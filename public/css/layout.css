@@ -1,0 +1,256 @@
+body {
+    margin: 0; /* Add this to your main CSS */
+    padding: 0; /* Add this to your main CSS */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+}
+
+
+.site-header {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 6rem;
+    align-items: center;
+}
+
+.nav-item {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: #ffd700;
+}
+
+.nav-item.contact {
+    color: #ffd700;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lang {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.lang:hover {
+    color: #ffd700;
+}
+
+.divider {
+    color: #666;
+}
+
+.search-icon {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 1rem;
+    padding: 0;
+}
+
+.search-icon:hover {
+    color: #ffd700;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* public/css/footer.css */
+
+.main-footer {
+    background-color: #1a2332;
+    color: white;
+    padding: 60px 0 20px 0;
+    font-family: 'Roboto', sans-serif;
+    margin: 60px 0 0 0 ; /* Add this */
+    width: 100%; /* Add this */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    left: 0;
+}
+
+/* Left Column */
+.footer-left {
+    max-width: 400px;
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.social-links {
+
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #ffd700;
+}
+
+.company-info h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.company-info p {
+    font-family: 'Roboto', sans-serif;
+    color: #a0aec0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Middle and Right Columns */
+.footer-links {
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    font-family: 'Roboto', sans-serif;
+    color: #ffd700;
+}
+
+/* Certification Section */
+.footer-certification {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.certification-text {
+    font-family: 'Roboto', sans-serif;
+    color: #a0aec0;
+    font-size: 14px;
+}
+
+.certification-images {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.cert-logo {
+    height: 40px;
+}
+
+/* Copyright */
+.footer-copyright {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a0aec0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-left {
+        max-width: 100%;
+    }
+
+    .footer-certification {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .certification-images {
+        flex-wrap: wrap;
+    }
+}
