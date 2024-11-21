@@ -39,8 +39,8 @@
         <div class="footer-certification">
             <p class="certification-text">Telah Berizin dan Diawasi oleh</p>
             <div class="certification-images">
-                <img src="{{ asset('images/ojk-logo.png') }}" alt="OJK" class="cert-logo">
-                <img src="{{ asset('images/amvesindo-logo.png') }}" alt="AMVESINDO" class="cert-logo">
+                <img src="{{ asset('images/ojk.png') }}" alt="OJK" class="cert-logo">
+                <img src="{{ asset('images/amvesindo.png') }}" alt="AMVESINDO" class="cert-logo">
             </div>
         </div>
     </div>

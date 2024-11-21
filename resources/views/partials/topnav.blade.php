@@ -15,12 +15,13 @@
         </div>
 
         <div class="language-selector">
-            <a href="#" class="lang">ID</a>
-            <span class="divider">|</span>
-            <a href="#" class="lang">EN</a>
             <button class="search-icon">
                 <i class="fas fa-search"></i>
             </button>
+            <a href="#" class="lang">ID</a>
+            <span class="divider">|</span>
+            <a href="#" class="lang">EN</a>
+
         </div>
     </nav>
 </header>
