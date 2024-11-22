@@ -90,16 +90,97 @@
 
 </div>
 
+<div class="portfolio-section">
+    {{-- Portfolio Header with hover effects and better spacing --}}
+    <div class="portfolio-header">
+        <div class="header-cell">Company Name</div>
+        <div class="header-cell">Category</div>
+        <div class="header-cell">Short Description</div>
+        <div class="header-cell">Current Stage</div>
+        <div class="header-cell">Partners</div>
+    </div>
+
+    <div class="portfolio-rows">
+        {{-- Portfolio Row with improved structure and interactions --}}
+        <div class="portfolio-row">
+            <div class="company-cell">
+                <h3 class="company-name">AgriAku</h3>
+            </div>
+            <div class="category-cell">Agriatech</div>
+            <div class="description-cell">
+                Berdiri sejak tahun 2021, PT Agriaku Digital Indonesia hadir sebagai perusahaan agrobisnis lok...
+            </div>
+            <div class="stage-cell">
+                <span class="stage-tag">Growth</span>
+            </div>
+            <div class="partners-cell">
+                <div class="partner-info">
+                    <span>Irvan Kolonas (CEO)</span>
+                    <button class="expand-btn" aria-label="Show more details">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-row">
+            <div class="company-cell">
+                <h3 class="company-name">AgriAku</h3>
+            </div>
+            <div class="category-cell">Agriatech</div>
+            <div class="description-cell">
+                Berdiri sejak tahun 2021, PT Agriaku Digital Indonesia hadir sebagai perusahaan agrobisnis lok...
+            </div>
+            <div class="stage-cell">
+                <span class="stage-tag">Growth</span>
+            </div>
+            <div class="partners-cell">
+                <div class="partner-info">
+                    <span>Irvan Kolonas (CEO)</span>
+                    <button class="expand-btn" aria-label="Show more details">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-row">
+            <div class="company-cell">
+                <h3 class="company-name">AgriAku</h3>
+            </div>
+            <div class="category-cell">Agriatech</div>
+            <div class="description-cell">
+                Berdiri sejak tahun 2021, PT Agriaku Digital Indonesia hadir sebagai perusahaan agrobisnis lok...
+            </div>
+            <div class="stage-cell">
+                <span class="stage-tag">Growth</span>
+            </div>
+            <div class="partners-cell">
+                <div class="partner-info">
+                    <span>Irvan Kolonas (CEO)</span>
+                    <button class="expand-btn" aria-label="Show more details">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        {{-- Additional rows follow the same pattern --}}
+    </div>
+</div>
+
 
 <div class="newsletter-section">
     <div class="newsletter-container">
-        <h2 class="newsletter-title">JOIN OUR MAILING LIST</h2>
-        <p class="newsletter-subtitle">Get the best stories from Mandiri Capital.</p>
+        <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
 
-        <form class="newsletter-form">
-            <input type="email" placeholder="Write here..." class="newsletter-input">
-            <button type="submit" class="newsletter-button">Proceed</button>
-        </form>
+        <a href="#">
+            <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect" class="button-image center-image-newsletter">
+        </a>
     </div>
 </div>
 
