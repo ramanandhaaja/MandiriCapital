@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             opacity: 1,
             scale: 1,
             duration: 0.8,
-            delay: index * 0.2,
+            delay: 0.2,
             ease: 'power2.out'
         });
     });

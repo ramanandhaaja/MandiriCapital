@@ -18,8 +18,8 @@
 
    <!-- Styles -->
    <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
-   <link href="{{ asset('css/home.css') }}" rel="stylesheet">
    <link href="{{ asset('css/scroll-animation.css') }}" rel="stylesheet">
+   @yield('localcss')
 
    @stack('styles')
 </head>
