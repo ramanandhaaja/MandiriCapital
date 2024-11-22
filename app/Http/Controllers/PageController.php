@@ -21,6 +21,16 @@ class PageController extends Controller
         return view('pages.contact');
     }
 
+    public function media()
+    {
+        return view('pages.media');
+    }
+
+    public function portfolio()
+    {
+        return view('pages.portfolio');
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
