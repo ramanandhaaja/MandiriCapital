@@ -113,7 +113,7 @@ body.menu-open {
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    max-width: 900px; /* Adjust this value based on your design needs */
+    max-width: 1000px; /* Adjust this value based on your design needs */
 }
 
 .nav-item {
