@@ -4,7 +4,6 @@
     <link href="{{ asset('css/about.css') }}" rel="stylesheet">
 @endsection
 
-
 @section('container')
     <div class="hero-section">
         <a href="#">
@@ -21,9 +20,7 @@
             <a href="#" class="filter-link active">About</a>
             <a href="#" class="filter-link">Our Team</a>
         </div>
-
     </div>
-
 
     {{-- Content Section --}}
     <div class="hero-mid-section">
@@ -218,7 +215,6 @@
             <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
         </div>
     </div>
-
     <div class="card">
         <div class="background-image" style="background-color: #ADD8E6;"></div>
         <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
