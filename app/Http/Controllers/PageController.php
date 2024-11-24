@@ -31,6 +31,16 @@ class PageController extends Controller
         return view('pages.portfolio');
     }
 
+    public function funding()
+    {
+        return view('pages.funding');
+    }
+
+    public function report()
+    {
+        return view('pages.report');
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
