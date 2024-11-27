@@ -1,11 +1,9 @@
 <?php
 
-// Terminal: php artisan make:filament-resource BlogCategory
-// app/Filament/Resources/BlogCategoryResource.php
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BlogCategoryResource\Pages;
-use App\Models\BlogCategory;
+use App\Filament\Resources\BlogTagResource\Pages;
+use App\Models\BlogTag;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,12 +11,12 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
-class BlogCategoryResource extends Resource
+class BlogTagResource extends Resource
 {
-    protected static ?string $model = BlogCategory::class;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $model = BlogTag::class;
+    protected static ?string $navigationIcon = 'heroicon-o-hashtag';
     protected static ?string $navigationGroup = 'Blog Management';
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
@@ -32,19 +30,10 @@ class BlogCategoryResource extends Resource
                             ->afterStateUpdated(fn (string $state, callable $set) =>
                                 $set('slug', Str::slug($state))
                             ),
-
                         Forms\Components\TextInput::make('slug')
                             ->required()
-                            ->unique(BlogCategory::class, 'slug', ignoreRecord: true),
-
-                        Forms\Components\Textarea::make('description')
-                            ->rows(3),
-
-                        Forms\Components\Toggle::make('is_active')
-                            ->label('Active')
-                            ->default(true),
+                            ->unique(BlogTag::class, 'slug', ignoreRecord: true),
                     ])
-                    ->columns(2)
             ]);
     }
 
@@ -56,18 +45,14 @@ class BlogCategoryResource extends Resource
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->sortable(),
             ])
             ->filters([
-                Tables\Filters\TernaryFilter::make('is_active')
-                    ->label('Active')
-                    ->boolean(),
+                //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -80,12 +65,19 @@ class BlogCategoryResource extends Resource
             ]);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListBlogCategories::route('/'),
-            'create' => Pages\CreateBlogCategory::route('/create'),
-            'edit' => Pages\EditBlogCategory::route('/{record}/edit'),
+            'index' => Pages\ListBlogTags::route('/'),
+            'create' => Pages\CreateBlogTag::route('/create'),
+            'edit' => Pages\EditBlogTag::route('/{record}/edit'),
         ];
     }
 }
