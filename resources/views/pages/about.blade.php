@@ -204,7 +204,6 @@
 </div>
 
 
-
 <h1 class="grid-headline-title">MANDIRI GROUP ECOSYSTEM </h1>
 <div class="masonry-grid">
     <div class="card">
