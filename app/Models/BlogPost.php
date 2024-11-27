@@ -49,4 +49,9 @@ class BlogPost extends Model
     {
         return $this->belongsToMany(BlogCategory::class, 'blog_post_categories');
     }
+
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(BlogTag::class, 'blog_post_tags');
+    }
 }

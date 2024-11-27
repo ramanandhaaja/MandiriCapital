@@ -17,6 +17,7 @@ class BlogPostResource extends Resource
     protected static ?string $model = BlogPost::class;
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $navigationGroup = 'Blog Management';
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -102,6 +103,25 @@ class BlogPostResource extends Resource
                                             ->required(),
                                     ])
                                     ->preload(),
+                            ]),
+
+                            Forms\Components\Section::make('Tags')
+                            ->schema([
+                                Forms\Components\Select::make('tags')
+                                    ->multiple()
+                                    ->relationship('tags', 'name')
+                                    ->preload()
+                                    ->createOptionForm([
+                                        Forms\Components\TextInput::make('name')
+                                            ->required()
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn (string $state, callable $set) =>
+                                                $set('slug', Str::slug($state))
+                                            ),
+                                        Forms\Components\TextInput::make('slug')
+                                            ->required()
+                                            ->unique('blog_tags', 'slug')
+                                    ])
                             ]),
 
                         Forms\Components\Section::make('SEO')
