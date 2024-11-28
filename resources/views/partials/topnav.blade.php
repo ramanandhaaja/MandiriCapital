@@ -20,19 +20,20 @@
                 <a href="{{ route('about') }}" class="nav-item {{ Route::currentRouteName() == 'about' ? 'active' : '' }}">ABOUT MCI</a>
                 <a href="{{ route('portfolio') }}" class="nav-item {{ Route::currentRouteName() == 'portfolio' ? 'active' : '' }}">PORTFOLIO</a>
                 <a href="{{ route('funding') }}" class="nav-item {{ Route::currentRouteName() == 'funding' ? 'active' : '' }}">FUNDING</a>
-                <a href="#" class="nav-item">VALUE CREATION</a>
                 <a href="{{ route('media') }}" class="nav-item {{ Route::currentRouteName() == 'media' ? 'active' : '' }}">MEDIA</a>
                 <a href="{{ route('report') }}" class="nav-item {{ Route::currentRouteName() == 'report' ? 'active' : '' }}">REPORT</a>
                 <a href="{{ route('contact') }}" class="nav-item {{ Route::currentRouteName() == 'contact' ? 'active' : '' }}">CONTACT US</a>
             </div>
 
-            <div class="language-selector">
+            <div class="nav-right">
                 <button class="search-icon">
                     <i class="fas fa-search"></i>
                 </button>
-                <a href="#" class="lang">ID</a>
-                <span class="divider">|</span>
-                <a href="#" class="lang">EN</a>
+                <div class="language-selector">
+                    <a href="#" class="lang-link active">EN</a>
+                    <span class="lang-separator">|</span>
+                    <a href="#" class="lang-link">ID</a>
+                </div>
             </div>
         </div>
     </nav>

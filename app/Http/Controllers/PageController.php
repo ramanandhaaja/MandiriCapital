@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BlogCategory;
+use App\Models\BlogPost;
+use App\Models\BlogTag;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -23,7 +26,22 @@ class PageController extends Controller
 
     public function media()
     {
-        return view('pages.media');
+        $posts = BlogPost::with(['user', 'categories', 'tags'])
+            ->where('status', 'published')
+            ->whereNotNull('published_at')
+            ->whereHas('categories', function($query) {
+                $query->where('name', 'Media');
+            })
+            ->whereHas('tags', function($query) {
+                $query->whereIn('name', ['News', 'Podcast']);
+            })
+            ->orderBy('published_at', 'desc')
+            ->paginate(10);
+
+        $categories = BlogCategory::where('is_active', true)->get();
+        $tags = BlogTag::whereIn('name', ['News', 'Podcast'])->get();
+
+        return view('pages.media', compact('posts', 'categories', 'tags'));
     }
 
     public function portfolio()
@@ -53,5 +71,25 @@ class PageController extends Controller
         // Add your logic here
 
         return redirect()->route('contact')->with('success', 'Message sent successfully!');
+    }
+
+    public function mediaFilter($tag)
+    {
+        $query = BlogPost::with(['user', 'categories', 'tags'])
+            ->whereHas('categories', function ($query) {
+                $query->where('name', 'Media');
+            });
+
+        if ($tag !== 'all') {
+            $query->whereHas('tags', function ($query) use ($tag) {
+                $query->where('name', ucfirst($tag));
+            });
+        }
+
+        $posts = $query->orderBy('published_at', 'desc')
+            ->take(7)
+            ->get();
+
+        return response()->json($posts);
     }
 }

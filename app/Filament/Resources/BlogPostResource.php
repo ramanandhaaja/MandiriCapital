@@ -148,6 +148,11 @@ class BlogPostResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
                     ->sortable(),
+
+                Tables\Columns\TextColumn::make('categories.name')
+                    ->searchable()
+                    ->sortable(),
+
                 Tables\Columns\TextColumn::make('status')
                     ->badge()
                     ->color(fn(string $state): string => match ($state) {

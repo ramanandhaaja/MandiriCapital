@@ -39,5 +39,6 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
    @stack('scripts')
+   @yield("scripts")
 </body>
 </html>
