@@ -1,7 +1,6 @@
 @extends('layout.mainlayout')
 @use('Illuminate\Support\Facades\Storage')
 
-
 @section('localcss')
     <link href="{{ asset('css/media.css') }}" rel="stylesheet">
 @endsection
@@ -35,8 +34,9 @@
 
     <div class="masonry-grid" data-route-pattern="{{ route('media.show', ':slug') }}">
         {{-- First Row --}}
-        <a href="{{ route('media.show', $posts[0]->slug) }}" class="text-decoration-none">
+
             <div class="card large">
+                <a href="{{ route('media.show', $posts[0]->slug) }}" class="text-decoration-none">
                 <div class="background-image"
                     style="background-image: url('{{ $posts[0]->featured_image ? Storage::url($posts[0]->featured_image) : asset('images/media/image1.png') }}');">
                 </div>
@@ -45,11 +45,12 @@
                     <h2>{{ $posts[0]->title }}</h2>
                 </div>
                 <span class="date">{{ \Carbon\Carbon::parse($posts[0]->published_at)->format('F Y') }}</span>
+            </a>
             </div>
-        </a>
 
-        <a href="{{ route('media.show', $posts[1]->slug) }}" class="text-decoration-none">
-            <div class="card">
+
+        <div class="card">
+            <a href="{{ route('media.show', $posts[1]->slug) }}" class="text-decoration-none">
                 <div class="background-image"
                     style="background-image: url('{{ $posts[1]->featured_image ? Storage::url($posts[1]->featured_image) : asset('images/media/image2.png') }}');">
                 </div>
@@ -58,12 +59,12 @@
                     <h2>{{ $posts[1]->title }}</h2>
                 </div>
                 <span class="date">{{ \Carbon\Carbon::parse($posts[1]->published_at)->format('F Y') }}</span>
-            </div>
-        </a>
+            </a>
+        </div>
 
         {{-- Second Row --}}
-        <a href="{{ route('media.show', $posts[2]->slug) }}" class="text-decoration-none">
-            <div class="card">
+        <div class="card">
+            <a href="{{ route('media.show', $posts[2]->slug) }}" class="text-decoration-none">
                 <div class="background-image"
                     style="background-image: url('{{ $posts[2]->featured_image ? Storage::url($posts[2]->featured_image) : asset('images/media/image3.png') }}');">
                 </div>
@@ -72,11 +73,11 @@
                     <h2>{{ $posts[2]->title }}</h2>
                 </div>
                 <span class="date">{{ \Carbon\Carbon::parse($posts[2]->published_at)->format('F Y') }}</span>
-            </div>
-        </a>
+            </a>
+        </div>
 
-        <a href="{{ route('media.show', $posts[3]->slug) }}" class="text-decoration-none">
-            <div class="card">
+        <div class="card">
+            <a href="{{ route('media.show', $posts[3]->slug) }}" class="text-decoration-none">
                 <div class="background-image"
                     style="background-image: url('{{ $posts[3]->featured_image ? Storage::url($posts[3]->featured_image) : asset('images/media/image4.png') }}');">
                 </div>
@@ -85,11 +86,11 @@
                     <h2>{{ $posts[3]->title }}</h2>
                 </div>
                 <span class="date">{{ \Carbon\Carbon::parse($posts[3]->published_at)->format('F Y') }}</span>
-            </div>
-        </a>
+            </a>
+        </div>
 
-        <a href="{{ route('media.show', $posts[4]->slug) }}" class="text-decoration-none">
-            <div class="card">
+        <div class="card">
+            <a href="{{ route('media.show', $posts[4]->slug) }}" class="text-decoration-none">
                 <div class="background-image"
                     style="background-image: url('{{ $posts[4]->featured_image ? Storage::url($posts[4]->featured_image) : asset('images/media/image5.png') }}');">
                 </div>
@@ -98,12 +99,12 @@
                     <h2>{{ $posts[4]->title }}</h2>
                 </div>
                 <span class="date">{{ \Carbon\Carbon::parse($posts[4]->published_at)->format('F Y') }}</span>
-            </div>
-        </a>
+            </a>
+        </div>
 
         {{-- Third Row --}}
-        <a href="{{ route('media.show', $posts[5]->slug) }}" class="text-decoration-none">
-            <div class="card">
+        <div class="card">
+            <a href="{{ route('media.show', $posts[5]->slug) }}" class="text-decoration-none">
                 <div class="background-image"
                     style="background-image: url('{{ $posts[5]->featured_image ? Storage::url($posts[5]->featured_image) : asset('images/media/image6.png') }}');">
                 </div>
@@ -112,11 +113,11 @@
                     <h2>{{ $posts[5]->title }}</h2>
                 </div>
                 <span class="date">{{ \Carbon\Carbon::parse($posts[5]->published_at)->format('F Y') }}</span>
-            </div>
-        </a>
+            </a>
+        </div>
 
-        <a href="{{ route('media.show', $posts[6]->slug) }}" class="text-decoration-none">
-            <div class="card large">
+        <div class="card large">
+            <a href="{{ route('media.show', $posts[6]->slug) }}" class="text-decoration-none">
                 <div class="background-image"
                     style="background-image: url('{{ $posts[6]->featured_image ? Storage::url($posts[6]->featured_image) : asset('images/media/image7.png') }}');">
                 </div>
@@ -125,8 +126,8 @@
                     <h2>{{ $posts[6]->title }}</h2>
                 </div>
                 <span class="date">{{ \Carbon\Carbon::parse($posts[6]->published_at)->format('F Y') }}</span>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 
     <div class="newsletter-section">
@@ -180,14 +181,14 @@
             });
 
             function updatePosts(posts, filter) {
-                // Create HTML for each post
+                // For all filters, including 'all'
                 const postsHtml = posts.map((post, index) => {
-                    // Only add large class if filter is 'all' and post is first or last
-                    const isLarge = filter === 'all' && (index === 0 || index === 6) ? 'large' : '';
+                    // Add large class for first and last posts only in 'all' filter
+                    const cardClass = filter === 'all' && (index === 0 || index === posts.length - 1) ? 'card large' : 'card';
                     const postUrl = routePattern.replace(':slug', post.slug);
                     return `
-                        <a href="${postUrl}" class="text-decoration-none">
-                            <div class="card ${isLarge}">
+                        <div class="${cardClass}">
+                            <a href="${postUrl}" class="text-decoration-none">
                                 <div class="background-image"
                                     style="background-image: url('${post.featured_image ? '/storage/' + post.featured_image : '/images/media/image${index + 1}.png'}');">
                                 </div>
@@ -196,20 +197,13 @@
                                     <h2>${post.title}</h2>
                                 </div>
                                 <span class="date">${new Date(post.published_at).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     `;
                 }).join('');
 
                 // Update the masonry grid
                 masonry.innerHTML = postsHtml;
-
-                // Update grid layout based on filter
-                if (filter === 'all') {
-                    masonry.style.gridTemplateColumns = 'repeat(3, 1fr)';
-                } else {
-                    masonry.style.gridTemplateColumns = 'repeat(3, 1fr)';
-                }
             }
         });
     </script>
