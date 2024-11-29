@@ -1,0 +1,461 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero-section {
+    width: 100%;
+    padding-top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-content {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 64px;
+    font-weight: 500;
+    padding-left: 70px;
+    padding-right: 70px;
+    z-index: 10;
+}
+
+.hero-section p {
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 80px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 70px;
+    padding-right: 70px;
+    z-index: 10;
+}
+
+
+
+
+/* Main Content Section */
+.content-section {
+    width: calc(100% - 40px);
+    margin-top: 100px;
+    margin-left: 40px;
+    margin-right: 0px;
+    background: transparent;
+    max-width: 1440px;
+}
+
+.content-container {
+    display: grid;
+    grid-template-columns: 350px 1fr 200px;
+    gap: 40px;
+    background: transparent;
+}
+
+.article-subtitle p {
+    font-family: 'Roboto', sans-serif;
+    color: #A1A1AA;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.article-content-text p{
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+
+}
+
+/* Left Sidebar */
+.sidebar-left {
+    margin-top: 50px;
+    width: 100%;
+    background: transparent;
+}
+
+/* Navigation Buttons */
+.news-navigation {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background: transparent;
+}
+
+.article-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: transparent;
+}
+
+.article-meta h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: #EFA32F;
+}
+
+.meta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: transparent;
+}
+
+.article-date {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+}
+
+.author-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+}
+
+.author-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.author-role {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #A1A1AA;
+}
+
+.article-category {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 12px 12px;
+    border-radius: 18px;
+    display: inline-block;
+    width: fit-content;
+    background: #27272A;
+}
+
+/* Navigation Buttons */
+.nav-button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+    background: transparent;
+    border: none;
+}
+
+.nav-button span {
+    font-size: 12px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.nav-button.prev-button span i {
+    align-self: flex-start;
+}
+
+.nav-button span i {
+    font-size: 14px;
+    background: #27272A;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-buttons-wrapper {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    background: transparent;
+}
+
+.nav-content {
+    display: flex;
+    gap: 12px;
+    background: transparent;
+}
+
+.nav-content img {
+    width: 160px;
+    height: 110px;
+    object-fit: cover;
+}
+
+.nav-text {
+    flex: 1;
+    background: transparent;
+}
+
+.nav-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #A1A1AA;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Main Content */
+.article-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    background: transparent;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+}
+
+.article-content blockquote {
+    border-left: 4px solid #666;
+    padding: 20px 0 20px 20px;
+    margin: 30px 0;
+    font-style: italic;
+    color: #555;
+    background: transparent;
+}
+
+.article-source {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #EFA32F;
+    background: transparent;
+}
+
+.article-source a {
+    color: #EFA32F;
+    text-decoration: none;
+}
+
+.article-source a:hover {
+    text-decoration: underline;
+}
+
+/* Share Section */
+.share-section {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 100px;
+    padding-right: 20px;
+    background: transparent;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.share-label {
+    color: #ffffff !important;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.share-section span {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: transparent;
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.2s ease;
+}
+
+.social-icon:hover img {
+    opacity: 0.7;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    width: 100%;
+    padding: 60px 20px;
+    margin-top: 60px;
+}
+
+.newsletter-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background: transparent;
+}
+
+.newsletter-title {
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    background: transparent;
+}
+
+.center-image-newsletter {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    background: transparent;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .content-container {
+        grid-template-columns: 250px 1fr 180px;
+        gap: 30px;
+        background: transparent;
+    }
+
+    .nav-content img {
+        width: 80px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-buttons-wrapper {
+        flex-direction: column;
+        gap: 12px;
+        background: transparent;
+    }
+
+    .content-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        background: transparent;
+    }
+
+    .sidebar-left {
+        order: 1;
+        background: transparent;
+    }
+
+    .content-text {
+        order: 2;
+        background: transparent;
+    }
+
+    .share-section {
+        order: 3;
+        background: transparent;
+    }
+
+    .social-icons {
+        flex-direction: row;
+        background: transparent;
+    }
+
+    .article-meta {
+        gap: 16px;
+        background: transparent;
+    }
+
+    .meta-info {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        background: transparent;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 400px;
+        padding-top: 100px;
+        background: transparent;
+    }
+
+    .article-meta h1 {
+        font-size: 28px;
+    }
+
+    .nav-content img {
+        width: 70px;
+        height: 52px;
+    }
+
+    .newsletter-title {
+        font-size: 28px;
+        background: transparent;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-section {
+        padding: 20px;
+        background: transparent;
+    }
+
+    .article-meta h1 {
+        font-size: 24px;
+    }
+
+    .meta-info {
+        gap: 8px;
+        background: transparent;
+    }
+
+    .newsletter-section {
+        padding: 40px 20px;
+        background-color: #1F2937;
+    }
+
+    .newsletter-title {
+        font-size: 24px;
+        background: transparent;
+    }
+}

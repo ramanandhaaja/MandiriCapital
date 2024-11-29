@@ -9,6 +9,7 @@ Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio'
 Route::get('/funding', [PageController::class, 'funding'])->name('funding');
 Route::get('/value', [PageController::class, 'value'])->name('value');
 Route::get('/media', [PageController::class, 'media'])->name('media');
+Route::get('/media/{slug}', [PageController::class, 'mediashow'])->name('media.show');
 Route::get('/media/filter/{tag}', [PageController::class, 'mediaFilter'])->name('media.filter');
 Route::get('/report', [PageController::class, 'report'])->name('report');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
