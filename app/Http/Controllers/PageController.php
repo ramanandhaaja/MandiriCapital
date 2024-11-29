@@ -44,6 +44,12 @@ class PageController extends Controller
         return view('pages.media', compact('posts', 'categories', 'tags'));
     }
 
+    public function mediashow($slug)
+    {
+        $post = BlogPost::where('slug', $slug)->firstOrFail();
+        return view('pages.media-show', compact('post'));
+    }
+
     public function portfolio()
     {
         return view('pages.portfolio');
