@@ -17,11 +17,11 @@
         {{-- Navigation Links Container --}}
         <div class="nav-content" id="navContent">
             <div class="nav-links">
-                <a href="{{ route('about') }}" class="nav-item {{ Route::currentRouteName() == 'about' ? 'active' : '' }}">ABOUT MCI</a>
+                <a href="{{ route('about') }}" class="nav-item {{ Route::currentRouteName() == 'about' ? 'active' : '' }}">OUR IDENTITY</a>
                 <a href="{{ route('portfolio') }}" class="nav-item {{ Route::currentRouteName() == 'portfolio' ? 'active' : '' }}">PORTFOLIO</a>
-                <a href="{{ route('funding') }}" class="nav-item {{ Route::currentRouteName() == 'funding' ? 'active' : '' }}">FUNDING</a>
+                <a href="{{ route('funding') }}" class="nav-item {{ Route::currentRouteName() == 'funding' ? 'active' : '' }}">PLATFORM</a>
                 <a href="{{ route('media') }}" class="nav-item {{ Route::currentRouteName() == 'media' ? 'active' : '' }}">MEDIA</a>
-                <a href="{{ route('report') }}" class="nav-item {{ Route::currentRouteName() == 'report' ? 'active' : '' }}">REPORT</a>
+                <a href="{{ route('report') }}" class="nav-item {{ Route::currentRouteName() == 'report' ? 'active' : '' }}">PUBLICATION</a>
                 <a href="{{ route('contact') }}" class="nav-item {{ Route::currentRouteName() == 'contact' ? 'active' : '' }}">CONTACT US</a>
             </div>
 
