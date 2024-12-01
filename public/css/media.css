@@ -215,8 +215,16 @@
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 125px;
+    height: 115px;
     margin-top: -50px;
+}
+
+
+
+.center-image-newsletter {
+    position: relative;
+    height: 58px;
+    padding-top: 20px;
 }
 
 

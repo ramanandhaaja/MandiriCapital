@@ -62,15 +62,59 @@ class PageController extends Controller
         return view('pages.portfolio-show', compact('portfolio'));
     }
 
-    public function funding()
+    public function platform()
     {
-        return view('pages.funding');
+        $posts = BlogPost::with(['user', 'categories', 'tags'])
+            ->where('status', 'published')
+            ->whereNotNull('published_at')
+            ->whereHas('categories', function($query) {
+                $query->where('name', 'Media');
+            })
+            ->whereHas('tags', function($query) {
+                $query->whereIn('name', ['News', 'Podcast']);
+            })
+            ->orderBy('published_at', 'desc')
+            ->paginate(10);
+
+        $categories = BlogCategory::where('is_active', true)->get();
+        $tags = BlogTag::whereIn('name', ['News', 'Podcast'])->get();
+
+        return view('pages.platform', compact('posts', 'categories', 'tags'));
     }
+
+    public function platformshow($slug)
+    {
+        $post = BlogPost::where('slug', $slug)->firstOrFail();
+        return view('pages.platform-show', compact('post'));
+    }
+
 
     public function report()
     {
-        return view('pages.report');
+        $posts = BlogPost::with(['user', 'categories', 'tags'])
+            ->where('status', 'published')
+            ->whereNotNull('published_at')
+            ->whereHas('categories', function($query) {
+                $query->where('name', 'Media');
+            })
+            ->whereHas('tags', function($query) {
+                $query->whereIn('name', ['News', 'Podcast']);
+            })
+            ->orderBy('published_at', 'desc')
+            ->paginate(10);
+
+        $categories = BlogCategory::where('is_active', true)->get();
+        $tags = BlogTag::whereIn('name', ['News', 'Podcast'])->get();
+
+        return view('pages.report', compact('posts', 'categories', 'tags'));
     }
+
+    public function reportshow($slug)
+    {
+        $post = BlogPost::where('slug', $slug)->firstOrFail();
+        return view('pages.report-show', compact('post'));
+    }
+
 
     public function store(Request $request)
     {
