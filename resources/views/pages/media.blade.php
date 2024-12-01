@@ -11,6 +11,7 @@
         <video autoplay muted loop playsinline class="video-background">
             <source src="{{ asset('images/media/media.mp4') }}" type="video/mp4">
         </video>
+
         <div class="hero-content">
             <a href="#">
                 <img src="{{ asset('images/media/media.png') }}" alt="Media" class="center-image">

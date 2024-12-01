@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -53,6 +54,12 @@ class PageController extends Controller
     public function portfolio()
     {
         return view('pages.portfolio');
+    }
+
+    public function portfolioshow($slug)
+    {
+        $portfolio = Portfolio::where('slug', $slug)->firstOrFail();
+        return view('pages.portfolio-show', compact('portfolio'));
     }
 
     public function funding()
