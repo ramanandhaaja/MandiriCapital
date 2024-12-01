@@ -6,26 +6,26 @@
 
 @section('container')
     <div class="hero-section">
-        <a href="#">
-            <img src="{{ asset('images/about/about.png') }}" alt="Media" class="center-image">
-        </a>
-        <img src="{{ asset('images/home/Ellipse110.png') }}" class="bg-left-1">
-        <img src="{{ asset('images/home/Ellipse111.png') }}" class="bg-left-2">
-        <img src="{{ asset('images/home/Ellipse112.png') }}" class="bg-left-3">
-    </div>
+        <video autoplay muted loop playsinline class="video-background">
+            <source src="{{ asset('images/about/about.mp4') }}" type="video/mp4">
+        </video>
 
-    {{-- Article Grid Section --}}
-    <div class="search-section">
-        <div class="category-filters">
-            <a href="#" class="filter-link active">About</a>
-            <a href="#" class="filter-link">Our Team</a>
+        <div class="hero-content">
+            <a href="#">
+                <img src="{{ asset('images/about/about.png') }}" alt="Media" class="center-image">
+            </a>
+            <div class="center-search">
+                <div class="category-filters">
+                    <a href="#" class="filter-link active">About</a>
+                    <a href="#" class="filter-link">Our Team</a>
+                </div>
+            </div>
         </div>
     </div>
 
     {{-- Content Section --}}
     <div class="hero-mid-section">
         <h1 class="center-text">MCI Connect Startups With Mandiri Group to Drive Rapid Innovation </h1>
-        <img src="{{ asset('images/about/jembatan.png') }}" alt="Media" class="center-mid-image">
     </div>
 
 
@@ -34,19 +34,15 @@
         <div class="counter-grid">
             <div class="counter-card right-border">
                 <h1>Mandiri Group Ecosystem </h1>
-                <h2>000</h2>
+                <h2>00</h2>
             </div>
             <div class="counter-card right-border">
-                <h1>Startup Partners </h1>
-                <h2>000</h2>
-            </div>
-            <div class="counter-card right-border">
-                <h1>Fund Venture </h1>
-                <h2>000</h2>
+                <h1>Portfolio</h1>
+                <h2>00</h2>
             </div>
             <div class="counter-card">
-                <h1>Initiative Program</h1>
-                <h2>000</h2>
+                <h1>Fund Venture </h1>
+                <h2>00</h2>
             </div>
         </div>
     </div>
@@ -120,153 +116,169 @@
     {{-- Headline Section --}}
 
 
-<div class="headline-section">
-    <h1 class="headline-title">FUNDING </h1>
+    <div class="headline-section">
+        <h1 class="headline-title">FUNDING </h1>
 
-    <div class="headline-grid">
-        <div class="headline-card">
-            <h1>Mandiri Corporate VC</h1>
-            <h2>Balance Sheet Fund</h2>
-            <p>Berfokus untuk memberikan investasi ke technology companies "growth startup" yang memiliki potensi kolaborasi...</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
+        <div class="headline-grid">
+            <div class="headline-card">
+                <h1>Mandiri Corporate VC</h1>
+                <h2>Balance Sheet Fund</h2>
+                <p>Berfokus untuk memberikan investasi ke technology companies "growth startup" yang memiliki potensi
+                    kolaborasi...</p>
+                <a href="#" class="learn-more">Learn More »</a>
+            </div>
 
-        <div class="headline-card middle-border">
-            <h1>Dana Ventura</h1>
-            <h2>Indonesia Impact Fund (IIF)</h2>
-            <p>Impact Fund swasta pertama di Indonesia yang berinvestasi ke perusahaan rintisan tahap awal yang mendukung imple...</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
+            <div class="headline-card middle-border">
+                <h1>Dana Ventura</h1>
+                <h2>Indonesia Impact Fund (IIF)</h2>
+                <p>Impact Fund swasta pertama di Indonesia yang berinvestasi ke perusahaan rintisan tahap awal yang
+                    mendukung imple...</p>
+                <a href="#" class="learn-more">Learn More »</a>
+            </div>
 
-        <div class="headline-card">
-            <h1>Dana Ventura</h1>
-            <h2>Merah Putih Fund (MPF)</h2>
-            <p>Dana Ventura terbesar di Indonesia yang dikelola oleh 5 CVC BUMN untuk mendukung soonicorns dan mempercepat pe...</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-    </div>
-</div>
-
-
-<div class="headline-section-grey">
-    <h1 class="headline-title">MCI VALUE CREATION INITIATIVES </h1>
-
-    <div class="headline-grid">
-        <div class="headline-card">
-            <h1>Mandiri Corporate VC</h1>
-            <h2>Balance Sheet Fund</h2>
-            <p>Berfokus untuk memberikan investasi ke technology companies "growth startup" yang memiliki potensi kolaborasi...</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-
-        <div class="headline-card middle-border">
-            <h1>Dana Ventura</h1>
-            <h2>Indonesia Impact Fund (IIF)</h2>
-            <p>Impact Fund swasta pertama di Indonesia yang berinvestasi ke perusahaan rintisan tahap awal yang mendukung imple...</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-
-        <div class="headline-card">
-            <h1>Dana Ventura</h1>
-            <h2>Merah Putih Fund (MPF)</h2>
-            <p>Dana Ventura terbesar di Indonesia yang dikelola oleh 5 CVC BUMN untuk mendukung soonicorns dan mempercepat pe...</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-    </div>
-</div>
-
-
-<div class="headline-section">
-    <h1 class="headline-title">OUR PRIORITY SECTOR </h1>
-
-    <div class="headline-grid">
-        <div class="headline-card">
-            <h1>Mandiri Corporate VC</h1>
-            <h2>Balance Sheet Fund</h2>
-            <p>Berfokus untuk memberikan investasi ke technology companies "growth startup" yang memiliki potensi kolaborasi...</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-
-        <div class="headline-card middle-border">
-            <h1>Dana Ventura</h1>
-            <h2>Indonesia Impact Fund (IIF)</h2>
-            <p>Impact Fund swasta pertama di Indonesia yang berinvestasi ke perusahaan rintisan tahap awal yang mendukung imple...</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-
-        <div class="headline-card">
-            <h1>Dana Ventura</h1>
-            <h2>Merah Putih Fund (MPF)</h2>
-            <p>Dana Ventura terbesar di Indonesia yang dikelola oleh 5 CVC BUMN untuk mendukung soonicorns dan mempercepat pe...</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-    </div>
-</div>
-
-
-<h1 class="grid-headline-title">MANDIRI GROUP ECOSYSTEM </h1>
-<div class="masonry-grid">
-    <div class="card">
-        <div class="background-image" style="background-color: #ADD8E6;"></div>
-        <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
-        <span class="category">Bank Mandiri Europe</span>
-        <div class="card-content">
-            <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
-        </div>
-    </div>
-    <div class="card">
-        <div class="background-image" style="background-color: #ADD8E6;"></div>
-        <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
-        <span class="category">Bank Mandiri Europe</span>
-        <div class="card-content">
-            <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+            <div class="headline-card">
+                <h1>Dana Ventura</h1>
+                <h2>Merah Putih Fund (MPF)</h2>
+                <p>Dana Ventura terbesar di Indonesia yang dikelola oleh 5 CVC BUMN untuk mendukung soonicorns dan
+                    mempercepat pe...</p>
+                <a href="#" class="learn-more">Learn More »</a>
+            </div>
         </div>
     </div>
 
-    <div class="card">
-        <div class="background-image" style="background-color: #ADD8E6;"></div>
-        <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
-        <span class="category">Bank Mandiri Europe</span>
-        <div class="card-content">
-            <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
-        </div>
-    </div>
-    <div class="card">
-        <div class="background-image" style="background-color: #ADD8E6;"></div>
-        <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
-        <span class="category">Bank Mandiri Europe</span>
-        <div class="card-content">
-            <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
-        </div>
-    </div>
-    <div class="card">
-        <div class="background-image" style="background-color: #ADD8E6;"></div>
-        <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
-        <span class="category">Bank Mandiri Europe</span>
-        <div class="card-content">
-            <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+
+    <div class="headline-section-grey">
+        <h1 class="headline-title">MCI VALUE CREATION INITIATIVES </h1>
+
+        <div class="headline-grid">
+            <div class="headline-card">
+                <h1>Mandiri Corporate VC</h1>
+                <h2>Balance Sheet Fund</h2>
+                <p>Berfokus untuk memberikan investasi ke technology companies "growth startup" yang memiliki potensi
+                    kolaborasi...</p>
+                <a href="#" class="learn-more">Learn More »</a>
+            </div>
+
+            <div class="headline-card middle-border">
+                <h1>Dana Ventura</h1>
+                <h2>Indonesia Impact Fund (IIF)</h2>
+                <p>Impact Fund swasta pertama di Indonesia yang berinvestasi ke perusahaan rintisan tahap awal yang
+                    mendukung imple...</p>
+                <a href="#" class="learn-more">Learn More »</a>
+            </div>
+
+            <div class="headline-card">
+                <h1>Dana Ventura</h1>
+                <h2>Merah Putih Fund (MPF)</h2>
+                <p>Dana Ventura terbesar di Indonesia yang dikelola oleh 5 CVC BUMN untuk mendukung soonicorns dan
+                    mempercepat pe...</p>
+                <a href="#" class="learn-more">Learn More »</a>
+            </div>
         </div>
     </div>
 
-    {{-- Third Row --}}
-    <div class="card">
-        <div class="background-image" style="background-color: #ADD8E6;"></div>
-        <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
-        <span class="category">Bank Mandiri Europe</span>
-        <div class="card-content">
-            <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+
+    <div class="headline-section">
+        <h1 class="headline-title">OUR PRIORITY SECTOR </h1>
+
+        <div class="headline-grid">
+            <div class="headline-card">
+                <h1>Mandiri Corporate VC</h1>
+                <h2>Balance Sheet Fund</h2>
+                <p>Berfokus untuk memberikan investasi ke technology companies "growth startup" yang memiliki potensi
+                    kolaborasi...</p>
+                <a href="#" class="learn-more">Learn More »</a>
+            </div>
+
+            <div class="headline-card middle-border">
+                <h1>Dana Ventura</h1>
+                <h2>Indonesia Impact Fund (IIF)</h2>
+                <p>Impact Fund swasta pertama di Indonesia yang berinvestasi ke perusahaan rintisan tahap awal yang
+                    mendukung imple...</p>
+                <a href="#" class="learn-more">Learn More »</a>
+            </div>
+
+            <div class="headline-card">
+                <h1>Dana Ventura</h1>
+                <h2>Merah Putih Fund (MPF)</h2>
+                <p>Dana Ventura terbesar di Indonesia yang dikelola oleh 5 CVC BUMN untuk mendukung soonicorns dan
+                    mempercepat pe...</p>
+                <a href="#" class="learn-more">Learn More »</a>
+            </div>
         </div>
     </div>
 
-    <div class="card">
-        <div class="background-image" style="background-color: #ADD8E6;"></div>
-        <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
-        <span class="category">Bank Mandiri Europe</span>
-        <div class="card-content">
-            <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+
+    <h1 class="grid-headline-title">MANDIRI GROUP ECOSYSTEM </h1>
+    <div class="masonry-grid">
+        <div class="card">
+            <div class="background-image" style="background-color: #ADD8E6;"></div>
+            <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
+            <span class="category">Bank Mandiri Europe</span>
+            <div class="card-content">
+                <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan
+                    The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="background-image" style="background-color: #ADD8E6;"></div>
+            <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
+            <span class="category">Bank Mandiri Europe</span>
+            <div class="card-content">
+                <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan
+                    The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="background-image" style="background-color: #ADD8E6;"></div>
+            <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
+            <span class="category">Bank Mandiri Europe</span>
+            <div class="card-content">
+                <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan
+                    The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="background-image" style="background-color: #ADD8E6;"></div>
+            <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
+            <span class="category">Bank Mandiri Europe</span>
+            <div class="card-content">
+                <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan
+                    The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="background-image" style="background-color: #ADD8E6;"></div>
+            <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
+            <span class="category">Bank Mandiri Europe</span>
+            <div class="card-content">
+                <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan
+                    The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+            </div>
+        </div>
+
+        {{-- Third Row --}}
+        <div class="card">
+            <div class="background-image" style="background-color: #ADD8E6;"></div>
+            <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
+            <span class="category">Bank Mandiri Europe</span>
+            <div class="card-content">
+                <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan
+                    The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="background-image" style="background-color: #ADD8E6;"></div>
+            <img class="background-icon" src="{{ asset('images/about/group1.png') }}" alt="Lets Connect">
+            <span class="category">Bank Mandiri Europe</span>
+            <div class="card-content">
+                <h2>Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan
+                    The Companies Act 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London</h2>
+            </div>
         </div>
     </div>
-</div>
 
 
 
