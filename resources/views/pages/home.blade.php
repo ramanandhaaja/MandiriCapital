@@ -7,17 +7,19 @@
 @section("container")
 
 {{-- Hero Section --}}
-<div class="hero-section">
-    <h1 class="center-text" >Most Progressive <br/>
-        Corporate Venture Capital <br/>
-        in Southeast Asia.</h1>
-    <img src="{{ asset('images/home/Ellipse110.png') }}" class="bg-left-1">
-    <img src="{{ asset('images/home/Ellipse111.png') }}" class="bg-left-2">
-    <img src="{{ asset('images/home/Ellipse112.png') }}" class="bg-left-3">
 
-    <a href="#">
+<div class="hero-section">
+    <video autoplay muted loop playsinline class="video-background">
+        <source src="{{ asset('images/home/home.mp4') }}" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+        <h1 class="center-text" >Corporate Venture Capital <br/>
+            of Bank Mandiri</h1>
         <img src="{{ asset('images/home/getInvestment.png') }}" alt="Get Investment" class="button-image center-image">
-    </a>
+
+    </div>
+
 </div>
 
 {{-- Headline Section --}}
@@ -42,6 +44,26 @@
             <h2>Merah Putih Fund (MPF)</h2>
             <p>Dana Ventura terbesar di Indonesia yang dikelola oleh 5 CVC BUMN untuk mendukung soonicorns dan mempercepat pe...</p>
             <a href="#" class="learn-more">Learn More »</a>
+        </div>
+    </div>
+</div>
+
+<div class="headline-section-two">
+    <div class="headline-grid">
+        <div class="headline-card-two">
+            <h1>Mandiri Group Ecosystem</h1>
+            <h2>15</h2>
+        </div>
+
+        <div class="headline-card-two middle-border">
+            <h1>Portfolio</h1>
+            <h2>25</h2>
+        </div>
+
+        <div class="headline-card-two">
+            <h1>Fund Venture</h1>
+            <h2>13</h2>
+
         </div>
     </div>
 </div>
