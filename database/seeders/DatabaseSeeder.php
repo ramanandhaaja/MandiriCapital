@@ -17,11 +17,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        /*
         User::factory()->create([
             'name' => 'nandha',
             'email' => 'nandha@nandha.com',
             'password' => Hash::make('nandha'),
-        ]);
+        ]);*/
 
         $this->call([
             PortfolioSeeder::class,
