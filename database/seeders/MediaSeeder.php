@@ -222,14 +222,29 @@ class MediaSeeder extends Seeder
         ];
 
         foreach ($posts as $post) {
+            $slug = Str::slug($post['title']);
+
+            // Create or update the blog post
             $blogPost = BlogPost::updateOrCreate(
-                ['slug' => Str::slug($post['title'])],
-                array_merge($post, ['user_id' => $user->id])
+                ['slug' => $slug],
+                array_merge($post, [
+                    'slug' => $slug,
+                    'user_id' => $user->id,
+                    'blog_category_id' => BlogCategory::inRandomOrder()->first()->id,
+                ])
             );
 
-            // Attach random categories and tags
-            $blogPost->categories()->attach(BlogCategory::inRandomOrder()->take(1)->pluck('id'));
-            $blogPost->tags()->attach(BlogTag::inRandomOrder()->take(rand(2, 3))->pluck('id'));
+            // Detach existing tags first to prevent duplicates
+            $blogPost->tags()->detach();
+
+            // Attach 2-4 random tags
+            $randomTags = BlogTag::inRandomOrder()
+                ->take(rand(2, 4))
+                ->get()
+                ->pluck('id')
+                ->toArray();
+
+            $blogPost->tags()->attach($randomTags);
         }
     }
 }
