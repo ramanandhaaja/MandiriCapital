@@ -230,9 +230,12 @@ class MediaSeeder extends Seeder
                 array_merge($post, [
                     'slug' => $slug,
                     'user_id' => $user->id,
-                    'blog_category_id' => BlogCategory::inRandomOrder()->first()->id,
                 ])
             );
+
+            // Detach and attach new category
+            $blogPost->categories()->detach();
+            $blogPost->categories()->attach(BlogCategory::inRandomOrder()->first()->id);
 
             // Detach existing tags first to prevent duplicates
             $blogPost->tags()->detach();
