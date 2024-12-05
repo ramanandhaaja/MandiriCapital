@@ -15,7 +15,10 @@ class BlogTagResource extends Resource
 {
     protected static ?string $model = BlogTag::class;
     protected static ?string $navigationIcon = 'heroicon-o-hashtag';
-    protected static ?string $navigationGroup = 'Blog Management';
+    protected static ?string $navigationLabel = 'Media Tags';
+    protected static ?string $navigationGroup = 'Media Management';
+    protected static ?string $modelLabel = 'Media Tag';
+    protected static ?string $pluralModelLabel = 'Media Tags';
     protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form

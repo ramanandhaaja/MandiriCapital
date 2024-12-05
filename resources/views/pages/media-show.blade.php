@@ -24,7 +24,7 @@
                     <div class="article-meta">
                         <h1>Berita Terbaru</h1>
                         <div class="meta-info">
-                            <span class="article-date">10 January 2024</span>
+                            <span class="article-date">{{ \Carbon\Carbon::parse($post->published_at)->format('d F Y') }}</span>
                             <div class="author-info">
                                 <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar">
                                 <div class="author-details">
@@ -32,7 +32,7 @@
                                     <span class="author-role">Author</span>
                                 </div>
                             </div>
-                            <div class="article-category">NEWS</div>
+                            <div class="article-category">{{ $post->categories->first()->name }}</div>
                         </div>
                     </div>
 
@@ -68,55 +68,23 @@
                 <div class="article-content">
 
                     <div class="article-subtitle">
-                        <p>jpnn.com, NIAS – PT Mandiri Capital Indonesia (MCI) terpilih oleh Kementerian BUMN untuk turut
-                            berpartisipasi dalam Program Relawan Bakti BUMN Batch VI tahun 2024.</p>
+                        <p>{{ $post->content_heading }}</p>
                     </div>
                     <div class="article-content-text">
-                        <p>Direktur Keuangan, HR & Manajemen Risiko MCI, Wisnu Setiadi, sebagai salah satu Direktur Muda
-                            BUMN
-                            ditugaskan untuk memberikan sharing session pada relawan BUMN yang ditempatkan di Desa Wisata
-                            Hilisimaetano, Nias Selatan, Pulau Nias, Sumatera Utara.</p>
-
-                        <p>Desa Wisata Hilisimaetano dikenal sebagai salah satu destinasi wisata unggulan dengan keindahan
-                            alam
-                            dan budaya yang kaya, di mana desa ini memiliki tradisi atraksi lompat batu yang pernah menjadi
-                            salah satu latar belakang dalam mata uang seribu rupiah keluaran 1992 silam.</p>
-
-                        <p>Program Relawan Bakti BUMN merupakan Employee Volunteering Program bagi pegawai BUMN dengan
-                            tujuan
-                            untuk meningkatkan peran BUMN sebagai Agent of Development, implementasi nilai-nilai AKHLAK, dan
-                            meningkatkan engagement pegawai melalui keterlibatan langsung dalam program Tanggung Jawab
-                            Sosial &
-                            Lingkungan (TJSL).</p>
-
-                        <p>Adapun 10 Relawan Muda BUMN yang ditugaskan ke Nias Selatan berasal dari berbagai BUMN seperti
-                            Bank
-                            Mandiri, BNI, BSI, BTN, Pertamina, PLN, PGN, Jamkrindo, Askrindo, dan Pegadaian. Sepuluh Relawan
-                            Muda tersebut turut berperan aktif dalam kegiatan sosial, mulai dari pendidikan, pengelolaan
-                            sampah,
-                            kesehatan, hingga perbaikan infrastruktur lokal.</p>
-
-                        <p>Kehadiran para relawan diharapkan dapat memberikan dampak positif bagi masyarakat desa.</p>
-
-
-                        <p>"Kami berharap teman-teman relawan dapat mengimplementasikan core value AKHLAK dengan
-                            purpose yang lebih tinggi setelah 5 hari terakhir turut serta dalam program bakti di Desa
-                            Hilisimaetano. Implementasi core value AKHLAK dalam proses bisnis sehari-hari diharapkan dapat
-                            membantu meningkatkan kualitas kinerja perusahaan BUMN, yang pada akhirnya BUMN dapat memberikan
-                            kontribusi lebih pada masyarakat Indonesia," ujar Wisnu Setiadi.
-                        </p>
+                        <p>{!! $post->content !!}</p>
 
                     </div>
                     <div class="article-source">
                         Sumber: <a
-                            href="https://www.jawapos.com/finance/013445361/btn-dan-mandiri-capital-bentuk-btn-fund-berikan-pendanaan-untuk-startup-properti"
-                            target="_blank">https://www.jawapos.com/finance/013445361/btn-dan-mandiri-capital-bentuk-btn-fund-berikan-pendanaan-untuk-startup-properti</a>
+                            href="{{ $post->media_source_url }}"
+                            target="_blank">{{ $post->media_source_url }}</a>
                     </div>
 
                     <div style="width: 100%; margin: 40px 0 0 0;">
+                        @if(Str::contains(strtolower($post->media_url), 'spotify'))
                         <iframe
                             style="border-radius:12px"
-                            src="https://open.spotify.com/embed/episode/6gxsvG2u5eJPKoD7oLJ25G?utm_source=generator"
+                            src="{{ $post->media_url }}"
                             width="100%"
                             height="200"
                             frameBorder="0"
@@ -124,19 +92,18 @@
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy">
                         </iframe>
-                    </div>
-
-                    <div style="width: 100%; margin: 0px;">
+                        @elseif(Str::contains(strtolower($post->media_url), 'youtube'))
                         <iframe
                             style="border-radius:12px"
-                            src="https://www.youtube.com/embed/Q89Dzox4jAE"
+                            src="{{ $post->media_url }}"
                             width="100%"
-                            height="180"
+                            height="480"
                             frameBorder="0"
                             allowfullscreen=""
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             loading="lazy">
                         </iframe>
+                        @endif
                     </div>
                 </div>
             </div>
