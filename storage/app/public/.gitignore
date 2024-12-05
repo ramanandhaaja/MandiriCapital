@@ -1,2 +1,6 @@
 *
 !.gitignore
+!blog-images/
+!blog-images/*
+!portfolios/
+!portfolios/*
