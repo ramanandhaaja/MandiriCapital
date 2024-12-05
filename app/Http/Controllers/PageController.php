@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
+use App\Models\Platform;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
 use App\Models\Publication;
@@ -70,19 +71,11 @@ class PageController extends Controller
 
     public function platform()
     {
-        $posts = BlogPost::with(['user', 'categories', 'tags'])
-            ->where('status', 'published')
-            ->whereNotNull('published_at')
-            ->whereHas('categories', function($query) {
-                $query->whereIn('name', ['News', 'Podcast']);
-            })
-            ->orderBy('published_at', 'desc')
-            ->paginate(10);
+        $posts = BlogPost::all();
 
         $categories = BlogCategory::where('is_active', true)->get();
-        $tags = BlogTag::whereIn('name', ['News', 'Podcast'])->get();
 
-        return view('pages.platform', compact('posts', 'categories', 'tags'));
+        return view('pages.platform', compact('posts', 'categories'));
     }
 
     public function platformshow($slug)
@@ -157,6 +150,22 @@ class PageController extends Controller
         $publications = $query->get();
 
         return response()->json($publications);
+    }
+
+    public function platformFilter($category)
+    {
+        $query = Platform::with('category')
+            ->orderBy('published_date', 'desc');
+
+        if ($category !== 'all') {
+            $query->whereHas('category', function ($query) use ($category) {
+                $query->where('name', ucfirst($category));
+            });
+        }
+
+        $platforms = $query->get();
+
+        return response()->json($platforms);
     }
 
     public function portfolioFilter($category)

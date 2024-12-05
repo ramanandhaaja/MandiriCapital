@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PortfolioSeeder::class,
             MediaSeeder::class,
             PublicationSeeder::class,
+            PlatformSeeder::class,
         ]);
     }
 }
