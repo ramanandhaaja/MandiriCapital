@@ -13,8 +13,10 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->text('excerpt')->nullable();
+            $table->longText('content_heading');
             $table->longText('content');
+            $table->longText('media_source_url')->nullable();
+            $table->longText('media_url')->nullable();
             $table->string('featured_image')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->string('meta_title')->nullable();

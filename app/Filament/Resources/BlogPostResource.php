@@ -16,8 +16,11 @@ class BlogPostResource extends Resource
 {
     protected static ?string $model = BlogPost::class;
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    protected static ?string $navigationGroup = 'Blog Management';
+    protected static ?string $navigationLabel = 'Media';
+    protected static ?string $navigationGroup = 'Media Management';
     protected static ?int $navigationSort = 1;
+    protected static ?string $modelLabel = 'Media';
+    protected static ?string $pluralModelLabel = 'Media';
 
     public static function form(Form $form): Form
     {
@@ -47,19 +50,42 @@ class BlogPostResource extends Resource
                                         Forms\Components\TextInput::make('slug')
                                             ->required()
                                             ->unique(BlogPost::class, 'slug', ignoreRecord: true),
+
+                                        Forms\Components\TextInput::make('content_heading')
+                                            ->required()
+                                            ->label('Content Heading')
+                                            ->placeholder('Enter the main heading for the content'),
+
+
                                     ]),
+
+                                Forms\Components\RichEditor::make('content_heading')
+                                    ->required()
+                                    ->label('Content Heading')
+                                    ->placeholder('Enter the main heading for the content')
+                                    ->columnSpanFull(),
 
                                 Forms\Components\RichEditor::make('content')
                                     ->required()
                                     ->columnSpanFull(),
 
-                                Forms\Components\TextInput::make('excerpt')
+                                Forms\Components\TextInput::make('media_source_url')
+                                    ->label('Media Source URL')
+                                    ->placeholder('Enter the source URL for the media')
+                                    ->url()
                                     ->columnSpanFull(),
+
+                                Forms\Components\TextInput::make('media_url')
+                                    ->label('Media URL')
+                                    ->placeholder('Enter YouTube or other media URL')
+                                    ->url()
+                                    ->columnSpanFull(),
+
 
                                 Forms\Components\DateTimePicker::make('published_at')
                                     ->label('Publish Date')
                                     ->seconds(false)
-                                    ->dehydrateStateUsing(fn ($state) => $state ?? now()),
+                                    ->dehydrateStateUsing(fn($state) => $state ?? now()),
 
                                 Forms\Components\Select::make('status')
                                     ->options([
@@ -105,7 +131,7 @@ class BlogPostResource extends Resource
                                     ->preload(),
                             ]),
 
-                            Forms\Components\Section::make('Tags')
+                        Forms\Components\Section::make('Tags')
                             ->schema([
                                 Forms\Components\Select::make('tags')
                                     ->multiple()
@@ -115,7 +141,8 @@ class BlogPostResource extends Resource
                                         Forms\Components\TextInput::make('name')
                                             ->required()
                                             ->live(onBlur: true)
-                                            ->afterStateUpdated(fn (string $state, callable $set) =>
+                                            ->afterStateUpdated(
+                                                fn(string $state, callable $set) =>
                                                 $set('slug', Str::slug($state))
                                             ),
                                         Forms\Components\TextInput::make('slug')
@@ -141,8 +168,8 @@ class BlogPostResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('featured_image')
                     ->disk('public')
-                    ->url(fn ($record) => $record->featured_image ? url('storage/' . $record->featured_image) : null)
-                    ->getStateUsing(fn ($record) => $record->featured_image ? url('storage/' . $record->featured_image) : null)
+                    ->url(fn($record) => $record->featured_image ? url('storage/' . $record->featured_image) : null)
+                    ->getStateUsing(fn($record) => $record->featured_image ? url('storage/' . $record->featured_image) : null)
                     ->height(50),
 
                 Tables\Columns\TextColumn::make('title')

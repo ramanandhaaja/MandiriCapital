@@ -11,25 +11,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('portfolio_categories', function (Blueprint $table) {
+        Schema::create('publication_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
             $table->timestamps();
         });
 
-        Schema::create('portfolios', function (Blueprint $table) {
+        Schema::create('publications', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->string('slug')->unique();
-            $table->foreignId('portfolio_category_id')->constrained()->onDelete('cascade');
-            $table->text('description');
-            $table->string('stage');
-            $table->string('website_url');
+            $table->foreignId('publication_category_id')->constrained()->onDelete('cascade');
+            $table->text('content');
+            $table->date('published_date');
             $table->string('image_path');
-            $table->string('ceo_name');
-            $table->string('year_invested');
-            $table->string('sector');
             $table->timestamps();
         });
     }
@@ -39,7 +35,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('portfolios');
-        Schema::dropIfExists('portfolio_categories');
+        Schema::dropIfExists('publications');
+        Schema::dropIfExists('publication_categories');
     }
 };

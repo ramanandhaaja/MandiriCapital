@@ -6,6 +6,9 @@ use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
 use App\Models\Portfolio;
+use App\Models\PortfolioCategory;
+use App\Models\Publication;
+use App\Models\PublicationCategory;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -31,9 +34,6 @@ class PageController extends Controller
             ->where('status', 'published')
             ->whereNotNull('published_at')
             ->whereHas('categories', function($query) {
-                $query->where('name', 'Media');
-            })
-            ->whereHas('tags', function($query) {
                 $query->whereIn('name', ['News', 'Podcast']);
             })
             ->orderBy('published_at', 'desc')
@@ -53,7 +53,13 @@ class PageController extends Controller
 
     public function portfolio()
     {
-        return view('pages.portfolio');
+        $portfolios = Portfolio::with('category')
+            ->orderBy('year_invested');
+
+        $portfolio_categories = PortfolioCategory::all();
+
+        return view('pages.portfolio', compact('portfolios', 'portfolio_categories'));
+
     }
 
     public function portfolioshow($slug)
@@ -68,9 +74,6 @@ class PageController extends Controller
             ->where('status', 'published')
             ->whereNotNull('published_at')
             ->whereHas('categories', function($query) {
-                $query->where('name', 'Media');
-            })
-            ->whereHas('tags', function($query) {
                 $query->whereIn('name', ['News', 'Podcast']);
             })
             ->orderBy('published_at', 'desc')
@@ -91,28 +94,19 @@ class PageController extends Controller
 
     public function report()
     {
-        $posts = BlogPost::with(['user', 'categories', 'tags'])
-            ->where('status', 'published')
-            ->whereNotNull('published_at')
-            ->whereHas('categories', function($query) {
-                $query->where('name', 'Media');
-            })
-            ->whereHas('tags', function($query) {
-                $query->whereIn('name', ['News', 'Podcast']);
-            })
-            ->orderBy('published_at', 'desc')
+        $publications = Publication::with('category')
+            ->orderBy('published_date')
             ->paginate(10);
 
-        $categories = BlogCategory::where('is_active', true)->get();
-        $tags = BlogTag::whereIn('name', ['News', 'Podcast'])->get();
+        $publication_categories = PublicationCategory::all();
 
-        return view('pages.report', compact('posts', 'categories', 'tags'));
+        return view('pages.report', compact('publications', 'publication_categories'));
     }
 
     public function reportshow($slug)
     {
-        $post = BlogPost::where('slug', $slug)->firstOrFail();
-        return view('pages.report-show', compact('post'));
+        $publication = Publication::where('slug', $slug)->firstOrFail();
+        return view('pages.report-show', compact('publication'));
     }
 
 
@@ -130,16 +124,15 @@ class PageController extends Controller
         return redirect()->route('contact')->with('success', 'Message sent successfully!');
     }
 
-    public function mediaFilter($tag)
+    public function mediaFilter($category)
     {
-        $query = BlogPost::with(['user', 'categories', 'tags'])
-            ->whereHas('categories', function ($query) {
-                $query->where('name', 'Media');
-            });
+        $query = BlogPost::with(['user', 'categories'])
+            ->where('status', 'published')
+            ->whereNotNull('published_at');
 
-        if ($tag !== 'all') {
-            $query->whereHas('tags', function ($query) use ($tag) {
-                $query->where('name', ucfirst($tag));
+        if ($category !== 'all') {
+            $query->whereHas('categories', function ($query) use ($category) {
+                $query->where('name', ucfirst($category));
             });
         }
 
@@ -148,5 +141,37 @@ class PageController extends Controller
             ->get();
 
         return response()->json($posts);
+    }
+
+    public function reportFilter($category)
+    {
+        $query = Publication::with('category')
+            ->orderBy('published_date', 'desc');
+
+        if ($category !== 'all') {
+            $query->whereHas('category', function ($query) use ($category) {
+                $query->where('name', ucfirst($category));
+            });
+        }
+
+        $publications = $query->get();
+
+        return response()->json($publications);
+    }
+
+    public function portfolioFilter($category)
+    {
+        $query = Portfolio::with('category')
+            ->orderBy('year_invested', 'desc');
+
+        if ($category !== 'all') {
+            $query->whereHas('category', function ($query) use ($category) {
+                $query->where('name', ucfirst($category));
+            });
+        }
+
+        $portfolios = $query->get();
+
+        return response()->json($portfolios);
     }
 }

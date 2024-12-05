@@ -66,14 +66,14 @@
     background: transparent;
 }
 
-.article-subtitle p {
+.article-subtitle {
     font-family: 'Roboto', sans-serif;
     color: #A1A1AA;
     font-size: 24px;
     line-height: 1.4;
 }
 
-.article-content-text p{
+.article-content-text {
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
 
@@ -320,7 +320,6 @@
 .newsletter-section {
     width: 100%;
     padding: 60px 20px;
-    margin-top: 60px;
 }
 
 .newsletter-container {

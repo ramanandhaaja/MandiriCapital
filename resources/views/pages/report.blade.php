@@ -34,85 +34,73 @@
 
     {{-- Article Grid Section --}}
 
-    <div class="masonry-grid" data-route-pattern="{{ route('media.show', ':slug') }}">
+    <div class="masonry-grid" data-route-pattern="{{ route('report.show', ':slug') }}">
         {{-- First Row --}}
-
         <div class="card"
-            style="background-image: url('{{ $posts[0]->featured_image ? Storage::url($posts[0]->featured_image) : asset('images/media/image1.png') }}');">
-            <a href="{{ route('media.show', $posts[0]->slug) }}" class="text-decoration-none">
-                <span class="category">{{ $posts[0]->tags->first()->name }}</span>
+            style="background-image: url('{{ $publications[0]->image_path ? Storage::url($publications[0]->image_path) : asset('images/media/image1.png') }}');">
+            <a href="{{ route('report.show', $publications[0]->slug) }}" class="text-decoration-none">
+                <span class="category">{{ $publications[0]->category->name ?? '' }}</span>
                 <div class="card-content">
-                    <h2>{{ $posts[0]->title }}</h2>
+                    <h2>{{ $publications[0]->title }}</h2>
                 </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[0]->published_at)->format('F Y') }}</span>
+                <span class="date">{{ \Carbon\Carbon::parse($publications[0]->published_date)->format('F Y') }}</span>
             </a>
         </div>
 
         <div class="card"
-            style="background-image: url('{{ $posts[1]->featured_image ? Storage::url($posts[1]->featured_image) : asset('images/media/image2.png') }}');">
-            <a href="{{ route('media.show', $posts[1]->slug) }}" class="text-decoration-none">
-                <span class="category">{{ $posts[1]->tags->first()->name }}</span>
+            style="background-image: url('{{ $publications[1]->image_path ? Storage::url($publications[1]->image_path) : asset('images/media/image2.png') }}');">
+            <a href="{{ route('report.show', $publications[1]->slug) }}" class="text-decoration-none">
+                <span class="category">{{ $publications[1]->category->name ?? '' }}</span>
                 <div class="card-content">
-                    <h2>{{ $posts[1]->title }}</h2>
+                    <h2>{{ $publications[1]->title }}</h2>
                 </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[1]->published_at)->format('F Y') }}</span>
+                <span class="date">{{ \Carbon\Carbon::parse($publications[1]->published_date)->format('F Y') }}</span>
             </a>
         </div>
 
         {{-- Second Row --}}
         <div class="card"
-            style="background-image: url('{{ $posts[2]->featured_image ? Storage::url($posts[2]->featured_image) : asset('images/media/image3.png') }}');">
-            <a href="{{ route('media.show', $posts[2]->slug) }}" class="text-decoration-none">
-                <span class="category">{{ $posts[2]->tags->first()->name }}</span>
+            style="background-image: url('{{ $publications[2]->image_path ? Storage::url($publications[2]->image_path) : asset('images/media/image3.png') }}');">
+            <a href="{{ route('report.show', $publications[2]->slug) }}" class="text-decoration-none">
+                <span class="category">{{ $publications[2]->category->name ?? '' }}</span>
                 <div class="card-content">
-                    <h2>{{ $posts[2]->title }}</h2>
+                    <h2>{{ $publications[2]->title }}</h2>
                 </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[2]->published_at)->format('F Y') }}</span>
+                <span class="date">{{ \Carbon\Carbon::parse($publications[2]->published_date)->format('F Y') }}</span>
             </a>
         </div>
 
         <div class="card"
-            style="background-image: url('{{ $posts[3]->featured_image ? Storage::url($posts[3]->featured_image) : asset('images/media/image4.png') }}');">
-            <a href="{{ route('media.show', $posts[3]->slug) }}" class="text-decoration-none">
-                <span class="category">{{ $posts[3]->tags->first()->name }}</span>
+            style="background-image: url('{{ $publications[3]->image_path ? Storage::url($publications[3]->image_path) : asset('images/media/image4.png') }}');">
+            <a href="{{ route('report.show', $publications[3]->slug) }}" class="text-decoration-none">
+                <span class="category">{{ $publications[3]->category->name ?? '' }}</span>
                 <div class="card-content">
-                    <h2>{{ $posts[3]->title }}</h2>
+                    <h2>{{ $publications[3]->title }}</h2>
                 </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[3]->published_at)->format('F Y') }}</span>
+                <span class="date">{{ \Carbon\Carbon::parse($publications[3]->published_date)->format('F Y') }}</span>
             </a>
         </div>
 
         <div class="card"
-            style="background-image: url('{{ $posts[4]->featured_image ? Storage::url($posts[4]->featured_image) : asset('images/media/image5.png') }}');">
-            <a href="{{ route('media.show', $posts[4]->slug) }}" class="text-decoration-none">
-                <span class="category">{{ $posts[4]->tags->first()->name }}</span>
+            style="background-image: url('{{ $publications[4]->image_path ? Storage::url($publications[4]->image_path) : asset('images/media/image5.png') }}');">
+            <a href="{{ route('report.show', $publications[4]->slug) }}" class="text-decoration-none">
+                <span class="category">{{ $publications[4]->category->name ?? '' }}</span>
                 <div class="card-content">
-                    <h2>{{ $posts[4]->title }}</h2>
+                    <h2>{{ $publications[4]->title }}</h2>
                 </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[4]->published_at)->format('F Y') }}</span>
+                <span class="date">{{ \Carbon\Carbon::parse($publications[4]->published_date)->format('F Y') }}</span>
             </a>
         </div>
 
         {{-- Third Row --}}
         <div class="card"
-            style="background-image: url('{{ $posts[5]->featured_image ? Storage::url($posts[5]->featured_image) : asset('images/media/image6.png') }}');">
-            <a href="{{ route('media.show', $posts[5]->slug) }}" class="text-decoration-none">
-                <span class="category">{{ $posts[5]->tags->first()->name }}</span>
+            style="background-image: url('{{ $publications[5]->image_path ? Storage::url($publications[5]->image_path) : asset('images/media/image6.png') }}');">
+            <a href="{{ route('report.show', $publications[5]->slug) }}" class="text-decoration-none">
+                <span class="category">{{ $publications[5]->category->name ?? '' }}</span>
                 <div class="card-content">
-                    <h2>{{ $posts[5]->title }}</h2>
+                    <h2>{{ $publications[5]->title }}</h2>
                 </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[5]->published_at)->format('F Y') }}</span>
-            </a>
-        </div>
-
-        <div class="card"
-            style="background-image: url('{{ $posts[6]->featured_image ? Storage::url($posts[6]->featured_image) : asset('images/media/image7.png') }}');">
-            <a href="{{ route('media.show', $posts[6]->slug) }}" class="text-decoration-none">
-                <span class="category">{{ $posts[6]->tags->first()->name }}</span>
-                <div class="card-content">
-                    <h2>{{ $posts[6]->title }}</h2>
-                </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[6]->published_at)->format('F Y') }}</span>
+                <span class="date">{{ \Carbon\Carbon::parse($publications[5]->published_date)->format('F Y') }}</span>
             </a>
         </div>
 
@@ -152,7 +140,7 @@
                     currentFilter = this.textContent.toLowerCase();
 
                     try {
-                        const response = await fetch(`/media/filter/${currentFilter}`, {
+                        const response = await fetch(`/report/filter/${currentFilter}`, {
                             headers: {
                                 'X-Requested-With': 'XMLHttpRequest'
                             }
@@ -160,26 +148,26 @@
 
                         if (!response.ok) throw new Error('Network response was not ok');
 
-                        const posts = await response.json();
-                        updatePosts(posts, currentFilter);
+                        const publications = await response.json();
+                        updatePosts(publications, currentFilter);
                     } catch (error) {
                         console.error('Error:', error);
                     }
                 });
             });
 
-            function updatePosts(posts, filter) {
-                const postsHtml = posts.map((post, index) => {
-                    const postUrl = routePattern.replace(':slug', post.slug);
-                    const imageUrl = post.featured_image ? '/storage/' + post.featured_image : '/images/media/image' + (index + 1) + '.png';
+            function updatePosts(publications, filter) {
+                const postsHtml = publications.map((publication, index) => {
+                    const postUrl = routePattern.replace(':slug', publication.slug);
+                    const imageUrl = publication.image_path ? '/storage/' + publication.image_path : '/images/media/image' + (index + 1) + '.png';
                     return `
                         <div class="card" style="background-image: url('${imageUrl}');">
                             <a href="${postUrl}" class="text-decoration-none">
-                                <span class="category">${post.tags[0]?.name || ''}</span>
+                                <span class="category">${publication.category?.name ?? ''}</span>
                                 <div class="card-content">
-                                    <h2>${post.title}</h2>
+                                    <h2>${publication.title}</h2>
                                 </div>
-                                <span class="date">${new Date(post.published_at).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                                <span class="date">${new Date(publication.published_date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                             </a>
                         </div>
                     `;

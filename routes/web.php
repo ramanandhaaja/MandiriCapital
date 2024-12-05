@@ -20,19 +20,23 @@ require __DIR__.'/auth.php';
 
 Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
+
 Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio');
 Route::get('/portfolio/{slug}', [PageController::class, 'portfolioshow'])->name('portfolio.show');
+Route::get('/portfolio/filter/{tag}', [PageController::class, 'portfolioFilter'])->name('portfolio.filter');
+
 Route::get('/platform', [PageController::class, 'platform'])->name('platform');
 Route::get('/platform/{slug}', [PageController::class, 'platformshow'])->name('platform.show');
 Route::get('/platform/filter/{tag}', [PageController::class, 'platformFilter'])->name('platform.filter');
 
-Route::get('/value', [PageController::class, 'value'])->name('value');
 Route::get('/media', [PageController::class, 'media'])->name('media');
 Route::get('/media/{slug}', [PageController::class, 'mediashow'])->name('media.show');
 Route::get('/media/filter/{tag}', [PageController::class, 'mediaFilter'])->name('media.filter');
+
 Route::get('/report', [PageController::class, 'report'])->name('report');
 Route::get('/report/{slug}', [PageController::class, 'reportshow'])->name('report.show');
 Route::get('/report/filter/{tag}', [PageController::class, 'reportFilter'])->name('report.filter');
+
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');

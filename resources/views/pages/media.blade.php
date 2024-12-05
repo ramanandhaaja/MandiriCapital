@@ -41,7 +41,7 @@
                 <div class="background-image"
                     style="background-image: url('{{ $posts[0]->featured_image ? Storage::url($posts[0]->featured_image) : asset('images/media/image1.png') }}');">
                 </div>
-                <span class="category">{{ $posts[0]->tags->first()->name }}</span>
+                <span class="category">{{ $posts[0]->categories->first()->name }}</span>
                 <div class="card-content">
                     <h2>{{ $posts[0]->title }}</h2>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="background-image"
                     style="background-image: url('{{ $posts[1]->featured_image ? Storage::url($posts[1]->featured_image) : asset('images/media/image2.png') }}');">
                 </div>
-                <span class="category">{{ $posts[1]->tags->first()->name }}</span>
+                <span class="category">{{ $posts[1]->categories->first()->name }}</span>
                 <div class="card-content">
                     <h2>{{ $posts[1]->title }}</h2>
                 </div>
@@ -69,7 +69,7 @@
                 <div class="background-image"
                     style="background-image: url('{{ $posts[2]->featured_image ? Storage::url($posts[2]->featured_image) : asset('images/media/image3.png') }}');">
                 </div>
-                <span class="category">{{ $posts[2]->tags->first()->name }}</span>
+                <span class="category">{{ $posts[2]->categories->first()->name }}</span>
                 <div class="card-content">
                     <h2>{{ $posts[2]->title }}</h2>
                 </div>
@@ -82,7 +82,7 @@
                 <div class="background-image"
                     style="background-image: url('{{ $posts[3]->featured_image ? Storage::url($posts[3]->featured_image) : asset('images/media/image4.png') }}');">
                 </div>
-                <span class="category">{{ $posts[3]->tags->first()->name }}</span>
+                <span class="category">{{ $posts[3]->categories->first()->name }}</span>
                 <div class="card-content">
                     <h2>{{ $posts[3]->title }}</h2>
                 </div>
@@ -95,7 +95,7 @@
                 <div class="background-image"
                     style="background-image: url('{{ $posts[4]->featured_image ? Storage::url($posts[4]->featured_image) : asset('images/media/image5.png') }}');">
                 </div>
-                <span class="category">{{ $posts[4]->tags->first()->name }}</span>
+                <span class="category">{{ $posts[4]->categories->first()->name }}</span>
                 <div class="card-content">
                     <h2>{{ $posts[4]->title }}</h2>
                 </div>
@@ -109,7 +109,7 @@
                 <div class="background-image"
                     style="background-image: url('{{ $posts[5]->featured_image ? Storage::url($posts[5]->featured_image) : asset('images/media/image6.png') }}');">
                 </div>
-                <span class="category">{{ $posts[5]->tags->first()->name }}</span>
+                <span class="category">{{ $posts[5]->categories->first()->name }}</span>
                 <div class="card-content">
                     <h2>{{ $posts[5]->title }}</h2>
                 </div>
@@ -122,7 +122,7 @@
                 <div class="background-image"
                     style="background-image: url('{{ $posts[6]->featured_image ? Storage::url($posts[6]->featured_image) : asset('images/media/image7.png') }}');">
                 </div>
-                <span class="category">{{ $posts[6]->tags->first()->name }}</span>
+                <span class="category">{{ $posts[6]->categories->first()->name }}</span>
                 <div class="card-content">
                     <h2>{{ $posts[6]->title }}</h2>
                 </div>
@@ -193,7 +193,7 @@
                                 <div class="background-image"
                                     style="background-image: url('${post.featured_image ? '/storage/' + post.featured_image : '/images/media/image${index + 1}.png'}');">
                                 </div>
-                                <span class="category">${post.tags[0]?.name || ''}</span>
+                                <span class="category">${post.categories[0]?.name || ''}</span>
                                 <div class="card-content">
                                     <h2>${post.title}</h2>
                                 </div>
