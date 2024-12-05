@@ -1,4 +1,6 @@
 *
 !private/
 !public/
+!blog-images/
+!portfolios/
 !.gitignore
