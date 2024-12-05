@@ -8,6 +8,7 @@ use App\Models\BlogTag;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class MediaSeeder extends Seeder
 {
@@ -26,7 +27,10 @@ class MediaSeeder extends Seeder
         ];
 
         foreach ($categories as $category) {
-            BlogCategory::create($category);
+            BlogCategory::updateOrCreate(
+                ['slug' => $category['slug']],
+                $category
+            );
         }
 
         // Create sample tags
@@ -58,11 +62,20 @@ class MediaSeeder extends Seeder
         ];
 
         foreach ($tags as $tag) {
-            BlogTag::create($tag);
+            BlogTag::updateOrCreate(
+                ['slug' => $tag['slug']],
+                $tag
+            );
         }
 
-        // Get the first user
-        $user = User::first();
+        // Get or create the first user if needed
+        $user = User::firstOrCreate(
+            ['email' => 'nandha@nandha.com'],
+            [
+                'name' => 'nandha',
+                'password' => Hash::make('nandha'),
+            ]
+        );
 
         // Create sample blog posts
         $posts = [
@@ -209,11 +222,10 @@ class MediaSeeder extends Seeder
         ];
 
         foreach ($posts as $post) {
-            // Create the blog post
-            $blogPost = BlogPost::create(array_merge($post, [
-                'user_id' => $user->id,
-                'slug' => Str::slug($post['title']),
-            ]));
+            $blogPost = BlogPost::updateOrCreate(
+                ['slug' => Str::slug($post['title'])],
+                array_merge($post, ['user_id' => $user->id])
+            );
 
             // Attach random categories and tags
             $blogPost->categories()->attach(BlogCategory::inRandomOrder()->take(1)->pluck('id'));

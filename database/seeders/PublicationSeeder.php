@@ -18,12 +18,14 @@ class PublicationSeeder extends Seeder
             ['name' => 'Whitepaper'],
         ];
 
-        $createdCategories = [];
-
+        $categoryIds = [];
         foreach ($categories as $category) {
-            $createdCategories[] = PublicationCategory::create(array_merge($category, [
-                'slug' => Str::slug($category['name'])
-            ]));
+            $slug = Str::slug($category['name']);
+            $createdCategory = PublicationCategory::updateOrCreate(
+                ['slug' => $slug],
+                array_merge($category, ['slug' => $slug])
+            );
+            $categoryIds[] = $createdCategory->id;
         }
 
         $publications = [
@@ -66,10 +68,24 @@ class PublicationSeeder extends Seeder
         ];
 
         foreach ($publications as $publication) {
-            $publication['publication_category_id'] = PublicationCategory::inRandomOrder()->first()->id;
-            Publication::create(array_merge($publication, [
-                'slug' => Str::slug($publication['title'])
-            ]));
+            $slug = Str::slug($publication['title']);
+
+            // Assign a consistent category based on the publication's title hash
+            $categoryIndex = crc32($publication['title']) % count($categoryIds);
+            $publication['publication_category_id'] = $categoryIds[$categoryIndex];
+
+            // Add metadata fields
+            $publication['meta_title'] = $publication['title'];
+            $publication['meta_description'] = Str::limit(strip_tags($publication['content']), 160);
+
+            Publication::updateOrCreate(
+                ['slug' => $slug],
+                array_merge($publication, [
+                    'slug' => $slug,
+                    'created_at' => $publication['published_date'],
+                    'updated_at' => $publication['published_date']
+                ])
+            );
         }
     }
 }

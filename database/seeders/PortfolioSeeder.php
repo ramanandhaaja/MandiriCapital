@@ -19,8 +19,14 @@ class PortfolioSeeder extends Seeder
             ['name' => 'Customer', 'slug' => 'customer'],
         ];
 
+        // Create or update categories
+        $categoryIds = [];
         foreach ($categories as $category) {
-            PortfolioCategory::create($category);
+            $portfolioCategory = PortfolioCategory::updateOrCreate(
+                ['slug' => $category['slug']],
+                $category
+            );
+            $categoryIds[] = $portfolioCategory->id;
         }
 
         // Create sample portfolios
@@ -157,11 +163,18 @@ class PortfolioSeeder extends Seeder
             ],
         ];
 
+        // Create or update portfolios with consistent category assignment
         foreach ($portfolios as $portfolio) {
-            $portfolio['portfolio_category_id'] = PortfolioCategory::inRandomOrder()->first()->id;
-            Portfolio::create(array_merge($portfolio, [
-                'slug' => Str::slug($portfolio['name'])
-            ]));
+            $slug = Str::slug($portfolio['name']);
+
+            // Assign a consistent category based on the portfolio's name hash
+            $categoryIndex = crc32($portfolio['name']) % count($categoryIds);
+            $portfolio['portfolio_category_id'] = $categoryIds[$categoryIndex];
+
+            Portfolio::updateOrCreate(
+                ['slug' => $slug],
+                array_merge($portfolio, ['slug' => $slug])
+            );
         }
     }
 }
