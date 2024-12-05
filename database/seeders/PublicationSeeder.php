@@ -74,10 +74,6 @@ class PublicationSeeder extends Seeder
             $categoryIndex = crc32($publication['title']) % count($categoryIds);
             $publication['publication_category_id'] = $categoryIds[$categoryIndex];
 
-            // Add metadata fields
-            $publication['meta_title'] = $publication['title'];
-            $publication['meta_description'] = Str::limit(strip_tags($publication['content']), 160);
-
             Publication::updateOrCreate(
                 ['slug' => $slug],
                 array_merge($publication, [
