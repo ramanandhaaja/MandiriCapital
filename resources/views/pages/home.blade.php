@@ -70,7 +70,7 @@
 
 {{-- Content Section --}}
 <div class="masonry-grid">
-    <div class="card medium" style="background-color: #B8860B; background-image: url('{{ asset('images/home/article1.png') }}');">
+    <div class="card medium" style="background-color: #B8860B; background-image: url('{{ asset('images/home/Article1.png') }}');">
         <span class="category">EVENT</span>
         <div class="card-content">
             <h2>Apply Now for Zenith Startup Accelerator</h2>
@@ -78,7 +78,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/article2.png') }}');">
+    <div class="card large" style="background-image: url('{{ asset('images/home/Article2.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Mandiri Capital Indonesia Siap Jajaki Pasar Regional dan Global</h2>
@@ -102,7 +102,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/article4.png') }}');">
+    <div class="card large" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Cryptocurrency Investment: Risks and Rewards</h2>
@@ -110,7 +110,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card medium" style="background-image: url('{{ asset('images/home/article3.png') }}');">
+    <div class="card medium" style="background-image: url('{{ asset('images/home/Article3.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Understanding the Basics of Stock Market Investing</h2>
@@ -118,7 +118,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/article4.png') }}');">
+    <div class="card large" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Cryptocurrency Investment: Risks and Rewards</h2>
@@ -126,7 +126,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/article4.png') }}');">
+    <div class="card large" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Cryptocurrency Investment: Risks and Rewards</h2>
@@ -142,7 +142,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card small-square" style="background-image: url('{{ asset('images/home/investment.png') }}');">
+    <div class="card small-square" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">PODCAST</span>
         <div class="card-content">
             <h2>Long-term vs. Short-term Investments</h2>
@@ -150,7 +150,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/article4.png') }}');">
+    <div class="card large" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Cryptocurrency Investment: Risks and Rewards</h2>
@@ -158,7 +158,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/article4.png') }}');">
+    <div class="card large" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Cryptocurrency Investment: Risks and Rewards</h2>
