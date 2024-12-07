@@ -6,8 +6,6 @@
 
 @section("container")
 
-{{-- Hero Section --}}
-
 <div class="hero-section">
     <video autoplay muted loop playsinline class="video-background">
         <source src="{{ asset('images/home/home.mp4') }}" type="video/mp4">
