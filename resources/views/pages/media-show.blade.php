@@ -38,6 +38,7 @@
 
                     <div class="nav-buttons-wrapper">
                         <button class="nav-button prev-button">
+                            {{-- //TODO: prev article dan next article based on current article date --}}
                             <span><i class="fas fa-chevron-left"></i> Previous</span>
                             <div class="nav-content">
                                 <img src="{{ asset('images/media/news1.png') }}" alt="Previous Article">

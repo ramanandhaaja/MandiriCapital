@@ -40,6 +40,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'John Smith',
                 'year_invested' => '2022',
                 'sector' => 'Technology',
+                'portfolio_category_id' => $categoryIds[0],
             ],
             [
                 'name' => 'Green Energy Solutions',
@@ -50,6 +51,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Sarah Johnson',
                 'year_invested' => '2023',
                 'sector' => 'Energy',
+                'portfolio_category_id' => $categoryIds[0],
             ],
             [
                 'name' => 'FinTech Connect',
@@ -60,6 +62,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Michael Chen',
                 'year_invested' => '2022',
                 'sector' => 'Financial Technology',
+                'portfolio_category_id' => $categoryIds[1],
             ],
             [
                 'name' => 'HealthTech Indonesia',
@@ -70,6 +73,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Dr. Siti Rahma',
                 'year_invested' => '2023',
                 'sector' => 'Healthcare',
+                'portfolio_category_id' => $categoryIds[1],
             ],
             [
                 'name' => 'EduTech Solutions',
@@ -80,6 +84,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'David Wong',
                 'year_invested' => '2021',
                 'sector' => 'Education',
+                'portfolio_category_id' => $categoryIds[1],
             ],
             [
                 'name' => 'LogisticsPro',
@@ -90,6 +95,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Amanda Susanto',
                 'year_invested' => '2022',
                 'sector' => 'Logistics',
+                'portfolio_category_id' => $categoryIds[2],
             ],
             [
                 'name' => 'Sustainable Foods',
@@ -100,6 +106,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Jessica Tanoto',
                 'year_invested' => '2023',
                 'sector' => 'Food Technology',
+                'portfolio_category_id' => $categoryIds[2],
             ],
             [
                 'name' => 'CyberSec Indonesia',
@@ -110,6 +117,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Budi Prakoso',
                 'year_invested' => '2022',
                 'sector' => 'Cybersecurity',
+                'portfolio_category_id' => $categoryIds[2],
             ],
             [
                 'name' => 'CleanEnergy Tech',
@@ -120,6 +128,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Linda Wijaya',
                 'year_invested' => '2021',
                 'sector' => 'Clean Energy',
+                'portfolio_category_id' => $categoryIds[3],
             ],
             [
                 'name' => 'RetailTech Solutions',
@@ -130,6 +139,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Robert Tanjung',
                 'year_invested' => '2023',
                 'sector' => 'Retail Technology',
+                'portfolio_category_id' => $categoryIds[3],
             ],
             [
                 'name' => 'AI Vision Labs',
@@ -140,6 +150,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Kevin Wijaya',
                 'year_invested' => '2023',
                 'sector' => 'Artificial Intelligence',
+                'portfolio_category_id' => $categoryIds[3],
             ],
             [
                 'name' => 'GreenMobile',
@@ -150,6 +161,7 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Dewi Suryani',
                 'year_invested' => '2022',
                 'sector' => 'Mobility',
+                'portfolio_category_id' => $categoryIds[0],
             ],
             [
                 'name' => 'BlockchainPay',
@@ -160,16 +172,13 @@ class PortfolioSeeder extends Seeder
                 'ceo_name' => 'Adrian Hartono',
                 'year_invested' => '2023',
                 'sector' => 'Blockchain',
+                'portfolio_category_id' => $categoryIds[1],
             ],
         ];
 
         // Create or update portfolios with consistent category assignment
         foreach ($portfolios as $portfolio) {
             $slug = Str::slug($portfolio['name']);
-
-            // Assign a consistent category based on the portfolio's name hash
-            $categoryIndex = crc32($portfolio['name']) % count($categoryIds);
-            $portfolio['portfolio_category_id'] = $categoryIds[$categoryIndex];
 
             Portfolio::updateOrCreate(
                 ['slug' => $slug],

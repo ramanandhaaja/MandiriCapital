@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up()
     {
+        //TODO : annual report hanya yg teregister yang bisa download, kalau white paper, bisa di download semua orang, tp hrus di save siapa aja yg download
         Schema::create('publication_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
