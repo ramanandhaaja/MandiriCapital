@@ -19,7 +19,7 @@ class PlatformCategoryResource extends Resource
 
     protected static ?string $navigationGroup = 'Platform Management';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 41;
 
     public static function form(Form $form): Form
     {

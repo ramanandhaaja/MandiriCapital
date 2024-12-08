@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PlatformResource\Pages;
-use App\Models\Platform;
+use App\Filament\Resources\HomeArticleResource\Pages;
+use App\Models\HomeArticle;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -11,15 +11,15 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
-class PlatformResource extends Resource
+class HomeArticleResource extends Resource
 {
-    protected static ?string $model = Platform::class;
+    protected static ?string $model = HomeArticle::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $navigationGroup = 'Platform Management';
+    protected static ?string $navigationGroup = 'Home Management';
 
-    protected static ?int $navigationSort = 40;
+    protected static ?int $navigationSort = 10;
 
     public static function form(Form $form): Form
     {
@@ -44,7 +44,7 @@ class PlatformResource extends Resource
                                                 Forms\Components\TextInput::make('slug')
                                                     ->required()
                                                     ->maxLength(255)
-                                                    ->unique(Platform::class, 'slug', ignoreRecord: true),
+                                                    ->unique(HomeArticle::class, 'slug', ignoreRecord: true),
                                             ]),
 
                                         Forms\Components\RichEditor::make('content')
@@ -68,32 +68,22 @@ class PlatformResource extends Resource
                                                     ->required()
                                                     ->image()
                                                     ->disk('public')
-                                                    ->directory('platforms')
+                                                    ->directory('home-articles')
                                                     ->visibility('public')
                                                     ->columnSpanFull(),
                                             ]),
                             ])
                             ->columnSpan(2),
 
-                        Forms\Components\Section::make('Category')
+                            Forms\Components\Section::make('Category')
                             ->schema([
-                                Forms\Components\Select::make('platform_category_id')
-                                    ->relationship('category', 'name')
+                                Forms\Components\TextInput::make('category')
                                     ->required()
-                                    ->createOptionForm([
-                                        Forms\Components\TextInput::make('name')
-                                            ->required()
-                                            ->maxLength(255)
-                                            ->live(onBlur: true)
-                                            ->afterStateUpdated(fn (string $state, callable $set) =>
-                                                $set('slug', Str::slug($state))
-                                            ),
-                                        Forms\Components\TextInput::make('slug')
-                                            ->required()
-                                            ->maxLength(255)
-                                            ->unique('platform_categories', 'slug'),
-                                    ])
-                                    ->preload(),
+                                    ->maxLength(255)
+                                    ->live(onBlur: true)
+                                    ->afterStateUpdated(fn (string $state, callable $set) =>
+                                        $set('slug', Str::slug($state))
+                                    ),
                             ])
                             ->columnSpan(1),
                     ])
@@ -143,9 +133,9 @@ class PlatformResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPlatforms::route('/'),
-            'create' => Pages\CreatePlatform::route('/create'),
-            'edit' => Pages\EditPlatform::route('/{record}/edit'),
+            'index' => Pages\ListHomeArticles::route('/'),
+            'create' => Pages\CreateHomeArticle::route('/create'),
+            'edit' => Pages\EditHomeArticle::route('/{record}/edit'),
         ];
     }
 }

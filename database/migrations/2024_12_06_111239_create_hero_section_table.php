@@ -11,12 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //TODO : article cms for page home, khusus home aja
-        Schema::create('home_article', function (Blueprint $table) {
+        Schema::create('hero_section_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('category');
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->timestamps();
+        });
+
+        Schema::create('hero_section', function (Blueprint $table) {
+            $table->id();
             $table->string('title');
             $table->string('slug')->unique();
+            $table->foreignId('hero_section_category_id')->constrained('hero_section_categories')->onDelete('cascade');
             $table->text('content');
             $table->date('published_date');
             $table->string('image_path');
@@ -29,6 +35,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_article');
+        Schema::dropIfExists('hero_section_categories');
+        Schema::dropIfExists('hero_section');
+
     }
 };
