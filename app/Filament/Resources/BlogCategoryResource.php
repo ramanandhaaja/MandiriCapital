@@ -21,7 +21,7 @@ class BlogCategoryResource extends Resource
     protected static ?string $navigationGroup = 'Media Management';
     protected static ?string $modelLabel = 'Media Category';
     protected static ?string $pluralModelLabel = 'Media Categories';
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 51;
 
     public static function form(Form $form): Form
     {

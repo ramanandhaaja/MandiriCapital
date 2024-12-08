@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BlogTagResource\Pages;
-use App\Models\BlogTag;
+use App\Filament\Resources\HeroSectionCategoryResource\Pages;
+use App\Models\HeroSectionCategory;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -11,15 +11,15 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
-class BlogTagResource extends Resource
+class HeroSectionCategoryResource extends Resource
 {
-    protected static ?string $model = BlogTag::class;
-    protected static ?string $navigationIcon = 'heroicon-o-hashtag';
-    protected static ?string $navigationLabel = 'Media Tags';
-    protected static ?string $navigationGroup = 'Media Management';
-    protected static ?string $modelLabel = 'Media Tag';
-    protected static ?string $pluralModelLabel = 'Media Tags';
-    protected static ?int $navigationSort = 52;
+    protected static ?string $model = HeroSectionCategory::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    protected static ?string $navigationGroup = 'Content Management';
+
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -29,13 +29,18 @@ class BlogTagResource extends Resource
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
+                            ->maxLength(255)
                             ->live(onBlur: true)
-                            ->afterStateUpdated(fn (string $state, callable $set) =>
-                                $set('slug', Str::slug($state))
-                            ),
+                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                                if ($operation === 'create') {
+                                    $set('slug', Str::slug($state));
+                                }
+                            }),
+
                         Forms\Components\TextInput::make('slug')
                             ->required()
-                            ->unique(BlogTag::class, 'slug', ignoreRecord: true),
+                            ->maxLength(255)
+                            ->unique(ignoreRecord: true),
                     ])
             ]);
     }
@@ -45,14 +50,17 @@ class BlogTagResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable()
-                    ->sortable(),
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
-                    ->searchable()
-                    ->sortable(),
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
@@ -68,19 +76,12 @@ class BlogTagResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListBlogTags::route('/'),
-            'create' => Pages\CreateBlogTag::route('/create'),
-            'edit' => Pages\EditBlogTag::route('/{record}/edit'),
+            'index' => Pages\ListHeroSectionCategories::route('/'),
+            'create' => Pages\CreateHeroSectionCategory::route('/create'),
+            'edit' => Pages\EditHeroSectionCategory::route('/{record}/edit'),
         ];
     }
 }
