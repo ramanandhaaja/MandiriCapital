@@ -36,33 +36,49 @@ class HeroSectionSeeder extends Seeder
                 'title' => 'Home',
                 'slug' => 'home',
                 'hero_section_category_id' => 1, // Home
-                'content' => 'Leading the way in financial innovation and technology solutions.',
+                'content' => 'Home Section Header',
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD.mp4'
             ],
             [
-                'title' => 'About Us',
-                'slug' => 'about-us',
+                'title' => 'Our Identity',
+                'slug' => 'our-identity',
                 'hero_section_category_id' => 2, // About
-                'content' => 'Learn about our mission, vision, and values.',
+                'content' => 'Our Identity Section Header',
                 'published_date' => now(),
-                'image_path' => 'hero-sections/about.jpg'
+                'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD1.mp4'
             ],
             [
-                'title' => 'Our Services',
-                'slug' => 'our-services',
-                'hero_section_category_id' => 3, // Services
-                'content' => 'Discover our comprehensive range of financial services.',
+                'title' => 'Portfolio',
+                'slug' => 'portfolio',
+                'hero_section_category_id' => 3, // Portfolio
+                'content' => 'Portfolio Section Header.',
                 'published_date' => now(),
-                'image_path' => 'hero-sections/services.jpg'
+                'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD2.mp4'
             ],
             [
-                'title' => 'Contact Us',
-                'slug' => 'contact-us',
-                'hero_section_category_id' => 4, // Contact
-                'content' => 'Get in touch with our team of experts.',
+                'title' => 'Platform',
+                'slug' => 'platform',
+                'hero_section_category_id' => 4, // Platform
+                'content' => 'Platform Section Header.',
                 'published_date' => now(),
-                'image_path' => 'hero-sections/contact.jpg'
+                'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD3.mp4'
+            ],
+            [
+                'title' => 'Media',
+                'slug' => 'media',
+                'hero_section_category_id' => 5, // Media
+                'content' => 'Media Section Header.',
+                'published_date' => now(),
+                'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD4.mp4'
+            ],
+            [
+                'title' => 'Publication',
+                'slug' => 'publication',
+                'hero_section_category_id' => 6, // Publication
+                'content' => 'Publication Section Header.',
+                'published_date' => now(),
+                'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD5.mp4'
             ]
         ];
 
