@@ -104,7 +104,7 @@ class HomeArticleResource extends Resource
                     ->sortable()
                     ->searchable(),
 
-                Tables\Columns\TextColumn::make('category.name')
+                Tables\Columns\TextColumn::make('category')
                     ->sortable()
                     ->searchable(),
 
