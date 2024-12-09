@@ -1,6 +1,7 @@
 *
 !.gitignore
-!blog-images/
 !blog-images/*
-!portfolios/
+!blog-images/*
+!portfolios/*
+!hero-sections/*
 !portfolios/*
