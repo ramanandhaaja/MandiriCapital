@@ -7,7 +7,7 @@
 @section('container')
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
-            <source src="{{ asset('images/about/about.mp4') }}" type="video/mp4">
+            <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
 
         <div class="hero-content">

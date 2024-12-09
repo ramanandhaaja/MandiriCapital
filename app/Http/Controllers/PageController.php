@@ -6,6 +6,7 @@ use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
 use App\Models\HeroSection;
+use App\Models\HomeArticle;
 use App\Models\Platform;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
@@ -20,13 +21,18 @@ class PageController extends Controller
         $hero = HeroSection::whereHas('category', function($query) {
             $query->where('name', 'Home');
         })->first();
+        $article = HomeArticle::take(3)->get();
         //return view('pages.home');
-        return view('pages.home', compact('hero'));
+        return view('pages.home', compact('hero', 'article'));
     }
 
     public function about()
     {
-        return view('pages.about');
+        $hero = HeroSection::whereHas('category', function($query) {
+            $query->where('name', 'Our Identity');
+        })->first();
+
+        return view('pages.about', compact('hero'));
     }
 
     public function contact()
@@ -36,6 +42,10 @@ class PageController extends Controller
 
     public function media()
     {
+        $hero = HeroSection::whereHas('category', function($query) {
+            $query->where('name', 'Media');
+        })->first();
+
         $posts = BlogPost::with(['user', 'categories', 'tags'])
             ->where('status', 'published')
             ->whereNotNull('published_at')
@@ -48,7 +58,7 @@ class PageController extends Controller
         $categories = BlogCategory::where('is_active', true)->get();
         $tags = BlogTag::whereIn('name', ['News', 'Podcast'])->get();
 
-        return view('pages.media', compact('posts', 'categories', 'tags'));
+        return view('pages.media', compact('hero', 'posts', 'categories', 'tags'));
     }
 
     public function mediashow($slug)
@@ -59,12 +69,16 @@ class PageController extends Controller
 
     public function portfolio()
     {
+        $hero = HeroSection::whereHas('category', function($query) {
+            $query->where('name', 'Portfolio');
+        })->first();
+
         $portfolios = Portfolio::with('category')
             ->orderBy('year_invested');
 
         $portfolio_categories = PortfolioCategory::all();
 
-        return view('pages.portfolio', compact('portfolios', 'portfolio_categories'));
+        return view('pages.portfolio', compact('hero', 'portfolios', 'portfolio_categories'));
 
     }
 
@@ -76,11 +90,15 @@ class PageController extends Controller
 
     public function platform()
     {
+        $hero = HeroSection::whereHas('category', function($query) {
+            $query->where('name', 'Platform');
+        })->first();
+
         $posts = BlogPost::all();
 
         $categories = BlogCategory::where('is_active', true)->get();
 
-        return view('pages.platform', compact('posts', 'categories'));
+        return view('pages.platform', compact('hero', 'posts', 'categories'));
     }
 
     public function platformshow($slug)
@@ -92,13 +110,17 @@ class PageController extends Controller
 
     public function report()
     {
+        $hero = HeroSection::whereHas('category', function($query) {
+            $query->where('name', 'Publication');
+        })->first();
+
         $publications = Publication::with('category')
             ->orderBy('published_date')
             ->paginate(10);
 
         $publication_categories = PublicationCategory::all();
 
-        return view('pages.report', compact('publications', 'publication_categories'));
+        return view('pages.report', compact('hero', 'publications', 'publication_categories'));
     }
 
     public function reportshow($slug)

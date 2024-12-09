@@ -11,8 +11,6 @@
         <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
     </video>
 
-
-
     <div class="hero-content">
         <h1 class="center-text" >Corporate Venture Capital <br/>
             of Bank Mandiri</h1>
@@ -26,23 +24,23 @@
 <div class="headline-section">
     <div class="headline-grid">
         <div class="headline-card">
-            <h1>Mandiri Corporate VC</h1>
-            <h2>Balance Sheet Fund</h2>
-            <p>Berfokus untuk memberikan investasi ke technology companies "growth startup" yang memiliki potensi kolaborasi...</p>
+            <h1>{{ $article[0]->category }}</h1>
+            <h2>{{ $article[0]->title }}</h2>
+            <p>{{ Str::words($article[0]->content, 13, '...') }}</p>
             <a href="#" class="learn-more">Learn More »</a>
         </div>
 
         <div class="headline-card middle-border">
-            <h1>Dana Ventura</h1>
-            <h2>Indonesia Impact Fund (IIF)</h2>
-            <p>Impact Fund swasta pertama di Indonesia yang berinvestasi ke perusahaan rintisan tahap awal yang mendukung imple...</p>
+            <h1>{{ $article[1]->category }}</h1>
+            <h2>{{ $article[1]->title }}</h2>
+            <p>{{ Str::words($article[1]->content, 13, '...') }}</p>
             <a href="#" class="learn-more">Learn More »</a>
         </div>
 
         <div class="headline-card">
-            <h1>Dana Ventura</h1>
-            <h2>Merah Putih Fund (MPF)</h2>
-            <p>Dana Ventura terbesar di Indonesia yang dikelola oleh 5 CVC BUMN untuk mendukung soonicorns dan mempercepat pe...</p>
+            <h1>{{ $article[2]->category }}</h1>
+            <h2>{{ $article[2]->title }}</h2>
+            <p>{{ Str::words($article[2]->content, 13, '...') }}</p>
             <a href="#" class="learn-more">Learn More »</a>
         </div>
     </div>
