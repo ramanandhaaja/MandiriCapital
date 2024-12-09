@@ -33,12 +33,12 @@ class HeroSectionSeeder extends Seeder
         // Create hero sections
         $sections = [
             [
-                'title' => 'Welcome to Our Company',
-                'slug' => 'welcome-to-our-company',
+                'title' => 'Home',
+                'slug' => 'home',
                 'hero_section_category_id' => 1, // Home
                 'content' => 'Leading the way in financial innovation and technology solutions.',
                 'published_date' => now(),
-                'image_path' => 'hero-sections/welcome.jpg'
+                'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD.mp4'
             ],
             [
                 'title' => 'About Us',

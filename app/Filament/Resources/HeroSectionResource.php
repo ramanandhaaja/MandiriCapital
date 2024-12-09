@@ -60,11 +60,12 @@ class HeroSectionResource extends Resource
 
                                     ])
                                     ->columns(2),
-                                Forms\Components\Section::make('Image')
+                                Forms\Components\Section::make('Image/Video')
                                     ->schema([
                                         Forms\Components\FileUpload::make('image_path')
                                             ->required()
-                                            ->image()
+                                            ->acceptedFileTypes(['image/*', 'video/*'])
+                                            ->maxSize(50 * 1024) // 50MB max file size
                                             ->disk('public')
                                             ->directory('hero-sections')
                                             ->visibility('public')

@@ -8,8 +8,10 @@
 
 <div class="hero-section">
     <video autoplay muted loop playsinline class="video-background">
-        <source src="{{ asset('images/home/home.mp4') }}" type="video/mp4">
+        <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
     </video>
+
+
 
     <div class="hero-content">
         <h1 class="center-text" >Corporate Venture Capital <br/>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
+use App\Models\HeroSection;
 use App\Models\Platform;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
@@ -16,7 +17,11 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('pages.home');
+        $hero = HeroSection::whereHas('category', function($query) {
+            $query->where('name', 'Home');
+        })->first();
+        //return view('pages.home');
+        return view('pages.home', compact('hero'));
     }
 
     public function about()
