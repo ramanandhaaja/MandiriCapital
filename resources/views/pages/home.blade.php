@@ -12,7 +12,7 @@
     </video>
 
     <div class="hero-content">
-        <h1 class="center-text">{{ $hero->content }}</h1>
+        <div class="center-text">{!! $hero->content !!}</div>
         <img src="{{ asset('images/home/getInvestment.png') }}" alt="Get Investment" class="button-image center-image">
     </div>
 
