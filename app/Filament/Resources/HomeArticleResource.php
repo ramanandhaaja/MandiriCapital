@@ -65,7 +65,6 @@ class HomeArticleResource extends Resource
                                     Forms\Components\Section::make('Image')
                                             ->schema([
                                                 Forms\Components\FileUpload::make('image_path')
-                                                    ->required()
                                                     ->image()
                                                     ->disk('public')
                                                     ->directory('home-articles')

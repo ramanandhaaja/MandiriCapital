@@ -15,7 +15,16 @@
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-size: 56px;
-    bottom: 100px;
+    bottom: 160px;
+    padding-left: 50px;
+    color: #FFFFFF;
+}
+
+.center-text{
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-size: 56px;
+    bottom: 160px;
     padding-left: 50px;
     color: #FFFFFF;
 }
@@ -71,14 +80,7 @@
 
 
 
-.center-text{
-    position: absolute;
-    font-family: 'Roboto', sans-serif;
-    font-size: 56px;
-    bottom: 100px;
-    padding-left: 50px;
-    color: #FFFFFF;
-}
+
 
 .center-image {
     position: absolute;
