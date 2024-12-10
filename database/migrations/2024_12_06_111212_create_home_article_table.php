@@ -11,7 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //TODO : article cms for page home, khusus home aja
         Schema::create('home_article', function (Blueprint $table) {
             $table->id();
             $table->string('category');
