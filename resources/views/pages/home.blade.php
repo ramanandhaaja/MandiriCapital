@@ -12,10 +12,8 @@
     </video>
 
     <div class="hero-content">
-        <h1 class="center-text" >Corporate Venture Capital <br/>
-            of Bank Mandiri</h1>
+        <h1 class="center-text">{{ $hero->content }}</h1>
         <img src="{{ asset('images/home/getInvestment.png') }}" alt="Get Investment" class="button-image center-image">
-
     </div>
 
 </div>

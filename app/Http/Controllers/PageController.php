@@ -144,6 +144,23 @@ class PageController extends Controller
         return redirect()->route('contact')->with('success', 'Message sent successfully!');
     }
 
+    public function aboutFilter($category)
+    {
+
+        $query = Platform::with('category')
+            ->orderBy('published_date', 'desc');
+
+        if ($category !== 'all') {
+            $query->whereHas('category', function ($query) use ($category) {
+                $query->where('name', ucfirst($category));
+            });
+        }
+
+        $about = $query->get();
+
+        return response()->json($about);
+    }
+
     public function mediaFilter($category)
     {
         $query = BlogPost::with(['user', 'categories'])

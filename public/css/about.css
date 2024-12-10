@@ -1106,3 +1106,96 @@
 .newsletter-button:hover {
     background-color: #D97706;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Card Styles */
+
+.team-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.team-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 530px;
+    grid-column: span 1;
+    gap: 20px;
+    border: 0.5px solid #3F3F46;
+    background-color: #27272A;
+}
+
+.team-card .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.team-card .background-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: auto;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+
+
+.team-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    color: #EAB308;
+    font-weight: 200;
+    z-index: 2;
+}
+
+.team-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    color: #FAFAFA;
+    font-weight: 200;
+    z-index: 2;
+}
+
+.team-image-containter{
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+}
+
+.team-image-large{
+    width: 100%;
+    height: auto;
+}
