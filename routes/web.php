@@ -20,6 +20,8 @@ require __DIR__.'/auth.php';
 
 Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/about/filter/{tag}', [PageController::class, 'aboutFilter'])->name('about.filter');
+
 
 Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio');
 Route::get('/portfolio/{slug}', [PageController::class, 'portfolioshow'])->name('portfolio.show');
