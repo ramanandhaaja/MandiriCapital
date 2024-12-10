@@ -36,7 +36,7 @@ class HeroSectionSeeder extends Seeder
                 'title' => 'Home',
                 'slug' => 'home',
                 'hero_section_category_id' => 1, // Home
-                'content' => 'Home Section Header',
+                'content' => 'Corporate Venture Capital of Bank Mandiri',
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD.mp4'
             ],
