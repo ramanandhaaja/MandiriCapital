@@ -153,6 +153,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
+    const headlineGrid = document.querySelectorAll('.headline-grid');
+    headlineGrid.forEach((card) => {
+        gsap.fromTo(card,
+            {
+                opacity: 0,
+                scale: 1,
+                y: 100
+            },
+            {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top bottom',
+                    end: 'bottom center-=100',
+                    toggleActions: 'play reverse play reverse',
+                },
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                delay: 0.2,
+                ease: 'power2.out'
+            }
+        );
+    });
+
+
 
     const largerightCards = document.querySelectorAll('.card.large.right');
     largerightCards.forEach((card) => {
