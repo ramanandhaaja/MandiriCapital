@@ -37,6 +37,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('hero_section_categories');
         Schema::dropIfExists('hero_section');
-
     }
 };

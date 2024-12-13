@@ -35,15 +35,21 @@
             <div class="counter-grid">
                 <div class="counter-card right-border">
                     <h1>Mandiri Group Ecosystem </h1>
-                    <h2>00</h2>
+                    <div id="counter1" class="counter">
+                        0
+                    </div>
                 </div>
                 <div class="counter-card right-border">
                     <h1>Portfolio</h1>
-                    <h2>00</h2>
+                    <div id="counter2" class="counter">
+                        0
+                    </div>
                 </div>
                 <div class="counter-card">
                     <h1>Fund Venture </h1>
-                    <h2>00</h2>
+                    <div id="counter3" class="counter">
+                        0
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,7 +126,7 @@
         <div class="headline-section">
             <h1 class="headline-title">FUNDING </h1>
 
-            <div class="headline-grid">
+            <div class="headline-grid middle-animation">
                 <div class="headline-card">
                     <h1>Mandiri Corporate VC</h1>
                     <h2>Balance Sheet Fund</h2>
@@ -149,9 +155,9 @@
 
 
         <div class="headline-section-grey">
-            <h1 class="headline-title">MCI VALUE CREATION INITIATIVES </h1>
+            <h1 class="headline-title ">MCI VALUE CREATION INITIATIVES </h1>
 
-            <div class="headline-grid">
+            <div class="headline-grid middle-animation">
                 <div class="headline-card">
                     <h1>Mandiri Corporate VC</h1>
                     <h2>Balance Sheet Fund</h2>
@@ -180,9 +186,9 @@
 
 
         <div class="headline-section">
-            <h1 class="headline-title">OUR PRIORITY SECTOR </h1>
+            <h1 class="headline-title ">OUR PRIORITY SECTOR </h1>
 
-            <div class="headline-grid">
+            <div class="headline-grid middle-animation">
                 <div class="headline-card">
                     <h1>Mandiri Corporate VC</h1>
                     <h2>Balance Sheet Fund</h2>
@@ -421,4 +427,6 @@
             }
         });
     </script>
+
+    <script src="{{ asset('js/about-animation.js') }}"></script>
 @endsection

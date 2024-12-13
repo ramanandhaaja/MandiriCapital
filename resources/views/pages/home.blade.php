@@ -48,17 +48,24 @@
     <div class="headline-grid">
         <div class="headline-card-two">
             <h1>Mandiri Group Ecosystem</h1>
-            <h2>15</h2>
+            <div id="counter1" class="counter">
+                0
+            </div>
+
         </div>
 
         <div class="headline-card-two middle-border">
             <h1>Portfolio</h1>
-            <h2>25</h2>
+            <div id="counter2" class="counter">
+                0
+            </div>
         </div>
 
         <div class="headline-card-two">
             <h1>Fund Venture</h1>
-            <h2>13</h2>
+            <div id="counter3" class="counter">
+                0
+            </div>
 
         </div>
     </div>
@@ -74,7 +81,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/Article2.png') }}');">
+    <div class="card large right" style="background-image: url('{{ asset('images/home/Article2.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Mandiri Capital Indonesia Siap Jajaki Pasar Regional dan Global</h2>
@@ -82,7 +89,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card small-square" style="background-color: #B8860B; }}');">
+    <div class="card small-square left" style="background-color: #B8860B; }}');">
         <span class="category">PODCAST</span>
         <div class="card-content">
             <h2>Talk about GOTO</h2>
@@ -90,7 +97,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card small-square" style="background-color: #B8860B; }}');">
+    <div class="card small-square left" style="background-color: #B8860B; }}');">
         <span class="category">NEWS</span>
         <div class="card-content">
             <h2>Article Title</h2>
@@ -98,7 +105,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
+    <div class="card large left" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Cryptocurrency Investment: Risks and Rewards</h2>
@@ -114,7 +121,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
+    <div class="card large right" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Cryptocurrency Investment: Risks and Rewards</h2>
@@ -122,7 +129,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
+    <div class="card large left" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Cryptocurrency Investment: Risks and Rewards</h2>
@@ -130,7 +137,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card small-square" style="background-color: #B8860B;">
+    <div class="card small-square right" style="background-color: #B8860B;">
         <span class="category">BLOG</span>
         <div class="card-content">
             <h2>Article Title</h2>
@@ -138,7 +145,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card small-square" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
+    <div class="card small-square right" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">PODCAST</span>
         <div class="card-content">
             <h2>Long-term vs. Short-term Investments</h2>
@@ -146,7 +153,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
+    <div class="card large left" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Cryptocurrency Investment: Risks and Rewards</h2>
@@ -154,7 +161,7 @@
         <span class="date">June 2020</span>
     </div>
 
-    <div class="card large" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
+    <div class="card large right" style="background-image: url('{{ asset('images/home/Article4.png') }}');">
         <span class="category">WHITE PAPER</span>
         <div class="card-content">
             <h2>Cryptocurrency Investment: Risks and Rewards</h2>
@@ -175,4 +182,8 @@
     </div>
 </div>
 
+@endsection
+
+@section("scripts")
+<script src="{{ asset('js/home-animation.js') }}"></script>
 @endsection

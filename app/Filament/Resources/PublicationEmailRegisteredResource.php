@@ -2,24 +2,24 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PublicationCategoryResource\Pages;
-use App\Models\PublicationCategory;
+use App\Filament\Resources\PublicationEmailRegisteredResource\Pages;
+use App\Models\PublicationEmailRegistered;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class PublicationCategoryResource extends Resource
+class PublicationEmailRegisteredResource extends Resource
 {
-    protected static ?string $model = PublicationCategory::class;
+    protected static ?string $model = PublicationEmailRegistered::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
+    protected static ?string $navigationIcon = 'heroicon-o-envelope';
     protected static ?string $navigationGroup = 'Publication Management';
-
-    protected static ?int $navigationSort = 64;
+    protected static ?string $navigationLabel = 'Email Registered';
+    protected static ?int $navigationSort = 61;
 
     public static function form(Form $form): Form
     {
@@ -27,15 +27,14 @@ class PublicationCategoryResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
-                    ->maxLength(255)
-                    ->live(onBlur: true)
-                    ->afterStateUpdated(fn (string $state, callable $set) =>
-                        $set('slug', Str::slug($state))
-                    ),
-                Forms\Components\TextInput::make('slug')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('company_name')
                     ->required()
-                    ->maxLength(255)
-                    ->unique(PublicationCategory::class, 'slug', ignoreRecord: true),
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -44,13 +43,11 @@ class PublicationCategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->sortable()
                     ->searchable(),
-
-                Tables\Columns\TextColumn::make('slug')
-                    ->sortable()
+                Tables\Columns\TextColumn::make('company_name')
                     ->searchable(),
-
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable(),
@@ -59,6 +56,7 @@ class PublicationCategoryResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
@@ -72,9 +70,9 @@ class PublicationCategoryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPublicationCategories::route('/'),
-            'create' => Pages\CreatePublicationCategory::route('/create'),
-            'edit' => Pages\EditPublicationCategory::route('/{record}/edit'),
+            'index' => Pages\ListPublicationEmailRegistereds::route('/'),
+            'create' => Pages\CreatePublicationEmailRegistered::route('/create'),
+            'edit' => Pages\EditPublicationEmailRegistered::route('/{record}/edit'),
         ];
     }
 }

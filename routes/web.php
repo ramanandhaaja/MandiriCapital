@@ -1,8 +1,11 @@
 <?php
 
+use App\Filament\Resources\PublicationEmailDownloadResource as ResourcesPublicationEmailDownloadResource;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PublicationController; // Added this line
+use App\Http\Controllers\PublicationEmailDownloadResource; // Added this line
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,6 +41,7 @@ Route::get('/media/filter/{tag}', [PageController::class, 'mediaFilter'])->name(
 Route::get('/report', [PageController::class, 'report'])->name('report');
 Route::get('/report/{slug}', [PageController::class, 'reportshow'])->name('report.show');
 Route::get('/report/filter/{tag}', [PageController::class, 'reportFilter'])->name('report.filter');
+Route::post('/report/{publication}/download', [PageController::class, 'reportdownload'])->name('report.download');
 
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 

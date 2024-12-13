@@ -12,6 +12,8 @@ use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
 use App\Models\Publication;
 use App\Models\PublicationCategory;
+use App\Models\PublicationEmailDownload;
+use App\Models\PublicationEmailRegistered;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -127,6 +129,45 @@ class PageController extends Controller
     {
         $publication = Publication::where('slug', $slug)->firstOrFail();
         return view('pages.report-show', compact('publication'));
+    }
+
+    public function reportdownload(Request $request, Publication $publication)
+    {
+        // Validate the request
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'company_name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+        ]);
+
+        // Check if email already exists
+        $existingDownload = PublicationEmailDownload::where('email', $validated['email'])->first();
+
+        // If the email exists, allow download
+
+
+        // Check if publication is a Whitepaper
+        if ($publication->category->name === 'Whitepaper') {
+
+            $existingDownload = PublicationEmailRegistered::where('email', $validated['email'])->first();
+            if ($existingDownload) {
+                return response()->download(public_path('images/report/download.png'));
+            }
+                return redirect()->back()->with('error', 'This content is not available for download.');
+
+
+        }else{
+        // else, store the email in the database
+            PublicationEmailDownload::create([
+                'name' => $validated['name'],
+                'company_name' => $validated['company_name'],
+                'email' => $validated['email'],
+            ]);
+            return response()->download(public_path('images/report/download.png'));
+        }
+
+        // If not a whitepaper, redirect back with error
+        return redirect()->back()->with('error', 'This content is not available for download.');
     }
 
 

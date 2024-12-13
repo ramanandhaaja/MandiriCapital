@@ -18,7 +18,6 @@
 
    <!-- Styles -->
    <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
-   <link href="{{ asset('css/scroll-animation.css') }}" rel="stylesheet">
    @yield('localcss')
 
    @stack('styles')
@@ -33,8 +32,7 @@
    @include('partials.footer')
 
    <!-- Scripts -->
-   <script src="{{ asset('js/app.js') }}"></script>
-   <script src="{{ asset('js/scroll-animation.js') }}"></script>
+
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 

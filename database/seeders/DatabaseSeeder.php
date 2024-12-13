@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Publication;
 use Illuminate\Database\Seeder;
+use SebastianBergmann\CodeCoverage\Report\Xml\Report;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,6 +25,7 @@ class DatabaseSeeder extends Seeder
             PlatformSeeder::class,
             HomeArticleSeeder::class,
             HeroSectionSeeder::class,
+            PublicationEmailSeeder::class,
         ]);
     }
 }
