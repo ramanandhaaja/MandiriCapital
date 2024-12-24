@@ -168,9 +168,10 @@ class BlogPostResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('featured_image')
                     ->disk('public')
-                    ->url(fn($record) => $record->featured_image ? url('storage/' . $record->featured_image) : null)
-                    ->getStateUsing(fn($record) => $record->featured_image ? url('storage/' . $record->featured_image) : null)
-                    ->height(50),
+                    ->circular()
+                    ->height(40)
+                    ->width(40)
+                    ->getStateUsing(fn ($record) => $record->featured_image_url),
 
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()

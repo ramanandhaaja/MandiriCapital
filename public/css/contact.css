@@ -1,5 +1,6 @@
-/* resources/css/contact.css */
+/* Contact Page Styles */
 
+/* Contact Section */
 .contact-section {
     background-color: #000000;
     color: #ffffff;
@@ -19,6 +20,7 @@
     gap: 60px;
 }
 
+/* Contact Information */
 .contact-title {
     font-family: 'Roboto', sans-serif;
     font-size: 56px;
@@ -63,6 +65,7 @@
     color: #ffffff;
 }
 
+/* Social Media */
 .social-media-container {
     display: flex;
     gap: 1.5rem;
@@ -80,6 +83,7 @@
     opacity: 1;
 }
 
+/* Contact Form */
 .contact-form-section {
     padding-top: 0px;
 }
@@ -152,56 +156,7 @@
     opacity: 0.8;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .contact-container {
-        padding: 0 2rem;
-    }
-
-    .contact-grid {
-        gap: 4rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .contact-title {
-        font-size: 42px;
-    }
-
-    .form-row, .info-row {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-container {
-        padding: 0 1rem;
-    }
-
-    .contact-title {
-        font-size: 36px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* resources/css/map.css */
-
+/* Map Section */
 .map-section {
     background-color: #000000;
     color: #ffffff;
@@ -221,15 +176,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: top;
+    align-items: start;
 }
 
 .map-iframe {
     width: 600px;
-    border-radius: 0px;
+    border-radius: 0;
     border: none;
 }
-
 
 .map-content {
     padding-left: 2rem;
@@ -258,47 +212,165 @@
     line-height: 1.6;
 }
 
-/* Responsive adjustments */
+/* Responsive Styles */
 @media (max-width: 1024px) {
+    .contact-container {
+        padding: 0 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .contact-grid,
+    .map-grid {
+        gap: 3rem;
+    }
+
     .map-container {
         padding: 0 2rem;
     }
 
-    .map-grid {
-        gap: 4rem;
+    .map-iframe {
+        width: 100%;
+        max-width: 600px;
     }
 }
 
 @media (max-width: 768px) {
+    .contact-section {
+        margin-top: 100px;
+        padding: 3rem 0;
+    }
+
+    .contact-grid,
     .map-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
+    }
+
+    .contact-title,
+    .map-title {
+        font-size: 42px;
+        text-align: center;
+    }
+
+    .contact-info-section {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .form-row,
+    .info-row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .contact-info-title {
+        text-align: center;
+    }
+
+    .contact-info-link {
+        text-align: center;
+    }
+
+    .social-media-container {
+        justify-content: center;
+    }
+
+    .contact-form-section {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .contact-form-intro {
+        text-align: center;
     }
 
     .map-content {
         padding-left: 0;
         text-align: center;
-    }
-
-    .map-title {
-        font-size: 42px;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .map-iframe {
         height: 400px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .submit-button {
+        float: none;
+        margin: 1.5rem auto 0;
+        display: block;
     }
 }
 
 @media (max-width: 480px) {
-    .map-container {
-        padding: 0 1rem;
+    .contact-section {
+        margin-top: 80px;
+        padding: 2.5rem 0;
     }
 
+    .contact-container,
+    .map-container {
+        padding: 0 1.25rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .contact-title,
     .map-title {
-        font-size: 36px;
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .contact-info-title {
+        font-size: 15px;
+    }
+
+    .contact-info-link,
+    .form-input,
+    .form-textarea,
+    .address {
+        font-size: 13px;
+    }
+
+    .form-label {
+        font-size: 15px;
     }
 
     .map-iframe {
-        height: 300px;
+        height: 250px;
+    }
+
+    .company-name {
+        font-size: 13px;
+    }
+
+    .submit-button img {
+        height: 44px;
+    }
+}
+
+@media (max-width: 360px) {
+    .contact-section {
+        margin-top: 60px;
+        padding: 2rem 0;
+    }
+
+    .contact-container,
+    .map-container {
+        padding: 0 1rem;
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+    }
+
+    .contact-title,
+    .map-title {
+        font-size: 28px;
+    }
+
+    .map-iframe {
+        height: 200px;
     }
 }

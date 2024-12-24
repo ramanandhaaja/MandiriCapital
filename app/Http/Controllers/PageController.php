@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// Model Imports
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
@@ -14,17 +15,24 @@ use App\Models\Publication;
 use App\Models\PublicationCategory;
 use App\Models\PublicationEmailDownload;
 use App\Models\PublicationEmailRegistered;
+
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    /**
+     * Display the home page
+     *
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         $hero = HeroSection::whereHas('category', function($query) {
             $query->where('name', 'Home');
         })->first();
+
         $article = HomeArticle::take(3)->get();
-        //return view('pages.home');
+
         return view('pages.home', compact('hero', 'article'));
     }
 

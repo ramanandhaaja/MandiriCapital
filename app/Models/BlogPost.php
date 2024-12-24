@@ -49,11 +49,20 @@ class BlogPost extends Model
 
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(BlogCategory::class, 'blog_post_categories');
+        return $this->belongsToMany(BlogCategory::class, 'blog_post_categories')
+            ->withTimestamps();
     }
 
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(BlogTag::class, 'blog_post_tags');
+    }
+
+    public function getFeaturedImageUrlAttribute()
+    {
+        if (!$this->featured_image) {
+            return null;
+        }
+        return asset('storage/' . $this->featured_image);
     }
 }

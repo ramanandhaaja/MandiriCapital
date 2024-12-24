@@ -1,0 +1,41 @@
+.fi-sidebar {
+    --sidebar-nav-group-gap: 0.125rem !important;
+}
+
+.fi-sidebar-nav .fi-sidebar-nav-groups.gap-y-1 {
+    --tw-space-y-reverse: 0 !important;
+    margin-top: calc(0.125rem * calc(1 - var(--tw-space-y-reverse))) !important;
+    margin-bottom: calc(0.125rem * var(--tw-space-y-reverse)) !important;
+}
+
+.fi-sidebar-nav-groups > * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.fi-sidebar-nav-groups {
+    margin-top: -0.25rem !important;
+    margin-bottom: -0.25rem !important;
+}
+
+.fi-sidebar-item {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
+    margin: 0 !important;
+}
+
+.fi-sidebar-group {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
+    margin: 0 !important;
+}
+
+.fi-sidebar-group-items {
+    padding-left: 0.75rem !important;
+    margin: 0 !important;
+}
+
+.fi-sidebar-item-button {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}

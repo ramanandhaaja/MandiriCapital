@@ -1,3 +1,29 @@
+/* Root variables for consistent theming */
+:root {
+    --color-primary: #FFD700;
+    --color-secondary: #EFA32F;
+    --color-dark: #18181B;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-gray-100: #F3F4F6;
+    --color-gray-400: #9CA3AF;
+    --color-gray-500: #6B7280;
+    --color-gray-600: #4B5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1F2937;
+    --color-gray-900: #111827;
+    --color-border: #3F3F46;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Add these at the top of the file */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 /* Search Section Styles */
 
 .search-input-container {
@@ -6,21 +32,22 @@
 }
 
 .search-input {
-    font-family: 'Roboto', sans-serif;
-    width: 400px;
+    font-family: var(--font-family);
+    width: 100%;
+    max-width: 400px;
     padding: 12px 20px;
     padding-right: 40px;
-    border: 1px solid #FFFFFF;
+    border: 1px solid var(--color-white);
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.3);
-    color: white;
+    color: var(--color-white);
     font-size: 16px;
     margin-bottom: 50px;
 }
 
 .search-input:focus {
     outline: none;
-    border-color: #FFFFFF;
+    border-color: var(--color-white);
 }
 
 .search-input-icon {
@@ -39,26 +66,29 @@
 
 .category-filters {
     display: flex;
-    gap: 48px;
+    gap: 20px;
     margin-bottom: 40px;
     padding-bottom: 8px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .filter-link {
-    font-family: 'Roboto', sans-serif;
-    color: white;
+    font-family: var(--font-family);
+    color: var(--color-white);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
     padding-bottom: 16px;
     position: relative;
-    width:200px;
+    width: auto;
+    min-width: 120px;
+    text-align: center;
 }
 
 .filter-link.active {
-    color: #FFD700;
-    font-family: 'Roboto', sans-serif;
+    color: var(--color-primary);
+    font-family: var(--font-family);
 }
 
 .filter-link.active::after {
@@ -69,7 +99,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #FFD700;
+    background-color: var(--color-primary);
 }
 
 
@@ -80,7 +110,7 @@
 
 /* Newsletter section styles remain unchanged */
 .newsletter-section {
-    background-color: #000000;
+    background-color: var(--color-black);
     padding-top: 50px;
     padding-bottom: 40px;
     position: relative;
@@ -94,16 +124,16 @@
 }
 
 .newsletter-title {
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
+    font-family: var(--font-family);
+    color: var(--color-white);
     font-size: 36px;
     font-weight: 600;
     margin: 0 0 12px 0;
 }
 
 .newsletter-subtitle {
-    font-family: 'Roboto', sans-serif;
-    color: #9CA3AF;
+    font-family: var(--font-family);
+    color: var(--color-gray-400);
     font-size: 16px;
     margin: 0 0 32px 0;
 }
@@ -118,18 +148,18 @@
 }
 
 .newsletter-input {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     flex: 1;
-    background-color: #1F2937;
+    background-color: var(--color-gray-800);
     border: none;
     border-radius: 4px;
-    color: #FFFFFF;
+    color: var(--color-white);
     padding: 12px 16px;
     font-size: 16px;
 }
 
 .newsletter-input::placeholder {
-    color: #9CA3AF;
+    color: var(--color-gray-400);
 }
 
 .newsletter-input:focus {
@@ -138,12 +168,12 @@
 }
 
 .newsletter-button {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
-    background-color: #F59E0B;
+    background-color: var(--color-secondary);
     border: none;
     border-radius: 4px;
-    color: #ffffff;
+    color: var(--color-white);
     cursor: pointer;
     font-weight: 500;
     padding: 12px 24px;
@@ -151,7 +181,7 @@
 }
 
 .newsletter-button:hover {
-    background-color: #D97706;
+    background-color: var(--color-secondary);
 }
 
 /* Responsive Design */
@@ -243,8 +273,8 @@
 
 .portfolio-section {
     padding: 60px 40px;
-    color: white;
-    font-family: 'Roboto', sans-serif;
+    color: var(--color-white);
+    font-family: var(--font-family);
     max-width: 1600px;
     margin: 0 auto;
 }
@@ -255,13 +285,13 @@
     grid-template-columns: 2fr 1.5fr 3fr 1fr 1.5fr;
     gap: 24px;
     padding: 20px 24px;
-    background-color: #27272A;
+    background-color: var(--color-dark);
     border-radius: 0px;
     margin-bottom: 4px;
 }
 
 .header-cell {
-    color: white;
+    color: var(--color-white);
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
@@ -274,20 +304,20 @@
     grid-template-columns: 2fr 1.5fr 3fr 1fr 1.5fr;
     gap: 24px;
     padding: 24px;
-    border-bottom: 1px solid #27272A;
+    border-bottom: 1px solid var(--color-dark);
     align-items: center;
     transition: background-color 0.2s ease;
 }
 
 .portfolio-row:hover {
-    background-color: #27272A;
+    background-color: var(--color-dark);
 }
 
 /* Improved company name styling */
 .company-name {
     font-size: 18px;
     font-weight: 500;
-    color: white;
+    color: var(--color-white);
     margin: 0;
 }
 
@@ -299,7 +329,7 @@
 /* Enhanced description text handling */
 .description-cell {
     font-size: 14px;
-    color: #A1A1AA;
+    color: var(--color-gray-400);
     line-height: 1.6;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -325,7 +355,7 @@
 .expand-btn {
     background: none;
     border: none;
-    color: #A1A1AA;
+    color: var(--color-gray-400);
     cursor: pointer;
     padding: 8px;
     border-radius: 4px;
@@ -336,8 +366,8 @@
 }
 
 .expand-btn:hover {
-    color: white;
-    background-color: #3F3F46;
+    color: var(--color-white);
+    background-color: var(--color-dark);
 }
 
 /* Responsive improvements */
@@ -466,27 +496,30 @@
 
 .category-filters {
     display: flex;
-    gap: 48px;
+    gap: 20px;
     margin-bottom: 40px;
     padding-bottom: 8px;
     padding-top: 95px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .filter-link {
-    font-family: 'Roboto', sans-serif;
-    color: white;
+    font-family: var(--font-family);
+    color: var(--color-white);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
     padding-bottom: 16px;
     position: relative;
-    width:200px;
+    width: auto;
+    min-width: 120px;
+    text-align: center;
 }
 
 .filter-link.active {
-    color: #FFD700;
-    font-family: 'Roboto', sans-serif;
+    color: var(--color-primary);
+    font-family: var(--font-family);
 }
 
 .filter-link.active::after {
@@ -497,14 +530,14 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #FFD700;
+    background-color: var(--color-primary);
 }
 
 
 /*hero mid section*/
 
 .hero-mid-section {
-    color: white;
+    color: var(--color-white);
     text-align: center;
     position: relative;
     margin-bottom: 110px;
@@ -512,8 +545,8 @@
 
 .center-text {
     position: relative;
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
+    font-family: var(--font-family);
+    color: var(--color-white);
     font-size: 56px;
     font-weight: 350;
     text-align: center;
@@ -578,20 +611,20 @@
 }
 
 .counter-card h1 {
-    font-family: 'Roboto', sans-serif;
-    color: white;
+    font-family: var(--font-family);
+    color: var(--color-white);
     font-size: 19px;
     margin-bottom: -18px;
     font-weight: 100;
 }
 
 .counter-card.right-border {
-    border-right: 1px solid #3F3F46;
+    border-right: 1px solid var(--color-border);
 }
 
 .counter-card h2 {
-    font-family: 'Roboto', sans-serif;
-    color: #EFA32F;
+    font-family: var(--font-family);
+    color: var(--color-secondary);
     font-size: 64px;
     font-weight: 500;
     margin-top: 20px;
@@ -601,8 +634,8 @@
 
 
 .counter {
-    font-family: 'Roboto', sans-serif;
-    color: #EFA32F;
+    font-family: var(--font-family);
+    color: var(--color-secondary);
     font-size: 64px;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -621,9 +654,9 @@
 
 
 .counter-content {
-    background-color: #18181B;
+    background-color: var(--color-dark);
     padding: 120px 40px;
-    color: white;
+    color: var(--color-white);
     display: flex;
     max-width: 1600px;
     margin: 0 auto;
@@ -642,10 +675,10 @@
 }
 
 .text-content p {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 24px;
     line-height: 1.6;
-    color: #A1A1AA;
+    color: var(--color-gray-400);
     margin: 0;
 }
 
@@ -654,26 +687,26 @@
 }
 
 .features-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 28px;
     font-weight: 600;
     margin-bottom: 48px;
     margin-top: 0px;
-    color: white;
+    color: var(--color-white);
     line-height: 1.2;
 }
 
 .feature-content h3 {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 500;
     margin: 0 0 8px 0;
-    color: white;
+    color: var(--color-white);
 }
 .feature-content p {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
-    color: #A1A1AA;
+    color: var(--color-gray-400);
     margin: 0;
 }
 
@@ -697,7 +730,7 @@
 .feature-icon img {
     width: 32px;
     height: 32px;
-    color: #FFD700;
+    color: var(--color-primary);
 }
 
 /* Rest of your feature styles remain the same */
@@ -732,7 +765,7 @@
 }
 
 .headline-section-grey {
-    background-color: #18181B;
+    background-color: var(--color-dark);
     padding-top: 80px;
     padding-bottom: 80px;
 }
@@ -740,8 +773,8 @@
 
 .headline-title {
     position: relative;
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
+    font-family: var(--font-family);
+    color: var(--color-white);
     font-size: 32px;
     font-weight: 500;
     text-align: left;
@@ -768,21 +801,21 @@
 }
 
 .headline-card h1 {
-    font-family: 'Roboto', sans-serif;
-    color: white;
+    font-family: var(--font-family);
+    color: var(--color-white);
     font-size: 16px;
     margin-bottom: -18px;
     font-weight: 100;
 }
 
 .headline-card.middle-border {
-    border-left: 1px solid #3F3F46;
-    border-right: 1px solid #3F3F46;
+    border-left: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
 }
 
 .headline-card h2 {
-    font-family: 'Roboto', sans-serif;
-    color: white;
+    font-family: var(--font-family);
+    color: var(--color-white);
     font-size: 28px;
     margin-bottom: -10px;
     font-weight: 500;
@@ -790,23 +823,23 @@
 
 
 .headline-card p {
-    font-family: 'Roboto', sans-serif;
-    color: #A1A1AA;
+    font-family: var(--font-family);
+    color: var(--color-gray-400);
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 16px;
 }
 
 .learn-more {
-    font-family: 'Roboto', sans-serif;
-    color: #FFD700;
+    font-family: var(--font-family);
+    color: var(--color-primary);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
 }
 
 .learn-more {
-    color: #FFD700;
+    color: var(--color-primary);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -838,8 +871,8 @@
 
 .grid-headline-title {
     position: relative;
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
+    font-family: var(--font-family);
+    color: var(--color-white);
     font-size: 32px;
     font-weight: 500;
     text-align: left;
@@ -869,7 +902,7 @@
     height: 264px;
     grid-column: span 1;
     gap: 20px;
-    border: 0.5px solid #3F3F46;
+    border: 0.5px solid var(--color-border);
 }
 
 .card .background-image {
@@ -897,12 +930,12 @@
 
 
 .category {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     position: absolute;
     top: 80px;
     left: 20px;
-    color: #EAB308;
+    color: var(--color-secondary);
     font-weight: 200;
     z-index: 2;
 }
@@ -916,8 +949,8 @@
 }
 
 .card h2 {
-    font-family: 'Roboto', sans-serif;
-    color: white;
+    font-family: var(--font-family);
+    color: var(--color-white);
     font-size: 14px;
     margin: 0;
     font-weight: 200;
@@ -1037,7 +1070,7 @@
 
 /* Newsletter Section Styles */
 .newsletter-section {
-    background-color: #000000;
+    background-color: var(--color-black);
     padding-top: 80px;
     padding-bottom: 60px;
     position: relative;
@@ -1052,8 +1085,8 @@
 }
 
 .newsletter-title {
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
+    font-family: var(--font-family);
+    color: var(--color-white);
     font-size: 40px;
     font-weight: 500;
     margin: 0 0 12px 0;
@@ -1066,8 +1099,8 @@
 }
 
 .newsletter-subtitle {
-    font-family: 'Roboto', sans-serif;
-    color: #9CA3AF;
+    font-family: var(--font-family);
+    color: var(--color-gray-400);
     font-size: 16px;
     margin: 0 0 32px 0;
 }
@@ -1082,18 +1115,18 @@
 }
 
 .newsletter-input {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     flex: 1;
-    background-color: #1F2937;
+    background-color: var(--color-gray-800);
     border: none;
     border-radius: 4px;
-    color: #FFFFFF;
+    color: var(--color-white);
     padding: 12px 16px;
     font-size: 16px;
 }
 
 .newsletter-input::placeholder {
-    color: #9CA3AF;
+    color: var(--color-gray-400);
 }
 
 .newsletter-input:focus {
@@ -1102,12 +1135,12 @@
 }
 
 .newsletter-button {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
-    background-color: #F59E0B;
+    background-color: var(--color-secondary);
     border: none;
     border-radius: 4px;
-    color: #ffffff;
+    color: var(--color-white);
     cursor: pointer;
     font-weight: 500;
     padding: 12px 24px;
@@ -1115,7 +1148,7 @@
 }
 
 .newsletter-button:hover {
-    background-color: #D97706;
+    background-color: var(--color-secondary);
 }
 
 
@@ -1150,8 +1183,8 @@
     height: 530px;
     grid-column: span 1;
     gap: 20px;
-    border: 0.5px solid #3F3F46;
-    background-color: #27272A;
+    border: 0.5px solid var(--color-border);
+    background-color: var(--color-dark);
 }
 
 .team-card .background-image {
@@ -1179,23 +1212,23 @@
 
 
 .team-name {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 28px;
     position: absolute;
     bottom: 60px;
     left: 20px;
-    color: #EAB308;
+    color: var(--color-secondary);
     font-weight: 200;
     z-index: 2;
 }
 
 .team-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 24px;
     position: absolute;
     bottom: 25px;
     left: 20px;
-    color: #FAFAFA;
+    color: var(--color-white);
     font-weight: 200;
     z-index: 2;
 }
