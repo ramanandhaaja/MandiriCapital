@@ -9,5 +9,5 @@ max_input_time = 300
 ## Nginx config
 client_max_body_size 50M;
 
-
+## Apache config
 
