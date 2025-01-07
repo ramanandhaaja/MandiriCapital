@@ -13,37 +13,17 @@
 
     <div class="hero-content">
         <div class="center-text">{!! $hero->content !!}</div>
-        <img src="{{ asset('images/home/getInvestment.png') }}" alt="Get Investment" class="button-image center-image">
+        <div class="image-container">
+            <img src="{{ asset('images/home/forstartup.png') }}" alt="For Startup" class="button-image center-image">
+            <img src="{{ asset('images/home/forlp.png') }}" alt="For LP" class="button-image center-image">
+        </div>
     </div>
-
 </div>
+
+
+
 
 {{-- Headline Section --}}
-<div class="headline-section">
-    <div class="headline-grid">
-        <div class="headline-card">
-            <h1>{{ $article[0]->category }}</h1>
-            <h2>{{ $article[0]->title }}</h2>
-            <p>{{ Str::words($article[0]->content, 13, '...') }}</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-
-        <div class="headline-card middle-border">
-            <h1>{{ $article[1]->category }}</h1>
-            <h2>{{ $article[1]->title }}</h2>
-            <p>{{ Str::words($article[1]->content, 13, '...') }}</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-
-        <div class="headline-card">
-            <h1>{{ $article[2]->category }}</h1>
-            <h2>{{ $article[2]->title }}</h2>
-            <p>{{ Str::words($article[2]->content, 13, '...') }}</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-    </div>
-</div>
-
 <div class="headline-section-two">
     <div class="headline-grid">
         <div class="headline-card-two">
@@ -70,6 +50,28 @@
         </div>
     </div>
 </div>
+
+
+<div class="headline-section">
+    <div class="headline-grid-two">
+        <div class="headline-card">
+            <h1>{{ $article[0]->category }}</h1>
+            <h2>{{ $article[0]->title }}</h2>
+            <p>{{ Str::words($article[0]->content, 13, '...') }}</p>
+            <a href="#" class="learn-more">Learn More »</a>
+        </div>
+
+        <div class="headline-card middle-border">
+            <h1>{{ $article[1]->category }}</h1>
+            <h2>{{ $article[1]->title }}</h2>
+            <p>{{ Str::words($article[1]->content, 13, '...') }}</p>
+            <a href="#" class="learn-more">Learn More »</a>
+        </div>
+
+    </div>
+</div>
+
+
 
 {{-- Content Section --}}
 <div class="masonry-grid">

@@ -12,7 +12,7 @@
         <div class="hero-content" style="background-image: url('{{ asset('images/media/OnHover.png') }}');">
         </div>
         <h1>{{ $post->title }}</h1>
-        <p>{{ \Carbon\Carbon::parse($post->published_at)->format('F Y') }}</p>
+        <p>{{ \Carbon\Carbon::parse($post->published_at)->format('d F Y') }}</p>
     </div>
 
     <!-- Content Section -->

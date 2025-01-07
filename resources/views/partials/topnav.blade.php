@@ -18,8 +18,10 @@
         <div class="nav-content" id="navContent">
             <div class="nav-links">
                 <a href="{{ route('about') }}" class="nav-item {{ Route::currentRouteName() == 'about' ? 'active' : '' }}">OUR IDENTITY</a>
-                <a href="{{ route('portfolio') }}" class="nav-item {{ Route::currentRouteName() == 'portfolio' ? 'active' : '' }}">PORTFOLIO</a>
-                <a href="{{ route('platform') }}" class="nav-item {{ Route::currentRouteName() == 'platform' ? 'active' : '' }}">PLATFORM</a>
+                <a href="{{ route('portfolio') }}" class="nav-item {{ Route::currentRouteName() == 'portfolio' ? 'active' : '' }}">INVESTMENT
+
+                </a>
+                <a href="{{ route('platform') }}" class="nav-item {{ Route::currentRouteName() == 'platform' ? 'active' : '' }}">VALUE CREATION</a>
                 <a href="{{ route('media') }}" class="nav-item {{ in_array(Route::currentRouteName(), ['media', 'media.show']) ? 'active' : '' }}">MEDIA</a>
                 <a href="{{ route('report') }}" class="nav-item {{ Route::currentRouteName() == 'report' ? 'active' : '' }}">PUBLICATION</a>
                 <a href="{{ route('contact') }}" class="nav-item {{ Route::currentRouteName() == 'contact' ? 'active' : '' }}">CONTACT US</a>
