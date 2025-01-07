@@ -17,10 +17,24 @@
                 <img src="{{ asset('images/report/report.png') }}" alt="Media" class="center-image">
             </a>
             <div class="center-search">
-                <div class="search-input-container">
-                    <input type="text" placeholder="Search..." class="search-input">
-                    <i class="fas fa-search search-input-icon"></i>
+                <div class="search-section">
+                    <div class="search-filters-container">
+                        <div class="search-input-container">
+                            <input type="text" placeholder="Search..." class="search-input">
+                            <i class="fas fa-search search-input-icon"></i>
+                        </div>
+                        <div class="date-range-container">
+                            <div class="date-range-label">Pick Date Range</div>
+                            <div class="date-range-inputs">
+                                <input type="text" placeholder="MM/YY" class="date-input" id="start-date">
+                                <span class="date-separator">|</span>
+                                <input type="text" placeholder="MM/YY" class="date-input" id="end-date">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
                 <div class="category-filters">
                     <a href="#" class="filter-link active">All</a>
                     <a href="#" class="filter-link">Annual Report</a>
@@ -119,6 +133,7 @@
 @endsection
 
 @section('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const filterLinks = document.querySelectorAll('.filter-link');

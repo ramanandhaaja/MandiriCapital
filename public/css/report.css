@@ -254,8 +254,13 @@
 }
 
 
-
 /* Search Section Styles */
+.search-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .center-search {
     position: absolute;
     left: 50%;
@@ -266,22 +271,33 @@
     text-align: center;
 }
 
+.search-filters-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
 .search-input-container {
+    flex: initial;
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: flex-end;
 }
 
 .search-input {
     font-family: 'Roboto', sans-serif;
     width: 400px;
-    padding: 12px 20px;
+    padding: 10px 20px;
     padding-right: 40px;
     border: 1px solid #FFFFFF;
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.3);
     color: white;
     font-size: 16px;
-    margin-bottom: 50px;
+    height: 42px;
+    box-sizing: border-box;
 }
 
 .search-input:focus {
@@ -291,18 +307,73 @@
 
 .search-input-icon {
     position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: 10px;
+    bottom: 12px;
     color: rgba(255, 255, 255, 0.5);
     pointer-events: none;
-    margin-top: -25px;
 }
 
 .search-input::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.search-date-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(39, 39, 42, 0.8);
+    padding: 16px;
+    border-radius: 8px;
+    min-width: 250px;
+}
+
+.date-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #27272A;
+    border: 1px solid #3F3F46;
+    padding: 10px 20px;
+    border-radius: 4px;
+    height: 42px;
+    box-sizing: border-box;
+}
+
+.date-range-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.date-range-label {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+
+.date-input {
+    background: transparent;
+    border: none;
+    color: #3F3F46;
+    font-size: 16px;
+    padding: 4px;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.date-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.date-separator {
+    color: #FFFFFF;
+    font-size: 16px;
+    opacity: 0.5;
+}
 
 /* Category Filter Styles */
 .category-filters {
@@ -410,4 +481,40 @@
 
 .newsletter-button:hover {
     background-color: #D97706;
+}
+
+/* Flatpickr customization */
+.flatpickr-calendar.dark {
+    background: #27272A;
+    border: 1px solid #3F3F46;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.flatpickr-calendar.dark .flatpickr-months {
+    background: #27272A;
+}
+
+.flatpickr-calendar.dark .flatpickr-month {
+    color: #FFFFFF;
+}
+
+.flatpickr-calendar.dark .flatpickr-weekday {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.flatpickr-calendar.dark .flatpickr-day {
+    color: #FFFFFF;
+}
+
+.flatpickr-calendar.dark .flatpickr-day.selected {
+    background: #3F3F46;
+    border-color: #3F3F46;
+}
+
+.flatpickr-calendar.dark .flatpickr-day:hover {
+    background: #3F3F46;
+}
+
+.flatpickr-calendar.dark .flatpickr-day.disabled {
+    color: rgba(255, 255, 255, 0.3);
 }
