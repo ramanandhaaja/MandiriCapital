@@ -1,3 +1,22 @@
+/* Root variables for consistent theming */
+:root {
+    --color-primary: #FFD700;
+    --color-secondary: #EFA32F;
+    --color-dark: #18181B;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-gray-100: #F3F4F6;
+    --color-gray-400: #9CA3AF;
+    --color-gray-500: #6B7280;
+    --color-gray-600: #4B5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1F2937;
+    --color-gray-900: #111827;
+    --color-border: #3F3F46;
+    --font-family: 'Roboto', sans-serif;
+}
+
+
 /* Masonry Grid Layout */
 .masonry-grid {
     display: grid;
@@ -9,6 +28,122 @@
     opacity: 1;
     transition: opacity 0.3s ease;
 }
+
+.masonry-grid-investment-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 0 20px;
+    max-width: 1600px;
+    margin: 60px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.masonry-grid-investment-section-grey {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 60px 20px;
+    max-width: 1600px;
+    margin: 60px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    background-color: #18181B ;
+}
+
+.masonry-grid-contact-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 20px;
+    max-width: 1600px;
+    margin: 120px auto 60px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.grid-headline-title {
+    position: relative;
+    font-family: var(--font-family);
+    color: var(--color-white);
+    font-size: 28px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 80px;
+    margin-right: 90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.grid-headline-title-contact {
+    position: relative;
+    font-family: var(--font-family);
+    color: var(--color-white);
+    font-size: 56px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 80px;
+    margin-right: 90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.grid-headline-subtitle-contact {
+    position: relative;
+    font-family: var(--font-family);
+    color: #A1A1AA;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 80px;
+    margin-right: 90px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width: 60%;
+}
+
+.grid-headline-subtitle {
+    position: relative;
+    font-family: var(--font-family);
+    color: #A1A1AA;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 0px;
+    margin-right: 90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 60%;
+}
+
+.grid-headline-subtitle-left {
+    position: relative;
+    font-family: var(--font-family);
+    color: #A1A1AA;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 80px;
+    margin-right: 90px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width: 60%;
+}
+
+.grid-headline-description-card{
+    grid-column: span 2;
+}
+
+.grid-headline-title-card{
+    grid-column: span 1;
+}
+
+.grid-headline-contact-card{
+    grid-column: span 1;
+    padding-right: 90px;
+}
+
 
 .card {
     position: relative;
@@ -24,6 +159,7 @@
     align-items: center;
     justify-content: center;
 }
+
 
 .portfolio-image {
     max-width: 100%;
@@ -84,6 +220,7 @@
     font-weight: 500;
     text-transform: uppercase;
 }
+
 
 .card-content {
     position: relative;
@@ -726,4 +863,314 @@
     font-size: 14px;
     line-height: 1.5;
     opacity: 0.8;
+}
+
+
+
+
+/* Contact Form */
+.contact-form-section {
+    padding-top: 0px;
+}
+
+.contact-form-intro {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.87);
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 0px;
+}
+
+.form-label {
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.form-input,
+.form-textarea {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.1);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.form-textarea {
+    resize: none;
+    min-height: 180px;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.submit-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    float: right;
+    margin-top: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.submit-button img {
+    height: 48px;
+}
+
+.submit-button:hover {
+    opacity: 0.8;
+}
+
+
+
+
+
+.for-investor-section {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.investor-container {
+    background-color: #18181B;
+    width: 100%;
+    padding: 60px 5% 60px 5%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.investor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: top;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+    .investor-container {
+        padding: 0px 3% 0px 3%;
+    }
+    .investor-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .investor-container {
+        padding: 0px 20px;
+    }
+    .investor-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.investor-container.dark {
+    background-color: #000000;
+}
+
+.investor-iframe-container {
+    display: grid;
+}
+
+.investor-iframe {
+    height: 80px;
+}
+
+.investor-iframe-gif {
+    height: 380px;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.investor-iframe.right {
+    margin-left: auto;
+    display: block;
+}
+
+
+.investor-content {
+    padding-left: 2rem;
+}
+
+.investor-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.investor-title-lg {
+    font-family: 'Roboto', sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.company-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.investor-info {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #A1A1AA;
+    line-height: 1.6;
+}
+
+
+.investor-number {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.number-item {
+    text-align: left;
+}
+
+.number-value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.number-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+
+.investor-register {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.register-btn {
+    height: 32px;
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-detail {
+    background-color: #F4B41A;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-register {
+    background-color: transparent;
+    color: #EAB308;
+    border: 1px solid #F4B41A;
+}
+
+.register-btn:hover {
+    opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .investor-container {
+        padding: 0 2rem;
+    }
+
+    .investor-grid {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .investor-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .investor-content {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .investor-title {
+        font-size: 42px;
+    }
+
+    .investor-iframe {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .investor-container {
+        padding: 0 1rem;
+    }
+
+    .investor-title {
+        font-size: 36px;
+    }
+
+    .investor-iframe {
+        height: 300px;
+    }
+}
+
+.investor-iframe-container-lg {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.investor-iframe-container-lg img {
+    max-width: 300px;
+    height: 58px;
+    height: auto;
+    margin-bottom: 0;
 }

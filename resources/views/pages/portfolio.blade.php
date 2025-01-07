@@ -30,7 +30,121 @@
 
     {{-- get investment Section --}}
     <div class="get-investement-section">
-        get Investment
+        <div class="masonry-grid-investment-section">
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title">Why MCI </h1>
+            </div>
+            <div class="grid-headline-description-card">
+                <h1 class="grid-headline-subtitle">At Mandiri Capital Indonesia, we believe in investing in businesses, not
+                    just funding rounds. This means we’re here to support you throughout your journey—from the spark of an
+                    idea to scaling into a successful, impactful enterprise.
+                    </br></br>
+                    As part of the Mandiri Group, we bring unparalleled resources, expertise, and connections to help you
+                    grow and thrive at every stage.</h1>
+            </div>
+
+        </div>
+
+        <div class="masonry-grid-investment-section-grey">
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title">Here’s how we’ll help you achieve that growth </h1>
+            </div>
+            <div class="grid-headline-description-card">
+                <h1 class="grid-headline-subtitle">At Mandiri Capital Indonesia, we believe in investing in businesses, not
+                    just funding rounds. This means we’re here to support you throughout your journey—from the spark of an
+                    idea to scaling into a successful, impactful enterprise.
+                    </br></br>
+                    As part of the Mandiri Group, we bring unparalleled resources, expertise, and connections to help you
+                    grow and thrive at every stage.</h1>
+            </div>
+
+        </div>
+
+        <div class="masonry-grid-investment-section">
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title">Our Investment Process </h1>
+            </div>
+            <div class="grid-headline-description-card">
+                <h1 class="grid-headline-subtitle">At Mandiri Capital Indonesia, we believe in investing in businesses, not
+                    just funding rounds. This means we’re here to support you throughout your journey—from the spark of an
+                    idea to scaling into a successful, impactful enterprise.
+                    </br></br>
+                    As part of the Mandiri Group, we bring unparalleled resources, expertise, and connections to help you
+                    grow and thrive at every stage.</h1>
+            </div>
+
+        </div>
+
+        <div class="masonry-grid-investment-section-grey">
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title">For Investor</h1>
+                <h1 class="grid-headline-subtitle-left">To foster long-term growth, we invest through three distinct fund
+                    vehiclesr</h1>
+            </div>
+            <div class="grid-headline-description-card">
+                <h1 class="grid-headline-subtitle">At Mandiri Capital Indonesia, we believe in investing in businesses, not
+                    just funding rounds. This means we’re here to support you throughout your journey—from the spark of an
+                    idea to scaling into a successful, impactful enterprise.
+                    </br></br>
+                    As part of the Mandiri Group, we bring unparalleled resources, expertise, and connections to help you
+                    grow and thrive at every stage.</h1>
+            </div>
+
+        </div>
+
+        <div class="masonry-grid-contact-section">
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title-contact">Send Your Business Proposal</h1>
+                <h1 class="grid-headline-subtitle-contact">We are happy to discuss your business situation, please contact.
+                </h1>
+            </div>
+            <div class="grid-headline-contact-card">
+                <form id="contactForm" class="contact-form">
+                    @csrf
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company_name" class="form-label">Company Name</label>
+                            <input type="text" id="company_name" name="company_name" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website" class="form-label">Website</label>
+                            <input type="text" id="website" name="website" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Business Description</label>
+                        <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Write here..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="text" id="phone" name="phone" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Company Email</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">
+                            <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message">
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
 
     {{-- Porfolio Section --}}
@@ -122,7 +236,89 @@
 
     {{-- for investor Section --}}
     <div class="for-investor-section">
-        for investor
+        <div class="investor-container">
+            <div class="investor-grid">
+                <div class="investor-iframe-container">
+                </div>
+                <!-- Content Column -->
+                <div class="investor-content">
+                    <h2 class="investor-title">
+                        IFF
+                    </h2>
+
+                    <div class="investor-info">
+                        <p> financial tool designed to raise funds for important global projects, like health, education, or
+                            infrastructure. It works by issuing bonds in capital markets, backed by long-term government
+                            pledges.</p>
+                        <p> This approach provides immediate funding for urgent needs while spreading the financial
+                            commitment over time. A key example is the International Finance Facility for Immunisation
+                            (IFFIm), which has helped deliver vaccines to millions worldwide.</p>
+                        <p> In simple terms, IFF turns future promises into funds that create impact today. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="investor-container dark">
+            <div class="investor-grid">
+                <!-- Content Column -->
+                <div class="investor-content">
+                    <h2 class="investor-title">
+                        BTN Fund
+                    </h2>
+
+                    <div class="investor-info">
+                        <p> investment initiative launched by PT Bank Tabungan Negara (Persero) Tbk (Bank BTN) in
+                            collaboration with PT Mandiri Capital Indonesia (MCI), the corporate venture capital arm of Bank
+                            Mandiri. Established in December 2023, the fund focuses on investing in startups operating in
+                            sectors such as property technology (proptech), mortgage technology (mortgage tech), financial
+                            technology (fintech), embedded finance, construction technology (construction tech), open
+                            finance, and software as a service (SaaS).</p>
+                        <p> In summary, the BTN Fund represents a strategic move by Bank BTN to invest in and collaborate
+                            with technology-driven startups, thereby accelerating its digital transformation and
+                            strengthening its position in the housing finance sector.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="investor-container">
+            <div class="investor-grid">
+                <div class="investor-iframe-container">
+                </div>
+                <!-- Content Column -->
+                <div class="investor-content">
+                    <h2 class="investor-title">
+                        MPF
+                    </h2>
+
+                    <div class="investor-info">
+                        <p> It's a compulsory retirement savings scheme in Hong Kong, designed to help employees save
+                            for their retirement. </p>
+                        <p> Both employers and employees contribute a percentage of the employee's salary into the fund,
+                            which is then invested in various financial products to grow over time. The accumulated
+                            savings become accessible to employees upon reaching retirement age or under specific
+                            conditions. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="investor-container dark">
+            <div class="investor-grid">
+                <!-- Content Column -->
+                <div class="investor-content">
+                    <h2 class="investor-title-lg">
+                        New Investor Enquiry
+                    </h2>
+                    <div class="investor-info">
+                        <p> Begin your investment journey with confidence</p>
+                        <p> —partner with us today.</p>
+                    </div>
+                </div>
+                <div class="investor-iframe-container-lg">
+                    <img src="{{ asset('images/portfolio/btn.png') }}" alt="Lets Connect"/>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 
@@ -258,38 +454,38 @@
                             <div class="header-cell">Partners</div>
                         </div>
                         ${remainingPortfolios.map(portfolio => `
-                                <div class="portfolio-row">
-                                    <div class="company-cell">
-                                        <h3 class="company-name">${portfolio.name}</h3>
-                                        <a href="/portfolio/${portfolio.name.toLowerCase().replace(/\s+/g, '-')}" class="company-image-link">
-                                            <img class="company-image"
-                                                src="${portfolio.image_path ? '/storage/' + portfolio.image_path : '/images/media/image5.png'}"
-                                                alt="${portfolio.name}">
-                                        </a>
-                                        <a href="${portfolio.website_url}" target="_blank" class="company-website">
-                                            ${portfolio.website_url ? portfolio.website_url.replace(/^https?:\/\//, '') : ''}
-                                        </a>
-                                    </div>
-                                    <div class="category-cell">${portfolio.category ? portfolio.category.name : ''}</div>
-                                    <div class="description-cell">
-                                        ${portfolio.description ? portfolio.description.substring(0, 100) + (portfolio.description.length > 100 ? '...' : '') : ''}
-                                    </div>
-                                    <div class="stage-cell">
-                                        <span class="stage-tag">${portfolio.stage || ''}</span>
-                                    </div>
-                                    <div class="partners-cell">
-                                        <div class="partner-info">
-                                            <span>${portfolio.ceo_name ? portfolio.ceo_name + ' (CEO)' : ''}</span>
-                                            <button class="expand-btn" aria-label="Show more details">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M6 9l6 6 6-6" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            `).join('')}
+                                                            <div class="portfolio-row">
+                                                                <div class="company-cell">
+                                                                    <h3 class="company-name">${portfolio.name}</h3>
+                                                                    <a href="/portfolio/${portfolio.name.toLowerCase().replace(/\s+/g, '-')}" class="company-image-link">
+                                                                        <img class="company-image"
+                                                                            src="${portfolio.image_path ? '/storage/' + portfolio.image_path : '/images/media/image5.png'}"
+                                                                            alt="${portfolio.name}">
+                                                                    </a>
+                                                                    <a href="${portfolio.website_url}" target="_blank" class="company-website">
+                                                                        ${portfolio.website_url ? portfolio.website_url.replace(/^https?:\/\//, '') : ''}
+                                                                    </a>
+                                                                </div>
+                                                                <div class="category-cell">${portfolio.category ? portfolio.category.name : ''}</div>
+                                                                <div class="description-cell">
+                                                                    ${portfolio.description ? portfolio.description.substring(0, 100) + (portfolio.description.length > 100 ? '...' : '') : ''}
+                                                                </div>
+                                                                <div class="stage-cell">
+                                                                    <span class="stage-tag">${portfolio.stage || ''}</span>
+                                                                </div>
+                                                                <div class="partners-cell">
+                                                                    <div class="partner-info">
+                                                                        <span>${portfolio.ceo_name ? portfolio.ceo_name + ' (CEO)' : ''}</span>
+                                                                        <button class="expand-btn" aria-label="Show more details">
+                                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                                <path d="M6 9l6 6 6-6" />
+                                                                            </svg>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        `).join('')}
                     `;
 
                     portfolioSection.innerHTML = tableHtml;
@@ -316,38 +512,38 @@
                         <div class="header-cell">Partners</div>
                     </div>
                     ${portfolios.map(portfolio => `
-                            <div class="portfolio-row">
-                                <div class="company-cell">
-                                    <h3 class="company-name">${portfolio.name}</h3>
-                                    <a href="/portfolio/${portfolio.name.toLowerCase().replace(/\s+/g, '-')}" class="company-image-link">
-                                        <img class="company-image"
-                                            src="${portfolio.image_path ? '/storage/' + portfolio.image_path : '/images/media/image5.png'}"
-                                            alt="${portfolio.name}">
-                                    </a>
-                                    <a href="${portfolio.website_url}" target="_blank" class="company-website">
-                                        ${portfolio.website_url ? portfolio.website_url.replace(/^https?:\/\//, '') : ''}
-                                    </a>
-                                </div>
-                                <div class="category-cell">${portfolio.category ? portfolio.category.name : ''}</div>
-                                <div class="description-cell">
-                                    ${portfolio.description ? portfolio.description.substring(0, 100) + (portfolio.description.length > 100 ? '...' : '') : ''}
-                                </div>
-                                <div class="stage-cell">
-                                    <span class="stage-tag">${portfolio.stage || ''}</span>
-                                </div>
-                                <div class="partners-cell">
-                                    <div class="partner-info">
-                                        <span>${portfolio.ceo_name ? portfolio.ceo_name + ' (CEO)' : ''}</span>
-                                        <button class="expand-btn" aria-label="Show more details">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M6 9l6 6 6-6" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        `).join('')}
+                                                        <div class="portfolio-row">
+                                                            <div class="company-cell">
+                                                                <h3 class="company-name">${portfolio.name}</h3>
+                                                                <a href="/portfolio/${portfolio.name.toLowerCase().replace(/\s+/g, '-')}" class="company-image-link">
+                                                                    <img class="company-image"
+                                                                        src="${portfolio.image_path ? '/storage/' + portfolio.image_path : '/images/media/image5.png'}"
+                                                                        alt="${portfolio.name}">
+                                                                </a>
+                                                                <a href="${portfolio.website_url}" target="_blank" class="company-website">
+                                                                    ${portfolio.website_url ? portfolio.website_url.replace(/^https?:\/\//, '') : ''}
+                                                                </a>
+                                                            </div>
+                                                            <div class="category-cell">${portfolio.category ? portfolio.category.name : ''}</div>
+                                                            <div class="description-cell">
+                                                                ${portfolio.description ? portfolio.description.substring(0, 100) + (portfolio.description.length > 100 ? '...' : '') : ''}
+                                                            </div>
+                                                            <div class="stage-cell">
+                                                                <span class="stage-tag">${portfolio.stage || ''}</span>
+                                                            </div>
+                                                            <div class="partners-cell">
+                                                                <div class="partner-info">
+                                                                    <span>${portfolio.ceo_name ? portfolio.ceo_name + ' (CEO)' : ''}</span>
+                                                                    <button class="expand-btn" aria-label="Show more details">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                            <path d="M6 9l6 6 6-6" />
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    `).join('')}
                 `;
 
                 portfolioSection.innerHTML = tableHtml;
