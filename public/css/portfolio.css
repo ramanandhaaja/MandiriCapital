@@ -421,6 +421,7 @@
     font-family: 'Roboto', sans-serif;
     max-width: 1600px;
     margin: 0 auto;
+    display: none; /* Hide table view by default */
 }
 
 /* Improved header styling with better contrast and spacing */
@@ -566,6 +567,39 @@
     justify-content: space-between;
     align-items: center;
     gap: 12px;
+}
+
+/* Expand Button Styles */
+.expand-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--color-white);
+    transition: transform 0.3s ease;
+}
+
+.expand-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.expanded .expand-btn svg {
+    transform: rotate(180deg);
+}
+
+.portfolio-row {
+    transition: all 0.3s ease;
+}
+
+.portfolio-row.expanded {
+    background-color: var(--color-dark);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.portfolio-row.expanded .partner-info {
+    margin-bottom: 15px;
 }
 
 /* Enhanced expand button styling */
@@ -1173,4 +1207,82 @@
     height: 58px;
     height: auto;
     margin-bottom: 0;
+}
+
+/* Floating Action Button */
+.floating-action-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--color-dark);
+    border: 2px solid var(--color-border);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-action-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.floating-action-button.table-view {
+    background-color: var(--color-dark);
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    display: block;
+}
+
+/* Display Toggle States */
+.grid-display-portfolio {
+    display: none;
+}
+
+.table-display-portfolio {
+    display: none;
+}
+
+.portfolio-full-section.display-grid .grid-display-portfolio {
+    display: block;
+}
+
+.portfolio-full-section.display-grid .table-display-portfolio {
+    display: none;
+}
+
+.portfolio-full-section.display-table .grid-display-portfolio {
+    display: none;
+}
+
+.portfolio-full-section.display-table .table-display-portfolio {
+    display: block;
+}
+
+/* FAB Icon Animation */
+.floating-action-button.table-view .menu-icon {
+    transform: rotate(45deg);
+}
+
+.floating-action-button .menu-icon {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
 }

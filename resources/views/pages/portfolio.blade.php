@@ -4,8 +4,8 @@
     <link href="{{ asset('css/portfolio.css') }}" rel="stylesheet">
 @endsection
 
-
 @section('container')
+
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
             <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
@@ -148,80 +148,96 @@
     </div>
 
     {{-- Porfolio Section --}}
-    <div class="portfolio-full-section">
-        <div class="masonry-grid">
-            @foreach ($portfolios->take(8)->get() as $portfolio)
-                <div class="card">
-                    <a href="{{ route('portfolio.show', ['slug' => Str::slug($portfolio->name)]) }}"
-                        class="company-image-link">
-                        <img class="portfolio-image"
-                            src="{{ $portfolio->image_path ? Storage::url($portfolio->image_path) : asset('images/media/image5.png') }}" />
-                    </a>
-                    <div class="card-stats">
-                        <div class="stat-item">
-                            <img src="{{ asset('images/portfolio/icon1.png') }}" />
-                            <span>{{ rand(1, 10) }}</span>
-                        </div>
-                        <div class="stat-item-middle">
-                            <img src="{{ asset('images/portfolio/icon2.png') }}" />
-                            <span>{{ rand(3, 15) }}</span>
-                        </div>
-                        <div class="stat-item">
-                            <img src="{{ asset('images/portfolio/icon3.png') }}" />
-                            <span>{{ rand(5, 20) }}</span>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+    <div class="portfolio-full-section display-grid">
+        <div class="floating-action-button">
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
 
-        @if ($portfolios->count() > 8)
-            <div class="portfolio-section">
-                {{-- Portfolio Header with hover effects and better spacing --}}
-                <div class="portfolio-header">
-                    <div class="header-cell">Company Name</div>
-                    <div class="header-cell">Category</div>
-                    <div class="header-cell">Short Description</div>
-                    <div class="header-cell">Current Stage</div>
-                    <div class="header-cell">Partners</div>
-                </div>
-
-                @foreach ($portfolios->skip(8)->get() as $portfolio)
-                    <div class="portfolio-row">
-                        <div class="company-cell">
-                            <h3 class="company-name">{{ $portfolio->name }}</h3>
+        {{-- Grid Display --}}
+        <div class="grid-display-portfolio">
+            <div class="masonry-grid">
+                @if ($portfolios->count() > 0)
+                    @foreach ($portfolios->get() as $portfolio)
+                        <div class="card">
                             <a href="{{ route('portfolio.show', ['slug' => Str::slug($portfolio->name)]) }}"
                                 class="company-image-link">
-                                <img class="company-image"
-                                    src="{{ $portfolio->image_path ? Storage::url($portfolio->image_path) : asset('images/media/image5.png') }}"
-                                    alt="{{ $portfolio->name }}">
+                                <img class="portfolio-image"
+                                    src="{{ $portfolio->image_path ? Storage::url($portfolio->image_path) : asset('images/media/image5.png') }}" />
                             </a>
-                            <a href="{{ $portfolio->website_url }}" target="_blank"
-                                class="company-website">{{ str_replace(['https://', 'http://'], '', $portfolio->website_url) }}</a>
-                        </div>
-                        <div class="category-cell">{{ $portfolio->category->name }}</div>
-                        <div class="description-cell">
-                            {{ Str::limit($portfolio->description, 100) }}
-                        </div>
-                        <div class="stage-cell">
-                            <span class="stage-tag">{{ $portfolio->stage }}</span>
-                        </div>
-                        <div class="partners-cell">
-                            <div class="partner-info">
-                                <span>{{ $portfolio->ceo_name }} (CEO)</span>
-                                <button class="expand-btn" aria-label="Show more details">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </button>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <img src="{{ asset('images/portfolio/icon1.png') }}" />
+                                    <span>{{ rand(1, 10) }}</span>
+                                </div>
+                                <div class="stat-item-middle">
+                                    <img src="{{ asset('images/portfolio/icon2.png') }}" />
+                                    <span>{{ rand(3, 15) }}</span>
+                                </div>
+                                <div class="stat-item">
+                                    <img src="{{ asset('images/portfolio/icon3.png') }}" />
+                                    <span>{{ rand(5, 20) }}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
             </div>
-        @endif
+        </div>
+
+        {{-- Table Display --}}
+        <div class="table-display-portfolio">
+            @if ($portfolios->count() > 0)
+                <div class="portfolio-section">
+                    {{-- Portfolio Header with hover effects and better spacing --}}
+                    <div class="portfolio-header">
+                        <div class="header-cell">Company Name</div>
+                        <div class="header-cell">Category</div>
+                        <div class="header-cell">Short Description</div>
+                        <div class="header-cell">Current Stage</div>
+                        <div class="header-cell">Partners</div>
+                    </div>
+
+                    @foreach ($portfolios->get() as $portfolio)
+                        <div class="portfolio-row">
+                            <div class="company-cell">
+                                <h3 class="company-name">{{ $portfolio->name }}</h3>
+                                <a href="{{ route('portfolio.show', ['slug' => Str::slug($portfolio->name)]) }}"
+                                    class="company-image-link">
+                                    <img class="company-image"
+                                        src="{{ $portfolio->image_path ? Storage::url($portfolio->image_path) : asset('images/media/image5.png') }}"
+                                        alt="{{ $portfolio->name }}">
+                                </a>
+                                <a href="{{ $portfolio->website_url }}" target="_blank"
+                                    class="company-website">{{ str_replace(['https://', 'http://'], '', $portfolio->website_url) }}</a>
+                            </div>
+                            <div class="category-cell">{{ $portfolio->category->name }}</div>
+                            <div class="description-cell">
+                                {{ Str::limit($portfolio->description, 100) }}
+                            </div>
+                            <div class="stage-cell">
+                                <span class="stage-tag">{{ $portfolio->stage }}</span>
+                            </div>
+                            <div class="partners-cell">
+                                <div class="partner-info">
+                                    <span>{{ $portfolio->ceo_name }} (CEO)</span>
+                                    <button class="expand-btn" aria-label="Show more details">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M6 9l6 6 6-6" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
 
         <div class="newsletter-section">
             <div class="newsletter-container">
@@ -314,13 +330,12 @@
                     </div>
                 </div>
                 <div class="investor-iframe-container-lg">
-                    <img src="{{ asset('images/portfolio/btn.png') }}" alt="Lets Connect"/>
+                    <img src="{{ asset('images/portfolio/btn.png') }}" alt="Lets Connect" />
                 </div>
             </div>
         </div>
 
     </div>
-
 
 @endsection
 
@@ -330,57 +345,77 @@
             const filterLinks = document.querySelectorAll('.filter-link');
             const masonry = document.querySelector('.masonry-grid');
             const portfolioSection = document.querySelector('.portfolio-section');
-
             const getInvestmentSection = document.querySelector('.get-investement-section');
             const portfolioSectionFull = document.querySelector('.portfolio-full-section');
             const forInvestorSection = document.querySelector('.for-investor-section');
+            const fab = document.querySelector('.floating-action-button');
+            const gridDisplay = document.querySelector('.grid-display-portfolio');
+            const tableDisplay = document.querySelector('.table-display-portfolio');
 
+            function setupExpandButtons() {
+                document.querySelectorAll('.expand-btn').forEach(button => {
+                    button.removeEventListener('click', handleExpand);
+                    button.addEventListener('click', handleExpand);
+                });
+            }
+
+            function handleExpand(e) {
+                e.preventDefault();
+                const row = this.closest('.portfolio-row');
+                row.classList.toggle('expanded');
+            }
+
+            // Initial setup
+            setupExpandButtons();
+            portfolioSectionFull.classList.add('display-grid'); // Start with grid display
+
+            // FAB click handler
+            fab.addEventListener('click', function() {
+                if (portfolioSectionFull.classList.contains('display-grid')) {
+                    portfolioSectionFull.classList.remove('display-grid');
+                    portfolioSectionFull.classList.add('display-table');
+                    fab.classList.add('table-view');
+                    gridDisplay.style.display = 'none';
+                    tableDisplay.style.display = 'block';
+                } else {
+                    portfolioSectionFull.classList.remove('display-table');
+                    portfolioSectionFull.classList.add('display-grid');
+                    fab.classList.remove('table-view');
+                    gridDisplay.style.display = 'block';
+                    tableDisplay.style.display = 'none';
+                }
+            });
 
             getInvestmentSection.style.display = 'block';
             portfolioSectionFull.style.display = 'none';
             forInvestorSection.style.display = 'none';
 
-            let currentFilter = 'all';
-
-            function setupExpandButtons() {
-                document.querySelectorAll('.expand-btn').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const row = this.closest('.portfolio-row');
-                        row.classList.toggle('expanded');
-                    });
-                });
-            }
-
-            setupExpandButtons();
-
             filterLinks.forEach(link => {
                 link.addEventListener('click', async function(e) {
                     e.preventDefault();
-
                     filterLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
-                    currentFilter = this.getAttribute('data-category') || 'all';
+                    const currentFilter = this.getAttribute('data-category') || 'all';
 
                     try {
                         const response = await fetch(`/portfolio/filter/${currentFilter}`, {
                             headers: {
-                                'X-Requested-With': 'XMLHttpRequest'
+                                'Accept': 'application/json'
                             }
                         });
 
                         if (!response.ok) throw new Error('Network response was not ok');
-
                         const portfolios = await response.json();
 
-                        if (currentFilter === 'all') {
-                            updateGridLayout(portfolios);
-                        } else if (currentFilter === 'get_investment') {
+                        if (currentFilter === 'get_investment') {
                             updategetinvestment();
+                        } else if (currentFilter === 'all') {
+                            updateGridLayout(portfolios);
+                            setupExpandButtons
+                        (); // Add this line to setup expand buttons after updating the grid
                         } else if (currentFilter === 'for_investor') {
                             updateforinvestor();
                         }
-
-                        setupExpandButtons();
                     } catch (error) {
                         console.error('Error:', error);
                     }
@@ -406,7 +441,7 @@
 
                 masonry.style.display = 'grid';
 
-                const gridPortfolios = portfolios.slice(0, 8);
+                const gridPortfolios = portfolios;
                 const postsHtml = gridPortfolios.map((portfolio) => {
                     const postUrl = `/portfolio/${portfolio.name.toLowerCase().replace(/\s+/g, '-')}`;
                     const imageUrl = portfolio.image_path ? '/storage/' + portfolio.image_path :
@@ -436,7 +471,7 @@
 
                 masonry.innerHTML = postsHtml;
 
-                if (portfolios.length > 8) {
+                if (portfolios.length > 0) {
                     if (!portfolioSection) {
                         const newPortfolioSection = document.createElement('div');
                         newPortfolioSection.className = 'portfolio-section';
@@ -444,7 +479,6 @@
                     }
                     portfolioSection.style.display = 'block';
 
-                    const remainingPortfolios = portfolios.slice(8);
                     const tableHtml = `
                         <div class="portfolio-header">
                             <div class="header-cell">Company Name</div>
@@ -453,101 +487,50 @@
                             <div class="header-cell">Current Stage</div>
                             <div class="header-cell">Partners</div>
                         </div>
-                        ${remainingPortfolios.map(portfolio => `
-                                                            <div class="portfolio-row">
-                                                                <div class="company-cell">
-                                                                    <h3 class="company-name">${portfolio.name}</h3>
-                                                                    <a href="/portfolio/${portfolio.name.toLowerCase().replace(/\s+/g, '-')}" class="company-image-link">
-                                                                        <img class="company-image"
-                                                                            src="${portfolio.image_path ? '/storage/' + portfolio.image_path : '/images/media/image5.png'}"
-                                                                            alt="${portfolio.name}">
-                                                                    </a>
-                                                                    <a href="${portfolio.website_url}" target="_blank" class="company-website">
-                                                                        ${portfolio.website_url ? portfolio.website_url.replace(/^https?:\/\//, '') : ''}
-                                                                    </a>
-                                                                </div>
-                                                                <div class="category-cell">${portfolio.category ? portfolio.category.name : ''}</div>
-                                                                <div class="description-cell">
-                                                                    ${portfolio.description ? portfolio.description.substring(0, 100) + (portfolio.description.length > 100 ? '...' : '') : ''}
-                                                                </div>
-                                                                <div class="stage-cell">
-                                                                    <span class="stage-tag">${portfolio.stage || ''}</span>
-                                                                </div>
-                                                                <div class="partners-cell">
-                                                                    <div class="partner-info">
-                                                                        <span>${portfolio.ceo_name ? portfolio.ceo_name + ' (CEO)' : ''}</span>
-                                                                        <button class="expand-btn" aria-label="Show more details">
-                                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                                                <path d="M6 9l6 6 6-6" />
-                                                                            </svg>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        `).join('')}
+                        ${portfolios.map(portfolio => `
+                                <div class="portfolio-row">
+                                    <div class="company-cell">
+                                        <h3 class="company-name">${portfolio.name}</h3>
+                                        <a href="/portfolio/${portfolio.name.toLowerCase().replace(/\s+/g, '-')}" class="company-image-link">
+                                            <img class="company-image"
+                                                src="${portfolio.image_path ? '/storage/' + portfolio.image_path : '/images/media/image5.png'}"
+                                                alt="${portfolio.name}">
+                                        </a>
+                                        <a href="${portfolio.website_url}" target="_blank" class="company-website">
+                                            ${portfolio.website_url ? portfolio.website_url.replace(/^https?:\/\//, '') : ''}
+                                        </a>
+                                    </div>
+                                    <div class="category-cell">${portfolio.category ? portfolio.category.name : ''}</div>
+                                    <div class="description-cell">
+                                        ${portfolio.description ? portfolio.description.substring(0, 100) + '...' : ''}
+                                    </div>
+                                    <div class="stage-cell">
+                                        <span class="stage-tag">${portfolio.stage || ''}</span>
+                                    </div>
+                                    <div class="partners-cell">
+                                        <div class="partner-info">
+                                            <span>${portfolio.ceo_name ? portfolio.ceo_name + ' (CEO)' : ''}</span>
+                                            <button class="expand-btn" aria-label="Show more details">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path d="M6 9l6 6 6-6" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
                     `;
 
                     portfolioSection.innerHTML = tableHtml;
+                    setupExpandButtons(); // Add this line to setup expand buttons after updating the table
                 } else {
                     if (portfolioSection) portfolioSection.style.display = 'none';
                 }
             }
 
-            function updateTableLayout(portfolios) {
-                masonry.style.display = 'none';
-                if (!portfolioSection) {
-                    const newPortfolioSection = document.createElement('div');
-                    newPortfolioSection.className = 'portfolio-section';
-                    masonry.parentNode.insertBefore(newPortfolioSection, masonry.nextSibling);
-                }
-                portfolioSection.style.display = 'block';
 
-                const tableHtml = `
-                    <div class="portfolio-header">
-                        <div class="header-cell">Company Name</div>
-                        <div class="header-cell">Category</div>
-                        <div class="header-cell">Short Description</div>
-                        <div class="header-cell">Current Stage</div>
-                        <div class="header-cell">Partners</div>
-                    </div>
-                    ${portfolios.map(portfolio => `
-                                                        <div class="portfolio-row">
-                                                            <div class="company-cell">
-                                                                <h3 class="company-name">${portfolio.name}</h3>
-                                                                <a href="/portfolio/${portfolio.name.toLowerCase().replace(/\s+/g, '-')}" class="company-image-link">
-                                                                    <img class="company-image"
-                                                                        src="${portfolio.image_path ? '/storage/' + portfolio.image_path : '/images/media/image5.png'}"
-                                                                        alt="${portfolio.name}">
-                                                                </a>
-                                                                <a href="${portfolio.website_url}" target="_blank" class="company-website">
-                                                                    ${portfolio.website_url ? portfolio.website_url.replace(/^https?:\/\//, '') : ''}
-                                                                </a>
-                                                            </div>
-                                                            <div class="category-cell">${portfolio.category ? portfolio.category.name : ''}</div>
-                                                            <div class="description-cell">
-                                                                ${portfolio.description ? portfolio.description.substring(0, 100) + (portfolio.description.length > 100 ? '...' : '') : ''}
-                                                            </div>
-                                                            <div class="stage-cell">
-                                                                <span class="stage-tag">${portfolio.stage || ''}</span>
-                                                            </div>
-                                                            <div class="partners-cell">
-                                                                <div class="partner-info">
-                                                                    <span>${portfolio.ceo_name ? portfolio.ceo_name + ' (CEO)' : ''}</span>
-                                                                    <button class="expand-btn" aria-label="Show more details">
-                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                                            <path d="M6 9l6 6 6-6" />
-                                                                        </svg>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    `).join('')}
-                `;
-
-                portfolioSection.innerHTML = tableHtml;
-            }
         });
     </script>
 @endsection
