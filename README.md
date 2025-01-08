@@ -8,3 +8,6 @@ max_input_time = 300
 
 ## Nginx config
 client_max_body_size 50M;
+
+https://gitlab.62teknologi.com/62teknologi/mandiri-capital-web-apps.git
+git push git@gitlab.62teknologi.com:62teknologi/mandiri-capital-web-apps.git
