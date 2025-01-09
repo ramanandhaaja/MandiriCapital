@@ -13,9 +13,10 @@
 
     <div class="hero-content">
         <div class="center-text">{!! $hero->content !!}</div>
+        <div class="center-text-subtitle">We bring unparalleled resources, expertise, and connections to help you grow and thrive in every stage.</div>
         <div class="image-container">
-            <img src="{{ asset('images/home/forstartup.png') }}" alt="For Startup" class="button-image center-image">
-            <img src="{{ asset('images/home/forlp.png') }}" alt="For LP" class="button-image center-image">
+            <img src="{{ asset('images/home/forstartup.png') }}" alt="For Startup" class="button-image center-image" onclick="openPitchModal()">
+            <img src="{{ asset('images/home/forlp.png') }}" alt="For LP" class="button-image center-image" onclick="openInvestorModal()">
         </div>
     </div>
 </div>
@@ -50,27 +51,6 @@
         </div>
     </div>
 </div>
-
-
-<div class="headline-section">
-    <div class="headline-grid-two">
-        <div class="headline-card">
-            <h1>{{ $article[0]->category }}</h1>
-            <h2>{{ $article[0]->title }}</h2>
-            <p>{{ Str::words($article[0]->content, 13, '...') }}</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-
-        <div class="headline-card middle-border">
-            <h1>{{ $article[1]->category }}</h1>
-            <h2>{{ $article[1]->title }}</h2>
-            <p>{{ Str::words($article[1]->content, 13, '...') }}</p>
-            <a href="#" class="learn-more">Learn More »</a>
-        </div>
-
-    </div>
-</div>
-
 
 
 {{-- Content Section --}}
@@ -172,17 +152,217 @@
     </div>
 </div>
 
+
 <div class="newsletter-section">
     <div class="newsletter-container">
-        <h2 class="newsletter-title">JOIN OUR MAILING LIST</h2>
-        <p class="newsletter-subtitle">Get the best stories from Mandiri Capital.</p>
+        <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
 
-        <form class="newsletter-form">
-            <input type="email" placeholder="Write here..." class="newsletter-input">
-            <button type="submit" class="newsletter-button">Proceed</button>
-        </form>
+        <a href="#">
+            <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
+                class="button-image center-image-newsletter">
+        </a>
     </div>
 </div>
+
+<!-- Pitch Form Modal -->
+<div id="pitchFormModal" class="modal">
+    <div class="modal-overlay" onclick="closePitchModal()"></div>
+    <div class="modal-content">
+        <button class="modal-close" onclick="closePitchModal()">×</button>
+        <section class="pitch-form">
+            <div class="pitch-form-grid">
+                <div class="pitch-form-intro">
+                    <h2>Please fill the Form to Pitch With Us</h2>
+                    <p class="subtitle">*Place your pitchdeck below and our investment team will check it out!</p>
+                    <p class="subtitle">*Please note that we receive a high volume of submissions and will not be able to reply to everyone.</p>
+                </div>
+
+                <form action="#" method="POST" enctype="multipart/form-data" class="pitch-form-content">
+                    @csrf
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first_name">First Name<span class="required">*</span></label>
+                            <input type="text" name="first_name" id="first_name" placeholder="Write here..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last_name">Last Name<span class="required">*</span></label>
+                            <input type="text" name="last_name" id="last_name" placeholder="Write here..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address<span class="required">*</span></label>
+                            <input type="email" name="email" id="email" placeholder="Write here..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="business_name">Name of Your Business<span class="required">*</span></label>
+                            <input type="text" name="business_name" id="business_name" placeholder="Write here..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="market">Country/ Market Does Your Business Serve?<span class="required">*</span></label>
+                            <input type="text" name="market" id="market" placeholder="Write here..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="growth_stage">Stage of Growth Your Company At<span class="required">*</span></label>
+                            <select name="growth_stage" id="growth_stage" required>
+                                <option value="">Select...</option>
+                                <option value="seed">Seed</option>
+                                <option value="early">Early Stage</option>
+                                <option value="growth">Growth Stage</option>
+                                <option value="expansion">Expansion</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pitch_url">Add URL to your Pitch Deck</label>
+                            <input type="url" name="pitch_url" id="pitch_url" placeholder="Write here...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pitch_file">Upload Your Files</label>
+                            <div class="file-input">
+                                <button type="button" class="file-button" onclick="document.getElementById('pitch_file').click()">
+                                    Choose File
+                                </button>
+                                <span id="file-chosen">No File Chosen</span>
+                                <input type="file" name="pitch_file" id="pitch_file" accept=".pdf,.doc,.docx,.ppt,.pptx" onchange="updateFileName()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel" onclick="closePitchModal()">Cancel</button>
+                        <button type="submit" class="btn-submit">Submit Pitch</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- Investor Form Modal -->
+<div id="investorFormModal" class="modal">
+    <div class="modal-overlay" onclick="closeInvestorModal()"></div>
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeInvestorModal()">×</button>
+        <section class="pitch-form">
+            <div class="pitch-form-grid">
+                <div class="pitch-form-intro">
+                    <h2>We'd Love to hear from you</h2>
+                    <p class="subtitle">MANDIRI CAPITAL INDONESIA</p>
+                    <p class="subtitle">Menara Mandiri II, lantai 14.<br>Jl. Jend. Sudirman No. 54-55, Jakarta 12190</p>
+                </div>
+
+                <form action="#" method="POST" enctype="multipart/form-data" class="pitch-form-content">
+                    @csrf
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full_name">Full Name</label>
+                            <input type="text" name="full_name" id="full_name" placeholder="Write here..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select name="subject" id="subject" required>
+                                <option value="">Select...</option>
+                                <option value="investment">Investment</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" name="phone" id="phone" placeholder="Write here..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="investor_email">Email Address</label>
+                            <input type="email" name="investor_email" id="investor_email" placeholder="Write here..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="company">Company Name</label>
+                            <input type="text" name="company" id="company" placeholder="Write here..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" placeholder="Write here..." required rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel" onclick="closeInvestorModal()">Cancel</button>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+function openPitchModal() {
+    document.getElementById('pitchFormModal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePitchModal() {
+    document.getElementById('pitchFormModal').classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+function openInvestorModal() {
+    document.getElementById('investorFormModal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeInvestorModal() {
+    document.getElementById('investorFormModal').classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+function updateFileName() {
+    const fileInput = document.getElementById('pitch_file');
+    const fileChosen = document.getElementById('file-chosen');
+    if (fileInput.files.length > 0) {
+        fileChosen.textContent = fileInput.files[0].name;
+    } else {
+        fileChosen.textContent = 'No File Chosen';
+    }
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('pitchFormModal');
+    if (event.target === modal) {
+        closePitchModal();
+    }
+});
+
+// Close modal on escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closePitchModal();
+    }
+});
+</script>
 
 @endsection
 
