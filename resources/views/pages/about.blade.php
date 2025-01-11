@@ -5,290 +5,252 @@
 @endsection
 
 @section('container')
+    {{-- Hero Section --}}
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
             <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
 
         <div class="hero-content">
-            <a href="#">
-                <h1 class="hero-main-text">OUR IDENTITY </h1>
-            </a>
+            <h1 class="hero-main-text">OUR IDENTITY</h1>
             <div class="center-search">
-                <div class="category-filters">
-                    <a href="#" class="filter-link active">About MCI</a>
-                    <a href="#" class="filter-link">About Mandiri</a>
-                    <a href="#" class="filter-link">Our Team</a>
-                </div>
+                <nav class="category-filters">
+                    <a href="#" class="filter-link active" data-filter="about-mci">About MCI</a>
+                    <a href="#" class="filter-link" data-filter="about-mandiri">About Mandiri</a>
+                    <a href="#" class="filter-link" data-filter="our-team">Our Team</a>
+                </nav>
             </div>
         </div>
     </div>
 
-    {{-- Content Section --}}
+    {{-- About MCI Section --}}
     <div class="about-full-section">
+        {{-- Mission Statement --}}
         <div class="hero-mid-section">
-            <h1 class="center-text">MCI Connect Startups With Mandiri Group to Drive Rapid Innovation </h1>
+            <h1 class="center-text">MCI Connect Startups With Mandiri Group to Drive Rapid Innovation</h1>
         </div>
 
-
-        {/* Counter Content Section */}
+        {{-- Company Overview --}}
         <div class="counter-content">
             <div class="content-container">
                 <div class="text-content">
-                    <p>
-                        Established in 2015 as the corporate venture capital arm of Indonesia's
+                    <p>Established in 2015 as the corporate venture capital arm of Indonesia's
                         largest financial institution, PT Bank Mandiri (Persero) Tbk, MCI acts as a
-                        dynamic bridge between Startups and Mandiri Group ecosystem.
-                    </p>
+                        dynamic bridge between Startups and Mandiri Group ecosystem.</p>
 
-                    <p>
-                        With a portfolio of 23 startups across diverse sectors, backed by funds such
+                    <p>With a portfolio of 23 startups across diverse sectors, backed by funds such
                         as the Balance Sheet Fund, Indonesia Impact Fund, and Merah Putih Fund,
-                        MCI accelerates innovation through meaningful partnerships.
-                    </p>
+                        MCI accelerates innovation through meaningful partnerships.</p>
 
-                    <p>
-                        By providing initiative programs, resources, expertise, and strategic support,
+                    <p>By providing initiative programs, resources, expertise, and strategic support,
                         MCI fosters the growth of technology companies, contributing significantly
-                        to the advancement of Indonesia's economy.
-                    </p>
+                        to the advancement of Indonesia's economy.</p>
                 </div>
             </div>
 
+            {{-- Features Section --}}
             <div class="features-container">
                 <h2 class="features-title">Unlocking Startups'<br>Best Potential</h2>
 
                 <div class="feature-items">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <img src="{{ asset('images/about/icon1.png') }}" alt="Market Icon" />
-                        </div>
-                        <div class="feature-content">
-                            <h3>Accessing New Markets</h3>
-                            <p>From tapping into ecosystem of startups</p>
-                        </div>
-                    </div>
+                    @php
+                        $features = [
+                            [
+                                'icon' => 'icon1.png',
+                                'title' => 'Accessing New Markets',
+                                'description' => 'From tapping into ecosystem of startups'
+                            ],
+                            [
+                                'icon' => 'icon2.png',
+                                'title' => 'Improving Business Process',
+                                'description' => 'By implementing new technologies (ex: AI)'
+                            ],
+                            [
+                                'icon' => 'icon3.png',
+                                'title' => 'Supporting ESG Initiatives',
+                                'description' => 'Achieving net zero emission'
+                            ]
+                        ];
+                    @endphp
 
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <img src="{{ asset('images/about/icon2.png') }}" alt="Business Icon" />
+                    @foreach($features as $feature)
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <img src="{{ asset('images/about/' . $feature['icon']) }}" alt="{{ $feature['title'] }} Icon">
+                            </div>
+                            <div class="feature-content">
+                                <h3>{{ $feature['title'] }}</h3>
+                                <p>{{ $feature['description'] }}</p>
+                            </div>
                         </div>
-                        <div class="feature-content">
-                            <h3>Improving Business Process</h3>
-                            <p>By implementing new technologies (ex: AI)</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <img src="{{ asset('images/about/icon3.png') }}" alt="ESG Icon" />
-                        </div>
-                        <div class="feature-content">
-                            <h3>Supporting ESG Initiatives</h3>
-                            <p>Achieving net zero emission</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
 
-
+        {{-- Priority Sectors --}}
         <div class="headline-section">
-            <h1 class="headline-title ">OUR PRIORITY SECTOR </h1>
+            <h1 class="headline-title">OUR PRIORITY SECTOR</h1>
 
             <div class="headline-grid-four middle-animation">
-                <div class="headline-card">
-                    <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                    <h1>Software as a Service (SaaS)</h1>
-                </div>
+                @php
+                    $sectors = ['Software as a Service (SaaS)', 'Deep Tech', 'Fintech', 'Value Chain'];
+                @endphp
 
-                <div class="headline-card middle-border">
-                    <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                    <h1>Deep Tech</h1>
-
-                </div>
-
-                <div class="headline-card middle-border">
-                    <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                    <h1>Fintech</h1>
-
-                </div>
-
-                <div class="headline-card left-border">
-                    <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                    <h1>Value Chain</h1>
-
-                </div>
-
+                @foreach($sectors as $index => $sector)
+                    <div class="headline-card {{ $index > 0 ? ($index === 3 ? 'left-border' : 'middle-border') : '' }}">
+                        <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="{{ $sector }}">
+                        <h1>{{ $sector }}</h1>
+                    </div>
+                @endforeach
             </div>
         </div>
-
-
     </div>
 
-    <!-- MANDIRI SECTIION -->
+    {{-- Mandiri Section --}}
     <div class="mandiri-section">
         <div class="ecosystem-grid">
-        @foreach($ecosystemList as $ecosystem)
-            <div class="card-ecosystem">
-                <div class="background-image">
-                    <img src="images/platform/funding1.png" alt="Media" class="card-ecosystem-image" />
-                    <a href="#" class="text-decoration-none">
-                        <span class="category">{{ $ecosystem->title }}</span>
-                        <div class="card-ecosystem-content">
-                            {{ $ecosystem->content }}
-                        </div>
-                    </a>
+            @foreach($ecosystemList as $ecosystem)
+                <div class="card-ecosystem">
+                    <div class="background-image">
+                        <img src="images/platform/funding1.png" alt="{{ $ecosystem->title }}" class="card-ecosystem-image">
+                        <a href="#" class="text-decoration-none">
+                            <span class="category">{{ $ecosystem->title }}</span>
+                            <div class="card-ecosystem-content">
+                                {{ $ecosystem->content }}
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
         </div>
     </div>
 
-
-    <!-- TEAM SECTIION -->
+    {{-- Team Section --}}
     <div class="team-section">
         <div class="team-title-section">
             <div class="masonry-grid">
                 <div class="grid-headline-title-card">
-                    <h1 class="grid-headline-title">Meet the amazing people behind MCI </h1>
+                    <h1 class="grid-headline-title">Meet the amazing people behind MCI</h1>
                 </div>
                 <div class="grid-headline-description-card">
-                    <h1 class="grid-headline-subtitle">Our team is packed with talent, creativity, and a whole lot of personality. We're a group of bright minds and big thinkers who love what we do—and have a great time doing it. From tackling challenges to coming up with fresh ideas, every team member brings something unique to the table. Together, we make work exciting, inspiring, and just a little more fun every day. Come get to know us!</h1>
+                    <h1 class="grid-headline-subtitle">
+                        Our team is packed with talent, creativity, and a whole lot of personality.
+                        We're a group of bright minds and big thinkers who love what we do—and have
+                        a great time doing it. From tackling challenges to coming up with fresh ideas,
+                        every team member brings something unique to the table. Together, we make work
+                        exciting, inspiring, and just a little more fun every day. Come get to know us!
+                    </h1>
                 </div>
             </div>
         </div>
+
         <div class="masonry-grid">
-            <div class="team-card">
-                <img class="background-image" src="{{ asset('images/about/team1.png') }}"></img>
-                <span class="team-name">Floyd Miles</span>
-                <span class="team-title">CEO - Chief Executive Officer</span>
+            @php
+                $teamMembers = [
+                    ['name' => 'Floyd Miles', 'title' => 'CEO - Chief Executive Officer'],
+                    ['name' => 'Floyd Miles', 'title' => 'CEO - Chief Executive Officer'],
+                    ['name' => 'Floyd Miles', 'title' => 'CEO - Chief Executive Officer'],
+                    ['name' => 'Floyd Miles', 'title' => 'CEO - Chief Executive Officer'],
+                    ['name' => 'Floyd Miles', 'title' => 'CEO - Chief Executive Officer']
+                ];
+            @endphp
 
-            </div>
-            <div class="team-card">
-                <img class="background-image" src="{{ asset('images/about/team1.png') }}"></img>
-                <span class="team-name">Floyd Miles</span>
-                <span class="team-title">CEO - Chief Executive Officer</span>
-
-            </div>
-            <div class="team-card">
-                <img class="background-image" src="{{ asset('images/about/team1.png') }}"></img>
-                <span class="team-name">Floyd Miles</span>
-                <span class="team-title">CEO - Chief Executive Officer</span>
-
-            </div>
-            <div class="team-card">
-                <img class="background-image" src="{{ asset('images/about/team1.png') }}"></img>
-                <span class="team-name">Floyd Miles</span>
-                <span class="team-title">CEO - Chief Executive Officer</span>
-
-            </div>
-            <div class="team-card">
-                <img class="background-image" src="{{ asset('images/about/team1.png') }}"></img>
-                <span class="team-name">Floyd Miles</span>
-                <span class="team-title">CEO - Chief Executive Officer</span>
-
-            </div>
+            @foreach($teamMembers as $member)
+                <div class="team-card">
+                    <img class="background-image" src="{{ asset('images/about/team1.png') }}" alt="{{ $member['name'] }}">
+                    <span class="team-name">{{ $member['name'] }}</span>
+                    <span class="team-title">{{ $member['title'] }}</span>
+                </div>
+            @endforeach
         </div>
+
         <div class="team-image-containter">
-            <img class="team-image-large" src="{{ asset('images/about/teamlarge.png') }}"></img>
+            <img class="team-image-large" src="{{ asset('images/about/teamlarge.png') }}" alt="Team Photo">
         </div>
-
     </div>
 
-
-
+    {{-- Newsletter Section --}}
     <div class="newsletter-section">
         <div class="newsletter-container">
             <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
-
-            <a href="#">
-                <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
-                    class="button-image center-image-newsletter">
+            <a href="#" class="newsletter-link">
+                <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect" class="button-image center-image-newsletter">
             </a>
         </div>
     </div>
 @endsection
 
-
-
 @section('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const filterLinks = document.querySelectorAll('.filter-link');
-            const masonry = document.querySelector('.masonry-grid');
-            const newsletterSection = document.querySelector('.newsletter-section');
-            const aboutFullSection = document.querySelector('.about-full-section');
-            const mandiriSection = document.querySelector('.mandiri-section');
-            const teamSection = document.querySelector('.team-section');
+            // Cache DOM elements
+            const elements = {
+                filterLinks: document.querySelectorAll('.filter-link'),
+                masonry: document.querySelector('.masonry-grid'),
+                sections: {
+                    about: document.querySelector('.about-full-section'),
+                    mandiri: document.querySelector('.mandiri-section'),
+                    team: document.querySelector('.team-section'),
+                    newsletter: document.querySelector('.newsletter-section')
+                }
+            };
 
-            // Initial states
+            // Initialize section visibility
+            function initializeSections() {
+                elements.sections.about.style.display = 'block';
+                elements.sections.mandiri.style.display = 'none';
+                elements.sections.team.style.display = 'none';
+                elements.sections.newsletter.style.display = 'block';
+            }
 
-            aboutFullSection.style.display = 'block';
-            mandiriSection.style.display = 'none';
-            teamSection.style.display = 'none';
-            newsletterSection.style.display = 'block';
+            // Update section visibility based on filter
+            function updateSectionVisibility(filter) {
+                const sectionMap = {
+                    'about-mci': { about: true, mandiri: false, team: false },
+                    'about-mandiri': { about: false, mandiri: true, team: false },
+                    'our-team': { about: false, mandiri: false, team: true }
+                };
 
+                const visibility = sectionMap[filter] || sectionMap['about-mci'];
 
-            const routePattern = masonry.dataset.routePattern;
-            let currentFilter = 'all';
-
-            filterLinks.forEach(link => {
-                link.addEventListener('click', async function(e) {
-                    e.preventDefault();
-
-                    // Remove active class from all links
-                    filterLinks.forEach(l => l.classList.remove('active'));
-
-                    // Add active class to clicked link
-                    this.classList.add('active');
-
-                    // Get the filter value
-                    currentFilter = this.textContent.toLowerCase();
-
-                    try {
-                        const response = await fetch(`/about/filter/${currentFilter}`, {
-                            headers: {
-                                'X-Requested-With': 'XMLHttpRequest'
-                            }
-                        });
-
-                        if (!response.ok) throw new Error('Network response was not ok');
-
-                        const posts = await response.json();
-                        if (currentFilter === 'about mci') {
-                            updateAbout(posts, currentFilter);
-                        } else if (currentFilter === 'about mandiri') {
-                            updateMandiri(posts, currentFilter);
-                        } else if (currentFilter === 'our team') {
-                            updateTeam(posts, currentFilter);
-                        }
-                    } catch (error) {
-                        console.error('Error:', error);
+                Object.entries(elements.sections).forEach(([key, section]) => {
+                    if (key !== 'newsletter') {
+                        section.style.display = visibility[key] ? 'block' : 'none';
                     }
                 });
+            }
+
+            // Handle filter click events
+            async function handleFilterClick(e) {
+                e.preventDefault();
+
+                // Update active state
+                elements.filterLinks.forEach(link => link.classList.remove('active'));
+                e.target.classList.add('active');
+
+                // Get filter value from data attribute
+                const filter = e.target.dataset.filter;
+
+                try {
+                    const response = await fetch(`/about/filter/${filter}`, {
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+
+                    if (!response.ok) throw new Error('Network response was not ok');
+
+                    const posts = await response.json();
+                    updateSectionVisibility(filter);
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }
+
+            // Initialize and add event listeners
+            initializeSections();
+            elements.filterLinks.forEach(link => {
+                link.addEventListener('click', handleFilterClick);
             });
-
-            function updateAbout(posts, filter) {
-                aboutFullSection.style.display = 'block';
-                mandiriSection.style.display = 'none';
-                teamSection.style.display = 'none';
-                newsletterSection.style.display = 'block';
-            }
-
-            function updateMandiri(posts, filter) {
-                aboutFullSection.style.display = 'none';
-                mandiriSection.style.display = 'block';
-                teamSection.style.display = 'none';
-                newsletterSection.style.display = 'block';
-            }
-
-            function updateTeam(posts, filter) {
-                aboutFullSection.style.display = 'none';
-                mandiriSection.style.display = 'none';
-                teamSection.style.display = 'block';
-                newsletterSection.style.display = 'block';
-            }
         });
     </script>
 

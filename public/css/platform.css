@@ -33,7 +33,6 @@
     margin: 40px 50px 0 50px;
 }
 
-
 /* Card Styles */
 .card {
     position: relative;
@@ -81,8 +80,6 @@
     z-index: 2;
     display: block;
 }
-
-
 
 .category {
     font-family: var(--font-family);
@@ -133,7 +130,6 @@
     font-size: 28px;
     text-align: center;
 }
-
 
 /* Responsive Design */
 @media (max-width: 1400px) {
@@ -234,7 +230,6 @@
     overflow: hidden;
 }
 
-
 .video-background {
     position: absolute;
     top: -420px;
@@ -292,8 +287,6 @@
     margin-top: -50px;
 }
 
-
-
 /* Search Section Styles */
 .center-search {
     position: absolute;
@@ -342,7 +335,6 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
-
 /* Category Filter Styles */
 .category-filters {
     display: flex;
@@ -373,14 +365,6 @@
     display: none;
 }
 
-
-
-
-
-
-
-
-
 .download-section {
     padding: 60px 20px 60px 20px;
     margin: 60px 50px 60px 50px;
@@ -396,7 +380,6 @@
     align-items: start;
 }
 
-/* Left Column */
 .download-left {
     display: flex;
     flex-direction: column;
@@ -421,8 +404,6 @@
     margin-bottom: 20px;
 }
 
-
-/* Right Column */
 .download-right {
     max-width: 500px;
 }
@@ -649,13 +630,6 @@
 
 }
 
-
-
-
-
-
-
-
 /* Newsletter Section Styles */
 .newsletter-section {
     display: flex;
@@ -740,12 +714,6 @@
     padding-top: 20px;
 }
 
-
-
-
-
-
-
 .hero-mid-section {
     color: #ffffff;
     text-align: center;
@@ -776,10 +744,6 @@
     text-align: center;
     width: 100%;
 }
-
-
-
-
 
 .synergy-section {
     color: #ffffff;
@@ -834,7 +798,6 @@
     display: block;
 }
 
-
 .synergy-content {
     padding-left: 2rem;
 }
@@ -862,7 +825,6 @@
     line-height: 1.6;
 }
 
-
 .synergy-number {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -887,7 +849,6 @@
     font-size: 16px;
     color: #ffffff;
 }
-
 
 .synergy-register {
     display: flex;
@@ -971,10 +932,6 @@
     }
 }
 
-
-
-
-
 .headline-section {
     padding-top: 0px;
     padding-bottom: 80px;
@@ -985,7 +942,6 @@
     padding-top: 80px;
     padding-bottom: 80px;
 }
-
 
 .headline-card {
     padding: 40px 40px 40px 40px;
@@ -1047,7 +1003,6 @@
     margin: 0 auto;
     padding: 0 40px;
 }
-
 
 .headline-card h2 {
     font-family: var(--font-family);

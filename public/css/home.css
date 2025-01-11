@@ -1,7 +1,9 @@
-/* public/css/home.css */
+/* ==========================================================================
+   Base Styles and Variables
+   ========================================================================== */
 
-/* Root variables for consistent theming */
 :root {
+    /* Colors */
     --color-primary: #FFD700;
     --color-secondary: #EFA32F;
     --color-dark: #18181B;
@@ -15,15 +17,37 @@
     --color-gray-800: #1F2937;
     --color-gray-900: #111827;
     --color-border: #3F3F46;
+    --color-accent: #F5A524;
+    --color-dark-bg: #1A1A1A;
 
+    /* Spacing */
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --spacing-xl: 40px;
     --spacing-2xl: 50px;
+    --spacing-section: 80px;
+
+    /* Typography */
     --font-family: 'Avenir LT Std', sans-serif;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 36px;
+    --font-size-4xl: 64px;
+    --font-size-5xl: 84px;
+    --font-size-hero: 136px;
+
+    /* Layout */
+    --container-max-width: 1600px;
+    --container-width-lg: 1440px;
+    --card-height-sm: 300px;
+    --card-height-lg: 620px;
 }
 
+/* Typography */
 @font-face {
     font-family: 'Avenir LT Std';
     src: url('../fonts/Avenir LT Std 45 Book.otf') format('opentype');
@@ -31,19 +55,23 @@
     font-style: normal;
 }
 
-/* Base styles */
+/* Reset & Base Styles */
 * {
     font-family: var(--font-family);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html, body {
     overflow-x: hidden;
     width: 100%;
-    margin: 0;
-    padding: 0;
 }
 
-/* Hero Section Styles */
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
 .hero-section {
     position: relative;
     width: 100%;
@@ -62,18 +90,8 @@ html, body {
     height: calc(100% + 600px);
     object-fit: cover;
     z-index: -10;
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 1) 60%,
-        rgba(0, 0, 0, 0) 100%
-    );
-    mask-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 1) 60%,
-        rgba(0, 0, 0, 0) 100%
-    );
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
 }
 
 .hero-section::after {
@@ -83,18 +101,18 @@ html, body {
     left: 0;
     width: 100%;
     height: 50%;
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0.8) 30%,
-        rgba(0, 0, 0, 0) 100%
-    );
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0) 100%);
     z-index: -5;
+}
+
+.hero-content {
+    position: relative;
+    height: 100%;
 }
 
 .center-text {
     position: absolute;
-    font-size: 136px;
+    font-size: var(--font-size-hero);
     line-height: 1.1;
     bottom: 200px;
     padding-left: var(--spacing-xl);
@@ -103,13 +121,12 @@ html, body {
 
 .center-text-subtitle {
     position: absolute;
-    font-size: 20px;
+    font-size: var(--font-size-lg);
     line-height: 1.2;
     bottom: 160px;
     padding-left: var(--spacing-xl);
     color: var(--color-white);
 }
-
 
 .image-container {
     position: absolute;
@@ -121,7 +138,6 @@ html, body {
 .center-image {
     position: relative;
     padding-right: 10px;
-
 }
 
 .center-image-newsletter {
@@ -129,109 +145,62 @@ html, body {
     height: 58px;
 }
 
-/* Headline Section */
-.headline-section {
-    padding: var(--spacing-2xl) 0;
-}
+/* ==========================================================================
+   Headline Section
+   ========================================================================== */
 
 .headline-section-two {
     padding: var(--spacing-2xl) 0;
-    background-color: #18181B;
+    background-color: var(--color-dark);
 }
 
 .headline-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    max-width: 1600px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 var(--spacing-xl);
-    box-sizing: border-box;
 }
 
-.headline-grid-two {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-xl);
-    box-sizing: border-box;
-}
-
-.headline-card,
 .headline-card-two {
     padding: 0 var(--spacing-lg);
-    border-radius: 0;
-    position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.headline-card h1,
 .headline-card-two h1 {
     color: var(--color-white);
-    font-size: 16px;
+    font-size: var(--font-size-base);
     font-weight: 100;
-}
-
-.headline-card h1 {
-    margin-bottom: 5px;
-}
-
-.headline-card-two h1 {
     margin-bottom: -18px;
-}
-
-.headline-card h2 {
-    color: var(--color-white);
-    font-size: 28px;
-    margin-top: 0;
-    margin-bottom: -10px;
-    font-weight: 500;
-}
-
-.headline-card p {
-    color: var(--color-gray-400);
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: var(--spacing-md);
 }
 
 .counter {
     color: var(--color-secondary);
-    font-size: 64px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    font-size: var(--font-size-4xl);
+    margin: 20px 0 10px;
     font-weight: 500;
     text-align: center;
 }
 
-.headline-card.middle-border,
 .headline-card-two.middle-border {
     border-left: 1px solid var(--color-border);
     border-right: 1px solid var(--color-border);
 }
 
-.learn-more {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: auto;
-    text-align: right;
-}
+/* ==========================================================================
+   Masonry Grid
+   ========================================================================== */
 
-/* Masonry Grid Layout */
 .masonry-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
     width: 100%;
-    max-width: 1600px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    box-sizing: border-box;
 }
 
 .card {
@@ -245,19 +214,19 @@ html, body {
 
 .card.small-square {
     grid-row: span 1;
-    height: 300px;
+    height: var(--card-height-sm);
 }
 
 .card.large {
     grid-column: span 2;
     grid-row: span 2;
-    height: 620px;
+    height: var(--card-height-lg);
 }
 
 .card.medium {
     grid-column: span 2;
     grid-row: span 1;
-    height: 300px;
+    height: var(--card-height-sm);
 }
 
 .card::before {
@@ -272,11 +241,11 @@ html, body {
 }
 
 .category {
-    font-size: 24px;
     position: absolute;
     top: var(--spacing-xl);
     left: var(--spacing-xl);
     color: var(--color-white);
+    font-size: var(--font-size-xl);
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -289,7 +258,7 @@ html, body {
 
 .card h2 {
     color: var(--color-white);
-    font-size: 32px;
+    font-size: var(--font-size-2xl);
     margin: 0;
     font-weight: 500;
 }
@@ -299,11 +268,14 @@ html, body {
     bottom: var(--spacing-xl);
     left: var(--spacing-xl);
     color: var(--color-white);
-    font-size: 16px;
+    font-size: var(--font-size-base);
     opacity: 0.8;
 }
 
-/* Newsletter Section */
+/* ==========================================================================
+   Newsletter Section
+   ========================================================================== */
+
 .newsletter-section {
     background-color: var(--color-black);
     padding: var(--spacing-2xl) 0 var(--spacing-xl);
@@ -319,64 +291,17 @@ html, body {
 
 .newsletter-title {
     color: var(--color-white);
-    font-size: 36px;
+    font-size: var(--font-size-3xl);
     font-weight: 600;
     margin: 0 0 12px;
 }
 
-.newsletter-subtitle {
-    color: var(--color-gray-400);
-    font-size: 16px;
-    margin: 0 0 32px;
-}
+/* ==========================================================================
+   Form Styles
+   ========================================================================== */
 
-.newsletter-form {
-    display: flex;
-    gap: var(--spacing-sm);
-    justify-content: center;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.newsletter-input {
-    flex: 1;
-    background-color: var(--color-gray-800);
-    border: none;
-    border-radius: 4px;
-    color: var(--color-white);
-    padding: 12px var(--spacing-md);
-    font-size: 16px;
-}
-
-.newsletter-input::placeholder {
-    color: var(--color-gray-400);
-}
-
-.newsletter-input:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-}
-
-.newsletter-button {
-    font-size: 16px;
-    background-color: #F59E0B;
-    border: none;
-    border-radius: 4px;
-    color: var(--color-white);
-    cursor: pointer;
-    font-weight: 500;
-    padding: 12px var(--spacing-lg);
-    transition: background-color 0.2s ease;
-}
-
-.newsletter-button:hover {
-    background-color: #D97706;
-}
-
-/* Pitch Form Styles */
 .pitch-form {
-    background: #27272ABF;
+    background: rgba(39, 39, 42, 0.75);
     padding: 60px;
     border-radius: 40px;
     margin: 40px auto;
@@ -396,285 +321,159 @@ html, body {
 }
 
 .pitch-form-intro h2 {
-    font-size: 40px;
-    font-weight: 600;
-    margin-bottom: 24px;
     color: white;
-    line-height: 1.2;
-}
-
-.subtitle {
-    color: #e0e0e0;
-    margin-bottom: 8px;
-    font-size: 14px;
-    max-width: 400px;
-}
-
-.pitch-form-content {
-    padding: 40px;
-    border-radius: 24px;
-}
-
-.form-row {
-    display: flex;
-    gap: 24px;
+    font-size: var(--font-size-2xl);
     margin-bottom: 24px;
+}
+
+.pitch-form-intro .subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+}
+
+/* Form Controls */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 .form-group {
-    flex: 1;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group.full-width {
-    flex: 0 0 100%;
+    grid-column: span 2;
 }
 
+/* Form Input Styles */
 .form-group input,
 .form-group select,
 .form-group textarea {
-    display: block;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
     width: 100%;
-    box-sizing: border-box;
 }
 
-label {
-    display: block;
+.form-group input::placeholder,
+.form-group select::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Custom Select Styles */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Button Styles */
+.btn-cancel {
+    padding: 0.75rem 2rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
     color: white;
-    font-size: 14px;
-    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-submit {
+    padding: 0.75rem 2rem;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Message Input Height */
+textarea[name="message"] {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Form Labels */
+label {
+    color: var(--color-white);
+    margin-bottom: 8px;
+    font-size: var(--font-size-base);
 }
 
 .required {
-    color: #FFB800;
+    color: var(--color-primary);
     margin-left: 4px;
 }
 
-input, select {
-    width: 100%;
-    padding: 16px;
-    background: rgba(0, 0, 0, 0.2);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 14px;
-}
-
-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-select {
-    appearance: none;
-    -webkit-appearance: none;
-    background: rgba(0, 0, 0, 0.2);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 14px;
-    padding: 16px;
-    background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px;
-}
-
-.file-input {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
-
-input[type="file"] {
-    display: none;
-}
-
-.file-button {
-    padding: 12px 24px;
-    background: rgba(0, 0, 0, 0.2);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#file-chosen {
-    color: rgba(255, 255, 255, 0.5);
-}
-
+/* Form Actions */
 .form-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 16px;
-    margin-top: 40px;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
 }
 
-.btn-cancel {
-    padding: 12px 40px;
-    background: transparent;
-    border: 1px solid #FFB800;
-    color: #FFB800;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-}
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .masonry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-.btn-submit {
-    padding: 12px 40px;
-    background: #e0e0e0;
-    border: none;
-    color: #333333;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-input:focus, select:focus {
-    outline: none;
-    background: rgba(0, 0, 0, 0.3);
-}
-
-textarea {
-    width: 100%;
-    padding: 16px;
-    background: rgba(0, 0, 0, 0.2);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 14px;
-    resize: vertical;
-    min-height: 60px;
-}
-
-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.pitch-form-intro .subtitle:first-of-type {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 16px;
-    color: white;
-}
-
-.pitch-form-intro .subtitle br {
-    display: block;
-    content: "";
-    margin-top: 8px;
-}
-
-/* Adjust button styles */
-.btn-submit {
-    background: #E2E8F0;
-}
-
-/* Focus styles */
-textarea:focus {
-    outline: none;
-    background: rgba(0, 0, 0, 0.3);
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-}
-
-.modal.show {
-    display: block;
-}
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(20px) brightness(0.8);
-    -webkit-backdrop-filter: blur(20px) brightness(0.8);
-}
-
-.modal-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 1300px;
-    max-height: 90vh;
-    overflow-y: auto;
-    border-radius: 40px;
-}
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1010;
-}
-
-.modal-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Scrollbar Styles for Modal */
-.modal-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.modal-content::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-}
-
-.modal-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-/* Adjust pitch form styles for modal */
-.modal .pitch-form {
-    margin: 0;
-    max-width: none;
+    .center-text {
+        font-size: calc(var(--font-size-hero) * 0.7);
+    }
 }
 
 @media (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        border-radius: 24px;
+    .headline-grid,
+    .pitch-form-grid {
+        grid-template-columns: 1fr;
     }
 
-    .modal-close {
-        top: 10px;
-        right: 10px;
+    .headline-card-two.middle-border {
+        border: none;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+        padding: var(--spacing-lg) 0;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: span 1;
     }
 }
 
-/* Media Queries */
 @media screen and (max-width: 1200px) {
     .masonry-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -750,4 +549,360 @@ textarea:focus {
     .card.medium {
         grid-column: span 1;
     }
+}
+
+/* File Input Styles */
+.file-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.file-button {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#file-chosen {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px) brightness(0.8);
+    -webkit-backdrop-filter: blur(20px) brightness(0.8);
+}
+
+.modal-content {
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1300px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 40px;
+}
+
+.modal-close {
+    position: absolute;
+    border: none;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1010;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Form Input Styles */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group select::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Custom Select Styles */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Button Styles */
+.btn-cancel {
+    padding: 0.75rem 2rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-submit {
+    padding: 0.75rem 2rem;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Message Input Height */
+textarea[name="message"] {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Scrollbar Styles for Modal */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Adjust pitch form styles for modal */
+.modal .pitch-form {
+    margin: 0;
+    max-width: none;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        border-radius: 24px;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Founder Carousel Section */
+.founder-carousell-section {
+    background: var(--color-dark-bg);
+    padding: var(--spacing-section) 0;
+    color: var(--color-white);
+    position: relative;
+}
+
+.section-title {
+    position: absolute;
+    top: var(--spacing-section);
+    left: var(--spacing-section);
+    font-size: var(--font-size-5xl);
+    font-weight: 300;
+    color: var(--color-white);
+    text-transform: lowercase;
+    z-index: 2;
+    margin: 0;
+}
+
+.founder-carousel-container {
+    max-width: var(--container-width-lg);
+    margin: 0 auto;
+    padding: 60px var(--spacing-xl) 0;
+    position: relative;
+}
+
+.carousel-slides {
+    position: relative;
+}
+
+.carousel-slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.slide-content {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-section);
+}
+
+.founder-image {
+    flex: 1;
+    max-width: 680px;
+}
+
+.image-circle {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    background: var(--color-accent);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.founder-photo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-text {
+    flex: 1;
+    max-width: 600px;
+    padding-top: 60px;
+    position: relative;
+}
+
+.amartha-logo {
+    margin-bottom: 30px;
+}
+
+.amartha-logo img {
+    height: 116px;
+    width: auto;
+}
+
+.slide-text h3 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+}
+
+.slide-text p {
+    font-size: var(--font-size-xl);
+    line-height: 1.5;
+    opacity: 0.9;
+    margin-bottom: var(--spacing-xl);
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 50px;
+    left: 760px;
+    display: block;
+}
+
+.carousel-navigation {
+    display: flex;
+    gap: 12px;
+    margin-bottom: var(--spacing-md);
+}
+
+.prev-btn,
+.next-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--color-white);
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.carousel-dots {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: left;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--color-accent);
 }

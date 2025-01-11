@@ -5,18 +5,19 @@
     <link href="{{ asset('css/media.css') }}" rel="stylesheet">
 @endsection
 
-
 @section('container')
+    {{-- Hero Section with Video Background --}}
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
             <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
 
         <div class="hero-content">
-            <a href="#">
-                <h1 class="hero-main-text">MEDIA </h1>
-            </a>
+            <a href="#"><h1 class="hero-main-text">MEDIA</h1></a>
+
+            {{-- Search and Filter Section --}}
             <div class="center-search">
+                {{-- Search Box with Date Range --}}
                 <div class="search-section">
                     <div class="search-filters-container">
                         <div class="search-input-container">
@@ -33,123 +34,49 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- Category Filter Links --}}
                 <div class="category-filters">
                     <a href="#" class="filter-link active">All</a>
                     <a href="#" class="filter-link">News</a>
                     <a href="#" class="filter-link">Podcast</a>
+                    <a href="#" class="filter-link">Blog</a>
                 </div>
             </div>
         </div>
-
     </div>
 
-    {{-- Article Grid Section --}}
-
+    {{-- Media Grid Section --}}
     <div class="masonry-grid" data-route-pattern="{{ route('media.show', ':slug') }}">
-        {{-- First Row --}}
+        @foreach($posts as $index => $post)
+            @php
+                $isLargeCard = ($index === 0 || $index === 6);
+                $defaultImage = asset("images/media/image" . ($index + 1) . ".png");
+                $backgroundImage = $post->featured_image ? Storage::url($post->featured_image) : $defaultImage;
+                $formattedDate = \Carbon\Carbon::parse($post->published_at)->format('F Y');
+            @endphp
 
-            <div class="card large">
-                <a href="{{ route('media.show', $posts[0]->slug) }}" class="text-decoration-none">
-                <div class="background-image"
-                    style="background-image: url('{{ $posts[0]->featured_image ? Storage::url($posts[0]->featured_image) : asset('images/media/image1.png') }}');">
-                </div>
-                <span class="category">{{ $posts[0]->categories->first()->name }}</span>
-                <div class="card-content">
-                    <h2>{{ $posts[0]->title }}</h2>
-                </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[0]->published_at)->format('F Y') }}</span>
-            </a>
+            <div class="card {{ $isLargeCard ? 'large' : '' }}">
+                <a href="{{ route('media.show', $post->slug) }}" class="text-decoration-none">
+                    <div class="background-image" style="background-image: url('{{ $backgroundImage }}');"></div>
+                    <span class="category">{{ $post->categories->first()->name }}</span>
+                    <div class="card-content">
+                        <h2>{{ $post->title }}</h2>
+                    </div>
+                    <span class="date">{{ $formattedDate }}</span>
+                </a>
             </div>
-
-
-        <div class="card">
-            <a href="{{ route('media.show', $posts[1]->slug) }}" class="text-decoration-none">
-                <div class="background-image"
-                    style="background-image: url('{{ $posts[1]->featured_image ? Storage::url($posts[1]->featured_image) : asset('images/media/image2.png') }}');">
-                </div>
-                <span class="category">{{ $posts[1]->categories->first()->name }}</span>
-                <div class="card-content">
-                    <h2>{{ $posts[1]->title }}</h2>
-                </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[1]->published_at)->format('F Y') }}</span>
-            </a>
-        </div>
-
-        {{-- Second Row --}}
-        <div class="card">
-            <a href="{{ route('media.show', $posts[2]->slug) }}" class="text-decoration-none">
-                <div class="background-image"
-                    style="background-image: url('{{ $posts[2]->featured_image ? Storage::url($posts[2]->featured_image) : asset('images/media/image3.png') }}');">
-                </div>
-                <span class="category">{{ $posts[2]->categories->first()->name }}</span>
-                <div class="card-content">
-                    <h2>{{ $posts[2]->title }}</h2>
-                </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[2]->published_at)->format('F Y') }}</span>
-            </a>
-        </div>
-
-        <div class="card">
-            <a href="{{ route('media.show', $posts[3]->slug) }}" class="text-decoration-none">
-                <div class="background-image"
-                    style="background-image: url('{{ $posts[3]->featured_image ? Storage::url($posts[3]->featured_image) : asset('images/media/image4.png') }}');">
-                </div>
-                <span class="category">{{ $posts[3]->categories->first()->name }}</span>
-                <div class="card-content">
-                    <h2>{{ $posts[3]->title }}</h2>
-                </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[3]->published_at)->format('F Y') }}</span>
-            </a>
-        </div>
-
-        <div class="card">
-            <a href="{{ route('media.show', $posts[4]->slug) }}" class="text-decoration-none">
-                <div class="background-image"
-                    style="background-image: url('{{ $posts[4]->featured_image ? Storage::url($posts[4]->featured_image) : asset('images/media/image5.png') }}');">
-                </div>
-                <span class="category">{{ $posts[4]->categories->first()->name }}</span>
-                <div class="card-content">
-                    <h2>{{ $posts[4]->title }}</h2>
-                </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[4]->published_at)->format('F Y') }}</span>
-            </a>
-        </div>
-
-        {{-- Third Row --}}
-        <div class="card">
-            <a href="{{ route('media.show', $posts[5]->slug) }}" class="text-decoration-none">
-                <div class="background-image"
-                    style="background-image: url('{{ $posts[5]->featured_image ? Storage::url($posts[5]->featured_image) : asset('images/media/image6.png') }}');">
-                </div>
-                <span class="category">{{ $posts[5]->categories->first()->name }}</span>
-                <div class="card-content">
-                    <h2>{{ $posts[5]->title }}</h2>
-                </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[5]->published_at)->format('F Y') }}</span>
-            </a>
-        </div>
-
-        <div class="card large">
-            <a href="{{ route('media.show', $posts[6]->slug) }}" class="text-decoration-none">
-                <div class="background-image"
-                    style="background-image: url('{{ $posts[6]->featured_image ? Storage::url($posts[6]->featured_image) : asset('images/media/image7.png') }}');">
-                </div>
-                <span class="category">{{ $posts[6]->categories->first()->name }}</span>
-                <div class="card-content">
-                    <h2>{{ $posts[6]->title }}</h2>
-                </div>
-                <span class="date">{{ \Carbon\Carbon::parse($posts[6]->published_at)->format('F Y') }}</span>
-            </a>
-        </div>
+        @endforeach
     </div>
 
+    {{-- Newsletter Section --}}
     <div class="newsletter-section">
         <div class="newsletter-container">
             <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
-
             <a href="#">
-                <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
-                    class="button-image center-image-newsletter">
+                <img src="{{ asset('images/portfolio/letsconnect.png') }}"
+                     alt="Lets Connect"
+                     class="button-image center-image-newsletter">
             </a>
         </div>
     </div>
@@ -158,65 +85,76 @@
 @section('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const filterLinks = document.querySelectorAll('.filter-link');
-            const masonry = document.querySelector('.masonry-grid');
-            const routePattern = masonry.dataset.routePattern;
+            // DOM Elements
+            const elements = {
+                filterLinks: document.querySelectorAll('.filter-link'),
+                masonry: document.querySelector('.masonry-grid'),
+                routePattern: document.querySelector('.masonry-grid').dataset.routePattern
+            };
+
             let currentFilter = 'all';
 
-            filterLinks.forEach(link => {
-                link.addEventListener('click', async function(e) {
-                    e.preventDefault();
-
-                    // Remove active class from all links
-                    filterLinks.forEach(l => l.classList.remove('active'));
-
-                    // Add active class to clicked link
-                    this.classList.add('active');
-
-                    // Get the filter value
-                    currentFilter = this.textContent.toLowerCase();
-
-                    try {
-                        const response = await fetch(`/media/filter/${currentFilter}`, {
-                            headers: {
-                                'X-Requested-With': 'XMLHttpRequest'
-                            }
-                        });
-
-                        if (!response.ok) throw new Error('Network response was not ok');
-
-                        const posts = await response.json();
-                        updatePosts(posts, currentFilter);
-                    } catch (error) {
-                        console.error('Error:', error);
-                    }
-                });
+            // Event Listeners
+            elements.filterLinks.forEach(link => {
+                link.addEventListener('click', handleFilterClick);
             });
 
+            // Filter click handler
+            async function handleFilterClick(e) {
+                e.preventDefault();
+                updateActiveFilter(this);
+                await fetchAndUpdatePosts(this.textContent.toLowerCase());
+            }
+
+            // Update active filter UI
+            function updateActiveFilter(clickedLink) {
+                elements.filterLinks.forEach(l => l.classList.remove('active'));
+                clickedLink.classList.add('active');
+            }
+
+            // Fetch posts based on filter
+            async function fetchAndUpdatePosts(filter) {
+                try {
+                    const response = await fetch(`/media/filter/${filter}`, {
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+
+                    if (!response.ok) throw new Error('Network response was not ok');
+
+                    const posts = await response.json();
+                    updatePosts(posts, filter);
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }
+
+            // Update posts in the DOM
             function updatePosts(posts, filter) {
-                // For all filters, including 'all'
                 const postsHtml = posts.map((post, index) => {
-                    // Add large class for first and last posts only in 'all' filter
-                    const cardClass = filter === 'all' && (index === 0 || index === posts.length - 1) ? 'card large' : 'card';
-                    const postUrl = routePattern.replace(':slug', post.slug);
+                    const isLargeCard = filter === 'all' && (index === 0 || index === posts.length - 1);
+                    const postUrl = elements.routePattern.replace(':slug', post.slug);
+                    const defaultImage = `/images/media/image${index + 1}.png`;
+                    const backgroundImage = post.featured_image ? '/storage/' + post.featured_image : defaultImage;
+                    const date = new Date(post.published_at).toLocaleDateString('en-US', {
+                        month: 'long',
+                        year: 'numeric'
+                    });
+
                     return `
-                        <div class="${cardClass}">
+                        <div class="card ${isLargeCard ? 'large' : ''}">
                             <a href="${postUrl}" class="text-decoration-none">
-                                <div class="background-image"
-                                    style="background-image: url('${post.featured_image ? '/storage/' + post.featured_image : '/images/media/image${index + 1}.png'}');">
-                                </div>
+                                <div class="background-image" style="background-image: url('${backgroundImage}');"></div>
                                 <span class="category">${post.categories[0]?.name || ''}</span>
                                 <div class="card-content">
                                     <h2>${post.title}</h2>
                                 </div>
-                                <span class="date">${new Date(post.published_at).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                                <span class="date">${date}</span>
                             </a>
                         </div>
                     `;
                 }).join('');
 
-                // Update the masonry grid
-                masonry.innerHTML = postsHtml;
+                elements.masonry.innerHTML = postsHtml;
             }
         });
     </script>

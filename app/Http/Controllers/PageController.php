@@ -88,12 +88,12 @@ class PageController extends Controller
             $query->where('name', 'Portfolio');
         })->first();
 
-        $portfolios = Portfolio::with('category')
-            ->orderBy('year_invested');
+        $portfolioQuery = Portfolio::with('category')
+            ->orderBy('year_invested', 'desc');
 
-        $portfolio_categories = PortfolioCategory::all();
+        $portfolios = $portfolioQuery->get();
 
-        return view('pages.portfolio', compact('hero', 'portfolios', 'portfolio_categories'));
+        return view('pages.portfolio', compact('hero', 'portfolios'));
 
     }
 

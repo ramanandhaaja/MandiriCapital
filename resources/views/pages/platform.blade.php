@@ -5,240 +5,165 @@
     <link href="{{ asset('css/platform.css') }}" rel="stylesheet">
 @endsection
 
-
 @section('container')
+    {{-- Hero Section --}}
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
             <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
 
         <div class="hero-content">
-            <a href="#">
-                <h1 class="hero-main-text">VALUE CREATION </h1>
-            </a>
+            <h1 class="hero-main-text">VALUE CREATION</h1>
             <div class="center-search">
                 <div class="category-filters">
-                    <a href="#" class="filter-link active">Business Unit</a>
-                    <a href="#" class="filter-link">Program</a>
+                    <a href="#" class="filter-link active" data-filter="business">Business Unit</a>
+                    <a href="#" class="filter-link" data-filter="program">Program</a>
                 </div>
             </div>
         </div>
-
     </div>
 
-    {{-- Article Grid Section --}}
-
-    <div class="headline-section">
+    {{-- Business Units Section --}}
+    <div class="headline-section" id="business-section">
         <div class="hero-mid-section">
-            <h1 class="center-text">A Chance To Collaborate With Bank Mandiri’s Business Units</h1>
+            <h1 class="center-text">A Chance To Collaborate With Bank Mandiri's Business Units</h1>
         </div>
         <div class="headline-grid-four middle-animation">
-            <div class="headline-card">
-                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                <h1>Software as a Service</h1>
-                <p>Property tech startups that open to synergy in loan channeling</p>
-            </div>
+            @php
+                $businessUnits = [
+                    [
+                        'title' => 'Software as a Service',
+                        'description' => 'Property tech startups that open to synergy in loan channeling',
+                        'image' => 'sector.png'
+                    ],
+                    [
+                        'title' => 'Deep Tech',
+                        'description' => 'Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards',
+                        'image' => 'sector.png'
+                    ],
+                    [
+                        'title' => 'Fintech',
+                        'description' => 'Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards',
+                        'image' => 'sector.png'
+                    ],
+                    [
+                        'title' => 'Value Chain',
+                        'description' => 'Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards',
+                        'image' => 'sector.png'
+                    ]
+                ];
+            @endphp
 
-            <div class="headline-card middle-border">
-                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                <h1>Deep Tech</h1>
-                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
+            @foreach($businessUnits as $index => $unit)
+                <div class="headline-card {{ $index > 0 ? ($index % 4 === 3 ? 'left-border' : 'middle-border') : '' }}">
+                    <img class="headline-image" src="{{ asset('images/about/' . $unit['image']) }}" alt="{{ $unit['title'] }}">
+                    <h1>{{ $unit['title'] }}</h1>
+                    <p>{{ $unit['description'] }}</p>
+                </div>
+            @endforeach
 
-            </div>
-
-            <div class="headline-card middle-border">
-                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                <h1>Fintech</h1>
-                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
-
-            </div>
-
-            <div class="headline-card left-border">
-                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                <h1>Value Chain</h1>
-                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
-
-            </div>
-
-            <div class="headline-card">
-                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                <h1>Software as a Service</h1>
-                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
-
-            </div>
-
-            <div class="headline-card middle-border">
-                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                <h1>Deep Tech</h1>
-                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
-
-
-            </div>
-
-            <div class="headline-card middle-border">
-                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                <h1>Fintech</h1>
-                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
-
-
-            </div>
-
-            <div class="headline-card left-border">
-                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
-                <h1>Value Chain</h1>
-                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
-
-
-            </div>
-
+            {{-- Duplicate the cards for the second row --}}
+            @foreach($businessUnits as $index => $unit)
+                <div class="headline-card {{ $index > 0 ? ($index % 4 === 3 ? 'left-border' : 'middle-border') : '' }}">
+                    <img class="headline-image" src="{{ asset('images/about/' . $unit['image']) }}" alt="{{ $unit['title'] }}">
+                    <h1>{{ $unit['title'] }}</h1>
+                    <p>{{ $unit['description'] }}</p>
+                </div>
+            @endforeach
         </div>
     </div>
 
-
-
-
-    <!-- SYNERGY SECTION -->
-
-    <section class="synergy-section">
+    {{-- Synergy Programs Section --}}
+    <section class="synergy-section" id="program-section">
         <div class="hero-mid-section">
             <h1 class="center-text">Our value creation program</h1>
         </div>
-        <div class="synergy-container">
-            <div class="synergy-grid">
-                <!-- Map Column -->
-                <div class="synergy-iframe-container">
-                    <img src="/images/platform/synergy1.png" alt="Send" class="synergy-iframe">
-                    <img src="/images/platform/synergy1.gif" alt="Send" class="synergy-iframe-gif">
-                </div>
-                <!-- Content Column -->
-                <div class="synergy-content">
-                    <h2 class="synergy-title">
-                        Connecting Startups Discover What's Possible
-                    </h2>
 
-                    <div class="synergy-info">
-                        <p> cXponent merupakan program dari Mandiri Capital Indonesia (MCI) yang mendorong sinergi antara
-                            unit bisnis di Mandiri Group dengan perusahaan rintisan (startup).</p>
-                        <p> Melalui sinergi, ditemukan peluang untuk meningkatkan pertumbuhan yang berkelanjutan dan nilai
-                            sinergi yang baik. </p>
-                        <p>
-                            Xponent menawarkan platform yang ideal bagi para startup untuk menjalin kemitraan yang inovatif
-                            dan mendorong terobosan di sektor industri, sehingga dapat membuka jalan menuju hari esok yang
-                            lebih cerah. </p>
+        @php
+            $synergyPrograms = [
+                [
+                    'title' => 'Connecting Startups Discover What\'s Possible',
+                    'image' => 'synergy1',
+                    'content' => [
+                        'cXponent merupakan program dari Mandiri Capital Indonesia (MCI) yang mendorong sinergi antara unit bisnis di Mandiri Group dengan perusahaan rintisan (startup).',
+                        'Melalui sinergi, ditemukan peluang untuk meningkatkan pertumbuhan yang berkelanjutan dan nilai sinergi yang baik.',
+                        'Xponent menawarkan platform yang ideal bagi para startup untuk menjalin kemitraan yang inovatif dan mendorong terobosan di sektor industri, sehingga dapat membuka jalan menuju hari esok yang lebih cerah.'
+                    ],
+                    'showButtons' => true,
+                    'imageRight' => false
+                ],
+                [
+                    'title' => 'Connecting Startups Discover What\'s Possible',
+                    'image' => 'synergy2',
+                    'content' => [
+                        'cXponent merupakan program dari Mandiri Capital Indonesia (MCI) yang mendorong sinergi antara unit bisnis di Mandiri Group dengan perusahaan rintisan (startup).',
+                        'Melalui sinergi, ditemukan peluang untuk meningkatkan pertumbuhan yang berkelanjutan dan nilai sinergi yang baik.',
+                        'Xponent menawarkan platform yang ideal bagi para startup untuk menjalin kemitraan yang inovatif dan mendorong terobosan di sektor industri, sehingga dapat membuka jalan menuju hari esok yang lebih cerah.'
+                    ],
+                    'showButtons' => false,
+                    'imageRight' => true
+                ],
+                [
+                    'title' => 'Connecting Startups Discover What\'s Possible',
+                    'image' => 'synergy3',
+                    'content' => [
+                        'cXponent merupakan program dari Mandiri Capital Indonesia (MCI) yang mendorong sinergi antara unit bisnis di Mandiri Group dengan perusahaan rintisan (startup).',
+                        'Melalui sinergi, ditemukan peluang untuk meningkatkan pertumbuhan yang berkelanjutan dan nilai sinergi yang baik.',
+                        'Xponent menawarkan platform yang ideal bagi para startup untuk menjalin kemitraan yang inovatif dan mendorong terobosan di sektor industri, sehingga dapat membuka jalan menuju hari esok yang lebih cerah.'
+                    ],
+                    'showButtons' => true,
+                    'imageRight' => false
+                ]
+            ];
+        @endphp
+
+        @foreach($synergyPrograms as $index => $program)
+            <div class="synergy-container {{ $index % 2 === 1 ? 'dark' : '' }}">
+                <div class="synergy-grid">
+                    @if(!$program['imageRight'])
+                        <div class="synergy-iframe-container">
+                            <img src="/images/platform/{{ $program['image'] }}.png" alt="Program Image" class="synergy-iframe">
+                            <img src="/images/platform/{{ $program['image'] }}.gif" alt="Program Animation" class="synergy-iframe-gif">
+                        </div>
+                    @endif
+
+                    <div class="synergy-content">
+                        <h2 class="synergy-title">{{ $program['title'] }}</h2>
+                        <div class="synergy-info">
+                            @foreach($program['content'] as $paragraph)
+                                <p>{{ $paragraph }}</p>
+                            @endforeach
+                        </div>
+
+                        <div class="synergy-number">
+                            @foreach(['MOU PKS', 'Synergy Volume', 'Success Story'] as $metric)
+                                <div class="number-item">
+                                    <div class="number-label">{{ $metric }}</div>
+                                    <div class="number-value">00</div>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        @if($program['showButtons'])
+                            <div class="synergy-register">
+                                <a href="#" class="register-btn btn-detail">View Detail</a>
+                                <a href="#" class="register-btn btn-register">Register Now</a>
+                            </div>
+                        @endif
                     </div>
 
-                    <div class="synergy-number">
-                        <div class="number-item">
-                            <div class="number-label">MOU PKS</div>
-                            <div class="number-value">00</div>
+                    @if($program['imageRight'])
+                        <div class="synergy-iframe-container">
+                            <img src="/images/platform/{{ $program['image'] }}.png" alt="Program Image" class="synergy-iframe right">
+                            <img src="/images/platform/{{ $program['image'] }}.gif" alt="Program Animation" class="synergy-iframe-gif right">
                         </div>
-                        <div class="number-item">
-                            <div class="number-label">Synergy Volume</div>
-                            <div class="number-value">00</div>
-                        </div>
-                        <div class="number-item">
-                            <div class="number-label">Success Story</div>
-                            <div class="number-value">00</div>
-                        </div>
-                    </div>
-
-                    <div class="synergy-register">
-                        <a href="#" class="register-btn btn-detail">View Detail</a>
-                        <a href="#" class="register-btn btn-register">Register Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="synergy-container dark">
-            <div class="synergy-grid">
-
-                <div class="synergy-content">
-                    <h2 class="synergy-title">
-                        Connecting Startups Discover What's Possible
-                    </h2>
-
-                    <div class="synergy-info">
-                        <p> cXponent merupakan program dari Mandiri Capital Indonesia (MCI) yang mendorong sinergi antara
-                            unit bisnis di Mandiri Group dengan perusahaan rintisan (startup).</p>
-                        <p> Melalui sinergi, ditemukan peluang untuk meningkatkan pertumbuhan yang berkelanjutan dan nilai
-                            sinergi yang baik. </p>
-                        <p>
-                            Xponent menawarkan platform yang ideal bagi para startup untuk menjalin kemitraan yang inovatif
-                            dan mendorong terobosan di sektor industri, sehingga dapat membuka jalan menuju hari esok yang
-                            lebih cerah. </p>
-                    </div>
-
-                    <div class="synergy-number">
-                        <div class="number-item">
-                            <div class="number-label">MOU PKS</div>
-                            <div class="number-value">00</div>
-                        </div>
-                        <div class="number-item">
-                            <div class="number-label">Synergy Volume</div>
-                            <div class="number-value">00</div>
-                        </div>
-                        <div class="number-item">
-                            <div class="number-label">Success Story</div>
-                            <div class="number-value">00</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="synergy-iframe-container">
-                    <img src="/images/platform/synergy2.png" alt="Send" class="synergy-iframe right">
-                    <img src="/images/platform/synergy2.gif" alt="Send" class="synergy-iframe-gif right">
+                    @endif
                 </div>
             </div>
-        </div>
-        <div class="synergy-container">
-            <div class="synergy-grid">
-                <div class="synergy-iframe-container">
-                    <img src="/images/platform/synergy3.png" alt="Send" class="synergy-iframe">
-                    <img src="/images/platform/synergy3.gif" alt="Send" class="synergy-iframe-gif">
-                </div>
-
-
-                <div class="synergy-content">
-                    <h2 class="synergy-title">
-                        Connecting Startups Discover What's Possible
-                    </h2>
-
-                    <div class="synergy-info">
-                        <p> cXponent merupakan program dari Mandiri Capital Indonesia (MCI) yang mendorong sinergi antara
-                            unit bisnis di Mandiri Group dengan perusahaan rintisan (startup).</p>
-                        <p> Melalui sinergi, ditemukan peluang untuk meningkatkan pertumbuhan yang berkelanjutan dan nilai
-                            sinergi yang baik. </p>
-                        <p>
-                            Xponent menawarkan platform yang ideal bagi para startup untuk menjalin kemitraan yang inovatif
-                            dan mendorong terobosan di sektor industri, sehingga dapat membuka jalan menuju hari esok yang
-                            lebih cerah. </p>
-                    </div>
-
-                    <div class="synergy-number">
-                        <div class="number-item">
-                            <div class="number-label">MOU PKS</div>
-                            <div class="number-value">00</div>
-                        </div>
-                        <div class="number-item">
-                            <div class="number-label">Synergy Volume</div>
-                            <div class="number-value">00</div>
-                        </div>
-                        <div class="number-item">
-                            <div class="number-label">Success Story</div>
-                            <div class="number-value">00</div>
-                        </div>
-                    </div>
-
-                    <div class="synergy-register">
-                        <a href="#" class="register-btn btn-detail">View Detail</a>
-                        <a href="#" class="register-btn btn-register">Register Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </section>
 
-
-    <!-- Newsletter Section -->
+    {{-- Newsletter Section --}}
     <div class="newsletter-section">
         <div class="newsletter-container">
             <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
@@ -254,64 +179,36 @@
 @section('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const filterLinks = document.querySelectorAll('.filter-link');
-            const headlineSection = document.querySelector('.headline-section');
-            const synergySection = document.querySelector('.synergy-section');
-            const newsletterSection = document.querySelector('.newsletter-section');
+            // DOM Elements
+            const elements = {
+                filterLinks: document.querySelectorAll('.filter-link'),
+                businessSection: document.getElementById('business-section'),
+                programSection: document.getElementById('program-section')
+            };
 
-            // Initial states
-            headlineSection.style.display = 'block';
-            synergySection.style.display = 'none';
-            newsletterSection.style.display = 'block';
+            // Show/Hide sections based on filter
+            function updateSections(filter) {
+                elements.businessSection.style.display = filter === 'business' ? 'block' : 'none';
+                elements.programSection.style.display = filter === 'program' ? 'block' : 'none';
+            }
 
-            let currentFilter = 'all';
-
-            filterLinks.forEach(link => {
-                link.addEventListener('click', async function(e) {
+            // Event Listeners
+            elements.filterLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
                     e.preventDefault();
 
-                    // Remove active class from all links
-                    filterLinks.forEach(l => l.classList.remove('active'));
-
-                    // Add active class to clicked link
+                    // Update active state
+                    elements.filterLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
 
-                    // Get the filter value
-                    currentFilter = this.textContent.toLowerCase();
-
-                    try {
-                        const response = await fetch(`/platform/filter/${currentFilter}`, {
-                            headers: {
-                                'X-Requested-With': 'XMLHttpRequest'
-                            }
-                        });
-
-                        if (!response.ok) throw new Error('Network response was not ok');
-
-                        const posts = await response.json();
-                        if (currentFilter === 'business unit') {
-                            updateBusinessUnit(posts, currentFilter);
-                        } else {
-                            updateSynergy(posts, currentFilter);
-                        }
-                    } catch (error) {
-                        console.error('Error:', error);
-                    }
+                    // Show/hide sections
+                    const filter = this.getAttribute('data-filter');
+                    updateSections(filter);
                 });
             });
 
-            function updateBusinessUnit(posts, filter) {
-                headlineSection.style.display = 'block';
-                synergySection.style.display = 'none';
-                newsletterSection.style.display = 'block';
-            }
-
-            function updateSynergy(posts, filter) {
-                headlineSection.style.display = 'none';
-                synergySection.style.display = 'block';
-                newsletterSection.style.display = 'block';
-            }
-
+            // Initialize with business section
+            updateSections('business');
         });
     </script>
 @endsection
