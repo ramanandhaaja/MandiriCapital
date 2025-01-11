@@ -14,13 +14,12 @@
 
         <div class="hero-content">
             <a href="#">
-                <img src="{{ asset('images/platform/platform.png') }}" alt="Media" class="center-image">
+                <h1 class="hero-main-text">VALUE CREATION </h1>
             </a>
             <div class="center-search">
                 <div class="category-filters">
-                    <a href="#" class="filter-link active">Funding</a>
-                    <a href="#" class="filter-link">Ecosystem</a>
-                    <a href="#" class="filter-link">Synergy Program</a>
+                    <a href="#" class="filter-link active">Business Unit</a>
+                    <a href="#" class="filter-link">Program</a>
                 </div>
             </div>
         </div>
@@ -29,73 +28,81 @@
 
     {{-- Article Grid Section --}}
 
-    <div class="masonry-grid" data-route-pattern="{{ route('media.show', ':slug') }}">
-        {{-- First Row --}}
-
-        <div class="card">
-            <div class="card-title">
-                Mandiri Corporate VC
-            </div>
+    <div class="headline-section">
+        <div class="hero-mid-section">
+            <h1 class="center-text">A Chance To Collaborate With Bank Mandiri’s Business Units</h1>
         </div>
-
-        <div class="card">
-            <div class="background-image">
-                <img src="{{ asset('images/platform/funding1.png') }}" alt="Media" class="card-image" />
-                <a href="#" class="text-decoration-none">
-                    <span class="category">Balance Sheet Fund</span>
-                    <div class="card-content">
-                        Berfokus untuk memberikan investasi kepada technology companies “growth startup” yang memiliki
-                        potensi kolaborasi dengan ekosistem Mandiri Group
-                    </div>
-                    <span class="date">Fund Report >></span>
-                </a>
+        <div class="headline-grid-four middle-animation">
+            <div class="headline-card">
+                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                <h1>Software as a Service</h1>
+                <p>Property tech startups that open to synergy in loan channeling</p>
             </div>
-        </div>
 
-        {{-- Second Row --}}
-        <div class="card">
-        </div>
+            <div class="headline-card middle-border">
+                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                <h1>Deep Tech</h1>
+                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
 
-        <div class="card">
-            <div class="card-title">
-                Dana Ventura MCI
             </div>
-        </div>
 
-        <div class="card">
-            <div class="background-image">
-                <img src="{{ asset('images/platform/funding2.png') }}" alt="Media" class="card-image" />
+            <div class="headline-card middle-border">
+                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                <h1>Fintech</h1>
+                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
 
-                <a href="#" class="text-decoration-none">
-                    <span class="category">Balance Sheet Fund</span>
-                    <div class="card-content">
-                        Berfokus untuk memberikan investasi kepada technology companies “growth startup” yang memiliki
-                        potensi kolaborasi dengan ekosistem Mandiri Group
-                    </div>
-                    <span class="date">Fund Report >></span>
-                </a>
             </div>
-        </div>
-        <div class="card">
-            <div class="background-image">
-                <img src="{{ asset('images/platform/funding3.png') }}" alt="Media" class="card-image" />
 
-                <a href="#" class="text-decoration-none">
-                    <span class="category">Balance Sheet Fund</span>
-                    <div class="card-content">
-                        Berfokus untuk memberikan investasi kepada technology companies “growth startup” yang memiliki
-                        potensi kolaborasi dengan ekosistem Mandiri Group
-                    </div>
-                    <span class="date">Fund Report >></span>
-                </a>
+            <div class="headline-card left-border">
+                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                <h1>Value Chain</h1>
+                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
+
             </div>
+
+            <div class="headline-card">
+                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                <h1>Software as a Service</h1>
+                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
+
+            </div>
+
+            <div class="headline-card middle-border">
+                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                <h1>Deep Tech</h1>
+                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
+
+
+            </div>
+
+            <div class="headline-card middle-border">
+                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                <h1>Fintech</h1>
+                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
+
+
+            </div>
+
+            <div class="headline-card left-border">
+                <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                <h1>Value Chain</h1>
+                <p>Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards</p>
+
+
+            </div>
+
         </div>
     </div>
+
+
 
 
     <!-- SYNERGY SECTION -->
 
     <section class="synergy-section">
+        <div class="hero-mid-section">
+            <h1 class="center-text">Our value creation program</h1>
+        </div>
         <div class="synergy-container">
             <div class="synergy-grid">
                 <!-- Map Column -->
@@ -145,8 +152,6 @@
         <div class="synergy-container dark">
             <div class="synergy-grid">
 
-
-                <!-- Content Column -->
                 <div class="synergy-content">
                     <h2 class="synergy-title">
                         Connecting Startups Discover What's Possible
@@ -186,13 +191,12 @@
         </div>
         <div class="synergy-container">
             <div class="synergy-grid">
-                <!-- Map Column -->
                 <div class="synergy-iframe-container">
                     <img src="/images/platform/synergy3.png" alt="Send" class="synergy-iframe">
                     <img src="/images/platform/synergy3.gif" alt="Send" class="synergy-iframe-gif">
                 </div>
 
-                <!-- Content Column -->
+
                 <div class="synergy-content">
                     <h2 class="synergy-title">
                         Connecting Startups Discover What's Possible
@@ -233,58 +237,8 @@
         </div>
     </section>
 
-    <!-- Download Section -->
-    <div class="download-section">
-        <div class="download-container">
-            <!-- Left Column -->
-            <div class="download-left">
-                <h2 class="download-title">Send Your Business Proposal</h2>
-                <p> We are happy to discuss your business situation, please contact. </p>
-            </div>
 
-            <!-- Right Column -->
-            <div class="download-right">
-                <form method="POST" class="download-form">
-                    @csrf
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Company Name</label>
-                            <input type="text" id="name" name="name" placeholder="Write here..." required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="company_name">Website</label>
-                            <input type="text" id="company_name" name="company_name" placeholder="Write here..."
-                                required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="business_description">Business Description</label>
-                        <textarea id="business_description" name="business_description" placeholder="Write here..." required></textarea>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Phone Number</label>
-                            <input type="text" id="name" name="name" placeholder="Write here..." required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="company_name">Company Email</label>
-                            <input type="text" id="company_name" name="company_name" placeholder="Write here..."
-                                required>
-                        </div>
-                    </div>
-
-                    <div class="form-actions">
-                        <img src="{{ asset('images/platform/send.png') }}" alt="Download" class="send-btn">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+    <!-- Newsletter Section -->
     <div class="newsletter-section">
         <div class="newsletter-container">
             <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
@@ -295,27 +249,21 @@
             </a>
         </div>
     </div>
-
-
-
 @endsection
 
 @section('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const filterLinks = document.querySelectorAll('.filter-link');
-            const masonry = document.querySelector('.masonry-grid');
-            const newsletterSection = document.querySelector('.newsletter-section');
-            const downloadSection = document.querySelector('.download-section');
+            const headlineSection = document.querySelector('.headline-section');
             const synergySection = document.querySelector('.synergy-section');
+            const newsletterSection = document.querySelector('.newsletter-section');
 
             // Initial states
-            newsletterSection.style.display = 'none';
-            downloadSection.style.display = 'block';
-            synergySection.style.display = 'none'; // Hide synergy section by default
+            headlineSection.style.display = 'block';
+            synergySection.style.display = 'none';
+            newsletterSection.style.display = 'block';
 
-
-            const routePattern = masonry.dataset.routePattern;
             let currentFilter = 'all';
 
             filterLinks.forEach(link => {
@@ -341,10 +289,8 @@
                         if (!response.ok) throw new Error('Network response was not ok');
 
                         const posts = await response.json();
-                        if (currentFilter === 'funding') {
-                            updateFunding(posts, currentFilter);
-                        } else if (currentFilter === 'ecosystem') {
-                            updateEcosystem(posts, currentFilter);
+                        if (currentFilter === 'business unit') {
+                            updateBusinessUnit(posts, currentFilter);
                         } else {
                             updateSynergy(posts, currentFilter);
                         }
@@ -354,123 +300,16 @@
                 });
             });
 
-            function updateFunding(posts, filter) {
-                newsletterSection.style.display = 'none';
-                downloadSection.style.display = 'block'; // Show download section for funding
+            function updateBusinessUnit(posts, filter) {
+                headlineSection.style.display = 'block';
                 synergySection.style.display = 'none';
-
-                const postsHtml = `
-                    <div class="card">
-                        <div class="card-title">
-                            Mandiri Corporate VC
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="background-image">
-                            <img src="{{ asset('images/platform/funding1.png') }}" alt="Media" class="card-image" />
-                            <a href="#" class="text-decoration-none">
-                                <span class="category">Balance Sheet Fund</span>
-                                <div class="card-content">
-                                    Berfokus untuk memberikan investasi kepada technology companies "growth startup" yang memiliki
-                                    potensi kolaborasi dengan ekosistem Mandiri Group
-                                </div>
-                                <span class="date">Fund Report >></span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                    </div>
-
-                    <div class="card">
-                        <div class="card-title">
-                            Dana Ventura MCI
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="background-image">
-                            <img src="{{ asset('images/platform/funding2.png') }}" alt="Media" class="card-image" />
-                            <a href="#" class="text-decoration-none">
-                                <span class="category">Balance Sheet Fund</span>
-                                <div class="card-content">
-                                    Berfokus untuk memberikan investasi kepada technology companies "growth startup" yang memiliki
-                                    potensi kolaborasi dengan ekosistem Mandiri Group
-                                </div>
-                                <span class="date">Fund Report >></span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="background-image">
-                            <img src="{{ asset('images/platform/funding3.png') }}" alt="Media" class="card-image" />
-                            <a href="#" class="text-decoration-none">
-                                <span class="category">Balance Sheet Fund</span>
-                                <div class="card-content">
-                                    Berfokus untuk memberikan investasi kepada technology companies "growth startup" yang memiliki
-                                    potensi kolaborasi dengan ekosistem Mandiri Group
-                                </div>
-                                <span class="date">Fund Report >></span>
-                            </a>
-                        </div>
-                    </div>
-                `;
-
-                masonry.innerHTML = postsHtml;
-            }
-
-            function updateEcosystem(posts, filter) {
                 newsletterSection.style.display = 'block';
-                downloadSection.style.display = 'none'; // Hide download section for ecosystem
-                synergySection.style.display = 'none';
-
-                const postsHtml = posts.map((post, index) => {
-                    const postUrl = routePattern.replace(':slug', post.slug);
-                    const imageUrl = 'images/platform/funding1.png';
-                    return `
-                        <div class="card">
-                            <div class="background-image">
-                                <img src="{{ asset('${imageUrl}') }}" alt="Media" class="card-image" />
-                                <a href="#" class="text-decoration-none">
-                                    <span class="category">${post.title}</span>
-                                    <div class="card-content">
-                                        ${post.content}
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-
-                masonry.innerHTML = postsHtml;
             }
 
             function updateSynergy(posts, filter) {
-                newsletterSection.style.display = 'none';
-                downloadSection.style.display = 'block'; // Hide download section for ecosystem
-                synergySection.style.display = 'flex';
-
-                const postsHtml = posts.map((post, index) => {
-                    const postUrl = routePattern.replace(':slug', post.slug);
-                    const imageUrl = 'images/platform/funding1.png';
-                    return `
-                        <div class="card">
-                            <div class="background-image">
-                                <img src="{{ asset('${imageUrl}') }}" alt="Media" class="card-image" />
-                                <a href="#" class="text-decoration-none">
-                                    <span class="category">${post.title}</span>
-                                    <div class="card-content">
-                                        ${post.content}
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-
-                masonry.innerHTML = postsHtml;
+                headlineSection.style.display = 'none';
+                synergySection.style.display = 'block';
+                newsletterSection.style.display = 'block';
             }
 
         });

@@ -1,3 +1,29 @@
+/* Root variables for consistent theming */
+:root {
+    --color-primary: #FFD700;
+    --color-secondary: #EFA32F;
+    --color-dark: #18181B;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-gray-100: #F3F4F6;
+    --color-gray-400: #9CA3AF;
+    --color-gray-500: #6B7280;
+    --color-gray-600: #4B5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1F2937;
+    --color-gray-900: #111827;
+    --color-border: #3F3F46;
+    --font-family: 'Avenir LT Std', sans-serif;
+}
+
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('../fonts/Avenir LT Std 45 Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* Contact Page Styles */
 
 /* Contact Section */
@@ -22,7 +48,7 @@
 
 /* Contact Information */
 .contact-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 56px;
     font-weight: 400;
     line-height: 1.2;
@@ -45,7 +71,7 @@
 }
 
 .contact-info-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 0.75rem;
@@ -53,7 +79,7 @@
 }
 
 .contact-info-link {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
@@ -89,7 +115,7 @@
 }
 
 .contact-form-intro {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 30px;
@@ -108,7 +134,7 @@
 }
 
 .form-label {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     display: block;
     font-size: 16px;
     font-weight: 400;
@@ -118,7 +144,7 @@
 
 .form-input,
 .form-textarea {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     width: 100%;
     background-color: rgba(217, 217, 217, 0.1);
     border: none;
@@ -190,7 +216,7 @@
 }
 
 .map-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 56px;
     font-weight: 400;
     line-height: 1.2;
@@ -198,7 +224,7 @@
 }
 
 .company-name {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     font-weight: 500;
     color: #ffffff;
@@ -206,7 +232,7 @@
 }
 
 .address {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: rgba(255, 255, 255, 0.87);
     line-height: 1.6;

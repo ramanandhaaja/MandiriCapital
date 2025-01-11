@@ -13,10 +13,15 @@
     --color-gray-800: #1F2937;
     --color-gray-900: #111827;
     --color-border: #3F3F46;
-    --font-family: 'Roboto', sans-serif;
+    --font-family: 'Avenir LT Std', sans-serif;
 }
 
-
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('../fonts/Avenir LT Std 45 Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* Add these at the top of the file */
 html, body {
@@ -66,31 +71,30 @@ html, body {
     color: rgba(255, 255, 255, 0.5);
 }
 
+/* Category Filter Styles */
 .category-filters {
     display: flex;
-    gap: 20px;
+    gap: 48px;
     margin-bottom: 40px;
     padding-bottom: 8px;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .filter-link {
     font-family: var(--font-family);
-    color: var(--color-white);
+    color: white;
     text-decoration: none;
     font-size: 24px;
     font-weight: 500;
     padding-bottom: 16px;
     position: relative;
-    width: auto;
-    min-width: 120px;
     text-align: center;
+    min-width: 200px;
 }
 
 .filter-link.active {
-    color: var(--color-primary);
-    text-decoration: none;
+    color: #FFD700;
+    font-family: var(--font-family);
 }
 
 .filter-link.active::after {
@@ -412,6 +416,8 @@ html, body {
 
 /* Hero Section Styles */
 
+
+
 .hero-section {
     position: relative;
     width: 100%;
@@ -466,6 +472,19 @@ html, body {
     margin-top: -50px;
 }
 
+.hero-main-text {
+    position: absolute;
+    font-family: var(--font-family);
+    color: var(--color-white);
+    font-size: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
 .center-search {
     position: absolute;
     left: 50%;
@@ -477,15 +496,17 @@ html, body {
 }
 
 .search-input-container {
+    flex: initial;
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: flex-end;
 }
 
 
 
 .category-filters {
     display: flex;
-    gap: 20px;
+    gap: 48px;
     margin-bottom: 40px;
     padding-bottom: 8px;
     padding-top: 95px;
@@ -502,7 +523,7 @@ html, body {
     padding-bottom: 16px;
     position: relative;
     width: auto;
-    min-width: 120px;
+    min-width: 200px;
     text-align: center;
 }
 
@@ -772,6 +793,7 @@ html, body {
     text-align: left;
     margin-left: 65px;
     margin-right: 90px;
+    margin-bottom: 50px;
 }
 
 .headline-grid {
@@ -790,6 +812,14 @@ html, body {
     padding: 0 40px;
 }
 
+.headline-grid-four {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
 
 .headline-card {
     padding-left: 24px;
@@ -800,18 +830,32 @@ html, body {
     flex-direction: column;
 }
 
+.headline-image {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+}
+
+
 .headline-card h1 {
     font-family: var(--font-family);
     color: var(--color-white);
-    font-size: 16px;
-    margin-bottom: -18px;
-    font-weight: 100;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    padding-top: 20px;
+    text-align: center;
 }
 
 .headline-card.middle-border {
     border-left: 1px solid var(--color-border);
     border-right: 1px solid var(--color-border);
 }
+
+.headline-card.left-border {
+    border-left: 1px solid var(--color-border);
+}
+
 
 .headline-card h2 {
     font-family: var(--font-family);
@@ -1256,4 +1300,116 @@ html, body {
 .team-image-large{
     width: 100%;
     height: auto;
+}
+
+
+
+
+.ecosystem-grid {
+    position: relative;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1600px;
+    margin: 40px 50px 0 50px;
+}
+
+/* Card Styles */
+.card-ecosystem {
+    position: relative;
+    border-radius: 0px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 352px;
+    grid-column: span 1;
+    border-radius: 12px;
+}
+
+.card-ecosystem .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        #31302C 0%,
+        #18181B 50%,
+        #31302C 100%
+    );
+    z-index: 1;
+}
+
+.card-ecosystem-image {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 120px;
+    z-index: 2;
+    display: block;
+}
+
+
+
+.category {
+    font-family: var(--font-family);
+    font-size: 24px;
+    position: absolute;
+    top: 170px;
+    left: 30px;
+    color: white;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.card-ecosystem-content {
+    font-family: var(--font-family);
+    font-size: 14px;
+    position: absolute;
+    color: #A1A1AA;
+    top: 200px;
+    left: 30px;
+    right: 30px;
+    z-index: 2;
+}
+
+.card-ecosystem h2 {
+    font-family: var(--font-family);
+    color: white;
+    font-size: 28px;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.date {
+    font-family: var(--font-family);
+    position: absolute;
+    font-size: 14px;
+    bottom: 30px;
+    right: 30px;
+    color: #EAB308;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.card-ecosystem-title {
+    font-family: var(--font-family);
+    color: white;
+    position: relative;
+    font-size: 28px;
+    text-align: center;
 }

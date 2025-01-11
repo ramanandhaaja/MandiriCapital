@@ -14,7 +14,7 @@
 
         <div class="hero-content">
             <a href="#">
-                <img src="{{ asset('images/report/report.png') }}" alt="Media" class="center-image">
+                <h1 class="hero-main-text">PUBLICATION </h1>
             </a>
             <div class="center-search">
                 <div class="search-section">

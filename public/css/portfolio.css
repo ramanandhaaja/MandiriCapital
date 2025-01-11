@@ -13,7 +13,19 @@
     --color-gray-800: #1F2937;
     --color-gray-900: #111827;
     --color-border: #3F3F46;
-    --font-family: 'Roboto', sans-serif;
+    --font-family: 'Avenir LT Std', sans-serif;
+}
+
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('../fonts/Avenir LT Std 45 Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Base styles */
+* {
+    font-family: var(--font-family);
 }
 
 
@@ -35,7 +47,17 @@
     gap: 16px;
     padding: 0 20px;
     max-width: 1600px;
-    margin: 60px auto;
+    margin: 30px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.masonry-grid-investment-section-sub {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 0px auto;
     opacity: 1;
     transition: opacity 0.3s ease;
 }
@@ -56,11 +78,12 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    padding: 0 20px;
+    padding: 60px 20px;
     max-width: 1600px;
-    margin: 120px auto 60px auto;
+    margin: 120px auto 0px auto;
     opacity: 1;
     transition: opacity 0.3s ease;
+    background-color: #18181B;
 }
 
 .grid-headline-title {
@@ -133,6 +156,7 @@
 
 .grid-headline-description-card{
     grid-column: span 2;
+    padding-right: 60px;
 }
 
 .grid-headline-title-card{
@@ -144,6 +168,93 @@
     padding-right: 90px;
 }
 
+.grid-headline-title-card-sub {
+    padding: 0px 30px 0px 0px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.grid-headline-title-card-sub-bottom {
+    padding: 40px 30px 0px 0px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.grid-investor-card-three {
+    padding: 0px 30px 0px 0px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    grid-column: span 3;
+}
+
+.card-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.card-icon-bottom {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.card-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--font-family);
+}
+
+
+.card-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ffffff;
+    opacity: 0.7;
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.card-title-bottom {
+    padding-top: 0px;
+    font-size: 40px;
+    color: #EFA32F;
+    font-family: var(--font-family);
+    margin: 20px 0 0 0;
+}
+
+.card-description-bottom {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
 
 .card {
     position: relative;
@@ -159,7 +270,6 @@
     align-items: center;
     justify-content: center;
 }
-
 
 .portfolio-image {
     max-width: 100%;
@@ -186,7 +296,7 @@
 
 .stat-item {
     font-size: 12px;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     display: flex;
     align-items: center;
     gap: 2px;
@@ -195,7 +305,7 @@
 
 .stat-item-middle {
     font-size: 12px;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     display: flex;
     align-items: center;
     gap: 2px;
@@ -211,7 +321,8 @@
 
 /* Card content styling */
 .category {
-    font-family: 'Roboto', sans-serif;
+    position: relative;
+    font-family: var(--font-family);
     font-size: 24px;
     position: absolute;
     top: 40px;
@@ -219,8 +330,11 @@
     color: white;
     font-weight: 500;
     text-transform: uppercase;
+    display: block;
+    padding: 0 30px;
+    width: 100%;
+    box-sizing: border-box;
 }
-
 
 .card-content {
     position: relative;
@@ -228,9 +342,8 @@
     z-index: 2;
 }
 
-
 .card h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: white;
     font-size: 32px;
     margin: 0;
@@ -238,7 +351,7 @@
 }
 
 .date {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     position: absolute;
     bottom: 40px;
     left: 40px;
@@ -274,7 +387,7 @@
 }
 
 .newsletter-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #FFFFFF;
     font-size: 36px;
     font-weight: 600;
@@ -282,7 +395,7 @@
 }
 
 .newsletter-subtitle {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #9CA3AF;
     font-size: 16px;
     margin: 0 0 32px 0;
@@ -298,7 +411,7 @@
 }
 
 .newsletter-input {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     flex: 1;
     background-color: #1F2937;
     border: none;
@@ -318,7 +431,7 @@
 }
 
 .newsletter-button {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     background-color: #F59E0B;
     border: none;
@@ -341,6 +454,21 @@
     }
 }
 
+@media (max-width: 992px) {
+    .masonry-grid-investment-section-sub {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+    .card-description {
+        font-size: 14px;
+    }
+}
 
 @media (max-width: 768px) {
     .masonry-grid {
@@ -361,6 +489,14 @@
         font-size: 48px;
     }
 
+    .grid-headline-title-card-sub {
+        padding: 32px;
+    }
+
+
+    .card-title {
+        font-size: 18px;
+    }
 
     .card h2 {
         font-size: 24px;
@@ -403,7 +539,6 @@
         grid-column: span 1;
     }
 
-
     .search-input {
         font-size: 14px;
         padding: 10px 16px;
@@ -418,7 +553,7 @@
 .portfolio-section {
     padding: 60px 40px;
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     max-width: 1600px;
     margin: 0 auto;
     display: none; /* Hide table view by default */
@@ -739,7 +874,7 @@
 }
 
 .search-input {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     width: 400px;
     padding: 12px 20px;
     padding-right: 40px;
@@ -779,7 +914,7 @@
 }
 
 .filter-link {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: white;
     text-decoration: none;
     font-size: 24px;
@@ -791,7 +926,7 @@
 
 .filter-link.active {
     color: #FFD700;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
 }
 
 .filter-link.active::after {
@@ -814,7 +949,7 @@
 }
 
 .newsletter-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #FFFFFF;
     font-size: 40px;
     font-weight: 500;
@@ -828,7 +963,7 @@
 }
 
 .newsletter-subtitle {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #9CA3AF;
     font-size: 16px;
     margin: 0 0 32px 0;
@@ -844,7 +979,7 @@
 }
 
 .newsletter-input {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     flex: 1;
     background-color: #1F2937;
     border: none;
@@ -864,7 +999,7 @@
 }
 
 .newsletter-button {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     background-color: #F59E0B;
     border: none;
@@ -887,7 +1022,7 @@
 
 .expanded-details h4 {
     margin: 0 0 10px 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 18px;
     color: #EFA32F;
 }
@@ -899,16 +1034,13 @@
     opacity: 0.8;
 }
 
-
-
-
 /* Contact Form */
 .contact-form-section {
     padding-top: 0px;
 }
 
 .contact-form-intro {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 30px;
@@ -927,7 +1059,7 @@
 }
 
 .form-label {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     display: block;
     font-size: 16px;
     font-weight: 400;
@@ -937,7 +1069,7 @@
 
 .form-input,
 .form-textarea {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     width: 100%;
     background-color: rgba(217, 217, 217, 0.1);
     border: none;
@@ -958,10 +1090,10 @@
 }
 
 .submit-button {
-    background-color: transparent;
+    background: none;
     border: none;
-    padding: 0;
     cursor: pointer;
+    padding: 0;
     float: right;
     margin-top: 1rem;
     transition: opacity 0.3s ease;
@@ -974,10 +1106,6 @@
 .submit-button:hover {
     opacity: 0.8;
 }
-
-
-
-
 
 .for-investor-section {
     color: #ffffff;
@@ -1050,13 +1178,12 @@
     display: block;
 }
 
-
 .investor-content {
     padding-left: 2rem;
 }
 
 .investor-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 20px;
     font-weight: 400;
     line-height: 1.2;
@@ -1064,14 +1191,14 @@
 }
 
 .investor-title-lg {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 56px;
     font-weight: 400;
     margin-bottom: 2rem;
 }
 
 .company-name {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     font-weight: 500;
     color: #ffffff;
@@ -1079,12 +1206,11 @@
 }
 
 .investor-info {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: #A1A1AA;
     line-height: 1.6;
 }
-
 
 .investor-number {
     display: grid;
@@ -1098,7 +1224,7 @@
 }
 
 .number-value {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 64px;
     font-weight: 700;
     color: #ffffff;
@@ -1106,11 +1232,10 @@
 }
 
 .number-label {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     color: #ffffff;
 }
-
 
 .investor-register {
     display: flex;
@@ -1122,7 +1247,7 @@
 .register-btn {
     height: 32px;
     padding: 0 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
@@ -1154,7 +1279,6 @@
     .investor-container {
         padding: 0 2rem;
     }
-
     .investor-grid {
         gap: 4rem;
     }
@@ -1285,4 +1409,192 @@
 .floating-action-button .menu-icon {
     transform: rotate(0deg);
     transition: transform 0.3s ease;
+}
+
+/* Override main-footer margin */
+.main-footer {
+    margin: 0 !important;
+}
+
+/* Card Styles */
+.card-funding {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 417px;
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+}
+
+.card-funding-large {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    grid-column: span 3;
+    display: flex;
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #31302C 0%,
+        #18181B 50%,
+        #31302C 100%
+    );
+    z-index: 1;
+}
+
+.card-funding-large .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        #31302C 0%,
+        #18181B 50%,
+        #31302C 100%
+    );
+    z-index: 1;
+}
+
+.card-funding-image {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 120px;
+    z-index: 2;
+    display: block;
+}
+
+.funding-category {
+    position: absolute;
+    font-family: var(--font-family);
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    z-index: 3;
+    bottom: 230px;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.card-funding-content {
+    position: absolute;
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: #A1A1AA;
+    z-index: 2;
+    bottom: 90px;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.funding-category-large {
+    position: absolute;
+    font-family: var(--font-family);
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    z-index: 3;
+    top: 60px;
+    left: 40%;
+    transform: translateY(-50%);
+}
+
+.card-funding-content-large {
+    position: absolute;
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: #A1A1AA;
+    z-index: 2;
+    top: 120px;
+    left: 40%;
+    right: 30px;
+    transform: translateY(-50%);
+}
+
+.card-funding h2 {
+    font-family: var(--font-family);
+    color: white;
+    font-size: 28px;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.funding-link {
+    position: absolute;
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: #EAB308;
+    z-index: 2;
+    bottom: 30px;
+    right: 30px;
+    text-decoration: none;
+}
+
+.card-funding-title {
+    font-family: var(--font-family);
+    color: white;
+    position: relative;
+    font-size: 28px;
+    text-align: center;
+}
+
+a.text-decoration-none {
+    text-decoration: none;
+}
+
+
+
+.hero-mid-section {
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    margin-bottom: 110px;
+}
+
+.center-text {
+    position: relative;
+    font-family: var(--font-family);
+    color: #ffffff;
+    font-size: 56px;
+    font-weight: 350;
+    text-align: center;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.hero-main-text {
+    position: absolute;
+    font-family: var(--font-family);
+    color: var(--color-white);
+    font-size: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    text-align: center;
+    width: 100%;
 }

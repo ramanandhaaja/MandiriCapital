@@ -12,7 +12,7 @@
         </video>
         <div class="hero-content">
             <a href="#">
-                <img src="{{ asset('images/portfolio/portfolio.png') }}" alt="Media" class="center-image">
+                <h1 class="hero-main-text">INVESTMENT </h1>
             </a>
             <div class="center-search">
                 <div class="search-input-container">
@@ -22,7 +22,7 @@
                 <div class="category-filters">
                     <a href="#" class="filter-link active" data-category="get_investment">Get Investment</a>
                     <a href="#" class="filter-link" data-category="all">Portfolio</a>
-                    <a href="#" class="filter-link" data-category="for_investor">For Investor</a>
+                    <a href="#" class="filter-link" data-category="for_investor">Funding</a>
                 </div>
             </div>
         </div>
@@ -35,12 +35,33 @@
                 <h1 class="grid-headline-title">Why MCI </h1>
             </div>
             <div class="grid-headline-description-card">
-                <h1 class="grid-headline-subtitle">At Mandiri Capital Indonesia, we believe in investing in businesses, not
-                    just funding rounds. This means we’re here to support you throughout your journey—from the spark of an
-                    idea to scaling into a successful, impactful enterprise.
-                    </br></br>
-                    As part of the Mandiri Group, we bring unparalleled resources, expertise, and connections to help you
-                    grow and thrive at every stage.</h1>
+                <div class="masonry-grid-investment-section-sub">
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon">
+                            <img src="{{ asset('images/portfolio/headline-coin.png') }}" alt="Ecosystem Icon">
+                        </div>
+                        <h2 class="card-title">Access to Mandiri Group's Ecosystem</h2>
+                        <p class="card-description">We offer startups the unique opportunity to connect and collaborate with
+                            the diverse sectors and resources within the Mandiri Group, driving synergies that accelerate
+                            growth.</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon">
+                            <img src="{{ asset('images/portfolio/headline-person.png') }}" alt="Expertise Icon">
+                        </div>
+                        <h2 class="card-title">Industry Expertise</h2>
+                        <p class="card-description">Our team brings deep industry knowledge and operational expertise to
+                            help navigate challenges and capitalize on opportunities in the fintech landscape.</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon">
+                            <img src="{{ asset('images/portfolio/headline-card.png') }}" alt="Growth Icon">
+                        </div>
+                        <h2 class="card-title">Strategic Growth Support</h2>
+                        <p class="card-description">Beyond capital, we provide comprehensive support in strategy,
+                            networking, and operational excellence to drive sustainable growth.</p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -48,14 +69,41 @@
         <div class="masonry-grid-investment-section-grey">
             <div class="grid-headline-title-card">
                 <h1 class="grid-headline-title">Here’s how we’ll help you achieve that growth </h1>
+                <h1 class="grid-headline-subtitle-left">“At Mandiri Capital Indonesia, we believe in investing in
+                    businesses, not just funding rounds. This means we’re here to support you throughout your journey—from
+                    the spark of an idea to scaling into a successful, impactful enterprise.
+                    <br /><br />As part of the Mandiri Group, we bring unparalleled resources, expertise, and connections to
+                    help you grow and thrive at every stage.
+                </h1>
             </div>
             <div class="grid-headline-description-card">
-                <h1 class="grid-headline-subtitle">At Mandiri Capital Indonesia, we believe in investing in businesses, not
-                    just funding rounds. This means we’re here to support you throughout your journey—from the spark of an
-                    idea to scaling into a successful, impactful enterprise.
-                    </br></br>
-                    As part of the Mandiri Group, we bring unparalleled resources, expertise, and connections to help you
-                    grow and thrive at every stage.</h1>
+                <div class="masonry-grid-investment-section-sub">
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon">
+                            <img src="{{ asset('images/portfolio/headline-coin.png') }}" alt="Ecosystem Icon">
+                        </div>
+                        <h2 class="card-title">Access to Mandiri Group's Ecosystem</h2>
+                        <p class="card-description">We offer startups the unique opportunity to connect and collaborate with
+                            the diverse sectors and resources within the Mandiri Group, driving synergies that accelerate
+                            growth.</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon">
+                            <img src="{{ asset('images/portfolio/headline-person.png') }}" alt="Expertise Icon">
+                        </div>
+                        <h2 class="card-title">Industry Expertise</h2>
+                        <p class="card-description">Our team brings deep industry knowledge and operational expertise to
+                            help navigate challenges and capitalize on opportunities in the fintech landscape.</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon">
+                            <img src="{{ asset('images/portfolio/headline-card.png') }}" alt="Growth Icon">
+                        </div>
+                        <h2 class="card-title">Strategic Growth Support</h2>
+                        <p class="card-description">Beyond capital, we provide comprehensive support in strategy,
+                            networking, and operational excellence to drive sustainable growth.</p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -65,30 +113,65 @@
                 <h1 class="grid-headline-title">Our Investment Process </h1>
             </div>
             <div class="grid-headline-description-card">
-                <h1 class="grid-headline-subtitle">At Mandiri Capital Indonesia, we believe in investing in businesses, not
-                    just funding rounds. This means we’re here to support you throughout your journey—from the spark of an
-                    idea to scaling into a successful, impactful enterprise.
-                    </br></br>
-                    As part of the Mandiri Group, we bring unparalleled resources, expertise, and connections to help you
-                    grow and thrive at every stage.</h1>
+                <div class="masonry-grid-investment-section-sub">
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon-bottom">
+                            <h1 class="card-title-bottom">01 </h1>
+                        </div>
+                        <h2 class="card-title">Access to Mandiri Group's Ecosystem</h2>
+                        <p class="card-description">We offer startups the unique opportunity to connect and collaborate with
+                            the diverse sectors and resources within the Mandiri Group, driving synergies that accelerate
+                            growth.</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon-bottom">
+                            <h1 class="card-title-bottom">02 </h1>
+                        </div>
+                        <h2 class="card-title">Industry Expertise</h2>
+                        <p class="card-description">Our team brings deep industry knowledge and operational expertise to
+                            help navigate challenges and capitalize on opportunities in the fintech landscape.</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon-bottom">
+                            <h1 class="card-title-bottom">03 </h1>
+                        </div>
+                        <h2 class="card-title">Strategic Growth Support</h2>
+                        <p class="card-description">Beyond capital, we provide comprehensive support in strategy,
+                            networking, and operational excellence to drive sustainable growth.</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon-bottom">
+                            <h1 class="card-title-bottom">04 </h1>
+                        </div>
+                        <h2 class="card-title">Access to Mandiri Group's Ecosystem</h2>
+                        <p class="card-description">We offer startups the unique opportunity to connect and collaborate with
+                            the diverse sectors and resources within the Mandiri Group, driving synergies that accelerate
+                            growth.</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon-bottom">
+                            <h1 class="card-title-bottom">05 </h1>
+                        </div>
+                        <h2 class="card-title">Industry Expertise</h2>
+                        <p class="card-description">Our team brings deep industry knowledge and operational expertise to
+                            help navigate challenges and capitalize on opportunities in the fintech landscape.</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon-bottom">
+                            <h1 class="card-title-bottom">06 </h1>
+                        </div>
+                        <h2 class="card-title">Strategic Growth Support</h2>
+                        <p class="card-description">Beyond capital, we provide comprehensive support in strategy,
+                            networking, and operational excellence to drive sustainable growth.</p>
+                    </div>
+                </div>
+                <div class="grid-headline-title-card-sub-bottom">
+                    <h1 class="card-title-bottom">Are you innovating in any of these industries? </h1>
+                    <p class="card-description-bottom">Send your business proposal and join us in shaping the future of
+                        these sectors!</p>
+                </div>
             </div>
 
-        </div>
-
-        <div class="masonry-grid-investment-section-grey">
-            <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">For Investor</h1>
-                <h1 class="grid-headline-subtitle-left">To foster long-term growth, we invest through three distinct fund
-                    vehiclesr</h1>
-            </div>
-            <div class="grid-headline-description-card">
-                <h1 class="grid-headline-subtitle">At Mandiri Capital Indonesia, we believe in investing in businesses, not
-                    just funding rounds. This means we’re here to support you throughout your journey—from the spark of an
-                    idea to scaling into a successful, impactful enterprise.
-                    </br></br>
-                    As part of the Mandiri Group, we bring unparalleled resources, expertise, and connections to help you
-                    grow and thrive at every stage.</h1>
-            </div>
 
         </div>
 
@@ -252,89 +335,143 @@
 
     {{-- for investor Section --}}
     <div class="for-investor-section">
-        <div class="investor-container">
-            <div class="investor-grid">
-                <div class="investor-iframe-container">
-                </div>
-                <!-- Content Column -->
-                <div class="investor-content">
-                    <h2 class="investor-title">
-                        IFF
-                    </h2>
-
-                    <div class="investor-info">
-                        <p> financial tool designed to raise funds for important global projects, like health, education, or
-                            infrastructure. It works by issuing bonds in capital markets, backed by long-term government
-                            pledges.</p>
-                        <p> This approach provides immediate funding for urgent needs while spreading the financial
-                            commitment over time. A key example is the International Finance Facility for Immunisation
-                            (IFFIm), which has helped deliver vaccines to millions worldwide.</p>
-                        <p> In simple terms, IFF turns future promises into funds that create impact today. </p>
+        <div class="hero-mid-section">
+            <h1 class="center-text">To foster long-term growth, we invest through three distinct fund vehicles</h1>
+        </div>
+        <div class="masonry-grid-investment-section">
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title">Mandiri Corporate VC  </h1>
+            </div>
+            <div class="grid-headline-description-card">
+                <div class="masonry-grid-investment-section-sub">
+                    <div class="card-funding-large">
+                            <img src="{{ asset('images/platform/funding2.png') }}" alt="Media"
+                                class="card-funding-image" />
+                        <div class="funding-category-large">Indonesia Impact Fund (IIF)</div>
+                        <div class="card-funding-content-large">
+                            A joint initiative by MCI, ABAC Indonesia, and UNDP Indonesia, the Indonesia Impact Fund
+                            (IIF) is the nation's first private impact investment fund. Focused on early-stage startups
+                            advancing the SDGs, IIF is driving Indonesia’s journey toward a brighter, sustainable
+                            future.
+                        </div>
+                        <a href="#" class="text-decoration-none">
+                            <span class="funding-link">Fund Report >></span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="investor-container dark">
-            <div class="investor-grid">
-                <!-- Content Column -->
-                <div class="investor-content">
-                    <h2 class="investor-title">
-                        BTN Fund
-                    </h2>
-
-                    <div class="investor-info">
-                        <p> investment initiative launched by PT Bank Tabungan Negara (Persero) Tbk (Bank BTN) in
-                            collaboration with PT Mandiri Capital Indonesia (MCI), the corporate venture capital arm of Bank
-                            Mandiri. Established in December 2023, the fund focuses on investing in startups operating in
-                            sectors such as property technology (proptech), mortgage technology (mortgage tech), financial
-                            technology (fintech), embedded finance, construction technology (construction tech), open
-                            finance, and software as a service (SaaS).</p>
-                        <p> In summary, the BTN Fund represents a strategic move by Bank BTN to invest in and collaborate
-                            with technology-driven startups, thereby accelerating its digital transformation and
-                            strengthening its position in the housing finance sector.</p>
+        <div class="masonry-grid-investment-section">
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title">Dana Ventura MCI </h1>
+            </div>
+            <div class="grid-headline-description-card">
+                <div class="masonry-grid-investment-section-sub">
+                    <div class="card-funding">
+                        <div class="background-image">
+                            <img src="{{ asset('images/platform/funding2.png') }}" alt="Media"
+                                class="card-funding-image" />
+                        </div>
+                        <div class="funding-category">Indonesia Impact Fund (IIF)</div>
+                        <div class="card-funding-content">
+                            A joint initiative by MCI, ABAC Indonesia, and UNDP Indonesia, the Indonesia Impact Fund
+                            (IIF) is the nation's first private impact investment fund. Focused on early-stage startups
+                            advancing the SDGs, IIF is driving Indonesia’s journey toward a brighter, sustainable
+                            future.
+                        </div>
+                        <a href="#" class="text-decoration-none">
+                            <span class="funding-link">Fund Report >></span>
+                        </a>
+                    </div>
+                    <div class="card-funding">
+                        <div class="background-image">
+                            <img src="{{ asset('images/platform/funding2.png') }}" alt="Media"
+                                class="card-funding-image" />
+                        </div>
+                        <div class="funding-category">Indonesia Impact Fund (IIF)</div>
+                        <div class="card-funding-content">
+                            A joint initiative by MCI, ABAC Indonesia, and UNDP Indonesia, the Indonesia Impact Fund
+                            (IIF) is the nation's first private impact investment fund. Focused on early-stage startups
+                            advancing the SDGs, IIF is driving Indonesia’s journey toward a brighter, sustainable
+                            future.
+                        </div>
+                        <a href="#" class="text-decoration-none">
+                            <span class="funding-link">Fund Report >></span>
+                        </a>
+                    </div>
+                    <div class="card-funding">
+                        <div class="background-image">
+                            <img src="{{ asset('images/platform/funding2.png') }}" alt="Media"
+                                class="card-funding-image" />
+                        </div>
+                        <div class="funding-category">Indonesia Impact Fund (IIF)</div>
+                        <div class="card-funding-content">
+                            A joint initiative by MCI, ABAC Indonesia, and UNDP Indonesia, the Indonesia Impact Fund
+                            (IIF) is the nation's first private impact investment fund. Focused on early-stage startups
+                            advancing the SDGs, IIF is driving Indonesia’s journey toward a brighter, sustainable
+                            future.
+                        </div>
+                        <a href="#" class="text-decoration-none">
+                            <span class="funding-link">Fund Report >></span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="investor-container">
-            <div class="investor-grid">
-                <div class="investor-iframe-container">
-                </div>
-                <!-- Content Column -->
-                <div class="investor-content">
-                    <h2 class="investor-title">
-                        MPF
-                    </h2>
 
-                    <div class="investor-info">
-                        <p> It's a compulsory retirement savings scheme in Hong Kong, designed to help employees save
-                            for their retirement. </p>
-                        <p> Both employers and employees contribute a percentage of the employee's salary into the fund,
-                            which is then invested in various financial products to grow over time. The accumulated
-                            savings become accessible to employees upon reaching retirement age or under specific
-                            conditions. </p>
-                    </div>
-                </div>
+        <div class="masonry-grid-contact-section">
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title-contact">Send Your Business Proposal</h1>
+                <h1 class="grid-headline-subtitle-contact">We are happy to discuss your business situation, please contact.
+                </h1>
             </div>
-        </div>
-        <div class="investor-container dark">
-            <div class="investor-grid">
-                <!-- Content Column -->
-                <div class="investor-content">
-                    <h2 class="investor-title-lg">
-                        New Investor Enquiry
-                    </h2>
-                    <div class="investor-info">
-                        <p> Begin your investment journey with confidence</p>
-                        <p> —partner with us today.</p>
-                    </div>
-                </div>
-                <div class="investor-iframe-container-lg">
-                    <img src="{{ asset('images/portfolio/btn.png') }}" alt="Lets Connect" />
-                </div>
-            </div>
-        </div>
+            <div class="grid-headline-contact-card">
+                <form id="contactForm" class="contact-form">
+                    @csrf
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company_name" class="form-label">Company Name</label>
+                            <input type="text" id="company_name" name="company_name" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="website" class="form-label">Website</label>
+                            <input type="text" id="website" name="website" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Business Description</label>
+                        <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Write here..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="text" id="phone" name="phone" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Company Email</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">
+                            <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message">
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
 
 @endsection
@@ -412,7 +549,7 @@
                         } else if (currentFilter === 'all') {
                             updateGridLayout(portfolios);
                             setupExpandButtons
-                        (); // Add this line to setup expand buttons after updating the grid
+                                (); // Add this line to setup expand buttons after updating the grid
                         } else if (currentFilter === 'for_investor') {
                             updateforinvestor();
                         }
@@ -488,39 +625,39 @@
                             <div class="header-cell">Partners</div>
                         </div>
                         ${portfolios.map(portfolio => `
-                                <div class="portfolio-row">
-                                    <div class="company-cell">
-                                        <h3 class="company-name">${portfolio.name}</h3>
-                                        <a href="/portfolio/${portfolio.name.toLowerCase().replace(/\s+/g, '-')}" class="company-image-link">
-                                            <img class="company-image"
-                                                src="${portfolio.image_path ? '/storage/' + portfolio.image_path : '/images/media/image5.png'}"
-                                                alt="${portfolio.name}">
-                                        </a>
-                                        <a href="${portfolio.website_url}" target="_blank" class="company-website">
-                                            ${portfolio.website_url ? portfolio.website_url.replace(/^https?:\/\//, '') : ''}
-                                        </a>
-                                    </div>
-                                    <div class="category-cell">${portfolio.category ? portfolio.category.name : ''}</div>
-                                    <div class="description-cell">
-                                        ${portfolio.description ? portfolio.description.substring(0, 100) + '...' : ''}
-                                    </div>
-                                    <div class="stage-cell">
-                                        <span class="stage-tag">${portfolio.stage || ''}</span>
-                                    </div>
-                                    <div class="partners-cell">
-                                        <div class="partner-info">
-                                            <span>${portfolio.ceo_name ? portfolio.ceo_name + ' (CEO)' : ''}</span>
-                                            <button class="expand-btn" aria-label="Show more details">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M6 9l6 6 6-6" />
-                                                </svg>
-                                            </button>
+                                        <div class="portfolio-row">
+                                            <div class="company-cell">
+                                                <h3 class="company-name">${portfolio.name}</h3>
+                                                <a href="/portfolio/${portfolio.name.toLowerCase().replace(/\s+/g, '-')}" class="company-image-link">
+                                                    <img class="company-image"
+                                                        src="${portfolio.image_path ? '/storage/' + portfolio.image_path : '/images/media/image5.png'}"
+                                                        alt="${portfolio.name}">
+                                                </a>
+                                                <a href="${portfolio.website_url}" target="_blank" class="company-website">
+                                                    ${portfolio.website_url ? portfolio.website_url.replace(/^https?:\/\//, '') : ''}
+                                                </a>
+                                            </div>
+                                            <div class="category-cell">${portfolio.category ? portfolio.category.name : ''}</div>
+                                            <div class="description-cell">
+                                                ${portfolio.description ? portfolio.description.substring(0, 100) + '...' : ''}
+                                            </div>
+                                            <div class="stage-cell">
+                                                <span class="stage-tag">${portfolio.stage || ''}</span>
+                                            </div>
+                                            <div class="partners-cell">
+                                                <div class="partner-info">
+                                                    <span>${portfolio.ceo_name ? portfolio.ceo_name + ' (CEO)' : ''}</span>
+                                                    <button class="expand-btn" aria-label="Show more details">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M6 9l6 6 6-6" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            `).join('')}
+                                    `).join('')}
                     `;
 
                     portfolioSection.innerHTML = tableHtml;

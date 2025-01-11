@@ -21,8 +21,14 @@
     --spacing-lg: 24px;
     --spacing-xl: 40px;
     --spacing-2xl: 50px;
+    --font-family: 'Avenir LT Std', sans-serif;
+}
 
-    --font-family: 'Roboto', sans-serif;
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('../fonts/Avenir LT Std 45 Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* Base styles */
@@ -569,34 +575,6 @@ textarea::placeholder {
 textarea:focus {
     outline: none;
     background: rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 1024px) {
-    .pitch-form-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .pitch-form {
-        padding: 30px;
-        margin: 20px;
-        border-radius: 24px;
-    }
-
-    .pitch-form h2 {
-        font-size: 32px;
-    }
-
-    .pitch-form-content {
-        padding: 24px;
-    }
-}
-
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column;
-        gap: 16px;
-    }
 }
 
 /* Modal Styles */

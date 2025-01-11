@@ -1,3 +1,28 @@
+/* Root variables for consistent theming */
+:root {
+    --color-primary: #FFD700;
+    --color-secondary: #EFA32F;
+    --color-dark: #18181B;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-gray-100: #F3F4F6;
+    --color-gray-400: #9CA3AF;
+    --color-gray-500: #6B7280;
+    --color-gray-600: #4B5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1F2937;
+    --color-gray-900: #111827;
+    --color-border: #3F3F46;
+    --font-family: 'Avenir LT Std', sans-serif;
+}
+
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('../fonts/Avenir LT Std 45 Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Grid Layout */
 .masonry-grid {
     position: relative;
@@ -36,7 +61,7 @@
 }
 
 .category {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 38px;
     position: absolute;
     top: 50px;
@@ -56,7 +81,7 @@
 }
 
 .card h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: white;
     font-size: 28px;
     margin: 0;
@@ -65,7 +90,7 @@
 }
 
 .date {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     position: absolute;
     bottom: 30px;
     left: 30px;
@@ -247,6 +272,19 @@
     margin-top: -50px;
 }
 
+.hero-main-text {
+    position: absolute;
+    font-family: var(--font-family);
+    color: var(--color-white);
+    font-size: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
 .center-image-newsletter {
     position: relative;
     height: 58px;
@@ -287,7 +325,7 @@
 }
 
 .search-input {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     width: 400px;
     padding: 10px 20px;
     padding-right: 40px;
@@ -346,7 +384,7 @@
 }
 
 .date-range-label {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #FFFFFF;
     font-size: 14px;
     margin-bottom: 4px;
@@ -385,7 +423,7 @@
 }
 
 .filter-link {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: white;
     text-decoration: none;
     font-size: 24px;
@@ -397,7 +435,7 @@
 
 .filter-link.active {
     color: #FFD700;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
 }
 
 .filter-link.active::after {
@@ -423,7 +461,7 @@
 }
 
 .newsletter-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #FFFFFF;
     font-size: 36px;
     font-weight: 600;
@@ -431,7 +469,7 @@
 }
 
 .newsletter-subtitle {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #9CA3AF;
     font-size: 16px;
     margin: 0 0 32px 0;
@@ -447,7 +485,7 @@
 }
 
 .newsletter-input {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     flex: 1;
     background-color: #1F2937;
     border: none;
@@ -467,7 +505,7 @@
 }
 
 .newsletter-button {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     background-color: #F59E0B;
     border: none;

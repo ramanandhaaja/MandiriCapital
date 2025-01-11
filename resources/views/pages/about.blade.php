@@ -12,11 +12,12 @@
 
         <div class="hero-content">
             <a href="#">
-                <img src="{{ asset('images/about/about.png') }}" alt="Media" class="center-image">
+                <h1 class="hero-main-text">OUR IDENTITY </h1>
             </a>
             <div class="center-search">
                 <div class="category-filters">
-                    <a href="#" class="filter-link active">About</a>
+                    <a href="#" class="filter-link active">About MCI</a>
+                    <a href="#" class="filter-link">About Mandiri</a>
                     <a href="#" class="filter-link">Our Team</a>
                 </div>
             </div>
@@ -30,36 +31,9 @@
         </div>
 
 
-        {{-- Counter Section --}}
-        <div class="counter-section">
-            <div class="counter-grid">
-                <div class="counter-card right-border">
-                    <h1>Mandiri Group Ecosystem </h1>
-                    <div id="counter1" class="counter">
-                        0
-                    </div>
-                </div>
-                <div class="counter-card right-border">
-                    <h1>Portfolio</h1>
-                    <div id="counter2" class="counter">
-                        0
-                    </div>
-                </div>
-                <div class="counter-card">
-                    <h1>Fund Venture </h1>
-                    <div id="counter3" class="counter">
-                        0
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
         {/* Counter Content Section */}
         <div class="counter-content">
             <div class="content-container">
-                <!-- Left Column - Text Content -->
                 <div class="text-content">
                     <p>
                         Established in 2015 as the corporate venture capital arm of Indonesia's
@@ -81,7 +55,6 @@
                 </div>
             </div>
 
-            <!-- Right Column - Features -->
             <div class="features-container">
                 <h2 class="features-title">Unlocking Startups'<br>Best Potential</h2>
 
@@ -120,82 +93,31 @@
         </div>
 
 
-        {{-- Headline Section --}}
-
-
-        <div class="headline-section">
-            <h1 class="headline-title">FUNDING </h1>
-
-            <div class="headline-grid-two middle-animation">
-                <div class="headline-card">
-                    <h1>Mandiri Corporate VC</h1>
-                    <h2>Balance Sheet Fund</h2>
-                    <p>Berfokus untuk memberikan investasi ke technology companies "growth startup" yang memiliki potensi
-                        kolaborasi...</p>
-                    <a href="#" class="learn-more">Learn More »</a>
-                </div>
-
-                <div class="headline-card middle-border">
-                    <h1>Dana Ventura</h1>
-                    <h2>Indonesia Impact Fund (IIF)</h2>
-                    <p>Impact Fund swasta pertama di Indonesia yang berinvestasi ke perusahaan rintisan tahap awal yang
-                        mendukung imple...</p>
-                    <a href="#" class="learn-more">Learn More »</a>
-                </div>
-
-            </div>
-        </div>
-
-
-        <div class="headline-section-grey">
-            <h1 class="headline-title ">MCI VALUE CREATION INITIATIVES </h1>
-
-            <div class="headline-grid middle-animation">
-                <div class="headline-card">
-                    <h1>Mandiri Corporate VC</h1>
-                    <h2>Balance Sheet Fund</h2>
-                    <p>Berfokus untuk memberikan investasi ke technology companies "growth startup" yang memiliki potensi
-                        kolaborasi...</p>
-                    <a href="#" class="learn-more">Learn More »</a>
-                </div>
-
-                <div class="headline-card middle-border">
-                    <h1>Dana Ventura</h1>
-                    <h2>Indonesia Impact Fund (IIF)</h2>
-                    <p>Impact Fund swasta pertama di Indonesia yang berinvestasi ke perusahaan rintisan tahap awal yang
-                        mendukung imple...</p>
-                    <a href="#" class="learn-more">Learn More »</a>
-                </div>
-
-                <div class="headline-card">
-                    <h1>Dana Ventura</h1>
-                    <h2>Merah Putih Fund (MPF)</h2>
-                    <p>Dana Ventura terbesar di Indonesia yang dikelola oleh 5 CVC BUMN untuk mendukung soonicorns dan
-                        mempercepat pe...</p>
-                    <a href="#" class="learn-more">Learn More »</a>
-                </div>
-            </div>
-        </div>
-
-
         <div class="headline-section">
             <h1 class="headline-title ">OUR PRIORITY SECTOR </h1>
 
-            <div class="headline-grid-two middle-animation">
+            <div class="headline-grid-four middle-animation">
                 <div class="headline-card">
-                    <h1>Mandiri Corporate VC</h1>
-                    <h2>Balance Sheet Fund</h2>
-                    <p>Berfokus untuk memberikan investasi ke technology companies "growth startup" yang memiliki potensi
-                        kolaborasi...</p>
-                    <a href="#" class="learn-more">Learn More »</a>
+                    <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                    <h1>Software as a Service (SaaS)</h1>
                 </div>
 
                 <div class="headline-card middle-border">
-                    <h1>Dana Ventura</h1>
-                    <h2>Indonesia Impact Fund (IIF)</h2>
-                    <p>Impact Fund swasta pertama di Indonesia yang berinvestasi ke perusahaan rintisan tahap awal yang
-                        mendukung imple...</p>
-                    <a href="#" class="learn-more">Learn More »</a>
+                    <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                    <h1>Deep Tech</h1>
+
+                </div>
+
+                <div class="headline-card middle-border">
+                    <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                    <h1>Fintech</h1>
+
+                </div>
+
+                <div class="headline-card left-border">
+                    <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="Headline Image" />
+                    <h1>Value Chain</h1>
+
                 </div>
 
             </div>
@@ -204,6 +126,24 @@
 
     </div>
 
+    <!-- MANDIRI SECTIION -->
+    <div class="mandiri-section">
+        <div class="ecosystem-grid">
+        @foreach($ecosystemList as $ecosystem)
+            <div class="card-ecosystem">
+                <div class="background-image">
+                    <img src="images/platform/funding1.png" alt="Media" class="card-ecosystem-image" />
+                    <a href="#" class="text-decoration-none">
+                        <span class="category">{{ $ecosystem->title }}</span>
+                        <div class="card-ecosystem-content">
+                            {{ $ecosystem->content }}
+                        </div>
+                    </a>
+                </div>
+            </div>
+        @endforeach
+        </div>
+    </div>
 
 
     <!-- TEAM SECTIION -->
@@ -279,11 +219,13 @@
             const masonry = document.querySelector('.masonry-grid');
             const newsletterSection = document.querySelector('.newsletter-section');
             const aboutFullSection = document.querySelector('.about-full-section');
+            const mandiriSection = document.querySelector('.mandiri-section');
             const teamSection = document.querySelector('.team-section');
 
             // Initial states
 
             aboutFullSection.style.display = 'block';
+            mandiriSection.style.display = 'none';
             teamSection.style.display = 'none';
             newsletterSection.style.display = 'block';
 
@@ -314,8 +256,10 @@
                         if (!response.ok) throw new Error('Network response was not ok');
 
                         const posts = await response.json();
-                        if (currentFilter === 'about') {
+                        if (currentFilter === 'about mci') {
                             updateAbout(posts, currentFilter);
+                        } else if (currentFilter === 'about mandiri') {
+                            updateMandiri(posts, currentFilter);
                         } else if (currentFilter === 'our team') {
                             updateTeam(posts, currentFilter);
                         }
@@ -327,12 +271,21 @@
 
             function updateAbout(posts, filter) {
                 aboutFullSection.style.display = 'block';
+                mandiriSection.style.display = 'none';
+                teamSection.style.display = 'none';
+                newsletterSection.style.display = 'block';
+            }
+
+            function updateMandiri(posts, filter) {
+                aboutFullSection.style.display = 'none';
+                mandiriSection.style.display = 'block';
                 teamSection.style.display = 'none';
                 newsletterSection.style.display = 'block';
             }
 
             function updateTeam(posts, filter) {
                 aboutFullSection.style.display = 'none';
+                mandiriSection.style.display = 'none';
                 teamSection.style.display = 'block';
                 newsletterSection.style.display = 'block';
             }

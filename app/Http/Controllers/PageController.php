@@ -42,7 +42,12 @@ class PageController extends Controller
             $query->where('name', 'Our Identity');
         })->first();
 
-        return view('pages.about', compact('hero'));
+        $ecosystem = Platform::with('category')
+            ->orderBy('published_date', 'desc');
+
+        $ecosystemList = $ecosystem->get();
+
+        return view('pages.about', compact('hero', 'ecosystemList'));
     }
 
     public function contact()
