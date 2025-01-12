@@ -93,14 +93,13 @@
             <h1 class="headline-title">OUR PRIORITY SECTOR</h1>
 
             <div class="headline-grid-four middle-animation">
-                @php
-                    $sectors = ['Software as a Service (SaaS)', 'Deep Tech', 'Fintech', 'Value Chain'];
-                @endphp
 
-                @foreach($sectors as $index => $sector)
+
+                @foreach($prioritySectors as $index => $sector)
                     <div class="headline-card {{ $index > 0 ? ($index === 3 ? 'left-border' : 'middle-border') : '' }}">
-                        <img class="headline-image" src="{{ asset('images/about/sector.png') }}" alt="{{ $sector }}">
-                        <h1>{{ $sector }}</h1>
+                        <img class="headline-image" src="{{ '/storage/' . $sector->image_path }}" alt="{{ $sector->title }}">
+
+                        <h1>{{ $sector->title }}</h1>
                     </div>
                 @endforeach
             </div>
@@ -174,7 +173,7 @@
     <div class="newsletter-section">
         <div class="newsletter-container">
             <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
-            <a href="#" class="newsletter-link">
+            <a href="{{ route('contact') }}" class="newsletter-link">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect" class="button-image center-image-newsletter">
             </a>
         </div>

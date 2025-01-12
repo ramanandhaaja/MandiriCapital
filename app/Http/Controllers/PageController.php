@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 // Model Imports
+
+use App\Models\AboutPrioritySector;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
@@ -45,12 +47,14 @@ class PageController extends Controller
             $query->where('name', 'Our Identity');
         })->first();
 
+        $prioritySectors = AboutPrioritySector::get();
+
         $ecosystem = Platform::with('category')
             ->orderBy('published_date', 'desc');
 
         $ecosystemList = $ecosystem->get();
 
-        return view('pages.about', compact('hero', 'ecosystemList'));
+        return view('pages.about', compact('hero', 'ecosystemList', 'prioritySectors'));
     }
 
     public function contact()
