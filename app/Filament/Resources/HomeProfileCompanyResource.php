@@ -17,7 +17,13 @@ class HomeProfileCompanyResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
 
+    protected static ?string $navigationLabel = 'Testimonial';
+
     protected static ?string $navigationGroup = 'Home Management';
+
+    protected static ?string $modelLabel = 'Testimonial';
+
+    protected static ?string $pluralModelLabel = 'Testimonial';
 
     protected static ?int $navigationSort = 11;
 
@@ -59,33 +65,36 @@ class HomeProfileCompanyResource extends Resource
 
                                     ])
                                     ->columns(2),
-                                Forms\Components\Section::make('Image/Video')
-                                    ->schema([
-                                        Forms\Components\FileUpload::make('image_path')
-                                            ->required()
-                                            ->acceptedFileTypes(['image/*', 'video/*'])
-                                            ->maxSize(50 * 1024) // 50MB max file size
-                                            ->disk('public')
-                                            ->directory('hero-sections')
-                                            ->visibility('public')
-                                            ->columnSpanFull(),
-                                    ]),
+
 
                             ])
                             ->columnSpan(2),
-                            Forms\Components\Section::make('Image/Video')
-                                    ->schema([
-                                        Forms\Components\FileUpload::make('company_image_path')
-                                            ->required()
-                                            ->acceptedFileTypes(['image/*', 'video/*'])
-                                            ->maxSize(50 * 1024) // 50MB max file size
-                                            ->disk('public')
-                                            ->directory('hero-sections')
-                                            ->visibility('public')
-                                            ->columnSpanFull(),
-                                    ])
-                                    ->columnSpan(1),
-
+                            Forms\Components\Group::make()
+                                ->schema([
+                                    Forms\Components\Section::make('Company Logo')
+                                        ->schema([
+                                            Forms\Components\FileUpload::make('company_image_path')
+                                                ->required()
+                                                ->acceptedFileTypes(['image/*', 'video/*'])
+                                                ->maxSize(50 * 1024) // 50MB max file size
+                                                ->disk('public')
+                                                ->directory('hero-sections')
+                                                ->visibility('public')
+                                                ->columnSpanFull(),
+                                        ]),
+                                    Forms\Components\Section::make('Founder Photo')
+                                        ->schema([
+                                            Forms\Components\FileUpload::make('image_path')
+                                                ->required()
+                                                ->acceptedFileTypes(['image/*', 'video/*'])
+                                                ->maxSize(50 * 1024) // 50MB max file size
+                                                ->disk('public')
+                                                ->directory('hero-sections')
+                                                ->visibility('public')
+                                                ->columnSpanFull(),
+                                        ]),
+                                ])
+                                ->columnSpan(1),
                     ])
                     ->columns(3),
             ]);
@@ -96,10 +105,12 @@ class HomeProfileCompanyResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('company_image_path')
+                    ->label('Company Logo')
                     ->disk('public')
                     ->height(50),
 
                 Tables\Columns\TextColumn::make('company_name')
+                    ->label('Company Name')
                     ->sortable()
                     ->searchable(),
 
