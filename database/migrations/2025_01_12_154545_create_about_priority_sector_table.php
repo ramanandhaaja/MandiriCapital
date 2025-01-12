@@ -20,6 +20,29 @@ return new class extends Migration
             $table->string('image_path')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('about_mandiri_ecosystem', function (Blueprint $table) {
+            $table->id();
+            $table->string('title')->nullable();
+            $table->text('slug')->nullable();
+            $table->text('content')->nullable();
+            $table->date('published_date')->nullable();
+            $table->string('image_path')->nullable();
+            $table->boolean('is_domestic')->default(false);
+            $table->boolean('is_international')->default(false);
+            $table->timestamps();
+        });
+
+
+        Schema::create('about_team', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->nullable();
+            $table->string('title')->nullable();
+            $table->text('content')->nullable();
+            $table->date('published_date')->nullable();
+            $table->string('image_path')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -28,5 +51,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('about_priority_sector');
+        Schema::dropIfExists('about_mandiri_ecosystem');
     }
 };

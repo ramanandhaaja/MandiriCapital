@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 // Model Imports
 
+use App\Models\AboutMandiriEcosystem;
 use App\Models\AboutPrioritySector;
+use App\Models\AboutTeam;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
@@ -49,12 +51,11 @@ class PageController extends Controller
 
         $prioritySectors = AboutPrioritySector::get();
 
-        $ecosystem = Platform::with('category')
-            ->orderBy('published_date', 'desc');
+        $ecosystemList = AboutMandiriEcosystem::get();
 
-        $ecosystemList = $ecosystem->get();
+        $teamMembers = AboutTeam::get();
 
-        return view('pages.about', compact('hero', 'ecosystemList', 'prioritySectors'));
+        return view('pages.about', compact('hero', 'ecosystemList', 'prioritySectors', 'teamMembers'));
     }
 
     public function contact()

@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AboutPrioritySectorResource\Pages;
-use App\Models\AboutPrioritySector;
+use App\Filament\Resources\AboutMandiriEcosystemResource\Pages;
+use App\Models\AboutMandiriEcosystem;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,21 +12,21 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class AboutPrioritySectorResource extends Resource
+class AboutMandiriEcosystemResource extends Resource
 {
-    protected static ?string $model = AboutPrioritySector::class;
+    protected static ?string $model = AboutMandiriEcosystem::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-calculator';
 
     protected static ?string $navigationGroup = 'Our Identity Management';
 
-    protected static ?string $navigationLabel = 'Priority Sector';
+    protected static ?string $navigationLabel = 'Mandiri Ecosystem';
 
-    protected static ?string $modelLabel = 'Priority Sector';
+    protected static ?string $modelLabel = 'Mandiri Ecosystem';
 
-    protected static ?string $pluralModelLabel = 'Priority Sector';
+    protected static ?string $pluralModelLabel = 'Mandiri Ecosystems';
 
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 6;
 
     public static function form(Form $form): Form
     {
@@ -51,7 +51,7 @@ class AboutPrioritySectorResource extends Resource
                                                 Forms\Components\TextInput::make('slug')
                                                     ->required()
                                                     ->maxLength(255)
-                                                    ->unique(AboutPrioritySector::class, 'slug', ignoreRecord: true),
+                                                    ->unique(AboutMandiriEcosystem::class, 'slug', ignoreRecord: true),
                                             ]),
 
                                         Forms\Components\RichEditor::make('content')
@@ -68,22 +68,34 @@ class AboutPrioritySectorResource extends Resource
                                             ]),
 
                                     ])
+                                    ->columns(2),
+                                Forms\Components\Section::make('Image')
+                                    ->schema([
+                                        Forms\Components\FileUpload::make('image_path')
+                                            ->image()
+                                            ->disk('public')
+                                            ->directory('our-identity')
+                                            ->visibility('public')
+                                            ->columnSpanFull(),
+                                    ]),
 
                             ])
                             ->columnSpan(2),
 
-                            Forms\Components\Section::make('Image/Video')
+                        Forms\Components\Section::make('Tag')
                                     ->schema([
-                                        Forms\Components\FileUpload::make('image_path')
-                                            ->required()
-                                            ->acceptedFileTypes(['image/*', 'video/*'])
-                                            ->maxSize(50 * 1024) // 50MB max file size
-                                            ->disk('public')
-                                            ->directory('hero-sections')
-                                            ->visibility('public')
-                                            ->columnSpanFull(),
+                                        Forms\Components\Grid::make()
+                                            ->schema([
+                                                Forms\Components\Checkbox::make('is_domestic')
+                                                    ->label('Domestic')
+                                                    ->default(true),
+                                                Forms\Components\Checkbox::make('is_international')
+                                                    ->label('International')
+                                                    ->default(false),
+                                            ])
+                                            ->columns(2),
                                     ])
-                            ->columnSpan(1),
+                                    ->columnSpan(1),
                     ])
                     ->columns(3),
             ])
@@ -124,8 +136,8 @@ class AboutPrioritySectorResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAboutPrioritySector::route('/'),
-            'edit' => Pages\EditAboutPrioritySector::route('/{record}/edit'),
+            'index' => Pages\ListAboutMandiriEcosystem::route('/'),
+            'edit' => Pages\EditAboutMandiriEcosystem::route('/{record}/edit'),
         ];
     }
 

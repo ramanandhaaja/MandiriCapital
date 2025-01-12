@@ -91,14 +91,10 @@
         {{-- Priority Sectors --}}
         <div class="headline-section">
             <h1 class="headline-title">OUR PRIORITY SECTOR</h1>
-
             <div class="headline-grid-four middle-animation">
-
-
                 @foreach($prioritySectors as $index => $sector)
                     <div class="headline-card {{ $index > 0 ? ($index === 3 ? 'left-border' : 'middle-border') : '' }}">
                         <img class="headline-image" src="{{ '/storage/' . $sector->image_path }}" alt="{{ $sector->title }}">
-
                         <h1>{{ $sector->title }}</h1>
                     </div>
                 @endforeach
@@ -112,7 +108,15 @@
             @foreach($ecosystemList as $ecosystem)
                 <div class="card-ecosystem">
                     <div class="background-image">
-                        <img src="images/platform/funding1.png" alt="{{ $ecosystem->title }}" class="card-ecosystem-image">
+                        <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}" class="card-ecosystem-image">
+                        <div class="tag-container">
+                            @if($ecosystem->is_domestic)
+                                <span class="tag tag-domestic">Domestik</span>
+                            @endif
+                            @if($ecosystem->is_international)
+                                <span class="tag tag-international">International</span>
+                            @endif
+                        </div>
                         <a href="#" class="text-decoration-none">
                             <span class="category">{{ $ecosystem->title }}</span>
                             <div class="card-ecosystem-content">
@@ -145,21 +149,12 @@
         </div>
 
         <div class="masonry-grid">
-            @php
-                $teamMembers = [
-                    ['name' => 'Floyd Miles', 'title' => 'CEO - Chief Executive Officer'],
-                    ['name' => 'Floyd Miles', 'title' => 'CEO - Chief Executive Officer'],
-                    ['name' => 'Floyd Miles', 'title' => 'CEO - Chief Executive Officer'],
-                    ['name' => 'Floyd Miles', 'title' => 'CEO - Chief Executive Officer'],
-                    ['name' => 'Floyd Miles', 'title' => 'CEO - Chief Executive Officer']
-                ];
-            @endphp
 
             @foreach($teamMembers as $member)
                 <div class="team-card">
-                    <img class="background-image" src="{{ asset('images/about/team1.png') }}" alt="{{ $member['name'] }}">
-                    <span class="team-name">{{ $member['name'] }}</span>
-                    <span class="team-title">{{ $member['title'] }}</span>
+                    <img class="background-image" src="{{ '/storage/' . $member->image_path }}" alt="{{ $member->name }}">
+                    <span class="team-name">{{ $member->name }}</span>
+                    <span class="team-title">{{ $member->title }}</span>
                 </div>
             @endforeach
         </div>
