@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             HomeArticleSeeder::class,
             HeroSectionSeeder::class,
             PublicationEmailSeeder::class,
+            HomeProfileCompanySeeder::class,
         ]);
     }
 }

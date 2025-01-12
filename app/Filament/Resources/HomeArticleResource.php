@@ -9,15 +9,22 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class HomeArticleResource extends Resource
 {
     protected static ?string $model = HomeArticle::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-calculator';
 
     protected static ?string $navigationGroup = 'Home Management';
+
+    protected static ?string $navigationLabel = 'Counters';
+
+    protected static ?string $modelLabel = 'Counter';
+
+    protected static ?string $pluralModelLabel = 'Counters';
 
     protected static ?int $navigationSort = 10;
 
@@ -61,16 +68,7 @@ class HomeArticleResource extends Resource
                                             ]),
 
                                     ])
-                                    ->columns(2),
-                                    Forms\Components\Section::make('Image')
-                                            ->schema([
-                                                Forms\Components\FileUpload::make('image_path')
-                                                    ->image()
-                                                    ->disk('public')
-                                                    ->directory('home-articles')
-                                                    ->visibility('public')
-                                                    ->columnSpanFull(),
-                                            ]),
+
                             ])
                             ->columnSpan(2),
 
@@ -79,10 +77,7 @@ class HomeArticleResource extends Resource
                                 Forms\Components\TextInput::make('category')
                                     ->required()
                                     ->maxLength(255)
-                                    ->live(onBlur: true)
-                                    ->afterStateUpdated(fn (string $state, callable $set) =>
-                                        $set('slug', Str::slug($state))
-                                    ),
+                                    ->live(onBlur: true),
                             ])
                             ->columnSpan(1),
                     ])
@@ -95,9 +90,6 @@ class HomeArticleResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image_path')
-                    ->disk('public')
-                    ->height(50),
 
                 Tables\Columns\TextColumn::make('title')
                     ->sortable()
@@ -120,12 +112,9 @@ class HomeArticleResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                //
             ]);
     }
 
@@ -133,8 +122,17 @@ class HomeArticleResource extends Resource
     {
         return [
             'index' => Pages\ListHomeArticles::route('/'),
-            'create' => Pages\CreateHomeArticle::route('/create'),
             'edit' => Pages\EditHomeArticle::route('/{record}/edit'),
         ];
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canDelete(?Model $record = null): bool
+    {
+        return false;
     }
 }

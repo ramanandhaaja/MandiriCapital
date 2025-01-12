@@ -33,10 +33,10 @@ class HeroSectionSeeder extends Seeder
         // Create hero sections
         $sections = [
             [
-                'title' => 'Home',
-                'slug' => 'home',
+                'title' => 'Corporate Venture Capital of Bank Mandiri',
+                'slug' => 'corporate-venture-capital-of-bank-mandiri',
                 'hero_section_category_id' => 1, // Home
-                'content' => 'Corporate Venture Capital of Bank Mandiri',
+                'content' => 'We bring unparalleled resources, expertise, and connections to help you grow and thrive in every stage.',
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD.mp4'
             ],

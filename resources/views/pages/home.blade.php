@@ -16,8 +16,8 @@
         </video>
 
         <div class="hero-content">
-            <div class="center-text">{!! $hero->content !!}</div>
-            <div class="center-text-subtitle">We bring unparalleled resources, expertise, and connections to help you grow and thrive in every stage.</div>
+            <div class="center-text">{!! $hero->title !!}</div>
+            <div class="center-text-subtitle">{!! $hero->content !!}</div>
             <div class="image-container">
                 <img src="{{ asset('images/home/forstartup.png') }}" alt="For Startup" class="button-image center-image" onclick="openPitchModal()">
                 <img src="{{ asset('images/home/forlp.png') }}" alt="For LP" class="button-image center-image" onclick="openInvestorModal()">
@@ -26,20 +26,12 @@
     </div>
 
     {{-- Headline Section: Key metrics display --}}
-    @php
-        $metrics = [
-            ['title' => 'Mandiri Group Ecosystem', 'id' => 'counter1'],
-            ['title' => 'Portfolio', 'id' => 'counter2'],
-            ['title' => 'Fund Venture', 'id' => 'counter3']
-        ];
-    @endphp
-
     <div class="headline-section-two">
         <div class="headline-grid">
-            @foreach($metrics as $index => $metric)
+            @foreach($articles as $index => $article)
                 <div class="headline-card-two {{ $index === 1 ? 'middle-border' : '' }}">
-                    <h1>{{ $metric['title'] }}</h1>
-                    <div id="{{ $metric['id'] }}" class="counter">0</div>
+                    <h1>{{ $article->title }}</h1>
+                    <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article->content }}">0</div>
                 </div>
             @endforeach
         </div>
@@ -152,32 +144,6 @@
     </div>
 
     {{-- Testimonial Section: Customer Success Stories --}}
-    @php
-        $testimonials = [
-            [
-                'image' => 'owner_amartha.png',
-                'logo' => 'logo_amartha.png',
-                'name' => 'Andi Taufan Garuda Putra',
-                'title' => 'Founder/ CEO',
-                'quote' => 'Securing funding from MCI was a game-changer for our business. Their support and expertise helped us scale faster than we imagined. We\'re now reaching markets we once thought were out of reach.'
-            ],
-            [
-                'image' => 'owner_goto.png',
-                'logo' => 'logo_amartha.png',
-                'name' => 'Kevin Aluwi',
-                'title' => 'Co-Founder',
-                'quote' => 'MCI\'s strategic investment and guidance have been instrumental in our growth journey. Their deep understanding of the tech ecosystem helped us navigate challenges and seize opportunities.'
-            ],
-            [
-                'image' => 'owner_halofina.png',
-                'logo' => 'logo_amartha.png',
-                'name' => 'Adjie Wicaksana',
-                'title' => 'Founder & CEO',
-                'quote' => 'Working with MCI has opened doors we never thought possible. Their network and industry expertise have been crucial in establishing Halofina as a leading fintech platform.'
-            ]
-        ];
-    @endphp
-
     <div class="founder-carousell-section">
         <h1 class="section-title">What they say </br> about us</h1>
         <div class="founder-carousel-container">
@@ -188,18 +154,18 @@
                             <div class="slide-content">
                                 <div class="founder-image">
                                     <div class="image-circle">
-                                        <img src="{{ asset('images/home/' . $testimonial['image']) }}"
-                                             alt="{{ $testimonial['name'] }}"
+                                        <img src="{{ '/storage/' . $testimonial->image_path }}"
+                                             alt="{{ $testimonial->name }}"
                                              class="founder-photo">
                                     </div>
                                 </div>
                                 <div class="slide-text">
                                     <div class="amartha-logo">
-                                        <img src="{{ asset('images/home/' . $testimonial['logo']) }}"
-                                             alt="{{ $testimonial['name'] }} Logo">
+                                        <img src="{{ '/storage/' . $testimonial->company_image_path }}"
+                                             alt="{{ $testimonial->name }} Logo">
                                     </div>
-                                    <h3>{{ $testimonial['name'] }}, {{ $testimonial['title'] }}</h3>
-                                    <p>"{{ $testimonial['quote'] }}"</p>
+                                    <h3>{{ $testimonial->name }}, {{ $testimonial->title }}</h3>
+                                    <p>"{{ $testimonial->content }}"</p>
                                 </div>
                             </div>
                         </div>
@@ -227,7 +193,7 @@
     <div class="newsletter-section">
         <div class="newsletter-container">
             <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
-            <a href="#">
+            <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}"
                      alt="Lets Connect"
                      class="button-image center-image-newsletter">

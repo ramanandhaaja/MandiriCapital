@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class HomeArticle extends Model
 {
@@ -23,4 +24,11 @@ class HomeArticle extends Model
     protected $casts = [
         'published_date' => 'date',
     ];
+
+    protected function content(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => strip_tags($value)
+        );
+    }
 }

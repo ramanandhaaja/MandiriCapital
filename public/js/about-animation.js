@@ -68,13 +68,6 @@ window.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function () {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero section animation
-    gsap.from('.hero-section', {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: 'power2.out'
-    });
 
     // Cards animation
     const textcontent = document.querySelectorAll('.text-content');

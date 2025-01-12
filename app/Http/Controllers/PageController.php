@@ -8,6 +8,7 @@ use App\Models\BlogPost;
 use App\Models\BlogTag;
 use App\Models\HeroSection;
 use App\Models\HomeArticle;
+use App\Models\HomeProfileCompany;
 use App\Models\Platform;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
@@ -31,9 +32,11 @@ class PageController extends Controller
             $query->where('name', 'Home');
         })->first();
 
-        $article = HomeArticle::take(3)->get();
+        $articles = HomeArticle::take(3)->get();
 
-        return view('pages.home', compact('hero', 'article'));
+        $testimonials = HomeProfileCompany::get();
+
+        return view('pages.home', compact('hero', 'articles', 'testimonials'));
     }
 
     public function about()

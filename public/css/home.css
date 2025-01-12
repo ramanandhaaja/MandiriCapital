@@ -38,7 +38,7 @@
     --font-size-3xl: 36px;
     --font-size-4xl: 64px;
     --font-size-5xl: 84px;
-    --font-size-hero: 136px;
+    --font-size-hero: 120px;
 
     /* Layout */
     --container-max-width: 1600px;
@@ -114,7 +114,7 @@ html, body {
     position: absolute;
     font-size: var(--font-size-hero);
     line-height: 1.1;
-    bottom: 200px;
+    bottom: 180px;
     padding-left: var(--spacing-xl);
     color: var(--color-white);
 }
@@ -756,7 +756,7 @@ textarea[name="message"] {
 
 /* Founder Carousel Section */
 .founder-carousell-section {
-    background: var(--color-dark-bg);
+    background: transparent;
     padding: var(--spacing-section) 0;
     color: var(--color-white);
     position: relative;
@@ -769,7 +769,6 @@ textarea[name="message"] {
     font-size: var(--font-size-5xl);
     font-weight: 300;
     color: var(--color-white);
-    text-transform: lowercase;
     z-index: 2;
     margin: 0;
 }
@@ -803,26 +802,39 @@ textarea[name="message"] {
 }
 
 .founder-image {
-    flex: 1;
-    max-width: 680px;
+    position: relative;
+    width: 680px;
+    height: 680px;
+    margin: 0 auto;
+    background: transparent;
 }
 
 .image-circle {
-    width: 100%;
-    padding-top: 100%;
     position: relative;
-    background: var(--color-accent);
-    border-radius: 50%;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: transparent;
 }
 
-.founder-photo {
+.image-circle::before {
+    content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.founder-photo {
+    position: relative;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    z-index: 2;
+    background: transparent;
 }
 
 .slide-text {
