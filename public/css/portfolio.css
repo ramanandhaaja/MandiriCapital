@@ -222,6 +222,7 @@
     }
 
     .portfolio-section {
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
 
@@ -585,7 +586,7 @@
 
 .masonry-grid-contact-section {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     padding: 60px 20px;
     max-width: 1600px;
@@ -612,7 +613,7 @@
     position: relative;
     font-family: var(--font-family);
     color: var(--color-white);
-    font-size: 56px;
+    font-size: 28px;
     font-weight: 500;
     text-align: left;
     margin-left: 80px;
@@ -673,7 +674,7 @@
 }
 
 .grid-headline-contact-card{
-    grid-column: span 1;
+    grid-column: span 2;
     padding-right: 90px;
 }
 
@@ -1547,9 +1548,13 @@
 
 .form-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 60px;
     margin-bottom: 0px;
+}
+
+.form-row .form-group:only-child {
+    grid-column: 1 / -1;
 }
 
 .form-label {
@@ -1583,23 +1588,7 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
-.submit-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    float: right;
-    margin-top: 1rem;
-    transition: opacity 0.3s ease;
-}
 
-.submit-button img {
-    height: 48px;
-}
-
-.submit-button:hover {
-    opacity: 0.8;
-}
 
 .for-investor-section {
     color: #ffffff;
@@ -2228,4 +2217,187 @@ a.text-decoration-none {
 
 .image-container:hover .image-overlay {
     opacity: 1;
+}
+
+/* Upload Section Styles
+   ========================================================================== */
+.description-text {
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 8px 0;
+}
+
+.upload-guidelines {
+    margin-top: 16px;
+}
+
+.guidelines-title {
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.87);
+    margin-bottom: 8px;
+}
+
+.guidelines-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 8px 0;
+}
+
+.guidelines-list li {
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 4px;
+}
+
+/* Business Sector Grid Styles
+   ========================================================================== */
+.sector-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.sector-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sector-radio {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.sector-radio:checked {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+}
+
+.sector-radio:checked::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sector-label {
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.87);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .sector-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* File Upload Styles
+   ========================================================================== */
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.file-upload-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.file-upload-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.file-name {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-family);
+    font-size: 14px;
+}
+
+.file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Form Buttons
+   ========================================================================== */
+
+
+.reset-button {
+    height: 32px;
+    width: 140px;
+    font-family: var(--font-family);
+    font-size: 12px;
+    color: #EFA32F;
+    background: transparent;
+    border: 1px solid #EFA32F;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-button:hover {
+    background: rgba(240, 165, 0, 0.1);
+}
+
+.submit-button {
+    height: 32px;
+    width: 140px;
+    font-family: var(--font-family);
+    font-size: 12px;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.form-group.button-group {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 24px;
+    margin-right: -30px;
 }
