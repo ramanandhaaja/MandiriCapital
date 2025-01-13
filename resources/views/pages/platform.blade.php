@@ -29,47 +29,15 @@
             <h1 class="center-text">A Chance To Collaborate With Bank Mandiri's Business Units</h1>
         </div>
         <div class="headline-grid-four middle-animation">
-            @php
-                $businessUnits = [
-                    [
-                        'title' => 'Software as a Service',
-                        'description' => 'Property tech startups that open to synergy in loan channeling',
-                        'image' => 'sector.png'
-                    ],
-                    [
-                        'title' => 'Deep Tech',
-                        'description' => 'Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards',
-                        'image' => 'sector.png'
-                    ],
-                    [
-                        'title' => 'Fintech',
-                        'description' => 'Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards',
-                        'image' => 'sector.png'
-                    ],
-                    [
-                        'title' => 'Value Chain',
-                        'description' => 'Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards',
-                        'image' => 'sector.png'
-                    ]
-                ];
-            @endphp
 
-            @foreach($businessUnits as $index => $unit)
+            @foreach($businessUnitList as $index => $unit)
                 <div class="headline-card {{ $index > 0 ? ($index % 4 === 3 ? 'left-border' : 'middle-border') : '' }}">
-                    <img class="headline-image" src="{{ asset('images/about/' . $unit['image']) }}" alt="{{ $unit['title'] }}">
-                    <h1>{{ $unit['title'] }}</h1>
-                    <p>{{ $unit['description'] }}</p>
+                    <img class="headline-image" src="{{ '/storage/' . $unit->image_path }}" alt="{{ $unit->title }}">
+                    <h1>{{ $unit->title }}</h1>
+                    <p>{{ $unit->content }}</p>
                 </div>
             @endforeach
 
-            {{-- Duplicate the cards for the second row --}}
-            @foreach($businessUnits as $index => $unit)
-                <div class="headline-card {{ $index > 0 ? ($index % 4 === 3 ? 'left-border' : 'middle-border') : '' }}">
-                    <img class="headline-image" src="{{ asset('images/about/' . $unit['image']) }}" alt="{{ $unit['title'] }}">
-                    <h1>{{ $unit['title'] }}</h1>
-                    <p>{{ $unit['description'] }}</p>
-                </div>
-            @endforeach
         </div>
     </div>
 

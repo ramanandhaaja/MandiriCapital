@@ -129,11 +129,9 @@ class PageController extends Controller
             $query->where('name', 'Platform');
         })->first();
 
-        $posts = BlogPost::all();
+        $businessUnitList = Platform::all();
 
-        $categories = BlogCategory::where('is_active', true)->get();
-
-        return view('pages.platform', compact('hero', 'posts', 'categories'));
+        return view('pages.platform', compact('hero', 'businessUnitList'));
     }
 
     public function platformshow($slug)

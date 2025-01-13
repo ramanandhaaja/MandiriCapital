@@ -18,122 +18,104 @@ class PlatformSeeder extends Seeder
      */
     public function run()
     {
-        // First, seed the platform categories
-        $categories = [
-            [
-                'name' => 'Funding',
-                'slug' => 'funding',
-            ],
-            [
-                'name' => 'Ecosystem',
-                'slug' => 'ecosystem',
-            ],
-            [
-                'name' => 'Synergy Program',
-                'slug' => 'synergy-program',
-            ],
-        ];
 
-        foreach ($categories as $category) {
-            PlatformCategory::updateOrCreate(
-                ['slug' => $category['slug']],
-                [
-                    'name' => $category['name'],
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ]
-            );
-        }
-
-        // Then, seed the platforms
         $platforms = [
             [
-                'title' => 'Bank Mandiri (EUROPE) Ltd',
-                'slug' => 'bank-mandiri-europe',
-                'platform_category_id' => 2,
-                'content' => 'Bank Mandiri (Europe) Limited (BMEL) didirikan di London, Inggris pada tanggal 22 Juni 1999 berdasarkan The Companies A ct 1985 of the United Kingdom. BMEL merupakan konversi dari Bank Exim cabang London',
-                'published_date' => '1999-06-22',
-                'image_path' => 'images/platform/funding1.png',
+                'title' => 'Mortgage',
+                'slug' => 'mortgage',
+                'content' => 'Property tech startups that open to synergy in loan channeling',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG09MC0RMJWX8T99EJRJE8Y.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Mandiri International Remittance',
-                'slug' => 'mandiri-international-remittance',
-                'platform_category_id' => 2, // Financial Services category
-                'content' => 'Sebagai anak perusahaan yang sepenuhnya dimiliki oleh PT Bank Mandiri (Persero) Tbk., Mandiri International Remittance Sdn. Bhd. (MIR) telah menyediakan Layanan Pengiriman Uang (Remittance Service Provider) yang memiliki lisensi resmi dari Bank Negara Malaysia sejak tanggal 17 Maret 2009.',
-                'published_date' => '2009-03-17',
-                'image_path' => 'images/platform/funding1.png',
+                'title' => 'Financial Management',
+                'slug' => 'financial-management',
+                'content' => 'Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG0ASS6003ZDQ0XDSSWWF85.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'AXA Mandiri Finance Service',
-                'slug' => 'axa-mandiri-finance',
-                'platform_category_id' => 2, // Financial Services category
-                'content' => 'PT AXA Mandiri Financial Services (AXA Mandiri) adalah perusahaan patungan (joint venture) antara PT Bank Mandiri (Persero) Tbk dan AXA yang melakukan kegiatan pemasaran produk asuransi melalui kerjasama dengan Bank (bancassurance)',
-                'published_date' => Carbon::now()->subYears(5)->format('Y-m-d'),
-                'image_path' => 'images/platform/funding1.png',
+                'title' => 'Productive Loan',
+                'slug' => 'productive-loan',
+                'content' => 'Open synergy for loan channeling and referral in productive area',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG0BPCRAZDA6HK01NVNNVMN.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'PT. Bank Mandiri Taspen',
-                'slug' => 'bank-mandiri-taspen',
-                'platform_category_id' => 2, // Bank category
-                'content' => 'PT Bank Mandiri Taspen (MANTAP) berkedudukan Kantor Pusat di Jalan Melati No.65 Denpasar - Bali. Bank umum yang dimiliki oleh 2 BUMN yaitu PT Bank Mandiri (Persero) Tbk. dan PT Taspen (Persero) fokus bisnis pada segmen pensiunan dan UMKM',
-                'published_date' => Carbon::now()->subYears(2)->format('Y-m-d'),
-                'image_path' => 'images/platform/funding1.png',
+                'title' => 'Consumptive Loan',
+                'slug' => 'consumptive-loan',
+                'content' => 'Open synergy for loan channeling and referral in consumptive area',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG0C9SFV9AK5QK9PW6XSXXH.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Mandiri Tunas Finance',
-                'slug' => 'mandiri-tunas-finance',
-                'platform_category_id' => 2, // Financial Services category
-                'content' => 'PT Mandiri Tunas Finance (MTF) merupakan lembaga pembiayaan yang fokus pada pembiayaan Investasi, Modal Kerja, Multiguna dan kegiatan pembiayaan lain. Februari 2009, Bank Mandiri mengakuisisi menjadi PT Mandiri Tunas Finance (MTF)',
-                'published_date' => '2009-02-01',
-                'image_path' => 'images/platform/funding1.png',
+                'title' => 'Paylater',
+                'slug' => 'paylater',
+                'content' => 'Mandiri paylater is looking for partners to maximize your payment options',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG0CYN7PHJSS7HS9DW7WJG7.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Mandiri Utama Finance',
-                'slug' => 'mandiri-utama-finance',
-                'platform_category_id' => 2, // Financial Services category
-                'content' => 'PT Mandiri Utama Finance (MUF) merupakan lembaga pembiayaan yang fokus pada pembiayaan konsumen khususnya pembiayaan kendaraan bermotor. TAHUN 2015, Bank Mandiri bersama dengan PT Tunas Ridean Tbk dan PT Asco merealisir mendirikan MUF',
-                'published_date' => '2015-01-01',
-                'image_path' => 'images/platform/funding1.png',
+                'title' => 'Savings',
+                'slug' => 'savings',
+                'content' => 'Eager to collaborate in product bundling or cross selling, targeting B2C and B2B business',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG0DK0Z97EKY0EMYM37HG6H.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Mandiri Sekuritas',
-                'slug' => 'mandiri-sekuritas',
-                'platform_category_id' => 2, // Financial Services category
-                'content' => 'PT Mandiri Sekuritas merupakan perusahaan efek hasil merger beberapa perusahaan sekuritas di lingkungan Bank Mandiri, yaitu Bumi Daya Sekuritas, Exim Securities dan Merincorp Securities Indonesia.',
-                'published_date' => Carbon::now()->subYears(3)->format('Y-m-d'),
-                'image_path' => 'images/platform/funding1.png',
+                'title' => 'Invoice Financing',
+                'slug' => 'invoice-financing',
+                'content' => 'Mandiri tap into partner\'s business model which require invoice financing',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG0EA2HBXBY761D1JRTG1VR.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Mandiri Asuransi Inhealth',
-                'slug' => 'mandiri-inhealth',
-                'platform_category_id' => 2, // Financial Services category
-                'content' => 'PT Asuransi Jiwa Inhealth Indonesia selanjutnya disebut Mandiri Inhealth didirikan pada tanggal 6 Oktober 2008 yang merupakan anak perusahaan PT Askes (Persero) dan Koperasi Bhakti PT Askes (Persero)',
-                'published_date' => '2008-10-06',
-                'image_path' => 'images/platform/funding1.png',
+                'title' => 'Remittance',
+                'slug' => 'remittance',
+                'content' => 'Exploring collaboration with startups that provide seamless outgoing and incoming transfers overseas',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG0F3K88E8ETRXSNN3SMATQ.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Bank Syariah Indonesia',
-                'slug' => 'bank-syariah-indonesia',
-                'platform_category_id' => 2, // Bank category
-                'content' => 'Bank Syariah Indonesia adalah wujud sinergi untuk menjadikan keuangan dan ekonomi Syariah sebagai pilar kekuatan baru ekonomi nasional',
-                'published_date' => Carbon::now()->subYears(1)->format('Y-m-d'),
-                'image_path' => 'images/platform/funding1.png',
+                'title' => 'Automotive Financing',
+                'slug' => 'automotive-financing',
+                'content' => 'Mandiri\'s vehicle financing is looking for startups that focus on primary and secondary market',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG0FQQ2BWPS6KS84BTJ692P.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Data Management',
+                'slug' => 'data-management',
+                'content' => 'Cover data collection, input and output for business decision-making process',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG0G8DTQ8PQFPAMH03HRARJ.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Artificial Intelligence',
+                'slug' => 'artificial-intelligence',
+                'content' => 'AI tech in customer engagement, such as chatbot, CRM and complaint management',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JHG0H3RW95AKN8CZSCQGDB3H.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

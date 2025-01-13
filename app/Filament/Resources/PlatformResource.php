@@ -17,7 +17,13 @@ class PlatformResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $navigationGroup = 'Platform Management';
+    protected static ?string $navigationGroup = 'Value Management';
+
+    protected static ?string $navigationLabel = 'Business Unit';
+
+    protected static ?string $modelLabel = 'Business Unit';
+
+    protected static ?string $pluralModelLabel = 'Business Unit';
 
     protected static ?int $navigationSort = 40;
 
@@ -62,38 +68,19 @@ class PlatformResource extends Resource
 
                                     ])
                                     ->columns(2),
-                                    Forms\Components\Section::make('Image')
-                                            ->schema([
-                                                Forms\Components\FileUpload::make('image_path')
-                                                    ->required()
-                                                    ->image()
-                                                    ->disk('public')
-                                                    ->directory('platforms')
-                                                    ->visibility('public')
-                                                    ->columnSpanFull(),
-                                            ]),
+
                             ])
                             ->columnSpan(2),
 
-                        Forms\Components\Section::make('Category')
-                            ->schema([
-                                Forms\Components\Select::make('platform_category_id')
-                                    ->relationship('category', 'name')
-                                    ->required()
-                                    ->createOptionForm([
-                                        Forms\Components\TextInput::make('name')
-                                            ->required()
-                                            ->maxLength(255)
-                                            ->live(onBlur: true)
-                                            ->afterStateUpdated(fn (string $state, callable $set) =>
-                                                $set('slug', Str::slug($state))
-                                            ),
-                                        Forms\Components\TextInput::make('slug')
-                                            ->required()
-                                            ->maxLength(255)
-                                            ->unique('platform_categories', 'slug'),
-                                    ])
-                                    ->preload(),
+                        Forms\Components\Section::make('Image')
+                        ->schema([
+                            Forms\Components\FileUpload::make('image_path')
+                                ->required()
+                                ->image()
+                                ->disk('public')
+                                ->directory('platforms')
+                                ->visibility('public')
+                                ->columnSpanFull(),
                             ])
                             ->columnSpan(1),
                     ])
@@ -113,14 +100,6 @@ class PlatformResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->sortable()
                     ->searchable(),
-
-                Tables\Columns\TextColumn::make('category.name')
-                    ->sortable()
-                    ->searchable(),
-
-                Tables\Columns\TextColumn::make('published_date')
-                    ->date()
-                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

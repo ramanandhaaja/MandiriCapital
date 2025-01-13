@@ -9,7 +9,6 @@ class Platform extends Model
     protected $fillable = [
         'title',
         'slug',
-        'platform_category_id',
         'content',
         'published_date',
         'image_path'
@@ -18,9 +17,4 @@ class Platform extends Model
     protected $casts = [
         'published_date' => 'date'
     ];
-
-    public function category()
-    {
-        return $this->belongsTo(PlatformCategory::class, 'platform_category_id');
-    }
 }
