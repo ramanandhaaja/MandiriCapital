@@ -18,6 +18,8 @@ use App\Models\Portfolio;
 use App\Models\PortfolioArticle;
 use App\Models\PortfolioArticleSub;
 use App\Models\PortfolioCategory;
+use App\Models\PortfolioFundingArticle;
+use App\Models\PortfolioFundingArticleSub;
 use App\Models\Publication;
 use App\Models\PublicationCategory;
 use App\Models\PublicationEmailDownload;
@@ -101,6 +103,9 @@ class PageController extends Controller
         $portfolioArticlesList = PortfolioArticle::get();
         $portfolioArticleSubList = PortfolioArticleSub::get();
 
+        $portfolioFundingArticlesList = PortfolioFundingArticle::get();
+        $portfolioFundingArticleSubList = PortfolioFundingArticleSub::get();
+
         $portfolioQuery = Portfolio::with('category')
             ->orderBy('year_invested', 'desc');
 
@@ -109,7 +114,7 @@ class PageController extends Controller
         $categories = PortfolioCategory::all();
         $selectedCategory = null;
 
-        return view('pages.portfolio', compact('hero', 'portfolios', 'categories', 'selectedCategory', 'portfolioArticlesList', 'portfolioArticleSubList'));
+        return view('pages.portfolio', compact('hero', 'portfolios', 'categories', 'selectedCategory', 'portfolioArticlesList', 'portfolioArticleSubList','portfolioFundingArticlesList', 'portfolioFundingArticleSubList'));
     }
 
     public function portfolioshow($slug)

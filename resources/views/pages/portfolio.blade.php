@@ -30,42 +30,6 @@
 
     {{-- Get Investment Section --}}
     <div class="get-investement-section">
-        @php
-            // Define investment process steps
-            $investmentSteps = [
-                [
-                    'step' => '01',
-                    'title' => 'Initial Contact',
-                    'description' => 'Submit your pitch deck and business proposal for our initial review.',
-                ],
-                [
-                    'step' => '02',
-                    'title' => 'Screening',
-                    'description' => 'Our team evaluates your proposal against our investment criteria.',
-                ],
-                [
-                    'step' => '03',
-                    'title' => 'Due Diligence',
-                    'description' => 'Detailed assessment of your business, market, and team.',
-                ],
-                [
-                    'step' => '04',
-                    'title' => 'Term Sheet',
-                    'description' => 'Discussion and agreement on investment terms.',
-                ],
-                [
-                    'step' => '05',
-                    'title' => 'Documentation',
-                    'description' => 'Legal and financial documentation preparation.',
-                ],
-                [
-                    'step' => '06',
-                    'title' => 'Investment',
-                    'description' => 'Deal closing and beginning of our partnership journey.',
-                ],
-            ];
-        @endphp
-
         {{-- Article Section --}}
         @foreach ($portfolioArticlesList as $index => $article)
             <div
@@ -108,24 +72,23 @@
         <div class="masonry-grid-contact-section">
             <div class="grid-headline-title-card">
                 <h1 class="grid-headline-title-contact">Send Your Business Proposal</h1>
-                <h1 class="grid-headline-subtitle-contact">We are happy to discuss your business situation, please contact.
+                <h1 class="grid-headline-subtitle-contact">
+                    We are happy to discuss your business situation, please contact.
                 </h1>
             </div>
+
             <div class="grid-headline-contact-card">
                 <form id="contactForm" class="contact-form">
                     @csrf
-                    {{-- Company Information --}}
+                    {{-- Company Details --}}
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="company_name" class="form-label">Company Name</label>
-                            <input type="text" id="company_name" name="company_name" class="form-input"
-                                placeholder="Write here..." required>
-                        </div>
-                        <div class="form-group">
-                            <label for="website" class="form-label">Website</label>
-                            <input type="text" id="website" name="website" class="form-input"
-                                placeholder="Write here..." required>
-                        </div>
+                        @foreach ([['id' => 'company_name', 'label' => 'Company Name', 'type' => 'text'], ['id' => 'website', 'label' => 'Website', 'type' => 'text']] as $field)
+                            <div class="form-group">
+                                <label for="{{ $field['id'] }}" class="form-label">{{ $field['label'] }}</label>
+                                <input type="{{ $field['type'] }}" id="{{ $field['id'] }}" name="{{ $field['id'] }}"
+                                    class="form-input" placeholder="Write here..." required>
+                            </div>
+                        @endforeach
                     </div>
 
                     {{-- Business Description --}}
@@ -136,18 +99,16 @@
 
                     {{-- Contact Information --}}
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="text" id="phone" name="phone" class="form-input"
-                                placeholder="Write here..." required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Company Email</label>
-                            <input type="email" id="email" name="email" class="form-input"
-                                placeholder="Write here..." required>
-                        </div>
+                        @foreach ([['id' => 'phone', 'label' => 'Phone Number', 'type' => 'text'], ['id' => 'email', 'label' => 'Company Email', 'type' => 'email']] as $field)
+                            <div class="form-group">
+                                <label for="{{ $field['id'] }}" class="form-label">{{ $field['label'] }}</label>
+                                <input type="{{ $field['type'] }}" id="{{ $field['id'] }}" name="{{ $field['id'] }}"
+                                    class="form-input" placeholder="Write here..." required>
+                            </div>
+                        @endforeach
                     </div>
 
+                    {{-- Submit Button --}}
                     <div class="form-group">
                         <button type="submit" class="submit-button">
                             <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message">
@@ -282,114 +243,97 @@
         </div>
 
         {{-- Investment Vehicles --}}
-        @php
-            $investmentVehicles = [
-                [
-                    'title' => 'Mandiri Corporate VC',
-                    'cards' => [
-                        [
-                            'large' => true,
-                            'image' => 'funding2.png',
-                            'category' => 'Indonesia Impact Fund (IIF)',
-                            'content' =>
-                                'A joint initiative by MCI, ABAC Indonesia, and UNDP Indonesia, the Indonesia Impact Fund (IIF) is the nation\'s first private impact investment fund. Focused on early-stage startups advancing the SDGs, IIF is driving Indonesia\'s journey toward a brighter, sustainable future.',
-                        ],
-                    ],
-                ],
-                [
-                    'title' => 'Dana Ventura MCI',
-                    'cards' => array_fill(0, 3, [
-                        'large' => false,
-                        'image' => 'funding2.png',
-                        'category' => 'Indonesia Impact Fund (IIF)',
-                        'content' =>
-                            'A joint initiative by MCI, ABAC Indonesia, and UNDP Indonesia, the Indonesia Impact Fund (IIF) is the nation\'s first private impact investment fund. Focused on early-stage startups advancing the SDGs, IIF is driving Indonesia\'s journey toward a brighter, sustainable future.',
-                    ]),
-                ],
-            ];
-        @endphp
-
-        @foreach ($investmentVehicles as $vehicle)
+        @foreach ($portfolioFundingArticlesList as $article)
             <div class="masonry-grid-investment-section">
                 <div class="grid-headline-title-card">
-                    <h1 class="grid-headline-title">{{ $vehicle['title'] }}</h1>
+                    <h1 class="grid-headline-title">{{ $article->title }}</h1>
+                    <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
                 </div>
                 <div class="grid-headline-description-card">
                     <div class="masonry-grid-investment-section-sub">
-                        @foreach ($vehicle['cards'] as $card)
-                            <div class="card-funding{{ $card['large'] ? '-large' : '' }}">
-                                @if (!$card['large'])
+                        @foreach ($portfolioFundingArticleSubList->where('article_id', $article->id) as $subArticle)
+                            <div class="grid-headline-title-card-sub {{ $subArticle->is_large ? 'card-funding-large' : 'card-funding' }}">
+                                @if (!$subArticle->is_large)
                                     <div class="background-image">
                                 @endif
-                                <img src="{{ asset('images/platform/' . $card['image']) }}"
-                                    alt="{{ $card['category'] }}" class="card-funding-image" />
-                                @if (!$card['large'])
+                                <img src="{{ '/storage/' . $subArticle->image_path }}"
+                                alt="funding2.png" class="card-funding-image" />
+
+                                @if (!$subArticle->is_large)
+                                    </div>
+                                @endif
+                                <div class="funding-category{{ $subArticle->is_large ? '-large' : '' }}">
+                                    {{ $subArticle->title }}
+                                </div>
+                                <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
+                                    {{ $subArticle->content }}
+                                </div>
+                                    <a href="{{ $subArticle->report_url }}" class="text-decoration-none">
+                                        <span class="funding-link">Fund Report >></span>
+                                    </a>
                             </div>
-                        @endif
-                        <div class="funding-category{{ $card['large'] ? '-large' : '' }}">
-                            {{ $card['category'] }}
-                        </div>
-                        <div class="card-funding-content{{ $card['large'] ? '-large' : '' }}">
-                            {{ $card['content'] }}
-                        </div>
-                        <a href="#" class="text-decoration-none">
-                            <span class="funding-link">Fund Report >></span>
-                        </a>
+                        @endforeach
                     </div>
+                    @if ($article->title_sub)
+                        <div class="grid-headline-title-card-sub-bottom">
+                            <h1 class="card-title-sub-bottom">{{ $article->title_sub }}</h1>
+                            <p class="card-description-bottom">{{ $article->content_sub }}</p>
+                        </div>
+                    @endif
+                </div>
+            </div>
         @endforeach
-    </div>
-    </div>
-    @endforeach
 
-    {{-- Contact Form Section --}}
-    <div class="masonry-grid-contact-section">
-        <div class="grid-headline-title-card">
-            <h1 class="grid-headline-title-contact">Send Your Business Proposal</h1>
-            <h1 class="grid-headline-subtitle-contact">
-                We are happy to discuss your business situation, please contact.
-            </h1>
+
+        {{-- Contact Form Section --}}
+        <div class="masonry-grid-contact-section">
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title-contact">Send Your Business Proposal</h1>
+                <h1 class="grid-headline-subtitle-contact">
+                    We are happy to discuss your business situation, please contact.
+                </h1>
+            </div>
+
+            <div class="grid-headline-contact-card">
+                <form id="contactForm" class="contact-form">
+                    @csrf
+                    {{-- Company Details --}}
+                    <div class="form-row">
+                        @foreach ([['id' => 'company_name', 'label' => 'Company Name', 'type' => 'text'], ['id' => 'website', 'label' => 'Website', 'type' => 'text']] as $field)
+                            <div class="form-group">
+                                <label for="{{ $field['id'] }}" class="form-label">{{ $field['label'] }}</label>
+                                <input type="{{ $field['type'] }}" id="{{ $field['id'] }}" name="{{ $field['id'] }}"
+                                    class="form-input" placeholder="Write here..." required>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    {{-- Business Description --}}
+                    <div class="form-group">
+                        <label for="message" class="form-label">Business Description</label>
+                        <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Write here..." required></textarea>
+                    </div>
+
+                    {{-- Contact Information --}}
+                    <div class="form-row">
+                        @foreach ([['id' => 'phone', 'label' => 'Phone Number', 'type' => 'text'], ['id' => 'email', 'label' => 'Company Email', 'type' => 'email']] as $field)
+                            <div class="form-group">
+                                <label for="{{ $field['id'] }}" class="form-label">{{ $field['label'] }}</label>
+                                <input type="{{ $field['type'] }}" id="{{ $field['id'] }}" name="{{ $field['id'] }}"
+                                    class="form-input" placeholder="Write here..." required>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    {{-- Submit Button --}}
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">
+                            <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message">
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <div class="grid-headline-contact-card">
-            <form id="contactForm" class="contact-form">
-                @csrf
-                {{-- Company Details --}}
-                <div class="form-row">
-                    @foreach ([['id' => 'company_name', 'label' => 'Company Name', 'type' => 'text'], ['id' => 'website', 'label' => 'Website', 'type' => 'text']] as $field)
-                        <div class="form-group">
-                            <label for="{{ $field['id'] }}" class="form-label">{{ $field['label'] }}</label>
-                            <input type="{{ $field['type'] }}" id="{{ $field['id'] }}" name="{{ $field['id'] }}"
-                                class="form-input" placeholder="Write here..." required>
-                        </div>
-                    @endforeach
-                </div>
-
-                {{-- Business Description --}}
-                <div class="form-group">
-                    <label for="message" class="form-label">Business Description</label>
-                    <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Write here..." required></textarea>
-                </div>
-
-                {{-- Contact Information --}}
-                <div class="form-row">
-                    @foreach ([['id' => 'phone', 'label' => 'Phone Number', 'type' => 'text'], ['id' => 'email', 'label' => 'Company Email', 'type' => 'email']] as $field)
-                        <div class="form-group">
-                            <label for="{{ $field['id'] }}" class="form-label">{{ $field['label'] }}</label>
-                            <input type="{{ $field['type'] }}" id="{{ $field['id'] }}" name="{{ $field['id'] }}"
-                                class="form-input" placeholder="Write here..." required>
-                        </div>
-                    @endforeach
-                </div>
-
-                {{-- Submit Button --}}
-                <div class="form-group">
-                    <button type="submit" class="submit-button">
-                        <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message">
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
     </div>
 
 @endsection
@@ -429,7 +373,8 @@
                 // Rotate the expand button SVG
                 const svg = this.querySelector('svg');
                 if (svg) {
-                    svg.style.transform = portfolioRow.classList.contains('expanded') ? 'rotate(180deg)' : 'rotate(0deg)';
+                    svg.style.transform = portfolioRow.classList.contains('expanded') ? 'rotate(180deg)' :
+                        'rotate(0deg)';
                 }
             }
 

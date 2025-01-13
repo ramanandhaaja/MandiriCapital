@@ -1988,20 +1988,24 @@
     color: white;
     font-weight: 500;
     z-index: 3;
-    bottom: 230px;
+    top: 190px;
     padding: 0 30px;
     box-sizing: border-box;
 }
 
 .card-funding-content {
     position: absolute;
-    font-family: var(--font-family);
     font-size: 14px;
     color: #A1A1AA;
     z-index: 2;
-    bottom: 90px;
+    top: 250px;
     padding: 0 30px;
     box-sizing: border-box;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .funding-category-large {
@@ -2026,6 +2030,8 @@
     left: 40%;
     right: 30px;
     transform: translateY(-50%);
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 .card-funding h2 {

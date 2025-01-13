@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             AboutMandiriEcosystemSeeder::class,
             AboutTeamSeeder::class,
             PortfolioArticleSeeder::class,
+            PortfolioFundingArticleSeeder::class,
         ]);
     }
 }
