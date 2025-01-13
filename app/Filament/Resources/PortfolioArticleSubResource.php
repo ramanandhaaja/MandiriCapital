@@ -1,0 +1,119 @@
+<?php
+
+namespace App\Filament\Resources;
+
+use App\Filament\Resources\PortfolioArticleSubResource\Pages;
+use App\Models\PortfolioArticleSub;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
+use Illuminate\Support\Str;
+
+class PortfolioArticleSubResource extends Resource
+{
+    protected static ?string $navigationGroup = 'Investment Management';
+    protected static bool $shouldRegisterNavigation = true;
+    protected static ?bool $isNavigationGroupCollapsed = true;
+
+    protected static ?string $model = PortfolioArticleSub::class;
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?int $navigationSort = 31;
+
+    protected static ?string $navigationLabel = 'Get Investment Sub-Articles';
+
+    protected static ?string $modelLabel = 'Get Investment Sub-Articles';
+
+    protected static ?string $pluralModelLabel = 'Get Investment Sub-Articles';
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                Forms\Components\Group::make()
+                    ->schema([
+                        Forms\Components\Section::make()
+                            ->schema([
+                                Forms\Components\Grid::make(2)
+                                    ->schema([
+                                        Forms\Components\TextInput::make('title')
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->live(onBlur: true),
+
+                                        ]),
+
+                                Forms\Components\RichEditor::make('content')
+                                    ->required()
+                                    ->maxLength(65535)
+                                    ->columnSpanFull(),
+
+
+                            ])
+                            ->columns(2),
+                    ])
+                    ->columnSpan(['lg' => 2]),
+
+                Forms\Components\Group::make()
+                    ->schema([
+                        Forms\Components\Section::make('Icon')
+                        ->schema([
+                            Forms\Components\FileUpload::make('icon')
+                                ->image()
+                                ->disk('public')
+                                ->directory('portfolios')
+                                ->visibility('public')
+                                ->columnSpanFull(),
+
+                                Forms\Components\TextInput::make('text_icon')
+                                ->maxLength(255),
+                        ]),
+                    ])
+                    ->columnSpan(['lg' => 1]),
+            ])
+            ->columns(3);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                Tables\Columns\ImageColumn::make('icon')
+                    ->disk('public'),
+
+                    Tables\Columns\TextColumn::make('text_icon')
+                    ->sortable()
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make('title')
+                    ->sortable()
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable(),
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListPortfolioArticleSub::route('/'),
+            'create' => Pages\CreatePortfolioArticleSub::route('/create'),
+            'edit' => Pages\EditPortfolioArticleSub::route('/{record}/edit'),
+        ];
+    }
+}

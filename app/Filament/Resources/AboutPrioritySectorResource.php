@@ -26,7 +26,7 @@ class AboutPrioritySectorResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Priority Sector';
 
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 15;
 
     public static function form(Form $form): Form
     {

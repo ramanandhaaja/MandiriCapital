@@ -31,25 +31,6 @@
     {{-- Get Investment Section --}}
     <div class="get-investement-section">
         @php
-            // Define reusable features data
-            $mciFeatures = [
-                [
-                    'icon' => 'headline-coin.png',
-                    'title' => 'Access to Mandiri Group\'s Ecosystem',
-                    'description' => 'We offer startups the unique opportunity to connect and collaborate with the diverse sectors and resources within the Mandiri Group, driving synergies that accelerate growth.'
-                ],
-                [
-                    'icon' => 'headline-person.png',
-                    'title' => 'Industry Expertise',
-                    'description' => 'Our team brings deep industry knowledge and operational expertise to help navigate challenges and capitalize on opportunities in the fintech landscape.'
-                ],
-                [
-                    'icon' => 'headline-card.png',
-                    'title' => 'Strategic Growth Support',
-                    'description' => 'Beyond capital, we provide comprehensive support in strategy, networking, and operational excellence to drive sustainable growth.'
-                ]
-            ];
-
             // Define investment process steps
             $investmentSteps = [
                 ['step' => '01', 'title' => 'Initial Contact', 'description' => 'Submit your pitch deck and business proposal for our initial review.'],
@@ -61,79 +42,42 @@
             ];
         @endphp
 
-        {{-- Why MCI Section --}}
-        <div class="masonry-grid-investment-section">
-            <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">Why MCI</h1>
-            </div>
-            <div class="grid-headline-description-card">
-                <div class="masonry-grid-investment-section-sub">
-                    @foreach($mciFeatures as $feature)
-                        <div class="grid-headline-title-card-sub">
-                            <div class="card-icon">
-                                <img src="{{ asset('images/portfolio/' . $feature['icon']) }}"
-                                     alt="{{ $feature['title'] }} Icon">
-                            </div>
-                            <h2 class="card-title">{{ $feature['title'] }}</h2>
-                            <p class="card-description">{{ $feature['description'] }}</p>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
+        {{-- Article Section --}}
+        @foreach($portfolioArticlesList as $index => $article)
+        <div class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey' }}">
 
-        {{-- Growth Support Section --}}
-        <div class="masonry-grid-investment-section-grey">
-            <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">Here's how we'll help you achieve that growth</h1>
-                <h1 class="grid-headline-subtitle-left">
-                    "At Mandiri Capital Indonesia, we believe in investing in businesses, not just funding rounds.
-                    This means we're here to support you throughout your journey—from the spark of an idea to scaling
-                    into a successful, impactful enterprise.
-                    <br /><br />
-                    As part of the Mandiri Group, we bring unparalleled resources, expertise, and connections to help
-                    you grow and thrive at every stage."
-                </h1>
-            </div>
-            <div class="grid-headline-description-card">
-                <div class="masonry-grid-investment-section-sub">
-                    @foreach($mciFeatures as $feature)
-                        <div class="grid-headline-title-card-sub">
-                            <div class="card-icon">
-                                <img src="{{ asset('images/portfolio/' . $feature['icon']) }}"
-                                     alt="{{ $feature['title'] }} Icon">
-                            </div>
-                            <h2 class="card-title">{{ $feature['title'] }}</h2>
-                            <p class="card-description">{{ $feature['description'] }}</p>
-                        </div>
-                    @endforeach
+                <div class="grid-headline-title-card">
+                    <h1 class="grid-headline-title">{{ $article->title }}</h1>
+                    <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
                 </div>
-            </div>
-        </div>
+                <div class="grid-headline-description-card">
+                    <div class="masonry-grid-investment-section-sub">
+                        @foreach($portfolioArticleSubList->where('article_id', $article->id) as $subArticle)
+                            <div class="grid-headline-title-card-sub">
+                                @if($subArticle->icon)
+                                    <div class="card-icon">
+                                        <img src="{{ asset('images/portfolio/' . $subArticle->icon) }}"
+                                             alt="{{ $subArticle->title }} Icon">
+                                    </div>
+                                @else
+                                    <div class="card-icon-bottom">
+                                        <h1 class="card-title-bottom">{{ $subArticle->text_icon }}</h1>
+                                    </div>
+                                @endif
+                                <h2 class="card-title">{{ $subArticle->title }}</h2>
+                                <p class="card-description">{{ $subArticle->content }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="grid-headline-title-card-sub-bottom">
+                        <h1 class="card-title-sub-bottom">{{ $article->title_sub }}</h1>
+                        <p class="card-description-bottom">{{ $article->content_sub }}</p>
+                    </div>
+                </div>
 
-        {{-- Investment Process Section --}}
-        <div class="masonry-grid-investment-section">
-            <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">Our Investment Process</h1>
-            </div>
-            <div class="grid-headline-description-card">
-                <div class="masonry-grid-investment-section-sub">
-                    @foreach($investmentSteps as $step)
-                        <div class="grid-headline-title-card-sub">
-                            <div class="card-icon-bottom">
-                                <h1 class="card-title-bottom">{{ $step['step'] }}</h1>
-                            </div>
-                            <h2 class="card-title">{{ $step['title'] }}</h2>
-                            <p class="card-description">{{ $step['description'] }}</p>
-                        </div>
-                    @endforeach
-                </div>
-                <div class="grid-headline-title-card-sub-bottom">
-                    <h1 class="card-title-bottom">Are you innovating in any of these industries?</h1>
-                    <p class="card-description-bottom">Send your business proposal and join us in shaping the future of these sectors!</p>
-                </div>
-            </div>
         </div>
+        @endforeach
+
 
         {{-- Contact Form Section --}}
         <div class="masonry-grid-contact-section">

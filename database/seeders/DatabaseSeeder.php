@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
             HomeProfileCompanySeeder::class,
             AboutPrioritySectorSeeder::class,
             AboutMandiriEcosystemSeeder::class,
-            AboutTeamSeeder::class
+            AboutTeamSeeder::class,
+            PortfolioArticleSeeder::class,
         ]);
     }
 }

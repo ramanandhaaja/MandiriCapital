@@ -758,11 +758,20 @@
 }
 
 .card-title-bottom {
+    padding-left: 20px;
     padding-top: 0px;
     font-size: 40px;
     color: #EFA32F;
     font-family: var(--font-family);
-    margin: 20px 0 0 0;
+    margin: 20px 0 10px 0;
+}
+
+.card-title-sub-bottom {
+    padding-top: 0px;
+    font-size: 40px;
+    color: #EFA32F;
+    font-family: var(--font-family);
+    margin: 20px 0 0px 0;
 }
 
 .card-description-bottom {

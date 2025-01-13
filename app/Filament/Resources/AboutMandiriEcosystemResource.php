@@ -26,7 +26,7 @@ class AboutMandiriEcosystemResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Mandiri Ecosystems';
 
-    protected static ?int $navigationSort = 6;
+    protected static ?int $navigationSort = 16;
 
     public static function form(Form $form): Form
     {

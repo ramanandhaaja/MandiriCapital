@@ -15,6 +15,8 @@ use App\Models\HomeArticle;
 use App\Models\HomeProfileCompany;
 use App\Models\Platform;
 use App\Models\Portfolio;
+use App\Models\PortfolioArticle;
+use App\Models\PortfolioArticleSub;
 use App\Models\PortfolioCategory;
 use App\Models\Publication;
 use App\Models\PublicationCategory;
@@ -96,13 +98,18 @@ class PageController extends Controller
             $query->where('name', 'Portfolio');
         })->first();
 
+        $portfolioArticlesList = PortfolioArticle::get();
+        $portfolioArticleSubList = PortfolioArticleSub::get();
+
         $portfolioQuery = Portfolio::with('category')
             ->orderBy('year_invested', 'desc');
 
         $portfolios = $portfolioQuery->get();
 
-        return view('pages.portfolio', compact('hero', 'portfolios'));
+        $categories = PortfolioCategory::all();
+        $selectedCategory = null;
 
+        return view('pages.portfolio', compact('hero', 'portfolios', 'categories', 'selectedCategory', 'portfolioArticlesList', 'portfolioArticleSubList'));
     }
 
     public function portfolioshow($slug)
