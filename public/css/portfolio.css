@@ -116,12 +116,6 @@
     gap: var(--gap-small);
 }
 
-.company-name {
-    margin: 0;
-    font-size: 18px;
-    color: white;
-}
-
 .company-image {
     width: 60px;
     height: 60px;
@@ -309,11 +303,29 @@
 }
 
 .portfolio-image {
-    max-width: 100%;
-    max-height: 100%;
+    width: auto;
+    height: 80px;
+    max-width: 250px;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     filter: grayscale(100%);
     transition: filter 0.3s ease;
+}
+
+.icon-image {
+    width: auto;
+    height: 36px;
+    max-width: 180px;
+    object-fit: contain;
+    display: block;
+    margin-left: 40px;
+    position: relative;
+
 }
 
 .card:hover .portfolio-image {
@@ -390,12 +402,6 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-}
-
-.company-name {
-    color: var(--color-white);
-    margin: 0;
-    font-size: 16px;
 }
 
 .company-image {
@@ -479,21 +485,6 @@
     z-index: 1000;
 }
 
-.menu-icon {
-    width: 24px;
-    height: 24px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.menu-icon span {
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-dark);
-    transition: transform 0.3s ease;
-}
 
 /* Responsive Design */
 @media (max-width: 1200px) {
@@ -797,16 +788,7 @@
     justify-content: center;
 }
 
-.portfolio-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    filter: grayscale(100%);
-}
 
-.card:hover .portfolio-image {
-    filter: grayscale(0%);
-}
 
 .card-stats {
     position: absolute;
@@ -1124,13 +1106,6 @@
     margin-bottom: 20px;
 }
 
-/* Improved company name styling */
-.company-name {
-    font-size: 18px;
-    font-weight: 500;
-    color: white;
-    margin: 0;
-}
 
 .company-cell {
     position: relative;
@@ -1187,12 +1162,6 @@
     padding: 10px 0;
 }
 
-.card .portfolio-image {
-    width: auto;
-    height: 80px;
-    display: block;
-    object-fit: contain;
-}
 
 .card .company-image-link:hover {
     transform: scale(1.02);
@@ -1724,10 +1693,10 @@
 
 .company-name {
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 28px;
     font-weight: 500;
     color: #ffffff;
-    margin-bottom: 1rem;
+    margin: 0px;
 }
 
 .investor-info {
@@ -1886,19 +1855,37 @@
     background-color: var(--color-dark);
 }
 
+
 .menu-icon {
-    width: 24px;
-    height: 24px;
+    position: relative;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.menu-icon span {
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    display: block;
+.menu-icon img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-icon .icon-list,
+.menu-icon .icon-grid {
+    opacity: 0;
+}
+
+.menu-icon .icon-list.active,
+.menu-icon .icon-grid.active {
+    opacity: 1;
 }
 
 /* Display Toggle States */
@@ -1916,16 +1903,6 @@
 
 .portfolio-full-section.display-table .table-display-portfolio {
     display: block;
-}
-
-/* FAB Icon Animation */
-.floating-action-button.table-view .menu-icon {
-    transform: rotate(45deg);
-}
-
-.floating-action-button .menu-icon {
-    transform: rotate(0deg);
-    transition: transform 0.3s ease;
 }
 
 /* Override main-footer margin */
@@ -2191,4 +2168,58 @@ a.text-decoration-none {
     .extra-info {
         padding: 8px;
     }
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4B4B4B;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-description {
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-height: 1.4;
+    width: 80%;
+    max-width: 100%;
+    margin-bottom: 50px;
+    margin-left: 40px;
+}
+
+.company-image-link-list {
+    text-decoration: none;
+    display: none;
+}
+
+.portfolio-row.expanded .company-image-link-list {
+    display: block;
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
 }

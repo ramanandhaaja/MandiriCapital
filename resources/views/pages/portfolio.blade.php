@@ -33,18 +33,43 @@
         @php
             // Define investment process steps
             $investmentSteps = [
-                ['step' => '01', 'title' => 'Initial Contact', 'description' => 'Submit your pitch deck and business proposal for our initial review.'],
-                ['step' => '02', 'title' => 'Screening', 'description' => 'Our team evaluates your proposal against our investment criteria.'],
-                ['step' => '03', 'title' => 'Due Diligence', 'description' => 'Detailed assessment of your business, market, and team.'],
-                ['step' => '04', 'title' => 'Term Sheet', 'description' => 'Discussion and agreement on investment terms.'],
-                ['step' => '05', 'title' => 'Documentation', 'description' => 'Legal and financial documentation preparation.'],
-                ['step' => '06', 'title' => 'Investment', 'description' => 'Deal closing and beginning of our partnership journey.']
+                [
+                    'step' => '01',
+                    'title' => 'Initial Contact',
+                    'description' => 'Submit your pitch deck and business proposal for our initial review.',
+                ],
+                [
+                    'step' => '02',
+                    'title' => 'Screening',
+                    'description' => 'Our team evaluates your proposal against our investment criteria.',
+                ],
+                [
+                    'step' => '03',
+                    'title' => 'Due Diligence',
+                    'description' => 'Detailed assessment of your business, market, and team.',
+                ],
+                [
+                    'step' => '04',
+                    'title' => 'Term Sheet',
+                    'description' => 'Discussion and agreement on investment terms.',
+                ],
+                [
+                    'step' => '05',
+                    'title' => 'Documentation',
+                    'description' => 'Legal and financial documentation preparation.',
+                ],
+                [
+                    'step' => '06',
+                    'title' => 'Investment',
+                    'description' => 'Deal closing and beginning of our partnership journey.',
+                ],
             ];
         @endphp
 
         {{-- Article Section --}}
-        @foreach($portfolioArticlesList as $index => $article)
-        <div class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey' }}">
+        @foreach ($portfolioArticlesList as $index => $article)
+            <div
+                class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey' }}">
 
                 <div class="grid-headline-title-card">
                     <h1 class="grid-headline-title">{{ $article->title }}</h1>
@@ -52,12 +77,12 @@
                 </div>
                 <div class="grid-headline-description-card">
                     <div class="masonry-grid-investment-section-sub">
-                        @foreach($portfolioArticleSubList->where('article_id', $article->id) as $subArticle)
+                        @foreach ($portfolioArticleSubList->where('article_id', $article->id) as $subArticle)
                             <div class="grid-headline-title-card-sub">
-                                @if($subArticle->icon)
+                                @if ($subArticle->icon)
                                     <div class="card-icon">
-                                        <img src="{{ asset('images/portfolio/' . $subArticle->icon) }}"
-                                             alt="{{ $subArticle->title }} Icon">
+                                        <img src="{{ '/storage/' . $subArticle->icon }}"
+                                            alt="{{ $subArticle->title }} Icon">
                                     </div>
                                 @else
                                     <div class="card-icon-bottom">
@@ -75,7 +100,7 @@
                     </div>
                 </div>
 
-        </div>
+            </div>
         @endforeach
 
 
@@ -83,7 +108,8 @@
         <div class="masonry-grid-contact-section">
             <div class="grid-headline-title-card">
                 <h1 class="grid-headline-title-contact">Send Your Business Proposal</h1>
-                <h1 class="grid-headline-subtitle-contact">We are happy to discuss your business situation, please contact.</h1>
+                <h1 class="grid-headline-subtitle-contact">We are happy to discuss your business situation, please contact.
+                </h1>
             </div>
             <div class="grid-headline-contact-card">
                 <form id="contactForm" class="contact-form">
@@ -93,20 +119,19 @@
                         <div class="form-group">
                             <label for="company_name" class="form-label">Company Name</label>
                             <input type="text" id="company_name" name="company_name" class="form-input"
-                                   placeholder="Write here..." required>
+                                placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
                             <label for="website" class="form-label">Website</label>
                             <input type="text" id="website" name="website" class="form-input"
-                                   placeholder="Write here..." required>
+                                placeholder="Write here..." required>
                         </div>
                     </div>
 
                     {{-- Business Description --}}
                     <div class="form-group">
                         <label for="message" class="form-label">Business Description</label>
-                        <textarea id="message" name="message" rows="6" class="form-textarea"
-                                  placeholder="Write here..." required></textarea>
+                        <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Write here..." required></textarea>
                     </div>
 
                     {{-- Contact Information --}}
@@ -114,12 +139,12 @@
                         <div class="form-group">
                             <label for="phone" class="form-label">Phone Number</label>
                             <input type="text" id="phone" name="phone" class="form-input"
-                                   placeholder="Write here..." required>
+                                placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">Company Email</label>
                             <input type="email" id="email" name="email" class="form-input"
-                                   placeholder="Write here..." required>
+                                placeholder="Write here..." required>
                         </div>
                     </div>
 
@@ -137,10 +162,9 @@
     <div class="portfolio-full-section display-grid">
         {{-- View Toggle Button --}}
         <div class="floating-action-button">
-            <div class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="menu-icon" onclick="toggleView()">
+                <img src="{{ asset('images/portfolio/icon-list.png') }}" alt="Menu Icon" class="icon-list active">
+                <img src="{{ asset('images/portfolio/icon-grid.png') }}" alt="Menu Icon" class="icon-grid">
             </div>
         </div>
 
@@ -150,25 +174,33 @@
                 <div class="masonry-grid">
                     @foreach ($portfolios as $portfolio)
                         @php
-                            $portfolioUrl = route('portfolio.show', ['slug' => Str::slug($portfolio->name)]);
-                            $imageUrl = $portfolio->image_path ? Storage::url($portfolio->image_path) : asset('images/media/image5.png');
                             $stats = [
                                 ['icon' => 'icon1.png', 'value' => rand(1, 10)],
                                 ['icon' => 'icon2.png', 'value' => rand(3, 15)],
-                                ['icon' => 'icon3.png', 'value' => rand(5, 20)]
+                                ['icon' => 'icon3.png', 'value' => rand(5, 20)],
                             ];
                         @endphp
 
                         <div class="card">
 
-                            <a href="{{ $portfolioUrl }}" class="company-image-link">
-                                <img class="portfolio-image" src="{{ $imageUrl }}" alt="{{ $portfolio->name }}">
+                            <a href="{{ route('portfolio.show', ['slug' => Str::slug($portfolio->name)]) }}"
+                                class="company-image-link">
+                                <div class="image-container">
+                                    <img class="portfolio-image" src="{{ Storage::url($portfolio->image_path) }}"
+                                        alt="{{ $portfolio->name }}">
+                                    <div class="image-overlay">
+                                        <img class="icon-image" src="{{ Storage::url($portfolio->icon) }}"
+                                            alt="{{ $portfolio->icon }}">
+
+                                        <p class="portfolio-description">{{ $portfolio->description }}</p>
+                                    </div>
+                                </div>
                             </a>
                             <div class="card-stats">
-                                @foreach($stats as $index => $stat)
+                                @foreach ($stats as $index => $stat)
                                     <div class="stat-item{{ $index === 1 ? '-middle' : '' }}">
                                         <img src="{{ asset('images/portfolio/' . $stat['icon']) }}"
-                                             alt="Portfolio Statistic">
+                                            alt="Portfolio Statistic">
                                         <span>{{ $stat['value'] }}</span>
                                     </div>
                                 @endforeach
@@ -196,7 +228,7 @@
                             <div class="company-cell">
                                 <h3 class="company-name">{{ $portfolio->name }}</h3>
                                 <a href="{{ route('portfolio.show', ['slug' => Str::slug($portfolio->name)]) }}"
-                                    class="company-image-link">
+                                    class="company-image-link-list">
                                     <img class="company-image"
                                         src="{{ $portfolio->image_path ? Storage::url($portfolio->image_path) : asset('images/media/image5.png') }}"
                                         alt="{{ $portfolio->name }}">
@@ -234,9 +266,8 @@
             <div class="newsletter-container">
                 <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
                 <a href="#">
-                    <img src="{{ asset('images/portfolio/letsconnect.png') }}"
-                         alt="Lets Connect"
-                         class="button-image center-image-newsletter">
+                    <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
+                        class="button-image center-image-newsletter">
                 </a>
             </div>
         </div>
@@ -260,9 +291,10 @@
                             'large' => true,
                             'image' => 'funding2.png',
                             'category' => 'Indonesia Impact Fund (IIF)',
-                            'content' => 'A joint initiative by MCI, ABAC Indonesia, and UNDP Indonesia, the Indonesia Impact Fund (IIF) is the nation\'s first private impact investment fund. Focused on early-stage startups advancing the SDGs, IIF is driving Indonesia\'s journey toward a brighter, sustainable future.'
-                        ]
-                    ]
+                            'content' =>
+                                'A joint initiative by MCI, ABAC Indonesia, and UNDP Indonesia, the Indonesia Impact Fund (IIF) is the nation\'s first private impact investment fund. Focused on early-stage startups advancing the SDGs, IIF is driving Indonesia\'s journey toward a brighter, sustainable future.',
+                        ],
+                    ],
                 ],
                 [
                     'title' => 'Dana Ventura MCI',
@@ -270,114 +302,94 @@
                         'large' => false,
                         'image' => 'funding2.png',
                         'category' => 'Indonesia Impact Fund (IIF)',
-                        'content' => 'A joint initiative by MCI, ABAC Indonesia, and UNDP Indonesia, the Indonesia Impact Fund (IIF) is the nation\'s first private impact investment fund. Focused on early-stage startups advancing the SDGs, IIF is driving Indonesia\'s journey toward a brighter, sustainable future.'
-                    ])
-                ]
+                        'content' =>
+                            'A joint initiative by MCI, ABAC Indonesia, and UNDP Indonesia, the Indonesia Impact Fund (IIF) is the nation\'s first private impact investment fund. Focused on early-stage startups advancing the SDGs, IIF is driving Indonesia\'s journey toward a brighter, sustainable future.',
+                    ]),
+                ],
             ];
         @endphp
 
-        @foreach($investmentVehicles as $vehicle)
+        @foreach ($investmentVehicles as $vehicle)
             <div class="masonry-grid-investment-section">
                 <div class="grid-headline-title-card">
                     <h1 class="grid-headline-title">{{ $vehicle['title'] }}</h1>
                 </div>
                 <div class="grid-headline-description-card">
                     <div class="masonry-grid-investment-section-sub">
-                        @foreach($vehicle['cards'] as $card)
+                        @foreach ($vehicle['cards'] as $card)
                             <div class="card-funding{{ $card['large'] ? '-large' : '' }}">
-                                @if(!$card['large'])
+                                @if (!$card['large'])
                                     <div class="background-image">
                                 @endif
                                 <img src="{{ asset('images/platform/' . $card['image']) }}"
-                                     alt="{{ $card['category'] }}"
-                                     class="card-funding-image" />
-                                @if(!$card['large'])
-                                    </div>
-                                @endif
-                                <div class="funding-category{{ $card['large'] ? '-large' : '' }}">
-                                    {{ $card['category'] }}
-                                </div>
-                                <div class="card-funding-content{{ $card['large'] ? '-large' : '' }}">
-                                    {{ $card['content'] }}
-                                </div>
-                                <a href="#" class="text-decoration-none">
-                                    <span class="funding-link">Fund Report >></span>
-                                </a>
+                                    alt="{{ $card['category'] }}" class="card-funding-image" />
+                                @if (!$card['large'])
                             </div>
-                        @endforeach
+                        @endif
+                        <div class="funding-category{{ $card['large'] ? '-large' : '' }}">
+                            {{ $card['category'] }}
+                        </div>
+                        <div class="card-funding-content{{ $card['large'] ? '-large' : '' }}">
+                            {{ $card['content'] }}
+                        </div>
+                        <a href="#" class="text-decoration-none">
+                            <span class="funding-link">Fund Report >></span>
+                        </a>
                     </div>
-                </div>
-            </div>
         @endforeach
+    </div>
+    </div>
+    @endforeach
 
-        {{-- Contact Form Section --}}
-        <div class="masonry-grid-contact-section">
-            <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title-contact">Send Your Business Proposal</h1>
-                <h1 class="grid-headline-subtitle-contact">
-                    We are happy to discuss your business situation, please contact.
-                </h1>
-            </div>
-
-            <div class="grid-headline-contact-card">
-                <form id="contactForm" class="contact-form">
-                    @csrf
-                    {{-- Company Details --}}
-                    <div class="form-row">
-                        @foreach([
-                            ['id' => 'company_name', 'label' => 'Company Name', 'type' => 'text'],
-                            ['id' => 'website', 'label' => 'Website', 'type' => 'text']
-                        ] as $field)
-                            <div class="form-group">
-                                <label for="{{ $field['id'] }}" class="form-label">{{ $field['label'] }}</label>
-                                <input type="{{ $field['type'] }}"
-                                       id="{{ $field['id'] }}"
-                                       name="{{ $field['id'] }}"
-                                       class="form-input"
-                                       placeholder="Write here..."
-                                       required>
-                            </div>
-                        @endforeach
-                    </div>
-
-                    {{-- Business Description --}}
-                    <div class="form-group">
-                        <label for="message" class="form-label">Business Description</label>
-                        <textarea id="message"
-                                  name="message"
-                                  rows="6"
-                                  class="form-textarea"
-                                  placeholder="Write here..."
-                                  required></textarea>
-                    </div>
-
-                    {{-- Contact Information --}}
-                    <div class="form-row">
-                        @foreach([
-                            ['id' => 'phone', 'label' => 'Phone Number', 'type' => 'text'],
-                            ['id' => 'email', 'label' => 'Company Email', 'type' => 'email']
-                        ] as $field)
-                            <div class="form-group">
-                                <label for="{{ $field['id'] }}" class="form-label">{{ $field['label'] }}</label>
-                                <input type="{{ $field['type'] }}"
-                                       id="{{ $field['id'] }}"
-                                       name="{{ $field['id'] }}"
-                                       class="form-input"
-                                       placeholder="Write here..."
-                                       required>
-                            </div>
-                        @endforeach
-                    </div>
-
-                    {{-- Submit Button --}}
-                    <div class="form-group">
-                        <button type="submit" class="submit-button">
-                            <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message">
-                        </button>
-                    </div>
-                </form>
-            </div>
+    {{-- Contact Form Section --}}
+    <div class="masonry-grid-contact-section">
+        <div class="grid-headline-title-card">
+            <h1 class="grid-headline-title-contact">Send Your Business Proposal</h1>
+            <h1 class="grid-headline-subtitle-contact">
+                We are happy to discuss your business situation, please contact.
+            </h1>
         </div>
+
+        <div class="grid-headline-contact-card">
+            <form id="contactForm" class="contact-form">
+                @csrf
+                {{-- Company Details --}}
+                <div class="form-row">
+                    @foreach ([['id' => 'company_name', 'label' => 'Company Name', 'type' => 'text'], ['id' => 'website', 'label' => 'Website', 'type' => 'text']] as $field)
+                        <div class="form-group">
+                            <label for="{{ $field['id'] }}" class="form-label">{{ $field['label'] }}</label>
+                            <input type="{{ $field['type'] }}" id="{{ $field['id'] }}" name="{{ $field['id'] }}"
+                                class="form-input" placeholder="Write here..." required>
+                        </div>
+                    @endforeach
+                </div>
+
+                {{-- Business Description --}}
+                <div class="form-group">
+                    <label for="message" class="form-label">Business Description</label>
+                    <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Write here..." required></textarea>
+                </div>
+
+                {{-- Contact Information --}}
+                <div class="form-row">
+                    @foreach ([['id' => 'phone', 'label' => 'Phone Number', 'type' => 'text'], ['id' => 'email', 'label' => 'Company Email', 'type' => 'email']] as $field)
+                        <div class="form-group">
+                            <label for="{{ $field['id'] }}" class="form-label">{{ $field['label'] }}</label>
+                            <input type="{{ $field['type'] }}" id="{{ $field['id'] }}" name="{{ $field['id'] }}"
+                                class="form-input" placeholder="Write here..." required>
+                        </div>
+                    @endforeach
+                </div>
+
+                {{-- Submit Button --}}
+                <div class="form-group">
+                    <button type="submit" class="submit-button">
+                        <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
     </div>
 
 @endsection
@@ -405,8 +417,20 @@
 
             function handleExpand(e) {
                 e.preventDefault();
-                const row = this.closest('.portfolio-row');
-                row.classList.toggle('expanded');
+                const portfolioRow = this.closest('.portfolio-row');
+                portfolioRow.classList.toggle('expanded');
+
+                // Toggle company image link visibility
+                const imageLink = portfolioRow.querySelector('.company-image-link-list');
+                if (imageLink) {
+                    imageLink.style.display = portfolioRow.classList.contains('expanded') ? 'block' : 'none';
+                }
+
+                // Rotate the expand button SVG
+                const svg = this.querySelector('svg');
+                if (svg) {
+                    svg.style.transform = portfolioRow.classList.contains('expanded') ? 'rotate(180deg)' : 'rotate(0deg)';
+                }
             }
 
             // Initial setup
@@ -484,7 +508,7 @@
                     this.classList.add('active');
 
                     const currentFilter = this.getAttribute('data-category');
-                    switch(currentFilter) {
+                    switch (currentFilter) {
                         case FILTER_TYPES.GET_INVESTMENT:
                             updateView.getInvestment();
                             break;
@@ -498,5 +522,13 @@
                 });
             });
         });
+
+        function toggleView() {
+            const listIcon = document.querySelector('.icon-list');
+            const gridIcon = document.querySelector('.icon-grid');
+
+            listIcon.classList.toggle('active');
+            gridIcon.classList.toggle('active');
+        }
     </script>
 @endsection

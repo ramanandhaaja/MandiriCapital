@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('stage');
             $table->string('website_url');
             $table->string('image_path');
+            $table->string('icon');
             $table->string('ceo_name');
             $table->string('year_invested');
             $table->string('sector');
