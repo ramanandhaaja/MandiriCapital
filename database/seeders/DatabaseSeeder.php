@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             AboutTeamSeeder::class,
             PortfolioArticleSeeder::class,
             PortfolioFundingArticleSeeder::class,
+            PlatformValueCreationSeeder::class,
         ]);
     }
 }

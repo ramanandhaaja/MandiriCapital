@@ -14,6 +14,7 @@ use App\Models\HeroSection;
 use App\Models\HomeArticle;
 use App\Models\HomeProfileCompany;
 use App\Models\Platform;
+use App\Models\PlatformValueCreation;
 use App\Models\Portfolio;
 use App\Models\PortfolioArticle;
 use App\Models\PortfolioArticleSub;
@@ -131,7 +132,9 @@ class PageController extends Controller
 
         $businessUnitList = Platform::all();
 
-        return view('pages.platform', compact('hero', 'businessUnitList'));
+        $valueCreationList = PlatformValueCreation::all();
+
+        return view('pages.platform', compact('hero', 'businessUnitList', 'valueCreationList'));
     }
 
     public function platformshow($slug)

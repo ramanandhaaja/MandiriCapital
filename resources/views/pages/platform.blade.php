@@ -30,8 +30,8 @@
         </div>
         <div class="headline-grid-four middle-animation">
 
-            @foreach($businessUnitList as $index => $unit)
-                <div class="headline-card {{ $index > 0 ? ($index % 4 === 3 ? 'left-border' : 'middle-border') : '' }}">
+            @foreach ($businessUnitList as $index => $unit)
+                <div class="headline-card {{ $index % 4 >= 1 && $index % 4 <= 3 ? 'left-border' : '' }}">
                     <img class="headline-image" src="{{ '/storage/' . $unit->image_path }}" alt="{{ $unit->title }}">
                     <h1>{{ $unit->title }}</h1>
                     <p>{{ $unit->content }}</p>
@@ -47,83 +47,45 @@
             <h1 class="center-text">Our value creation program</h1>
         </div>
 
-        @php
-            $synergyPrograms = [
-                [
-                    'title' => 'Connecting Startups Discover What\'s Possible',
-                    'image' => 'synergy1',
-                    'content' => [
-                        'cXponent merupakan program dari Mandiri Capital Indonesia (MCI) yang mendorong sinergi antara unit bisnis di Mandiri Group dengan perusahaan rintisan (startup).',
-                        'Melalui sinergi, ditemukan peluang untuk meningkatkan pertumbuhan yang berkelanjutan dan nilai sinergi yang baik.',
-                        'Xponent menawarkan platform yang ideal bagi para startup untuk menjalin kemitraan yang inovatif dan mendorong terobosan di sektor industri, sehingga dapat membuka jalan menuju hari esok yang lebih cerah.'
-                    ],
-                    'showButtons' => true,
-                    'imageRight' => false
-                ],
-                [
-                    'title' => 'Connecting Startups Discover What\'s Possible',
-                    'image' => 'synergy2',
-                    'content' => [
-                        'cXponent merupakan program dari Mandiri Capital Indonesia (MCI) yang mendorong sinergi antara unit bisnis di Mandiri Group dengan perusahaan rintisan (startup).',
-                        'Melalui sinergi, ditemukan peluang untuk meningkatkan pertumbuhan yang berkelanjutan dan nilai sinergi yang baik.',
-                        'Xponent menawarkan platform yang ideal bagi para startup untuk menjalin kemitraan yang inovatif dan mendorong terobosan di sektor industri, sehingga dapat membuka jalan menuju hari esok yang lebih cerah.'
-                    ],
-                    'showButtons' => false,
-                    'imageRight' => true
-                ],
-                [
-                    'title' => 'Connecting Startups Discover What\'s Possible',
-                    'image' => 'synergy3',
-                    'content' => [
-                        'cXponent merupakan program dari Mandiri Capital Indonesia (MCI) yang mendorong sinergi antara unit bisnis di Mandiri Group dengan perusahaan rintisan (startup).',
-                        'Melalui sinergi, ditemukan peluang untuk meningkatkan pertumbuhan yang berkelanjutan dan nilai sinergi yang baik.',
-                        'Xponent menawarkan platform yang ideal bagi para startup untuk menjalin kemitraan yang inovatif dan mendorong terobosan di sektor industri, sehingga dapat membuka jalan menuju hari esok yang lebih cerah.'
-                    ],
-                    'showButtons' => true,
-                    'imageRight' => false
-                ]
-            ];
-        @endphp
-
-        @foreach($synergyPrograms as $index => $program)
+        @foreach ($valueCreationList as $index => $program)
             <div class="synergy-container {{ $index % 2 === 1 ? 'dark' : '' }}">
                 <div class="synergy-grid">
-                    @if(!$program['imageRight'])
-                        <div class="synergy-iframe-container">
-                            <img src="/images/platform/{{ $program['image'] }}.png" alt="Program Image" class="synergy-iframe">
-                            <img src="/images/platform/{{ $program['image'] }}.gif" alt="Program Animation" class="synergy-iframe-gif">
+                    @if ($index % 2 === 1)
+                        <div class="synergy-image">
+                            <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" style="height: 380px;">
                         </div>
                     @endif
 
                     <div class="synergy-content">
-                        <h2 class="synergy-title">{{ $program['title'] }}</h2>
+                        <img src="{{ '/storage/' . $program->logo }}" alt="{{ $program->title }}" style="height: 80px;">
+                        <h2 class="synergy-title">{{ $program->content_frontpage }}</h2>
                         <div class="synergy-info">
-                            @foreach($program['content'] as $paragraph)
-                                <p>{{ $paragraph }}</p>
-                            @endforeach
+                            <p>{{ $program->content_sub_frontpage }}</p>
                         </div>
 
                         <div class="synergy-number">
-                            @foreach(['MOU PKS', 'Synergy Volume', 'Success Story'] as $metric)
-                                <div class="number-item">
-                                    <div class="number-label">{{ $metric }}</div>
-                                    <div class="number-value">00</div>
-                                </div>
-                            @endforeach
+                            <div class="number-item">
+                                <div class="number-label">MOU PKS</div>
+                                <div class="number-value">00</div>
+                            </div>
+                            <div class="number-item">
+                                <div class="number-label">Synergy Volume</div>
+                                <div class="number-value">00</div>
+                            </div>
+                            <div class="number-item">
+                                <div class="number-label">Success Story</div>
+                                <div class="number-value">00</div>
+                            </div>
                         </div>
 
-                        @if($program['showButtons'])
-                            <div class="synergy-register">
-                                <a href="#" class="register-btn btn-detail">View Detail</a>
-                                <a href="#" class="register-btn btn-register">Register Now</a>
-                            </div>
-                        @endif
+                        <div class="synergy-register">
+                            <a href="#" class="register-btn btn-detail">View Detail</a>
+                            <a href="#" class="register-btn btn-register">Register Now</a>
+                        </div>
                     </div>
-
-                    @if($program['imageRight'])
-                        <div class="synergy-iframe-container">
-                            <img src="/images/platform/{{ $program['image'] }}.png" alt="Program Image" class="synergy-iframe right">
-                            <img src="/images/platform/{{ $program['image'] }}.gif" alt="Program Animation" class="synergy-iframe-gif right">
+                    @if ($index % 2 === 0)
+                        <div class="synergy-image">
+                            <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" style="height: 380px;">
                         </div>
                     @endif
                 </div>
@@ -136,7 +98,7 @@
         <div class="newsletter-container">
             <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
 
-            <a href="#">
+            <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
                     class="button-image center-image-newsletter">
             </a>

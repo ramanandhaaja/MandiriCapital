@@ -887,6 +887,18 @@
     opacity: 0.9;
 }
 
+.synergy-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.synergy-image img {
+    object-fit: contain;
+    max-width: 100%;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .synergy-container {
