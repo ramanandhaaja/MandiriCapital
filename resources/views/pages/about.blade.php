@@ -210,13 +210,15 @@
 
                 Object.entries(elements.sections).forEach(([key, section]) => {
                     if (key !== 'newsletter') {
-                        section.style.display = visibility[key] ? 'block' : 'none';
+                        if (section) {
+                            section.style.display = visibility[key] ? 'block' : 'none';
+                        }
                     }
                 });
             }
 
             // Handle filter click events
-            async function handleFilterClick(e) {
+            function handleFilterClick(e) {
                 e.preventDefault();
 
                 // Update active state
@@ -226,18 +228,8 @@
                 // Get filter value from data attribute
                 const filter = e.target.dataset.filter;
 
-                try {
-                    const response = await fetch(`/about/filter/${filter}`, {
-                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                    });
-
-                    if (!response.ok) throw new Error('Network response was not ok');
-
-                    const posts = await response.json();
-                    updateSectionVisibility(filter);
-                } catch (error) {
-                    console.error('Error:', error);
-                }
+                // Update UI immediately
+                updateSectionVisibility(filter);
             }
 
             // Initialize and add event listeners
