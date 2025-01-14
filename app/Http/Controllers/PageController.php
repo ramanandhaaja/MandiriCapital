@@ -139,8 +139,15 @@ class PageController extends Controller
 
     public function platformshow($slug)
     {
+        return view('pages.platform-show');
+    }
+
+
+
+    public function platformapply($slug)
+    {
         $post = BlogPost::where('slug', $slug)->firstOrFail();
-        return view('pages.platform-show', compact('post'));
+        return view('pages.platform-apply', compact('post'));
     }
 
 

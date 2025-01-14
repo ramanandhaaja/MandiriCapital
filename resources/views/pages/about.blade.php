@@ -58,25 +58,26 @@
                             [
                                 'icon' => 'icon1.png',
                                 'title' => 'Accessing New Markets',
-                                'description' => 'From tapping into ecosystem of startups'
+                                'description' => 'From tapping into ecosystem of startups',
                             ],
                             [
                                 'icon' => 'icon2.png',
                                 'title' => 'Improving Business Process',
-                                'description' => 'By implementing new technologies (ex: AI)'
+                                'description' => 'By implementing new technologies (ex: AI)',
                             ],
                             [
                                 'icon' => 'icon3.png',
                                 'title' => 'Supporting ESG Initiatives',
-                                'description' => 'Achieving net zero emission'
-                            ]
+                                'description' => 'Achieving net zero emission',
+                            ],
                         ];
                     @endphp
 
-                    @foreach($features as $feature)
+                    @foreach ($features as $feature)
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <img src="{{ asset('images/about/' . $feature['icon']) }}" alt="{{ $feature['title'] }} Icon">
+                                <img src="{{ asset('images/about/' . $feature['icon']) }}"
+                                    alt="{{ $feature['title'] }} Icon">
                             </div>
                             <div class="feature-content">
                                 <h3>{{ $feature['title'] }}</h3>
@@ -92,9 +93,10 @@
         <div class="headline-section">
             <h1 class="headline-title">OUR PRIORITY SECTOR</h1>
             <div class="headline-grid-four middle-animation">
-                @foreach($prioritySectors as $index => $sector)
+                @foreach ($prioritySectors as $index => $sector)
                     <div class="headline-card {{ $index > 0 ? ($index === 3 ? 'left-border' : 'middle-border') : '' }}">
-                        <img class="headline-image" src="{{ '/storage/' . $sector->image_path }}" alt="{{ $sector->title }}">
+                        <img class="headline-image" src="{{ '/storage/' . $sector->image_path }}"
+                            alt="{{ $sector->title }}">
                         <h1>{{ $sector->title }}</h1>
                     </div>
                 @endforeach
@@ -105,15 +107,41 @@
     {{-- Mandiri Section --}}
     <div class="mandiri-section">
         <div class="ecosystem-grid">
-            @foreach($ecosystemList as $ecosystem)
+            <div class="card-ecosystem-highlight">
+                <div class="card-ecosystem-highlight-grid">
+                    <img src="{{ asset('images/about/mandirilogobig.png') }}" alt=""
+                        class="card-ecosystem-image-highlight">
+                    <div class="">
+                        <div class="tag-container-highlight">
+                            <span class="tag tag-domestic">Domestik</span>
+                            <span class="tag tag-international">International</span>
+                        </div>
+                        <a href="#" class="text-decoration-none">
+                            <span class="category-highlight">The Biggest Conglomerate with Various Subsidiaries.</span>
+                            <div class="card-ecosystem-content-highlight">
+                                Mandiri’s total asset amount to Rp. 2.258 Tn a of Q1 2024, Mandiri has 42+ Mn retail
+                                customers and 200k+ SMEs, 137 Branch offices, 12k+ ATM, 7 overseas branch offices  which
+                                includes Singapore, Hong Kong, Shanghai, Cayman Islands, Dili, London, and Malaysia.
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mandiri-ecosystem-title">
+            Mandiri Ecosystem
+        </div>
+        <div class="ecosystem-grid">
+            @foreach ($ecosystemList as $ecosystem)
                 <div class="card-ecosystem">
                     <div class="background-image">
-                        <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}" class="card-ecosystem-image">
+                        <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}"
+                            class="card-ecosystem-image">
                         <div class="tag-container">
-                            @if($ecosystem->is_domestic)
+                            @if ($ecosystem->is_domestic)
                                 <span class="tag tag-domestic">Domestik</span>
                             @endif
-                            @if($ecosystem->is_international)
+                            @if ($ecosystem->is_international)
                                 <span class="tag tag-international">International</span>
                             @endif
                         </div>
@@ -150,7 +178,7 @@
 
         <div class="masonry-grid">
 
-            @foreach($teamMembers as $member)
+            @foreach ($teamMembers as $member)
                 <div class="team-card">
                     <img class="background-image" src="{{ '/storage/' . $member->image_path }}" alt="{{ $member->name }}">
                     <span class="team-name">{{ $member->name }}</span>
@@ -169,7 +197,8 @@
         <div class="newsletter-container">
             <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
             <a href="{{ route('contact') }}" class="newsletter-link">
-                <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect" class="button-image center-image-newsletter">
+                <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect"
+                    class="button-image center-image-newsletter">
             </a>
         </div>
     </div>
@@ -201,9 +230,21 @@
             // Update section visibility based on filter
             function updateSectionVisibility(filter) {
                 const sectionMap = {
-                    'about-mci': { about: true, mandiri: false, team: false },
-                    'about-mandiri': { about: false, mandiri: true, team: false },
-                    'our-team': { about: false, mandiri: false, team: true }
+                    'about-mci': {
+                        about: true,
+                        mandiri: false,
+                        team: false
+                    },
+                    'about-mandiri': {
+                        about: false,
+                        mandiri: true,
+                        team: false
+                    },
+                    'our-team': {
+                        about: false,
+                        mandiri: false,
+                        team: true
+                    }
                 };
 
                 const visibility = sectionMap[filter] || sectionMap['about-mci'];

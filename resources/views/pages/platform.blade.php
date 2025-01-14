@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="synergy-register">
-                            <a href="#" class="register-btn btn-detail">View Detail</a>
+                            <a href="{{ route('platform.show', $program->slug) }}" class="register-btn btn-detail">View Detail</a>
                             <a href="#" class="register-btn btn-register">Register Now</a>
                         </div>
                     </div>
