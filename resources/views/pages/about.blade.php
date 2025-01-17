@@ -120,7 +120,7 @@
                             <span class="category-highlight">The Biggest Conglomerate with Various Subsidiaries.</span>
                             <div class="card-ecosystem-content-highlight">
                                 Mandiri’s total asset amount to Rp. 2.258 Tn a of Q1 2024, Mandiri has 42+ Mn retail
-                                customers and 200k+ SMEs, 137 Branch offices, 12k+ ATM, 7 overseas branch offices  which
+                                customers and 200k+ SMEs, 137 Branch offices, 12k+ ATM, 7 overseas branch offices which
                                 includes Singapore, Hong Kong, Shanghai, Cayman Islands, Dili, London, and Malaysia.
                             </div>
                         </a>

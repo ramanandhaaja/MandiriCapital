@@ -1,451 +1,141 @@
+/* ==========================================================================
+   Portfolio Show Page Styles
+   ========================================================================== */
 
-/* Reset Styles */
-.top-hero-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 220px 0 80px 0;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
+/* Root Variables */
+:root {
+    /* Colors */
+    --color-primary: #FFD700;
+    --color-secondary: #EFA32F;
+    --color-white: #FFFFFF;
+    --color-gray-400: #9CA3AF;
+
+    /* Typography */
+    --font-family: 'Avenir LT Std', sans-serif;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
 }
 
-.author-avatar {
-    width: auto;
-    height: 150px;
-    object-fit: cover;
+/* Typography */
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('../fonts/Avenir LT Std 45 Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Base styles */
+* {
+    font-family: var(--font-family);
 }
 
 /* Hero Section */
+.top-hero-section {
+    /* Add styles for the top hero section with author avatar */
+}
+
 .hero-section {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    position: relative;
-    padding-top: 0;
-    margin: 0;
+    height: 550px;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    line-height: 20px;
 }
 
 .hero-content {
-    width: 100%;
-    height: auto;
-    min-height: 560px;
+    padding: 100px 30px 0px 0px;
+    color: var(--color-white);
     display: flex;
     flex-direction: column;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    z-index: 1;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
 }
 
-
-/* Main Content Section */
+/* Content Section */
 .content-section {
-    display: grid;
-    grid-template-columns: 1fr 200px;
-    gap: 40px;
-    width: calc(100% - 40px);
-    margin-top: 50px;
-    margin-left: 40px;
-    margin-right: 0px;
-    background: transparent;
-    max-width: 1440px;
+    /* Add styles for the main content section */
 }
 
 .content-container {
-    display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 40px;
-    background: transparent;
+    /* Add styles for the content container */
 }
 
-.article-subtitle p {
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.article-content-text p{
-    font-family: 'Roboto', sans-serif;
-    color: #ffffff;
-
-}
-
-/* Left Sidebar */
+/* Sidebar */
 .sidebar-left {
-    margin-top: 0px;
-    width: 100%;
-    padding-left: 20px;
-    background: transparent;
-}
-
-/* Navigation Buttons */
-.news-navigation {
-    margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    background: transparent;
+    /* Add styles for the left sidebar */
 }
 
 .article-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background: transparent;
+    /* Add styles for article meta information */
 }
-
-.article-meta h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 34px;
-    font-weight: 600;
-    color: #FFFFFF;
-}
-
-.meta-info {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    background: transparent;
-}
-
-.article-date {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    color: #ffffff;
-}
-
-.author-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: transparent;
-}
-
-
-.author-details {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    background: transparent;
-}
-
-.author-name {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    color: #ffffff;
-}
-
-.author-role {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    color: #A1A1AA;
-}
-
-.article-category {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #ffffff;
-    padding: 12px 12px;
-    border-radius: 18px;
-    display: inline-block;
-    width: fit-content;
-    background: #27272A;
-}
-
-/* Main Content */
-.article-content {
-    font-family: 'Roboto', sans-serif;
-    margin-top: 0px;
-    font-size: 14px;
-    color: #FFFFFF;
-}
-
-.article-content p {
-    margin-bottom: 20px;
-}
-
 
 /* Company Details */
 .company-details {
-    font-family: 'Roboto', sans-serif;
-    padding: 10px 0 0 0;
-    color: #FFFFFF;
+    /* Add styles for company details section */
 }
 
 .company-description {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    color: #FFFFFF;
+    /* Add styles for company description */
 }
 
 .company-info-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    /* Add styles for company info grid */
 }
 
 .info-item {
-    padding-bottom: 5px;
-    border-bottom: 1px solid rgba(255, 255, 255, 1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* Add styles for individual info items */
 }
 
 .info-label {
-    font-size: 14px;
-    font-weight: 500;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    flex: 1;
+    /* Add styles for info labels */
 }
 
 .info-value {
-    font-size: 16px;
-    color: #FFFFFF;
-    text-align: right;
-    flex: 1;
-}
-
-.website-link {
-    color: #EFA32F;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-}
-
-.website-link:hover {
-    opacity: 0.8;
-}
-
-/* Share Section */
-.share-section {
-    font-family: 'Roboto', sans-serif;
-    padding-top: 30px;
-    padding-right: 20px;
-    background: transparent;
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-.share-label {
-    color: #ffffff !important;
-    display: block;
-    margin-bottom: 16px;
-}
-
-.share-section span {
-    display: block;
-    margin-bottom: 16px;
-}
-
-.social-icons {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    background: transparent;
-}
-
-.social-icon img {
-    width: 24px;
-    height: 24px;
-    transition: opacity 0.2s ease;
-}
-
-.social-icon:hover img {
-    opacity: 0.7;
-}
-
-/* Newsletter Section */
-.newsletter-section {
-    width: 100%;
-    padding: 60px 20px;
-    margin-top: 60px;
-}
-
-.newsletter-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    background: transparent;
-}
-
-.newsletter-title {
-    font-family: 'Montserrat', sans-serif;
-    color: #FFFFFF;
-    font-size: 36px;
-    font-weight: 600;
-    margin-bottom: 24px;
-    background: transparent;
-}
-
-.center-image-newsletter {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    background: transparent;
+    /* Add styles for info values */
 }
 
 /* SDG Objectives */
 .sdg-objectives {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 20px 0;
+    /* Add styles for SDG objectives section */
 }
 
 .sdg-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    /* Add styles for individual SDG items */
 }
 
 .sdg-icon {
-    flex-shrink: 0;
-}
-
-.sdg-icon img {
-    width: 40px;
-    height: auto;
-    object-fit: contain;
+    /* Add styles for SDG icons */
 }
 
 .sdg-content {
-    flex: 1;
+    /* Add styles for SDG content */
 }
 
-.sdg-content h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: #FFFFFF;
-    margin: 0px;
+/* Share Section */
+.share-section {
+    /* Add styles for share section */
 }
 
-.sdg-content p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    color: #A1A1AA;
-    margin-top:5px;
+.share-content {
+    /* Add styles for share content */
+}
+
+.social-icons {
+    /* Add styles for social icons */
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-    .content-container {
-        grid-template-columns: 250px 1fr;
-        gap: 30px;
-        background: transparent;
-    }
-
-}
-
 @media (max-width: 992px) {
-
-    .content-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        background: transparent;
-    }
-
-    .social-icons {
-        flex-direction: row;
-        background: transparent;
-    }
-
-    .article-meta {
-        gap: 16px;
-        background: transparent;
-    }
-
-    .meta-info {
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
-        background: transparent;
-    }
+    /* Add tablet-specific styles */
 }
 
 @media (max-width: 768px) {
-    .hero-section {
-        height: 400px;
-        padding-top: 100px;
-        background: transparent;
-    }
-
-    .article-meta h1 {
-        font-size: 28px;
-    }
-
-
-    .newsletter-title {
-        font-size: 28px;
-        background: transparent;
-    }
-
-    .hero-content {
-        min-height: 300px;
-        background-size: cover;
-    }
-
-    .content-section {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .content-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .share-section {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .sidebar-left {
-        padding-left: 0;
-    }
+    /* Add mobile-specific styles */
 }
 
 @media (max-width: 480px) {
-    .content-section {
-        padding: 20px;
-        background: transparent;
-    }
-
-    .article-meta h1 {
-        font-size: 24px;
-    }
-
-    .meta-info {
-        gap: 8px;
-        background: transparent;
-    }
-
-    .newsletter-section {
-        padding: 40px 20px;
-        background-color: #1F2937;
-    }
-
-    .newsletter-title {
-        font-size: 24px;
-        background: transparent;
-    }
-
-    .hero-content {
-        min-height: 250px;
-    }
+    /* Add small mobile-specific styles */
 }
