@@ -11,3 +11,8 @@ client_max_body_size 50M;
 
 https://gitlab.62teknologi.com/62teknologi/mandiri-capital-web-apps.git
 git push git@gitlab.62teknologi.com:62teknologi/mandiri-capital-web-apps.git
+
+cd existing_repo
+git remote add origin https://gitlab.62teknologi.com/62teknologi/mandiri-capital-web-apps.git
+git branch -M staging
+git push -uf origin staging
