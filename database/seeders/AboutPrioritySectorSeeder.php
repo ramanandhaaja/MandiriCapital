@@ -15,33 +15,26 @@ class AboutPrioritySectorSeeder extends Seeder
 
         $datas = [
             [
+                'title' => 'AI',
+                'slug' => 'ai',
+                'content' => '',
+                'published_date' => Carbon::now(),
+                'image_path' => 'hero-sections/01JJ3RHBNH1RXYHN5GPSQ7ETP4.png'
+            ],
+            [
+                'title' => 'Tech Enabler',
+                'slug' => 'tech-enabler',
+                'content' => '',
+                'published_date' => Carbon::now(),
+                'image_path' => 'hero-sections/01JJ3RHMAYKVVVJ9P22K6Q67GR.png'
+            ],
+            [
                 'title' => 'Software as a Service (SaaS)',
                 'slug' => 'software-as-a-service-saas',
                 'content' => '',
                 'published_date' => Carbon::now(),
-                'image_path' => 'hero-sections/01JHDMCX98D9P0902E2P23FXA2.png'
+                'image_path' => 'hero-sections/01JJ3RHWHM1EATFMPCGCR5TZY7.png'
             ],
-            [
-                'title' => 'Deep Tech',
-                'slug' => 'deep-tech',
-                'content' => '',
-                'published_date' => Carbon::now(),
-                'image_path' => 'hero-sections/01JHDMCX98D9P0902E2P23FXA2.png'
-            ],
-            [
-                'title' => 'Fintech',
-                'slug' => 'fintech',
-                'content' => '',
-                'published_date' => Carbon::now(),
-                'image_path' => 'hero-sections/01JHDMCX98D9P0902E2P23FXA2.png'
-            ],
-            [
-                'title' => 'Value Chain',
-                'slug' => 'value-chain',
-                'content' => '',
-                'published_date' => Carbon::now(),
-                'image_path' => 'hero-sections/01JHDMCX98D9P0902E2P23FXA2.png'
-            ]
         ];
 
         foreach ($datas as $data) {

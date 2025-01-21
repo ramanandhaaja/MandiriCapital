@@ -92,7 +92,7 @@
         {{-- Priority Sectors --}}
         <div class="headline-section">
             <h1 class="headline-title">OUR PRIORITY SECTOR</h1>
-            <div class="headline-grid-four middle-animation">
+            <div class="headline-grid-three middle-animation">
                 @foreach ($prioritySectors as $index => $sector)
                     <div class="headline-card {{ $index > 0 ? ($index === 3 ? 'left-border' : 'middle-border') : '' }}">
                         <img class="headline-image" src="{{ '/storage/' . $sector->image_path }}"

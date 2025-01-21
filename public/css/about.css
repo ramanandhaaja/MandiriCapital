@@ -722,6 +722,14 @@ html, body {
     padding: 0 40px;
 }
 
+.headline-grid-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
 .headline-card {
     padding-left: 24px;
     padding-right: 24px;

@@ -12,33 +12,10 @@ class PortfolioFundingArticleSeeder extends Seeder
      */
     public function run(): void
     {
-        // First Article - Why MCI
-        $firstArticleId = DB::table('portfolio_funding_articles')->insertGetId([
-            'title' => 'Mandiri Corporate VC ',
-            'content' => '',  // This section appears to only have a title in the screenshot
-            'is_active' => true,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        // Sub-articles for Why MCI
-        DB::table('portfolio_funding_articles_sub')->insert([
-            [
-                'article_id' => $firstArticleId,
-                'title' => "Balance Sheet Fund",
-                'content' => 'Berfokus untuk memberikan investasi kepada technology companies “growth startup” yang memiliki potensi kolaborasi dengan ekosistem Mandiri Group.',
-                'is_large' => true,
-                'image_path' => 'portfolios/01JHFQD9T5Z8WB3Q1JT81DRPHK.png',
-                'order' => 1,
-                'is_active' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ]);
 
         // Second Article - Here's how we'll help
         $secondArticleId = DB::table('portfolio_funding_articles')->insertGetId([
-            'title' => "Dana Ventura MCI",
+            'title' => "Dana Ventura",
             'content' => '',
             'is_active' => true,
             'created_at' => now(),
@@ -47,6 +24,17 @@ class PortfolioFundingArticleSeeder extends Seeder
 
         // Sub-articles for second article
         DB::table('portfolio_funding_articles_sub')->insert([
+            [
+                'article_id' => $secondArticleId,
+                'title' => "Balance Sheet Fund",
+                'content' => 'Berfokus untuk memberikan investasi kepada technology companies “growth startup” yang memiliki potensi kolaborasi dengan ekosistem Mandiri Group.',
+                'is_large' => false,
+                'image_path' => 'portfolios/01JHFQD9T5Z8WB3Q1JT81DRPHK.png',
+                'order' => 1,
+                'is_active' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
             [
                 'article_id' => $secondArticleId,
                 'title' => "Indonesia Impact Fund (IIF)",

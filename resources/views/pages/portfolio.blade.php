@@ -83,33 +83,39 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="first_name" class="form-label">First Name</label>
-                            <input type="text" id="first_name" name="first_name" class="form-input" placeholder="Write here..." required>
+                            <input type="text" id="first_name" name="first_name" class="form-input"
+                                placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
                             <label for="last_name" class="form-label">Last Name</label>
-                            <input type="text" id="last_name" name="last_name" class="form-input" placeholder="Write here..." required>
+                            <input type="text" id="last_name" name="last_name" class="form-input"
+                                placeholder="Write here..." required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Write here..." required>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
                             <label for="phone" class="form-label">Phone Number</label>
-                            <input type="text" id="phone" name="phone" class="form-input" placeholder="Write here..." required>
+                            <input type="text" id="phone" name="phone" class="form-input"
+                                placeholder="Write here..." required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="company_name" class="form-label">Company Name</label>
-                            <input type="text" id="company_name" name="company_name" class="form-input" placeholder="Write here..." required>
+                            <input type="text" id="company_name" name="company_name" class="form-input"
+                                placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
                             <label for="url" class="form-label">Add URL to your Company Website</label>
-                            <input type="text" id="url" name="url" class="form-input" placeholder="Write here..." required>
+                            <input type="text" id="url" name="url" class="form-input"
+                                placeholder="Write here..." required>
                         </div>
                     </div>
 
@@ -119,7 +125,8 @@
                         <div class="file-upload-container">
                             <label for="company_profile" class="file-upload-button">Choose File</label>
                             <span class="file-name">No File Chosen</span>
-                            <input type="file" id="company_profile" name="company_profile" class="file-input" accept=".pdf" required>
+                            <input type="file" id="company_profile" name="company_profile" class="file-input"
+                                accept=".pdf" required>
                         </div>
                         <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page PDF)</p>
                         <div class="upload-guidelines">
@@ -127,7 +134,8 @@
                             <ul class="guidelines-list">
                                 <li>The specific problem your company are aiming to tackle</li>
                                 <li>The solution for the specific problem</li>
-                                <li>The business model, describe the strategy to increase the revenue or profit with its products and customer base</li>
+                                <li>The business model, describe the strategy to increase the revenue or profit with its
+                                    products and customer base</li>
                                 <li>The target market, the size, entry barriers, challenges, and opportunities</li>
                                 <li>Number of the current users or clients that are using your products</li>
                                 <li>Your competition and who might be one</li>
@@ -140,43 +148,53 @@
                         <label class="form-label">Choose your company's main business sector</label>
                         <div class="sector-grid">
                             <div class="sector-item">
-                                <input type="radio" id="agriculture" name="business_sector" value="Agriculture & Food" class="sector-radio" required>
+                                <input type="radio" id="agriculture" name="business_sector" value="Agriculture & Food"
+                                    class="sector-radio" required>
                                 <label for="agriculture" class="sector-label">Agriculture & Food</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="energy" name="business_sector" value="Energy & Resources" class="sector-radio">
+                                <input type="radio" id="energy" name="business_sector" value="Energy & Resources"
+                                    class="sector-radio">
                                 <label for="energy" class="sector-label">Energy & Resources</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="healthcare" name="business_sector" value="Healthcare & Pharmaceuticals" class="sector-radio">
+                                <input type="radio" id="healthcare" name="business_sector"
+                                    value="Healthcare & Pharmaceuticals" class="sector-radio">
                                 <label for="healthcare" class="sector-label">Healthcare & Pharmaceuticals</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="education" name="business_sector" value="Education & employment" class="sector-radio">
+                                <input type="radio" id="education" name="business_sector"
+                                    value="Education & employment" class="sector-radio">
                                 <label for="education" class="sector-label">Education & employment</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="automotive" name="business_sector" value="Automotive & Transportation" class="sector-radio">
+                                <input type="radio" id="automotive" name="business_sector"
+                                    value="Automotive & Transportation" class="sector-radio">
                                 <label for="automotive" class="sector-label">Automotive & Transportation</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="banking" name="business_sector" value="Banking & Financial Service" class="sector-radio">
+                                <input type="radio" id="banking" name="business_sector"
+                                    value="Banking & Financial Service" class="sector-radio">
                                 <label for="banking" class="sector-label">Banking & Financial Service</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="consulting" name="business_sector" value="Consulting & Professional Services" class="sector-radio">
+                                <input type="radio" id="consulting" name="business_sector"
+                                    value="Consulting & Professional Services" class="sector-radio">
                                 <label for="consulting" class="sector-label">Consulting & Professional Services</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="media" name="business_sector" value="Media & Entertainment" class="sector-radio">
+                                <input type="radio" id="media" name="business_sector"
+                                    value="Media & Entertainment" class="sector-radio">
                                 <label for="media" class="sector-label">Media & Entertainment</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="retail" name="business_sector" value="Retail & Wholesale" class="sector-radio">
+                                <input type="radio" id="retail" name="business_sector" value="Retail & Wholesale"
+                                    class="sector-radio">
                                 <label for="retail" class="sector-label">Retail & Wholesale</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="other" name="business_sector" value="Other" class="sector-radio">
+                                <input type="radio" id="other" name="business_sector" value="Other"
+                                    class="sector-radio">
                                 <label for="other" class="sector-label">Other</label>
                             </div>
                         </div>
@@ -315,7 +333,7 @@
     </div>
 
 
-    {{-- For Investor Section --}}
+    {{-- Funding Section --}}
     <div class="for-investor-section">
         {{-- Hero Section --}}
         <div class="hero-mid-section">
@@ -324,105 +342,110 @@
 
         {{-- Investment Vehicles --}}
         @foreach ($portfolioFundingArticlesList as $article)
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title">{{ $article->title }}</h1>
+                <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
+            </div>
             <div class="masonry-grid-investment-section">
-                <div class="grid-headline-title-card">
-                    <h1 class="grid-headline-title">{{ $article->title }}</h1>
-                    <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
-                </div>
-                <div class="grid-headline-description-card">
-                    <div class="masonry-grid-investment-section-sub">
+                <div class="grid-headline-description-card-funding">
+                    <div class="masonry-grid-investment-section-funding">
                         @foreach ($portfolioFundingArticleSubList->where('article_id', $article->id) as $subArticle)
-                            <div class="grid-headline-title-card-sub {{ $subArticle->is_large ? 'card-funding-large' : 'card-funding' }}">
+                            <div
+                                class="grid-headline-title-card-sub {{ $subArticle->is_large ? 'card-funding-large' : 'card-funding' }}">
                                 @if (!$subArticle->is_large)
                                     <div class="background-image">
                                 @endif
-                                <img src="{{ '/storage/' . $subArticle->image_path }}"
-                                alt="funding2.png" class="card-funding-image" />
-
+                                <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png"
+                                    class="card-funding-image" />
                                 @if (!$subArticle->is_large)
-                                    </div>
-                                @endif
-                                <div class="funding-category{{ $subArticle->is_large ? '-large' : '' }}">
-                                    {{ $subArticle->title }}
-                                </div>
-                                <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
-                                    {{ $subArticle->content }}
-                                </div>
-                                    <a href="{{ $subArticle->report_url }}" class="text-decoration-none">
-                                        <span class="funding-link">Fund Report >></span>
-                                    </a>
                             </div>
-                        @endforeach
-                    </div>
-                    @if ($article->title_sub)
-                        <div class="grid-headline-title-card-sub-bottom">
-                            <h1 class="card-title-sub-bottom">{{ $article->title_sub }}</h1>
-                            <p class="card-description-bottom">{{ $article->content_sub }}</p>
+                        @endif
+                        <div class="funding-category{{ $subArticle->is_large ? '-large' : '' }}">
+                            {{ $subArticle->title }}
                         </div>
-                    @endif
-                </div>
-            </div>
+                        <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
+                            {{ $subArticle->content }}
+                        </div>
+                        <a href="{{ $subArticle->report_url }}" class="text-decoration-none">
+                            <span class="funding-link">Fund Report >></span>
+                        </a>
+                    </div>
         @endforeach
+    </div>
+    @if ($article->title_sub)
+        <div class="grid-headline-title-card-sub-bottom">
+            <h1 class="card-title-sub-bottom">{{ $article->title_sub }}</h1>
+            <p class="card-description-bottom">{{ $article->content_sub }}</p>
+        </div>
+    @endif
+    </div>
+    </div>
+    @endforeach
 
 
-        {{-- Contact Form Section --}}
-        <div class="masonry-grid-contact-section">
-            <div class="grid-headline-title-card">
+    {{-- Contact Form Section --}}
+    <div class="masonry-grid-contact-section">
+        <div class="grid-headline-title-card">
             <h1 class="grid-headline-title-contact">New Investor Enquiry</h1>
             <p class="grid-headline-subtitle-contact">
                 Begin your investment journey with confidence—partner with us today.
             </p>
-            </div>
-
-            <div class="grid-headline-contact-card">
-                <form id="contactForm" class="contact-form">
-                    @csrf
-                    {{-- Company Details --}}
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="full_name" class="form-label">Full Name</label>
-                            <input type="text" id="full_name" name="full_name" class="form-input" placeholder="Write here..." required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-input" placeholder="Write here..." required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="text" id="phone" name="phone" class="form-input" placeholder="Write here..." required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Write here..." required>
-                        </div>
-
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="company_name" class="form-label">Company Name</label>
-                            <input type="text" id="company_name" name="company_name" class="form-input" placeholder="Write here..." required>
-                        </div>
-                    </div>
-
-                    {{-- Business Description --}}
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" rows="4" class="form-textarea" placeholder="Write here..." required></textarea>
-                    </div>
-
-
-                    {{-- Submit Button --}}
-                    <div class="form-group button-group">
-                        <button type="reset" class="reset-button">Reset</button>
-                        <button type="submit" class="submit-button">Submit</button>
-                    </div>
-                </form>
-            </div>
         </div>
+
+        <div class="grid-headline-contact-card">
+            <form id="contactForm" class="contact-form">
+                @csrf
+                {{-- Company Details --}}
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="full_name" class="form-label">Full Name</label>
+                        <input type="text" id="full_name" name="full_name" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="text" id="phone" name="phone" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company_name" class="form-label">Company Name</label>
+                        <input type="text" id="company_name" name="company_name" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                </div>
+
+                {{-- Business Description --}}
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" rows="4" class="form-textarea" placeholder="Write here..." required></textarea>
+                </div>
+
+
+                {{-- Submit Button --}}
+                <div class="form-group button-group">
+                    <button type="reset" class="reset-button">Reset</button>
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
     </div>
 
 @endsection

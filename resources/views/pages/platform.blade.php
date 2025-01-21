@@ -28,6 +28,25 @@
         <div class="hero-mid-section">
             <h1 class="center-text">A Chance To Collaborate With Bank Mandiri's Business Units</h1>
         </div>
+        <div class="headline-grid-two middle-animation">
+
+
+                <div class="headline-card">
+                    <img class="headline-image" src="{{ asset('images/platform/livin.png') }}" alt="Livin' by Mandiri">
+                    <h1>Livin’ by Mandiri</h1>
+                    <p>Mobile banking application designed to simplify financial transactions for retail customers with a wide range of features, including fund transfers, bill payments, QR code payments, and personal financial management tools, providing a seamless and secure digital banking experience.
+                    </p>
+                </div>
+                <div class="headline-card left-border">
+                    <img class="headline-image" src="{{ asset('images/platform/kopra.png') }}" alt="Kopra by Mandiri">
+                    <h1>Kopra by Mandiri</h1>
+                    <p>Bank Mandiri's digital platform tailored for corporate clients. It integrates comprehensive solutions for cash management, trade finance, and business operations, enabling companies to optimize their financial processes efficiently and securely.
+                    </p>
+                </div>
+
+        </div>
+
+
         <div class="headline-grid-four middle-animation">
 
             @foreach ($businessUnitList as $index => $unit)
@@ -52,7 +71,7 @@
                 <div class="synergy-grid">
                     @if ($index % 2 === 1)
                         <div class="synergy-image">
-                            <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" style="height: 380px;">
+                            <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" style="height: 500px;">
                         </div>
                     @endif
 
@@ -85,7 +104,7 @@
                     </div>
                     @if ($index % 2 === 0)
                         <div class="synergy-image">
-                            <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" style="height: 380px;">
+                            <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" style="height: 500px;">
                         </div>
                     @endif
                 </div>
