@@ -27,8 +27,8 @@ class PortfolioArticleSeeder extends Seeder
         DB::table('portfolio_articles_sub')->insert([
             [
                 'article_id' => $firstArticleId,
-                'title' => "Access to Mandiri Group's Ecosystem",
-                'content' => 'We offer startups the unique opportunity to connect and collaborate with the diverse sectors and resources within the Mandiri Group, driving synergies that accelerate growth.',
+                'title' => "Diverse Opportunities Within Mandiri Group",
+                'content' => 'With Mandiri Group’s extensive business ecosystem, startups gain unparalleled access to a wide range of sectors that allows you to explore synergies, scale your solutions, and tap into endless growth opportunities.',
                 'icon' => 'portfolios/01JHFA4PAR27040W6Q0V29TRMM.png',
                 'text_icon' => '',
                 'order' => 1,
@@ -38,8 +38,8 @@ class PortfolioArticleSeeder extends Seeder
             ],
             [
                 'article_id' => $firstArticleId,
-                'title' => 'Industry Expertise',
-                'content' => 'Our support goes beyond funding; we provide guidance, mentorship, and resources to help startups achieve long-term, healthy, and scalable growth.',
+                'title' => 'Expert Guidance and Mentorship',
+                'content' => "We don't just invest; we partner with you on your journey. MCI provides tailored guidance, strategic mentorship, and access to industry expertise to help your startup overcome challenges and unlock its full potential.",
                 'icon' => 'portfolios/01JHFA58K19B6J9T4D8HNW1XCE.png',
                 'text_icon' => '',
                 'order' => 2,
@@ -49,8 +49,8 @@ class PortfolioArticleSeeder extends Seeder
             ],
             [
                 'article_id' => $firstArticleId,
-                'title' => 'Strategic Growth Support',
-                'content' => 'Beyond capital, we provide comprehensive support in strategy, networking, and operational excellence to drive sustainable growth.',
+                'title' => 'Focus on ESG Impact',
+                'content' => 'We actively champion on ESG initiatives, ensuring that your startup can grow responsibly while making a positive on society and the environment.',
                 'icon' => 'portfolios/01JHFA5QMN3WW6YRSXFSQGBE8Z.png',
                 'text_icon' => '',
                 'order' => 3,
@@ -75,8 +75,8 @@ class PortfolioArticleSeeder extends Seeder
         DB::table('portfolio_articles_sub')->insert([
             [
                 'article_id' => $secondArticleId,
-                'title' => "Strategic Synergies with Mandiri Group",
-                'content' => 'Gain access to Indonesia’s largest  financial ecosystem, opening doors to valuable business collaborations and market opportunities.',
+                'title' => "Tailored Value Creation Programs",
+                'content' => 'We’ve designed programs like Sandbox, Matchmaking, and Networking to provide startups with structured opportunities to test ideas, forge meaningful connections, and access new markets. These initiatives are designed to create tangible impact and drive measurable growth.',
                 'icon' => 'portfolios/01JHFA4PAR27040W6Q0V29TRMM.png',
                 'text_icon' => '',
                 'order' => 1,
@@ -86,8 +86,8 @@ class PortfolioArticleSeeder extends Seeder
             ],
             [
                 'article_id' => $secondArticleId,
-                'title' => 'Tailored Growth Support',
-                'content' => 'From funding to mentorship, we offer hands-on support to scale your business sustainably and effectively.',
+                'title' => 'Sector-Focused Expertise',
+                'content' => 'Our priority sectors align with high-growth opportunities, offering startups the added value of deep industry insights and tailored support. By focusing on these areas, we help you leverage your strengths and scale effectively.',
                 'icon' => 'portfolios/01JHFA58K19B6J9T4D8HNW1XCE.png',
                 'text_icon' => '',
                 'order' => 2,
@@ -97,8 +97,19 @@ class PortfolioArticleSeeder extends Seeder
             ],
             [
                 'article_id' => $secondArticleId,
-                'title' => 'Long-Term Partnership',
-                'content' => 'We’re here for the long haul,  empowering your business to navigate challenges, seize opportunities, and achieve meaningful milestones as we grow together.',
+                'title' => 'End-to-End Guidance and Mentorship',
+                'content' => 'Throughout the investment period, we provide hands-on guidance, mentorship, and access to experts. Our aim is to help you navigate challenges, refine your strategies, and accelerate your growth journey.',
+                'icon' => 'portfolios/01JHFA5QMN3WW6YRSXFSQGBE8Z.png',
+                'text_icon' => '',
+                'order' => 3,
+                'is_active' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'article_id' => $secondArticleId,
+                'title' => 'Access to a Global Network',
+                'content' => 'Tap into a vast network of investors, venture capitalists, private equities, and potential acquiring companies. We don’t just invest—we prepare you to be the next big player in the market, positioning you as a pipeline for global opportunities.',
                 'icon' => 'portfolios/01JHFA5QMN3WW6YRSXFSQGBE8Z.png',
                 'text_icon' => '',
                 'order' => 3,

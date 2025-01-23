@@ -567,7 +567,7 @@ html, body {
 
 .counter-content {
     background-color: var(--color-dark);
-    padding: 120px 40px;
+    padding: 120px 100px;
     color: var(--color-white);
     display: flex;
     max-width: 1600px;
@@ -588,7 +588,7 @@ html, body {
 
 .text-content p {
     font-family: var(--font-family);
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.6;
     color: var(--color-gray-400);
     margin: 0;
@@ -602,7 +602,7 @@ html, body {
     font-family: var(--font-family);
     font-size: 28px;
     font-weight: 600;
-    margin-bottom: 48px;
+    margin-bottom: 28px;
     margin-top: 0px;
     color: var(--color-white);
     line-height: 1.2;
@@ -954,8 +954,8 @@ html, body {
 
 .tag-container {
     position: absolute;
-    top: 60px;
-    right: 30px;
+    top: 105px;
+    left: 30px;
     display: flex;
     gap: 10px;
     z-index: 2;
@@ -972,7 +972,7 @@ html, body {
 
 .tag {
     font-family: var(--font-family);
-    padding: 8px 20px;
+    padding: 6px 16px;
     border-radius: 50px;
     font-size: 14px;
     font-weight: 500;
@@ -1233,7 +1233,7 @@ html, body {
     position: relative;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     max-width: 1600px;
     margin: 40px 50px 0 50px;
 }
@@ -1297,7 +1297,7 @@ html, body {
 
 .card-ecosystem-image {
     position: absolute;
-    top: 30px;
+    top: 25px;
     left: 30px;
     width: 113px;
     z-index: 2;
@@ -1317,7 +1317,7 @@ html, body {
     font-family: var(--font-family);
     font-size: 14px;
     position: absolute;
-    top: 150px;
+    top: 160px;
     left: 30px;
     color: var(--color-secondary);
     font-weight: 500;

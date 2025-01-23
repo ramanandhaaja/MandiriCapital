@@ -31,6 +31,11 @@
     {{-- Get Investment Section --}}
     <div class="get-investement-section">
         {{-- Article Section --}}
+
+        <div class="hero-mid-section">
+            <h1 class="center-text">Ready to rise? Prove your resilience and show you have what it takes!</h1>
+        </div>
+
         @foreach ($portfolioArticlesList as $index => $article)
             <div
                 class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey' }}">

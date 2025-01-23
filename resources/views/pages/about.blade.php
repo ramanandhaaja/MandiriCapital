@@ -34,17 +34,12 @@
         <div class="counter-content">
             <div class="content-container">
                 <div class="text-content">
-                    <p>Established in 2015 as the corporate venture capital arm of Indonesia's
-                        largest financial institution, PT Bank Mandiri (Persero) Tbk, MCI acts as a
-                        dynamic bridge between Startups and Mandiri Group ecosystem.</p>
 
-                    <p>With a portfolio of 23 startups across diverse sectors, backed by funds such
-                        as the Balance Sheet Fund, Indonesia Impact Fund, and Merah Putih Fund,
-                        MCI accelerates innovation through meaningful partnerships.</p>
+                    <p>At Mandiri Capital Indonesia (MCI), we’re not just a venture capital firm—we’re catalysts for rapid innovation and sustainable growth. As the corporate venture capital arm of Bank Mandiri, we drive transformative change by forging synergies across a dynamic ecosystem, empowering startups to scale, and fostering impactful collaborations that fuel progress.</p>
 
-                    <p>By providing initiative programs, resources, expertise, and strategic support,
-                        MCI fosters the growth of technology companies, contributing significantly
-                        to the advancement of Indonesia's economy.</p>
+<p>With a diverse portfolio of 23 startups and access to strategic funds such as the Balance Sheet Fund, Indonesia Impact Fund, and Merah Putih Fund, MCI is leading the charge in shaping Indonesia's digital innovation landscape.</p>
+
+<p>Established in 2015 as the venture capital arm of PT Bank Mandiri (Persero) Tbk, MCI’s core mission has always been to unlock synergies that accelerate innovation. We don’t just envision growth; we make it happen—building a future of opportunity, resilience, and long-term success for both startups and Indonesia's economy.</p>
                 </div>
             </div>
 
@@ -57,18 +52,18 @@
                         $features = [
                             [
                                 'icon' => 'icon1.png',
-                                'title' => 'Accessing New Markets',
-                                'description' => 'From tapping into ecosystem of startups',
+                                'title' => 'Building Synergy with Mandiri Ecosystem',
+                                'description' => 'Empowering startups through strategic collaborations and resources.',
                             ],
                             [
                                 'icon' => 'icon2.png',
-                                'title' => 'Improving Business Process',
-                                'description' => 'By implementing new technologies (ex: AI)',
+                                'title' => 'Nurturing Startup Fundamentals',
+                                'description' => 'Strengthening growth with expert mentorship and guidance.',
                             ],
                             [
                                 'icon' => 'icon3.png',
-                                'title' => 'Supporting ESG Initiatives',
-                                'description' => 'Achieving net zero emission',
+                                'title' => 'ESG Initiative',
+                                'description' => 'Promoting sustainable growth through responsible business practices.',
                             ],
                         ];
                     @endphp
@@ -91,8 +86,8 @@
 
         {{-- Priority Sectors --}}
         <div class="headline-section">
-            <h1 class="headline-title">OUR PRIORITY SECTOR</h1>
-            <div class="headline-grid-three middle-animation">
+            <h1 class="headline-title">VALUES WE UPHOLD</h1>
+            <div class="headline-grid-four middle-animation">
                 @foreach ($prioritySectors as $index => $sector)
                     <div class="headline-card {{ $index > 0 ? ($index === 3 ? 'left-border' : 'middle-border') : '' }}">
                         <img class="headline-image" src="{{ '/storage/' . $sector->image_path }}"
@@ -195,7 +190,7 @@
     {{-- Newsletter Section --}}
     <div class="newsletter-section">
         <div class="newsletter-container">
-            <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
+            <h2 class="newsletter-title">Stay Connected</h2>
             <a href="{{ route('contact') }}" class="newsletter-link">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect"
                     class="button-image center-image-newsletter">

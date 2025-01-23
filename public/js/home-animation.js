@@ -3,17 +3,21 @@ class NumberCounter {
         this.element = document.getElementById(elementId);
         this.currentValue = 0;
         const value = this.element.dataset.value;
-        this.hasDollarSign = value.includes('$');
+        // Extract the prefix (any non-numeric characters at the start)
+        this.prefix = value.match(/^[^\d-]*/)[0] || '';
         // Extract any suffix (M, B, etc.) after the number
         this.suffix = value.match(/[A-Za-z]+$/)?.[0] || '';
     }
 
     formatNumber(value) {
-        const formattedNumber = value.toLocaleString('en-US', {
+        const numericValue = parseFloat(String(value).replace(/[^\d.-]/g, ''));
+
+        const formattedNumber = numericValue.toLocaleString('en-US', {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0
         });
-        let result = this.hasDollarSign ? '$' + formattedNumber : formattedNumber;
+
+        let result = this.prefix + formattedNumber;
         if (this.suffix) {
             result += this.suffix;
         }

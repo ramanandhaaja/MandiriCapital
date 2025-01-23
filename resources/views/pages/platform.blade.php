@@ -25,9 +25,31 @@
 
     {{-- Business Units Section --}}
     <div class="headline-section" id="business-section">
+
         <div class="hero-mid-section">
-            <h1 class="center-text">A Chance To Collaborate With Bank Mandiri's Business Units</h1>
+            <h1 class="center-text">Catalysing Growth Through Synergy with Our Value Creation Programs</h1>
         </div>
+
+        <div class="headline-section-two">
+            <div class="headline-grid-counter">
+                @php
+                    $dummyArticles = [
+                        ['title' => 'PROJECTS','subtitle' => 'hand to business unit', 'content' => '120+'],
+                        ['title' => 'STARTUPS','subtitle' => 'work with our business unit', 'content' => '40'],
+                        ['title' => 'BUSINESS UNITS','subtitle' => 'mandiri and subsidiaries work with statups', 'content' => '40+']
+                    ];
+                @endphp
+                @foreach($dummyArticles as $index => $article)
+                    <div class="headline-card-two {{ $index === 1 ? 'middle-border' : '' }}">
+                        <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article['content'] }}">{{ $article['content'] }}</div>
+                        <h1>{{ $article['title'] }}</h1>
+                        <p class="subtitle">{{ $article['subtitle'] }}</p>
+                        </div>
+                @endforeach
+            </div>
+        </div>
+
+
         <div class="headline-grid-two middle-animation">
 
 
