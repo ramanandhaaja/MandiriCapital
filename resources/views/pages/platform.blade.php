@@ -44,14 +44,13 @@
                         <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article['content'] }}">{{ $article['content'] }}</div>
                         <h1>{{ $article['title'] }}</h1>
                         <p class="subtitle">{{ $article['subtitle'] }}</p>
-                        </div>
+                    </div>
                 @endforeach
             </div>
         </div>
 
 
         <div class="headline-grid-two middle-animation">
-
 
                 <div class="headline-card">
                     <img class="headline-image" src="{{ asset('images/platform/livin.png') }}" alt="Livin' by Mandiri">
@@ -68,7 +67,7 @@
 
         </div>
 
-
+        {{--
         <div class="headline-grid-four middle-animation">
 
             @foreach ($businessUnitList as $index => $unit)
@@ -80,6 +79,212 @@
             @endforeach
 
         </div>
+        --}}
+
+
+
+        @php
+            $portfolioArticlesList = [
+                [
+                    'id' => 1,
+                    'title' => 'Embedded Finance',
+                    'content' => ''
+                ],
+                [
+                    'id' => 2,
+                    'title' => 'Health & Wellness',
+                    'content' => ''
+                ],
+                [
+                    'id' => 3,
+                    'title' => 'Wealth Management',
+                    'content' => ''
+                ],
+                [
+                    'id' => 4,
+                    'title' => 'Tech Enabler',
+                    'content' => ''
+                ],
+                [
+                    'id' => 5,
+                    'title' => 'Value Chain Enabler',
+                    'content' => ''
+                ],
+                [
+                    'id' => 6,
+                    'title' => 'Property Tech & Asset Management',
+                    'content' => ''
+                ]
+            ];
+
+            $portfolioArticleSubList = collect([
+                // Embedded Finance section
+                [
+                    'article_id' => 1,
+                    'title' => 'Generative AI',
+                    'icon' => 'images/platform/1.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 1,
+                    'title' => 'Financial Management',
+                    'icon' => 'images/platform/2.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 1,
+                    'title' => 'Data Management',
+                    'icon' => 'images/platform/3.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 1,
+                    'title' => 'Personalisation',
+                    'icon' => 'images/platform/4.png',
+                    'text_icon' => null
+                ],
+                // Health & Wellness section
+                [
+                    'article_id' => 2,
+                    'title' => 'Health & Wellness',
+                    'icon' => 'images/platform/5.png',
+                    'text_icon' => null
+                ],
+                // Wealth Management section
+                [
+                    'article_id' => 3,
+                    'title' => 'Wealth Management',
+                    'icon' => 'images/platform/6.png',
+                    'text_icon' => null
+                ],
+                // Tech Enabler section
+                [
+                    'article_id' => 4,
+                    'title' => 'SaaS',
+                    'icon' => 'images/platform/7.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 4,
+                    'title' => 'Online Payment',
+                    'icon' => 'images/platform/8.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 4,
+                    'title' => 'Cash Collection',
+                    'icon' => 'images/platform/9.png',
+                    'text_icon' => null
+                ],
+                // Value Chain Enabler section
+                [
+                    'article_id' => 5,
+                    'title' => 'Lifestyle',
+                    'icon' => 'images/platform/10.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 5,
+                    'title' => 'FMCG',
+                    'icon' => 'images/platform/11.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 5,
+                    'title' => 'Health',
+                    'icon' => 'images/platform/12.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 5,
+                    'title' => 'Cash Collection',
+                    'icon' => 'images/platform/13.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 5,
+                    'title' => 'Transportation',
+                    'icon' => 'images/platform/14.png',
+                    'text_icon' => null
+                ],
+                // Property Tech & Asset Management section
+                [
+                    'article_id' => 6,
+                    'title' => 'Asset Liquidation',
+                    'icon' => 'images/platform/15.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 6,
+                    'title' => 'Product bundling for wealth customers',
+                    'icon' => 'images/platform/16.png',
+                    'text_icon' => null
+                ],
+                [
+                    'article_id' => 6,
+                    'title' => 'Idle asset management',
+                    'icon' => 'images/platform/17.png',
+                    'text_icon' => null
+                ]
+            ]);
+        @endphp
+
+            <div class="masonry-grid-investment-section-grey">
+                <div class="grid-headline-title-card">
+                    <h1 class="grid-headline-title">What we focus on?</h1>
+                </div>
+
+                <div class="grid-headline-description-card">
+                    @foreach ($portfolioArticlesList as $index => $article)
+                        <div class="section-content">
+                            <h1 class="grid-headline-title-sub">{{ $article['title'] }}</h1>
+                            <div class="masonry-grid-investment-section-sub">
+                                @foreach ($portfolioArticleSubList->where('article_id', $article['id']) as $subArticle)
+                                    <div class="grid-headline-title-card-sub">
+                                        @if ($subArticle['icon'])
+                                            <div class="card-icon">
+                                                <img src="{{ asset($subArticle['icon']) }}"
+                                                    alt="{{ $subArticle['title'] }} Icon">
+                                            </div>
+                                        @else
+                                            <div class="card-icon-bottom">
+                                                <h1 class="card-title-bottom">{{ $subArticle['text_icon'] }}</h1>
+                                            </div>
+                                        @endif
+                                        <h2 class="card-title">{{ $subArticle['title'] }}</h2>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+        {{-- UNLOCK YOUR POTENTIAL  --}}
+        <div class="potential-section">
+            <div class="potential-title-card">
+                <h1 class="potential-title">Unlock Your Potentials</h1>
+            </div>
+
+            <div class="potential-content-card">
+                <div class="potential-content-section">
+                    <h1 class="potential-subtitle">Ecosystem Driven</h1>
+                    <p class="potential-description">We empower innovation and foster collaboration by leveraging our strategic position within the Mandiri Group and its extensive network.</p>
+                    <p class="potential-description">Beyond Mandiri Group, we also help startups to connect with SOEs and other corporations.</p>
+                </div>
+
+                <div class="potential-content-section">
+                    <h1 class="potential-subtitle">Tailored Guidance</h1>
+                    <p class="potential-description">Through our value creation programs, we offer hands-on support to scale your business and operations excellence.</p>
+                </div>
+
+                <div class="potential-content-section">
+                    <h1 class="potential-subtitle">Access to Indonesia and Global Market:</h1>
+                    <p class="potential-description">At the forefront of innovation, MCI supports startups worldwide in their expansion efforts.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     {{-- Synergy Programs Section --}}
@@ -137,7 +342,7 @@
     {{-- Newsletter Section --}}
     <div class="newsletter-section">
         <div class="newsletter-container">
-            <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
+            <h2 class="newsletter-title">Got Questionss? Let Us Know!</h2>
 
             <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"

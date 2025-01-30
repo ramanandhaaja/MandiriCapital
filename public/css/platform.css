@@ -1,4 +1,10 @@
 /* Root variables for consistent theming */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 :root {
     --color-primary: #FFD700;
     --color-secondary: #EFA32F;
@@ -30,7 +36,10 @@
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
     max-width: 1600px;
-    margin: 40px 50px 0 50px;
+    margin: 40px auto;
+    padding: 0 50px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Card Styles */
@@ -637,7 +646,7 @@
     align-items: center;
     width: 100%;
     max-width: 1600px;
-    margin: 60px auto;
+    margin: 20px 0 40px 0;
     padding: 0 20px;
 }
 
@@ -1104,4 +1113,203 @@
 .headline-card-two.middle-border {
     border-left: 1px solid #3F3F46;
     border-right: 1px solid #3F3F46;
+}
+
+
+
+
+.masonry-grid-investment-section-grey {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 60px 20px;
+    max-width: 1600px;
+    margin: 60px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    background-color: #18181B ;
+}
+
+.grid-headline-title-card{
+    grid-column: span 1;
+}
+
+.grid-headline-title {
+    position: relative;
+    font-family: var(--font-family);
+    color: var(--color-white);
+    font-size: 28px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 80px;
+    margin-right: 90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.grid-headline-title-sub {
+    position: relative;
+    font-family: var(--font-family);
+    color: #EFA32F;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 0px;
+    margin-right: 90px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.grid-headline-subtitle-left {
+    position: relative;
+    font-family: var(--font-family);
+    color: #A1A1AA;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 80px;
+    margin-right: 90px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width: 60%;
+}
+
+.grid-headline-description-card{
+    grid-column: span 2;
+    padding-right: 60px;
+}
+
+.masonry-grid-investment-section-sub {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 0px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.grid-headline-title-card-sub {
+    padding: 0px 30px 0px 0px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.card-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+
+.card-icon-bottom {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.card-icon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--font-family);
+}
+
+.card-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ffffff;
+    opacity: 0.7;
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.card-title-bottom {
+    padding-left: 20px;
+    padding-top: 0px;
+    font-size: 40px;
+    color: #EFA32F;
+    font-family: var(--font-family);
+    margin: 20px 0 10px 0;
+}
+
+.section-content{
+    padding-bottom: 30px;
+}
+
+.potential-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 60px 20px 0;
+    max-width: 1600px;
+    margin: 60px 20px 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.potential-title-card {
+    grid-column: span 1;
+}
+
+.potential-title {
+    position: relative;
+    font-family: var(--font-family);
+    color: var(--color-white);
+    font-size: 28px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 80px;
+    margin-right: 90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.potential-content-card {
+    grid-column: span 2;
+    padding-right: 60px;
+}
+
+.potential-subtitle {
+    position: relative;
+    font-family: var(--font-family);
+    color: #EFA32F;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: left;
+    margin: 0 0 20px 0;
+}
+
+.potential-description {
+    position: relative;
+    font-family: var(--font-family);
+    color: #A1A1AA;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    margin: 0 0 30px 0;
+    line-height: 1.6;
+}
+
+.potential-content-section {
+    padding-bottom: 20px;
+    width: 600px;
 }
