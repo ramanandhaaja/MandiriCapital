@@ -341,13 +341,14 @@
 
         {{-- Investment Vehicles --}}
         @foreach ($portfolioFundingArticlesList as $index => $article)
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title">{{ $article->title }}</h1>
+                <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
+            </div>
             <div
                 class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey2' }}">
-                <div class="grid-headline-title-card">
-                    <h1 class="grid-headline-title">{{ $article->title }}</h1>
-                    <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
-                </div>
-                <div class="grid-headline-description-card">
+
+                <div class="grid-headline-description-card-funding">
                     <div class="masonry-grid-investment-section-sub">
                         @foreach ($portfolioFundingArticleSubList->where('article_id', $article->id) as $subArticle)
                             <div
@@ -413,7 +414,7 @@
     @endforeach
 
     {{-- Contact Form Section --}}
-    <div class="masonry-grid-contact-section">
+    <div class="masonry-grid-contact-section-grey">
         <div class="grid-headline-title-card">
             <h1 class="grid-headline-title-contact">New Investor Enquiry</h1>
             <p class="grid-headline-subtitle-contact">
