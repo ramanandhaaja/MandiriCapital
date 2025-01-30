@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     start: 'top bottom+=100',
                     end: 'top top+=100',
                     toggleActions: 'play reverse play reverse',
+
                 },
                 x: 0,
                 opacity: 1,
