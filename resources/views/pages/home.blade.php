@@ -43,102 +43,103 @@
             // Featured Cards
             [
                 'type' => 'medium',
-                'category' => 'EVENT',
-                'title' => 'Apply Now for Zenith Startup Accelerator',
+                'category' => 'PROGRAM',
+                'title' => 'Connecting Startups Program',
                 'date' => 'June 2020',
                 'image' => 'Article1.png',
+                'logo' => 'exponent.png',
                 'position' => ''
             ],
             [
                 'type' => 'large',
                 'category' => 'WHITE PAPER',
-                'title' => 'Mandiri Capital Indonesia Siap Jajaki Pasar Regional dan Global',
+                'title' => 'The Billion Dollar Moment: A Paradigm Shift for Indonesian IPOs',
                 'date' => 'June 2020',
-                'image' => 'Article2.png',
+                'image' => 'Article2.jpeg',
+                'logo' => '',
                 'position' => 'right'
+            ],
+            [
+                'type' => 'medium',
+                'category' => 'PROGRAM',
+                'title' => 'Startup Accelerator ',
+                'date' => 'June 2020',
+                'image' => 'Article3.png',
+                'logo' => 'zenith.png',
+                'position' => ''
+            ],
+            [
+                'type' => 'medium',
+                'category' => 'PODCAST',
+                'title' => '',
+                'date' => 'June 2020',
+                'image' => 'Article4.png',
+                'logo' => '',
+                'position' => ''
             ],
 
             // Small Square Cards
             [
                 'type' => 'small-square',
-                'category' => 'PODCAST',
-                'title' => 'Talk about GOTO',
-                'date' => 'June 2020',
-                'image' => 'Article3.png',
-                'position' => 'left'
-            ],
-            [
-                'type' => 'small-square',
                 'category' => 'NEWS',
-                'title' => 'Article Title',
+                'title' => '',
                 'date' => 'June 2020',
-                'image' => 'Article4.png',
-                'position' => 'left'
-            ],
-
-            // Additional Cards
-            [
-                'type' => 'large',
-                'category' => 'WHITE PAPER',
-                'title' => 'Cryptocurrency Investment: Risks and Rewards',
-                'date' => 'June 2020',
-                'image' => 'Article4.png',
-                'position' => 'left'
-            ],
-            [
-                'type' => 'medium',
-                'category' => 'WHITE PAPER',
-                'title' => 'Understanding the Basics of Stock Market Investing',
-                'date' => 'June 2020',
-                'image' => 'Article3.png',
-                'position' => ''
-            ],
-            [
-                'type' => 'large',
-                'category' => 'WHITE PAPER',
-                'title' => 'Cryptocurrency Investment: Risks and Rewards',
-                'date' => 'June 2020',
-                'image' => 'Article4.png',
+                'image' => 'Article5.jpeg',
+                'logo' => '',
                 'position' => 'right'
             ],
-            [
-                'type' => 'large',
-                'category' => 'WHITE PAPER',
-                'title' => 'Cryptocurrency Investment: Risks and Rewards',
-                'date' => 'June 2020',
-                'image' => 'Article4.png',
-                'position' => 'left'
-            ],
-
-            // Blog and Podcast Cards
             [
                 'type' => 'small-square',
                 'category' => 'BLOG',
-                'title' => 'Article Title',
+                'title' => 'Understanding the Stock Market',
                 'date' => 'June 2020',
-                'image' => 'Article1.png',
+                'image' => 'Article6.png',
+                'logo' => '',
+                'position' => 'right'
+            ],
+
+            [
+                'type' => 'medium',
+                'category' => 'CEO Startup',
+                'title' => '',
+                'date' => 'June 2020',
+                'image' => 'Article7.png',
+                'logo' => '',
+                'position' => ''
+            ],
+            [
+                'type' => 'small-square',
+                'category' => 'ANNUAL REPORT',
+                'title' => '',
+                'date' => 'June 2020',
+                'image' => 'Article8.jpeg',
+                'logo' => '',
                 'position' => 'right'
             ],
             [
                 'type' => 'small-square',
-                'category' => 'PODCAST',
-                'title' => 'Long-term vs. Short-term Investments',
+                'category' => 'SUSTAINABILITY REPORT',
+                'title' => '',
                 'date' => 'June 2020',
-                'image' => 'Article1.png',
+                'image' => 'Article9.png',
+                'logo' => '',
                 'position' => 'right'
             ]
+
         ];
     @endphp
 
     <div class="masonry-grid">
         @foreach($cards as $card)
             <div class="card {{ $card['type'] }} {{ $card['position'] }}"
-                @if(isset($card['image'])) style="background-image: url('{{ asset('images/home/' . $card['image']) }}')" @endif>
+                @if(isset($card['image'])) style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ asset('images/home/' . $card['image']) }}')" @endif>
                 <span class="category">{{ $card['category'] }}</span>
+                @if($card['logo'])
+                    <img src="{{ asset('images/home/' . $card['logo']) }}" alt="{{ $card['category'] }} Logo" class="logo-card">
+                @endif
                 <div class="card-content">
                     <h2>{{ $card['title'] }}</h2>
                 </div>
-                <span class="date">{{ $card['date'] }}</span>
             </div>
         @endforeach
     </div>
@@ -337,6 +338,13 @@
                             <div class="form-group full-width">
                                 <label for="company">Company Name</label>
                                 <input type="text" name="company" id="company" placeholder="Write here..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" placeholder="Write here..." required></textarea>
                             </div>
                         </div>
 

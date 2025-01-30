@@ -24,7 +24,7 @@
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 24px;
-    --spacing-xl: 40px;
+    --spacing-xl: 36px;
     --spacing-2xl: 50px;
     --spacing-section: 80px;
 
@@ -242,7 +242,7 @@ html, body {
 
 .category {
     position: absolute;
-    top: var(--spacing-xl);
+    top: 50px;
     left: var(--spacing-xl);
     color: var(--color-white);
     font-size: var(--font-size-xl);
@@ -251,9 +251,18 @@ html, body {
 }
 
 .card-content {
-    position: relative;
-    padding: 325px var(--spacing-xl) 80px;
+    position: absolute;
+    bottom: 50px;
+    left: 40px;
     z-index: 2;
+}
+
+.logo-card {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 150px;
+    height: auto;
 }
 
 .card h2 {

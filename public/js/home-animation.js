@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 scrollTrigger: {
                     trigger: card,
-                    start: 'top bottom+=100',
+                    start: 'top bottom+=50',
                     end: 'top center',
                     toggleActions: 'play reverse play reverse',
                 },
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollTrigger: {
                     trigger: card,
                     start: 'top bottom+=100',
-                    end: 'top center',
+                    end: 'top top+=100',
                     toggleActions: 'play reverse play reverse',
                 },
                 x: 0,

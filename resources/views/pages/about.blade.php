@@ -35,11 +35,19 @@
             <div class="content-container">
                 <div class="text-content">
 
-                    <p>At Mandiri Capital Indonesia (MCI), we’re not just a venture capital firm—we’re catalysts for rapid innovation and sustainable growth. As the corporate venture capital arm of Bank Mandiri, we drive transformative change by forging synergies across a dynamic ecosystem, empowering startups to scale, and fostering impactful collaborations that fuel progress.</p>
+                    <p>At Mandiri Capital Indonesia (MCI), we’re not just a venture capital firm—we’re catalysts for rapid
+                        innovation and sustainable growth. As the corporate venture capital arm of Bank Mandiri, we drive
+                        transformative change by forging synergies across a dynamic ecosystem, empowering startups to scale,
+                        and fostering impactful collaborations that fuel progress.</p>
 
-<p>With a diverse portfolio of 23 startups and access to strategic funds such as the Balance Sheet Fund, Indonesia Impact Fund, and Merah Putih Fund, MCI is leading the charge in shaping Indonesia's digital innovation landscape.</p>
+                    <p>With a diverse portfolio of 23 startups and access to strategic funds such as the Balance Sheet Fund,
+                        Indonesia Impact Fund, and Merah Putih Fund, MCI is leading the charge in shaping Indonesia's
+                        digital innovation landscape.</p>
 
-<p>Established in 2015 as the venture capital arm of PT Bank Mandiri (Persero) Tbk, MCI’s core mission has always been to unlock synergies that accelerate innovation. We don’t just envision growth; we make it happen—building a future of opportunity, resilience, and long-term success for both startups and Indonesia's economy.</p>
+                    <p>Established in 2015 as the venture capital arm of PT Bank Mandiri (Persero) Tbk, MCI’s core mission
+                        has always been to unlock synergies that accelerate innovation. We don’t just envision growth; we
+                        make it happen—building a future of opportunity, resilience, and long-term success for both startups
+                        and Indonesia's economy.</p>
                 </div>
             </div>
 
@@ -150,6 +158,50 @@
                 </div>
             @endforeach
         </div>
+
+        {{-- card hover content --}}
+        <div class="card-ecosystem-hover">
+            <div class="hover-content">
+                <h3 class="hover-title">Here's what we seek for a synergy:</h3>
+
+                <h4 class="focus-areas-title">Focus Areas:</h4>
+                <p class="focus-description">Startups offering Syariah-compliant financial technology, digital banking
+                    solutions, Islamic wealth management tools, or trade finance systems.</p>
+
+                <div class="synergy-points">
+                    <div class="synergy-point">
+                        <span class="point-number">1.</span>
+                        <h5 class="point-title">Alignment with Syariah Principles</h5>
+                        <p>Compliance with Islamic finance regulations and ethical standards.</p>
+                    </div>
+
+                    <div class="synergy-point">
+                        <span class="point-number">2.</span>
+                        <h5 class="point-title">Technological Innovation</h5>
+                        <p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
+                        </p>
+                    </div>
+
+                    <div class="synergy-point">
+                        <span class="point-number">3.</span>
+                        <h5 class="point-title">Market Potential</h5>
+                        <p>Scalable business models targeting the Islamic finance sector locally and internationally.</p>
+                    </div>
+
+                    <div class="synergy-point">
+                        <span class="point-number">4.</span>
+                        <h5 class="point-title">Synergy Readiness</h5>
+                        <p>Ability to integrate with BSI's ecosystem, including retail and corporate banking services.</p>
+                    </div>
+
+                    <div class="synergy-point">
+                        <span class="point-number">5.</span>
+                        <h5 class="point-title">ESG Commitment</h5>
+                        <p>Promoting ethical and sustainable finance aligned with Syariah values.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     {{-- Team Section --}}
@@ -175,7 +227,8 @@
 
             @foreach ($teamMembers as $member)
                 <div class="team-card">
-                    <img class="background-image" src="{{ '/storage/' . $member->image_path }}" alt="{{ $member->name }}">
+                    <img class="background-image" src="{{ '/storage/' . $member->image_path }}"
+                        alt="{{ $member->name }}">
                     <span class="team-name">{{ $member->name }}</span>
                     <span class="team-title">{{ $member->title }}</span>
                 </div>

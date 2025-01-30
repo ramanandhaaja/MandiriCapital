@@ -582,6 +582,37 @@
     transition: opacity 0.3s ease;
 }
 
+.masonry-grid-investment-section-funding-article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 0px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.masonry-grid-investment-section-funding-article-grey {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 0px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    background-color: #18181B ;
+}
+
+.masonry-grid-investment-section-funding-article {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 0px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
 .masonry-grid-investment-section-grey {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -594,7 +625,19 @@
     background-color: #18181B ;
 }
 
-.masonry-grid-contact-section {
+.masonry-grid-investment-section-grey2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 60px 20px;
+    max-width: 1600px;
+    margin: 0px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    background-color: #18181B ;
+}
+
+.masonry-grid-contact-section-grey {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
@@ -604,6 +647,17 @@
     opacity: 1;
     transition: opacity 0.3s ease;
     background-color: #18181B;
+}
+
+.masonry-grid-contact-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 60px 20px;
+    max-width: 1600px;
+    margin: 0px auto 0px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .grid-headline-title {
@@ -680,9 +734,14 @@
 }
 
 .grid-headline-description-card-funding{
-    padding-left: 60px;
-    grid-column: span 4;
-    padding-right: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 0px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+
 }
 
 .grid-headline-title-card{
@@ -704,7 +763,7 @@
 }
 
 .grid-headline-title-card-sub-bottom {
-    padding: 40px 30px 0px 0px;
+    padding: 0px 30px 0px 0px;
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -1981,7 +2040,7 @@
     position: absolute;
     top: 30px;
     left: 30px;
-    height: 120px;
+    width: 200px;
     z-index: 2;
     display: block;
 }

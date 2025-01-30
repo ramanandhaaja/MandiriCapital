@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\HomeArticle;
+
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
@@ -15,7 +16,7 @@ class HomeArticleSeeder extends Seeder
                 'category' => 'Counter',
                 'title' => 'AUM',
                 'slug' => 'aum',
-                'content' => '$15M',
+                'content' => 'IDR3,8Bn',
                 'published_date' => Carbon::now()->subDays(30),
                 'image_path' => ''
             ],

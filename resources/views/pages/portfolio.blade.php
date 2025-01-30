@@ -5,7 +5,6 @@
 @endsection
 
 @section('container')
-
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
             <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
@@ -74,7 +73,7 @@
 
 
         {{-- Contact Form Section --}}
-        <div class="masonry-grid-contact-section">
+        <div class="masonry-grid-contact-section-grey">
             <div class="grid-headline-title-card">
                 <h1 class="grid-headline-title-contact">Get Investment!</h1>
                 <h1 class="grid-headline-subtitle-contact">
@@ -338,6 +337,7 @@
     </div>
 
 
+
     {{-- Funding Section --}}
     <div class="for-investor-section">
         {{-- Hero Section --}}
@@ -346,43 +346,48 @@
         </div>
 
         {{-- Investment Vehicles --}}
-        @foreach ($portfolioFundingArticlesList as $article)
-            <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">{{ $article->title }}</h1>
-                <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
-            </div>
-            <div class="masonry-grid-investment-section">
-                <div class="grid-headline-description-card-funding">
-                    <div class="masonry-grid-investment-section-funding">
+        @foreach ($portfolioFundingArticlesList as $index => $article)
+            <div
+                class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey2' }}">
+
+                <div class="grid-headline-title-card">
+                    <h1 class="grid-headline-title">{{ $article->title }}</h1>
+                    <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
+                </div>
+                <div class="grid-headline-description-card">
+                    <div class="masonry-grid-investment-section-sub">
                         @foreach ($portfolioFundingArticleSubList->where('article_id', $article->id) as $subArticle)
                             <div
                                 class="grid-headline-title-card-sub {{ $subArticle->is_large ? 'card-funding-large' : 'card-funding' }}">
                                 @if (!$subArticle->is_large)
                                     <div class="background-image">
                                 @endif
+
                                 <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png"
                                     class="card-funding-image" />
+
                                 @if (!$subArticle->is_large)
                             </div>
                         @endif
+
                         <div class="funding-category{{ $subArticle->is_large ? '-large' : '' }}">
                             {{ $subArticle->title }}
                         </div>
                         <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
                             {{ $subArticle->content }}
                         </div>
-                        <a href="{{ $subArticle->report_url }}" class="text-decoration-none">
-                            <span class="funding-link">Fund Report >></span>
-                        </a>
+                        <div>
+                            <a href="{{ $subArticle->report_url }}" class="text-decoration-none">
+                                <span class="funding-link">Fund Report >></span>
+                            </a>
+                        </div>
                     </div>
         @endforeach
     </div>
-    @if ($article->title_sub)
-        <div class="grid-headline-title-card-sub-bottom">
-            <h1 class="card-title-sub-bottom">{{ $article->title_sub }}</h1>
-            <p class="card-description-bottom">{{ $article->content_sub }}</p>
-        </div>
-    @endif
+    <div class="grid-headline-title-card-sub-bottom">
+        <h1 class="card-title-sub-bottom">{{ $article->title_sub }}</h1>
+        <p class="card-description-bottom">{{ $article->content_sub }}</p>
+    </div>
     </div>
     </div>
     @endforeach
@@ -450,7 +455,6 @@
                 </div>
             </form>
         </div>
-    </div>
     </div>
 
 @endsection

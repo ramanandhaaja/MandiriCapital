@@ -1256,16 +1256,18 @@ html, body {
     background-size: cover;
     background-position: center;
     height: 330px;
-    grid-column: span 3;
+    grid-column: span 4;
     border-radius: 12px;
+    padding: 0px 40px;
 }
 
 .card-ecosystem-highlight-grid {
     position: relative;
     display: grid;
-    gap: 20px;
+    gap: 0px;
     grid-template-columns: repeat(2, 1fr);
     max-width: 1600px;
+    padding-right: 40px;
 }
 
 .card-ecosystem .background-image {
@@ -1278,6 +1280,7 @@ html, body {
     background-position: center;
     z-index: 0;
 }
+
 
 .background-image::before {
     content: '';
@@ -1307,7 +1310,7 @@ html, body {
 .card-ecosystem-image-highlight {
     position: relative;
     top: 30px;
-    left: 80px;
+    left: 40px;
     width: 513px;
     z-index: 2;
     display: block;
