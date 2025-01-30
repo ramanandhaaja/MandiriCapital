@@ -124,6 +124,12 @@ class PageController extends Controller
         return view('pages.portfolio-show', compact('portfolio'));
     }
 
+    public function portfolioFundingShow($id)
+    {
+        $portfolioFunding = PortfolioFundingArticleSub::where('id', $id)->firstOrFail();
+        return view('pages.portfolio-funding-show', compact('portfolioFunding'));
+    }
+
     public function platform()
     {
         $hero = HeroSection::whereHas('category', function($query) {

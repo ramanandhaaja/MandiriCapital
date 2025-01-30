@@ -38,7 +38,6 @@
         @foreach ($portfolioArticlesList as $index => $article)
             <div
                 class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey' }}">
-
                 <div class="grid-headline-title-card">
                     <h1 class="grid-headline-title">{{ $article->title }}</h1>
                     <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
@@ -67,10 +66,8 @@
                         <p class="card-description-bottom">{{ $article->content_sub }}</p>
                     </div>
                 </div>
-
             </div>
         @endforeach
-
 
         {{-- Contact Form Section --}}
         <div class="masonry-grid-contact-section-grey">
@@ -335,8 +332,6 @@
         </div>
     </div>
 
-
-
     {{-- Funding Section --}}
     <div class="for-investor-section">
         {{-- Hero Section --}}
@@ -348,7 +343,6 @@
         @foreach ($portfolioFundingArticlesList as $index => $article)
             <div
                 class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey2' }}">
-
                 <div class="grid-headline-title-card">
                     <h1 class="grid-headline-title">{{ $article->title }}</h1>
                     <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
@@ -376,9 +370,36 @@
                             {{ $subArticle->content }}
                         </div>
                         <div>
-                            <a href="{{ $subArticle->report_url }}" class="text-decoration-none">
+                            <a href="#" onclick="openPortfolioModal(event)" class="text-decoration-none">
                                 <span class="funding-link">Fund Report >></span>
                             </a>
+                        </div>
+
+                        {{-- Hover card that follows mouse --}}
+                        <div class="card-funding-hover">
+                            <div class="hover-content">
+                                <div class="">
+                                    <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png"
+                                        class="card-funding-image-hover" />
+                                </div>
+                                <div class="funding-category-hover">
+                                    Startup Criteria
+                                </div>
+                                <div class="criteria-grid">
+                                    <div class="criteria-item">
+                                        <h3>Stage</h3>
+                                        <p>Growth to Late Stage</p>
+                                    </div>
+                                    <div class="criteria-item">
+                                        <h3>Geography</h3>
+                                        <p>Indonesia</p>
+                                    </div>
+                                    <div class="criteria-item">
+                                        <h3>Ticket Size</h3>
+                                        <p>$20-25Mn</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
         @endforeach
@@ -390,7 +411,6 @@
     </div>
     </div>
     @endforeach
-
 
     {{-- Contact Form Section --}}
     <div class="masonry-grid-contact-section">
@@ -429,7 +449,6 @@
                         <input type="email" id="email" name="email" class="form-input"
                             placeholder="Write here..." required>
                     </div>
-
                 </div>
 
                 <div class="form-row">
@@ -446,7 +465,6 @@
                     <textarea id="message" name="message" rows="4" class="form-textarea" placeholder="Write here..." required></textarea>
                 </div>
 
-
                 {{-- Submit Button --}}
                 <div class="form-group button-group">
                     <button type="reset" class="reset-button">Reset</button>
@@ -455,6 +473,42 @@
             </form>
         </div>
     </div>
+
+
+    {{-- Portfolio Register Form Modal --}}
+    <div id="portfolioFormModal" class="modal">
+        <div class="modal-overlay" onclick="closePortfolioModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePortfolioModal()">×</button>
+            <div class="masonry-grid-contact-section-modal">
+                <div class="grid-headline-title-card-modal">
+                    <h1 class="title-register">Input Email Address to Access Information</h1>
+                    <image class="image-register" src="{{ asset('images/portfolio/portfolio-register.png') }}"
+                        alt="Mandiri Capital Logo">
+                </div>
+
+                <div class="grid-headline-contact-card-modal">
+                    <form id="contactForm" class="contact-form">
+                        @csrf
+                        {{-- Company Details --}}
+
+                        <div class="form-group-modal">
+                            <label for="email" class="form-label-modal">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input-modal"
+                                placeholder="Write here..." required>
+                        </div>
+                        {{-- Submit Button --}}
+                        <div class="form-group-modal button-group-modal">
+                            <button type="button" onclick="window.location.href='{{ route('portfolio.funding.show', $subArticle->id) }}'" class="reset-button-modal">Login</button>or
+                            or
+                            <button type="submit" class="submit-button-modal">Request for Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 @endsection
 
@@ -595,5 +649,65 @@
             listIcon.classList.toggle('active');
             gridIcon.classList.toggle('active');
         }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card-funding, .card-funding-large');
+
+            cards.forEach(card => {
+                const hoverCard = card.querySelector('.card-funding-hover');
+                let isHovering = false;
+
+                document.addEventListener('mousemove', function(e) {
+                    if (isHovering) {
+                        const mouseX = e.clientX;
+                        const mouseY = e.clientY;
+
+                        hoverCard.style.left = `${mouseX}px`;
+                        hoverCard.style.top = `${mouseY}px`;
+                        hoverCard.style.transform = 'translate(20px, 20px)';
+                    }
+                });
+
+                card.addEventListener('mouseenter', function() {
+                    isHovering = true;
+                    hoverCard.classList.add('active');
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    isHovering = false;
+                    hoverCard.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+    <script>
+        function openPortfolioModal(event) {
+            event.preventDefault();
+            document.getElementById('portfolioFormModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePortfolioModal() {
+            document.getElementById('portfolioFormModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const portfolioModal = document.getElementById('portfolioFormModal');
+            if (event.target === portfolioModal) {
+                closePortfolioModal();
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add your form submission logic here
+            console.log('Form submitted');
+        });
     </script>
 @endsection

@@ -156,25 +156,25 @@
                             </div>
                         </a>
                     </div>
-                    {{-- card content hover--}}
-                 <div class="card-ecosystem-hover">
-                    <div class="hover-content">
-                        <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}"
-                            class="hover-image">
-                        <h2 class="hover-title">Here's what we seek for a synergy:</h2>
+                    {{-- card content hover --}}
+                    <div class="card-ecosystem-hover">
+                        <div class="hover-content">
+                            <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}"
+                                class="hover-image">
+                            <h2 class="hover-title">Here's what we seek for a synergy:</h2>
 
-                        <h4 class="focus-areas-title">Focus Areas:</h4>
-                        <p class="focus-description">{!! $ecosystem->hover_focus_area !!}</p>
+                            <h4 class="focus-areas-title">Focus Areas:</h4>
+                            <p class="focus-description">{!! $ecosystem->hover_focus_area !!}</p>
 
-                        <div class="synergy-points">
+                            <div class="synergy-points">
 
-                            <div class="synergy-point">
-                                {!! $ecosystem->hover_content !!}
+                                <div class="synergy-point">
+                                    {!! $ecosystem->hover_content !!}
+                                </div>
+
                             </div>
-
                         </div>
                     </div>
-                </div>
 
 
                 </div>
