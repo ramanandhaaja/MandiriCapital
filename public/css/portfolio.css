@@ -335,11 +335,12 @@
 
 .card-stats {
     position: absolute;
+    display: flex;
     bottom: 20px;
     left: 20px;
-    display: flex;
-    gap: 15px;
-    padding: 5px;
+    gap: 0px;
+    padding: 10px;
+    margin: 0px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid #52525B;
     border-radius: 10px;
@@ -349,21 +350,26 @@
 .stat-item-middle {
     display: flex;
     align-items: center;
-    gap: 5px;
-    padding: 5px;
+    gap: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .stat-item img,
 .stat-item-middle img {
-    width: 20px;
-    height: 20px;
+    width: 44px;
+    height: 44px;
     object-fit: contain;
+    padding: -1px;
+    margin: -1px;
 }
 
 .stat-item span,
 .stat-item-middle span {
     color: var(--color-white);
     font-size: 12px;
+    padding: 0px;
+    margin: 0px;
 }
 
 /* Table Display Styles */
@@ -865,43 +871,6 @@
 }
 
 
-
-.card-stats {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    gap: 15px;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid #52525B;
-    border-radius: 10px;
-}
-
-.stat-item {
-    font-size: 12px;
-    font-family: var(--font-family);
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    color: #FFFFFF;
-}
-
-.stat-item-middle {
-    font-size: 12px;
-    font-family: var(--font-family);
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    color: #FFFFFF;
-    border-left: 1px solid #52525B;
-    border-right: 1px solid #52525B;
-    padding: 0 15px;
-}
-
-.stat-item img {
-    padding-right: 10px;
-}
 
 /* Card content styling */
 .category {

@@ -238,9 +238,9 @@
                     @foreach ($portfolios as $portfolio)
                         @php
                             $stats = [
-                                ['icon' => 'icon1.png', 'value' => rand(1, 10)],
-                                ['icon' => 'icon2.png', 'value' => rand(3, 15)],
-                                ['icon' => 'icon3.png', 'value' => rand(5, 20)],
+                                ['icon' => 'portfolio-icon1.png'],
+                                ['icon' => 'portfolio-icon5.png'],
+                                ['icon' => 'portfolio-icon8.png'],
                             ];
                         @endphp
 
@@ -264,7 +264,6 @@
                                     <div class="stat-item{{ $index === 1 ? '-middle' : '' }}">
                                         <img src="{{ asset('images/portfolio/' . $stat['icon']) }}"
                                             alt="Portfolio Statistic">
-                                        <span>{{ $stat['value'] }}</span>
                                     </div>
                                 @endforeach
                             </div>

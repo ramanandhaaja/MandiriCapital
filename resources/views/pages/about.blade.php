@@ -161,42 +161,17 @@
                     <div class="hover-content">
                         <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}"
                             class="hover-image">
-                        <h3 class="hover-title">Here's what we seek for a synergy:</h3>
+                        <h2 class="hover-title">Here's what we seek for a synergy:</h2>
 
                         <h4 class="focus-areas-title">Focus Areas:</h4>
-                        <p class="focus-description">Startups offering Syariah-compliant financial technology, digital
-                            banking
-                            solutions, Islamic wealth management tools, or trade finance systems.</p>
+                        <p class="focus-description">{!! $ecosystem->hover_focus_area !!}</p>
 
                         <div class="synergy-points">
-                            <div class="synergy-point">
-                                <h5 class="point-title">1. Alignment with Syariah Principles</h5>
-                                <p>Compliance with Islamic finance regulations and ethical standards.</p>
-                            </div>
 
                             <div class="synergy-point">
-                                <h5 class="point-title">2. Technological Innovation</h5>
-                                <p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer
-                                    experience.
-                                </p>
+                                {!! $ecosystem->hover_content !!}
                             </div>
 
-                            <div class="synergy-point">
-                                <h5 class="point-title">3. Market Potential</h5>
-                                <p>Scalable business models targeting the Islamic finance sector locally and
-                                    internationally.</p>
-                            </div>
-
-                            <div class="synergy-point">
-                                <h5 class="point-title">4. Synergy Readiness</h5>
-                                <p>Ability to integrate with BSI's ecosystem, including retail and corporate banking
-                                    services.</p>
-                            </div>
-
-                            <div class="synergy-point">
-                                <h5 class="point-title">5. ESG Commitment</h5>
-                                <p>Promoting ethical and sustainable finance aligned with Syariah values.</p>
-                            </div>
                         </div>
                     </div>
                 </div>

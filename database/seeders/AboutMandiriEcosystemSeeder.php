@@ -23,12 +23,8 @@ class AboutMandiriEcosystemSeeder extends Seeder
                 'is_domestic' => true,
                 'is_international' => true,
                 'created_at' => now(),
-                'hover_focus_area' => 'Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.',
-                'hover_content' => "Alignment with Syariah Principles: Compliance with Islamic finance regulations and ethical standards.
-                                    -Technological Innovation: Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
-                                    - Market Potential: Scalable business models targeting the Islamic finance sector locally and internationally.
-                                    - Synergy Readiness: Ability to integrate with BSI ecosystem, including retail and corporate banking services.
-                                    - ESG Commitment: Promoting ethical and sustainable finance aligned with Syariah values."
+                'hover_focus_area' => '<p>Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.</p>',
+                'hover_content' => "<h3>1. Alignment with Syariah Principles</h3><p>Compliance with Islamic finance regulations and ethical standards.&nbsp;</p><h3><strong>2. Technological Innovation</strong></h3><p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.&nbsp;</p><h3>3.Market Potential</h3><p>Scalable business models targeting the Islamic finance sector locally and internationally.&nbsp;</p><h3>4. Synergy Readiness&nbsp;</h3><p>Ability to integrate with BSI ecosystem, including retail and corporate banking services.</p><h3>5. ESG Commitment</h3><p>Promoting ethical and sustainable finance aligned with Syariah values.</p>"
             ],
             [
                 'title' => 'Pension Fund Management Services',
@@ -39,12 +35,8 @@ class AboutMandiriEcosystemSeeder extends Seeder
                 'is_domestic' => true,
                 'is_international' => false,
                 'created_at' => now(),
-                'hover_focus_area' => 'Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.',
-                'hover_content' => "Alignment with Syariah Principles: Compliance with Islamic finance regulations and ethical standards.
-                                    -Technological Innovation: Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
-                                    - Market Potential: Scalable business models targeting the Islamic finance sector locally and internationally.
-                                    - Synergy Readiness: Ability to integrate with BSI ecosystem, including retail and corporate banking services.
-                                    - ESG Commitment: Promoting ethical and sustainable finance aligned with Syariah values."
+                'hover_focus_area' => '<p>Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.</p>',
+                'hover_content' => "<h3>1. Alignment with Syariah Principles</h3><p>Compliance with Islamic finance regulations and ethical standards.&nbsp;</p><h3><strong>2. Technological Innovation</strong></h3><p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.&nbsp;</p><h3>3.Market Potential</h3><p>Scalable business models targeting the Islamic finance sector locally and internationally.&nbsp;</p><h3>4. Synergy Readiness&nbsp;</h3><p>Ability to integrate with BSI ecosystem, including retail and corporate banking services.</p><h3>5. ESG Commitment</h3><p>Promoting ethical and sustainable finance aligned with Syariah values.</p>"
 
             ],
             [
@@ -56,12 +48,8 @@ class AboutMandiriEcosystemSeeder extends Seeder
                 'is_domestic' => true,
                 'is_international' => true,
                 'created_at' => now(),
-                'hover_focus_area' => 'Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.',
-                'hover_content' => "Alignment with Syariah Principles: Compliance with Islamic finance regulations and ethical standards.
-                                    -Technological Innovation: Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
-                                    - Market Potential: Scalable business models targeting the Islamic finance sector locally and internationally.
-                                    - Synergy Readiness: Ability to integrate with BSI ecosystem, including retail and corporate banking services.
-                                    - ESG Commitment: Promoting ethical and sustainable finance aligned with Syariah values."
+                'hover_focus_area' => '<p>Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.</p>',
+                'hover_content' => "<h3>1. Alignment with Syariah Principles</h3><p>Compliance with Islamic finance regulations and ethical standards.&nbsp;</p><h3><strong>2. Technological Innovation</strong></h3><p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.&nbsp;</p><h3>3.Market Potential</h3><p>Scalable business models targeting the Islamic finance sector locally and internationally.&nbsp;</p><h3>4. Synergy Readiness&nbsp;</h3><p>Ability to integrate with BSI ecosystem, including retail and corporate banking services.</p><h3>5. ESG Commitment</h3><p>Promoting ethical and sustainable finance aligned with Syariah values.</p>"
 
             ],
             [
@@ -73,12 +61,8 @@ class AboutMandiriEcosystemSeeder extends Seeder
                 'is_domestic' => true,
                 'is_international' => false,
                 'created_at' => now(),
-                'hover_focus_area' => 'Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.',
-                'hover_content' => "Alignment with Syariah Principles: Compliance with Islamic finance regulations and ethical standards.
-                                    -Technological Innovation: Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
-                                    - Market Potential: Scalable business models targeting the Islamic finance sector locally and internationally.
-                                    - Synergy Readiness: Ability to integrate with BSI ecosystem, including retail and corporate banking services.
-                                    - ESG Commitment: Promoting ethical and sustainable finance aligned with Syariah values."
+                'hover_focus_area' => '<p>Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.</p>',
+                'hover_content' => "<h3>1. Alignment with Syariah Principles</h3><p>Compliance with Islamic finance regulations and ethical standards.&nbsp;</p><h3><strong>2. Technological Innovation</strong></h3><p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.&nbsp;</p><h3>3.Market Potential</h3><p>Scalable business models targeting the Islamic finance sector locally and internationally.&nbsp;</p><h3>4. Synergy Readiness&nbsp;</h3><p>Ability to integrate with BSI ecosystem, including retail and corporate banking services.</p><h3>5. ESG Commitment</h3><p>Promoting ethical and sustainable finance aligned with Syariah values.</p>"
 
             ],
             [
@@ -90,12 +74,8 @@ class AboutMandiriEcosystemSeeder extends Seeder
                 'is_domestic' => true,
                 'is_international' => false,
                 'created_at' => now(),
-                'hover_focus_area' => 'Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.',
-                'hover_content' => "Alignment with Syariah Principles: Compliance with Islamic finance regulations and ethical standards.
-                                    -Technological Innovation: Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
-                                    - Market Potential: Scalable business models targeting the Islamic finance sector locally and internationally.
-                                    - Synergy Readiness: Ability to integrate with BSI ecosystem, including retail and corporate banking services.
-                                    - ESG Commitment: Promoting ethical and sustainable finance aligned with Syariah values."
+                'hover_focus_area' => '<p>Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.</p>',
+                'hover_content' => "<h3>1. Alignment with Syariah Principles</h3><p>Compliance with Islamic finance regulations and ethical standards.&nbsp;</p><h3><strong>2. Technological Innovation</strong></h3><p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.&nbsp;</p><h3>3.Market Potential</h3><p>Scalable business models targeting the Islamic finance sector locally and internationally.&nbsp;</p><h3>4. Synergy Readiness&nbsp;</h3><p>Ability to integrate with BSI ecosystem, including retail and corporate banking services.</p><h3>5. ESG Commitment</h3><p>Promoting ethical and sustainable finance aligned with Syariah values.</p>"
 
             ],
             [
@@ -107,12 +87,8 @@ class AboutMandiriEcosystemSeeder extends Seeder
                 'is_domestic' => true,
                 'is_international' => true,
                 'created_at' => now(),
-                'hover_focus_area' => 'Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.',
-                'hover_content' => "Alignment with Syariah Principles: Compliance with Islamic finance regulations and ethical standards.
-                                    -Technological Innovation: Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
-                                    - Market Potential: Scalable business models targeting the Islamic finance sector locally and internationally.
-                                    - Synergy Readiness: Ability to integrate with BSI ecosystem, including retail and corporate banking services.
-                                    - ESG Commitment: Promoting ethical and sustainable finance aligned with Syariah values."
+                'hover_focus_area' => '<p>Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.</p>',
+                'hover_content' => "<h3>1. Alignment with Syariah Principles</h3><p>Compliance with Islamic finance regulations and ethical standards.&nbsp;</p><h3><strong>2. Technological Innovation</strong></h3><p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.&nbsp;</p><h3>3.Market Potential</h3><p>Scalable business models targeting the Islamic finance sector locally and internationally.&nbsp;</p><h3>4. Synergy Readiness&nbsp;</h3><p>Ability to integrate with BSI ecosystem, including retail and corporate banking services.</p><h3>5. ESG Commitment</h3><p>Promoting ethical and sustainable finance aligned with Syariah values.</p>"
 
             ],
             [
@@ -124,12 +100,8 @@ class AboutMandiriEcosystemSeeder extends Seeder
                 'is_domestic' => true,
                 'is_international' => true,
                 'created_at' => now(),
-                'hover_focus_area' => 'Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.',
-                'hover_content' => "Alignment with Syariah Principles: Compliance with Islamic finance regulations and ethical standards.
-                                    -Technological Innovation: Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
-                                    - Market Potential: Scalable business models targeting the Islamic finance sector locally and internationally.
-                                    - Synergy Readiness: Ability to integrate with BSI ecosystem, including retail and corporate banking services.
-                                    - ESG Commitment: Promoting ethical and sustainable finance aligned with Syariah values."
+                'hover_focus_area' => '<p>Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.</p>',
+                'hover_content' => "<h3>1. Alignment with Syariah Principles</h3><p>Compliance with Islamic finance regulations and ethical standards.&nbsp;</p><h3><strong>2. Technological Innovation</strong></h3><p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.&nbsp;</p><h3>3.Market Potential</h3><p>Scalable business models targeting the Islamic finance sector locally and internationally.&nbsp;</p><h3>4. Synergy Readiness&nbsp;</h3><p>Ability to integrate with BSI ecosystem, including retail and corporate banking services.</p><h3>5. ESG Commitment</h3><p>Promoting ethical and sustainable finance aligned with Syariah values.</p>"
 
             ],
             [
@@ -142,12 +114,8 @@ class AboutMandiriEcosystemSeeder extends Seeder
                 'is_international' => false,
                 'created_at' => now(),
 
-                'hover_focus_area' => 'Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.',
-                'hover_content' => "Alignment with Syariah Principles: Compliance with Islamic finance regulations and ethical standards.
-                                    -Technological Innovation: Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
-                                    - Market Potential: Scalable business models targeting the Islamic finance sector locally and internationally.
-                                    - Synergy Readiness: Ability to integrate with BSI ecosystem, including retail and corporate banking services.
-                                    - ESG Commitment: Promoting ethical and sustainable finance aligned with Syariah values."
+                'hover_focus_area' => '<p>Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.</p>',
+                'hover_content' => "<h3>1. Alignment with Syariah Principles</h3><p>Compliance with Islamic finance regulations and ethical standards.&nbsp;</p><h3><strong>2. Technological Innovation</strong></h3><p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.&nbsp;</p><h3>3.Market Potential</h3><p>Scalable business models targeting the Islamic finance sector locally and internationally.&nbsp;</p><h3>4. Synergy Readiness&nbsp;</h3><p>Ability to integrate with BSI ecosystem, including retail and corporate banking services.</p><h3>5. ESG Commitment</h3><p>Promoting ethical and sustainable finance aligned with Syariah values.</p>"
 
             ],
         ];

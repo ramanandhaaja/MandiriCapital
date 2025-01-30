@@ -72,7 +72,7 @@
                         <div class="sdg-objectives">
                             <div class="sdg-item">
                                 <div class="sdg-icon">
-                                    <img src="{{ asset('images/portfolio/icon1.png') }}" alt="No Poverty Icon">
+                                    <img src="{{ asset('images/portfolio/portfolio-icon1.png') }}" alt="No Poverty Icon">
                                 </div>
                                 <div class="sdg-content">
                                     <h3>Tanpa Kemiskinan</h3>
@@ -82,7 +82,7 @@
 
                             <div class="sdg-item">
                                 <div class="sdg-icon">
-                                    <img src="{{ asset('images/portfolio/icon2.png') }}" alt="Gender Equality Icon">
+                                    <img src="{{ asset('images/portfolio/portfolio-icon5.png') }}" alt="Gender Equality Icon">
                                 </div>
                                 <div class="sdg-content">
                                     <h3>Kesetaraan Gender</h3>
@@ -92,7 +92,7 @@
 
                             <div class="sdg-item">
                                 <div class="sdg-icon">
-                                    <img src="{{ asset('images/portfolio/icon3.png') }}" alt="Decent Work Icon">
+                                    <img src="{{ asset('images/portfolio/portfolio-icon8.png') }}" alt="Decent Work Icon">
                                 </div>
                                 <div class="sdg-content">
                                     <h3>Pekerjaan Layak dan Pertumbuhan Ekonomi</h3>
