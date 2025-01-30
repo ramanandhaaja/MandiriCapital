@@ -44,7 +44,8 @@ class AboutMandiriEcosystemResource extends Resource
                                                     ->required()
                                                     ->maxLength(255)
                                                     ->live(onBlur: true)
-                                                    ->afterStateUpdated(fn (string $state, callable $set) =>
+                                                    ->afterStateUpdated(
+                                                        fn(string $state, callable $set) =>
                                                         $set('slug', Str::slug($state))
                                                     ),
 
@@ -69,20 +70,29 @@ class AboutMandiriEcosystemResource extends Resource
 
                                     ])
                                     ->columns(2),
-                                Forms\Components\Section::make('Image')
+
+                                Forms\Components\Section::make('Mouse-Hover')
                                     ->schema([
-                                        Forms\Components\FileUpload::make('image_path')
-                                            ->image()
-                                            ->disk('public')
-                                            ->directory('our-identity')
-                                            ->visibility('public')
+                                        Forms\Components\RichEditor::make('hover_focus_area')
+                                            ->label('Hover Focus Area')
+                                            ->maxLength(65535)
                                             ->columnSpanFull(),
-                                    ]),
+
+                                        Forms\Components\RichEditor::make('hover_content')
+                                            ->label('Hover Content')
+                                            ->maxLength(65535)
+                                            ->columnSpanFull(),
+
+                                    ])
+                                    ->columns(2),
+
 
                             ])
                             ->columnSpan(2),
 
-                        Forms\Components\Section::make('Tag')
+                        Forms\Components\Group::make()
+                            ->schema([
+                                Forms\Components\Section::make('Tag')
                                     ->schema([
                                         Forms\Components\Grid::make()
                                             ->schema([
@@ -94,8 +104,19 @@ class AboutMandiriEcosystemResource extends Resource
                                                     ->default(false),
                                             ])
                                             ->columns(2),
-                                    ])
-                                    ->columnSpan(1),
+                                    ]),
+
+                                Forms\Components\Section::make('Image')
+                                    ->schema([
+                                        Forms\Components\FileUpload::make('image_path')
+                                            ->image()
+                                            ->disk('public')
+                                            ->directory('our-identity')
+                                            ->visibility('public')
+                                            ->columnSpanFull(),
+                                    ]),
+                            ])
+                            ->columnSpan(1),
                     ])
                     ->columns(3),
             ])

@@ -18,7 +18,9 @@ class AboutMandiriEcosystem extends Model
         'published_date',
         'image_path',
         'is_domestic',
-        'is_international'
+        'is_international',
+        'hover_focus_area',
+        'hover_content',
     ];
 
     protected $casts = [

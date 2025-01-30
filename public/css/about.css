@@ -1275,16 +1275,15 @@ html, body {
     position: fixed;
     pointer-events: none;
     z-index: 1000;
-    background: #27272A;
+    background: rgba(39, 39, 42, 0.9);
     border-radius: 12px;
     border-width: 1px;
     border-style: solid;
     border-color: #A1A1AA;
     padding: 24px;
-    width: 400px;
-    opacity: 1;
+    width: 500px;
+    opacity: .6;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .card-ecosystem-hover.active {

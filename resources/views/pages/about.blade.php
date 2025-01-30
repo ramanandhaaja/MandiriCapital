@@ -136,6 +136,7 @@
         </div>
         <div class="ecosystem-grid">
             @foreach ($ecosystemList as $ecosystem)
+                {{-- Card Content --}}
                 <div class="card-ecosystem" data-hover-trigger>
                     <div class="background-image">
                         <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}"
@@ -155,9 +156,8 @@
                             </div>
                         </a>
                     </div>
-                </div>
-                {{-- card hover content --}}
-                <div class="card-ecosystem-hover">
+                    {{-- card content hover--}}
+                 <div class="card-ecosystem-hover">
                     <div class="hover-content">
                         <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}"
                             class="hover-image">
@@ -199,6 +199,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+
                 </div>
             @endforeach
         </div>
@@ -334,28 +337,29 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const hoverCard = document.querySelector('.card-ecosystem-hover');
-            let isHovering = false;
+            const cards = document.querySelectorAll('.card-ecosystem');
 
-            document.addEventListener('mousemove', function(e) {
-                if (isHovering) {
-                    const mouseX = e.clientX;
-                    const mouseY = e.clientY;
+            cards.forEach(card => {
+                const hoverCard = card.querySelector('.card-ecosystem-hover');
+                let isHovering = false;
 
-                    hoverCard.style.left = `${mouseX}px`;
-                    hoverCard.style.top = `${mouseY}px`;
-                    hoverCard.style.transform = 'translate(20px, 20px)';
-                }
-            });
+                document.addEventListener('mousemove', function(e) {
+                    if (isHovering) {
+                        const mouseX = e.clientX;
+                        const mouseY = e.clientY;
 
-            const triggerElements = document.querySelectorAll('[data-hover-trigger]');
-            triggerElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
+                        hoverCard.style.left = `${mouseX}px`;
+                        hoverCard.style.top = `${mouseY}px`;
+                        hoverCard.style.transform = 'translate(20px, 20px)';
+                    }
+                });
+
+                card.addEventListener('mouseenter', function() {
                     isHovering = true;
                     hoverCard.classList.add('active');
                 });
 
-                element.addEventListener('mouseleave', function() {
+                card.addEventListener('mouseleave', function() {
                     isHovering = false;
                     hoverCard.classList.remove('active');
                 });

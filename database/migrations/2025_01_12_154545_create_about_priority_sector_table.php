@@ -30,6 +30,8 @@ return new class extends Migration
             $table->string('image_path')->nullable();
             $table->boolean('is_domestic')->default(false);
             $table->boolean('is_international')->default(false);
+            $table->text('hover_focus_area')->nullable();
+            $table->text('hover_content')->nullable();
             $table->timestamps();
         });
 
