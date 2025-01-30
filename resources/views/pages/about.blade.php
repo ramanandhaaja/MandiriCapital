@@ -136,7 +136,7 @@
         </div>
         <div class="ecosystem-grid">
             @foreach ($ecosystemList as $ecosystem)
-                <div class="card-ecosystem">
+                <div class="card-ecosystem" data-hover-trigger>
                     <div class="background-image">
                         <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}"
                             class="card-ecosystem-image">
@@ -156,52 +156,54 @@
                         </a>
                     </div>
                 </div>
+                {{-- card hover content --}}
+                <div class="card-ecosystem-hover">
+                    <div class="hover-content">
+                        <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}"
+                            class="hover-image">
+                        <h3 class="hover-title">Here's what we seek for a synergy:</h3>
+
+                        <h4 class="focus-areas-title">Focus Areas:</h4>
+                        <p class="focus-description">Startups offering Syariah-compliant financial technology, digital
+                            banking
+                            solutions, Islamic wealth management tools, or trade finance systems.</p>
+
+                        <div class="synergy-points">
+                            <div class="synergy-point">
+                                <h5 class="point-title">1. Alignment with Syariah Principles</h5>
+                                <p>Compliance with Islamic finance regulations and ethical standards.</p>
+                            </div>
+
+                            <div class="synergy-point">
+                                <h5 class="point-title">2. Technological Innovation</h5>
+                                <p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer
+                                    experience.
+                                </p>
+                            </div>
+
+                            <div class="synergy-point">
+                                <h5 class="point-title">3. Market Potential</h5>
+                                <p>Scalable business models targeting the Islamic finance sector locally and
+                                    internationally.</p>
+                            </div>
+
+                            <div class="synergy-point">
+                                <h5 class="point-title">4. Synergy Readiness</h5>
+                                <p>Ability to integrate with BSI's ecosystem, including retail and corporate banking
+                                    services.</p>
+                            </div>
+
+                            <div class="synergy-point">
+                                <h5 class="point-title">5. ESG Commitment</h5>
+                                <p>Promoting ethical and sustainable finance aligned with Syariah values.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             @endforeach
         </div>
 
-        {{-- card hover content --}}
-        <div class="card-ecosystem-hover">
-            <div class="hover-content">
-                <h3 class="hover-title">Here's what we seek for a synergy:</h3>
 
-                <h4 class="focus-areas-title">Focus Areas:</h4>
-                <p class="focus-description">Startups offering Syariah-compliant financial technology, digital banking
-                    solutions, Islamic wealth management tools, or trade finance systems.</p>
-
-                <div class="synergy-points">
-                    <div class="synergy-point">
-                        <span class="point-number">1.</span>
-                        <h5 class="point-title">Alignment with Syariah Principles</h5>
-                        <p>Compliance with Islamic finance regulations and ethical standards.</p>
-                    </div>
-
-                    <div class="synergy-point">
-                        <span class="point-number">2.</span>
-                        <h5 class="point-title">Technological Innovation</h5>
-                        <p>Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
-                        </p>
-                    </div>
-
-                    <div class="synergy-point">
-                        <span class="point-number">3.</span>
-                        <h5 class="point-title">Market Potential</h5>
-                        <p>Scalable business models targeting the Islamic finance sector locally and internationally.</p>
-                    </div>
-
-                    <div class="synergy-point">
-                        <span class="point-number">4.</span>
-                        <h5 class="point-title">Synergy Readiness</h5>
-                        <p>Ability to integrate with BSI's ecosystem, including retail and corporate banking services.</p>
-                    </div>
-
-                    <div class="synergy-point">
-                        <span class="point-number">5.</span>
-                        <h5 class="point-title">ESG Commitment</h5>
-                        <p>Promoting ethical and sustainable finance aligned with Syariah values.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     {{-- Team Section --}}
@@ -227,8 +229,7 @@
 
             @foreach ($teamMembers as $member)
                 <div class="team-card">
-                    <img class="background-image" src="{{ '/storage/' . $member->image_path }}"
-                        alt="{{ $member->name }}">
+                    <img class="background-image" src="{{ '/storage/' . $member->image_path }}" alt="{{ $member->name }}">
                     <span class="team-name">{{ $member->name }}</span>
                     <span class="team-title">{{ $member->title }}</span>
                 </div>
@@ -330,4 +331,35 @@
     </script>
 
     <script src="{{ asset('js/about-animation.js') }}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hoverCard = document.querySelector('.card-ecosystem-hover');
+            let isHovering = false;
+
+            document.addEventListener('mousemove', function(e) {
+                if (isHovering) {
+                    const mouseX = e.clientX;
+                    const mouseY = e.clientY;
+
+                    hoverCard.style.left = `${mouseX}px`;
+                    hoverCard.style.top = `${mouseY}px`;
+                    hoverCard.style.transform = 'translate(20px, 20px)';
+                }
+            });
+
+            const triggerElements = document.querySelectorAll('[data-hover-trigger]');
+            triggerElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    isHovering = true;
+                    hoverCard.classList.add('active');
+                });
+
+                element.addEventListener('mouseleave', function() {
+                    isHovering = false;
+                    hoverCard.classList.remove('active');
+                });
+            });
+        });
+    </script>
 @endsection

@@ -918,6 +918,28 @@ html, body {
     color: inherit;
 }
 
+.card-ecosystem-highlight {
+    position: relative;
+    border-radius: 0px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 330px;
+    grid-column: span 4;
+}
+
+.card-ecosystem-highlight-grid {
+    position: relative;
+    display: grid;
+    gap: 0px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1600px;
+    padding-right: 40px;
+}
+
+.card-ecosystem-highlight-grid .card-ecosystem-highlight {
+    width: 100%;
+}
 
 .card-content {
     position: absolute;
@@ -1249,26 +1271,96 @@ html, body {
     border-radius: 12px;
 }
 
-.card-ecosystem-highlight {
-    position: relative;
-    border-radius: 0px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    height: 330px;
-    grid-column: span 4;
+.card-ecosystem-hover {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    background: #27272A;
     border-radius: 12px;
-    padding: 0px 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #A1A1AA;
+    padding: 24px;
+    width: 400px;
+    opacity: 1;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.card-ecosystem-highlight-grid {
-    position: relative;
-    display: grid;
-    gap: 0px;
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 1600px;
-    padding-right: 40px;
+.card-ecosystem-hover.active {
+    opacity: 1;
+    visibility: visible;
 }
+
+.card-ecosystem-hover .hover-image {
+    height: auto;
+    width: 113px;
+}
+
+.card-ecosystem-hover .hover-title {
+    color: var(--color-white);
+    font-size: 20px;
+    font-family: var(--font-family);
+}
+
+.card-ecosystem-hover h4 {
+    font-size: 14px;
+    font-family: var(--font-family);
+    color: #EFA32F;
+    margin: 5px;
+}
+
+.card-ecosystem-hover p {
+    color: var(--color-white);
+    font-size: 14px;
+    font-family: var(--font-family);
+    margin: 5px;
+}
+
+.card-ecosystem-hover h5 {
+    font-size: 14px;
+    font-family: var(--font-family);
+    color: #EFA32F;
+    margin: 5px;
+}
+
+
+
+.hover-title {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.focus-areas-title {
+    color: var(--color-white);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.focus-description {
+    color: var(--color-gray-400);
+    margin-bottom: 1.5rem;
+}
+
+
+
+.focus-areas-title {
+    color: var(--color-white);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.focus-description {
+    color: var(--color-gray-400);
+    margin-bottom: 1.5rem;
+}
+
+.synergy-points {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .card-ecosystem .background-image {
     position: absolute;
