@@ -141,6 +141,7 @@ class AboutMandiriEcosystemSeeder extends Seeder
                 'is_domestic' => true,
                 'is_international' => false,
                 'created_at' => now(),
+
                 'hover_focus_area' => 'Startups offering Syariah-compliant financial technology, digital banking solutions, Islamic wealth management tools, or trade finance systems.',
                 'hover_content' => "Alignment with Syariah Principles: Compliance with Islamic finance regulations and ethical standards.
                                     -Technological Innovation: Use of AI, blockchain, or big data to enhance Islamic banking services and customer experience.
