@@ -58,12 +58,47 @@
 
             <div class="card {{ $isLargeCard ? 'large' : '' }}">
                 <a href="{{ route('media.show', $post->slug) }}" class="text-decoration-none">
-                    <div class="background-image" style="background-image: url('{{ $backgroundImage }}');"></div>
-                    <span class="category">{{ $post->categories->first()->name }}</span>
-                    <div class="card-content">
-                        <h2>{{ $post->title }}</h2>
+                    <div class="card-wrapper">
+                        @if($post->categories->first()->name === 'Podcast')
+                        <div class="guest-header">
+                            <div class="guest-info">
+                                <div class="guest-image">
+                                    <img src="{{ asset('images/media/profilepodcast.png') }}" alt="Ahmad Zaki">
+                                </div>
+                                <div class="guest-details">
+                                    <div class="guest-label">SPECIAL GUEST</div>
+                                    <div class="guest-name">Ahmad Zaki</div>
+                                    <div class="guest-position">Ceo of BukaLapak</div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                        @if($post->categories->first()->name === 'Blog')
+                        <div class="blog-header">
+                            <div class="blog-info">
+                                <div class="blog-image">
+                                    <img src="{{ asset('images/media/author.png') }}" alt="Ahmad Zaki">
+                                </div>
+                                <div class="blog-details">
+                                    <div class="blog-label">Author</div>
+                                    <div class="blog-name">Rizki Saputra</div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                        <div class="main-content">
+                            <div class="background-image" style="background-image: url('{{ $backgroundImage }}');"></div>
+                            <span class="category filter-dependent">{{ $post->categories->first()->name }}</span>
+                            <div class="card-content">
+                                <h2>{{ $post->title }}</h2>
+                                <span class="post-date" style="display: none;">{{ $formattedDate }}</span>
+                                @if($post->categories->first()->name === 'News')
+                                <p class="business-news-week" style="display: none;">Business News Week</p>
+                                @endif
+                            </div>
+                            <span class="date filter-dependent">{{ $formattedDate }}</span>
+                        </div>
                     </div>
-                    <span class="date">{{ $formattedDate }}</span>
                 </a>
             </div>
         @endforeach
@@ -89,7 +124,8 @@
             const elements = {
                 filterLinks: document.querySelectorAll('.filter-link'),
                 masonry: document.querySelector('.masonry-grid'),
-                routePattern: document.querySelector('.masonry-grid').dataset.routePattern
+                routePattern: document.querySelector('.masonry-grid').dataset.routePattern,
+                cards: document.querySelectorAll('.card')
             };
 
             let currentFilter = 'all';
@@ -102,8 +138,41 @@
             // Filter click handler
             async function handleFilterClick(e) {
                 e.preventDefault();
+                const filter = this.textContent.toLowerCase();
+                currentFilter = filter;
+
+                // Update headers visibility
+                elements.cards.forEach(card => {
+                    // Remove all visibility classes first
+                    card.classList.remove('show-guest', 'show-blog');
+
+                    // Add appropriate class based on filter
+                    if (filter === 'podcast') {
+                        card.classList.add('show-guest');
+                    } else if (filter === 'blog') {
+                        card.classList.add('show-blog');
+                    }
+
+                    // Show/hide filter-dependent elements based on filter
+                    const filterDependentElements = card.querySelectorAll('.filter-dependent');
+                    filterDependentElements.forEach(element => {
+                        element.style.display = filter === 'all' ? '' : 'none';
+                    });
+
+                    // Show/hide post-date based on filter
+                    const postDate = card.querySelector('.post-date');
+                    if (postDate) {
+                        postDate.style.display = filter === 'all' ? 'none' : 'inline';
+                    }
+                });
+
                 updateActiveFilter(this);
-                await fetchAndUpdatePosts(this.textContent.toLowerCase());
+                await fetchAndUpdatePosts(filter);
+
+                // Show/hide "Business News Week" based on filter
+                document.querySelectorAll('.business-news-week').forEach(element => {
+                    element.style.display = filter === 'news' ? 'block' : 'none';
+                });
             }
 
             // Update active filter UI
@@ -139,16 +208,61 @@
                         month: 'long',
                         year: 'numeric'
                     });
+                    const newsFilterClass = filter !== 'all' ? 'news-filter' : '';
+                    const showGuestClass = filter.toLowerCase() === 'podcast' ? 'show-guest' : '';
+                    const showBlogClass = filter.toLowerCase() === 'blog' ? 'show-blog' : '';
+                    const filterDependentDisplay = filter === 'all' ? '' : 'none';
+                    const postDateDisplay = filter === 'all' ? 'none' : 'block';
+                    const businessNewsWeekDisplay = filter === 'news' ? 'block' : 'none';
+
+                    // Guest header HTML
+                    const guestHeader = post.categories[0]?.name.toLowerCase() === 'podcast' ? `
+                        <div class="guest-header">
+                            <div class="guest-info">
+                                <div class="guest-image">
+                                    <img src="{{ asset('images/media/profilepodcast.png') }}" alt="Ahmad Zaki">
+                                </div>
+                                <div class="guest-details">
+                                    <div class="guest-label">SPECIAL GUEST</div>
+                                    <div class="guest-name">Ahmad Zaki</div>
+                                    <div class="guest-position">Ceo of BukaLapak</div>
+                                </div>
+                            </div>
+                        </div>
+                    ` : '';
+
+                    // Blog header HTML
+                    const blogHeader = post.categories[0]?.name.toLowerCase() === 'blog' ? `
+                        <div class="blog-header">
+                            <div class="blog-info">
+                                <div class="blog-image">
+                                    <img src="{{ asset('images/media/author.png') }}" alt="Ahmad Zaki">
+                                </div>
+                                <div class="blog-details">
+                                    <div class="blog-label">Author</div>
+                                    <div class="blog-name">Rizki Saputra</div>
+                                </div>
+                            </div>
+                        </div>
+                    ` : '';
 
                     return `
-                        <div class="card ${isLargeCard ? 'large' : ''}">
+                        <div class="card ${isLargeCard ? 'large' : ''} ${newsFilterClass} ${showGuestClass} ${showBlogClass}">
                             <a href="${postUrl}" class="text-decoration-none">
-                                <div class="background-image" style="background-image: url('${backgroundImage}');"></div>
-                                <span class="category">${post.categories[0]?.name || ''}</span>
-                                <div class="card-content">
-                                    <h2>${post.title}</h2>
+                                ${guestHeader}
+                                ${blogHeader}
+                                <div class="main-content">
+                                    <div class="background-image" style="background-image: url('${backgroundImage}');"></div>
+                                    <span class="category filter-dependent" style="display: ${filterDependentDisplay};">${post.categories[0]?.name || ''}</span>
+                                    <div class="card-content">
+                                        <h2>${post.title}</h2>
+                                        <span class="post-date" style="display: ${postDateDisplay};">${date}</span>
+                                        ${post.categories[0]?.name === 'News' ? `
+                                            <p class="business-news-week" style="display: ${businessNewsWeekDisplay};">Business News Week</p>
+                                        ` : ''}
+                                    </div>
+                                    <span class="date filter-dependent" style="display: ${filterDependentDisplay};">${date}</span>
                                 </div>
-                                <span class="date">${date}</span>
                             </a>
                         </div>
                     `;

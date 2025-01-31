@@ -74,17 +74,20 @@ class PageController extends Controller
             $query->where('name', 'Media');
         })->first();
 
+        // Get all active categories first
+        $categories = BlogCategory::where('is_active', true)->get();
+        $categoryNames = $categories->pluck('name')->toArray();
+
         $posts = BlogPost::with(['user', 'categories', 'tags'])
             ->where('status', 'published')
             ->whereNotNull('published_at')
-            ->whereHas('categories', function($query) {
-                $query->whereIn('name', ['News', 'Podcast']);
+            ->whereHas('categories', function($query) use ($categoryNames) {
+                $query->whereIn('name', $categoryNames);
             })
             ->orderBy('published_at', 'desc')
             ->paginate(10);
 
-        $categories = BlogCategory::where('is_active', true)->get();
-        $tags = BlogTag::whereIn('name', ['News', 'Podcast'])->get();
+        $tags = BlogTag::whereIn('name', $categoryNames)->get();
 
         return view('pages.media', compact('hero', 'posts', 'categories', 'tags'));
     }

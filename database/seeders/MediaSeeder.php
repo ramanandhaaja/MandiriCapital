@@ -24,6 +24,10 @@ class MediaSeeder extends Seeder
                 'name' => 'Podcast',
                 'slug' => 'podcast',
             ],
+            [
+                'name' => 'Blog',
+                'slug' => 'blog',
+            ],
         ];
 
         foreach ($categories as $category) {
