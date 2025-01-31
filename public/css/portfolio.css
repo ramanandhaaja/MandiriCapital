@@ -563,7 +563,7 @@
     gap: 16px;
     padding: 0 20px;
     max-width: 1600px;
-    margin: 30px auto;
+    margin: 0px;
     opacity: 1;
     transition: opacity 0.3s ease;
 }
@@ -635,7 +635,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    padding: 60px 20px;
+    padding: 0px 20px;
     max-width: 1600px;
     margin: 0px auto;
     opacity: 1;
@@ -736,18 +736,17 @@
 
 .grid-headline-description-card{
     grid-column: span 2;
-    padding-right: 60px;
+    padding: 70px 0 60px 0;
 }
 
 .grid-headline-description-card-funding{
     grid-column: span 3;
-    padding-right: 60px;
-    padding-left: 60px;
 
 }
 
 .grid-headline-title-card{
     grid-column: span 1;
+    padding: 60px 0;
 }
 
 .grid-headline-contact-card{
@@ -2110,7 +2109,7 @@ a.text-decoration-none {
     color: #ffffff;
     text-align: center;
     position: relative;
-    margin-bottom: 110px;
+    margin-bottom: 90px;
 }
 
 .center-text {
@@ -2312,6 +2311,7 @@ a.text-decoration-none {
     gap: 16px;
     margin-top: 16px;
 }
+
 
 .sector-item {
     display: flex;

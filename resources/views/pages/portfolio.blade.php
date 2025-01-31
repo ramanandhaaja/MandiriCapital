@@ -341,375 +341,377 @@
 
         {{-- Investment Vehicles --}}
         @foreach ($portfolioFundingArticlesList as $index => $article)
-            <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">{{ $article->title }}</h1>
-                <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
+        <div class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey2' }}">
+                <div class="grid-headline-title-card">
+                    <h1 class="grid-headline-title">{{ $article->title }}</h1>
+                    <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
+                </div>
+
+                <div class="grid-headline-description-card">
+                    <div class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey2' }}">
+                        <div class="grid-headline-description-card-funding">
+                            <div class="masonry-grid-investment-section-sub">
+                                @foreach ($portfolioFundingArticleSubList->where('article_id', $article->id) as $subArticle)
+                                    <div class="grid-headline-title-card-sub {{ $subArticle->is_large ? 'card-funding-large' : 'card-funding' }}">
+                                        @if (!$subArticle->is_large)
+                                            <div class="background-image">
+                                        @endif
+
+                                        <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png" class="card-funding-image" />
+
+                                        @if (!$subArticle->is_large)
+                                            </div>
+                                        @endif
+
+                                        <div class="funding-category{{ $subArticle->is_large ? '-large' : '' }}">
+                                            {{ $subArticle->title }}
+                                        </div>
+                                        <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
+                                            {{ $subArticle->content }}
+                                        </div>
+                                        <div>
+                                            <a href="#" onclick="openPortfolioModal(event)" class="text-decoration-none">
+                                                <span class="funding-link">Fund Report >></span>
+                                            </a>
+                                        </div>
+
+                                        {{-- Hover card that follows mouse --}}
+                                        <div class="card-funding-hover">
+                                            <div class="hover-content">
+                                                <div class="">
+                                                    <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png" class="card-funding-image-hover" />
+                                                </div>
+                                                <div class="funding-category-hover">
+                                                    Startup Criteria
+                                                </div>
+                                                <div class="criteria-grid">
+                                                    <div class="criteria-item">
+                                                        <h3>Stage</h3>
+                                                        <p>Growth to Late Stage</p>
+                                                    </div>
+                                                    <div class="criteria-item">
+                                                        <h3>Geography</h3>
+                                                        <p>Indonesia</p>
+                                                    </div>
+                                                    <div class="criteria-item">
+                                                        <h3>Ticket Size</h3>
+                                                        <p>$20-25Mn</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-headline-title-card-sub-bottom">
+                        <h1 class="card-title-sub-bottom">{{ $article->title_sub }}</h1>
+                        <p class="card-description-bottom">{{ $article->content_sub }}</p>
+                    </div>
+                </div>
             </div>
-            <div
-                class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey2' }}">
-
-                <div class="grid-headline-description-card-funding">
-                    <div class="masonry-grid-investment-section-sub">
-                        @foreach ($portfolioFundingArticleSubList->where('article_id', $article->id) as $subArticle)
-                            <div
-                                class="grid-headline-title-card-sub {{ $subArticle->is_large ? 'card-funding-large' : 'card-funding' }}">
-                                @if (!$subArticle->is_large)
-                                    <div class="background-image">
-                                @endif
-
-                                <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png"
-                                    class="card-funding-image" />
-
-                                @if (!$subArticle->is_large)
-                            </div>
-                        @endif
-
-                        <div class="funding-category{{ $subArticle->is_large ? '-large' : '' }}">
-                            {{ $subArticle->title }}
-                        </div>
-                        <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
-                            {{ $subArticle->content }}
-                        </div>
-                        <div>
-                            <a href="#" onclick="openPortfolioModal(event)" class="text-decoration-none">
-                                <span class="funding-link">Fund Report >></span>
-                            </a>
-                        </div>
-
-                        {{-- Hover card that follows mouse --}}
-                        <div class="card-funding-hover">
-                            <div class="hover-content">
-                                <div class="">
-                                    <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png"
-                                        class="card-funding-image-hover" />
-                                </div>
-                                <div class="funding-category-hover">
-                                    Startup Criteria
-                                </div>
-                                <div class="criteria-grid">
-                                    <div class="criteria-item">
-                                        <h3>Stage</h3>
-                                        <p>Growth to Late Stage</p>
-                                    </div>
-                                    <div class="criteria-item">
-                                        <h3>Geography</h3>
-                                        <p>Indonesia</p>
-                                    </div>
-                                    <div class="criteria-item">
-                                        <h3>Ticket Size</h3>
-                                        <p>$20-25Mn</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
         @endforeach
-    </div>
-    <div class="grid-headline-title-card-sub-bottom">
-        <h1 class="card-title-sub-bottom">{{ $article->title_sub }}</h1>
-        <p class="card-description-bottom">{{ $article->content_sub }}</p>
-    </div>
-    </div>
-    </div>
-    @endforeach
 
-    {{-- Contact Form Section --}}
-    <div class="masonry-grid-contact-section-grey">
-        <div class="grid-headline-title-card">
-            <h1 class="grid-headline-title-contact">New Investor Enquiry</h1>
-            <p class="grid-headline-subtitle-contact">
-                Begin your investment journey with confidence—partner with us today.
-            </p>
-        </div>
+        {{-- Contact Form Section --}}
+        <div class="masonry-grid-contact-section">
+            <div class="grid-headline-title-card">
+                <h1 class="grid-headline-title-contact">New Investor Enquiry</h1>
+                <p class="grid-headline-subtitle-contact">
+                    Begin your investment journey with confidence—partner with us today.
+                </p>
+            </div>
 
-        <div class="grid-headline-contact-card">
-            <form id="contactForm" class="contact-form">
-                @csrf
-                {{-- Company Details --}}
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="full_name" class="form-label">Full Name*</label>
-                        <input type="text" id="full_name" name="full_name" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Subject*</label>
-                        <input type="text" id="subject" name="subject" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone" class="form-label">Phone Number*</label>
-                        <input type="text" id="phone" name="phone" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                    <div class="form-group">
-
-                        <label for="email" class="form-label">Email Address*</label>
-                        <input type="email" id="email" name="email" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="company_name" class="form-label">Company Name*</label>
-                        <input type="text" id="company_name" name="company_name" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                </div>
-
-                {{-- Business Description --}}
-                <div class="form-group">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea id="message" name="message" rows="4" class="form-textarea" placeholder="Write here..." required></textarea>
-                </div>
-
-                {{-- Submit Button --}}
-                <div class="form-group button-group">
-                    <button type="reset" class="reset-button">Reset</button>
-                    <button type="submit" class="submit-button">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-    {{-- Portfolio Register Form Modal --}}
-    <div id="portfolioFormModal" class="modal">
-        <div class="modal-overlay" onclick="closePortfolioModal()"></div>
-        <div class="modal-content">
-            <button class="modal-close" onclick="closePortfolioModal()">×</button>
-            <div class="masonry-grid-contact-section-modal">
-                <div class="grid-headline-title-card-modal">
-                    <h1 class="title-register">Input Email Address to Access Information</h1>
-                    <image class="image-register" src="{{ asset('images/portfolio/portfolio-register.png') }}"
-                        alt="Mandiri Capital Logo">
-                </div>
-
-                <div class="grid-headline-contact-card-modal">
-                    <form id="contactForm" class="contact-form">
-                        @csrf
-                        {{-- Company Details --}}
-
-                        <div class="form-group-modal">
-                            <label for="email" class="form-label-modal">Email Address*</label>
-                            <input type="email" id="email" name="email" class="form-input-modal"
+            <div class="grid-headline-contact-card">
+                <form id="contactForm" class="contact-form">
+                    @csrf
+                    {{-- Company Details --}}
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full_name" class="form-label">Full Name*</label>
+                            <input type="text" id="full_name" name="full_name" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
-                        {{-- Submit Button --}}
-                        <div class="form-group-modal button-group-modal">
-                            <button type="button" onclick="window.location.href='{{ route('portfolio.funding.show', $subArticle->id) }}'" class="reset-button-modal">Login</button>or
-                            or
-                            <button type="submit" class="submit-button-modal">Request for Account</button>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject*</label>
+                            <input type="text" id="subject" name="subject" class="form-input"
+                                placeholder="Write here..." required>
                         </div>
-                    </form>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number*</label>
+                            <input type="text" id="phone" name="phone" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="email" class="form-label">Email Address*</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company_name" class="form-label">Company Name*</label>
+                            <input type="text" id="company_name" name="company_name" class="form-input"
+                                placeholder="Write here..." required>
+                        </div>
+                    </div>
+
+                    {{-- Business Description --}}
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" rows="4" class="form-textarea" placeholder="Write here..." required></textarea>
+                    </div>
+
+                    {{-- Submit Button --}}
+                    <div class="form-group button-group">
+                        <button type="reset" class="reset-button">Reset</button>
+                        <button type="submit" class="submit-button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        {{-- Portfolio Register Form Modal --}}
+        <div id="portfolioFormModal" class="modal">
+            <div class="modal-overlay" onclick="closePortfolioModal()"></div>
+            <div class="modal-content">
+                <button class="modal-close" onclick="closePortfolioModal()">×</button>
+                <div class="masonry-grid-contact-section-modal">
+                    <div class="grid-headline-title-card-modal">
+                        <h1 class="title-register">Input Email Address to Access Information</h1>
+                        <image class="image-register" src="{{ asset('images/portfolio/portfolio-register.png') }}"
+                            alt="Mandiri Capital Logo">
+                    </div>
+
+                    <div class="grid-headline-contact-card-modal">
+                        <form id="contactForm" class="contact-form">
+                            @csrf
+                            {{-- Company Details --}}
+
+                            <div class="form-group-modal">
+                                <label for="email" class="form-label-modal">Email Address*</label>
+                                <input type="email" id="email" name="email" class="form-input-modal"
+                                    placeholder="Write here..." required>
+                            </div>
+                            {{-- Submit Button --}}
+                            <div class="form-group-modal button-group-modal">
+                                <button type="button"
+                                    onclick="window.location.href='{{ route('portfolio.funding.show', $subArticle->id) }}'"
+                                    class="reset-button-modal">Login</button>or
+                                or
+                                <button type="submit" class="submit-button-modal">Request for Account</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-@endsection
+    @endsection
 
-@section('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // DOM Elements
-            const elements = {
-                filterLinks: document.querySelectorAll('.filter-link'),
-                getInvestmentSection: document.querySelector('.get-investement-section'),
-                portfolioSection: document.querySelector('.portfolio-full-section'),
-                forInvestorSection: document.querySelector('.for-investor-section'),
-                fab: document.querySelector('.floating-action-button'),
-                gridDisplay: document.querySelector('.grid-display-portfolio'),
-                tableDisplay: document.querySelector('.table-display-portfolio')
-            };
+    @section('scripts')
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // DOM Elements
+                const elements = {
+                    filterLinks: document.querySelectorAll('.filter-link'),
+                    getInvestmentSection: document.querySelector('.get-investement-section'),
+                    portfolioSection: document.querySelector('.portfolio-full-section'),
+                    forInvestorSection: document.querySelector('.for-investor-section'),
+                    fab: document.querySelector('.floating-action-button'),
+                    gridDisplay: document.querySelector('.grid-display-portfolio'),
+                    tableDisplay: document.querySelector('.table-display-portfolio')
+                };
 
-            function setupExpandButtons() {
-                document.querySelectorAll('.expand-btn').forEach(button => {
-                    button.removeEventListener('click', handleExpand);
-                    button.addEventListener('click', handleExpand);
-                });
-            }
-
-            function handleExpand(e) {
-                e.preventDefault();
-                const portfolioRow = this.closest('.portfolio-row');
-                portfolioRow.classList.toggle('expanded');
-
-                // Toggle company image link visibility
-                const imageLink = portfolioRow.querySelector('.company-image-link-list');
-                if (imageLink) {
-                    imageLink.style.display = portfolioRow.classList.contains('expanded') ? 'block' : 'none';
+                function setupExpandButtons() {
+                    document.querySelectorAll('.expand-btn').forEach(button => {
+                        button.removeEventListener('click', handleExpand);
+                        button.addEventListener('click', handleExpand);
+                    });
                 }
 
-                // Rotate the expand button SVG
-                const svg = this.querySelector('svg');
-                if (svg) {
-                    svg.style.transform = portfolioRow.classList.contains('expanded') ? 'rotate(180deg)' :
-                        'rotate(0deg)';
-                }
-            }
-
-            // Initial setup
-            setupExpandButtons();
-
-            // Constants
-            const DISPLAY_STATES = {
-                GRID: 'display-grid',
-                TABLE: 'display-table'
-            };
-
-            const FILTER_TYPES = {
-                GET_INVESTMENT: 'get_investment',
-                PORTFOLIO: 'portfolio',
-                FUNDING: 'funding'
-            };
-
-            // Utility Functions
-            const utils = {
-                showSection: (section) => {
-                    // Hide all sections
-                    elements.getInvestmentSection.style.display = 'none';
-                    elements.portfolioSection.style.display = 'none';
-                    elements.forInvestorSection.style.display = 'none';
-
-                    // Show selected section
-                    if (section) {
-                        section.style.display = 'block';
-                    }
-                },
-                setGridView: (isGrid) => {
-                    // Set the display mode class
-                    elements.portfolioSection.classList.toggle(DISPLAY_STATES.GRID, isGrid);
-                    elements.portfolioSection.classList.toggle(DISPLAY_STATES.TABLE, !isGrid);
-
-                    // Show/hide the appropriate display
-                    if (isGrid) {
-                        elements.gridDisplay.style.display = 'block';
-                        elements.tableDisplay.style.display = 'none';
-                    } else {
-                        elements.gridDisplay.style.display = 'none';
-                        elements.tableDisplay.style.display = 'block';
-                    }
-                }
-            };
-
-            // View Update Functions
-            const updateView = {
-                getInvestment: () => {
-                    utils.showSection(elements.getInvestmentSection);
-                },
-                portfolio: () => {
-                    utils.showSection(elements.portfolioSection);
-                    utils.setGridView(true); // Always start with grid view
-                },
-                funding: () => {
-                    utils.showSection(elements.forInvestorSection);
-                }
-            };
-
-            // Initialize
-            updateView.getInvestment();
-
-            // Event Listeners
-            elements.fab.addEventListener('click', () => {
-                const isGridView = elements.portfolioSection.classList.contains(DISPLAY_STATES.GRID);
-                utils.setGridView(!isGridView); // Toggle between grid and table
-                elements.fab.classList.toggle('table-view', !isGridView);
-            });
-
-            elements.filterLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
+                function handleExpand(e) {
                     e.preventDefault();
-                    elements.filterLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
+                    const portfolioRow = this.closest('.portfolio-row');
+                    portfolioRow.classList.toggle('expanded');
 
-                    const currentFilter = this.getAttribute('data-category');
-                    switch (currentFilter) {
-                        case FILTER_TYPES.GET_INVESTMENT:
-                            updateView.getInvestment();
-                            break;
-                        case FILTER_TYPES.PORTFOLIO:
-                            updateView.portfolio();
-                            break;
-                        case FILTER_TYPES.FUNDING:
-                            updateView.funding();
-                            break;
+                    // Toggle company image link visibility
+                    const imageLink = portfolioRow.querySelector('.company-image-link-list');
+                    if (imageLink) {
+                        imageLink.style.display = portfolioRow.classList.contains('expanded') ? 'block' : 'none';
                     }
+
+                    // Rotate the expand button SVG
+                    const svg = this.querySelector('svg');
+                    if (svg) {
+                        svg.style.transform = portfolioRow.classList.contains('expanded') ? 'rotate(180deg)' :
+                            'rotate(0deg)';
+                    }
+                }
+
+                // Initial setup
+                setupExpandButtons();
+
+                // Constants
+                const DISPLAY_STATES = {
+                    GRID: 'display-grid',
+                    TABLE: 'display-table'
+                };
+
+                const FILTER_TYPES = {
+                    GET_INVESTMENT: 'get_investment',
+                    PORTFOLIO: 'portfolio',
+                    FUNDING: 'funding'
+                };
+
+                // Utility Functions
+                const utils = {
+                    showSection: (section) => {
+                        // Hide all sections
+                        elements.getInvestmentSection.style.display = 'none';
+                        elements.portfolioSection.style.display = 'none';
+                        elements.forInvestorSection.style.display = 'none';
+
+                        // Show selected section
+                        if (section) {
+                            section.style.display = 'block';
+                        }
+                    },
+                    setGridView: (isGrid) => {
+                        // Set the display mode class
+                        elements.portfolioSection.classList.toggle(DISPLAY_STATES.GRID, isGrid);
+                        elements.portfolioSection.classList.toggle(DISPLAY_STATES.TABLE, !isGrid);
+
+                        // Show/hide the appropriate display
+                        if (isGrid) {
+                            elements.gridDisplay.style.display = 'block';
+                            elements.tableDisplay.style.display = 'none';
+                        } else {
+                            elements.gridDisplay.style.display = 'none';
+                            elements.tableDisplay.style.display = 'block';
+                        }
+                    }
+                };
+
+                // View Update Functions
+                const updateView = {
+                    getInvestment: () => {
+                        utils.showSection(elements.getInvestmentSection);
+                    },
+                    portfolio: () => {
+                        utils.showSection(elements.portfolioSection);
+                        utils.setGridView(true); // Always start with grid view
+                    },
+                    funding: () => {
+                        utils.showSection(elements.forInvestorSection);
+                    }
+                };
+
+                // Initialize
+                updateView.getInvestment();
+
+                // Event Listeners
+                elements.fab.addEventListener('click', () => {
+                    const isGridView = elements.portfolioSection.classList.contains(DISPLAY_STATES.GRID);
+                    utils.setGridView(!isGridView); // Toggle between grid and table
+                    elements.fab.classList.toggle('table-view', !isGridView);
+                });
+
+                elements.filterLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        elements.filterLinks.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+
+                        const currentFilter = this.getAttribute('data-category');
+                        switch (currentFilter) {
+                            case FILTER_TYPES.GET_INVESTMENT:
+                                updateView.getInvestment();
+                                break;
+                            case FILTER_TYPES.PORTFOLIO:
+                                updateView.portfolio();
+                                break;
+                            case FILTER_TYPES.FUNDING:
+                                updateView.funding();
+                                break;
+                        }
+                    });
                 });
             });
-        });
 
-        function toggleView() {
-            const listIcon = document.querySelector('.icon-list');
-            const gridIcon = document.querySelector('.icon-grid');
+            function toggleView() {
+                const listIcon = document.querySelector('.icon-list');
+                const gridIcon = document.querySelector('.icon-grid');
 
-            listIcon.classList.toggle('active');
-            gridIcon.classList.toggle('active');
-        }
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card-funding, .card-funding-large');
-
-            cards.forEach(card => {
-                const hoverCard = card.querySelector('.card-funding-hover');
-                let isHovering = false;
-
-                document.addEventListener('mousemove', function(e) {
-                    if (isHovering) {
-                        const mouseX = e.clientX;
-                        const mouseY = e.clientY;
-
-                        hoverCard.style.left = `${mouseX}px`;
-                        hoverCard.style.top = `${mouseY}px`;
-                        hoverCard.style.transform = 'translate(20px, 20px)';
-                    }
-                });
-
-                card.addEventListener('mouseenter', function() {
-                    isHovering = true;
-                    hoverCard.classList.add('active');
-                });
-
-                card.addEventListener('mouseleave', function() {
-                    isHovering = false;
-                    hoverCard.classList.remove('active');
-                });
-            });
-        });
-    </script>
-
-    <script>
-        function openPortfolioModal(event) {
-            event.preventDefault();
-            document.getElementById('portfolioFormModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePortfolioModal() {
-            document.getElementById('portfolioFormModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const portfolioModal = document.getElementById('portfolioFormModal');
-            if (event.target === portfolioModal) {
-                closePortfolioModal();
+                listIcon.classList.toggle('active');
+                gridIcon.classList.toggle('active');
             }
-        }
+        </script>
 
-        // Handle form submission
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Add your form submission logic here
-            console.log('Form submitted');
-        });
-    </script>
-@endsection
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const cards = document.querySelectorAll('.card-funding, .card-funding-large');
+
+                cards.forEach(card => {
+                    const hoverCard = card.querySelector('.card-funding-hover');
+                    let isHovering = false;
+
+                    document.addEventListener('mousemove', function(e) {
+                        if (isHovering) {
+                            const mouseX = e.clientX;
+                            const mouseY = e.clientY;
+
+                            hoverCard.style.left = `${mouseX}px`;
+                            hoverCard.style.top = `${mouseY}px`;
+                            hoverCard.style.transform = 'translate(20px, 20px)';
+                        }
+                    });
+
+                    card.addEventListener('mouseenter', function() {
+                        isHovering = true;
+                        hoverCard.classList.add('active');
+                    });
+
+                    card.addEventListener('mouseleave', function() {
+                        isHovering = false;
+                        hoverCard.classList.remove('active');
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            function openPortfolioModal(event) {
+                event.preventDefault();
+                document.getElementById('portfolioFormModal').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePortfolioModal() {
+                document.getElementById('portfolioFormModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                const portfolioModal = document.getElementById('portfolioFormModal');
+                if (event.target === portfolioModal) {
+                    closePortfolioModal();
+                }
+            }
+
+            // Handle form submission
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Add your form submission logic here
+                console.log('Form submitted');
+            });
+        </script>
+    @endsection
