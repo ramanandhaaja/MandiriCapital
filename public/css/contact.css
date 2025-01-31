@@ -216,15 +216,25 @@
     background-color: var(--color-black);
     color: var(--color-white);
     padding: var(--spacing-2xl) 0;
-    display: flex;
     align-items: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--grid-gap);
 }
 
 .map-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-2xl);
+    width: 600px;
+    margin: 0 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
     width: 100%;
+    display: block;
 }
 
 .map-grid {
