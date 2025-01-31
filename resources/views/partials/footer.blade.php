@@ -4,11 +4,13 @@
         <!-- Left Column -->
         <div class="footer-left">
             <img src="{{ asset('images/logo.png') }}" alt="Mandiri Capital" class="footer-logo">
+            {{--
             <div class="social-links">
                 <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
             </div>
+             --}}
             <div class="company-info">
                 <h3>MANDIRI CAPITAL INDONESIA</h3>
                 <p>Menara Mandiri II, lantai 14.</p>
@@ -20,33 +22,33 @@
         <!-- Middle Column -->
         <div class="footer-middle">
             <ul class="footer-links">
-                <li><a href="#">TENTANG KAMI</a></li>
-                <li><a href="#">PORTOFOLIO</a></li>
-                <li><a href="#">BERITA</a></li>
+                <li><a href="#">OUR IDENTITY</a></li>
+                <li><a href="#">INVESTMENT</a></li>
+                <li><a href="#">VALUE CREATION</a></li>
+                <li><a href="#">MEDIA</a></li>
+                <li><a href="#">PUBLICATION</a></li>
+                <li><a href="#">CONTACT US</a></li>
             </ul>
         </div>
 
         <!-- Right Column -->
         <div class="footer-right">
-            <ul class="footer-links">
-                <li><a href="#">Hubungi Kami</a></li>
-                <li><a href="#">Pengaduan Konsumen</a></li>
-                <li><a href="#">Kebijakan Privacy</a></li>
-            </ul>
+            <p class="footer-right-text">Authorized</p>
+            <p class="footer-right-text">and Supervised by</p>
+            <p class="footer-right-text"><strong>OJK (Otoritas Jasa Keuangan)</strong></p>
         </div>
 
         <!-- Certification Section -->
         <div class="footer-certification">
-            <p class="certification-text">Telah Berizin dan Diawasi oleh</p>
-            <div class="certification-images">
-                <img src="{{ asset('images/ojk.png') }}" alt="OJK" class="cert-logo">
-                <img src="{{ asset('images/amvesindo.png') }}" alt="AMVESINDO" class="cert-logo">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </div>
 
     <!-- Copyright -->
     <div class="footer-copyright">
-        <p>© 2005-2023 • Company Name. All rights reserved</p>
+        <p>© 2024 Mandiri Capital Indonesia. All rights reserved</p>
     </div>
 </footer>
