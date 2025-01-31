@@ -3,6 +3,7 @@
 // app/Providers/Filament/AdminPanelProvider.php
 namespace App\Providers\Filament;
 
+use App\Filament\FilamentLoginLayout;
 use App\Filament\Widgets\BlogPostsOverview;
 use App\Filament\Widgets\LatestBlogPosts;
 use Filament\Http\Middleware\Authenticate;
@@ -11,6 +12,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\Support\Assets\Css;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -29,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
+            ->login(FilamentLoginLayout::class)
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -57,7 +59,7 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->brandName('Blog Admin')
+            ->brandName('MANDIRI CMS')
             ->maxContentWidth('full');
     }
 }

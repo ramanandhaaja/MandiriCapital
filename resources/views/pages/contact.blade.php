@@ -77,7 +77,7 @@
                                 </label>
 
                                 <label class="radio-container">
-                                    <input type="radio" name="identity" value="investor" >
+                                    <input type="radio" name="identity" value="investor">
                                     <span class="radio-button"></span>
                                     <span class="radio-label">Investor</span>
                                 </label>
@@ -119,17 +119,20 @@
 
                             <div class="form-group">
                                 <label for="problem" class="form-label">Whats the problem you are trying to solve?</label>
-                                <textarea id="problem" name="problem" rows="5" class="form-textarea" placeholder="Write here..." maxlength="300" required></textarea>
+                                <textarea id="problem" name="problem" rows="5" class="form-textarea" placeholder="Write here..."
+                                    maxlength="300" required></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label for="solution" class="form-label">How are you going to solve the problem?</label>
-                                <textarea id="solution" name="solution" rows="5" class="form-textarea" placeholder="Write here..." maxlength="300" required></textarea>
+                                <textarea id="solution" name="solution" rows="5" class="form-textarea" placeholder="Write here..."
+                                    maxlength="300" required></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label for="proposition" class="form-label">What's your value proposition?</label>
-                                <textarea id="proposition" name="proposition" rows="5" class="form-textarea" placeholder="Write here..." maxlength="300" required></textarea>
+                                <textarea id="proposition" name="proposition" rows="5" class="form-textarea" placeholder="Write here..."
+                                    maxlength="300" required></textarea>
                             </div>
 
                             <div class="form-group">
@@ -137,15 +140,19 @@
                                 <div class="file-upload-container">
                                     <label for="company_profile" class="file-upload-button">Choose File</label>
                                     <span class="file-name">No File Chosen</span>
-                                    <input type="file" id="company_profile" name="company_profile" class="file-input" accept=".pdf" required>
+                                    <input type="file" id="company_profile" name="company_profile" class="file-input"
+                                        accept=".pdf" required>
                                 </div>
-                                <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page PDF)</p>
+                                <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page
+                                    PDF)</p>
                                 <div class="upload-guidelines">
-                                    <p class="guidelines-title">Your company profile or pitch deck should address these things:</p>
+                                    <p class="guidelines-title">Your company profile or pitch deck should address these
+                                        things:</p>
                                     <ul class="guidelines-list">
                                         <li>The specific problem your company are aiming to tackle</li>
                                         <li>The solution for the specific problem</li>
-                                        <li>The business model, describe the strategy to increase the revenue or profit with its products and customer base</li>
+                                        <li>The business model, describe the strategy to increase the revenue or profit with
+                                            its products and customer base</li>
                                         <li>The target market, the size, entry barriers, challenges, and opportunities</li>
                                         <li>Number of the current users or clients that are using your products</li>
                                         <li>Your competition and who might be one</li>
@@ -202,9 +209,10 @@
     {{-- Map Section --}}
     <section class="map-section">
         <div class="map-container">
-
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.297882683585!2d106.8052263107502!3d-6.224397960934856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1caf7c75bad%3A0xe6744fb7fef268fd!2sPT.%20Mandiri%20Capital%20Indonesia!5e0!3m2!1sen!2sid!4v1738305411568!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.297882683585!2d106.8052263107502!3d-6.224397960934856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1caf7c75bad%3A0xe6744fb7fef268fd!2sPT.%20Mandiri%20Capital%20Indonesia!5e0!3m2!1sen!2sid!4v1738305411568!5m2!1sen!2sid"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="map-grid">
             <div class="map-content">
@@ -226,34 +234,33 @@
 @endsection
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const radioButtons = document.querySelectorAll('input[name="identity"]');
+        const formStartup = document.querySelector('.form-startup');
+        const formOther = document.querySelector('.form-other');
 
-document.addEventListener('DOMContentLoaded', function() {
-    const radioButtons = document.querySelectorAll('input[name="identity"]');
-    const formStartup = document.querySelector('.form-startup');
-    const formOther = document.querySelector('.form-other');
-
-    // Function to update form visibility
-    function updateFormVisibility(selectedValue) {
-        if (selectedValue === 'startup') {
-            formOther.classList.remove('active');
-            formStartup.classList.add('active');
-        } else {
-            formStartup.classList.remove('active');
-            formOther.classList.add('active');
+        // Function to update form visibility
+        function updateFormVisibility(selectedValue) {
+            if (selectedValue === 'startup') {
+                formOther.classList.remove('active');
+                formStartup.classList.add('active');
+            } else {
+                formStartup.classList.remove('active');
+                formOther.classList.add('active');
+            }
         }
-    }
 
-    // Show initial form based on default checked radio
-    const initialChecked = document.querySelector('input[name="identity"]:checked');
-    if (initialChecked) {
-        updateFormVisibility(initialChecked.value);
-    }
+        // Show initial form based on default checked radio
+        const initialChecked = document.querySelector('input[name="identity"]:checked');
+        if (initialChecked) {
+            updateFormVisibility(initialChecked.value);
+        }
 
-    // Add event listeners to radio buttons
-    radioButtons.forEach(radio => {
-        radio.addEventListener('change', function() {
-            updateFormVisibility(this.value);
+        // Add event listeners to radio buttons
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', function() {
+                updateFormVisibility(this.value);
+            });
         });
     });
-});
 </script>

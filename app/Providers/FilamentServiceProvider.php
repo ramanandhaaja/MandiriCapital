@@ -13,7 +13,6 @@ class FilamentServiceProvider extends ServiceProvider
     public function boot(): void
     {
         FilamentAsset::register([
-            Css::make('custom-filament', resource_path('css/filament/custom.css')),
         ]);
     }
 }

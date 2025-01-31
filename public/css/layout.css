@@ -125,7 +125,7 @@ body.menu-open {
 }
 
 .nav-item.active {
-    color: #ffffff;
+    color: #EFA32F;
     position: relative;
     transition: none;
 }

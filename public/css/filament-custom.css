@@ -1,0 +1,70 @@
+/* Override global styles for Filament admin panel */
+body {
+    background-color: #1a1a1a !important;
+}
+
+/* Form styles */
+.fi-body {
+    background-color: #1a1a1a !important;
+}
+
+.fi-simple-main {
+    background-color: #1a1a1a !important;
+}
+
+.fi-ta-text {
+    color: white !important;
+}
+
+.fi-fo-field-wrp {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.fi-input {
+    background-color: transparent !important;
+    color: white !important;
+}
+
+/* Login form width */
+:root {
+    --fi-simple-container-width: 600px !important;
+}
+
+.fi-simple-layout > div {
+    max-width: 600px !important;
+    width: 600px !important;
+}
+
+.fi-simple-layout form {
+    max-width: 600px !important;
+    width: 600px !important;
+}
+
+/* Button styles */
+.fi-btn {
+    background-color: #f59e0b !important;
+    color: white !important;
+}
+
+.fi-btn:hover {
+    background-color: #d97706 !important;
+}
+
+/* Text colors */
+.fi-simple-header {
+    color: white !important;
+}
+
+.fi-label {
+    color: #e5e7eb !important;
+}
+
+/* Links */
+.fi-link {
+    color: #f59e0b !important;
+}
+
+.fi-link:hover {
+    color: #d97706 !important;
+}

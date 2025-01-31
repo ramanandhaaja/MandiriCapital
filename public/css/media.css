@@ -58,6 +58,12 @@
 
 /* Base Styles
    ========================================================================== */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 body {
     font-family: var(--font-family);
     -webkit-font-smoothing: antialiased;
@@ -76,7 +82,7 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     max-width: 1600px;
-    margin: 40px 20px 0;
+    margin: 40px  20px;
 }
 
 .masonry-grid:has(.news-filter) {
@@ -571,32 +577,25 @@ a {
 @media (max-width: 1400px) {
     .search-section,
     .masonry-grid {
-        padding: 0 var(--spacing-2xl);
+        padding: 0 48px;
     }
 }
 
 @media (max-width: 1200px) {
     .masonry-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-lg);
+        gap: 20px;
+    }
+
+    .card.large {
+        grid-column: span 2;
     }
 }
 
 @media (max-width: 768px) {
     .search-section,
     .masonry-grid {
-        padding: 0 var(--spacing-lg);
-    }
-
-    .search-section {
-        margin-top: 100px;
-    }
-
-    .category-filters {
-        gap: var(--spacing-lg);
-        overflow-x: auto;
-        padding-bottom: var(--spacing-sm);
-        -webkit-overflow-scrolling: touch;
+        padding: 0 24px;
     }
 
     .masonry-grid {
@@ -606,52 +605,18 @@ a {
     .card,
     .card.large {
         grid-column: span 1;
-        height: 300px;
-    }
-
-    .card-content {
-        bottom: var(--spacing-2xl);
-        left: var(--spacing-lg);
-        right: var(--spacing-lg);
-    }
-
-    .category {
-        font-size: var(--font-size-base);
-        top: var(--spacing-lg);
-        left: var(--spacing-lg);
-    }
-
-    .card h2 {
-        font-size: var(--font-size-xl);
-    }
-
-    .date {
-        bottom: var(--spacing-lg);
-        left: var(--spacing-lg);
-    }
-
-    .video-background {
-        width: auto;
-        min-width: 100%;
-        height: calc(100% + 600px);
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .hero-main-text {
-        font-size: calc(var(--font-size-4xl) * 0.6);
     }
 }
 
 @media (max-width: 480px) {
     .search-section,
     .masonry-grid {
-        padding: 0 var(--spacing-md);
+        padding: 0 16px;
     }
 
     .search-input {
         font-size: var(--font-size-sm);
-        padding: 10px var(--spacing-md);
+        padding: 10px 16px;
     }
 
     .filter-link {

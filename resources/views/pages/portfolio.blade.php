@@ -83,12 +83,12 @@
                     {{-- Company Details --}}
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="first_name" class="form-label">First Name</label>
+                            <label for="first_name" class="form-label">First Name*</label>
                             <input type="text" id="first_name" name="first_name" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
-                            <label for="last_name" class="form-label">Last Name</label>
+                            <label for="last_name" class="form-label">Last Name*</label>
                             <input type="text" id="last_name" name="last_name" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
@@ -96,12 +96,12 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="email" class="form-label">Email Address</label>
+                            <label for="email" class="form-label">Email Address*</label>
                             <input type="email" id="email" name="email" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
+                            <label for="phone" class="form-label">Phone Number*</label>
                             <input type="text" id="phone" name="phone" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
@@ -109,7 +109,7 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="company_name" class="form-label">Company Name</label>
+                            <label for="company_name" class="form-label">Company Name*</label>
                             <input type="text" id="company_name" name="company_name" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
@@ -428,12 +428,12 @@
                 {{-- Company Details --}}
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="full_name" class="form-label">Full Name</label>
+                        <label for="full_name" class="form-label">Full Name*</label>
                         <input type="text" id="full_name" name="full_name" class="form-input"
                             placeholder="Write here..." required>
                     </div>
                     <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
+                        <label for="subject" class="form-label">Subject*</label>
                         <input type="text" id="subject" name="subject" class="form-input"
                             placeholder="Write here..." required>
                     </div>
@@ -441,12 +441,13 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="phone" class="form-label">Phone Number</label>
+                        <label for="phone" class="form-label">Phone Number*</label>
                         <input type="text" id="phone" name="phone" class="form-input"
                             placeholder="Write here..." required>
                     </div>
                     <div class="form-group">
-                        <label for="email" class="form-label">Email Address</label>
+
+                        <label for="email" class="form-label">Email Address*</label>
                         <input type="email" id="email" name="email" class="form-input"
                             placeholder="Write here..." required>
                     </div>
@@ -454,7 +455,7 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="company_name" class="form-label">Company Name</label>
+                        <label for="company_name" class="form-label">Company Name*</label>
                         <input type="text" id="company_name" name="company_name" class="form-input"
                             placeholder="Write here..." required>
                     </div>
@@ -494,7 +495,7 @@
                         {{-- Company Details --}}
 
                         <div class="form-group-modal">
-                            <label for="email" class="form-label-modal">Email Address</label>
+                            <label for="email" class="form-label-modal">Email Address*</label>
                             <input type="email" id="email" name="email" class="form-input-modal"
                                 placeholder="Write here..." required>
                         </div>

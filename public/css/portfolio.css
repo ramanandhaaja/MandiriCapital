@@ -843,6 +843,8 @@
     color: #EFA32F;
     font-family: var(--font-family);
     margin: 20px 0 0px 0;
+    font-style: italic;
+
 }
 
 .card-description-bottom {
