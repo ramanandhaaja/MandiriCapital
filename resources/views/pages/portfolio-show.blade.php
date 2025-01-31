@@ -13,7 +13,7 @@
     </div>
 
     <div class="hero-section">
-        <div class="hero-content" style="background-image: url('{{ asset('images/portfolio/OnHover.png') }}');">
+        <div class="hero-content" style="background-image: url('{{ asset('images/portfolio/OnHover.jpeg') }}');">
         </div>
     </div>
 

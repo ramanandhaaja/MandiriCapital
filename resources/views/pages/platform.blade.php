@@ -16,7 +16,7 @@
             <h1 class="hero-main-text">VALUE CREATION</h1>
             <div class="center-search">
                 <div class="category-filters">
-                    <a href="#" class="filter-link active" data-filter="business">Business Unit</a>
+                    <a href="#" class="filter-link active" data-filter="business">Our Focus</a>
                     <a href="#" class="filter-link" data-filter="program">Program</a>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                 @php
                     $dummyArticles = [
                         ['title' => 'PROJECTS','subtitle' => 'hand to business unit', 'content' => '120+'],
-                        ['title' => 'STARTUPS','subtitle' => 'work with our business unit', 'content' => '40'],
+                        ['title' => 'STARTUPS','subtitle' => 'work with our business unit', 'content' => '40+'],
                         ['title' => 'BUSINESS UNITS','subtitle' => 'mandiri and subsidiaries work with statups', 'content' => '40+']
                     ];
                 @endphp
@@ -337,7 +337,164 @@
                 </div>
             </div>
         @endforeach
-    </section>
+
+
+
+    {{-- Contact Form Section --}}
+    <div class="masonry-grid-contact-section-grey">
+        <div class="grid-headline-title-card">
+            <h1 class="grid-headline-title-contact">Get Investment!</h1>
+            <h1 class="grid-headline-subtitle-contact">
+            </h1>
+        </div>
+
+        <div class="grid-headline-contact-card">
+            <form id="contactForm" class="contact-form">
+                @csrf
+                {{-- Company Details --}}
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="program" class="form-label">Program*</label>
+                        <input type="text" id="program" name="program" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mandiri_ecosystem" class="form-label">Mandiri Ecosystem*</label>
+                        <input type="text" id="mandiri_ecosystem" name="mandiri_ecosystem" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first_name" class="form-label">First Name*</label>
+                        <input type="text" id="first_name" name="first_name" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name" class="form-label">Last Name*</label>
+                        <input type="text" id="last_name" name="last_name" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address*</label>
+                        <input type="email" id="email" name="email" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number*</label>
+                        <input type="text" id="phone" name="phone" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company_name" class="form-label">Company Name*</label>
+                        <input type="text" id="company_name" name="company_name" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="url" class="form-label">Add URL to your Company Website</label>
+                        <input type="text" id="url" name="url" class="form-input"
+                            placeholder="Write here..." required>
+                    </div>
+                </div>
+
+                {{-- Upload Company Profile / Pitch Deck --}}
+                <div class="form-group">
+                    <label class="form-label">Upload Your Company Profile / Pitch Deck</label>
+                    <div class="file-upload-container">
+                        <label for="company_profile" class="file-upload-button">Choose File</label>
+                        <span class="file-name">No File Chosen</span>
+                        <input type="file" id="company_profile" name="company_profile" class="file-input"
+                            accept=".pdf" required>
+                    </div>
+                    <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page PDF)</p>
+                    <div class="upload-guidelines">
+                        <p class="guidelines-title">Your company profile or pitch deck should address these things:</p>
+                        <ul class="guidelines-list">
+                            <li>The specific problem your company are aiming to tackle</li>
+                            <li>The solution for the specific problem</li>
+                            <li>The business model, describe the strategy to increase the revenue or profit with its
+                                products and customer base</li>
+                            <li>The target market, the size, entry barriers, challenges, and opportunities</li>
+                            <li>Number of the current users or clients that are using your products</li>
+                            <li>Your competition and who might be one</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {{-- Business Sector Selection --}}
+                <div class="form-group">
+                    <label class="form-label">Choose your company's main business sector</label>
+                    <div class="sector-grid">
+                        <div class="sector-item">
+                            <input type="radio" id="agriculture" name="business_sector" value="Agriculture & Food"
+                                class="sector-radio" required>
+                            <label for="agriculture" class="sector-label">Agriculture & Food</label>
+                        </div>
+                        <div class="sector-item">
+                            <input type="radio" id="energy" name="business_sector" value="Energy & Resources"
+                                class="sector-radio">
+                            <label for="energy" class="sector-label">Energy & Resources</label>
+                        </div>
+                        <div class="sector-item">
+                            <input type="radio" id="healthcare" name="business_sector"
+                                value="Healthcare & Pharmaceuticals" class="sector-radio">
+                            <label for="healthcare" class="sector-label">Healthcare & Pharmaceuticals</label>
+                        </div>
+                        <div class="sector-item">
+                            <input type="radio" id="education" name="business_sector"
+                                value="Education & employment" class="sector-radio">
+                            <label for="education" class="sector-label">Education & employment</label>
+                        </div>
+                        <div class="sector-item">
+                            <input type="radio" id="automotive" name="business_sector"
+                                value="Automotive & Transportation" class="sector-radio">
+                            <label for="automotive" class="sector-label">Automotive & Transportation</label>
+                        </div>
+                        <div class="sector-item">
+                            <input type="radio" id="banking" name="business_sector"
+                                value="Banking & Financial Service" class="sector-radio">
+                            <label for="banking" class="sector-label">Banking & Financial Service</label>
+                        </div>
+                        <div class="sector-item">
+                            <input type="radio" id="consulting" name="business_sector"
+                                value="Consulting & Professional Services" class="sector-radio">
+                            <label for="consulting" class="sector-label">Consulting & Professional Services</label>
+                        </div>
+                        <div class="sector-item">
+                            <input type="radio" id="media" name="business_sector"
+                                value="Media & Entertainment" class="sector-radio">
+                            <label for="media" class="sector-label">Media & Entertainment</label>
+                        </div>
+                        <div class="sector-item">
+                            <input type="radio" id="retail" name="business_sector" value="Retail & Wholesale"
+                                class="sector-radio">
+                            <label for="retail" class="sector-label">Retail & Wholesale</label>
+                        </div>
+                        <div class="sector-item">
+                            <input type="radio" id="other" name="business_sector" value="Other"
+                                class="sector-radio">
+                            <label for="other" class="sector-label">Other</label>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Submit Button --}}
+                <div class="form-group button-group">
+                    <button type="reset" class="reset-button">Reset</button>
+                    <button type="submit" class="submit-button">Submit Pitch</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
     {{-- Newsletter Section --}}
     <div class="newsletter-section">
