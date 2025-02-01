@@ -12,39 +12,221 @@ class AboutTeamSeeder extends Seeder
     {
         $datas = [
             [
-                'name' => 'John Anderson',
-                'title' => 'Chief Executive Officer',
-                'content' => 'Experienced leader with over 20 years in investment banking and venture capital.',
+                'name' => 'Alamanda Shatika',
+                'title' => 'Independent Commissioner',
+                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => 'our-identity/01JHDVAPS9GA10GG0T4W51JZTV.png'
+                'image_path' => ''
             ],
             [
-                'name' => 'Sarah Chen',
-                'title' => 'Chief Investment Officer',
-                'content' => 'Former Goldman Sachs executive with expertise in emerging markets and tech investments.',
+                'name' => 'Ronald S. Simorangkir',
+                'title' => 'CEO',
+                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => 'our-identity/01JHDVDG5N4SF6YE7BDRGART96.png'
+                'image_path' => ''
             ],
             [
-                'name' => 'Michael Rodriguez',
-                'title' => 'Chief Technology Officer',
-                'content' => 'Tech veteran with background in fintech innovation and digital transformation.',
+                'name' => 'Wisnu Setiadi',
+                'title' => 'CIO',
+                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => 'our-identity/01JHDVDTNSDMDEMFF6SJXRT0GY.png'
+                'image_path' => ''
             ],
             [
-                'name' => 'Emily Wong',
-                'title' => 'Chief Financial Officer',
-                'content' => 'Certified accountant with extensive experience in corporate finance and M&A.',
+                'name' => 'Muhammad Salman',
+                'title' => 'VP Venture Fund',
+                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => 'our-identity/01JHDVEYKJ3MT45KDF9SWJ505R.png'
+                'image_path' => ''
             ],
             [
-                'name' => 'David Park',
-                'title' => 'Chief Operating Officer',
-                'content' => 'Operations expert specializing in scaling venture capital firms and startups.',
+                'name' => 'Muhammad Rusyad',
+                'title' => 'Venture Fund',
+                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => 'our-identity/01JHDVF6R815T4YYREM37XMFRQ.png'
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Oktavia Laras',
+                'title' => 'Venture Fund',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Faris Iman',
+                'title' => 'VP Investment',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Melvin Santoso',
+                'title' => 'Investment',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Aldwin Riyaz Fadlurrahman',
+                'title' => 'Investment',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Muhammad Ilyas',
+                'title' => 'Investment',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Rabbi Amrita Givatama',
+                'title' => 'EVP Value Creation',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Fleta Jovitasari',
+                'title' => 'Value Creation',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Safira Azalia',
+                'title' => 'Value Creation',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Natasya Monica Tumundo',
+                'title' => 'SVP Legal, Compliance & HR',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Auginta Narasti Putri',
+                'title' => '',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Dipo Prima',
+                'title' => '',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Luna Amirahdya',
+                'title' => '',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Ahmat Sahri',
+                'title' => 'VP Risk & Portfolio Management',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Sthira Aryapradipta S.',
+                'title' => 'Risk & Portfolio Management',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Thalia Shizuka',
+                'title' => 'Risk & Portfolio Management',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Mohammad Iqbal',
+                'title' => 'VP Finance & Treasury',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Camelia Magdalena',
+                'title' => 'Finance & Treasury',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Gracia Anglani',
+                'title' => 'Finance & Treasury',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Delvin Theodorus Hansell',
+                'title' => 'Finance & Treasury',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Ade Lydia',
+                'title' => 'Team Leader Corsec & Operations',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Yuda Arisitian',
+                'title' => 'IT & Operations',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Inggrid Anggi Purnama',
+                'title' => 'Procurement',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Raina Safa Radhyana Rahmat',
+                'title' => 'Social Media',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Nabila Fauzia',
+                'title' => 'Internal Audit',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Hira Laksamana',
+                'title' => 'EVP Special Project',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
+                'name' => 'Dinar Meikaratri',
+                'title' => 'Executive Assistant',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
             ]
         ];
 

@@ -41,8 +41,8 @@
         <!-- Certification Section -->
         <div class="footer-certification">
             <div class="social-links">
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/mandiricapital/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/mandiri-capital-indonesia-mci/posts/?feedView=all" class="social-icon"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </div>

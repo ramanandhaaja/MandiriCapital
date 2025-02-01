@@ -147,7 +147,7 @@
 
     {{-- Testimonial Section: Customer Success Stories --}}
     <div class="founder-carousell-section">
-        <h1 class="section-title">What they say </br> about us</h1>
+        <h1 class="section-title">Featured Investees</h1>
         <div class="founder-carousel-container">
             <div class="founder-carousel">
                 <div class="carousel-slides">

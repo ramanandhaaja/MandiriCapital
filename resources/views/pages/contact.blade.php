@@ -46,11 +46,11 @@
                         <div class="contact-info-group">
                             <h3 class="contact-info-title">VISIT OUR SOCIAL MEDIA</h3>
                             <div class="social-media-container">
-                                <a href="#" class="social-media-link" aria-label="Instagram">
+                                <a href="https://www.instagram.com/mandiricapital/" class="social-media-link" aria-label="Instagram">
                                     <img src="{{ asset('images/contact/instagram.png') }}" alt="Instagram"
                                         class="social-media-icon">
                                 </a>
-                                <a href="#" class="social-media-link" aria-label="LinkedIn">
+                                <a href="https://www.linkedin.com/company/mandiri-capital-indonesia-mci/posts/?feedView=all" class="social-media-link" aria-label="LinkedIn">
                                     <img src="{{ asset('images/contact/linkedin.png') }}" alt="LinkedIn"
                                         class="social-media-icon">
                                 </a>
