@@ -50,19 +50,6 @@
         </div>
 
 
-        <div class="headline-grid-two">
-            <div class="headline-card">
-                    <img class="headline-image" src="{{ asset('images/platform/livin.png') }}" alt="Livin' by Mandiri">
-                    </div>
-                    <div class="headline-card">
-                    <div>
-                        <h1>Livin’ by Mandiri</h1>
-                        <p>Mobile banking application designed to simplify financial transactions for retail customers with a wide range of features, including fund transfers, bill payments, QR code payments, and personal financial management tools, providing a seamless and secure digital banking experience.
-                        </p>
-                    </div>
-            </div>
-
-        </div>
 
         {{--
         <div class="headline-grid-two middle-animation">
@@ -324,20 +311,6 @@
                             <p>{{ $program->content_sub_frontpage }}</p>
                         </div>
 
-                        <div class="synergy-number">
-                            <div class="number-item">
-                                <div class="number-label">MOU PKS</div>
-                                <div class="number-value">00</div>
-                            </div>
-                            <div class="number-item">
-                                <div class="number-label">Synergy Volume</div>
-                                <div class="number-value">00</div>
-                            </div>
-                            <div class="number-item">
-                                <div class="number-label">Success Story</div>
-                                <div class="number-value">00</div>
-                            </div>
-                        </div>
 
                         <div class="synergy-register">
                             <a href="{{ route('platform.show', $program->slug) }}" class="register-btn btn-detail">View Detail</a>

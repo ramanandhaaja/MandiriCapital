@@ -218,7 +218,7 @@
             <div class="map-content">
                 <h2 class="map-title">
                     Visit Our<br>
-                    Head Quarter
+                    Office
                 </h2>
 
                 <div class="map-info">

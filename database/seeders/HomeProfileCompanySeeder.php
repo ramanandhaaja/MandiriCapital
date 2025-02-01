@@ -41,16 +41,6 @@ class HomeProfileCompanySeeder extends Seeder
                 'company_image_path' => 'hero-sections/01JHDB19YRFSN8Q0RNEBMEZSX6.png',
                 'is_active' => true
             ],
-            [
-                'company_name' => 'Halofina',
-                'name' => 'Adjie Wicaksana',
-                'title' => 'Founder & CEO',
-                'content' => 'Thanks to the funding from MCI, we’ve been able to expand our operations, build a world-class team, and bring our product to thousands of new customers.',
-                'published_date' => Carbon::now(),
-                'image_path' => 'hero-sections/01JHDB1Y8YFDE9WC862F63STZ2.png',
-                'company_image_path' => 'hero-sections/01JHDB1Y8ZPYCB7X7Q7N3G41ZE.png',
-                'is_active' => true
-            ]
         ];
 
         foreach ($profiles as $profile) {

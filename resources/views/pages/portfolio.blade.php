@@ -371,7 +371,7 @@
                                         </div>
                                         <div>
                                             <a href="#" onclick="openPortfolioModal(event)" class="text-decoration-none">
-                                                <span class="funding-link">Fund Report >></span>
+                                                <span class="funding-link">Fund Details >></span>
                                             </a>
                                         </div>
 

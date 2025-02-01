@@ -39,7 +39,7 @@
                 <div class="category-filters">
                     <a href="#" class="filter-link active">All</a>
                     <a href="#" class="filter-link">News</a>
-                    <a href="#" class="filter-link">Podcast</a>
+                    {{-- <a href="#" class="filter-link">Podcast</a> --}}
                     <a href="#" class="filter-link">Blog</a>
                 </div>
             </div>
