@@ -28,7 +28,7 @@ Route::get('/about/filter/{tag}', [PageController::class, 'aboutFilter'])->name(
 
 Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio');
 Route::get('/portfolio/{slug}', [PageController::class, 'portfolioshow'])->name('portfolio.show');
-Route::get('/portfolio/funding/{slug}', [PageController::class, 'portfolioFundingShow'])->name('portfolio.funding.show');
+Route::get('/portfolio/funding/{title}', [PageController::class, 'portfolioShowFunding'])->name('portfolio.show.funding');
 Route::get('/portfolio/filter/{tag}', [PageController::class, 'portfolioFilter'])->name('portfolio.filter');
 
 Route::get('/platform', [PageController::class, 'platform'])->name('platform');

@@ -41,7 +41,7 @@
 
 .author-avatar {
     width: auto;
-    height: 150px;
+    height: 120px;
     object-fit: cover;
 }
 
@@ -533,4 +533,8 @@
 
 .investors-image{
     height: 80px;
+}
+
+.investors-imagempf{
+    height: 200px;
 }

@@ -127,10 +127,20 @@ class PageController extends Controller
         return view('pages.portfolio-show', compact('portfolio'));
     }
 
-    public function portfolioFundingShow($id)
+    public function portfolioShowFunding($title)
     {
-        $portfolioFunding = PortfolioFundingArticleSub::where('id', $id)->firstOrFail();
-        return view('pages.portfolio-funding-show', compact('portfolioFunding'));
+        //$portfolioFunding = PortfolioFundingArticleSub::where('id', $id)->firstOrFail();
+        if ($title=="Balance Sheet Fund") {
+            return view('pages.portfolio-show-funding-mpf');
+        } elseif ($title=="Merah Putih Fund (MPF)") {
+            return view('pages.portfolio-show-funding-mpf');
+        }elseif ($title=="Indonesia Impact Fund (IIF)") {
+            return view('pages.portfolio-show-funding-iif');
+        }elseif ($title=="BTN Fund") {
+            return view('pages.portfolio-show-funding-btn');
+        }
+
+
     }
 
     public function platform()

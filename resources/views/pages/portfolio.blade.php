@@ -370,7 +370,7 @@
                                             {{ $subArticle->content }}
                                         </div>
                                         <div>
-                                            <a href="#" onclick="openPortfolioModal(event)" class="text-decoration-none">
+                                            <a href="{{ route('portfolio.show.funding', $subArticle->title) }}" {{-- onclick="openPortfolioModal(event)" --}} class="text-decoration-none">
                                                 <span class="funding-link">Fund Details >></span>
                                             </a>
                                         </div>
@@ -502,7 +502,7 @@
                             {{-- Submit Button --}}
                             <div class="form-group-modal button-group-modal">
                                 <button type="button"
-                                    onclick="window.location.href='{{ route('portfolio.funding.show', $subArticle->id) }}'"
+                                    onclick="window.location.href='{{ route('portfolio.show.funding', $subArticle->id) }}'"
                                     class="reset-button-modal">Login</button>or
                                 or
                                 <button type="submit" class="submit-button-modal">Request for Account</button>
