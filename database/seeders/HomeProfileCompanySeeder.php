@@ -22,26 +22,6 @@ class HomeProfileCompanySeeder extends Seeder
                 'is_active' => true
             ],
             [
-                'company_name' => 'GoTo',
-                'name' => 'Patrick Waluyo',
-                'title' => 'CEO',
-                'content' => 'Partnering with MCI gave us the financial backing and strategic guidance we needed to bring our vision to life. Their belief in our mission fueled our growth every step of the way.',
-                'published_date' => Carbon::now(),
-                'image_path' => 'hero-sections/01JHDB0M1HRE1AATMY581D73YW.png',
-                'company_image_path' => 'hero-sections/01JHDB0M1K01TKM4QTA42QR7Q1.png',
-                'is_active' => true
-            ],
-            [
-                'company_name' => 'Delos',
-                'name' => 'Guntur Mallarangeng',
-                'title' => 'Founder/ CEO',
-                'content' => 'The investment from MCI didn’t just provide funding; it also opened doors to valuable networks and insights that have been critical for our success.',
-                'published_date' => Carbon::now(),
-                'image_path' => 'hero-sections/01JHDB19YPTDVK8420JKMCE5V1.png',
-                'company_image_path' => 'hero-sections/01JHDB19YRFSN8Q0RNEBMEZSX6.png',
-                'is_active' => true
-            ],
-            [
                 'company_name' => 'Privy',
                 'name' => 'Marshall Pribadi',
                 'title' => 'Founder/ CEO',

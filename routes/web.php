@@ -33,7 +33,7 @@ Route::get('/portfolio/filter/{tag}', [PageController::class, 'portfolioFilter']
 
 Route::get('/platform', [PageController::class, 'platform'])->name('platform');
 Route::get('/platform/{slug}', [PageController::class, 'platformshow'])->name('platform.show');
-Route::get('/platform-apply/{slug}', [PageController::class, 'platformapply'])->name('platform.apply');
+Route::get('/platform-apply', [PageController::class, 'platformapply'])->name('platform.apply');
 Route::get('/platform/filter/{tag}', [PageController::class, 'platformFilter'])->name('platform.filter');
 
 Route::get('/media', [PageController::class, 'media'])->name('media');

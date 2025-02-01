@@ -313,7 +313,7 @@
 
                         <div class="synergy-register">
                             <a href="{{ route('platform.show', $program->slug) }}" class="register-btn btn-detail">View Detail</a>
-                            <a href="#" class="register-btn btn-register">Register Now</a>
+                            <a href="{{ route('platform.apply') }}" class="register-btn btn-register">Register Now</a>
                         </div>
                     </div>
                     @if ($index % 2 === 0)

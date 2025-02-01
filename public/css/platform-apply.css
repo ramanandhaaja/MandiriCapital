@@ -60,9 +60,50 @@
     font-family: var(--font-family);
 }
 
-
 .get-investement-section{
-    padding: 200px 0px 0px 0px;
+    padding: 120px 0px 0px 0px;
+}
+
+.apply-header {
+    height:60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    background: linear-gradient(to right,
+        rgb(0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.8) 50%,
+        rgba(255, 168, 37, 0.137) 100%
+    );
+    position: relative;
+}
+
+.apply-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background: radial-gradient(
+        circle at right,
+        rgba(239, 163, 47, 0.1) 0%,
+        rgba(0, 0, 0, 0) 70%
+    );
+    pointer-events: none;
+}
+
+.apply-title {
+    font-family: var(--font-family);
+    font-size: 2rem;
+    color: var(--color-white);
+    margin-left: 0px;
+    font-weight: 500;
+}
+
+.apply-logo {
+    height: 40px;
+    width: auto;
 }
 
 /* Masonry Grid Layout */
@@ -105,9 +146,13 @@
     gap: 16px;
     padding: 60px 20px;
     max-width: 1600px;
-    margin: 120px auto 0px auto;
+    margin: 0px auto 0px auto;
     opacity: 1;
     transition: opacity 0.3s ease;
+
+}
+
+.masonry-grid-contact-section.grey-color{
     background-color: #18181B;
 }
 
@@ -131,7 +176,7 @@
     font-size: 28px;
     font-weight: 500;
     text-align: left;
-    margin-left: 80px;
+    margin-left: 40px;
     margin-right: 90px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -304,8 +349,6 @@
     justify-content: center;
 }
 
-
-
 .card-stats {
     position: absolute;
     bottom: 20px;
@@ -457,12 +500,21 @@
         grid-row: span 1;
     }
 
-
-
     .grid-headline-title-card-sub {
         padding: 32px;
     }
 
+    .apply-header {
+        padding: 1.5rem 2rem;
+    }
+
+    .apply-title {
+        font-size: 1.5rem;
+    }
+
+    .apply-logo {
+        height: 30px;
+    }
 
     .card-title {
         font-size: 18px;
@@ -519,7 +571,6 @@
         padding-bottom: 12px;
     }
 }
-
 
 /* Contact Form */
 .contact-form-section {
@@ -579,8 +630,6 @@
 .form-textarea::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
-
-
 
 /* Upload Section Styles
    ========================================================================== */
@@ -718,14 +767,14 @@
 
 
 .reset-button {
-    height: 32px;
+    height: 48px;
     width: 140px;
     font-family: var(--font-family);
     font-size: 12px;
     color: #EFA32F;
     background: transparent;
     border: 1px solid #EFA32F;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -737,15 +786,19 @@
     background: rgba(240, 165, 0, 0.1);
 }
 
+.end-section{
+    margin-bottom: -60px;
+}
+
 .submit-button {
-    height: 32px;
+    height: 48px;
     width: 140px;
     font-family: var(--font-family);
     font-size: 12px;
     color: white;
-    background: rgba(255, 255, 255, 0.2);
+    background: #EFA32F;
     border: none;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: flex;
@@ -762,5 +815,5 @@
     gap: 16px;
     justify-content: flex-end;
     margin-top: 24px;
-    margin-right: -30px;
+    margin-right: -280px;
 }

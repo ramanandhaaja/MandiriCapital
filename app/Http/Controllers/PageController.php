@@ -148,15 +148,20 @@ class PageController extends Controller
 
     public function platformshow($slug)
     {
-        return view('pages.platform-show');
+        if ($slug=="xponent") {
+            return view('pages.platform-show-xponent');
+        } elseif ($slug=="yaxis") {
+            return view('pages.platform-show-yaxis');
+        }elseif ($slug=="zenith") {
+            return view('pages.platform-show-zenith');
+        }
     }
 
 
 
-    public function platformapply($slug)
+    public function platformapply()
     {
-        $post = BlogPost::where('slug', $slug)->firstOrFail();
-        return view('pages.platform-apply', compact('post'));
+        return view('pages.platform-apply');
     }
 
 
