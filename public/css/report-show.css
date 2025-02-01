@@ -364,7 +364,7 @@
 
 .article-title{
     position: absolute;
-    bottom:120px;
+    top:300px;
     width: 300px;
     left: 80px;
     z-index: 10;
@@ -440,6 +440,12 @@
 
 .website-link:hover {
     opacity: 0.8;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 /* Share Section */

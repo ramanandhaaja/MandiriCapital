@@ -825,6 +825,7 @@ html, body {
     font-size: 14px;
     color: #A1A1AA;
     line-height: 1.6;
+    width: 400px;
 }
 
 .synergy-number {
@@ -1134,6 +1135,17 @@ html, body {
     background-color: #18181B ;
 }
 
+.masonry-grid-investment-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 60px 20px 0 20px;
+    max-width: 1600px;
+    margin: 60px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
 .grid-headline-title-card{
     grid-column: span 1;
 }
@@ -1268,6 +1280,7 @@ html, body {
     margin: 60px 20px 0;
     opacity: 1;
     transition: opacity 0.3s ease;
+    background-color: #18181B ;
 }
 
 .potential-title-card {

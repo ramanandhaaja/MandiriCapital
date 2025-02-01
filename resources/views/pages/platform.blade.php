@@ -231,7 +231,7 @@
             ]);
         @endphp
 
-            <div class="masonry-grid-investment-section-grey">
+            <div class="masonry-grid-investment-section">
                 <div class="grid-headline-title-card">
                     <h1 class="grid-headline-title">What we focus on?</h1>
                 </div>
@@ -310,7 +310,6 @@
                         <div class="synergy-info">
                             <p>{{ $program->content_sub_frontpage }}</p>
                         </div>
-
 
                         <div class="synergy-register">
                             <a href="{{ route('platform.show', $program->slug) }}" class="register-btn btn-detail">View Detail</a>
@@ -472,7 +471,7 @@
     {{-- Newsletter Section --}}
     <div class="newsletter-section">
         <div class="newsletter-container">
-            <h2 class="newsletter-title">JOIN US</h2>
+            <h2 class="newsletter-title">Join Us</h2>
 
             <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"

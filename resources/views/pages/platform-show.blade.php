@@ -163,7 +163,7 @@
                             </div>
                         @endif
                         <h2 class="card-title-bottom">127 </h2>
-                        <p class="card-description-bottom">Business Units Mandiri  and Subsidiaries Work with Statups </p>
+                        <p class="card-description-bottom">Business Units Mandiri and Subsidiaries Work with Statups </p>
                     </div>
                 </div>
                 <div class="grid-headline-title-card-sub-bottom">

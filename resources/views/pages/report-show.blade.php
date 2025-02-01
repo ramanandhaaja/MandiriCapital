@@ -16,11 +16,11 @@
                 <div class="article-meta">
                     <div class="meta-info">
                         <span
-                            class="article-date">{{ \Carbon\Carbon::parse($publication->published_date)->format('F Y') }}</span>
+                            class="article-date">{{ \Carbon\Carbon::parse($publication->published_date)->format('j F Y') }}</span>
                         <div class="author-info">
                             <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar">
                             <div class="author-details">
-                                <span class="author-name">Mandiri Admin</span>
+                                <span class="author-name">Mandiri Admin - </span>
                                 <span class="author-role">Author</span>
                             </div>
                         </div>
