@@ -27,8 +27,8 @@ class HomeProfileCompanySeeder extends Seeder
                 'title' => 'Founder/ CEO',
                 'content' => 'PrivyID is a digital signature provider founded in 2016. In less than a year, Privyid quickly turned into a major player in the industry by owning the largest company in the telco industry.',
                 'published_date' => Carbon::now(),
-                'image_path' => '',
-                'company_image_path' => '',
+                'image_path' => 'hero-sections/01JK1PF6NVSW2389XYA60PQDVT.png',
+                'company_image_path' => 'hero-sections/01JK1PF6NSJ04PD4AHZRCQX49K.png',
                 'is_active' => true
             ],
         ];
