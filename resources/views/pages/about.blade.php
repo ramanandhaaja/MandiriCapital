@@ -105,6 +105,16 @@
                 @endforeach
             </div>
         </div>
+
+        <div class="newsletter-section">
+            <div class="newsletter-container">
+                <h2 class="newsletter-title">Need Help? Contact Us!</h2>
+                <a href="{{ route('contact') }}" class="newsletter-link">
+                    <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect"
+                        class="button-image center-image-newsletter">
+                </a>
+            </div>
+        </div>
     </div>
 
     {{-- Mandiri Section --}}
@@ -217,16 +227,16 @@
         <div class="team-image-containter">
             <img class="team-image-large" src="{{ asset('images/about/teamlarge.png') }}" alt="Team Photo">
         </div>
-    </div>
 
-    {{-- Newsletter Section --}}
-    <div class="newsletter-section">
-        <div class="newsletter-container">
-            <h2 class="newsletter-title">Stay Connected</h2>
-            <a href="{{ route('contact') }}" class="newsletter-link">
-                <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect"
-                    class="button-image center-image-newsletter">
-            </a>
+        {{-- Newsletter Section --}}
+        <div class="newsletter-section">
+            <div class="newsletter-container">
+                <h2 class="newsletter-title">TALK TO US</h2>
+                <a href="{{ route('contact') }}" class="newsletter-link">
+                    <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect"
+                        class="button-image center-image-newsletter">
+                </a>
+            </div>
         </div>
     </div>
 @endsection

@@ -110,8 +110,7 @@
                 <span class="share-label">Share to:</span>
                 <div class="social-icons">
                     <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>

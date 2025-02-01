@@ -21,7 +21,7 @@
                 <div class="category-filters">
                     <a href="#" class="filter-link active" data-category="get_investment">Get Investment</a>
                     <a href="#" class="filter-link" data-category="portfolio">Portfolio</a>
-                    <a href="#" class="filter-link" data-category="funding">Funding</a>
+                    <a href="#" class="filter-link" data-category="funding">Funds</a>
                 </div>
             </div>
         </div>
@@ -323,7 +323,7 @@
         {{-- Newsletter Section --}}
         <div class="newsletter-section">
             <div class="newsletter-container">
-                <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
+                <h2 class="newsletter-title">CONTACT OUR TEAM</h2>
                 <a href="#">
                     <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
                         class="button-image center-image-newsletter">

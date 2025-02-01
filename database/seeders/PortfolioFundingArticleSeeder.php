@@ -23,7 +23,7 @@ class PortfolioFundingArticleSeeder extends Seeder
 
         // Second Article - Here's how we'll help
         $secondArticleId = DB::table('portfolio_funding_articles')->insertGetId([
-            'title' => "Balance Sheet",
+            'title' => "Venture Fund",
             'content' => '',
             'is_active' => true,
             'created_at' => now(),
@@ -35,7 +35,7 @@ class PortfolioFundingArticleSeeder extends Seeder
             [
                 'article_id' => $firstArticleId,
                 'title' => "Balance Sheet Fund",
-                'content' => 'The biggest  conglomerate with various subsidiaries. Mandiri’s total asset amount to Rp. 2.258 Tn a of Q1 2024, Mandiri has 42+ Mn retail customers and 200k+ SMEs, 137 Branch offices, 12k+ ATM, 7 overseas branch offices which includes Singapore, Hong Kong, Shanghai, Cayman Islands, Dili, London, Malaysia',
+                'content' => "The biggest conglomerate with various subsidiaries. Mandiri’s total asset amount to Rp. 2.258 Tn a of Q1 2024, Mandiri has 42+ Mn retail customers and 200k+ SMEs, 137 Branch offices, 12k+ ATM, 7 overseas branch offices which includes Singapore, Hong Kong, Shanghai, Cayman Islands, Dili, London, Malaysia",
                 'is_large' => false,
                 'image_path' => 'portfolios/01JHFQD9T5Z8WB3Q1JT81DRPHK.png',
                 'order' => 1,

@@ -24,7 +24,7 @@ class HomeArticleSeeder extends Seeder
                 'category' => 'Counter',
                 'title' => 'Synergy Value',
                 'slug' => 'synergy-value',
-                'content' => '25',
+                'content' => 'IDR2,324Tn',
                 'published_date' => Carbon::now()->subDays(15),
                 'image_path' => ''
             ],

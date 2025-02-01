@@ -104,18 +104,6 @@ class PortfolioSeeder extends Seeder
                 'portfolio_category_id' => $categoryIds[2],
             ],
             [
-                'name' => 'Halofina',
-                'description' => 'Halofina adalah aplikasi personal financial planning assistant (robo-advisor) berbasis AI yang bisa membantu anda dalam memanajemen keuangan dan membangun strategi investment (investment planning).',
-                'stage' => 'Early Stage',
-                'website_url' => 'https://sustainablefoods.co.id',
-                'image_path' => 'portfolios/01JHFBP7R0BKCG7EESH016FZ71.png',
-                'icon' => 'portfolios/01JHFEKHVDN3THP2QSCF2Y97CG.png',
-                'ceo_name' => 'Jessica Tanoto',
-                'year_invested' => '2023',
-                'sector' => 'Food Technology',
-                'portfolio_category_id' => $categoryIds[2],
-            ],
-            [
                 'name' => 'Privy',
                 'description' => 'PrivyID adalah penyedia tanda tangan digital yang didirikan pada tahun 2016. Dalam waktu kurang dari setahun, Privyid dengan cepat berubah menjadi pemain utama di industri ini dengan memiliki perusahaan terbesar di industri telco, multi finance, e-commerce dan pusat perbelanjaan telah menggunakan jasa kami.Penyelenggara Sertifikat Elektronik.',
                 'stage' => 'Series A',

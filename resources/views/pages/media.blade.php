@@ -107,7 +107,10 @@
     {{-- Newsletter Section --}}
     <div class="newsletter-section">
         <div class="newsletter-container">
-            <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
+            <h2 class="newsletter-title" id="all-title">Read, Watch, Listen -  Anytime, Anywhere</h2>
+            <h2 class="newsletter-title" id="news-title" style="display: none;">From Ideas to Insight - Know More</h2>
+            <h2 class="newsletter-title" id="podcast-title" style="display: none;">Catch Up with Our Latest Episodes</h2>
+            <h2 class="newsletter-title" id="blog-title" style="display: none;">Stay Ahead With Us</h2>
             <a href="#">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}"
                      alt="Lets Connect"
@@ -141,6 +144,17 @@
                 const filter = this.textContent.toLowerCase();
                 currentFilter = filter;
 
+                // Update active state of filter links
+                elements.filterLinks.forEach(link => {
+                    link.classList.toggle('active', link.textContent.toLowerCase() === filter);
+                });
+
+                // Update newsletter titles visibility
+                document.getElementById('all-title').style.display = filter === 'all' ? 'block' : 'none';
+                document.getElementById('news-title').style.display = filter === 'news' ? 'block' : 'none';
+                document.getElementById('podcast-title').style.display = filter === 'podcast' ? 'block' : 'none';
+                document.getElementById('blog-title').style.display = filter === 'blog' ? 'block' : 'none';
+
                 // Update headers visibility
                 elements.cards.forEach(card => {
                     // Remove all visibility classes first
@@ -166,19 +180,12 @@
                     }
                 });
 
-                updateActiveFilter(this);
                 await fetchAndUpdatePosts(filter);
 
                 // Show/hide "Business News Week" based on filter
                 document.querySelectorAll('.business-news-week').forEach(element => {
                     element.style.display = filter === 'news' ? 'block' : 'none';
                 });
-            }
-
-            // Update active filter UI
-            function updateActiveFilter(clickedLink) {
-                elements.filterLinks.forEach(l => l.classList.remove('active'));
-                clickedLink.classList.add('active');
             }
 
             // Fetch posts based on filter

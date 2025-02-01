@@ -50,23 +50,38 @@
         </div>
 
 
-        <div class="headline-grid-two middle-animation">
-
-                <div class="headline-card">
+        <div class="headline-grid-two">
+            <div class="headline-card">
                     <img class="headline-image" src="{{ asset('images/platform/livin.png') }}" alt="Livin' by Mandiri">
-                    <h1>Livin’ by Mandiri</h1>
-                    <p>Mobile banking application designed to simplify financial transactions for retail customers with a wide range of features, including fund transfers, bill payments, QR code payments, and personal financial management tools, providing a seamless and secure digital banking experience.
-                    </p>
-                </div>
-                <div class="headline-card left-border">
-                    <img class="headline-image" src="{{ asset('images/platform/kopra.png') }}" alt="Kopra by Mandiri">
-                    <h1>Kopra by Mandiri</h1>
-                    <p>Bank Mandiri's digital platform tailored for corporate clients. It integrates comprehensive solutions for cash management, trade finance, and business operations, enabling companies to optimize their financial processes efficiently and securely.
-                    </p>
-                </div>
+                    </div>
+                    <div class="headline-card">
+                    <div>
+                        <h1>Livin’ by Mandiri</h1>
+                        <p>Mobile banking application designed to simplify financial transactions for retail customers with a wide range of features, including fund transfers, bill payments, QR code payments, and personal financial management tools, providing a seamless and secure digital banking experience.
+                        </p>
+                    </div>
+            </div>
 
         </div>
 
+        {{--
+        <div class="headline-grid-two middle-animation">
+
+            <div class="headline-card">
+                <img class="headline-image" src="{{ asset('images/platform/livin.png') }}" alt="Livin' by Mandiri">
+                <h1>Livin’ by Mandiri</h1>
+                <p>Mobile banking application designed to simplify financial transactions for retail customers with a wide range of features, including fund transfers, bill payments, QR code payments, and personal financial management tools, providing a seamless and secure digital banking experience.
+                </p>
+            </div>
+            <div class="headline-card left-border">
+                <img class="headline-image" src="{{ asset('images/platform/kopra.png') }}" alt="Kopra by Mandiri">
+                <h1>Kopra by Mandiri</h1>
+                <p>Bank Mandiri's digital platform tailored for corporate clients. It integrates comprehensive solutions for cash management, trade finance, and business operations, enabling companies to optimize their financial processes efficiently and securely.
+                </p>
+            </div>
+
+        </div>
+         --}}
         {{--
         <div class="headline-grid-four middle-animation">
 
@@ -343,7 +358,7 @@
     {{-- Contact Form Section --}}
     <div class="masonry-grid-contact-section-grey">
         <div class="grid-headline-title-card">
-            <h1 class="grid-headline-title-contact">Get Investment!</h1>
+            <h1 class="grid-headline-title-contact">Synergize with Us</h1>
             <h1 class="grid-headline-subtitle-contact">
             </h1>
         </div>
@@ -499,7 +514,7 @@
     {{-- Newsletter Section --}}
     <div class="newsletter-section">
         <div class="newsletter-container">
-            <h2 class="newsletter-title">Got Questionss? Let Us Know!</h2>
+            <h2 class="newsletter-title">JOIN US</h2>
 
             <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
