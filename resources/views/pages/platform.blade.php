@@ -451,47 +451,32 @@
                         <div class="sector-item">
                             <input type="radio" id="agriculture" name="business_sector" value="Agriculture & Food"
                                 class="sector-radio" required>
-                            <label for="agriculture" class="sector-label">Agriculture & Food</label>
+                            <label for="agriculture" class="sector-label">Embedded Finance</label>
                         </div>
                         <div class="sector-item">
                             <input type="radio" id="energy" name="business_sector" value="Energy & Resources"
                                 class="sector-radio">
-                            <label for="energy" class="sector-label">Energy & Resources</label>
+                            <label for="energy" class="sector-label">Health & Wellness</label>
                         </div>
                         <div class="sector-item">
                             <input type="radio" id="healthcare" name="business_sector"
                                 value="Healthcare & Pharmaceuticals" class="sector-radio">
-                            <label for="healthcare" class="sector-label">Healthcare & Pharmaceuticals</label>
+                            <label for="healthcare" class="sector-label">Wealth Management</label>
                         </div>
                         <div class="sector-item">
                             <input type="radio" id="education" name="business_sector"
                                 value="Education & employment" class="sector-radio">
-                            <label for="education" class="sector-label">Education & employment</label>
+                            <label for="education" class="sector-label">Tech Enabler</label>
                         </div>
                         <div class="sector-item">
                             <input type="radio" id="automotive" name="business_sector"
                                 value="Automotive & Transportation" class="sector-radio">
-                            <label for="automotive" class="sector-label">Automotive & Transportation</label>
+                            <label for="automotive" class="sector-label">Value Chain Enabler</label>
                         </div>
                         <div class="sector-item">
                             <input type="radio" id="banking" name="business_sector"
                                 value="Banking & Financial Service" class="sector-radio">
-                            <label for="banking" class="sector-label">Banking & Financial Service</label>
-                        </div>
-                        <div class="sector-item">
-                            <input type="radio" id="consulting" name="business_sector"
-                                value="Consulting & Professional Services" class="sector-radio">
-                            <label for="consulting" class="sector-label">Consulting & Professional Services</label>
-                        </div>
-                        <div class="sector-item">
-                            <input type="radio" id="media" name="business_sector"
-                                value="Media & Entertainment" class="sector-radio">
-                            <label for="media" class="sector-label">Media & Entertainment</label>
-                        </div>
-                        <div class="sector-item">
-                            <input type="radio" id="retail" name="business_sector" value="Retail & Wholesale"
-                                class="sector-radio">
-                            <label for="retail" class="sector-label">Retail & Wholesale</label>
+                            <label for="banking" class="sector-label">Property Tech & Asset Management</label>
                         </div>
                         <div class="sector-item">
                             <input type="radio" id="other" name="business_sector" value="Other"
