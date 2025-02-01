@@ -107,6 +107,7 @@
 .center-image {
     position: relative;
     padding-right: 10px;
+    height: 48px;
 }
 
 .right-image {
@@ -117,7 +118,6 @@
     width: 560px;
     padding-left: 60px;
 }
-
 
 .get-investement-section{
     padding: 0px;

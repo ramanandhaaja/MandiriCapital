@@ -218,8 +218,10 @@
             @foreach ($teamMembers as $member)
                 <div class="team-card">
                     <img class="background-image" src="{{ '/storage/' . $member->image_path }}" alt="{{ $member->name }}">
-                    <span class="team-name">{{ $member->name }}</span>
-                    <span class="team-title">{{ $member->title }}</span>
+                    <div class="card-profile-photo">
+                        <span class="team-name">{{ $member->name }}</span>
+                        <span class="team-title">{{ $member->title }}</span>
+                    </div>
                 </div>
             @endforeach
         </div>

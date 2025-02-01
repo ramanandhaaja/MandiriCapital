@@ -7,12 +7,9 @@
 @section('container')
     <div class="hero-section">
         <div class="hero-content">
-            <div class="center-text">Apply Now for Zenith Startup Accelerator</div>
-            <div class="center-text-subtitle">Powered by Mandiri Capital Indonesia, Zenith is a startup accelerator program
-                that aims
-                to empower ventures and innovations from various business sector in Indonesia</div>
+            <div class="center-text">Zenith <br/>Startup Accelerator</div>
             <div class="image-container">
-                <img src="{{ asset('images/home/forstartup.png') }}" alt="For Startup" class="button-image center-image"
+                <img src="{{ asset('images/platform/forstartup.png') }}" alt="For Startup" class="button-image center-image"
                     onclick="openPitchModal()">
             </div>
         </div>
