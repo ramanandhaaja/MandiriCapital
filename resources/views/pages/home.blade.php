@@ -27,11 +27,12 @@
 
     {{-- Headline Section: Key metrics display --}}
     <div class="headline-section-two">
-        <div class="headline-grid">
+        <div class="headline-grid-two">
             @foreach($articles as $index => $article)
-                <div class="headline-card-two {{ $index === 1 ? 'middle-border' : '' }}">
+                <div class="headline-card-two {{ $index === 1 ? 'left-border' : '' }}">
                     <h1>{{ $article->title }}</h1>
                     <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article->content }}">0</div>
+                    <p class="subtitle-counter">{{ $article->slug }}</p>
                 </div>
             @endforeach
         </div>

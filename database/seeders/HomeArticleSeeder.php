@@ -22,18 +22,10 @@ class HomeArticleSeeder extends Seeder
             ],
             [
                 'category' => 'Counter',
-                'title' => 'Synergy Value',
-                'slug' => 'synergy-value',
+                'title' => 'Bank Mandiri Total Asset',
+                'slug' => '*As of September 2024',
                 'content' => 'IDR2,324Tn',
                 'published_date' => Carbon::now()->subDays(15),
-                'image_path' => ''
-            ],
-            [
-                'category' => 'Counter',
-                'title' => 'Startup In Our Ecosystem',
-                'slug' => 'startup-in-our-ecosystem',
-                'content' => '13',
-                'published_date' => Carbon::now()->subDays(45),
                 'image_path' => ''
             ]
         ];
