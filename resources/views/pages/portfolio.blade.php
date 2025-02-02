@@ -387,7 +387,7 @@
                                         <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
                                             {{ $subArticle->content }}
                                         </div>
-                                        <div style="visibility: hidden;">
+                                        <div>
                                             <a href="{{ route('portfolio.show.funding', $subArticle->title) }}" {{-- onclick="openPortfolioModal(event)" --}} class="text-decoration-none">
                                                 <span class="funding-link">Fund Details >></span>
                                             </a>

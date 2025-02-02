@@ -66,7 +66,8 @@
             <div class="content-text">
                 <div class="article-content">
                     <div class="company-details">
-                        <img src="{{ asset('images/portfolio/investorsMPF.png') }}" alt="Investors" class="investors-imagempf">
+                        <img src="{{ asset('images/portfolio/investorsMPFatas.png') }}" alt="Investors" class="investors-imagempf">
+                        <img src="{{ asset('images/portfolio/investorsMPFbawah.png') }}" alt="Investors" class="investors-imagempf">
 
                     </div>
                 </div>

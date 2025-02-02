@@ -53,8 +53,7 @@
                 <div class="article-content">
                     <div class="company-details">
                         <img src="{{ asset('images/portfolio/investorsBTN.png') }}" alt="Investors" class="investors-image">
-
-                    </div>
+                        </div>
                 </div>
             </div>
 
