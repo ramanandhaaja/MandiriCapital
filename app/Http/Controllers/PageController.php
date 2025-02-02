@@ -58,9 +58,28 @@ class PageController extends Controller
 
         $ecosystemList = AboutMandiriEcosystem::get();
 
-        $teamMembers = AboutTeam::orderBy('job_group')
-            ->get()
-            ->groupBy('job_group');
+        // Define the order of job groups
+        $jobGroupOrder = [
+            'Board of Commissioners',
+            'Board of Directors',
+            'Venture Fund',
+            'Investment',
+            'Value Creation',
+            'Legal, Compliance & HR',
+            'Risk & Portfolio Management',
+            'Finance & Treasury',
+            'Corsec & Operations',
+            'Internal Audit',
+            'Special Project',
+            'Executive Assistant to BOD'
+        ];
+
+        // Get team members and sort them by the custom order
+        $teamMembers = AboutTeam::get()
+            ->groupBy('job_group')
+            ->sortBy(function ($members, $key) use ($jobGroupOrder) {
+                return array_search($key, $jobGroupOrder);
+            });
 
         return view('pages.about', compact('hero', 'ecosystemList', 'prioritySectors', 'teamMembers'));
     }
