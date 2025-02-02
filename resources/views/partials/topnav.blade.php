@@ -27,16 +27,23 @@
                 <a href="{{ route('contact') }}" class="nav-item {{ Route::currentRouteName() == 'contact' ? 'active' : '' }}">CONTACT US</a>
             </div>
 
+
             <div class="nav-right">
                 <button class="search-icon">
                     <i class="fas fa-search"></i>
                 </button>
+
                 <div class="language-selector">
+                      {{--
                     <a href="#" class="lang-link active">EN</a>
+
                     <span class="lang-separator">|</span>
                     <a href="#" class="lang-link">ID</a>
+
+                 --}}
                 </div>
             </div>
+
         </div>
     </nav>
 </header>

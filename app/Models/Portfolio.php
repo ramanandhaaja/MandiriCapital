@@ -22,6 +22,10 @@ class Portfolio extends Model
         'ceo_name',
         'year_invested',
         'sector',
+        'portfolio_category_id',
+        'head_office',
+        'instagram_url',
+        'linkedin_url'
     ];
 
     public function category()

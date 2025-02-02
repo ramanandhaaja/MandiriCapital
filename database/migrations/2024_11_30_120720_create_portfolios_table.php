@@ -23,14 +23,17 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->foreignId('portfolio_category_id')->constrained()->onDelete('cascade');
-            $table->text('description');
-            $table->string('stage');
-            $table->string('website_url');
-            $table->string('image_path');
-            $table->string('icon');
-            $table->string('ceo_name');
-            $table->string('year_invested');
-            $table->string('sector');
+            $table->text('description')->nullable();
+            $table->string('stage')->nullable();
+            $table->string('website_url')->nullable();
+            $table->string('image_path')->nullable();
+            $table->string('icon')->nullable();
+            $table->string('ceo_name')->nullable();
+            $table->string('year_invested')->nullable();
+            $table->string('sector')->nullable();
+            $table->string('head_office')->nullable();
+            $table->string('instagram_url')->nullable();
+            $table->string('linkedin_url')->nullable();
             $table->timestamps();
         });
     }
