@@ -66,17 +66,26 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Write here..." required>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
                             <label for="company_name">Company Name</label>
                             <input type="text" id="company_name" name="company_name" placeholder="Write here..."
                                 required>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Write here..." required>
+                        <div class="form-group">
+                            <label for="position">Posisi/Jabatan    </label>
+                            <input type="text" id="position" name="position" placeholder="Write here..."
+                                required>
+                        </div>
                     </div>
-
                     <div class="form-actions">
                         <button type="button" class="btn-cancel">Cancel</button>
                         <button type="submit" class="btn-download" onclick="alert('Thank you for your interest, we will contact you very soon!')"
