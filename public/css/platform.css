@@ -637,7 +637,6 @@ html, body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1600px;
     margin: 20px 0 40px 0;
     padding: 0 20px;
 }
