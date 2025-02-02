@@ -53,7 +53,7 @@
     {{-- Publications Grid --}}
     <div class="masonry-grid" data-route-pattern="{{ route('report.show', ':slug') }}">
         @foreach($publications as $index => $publication)
-            @if($index < 6)
+            @if($index < 10)
                 <div class="card" style="background-image: url('{{ $publication->image_path ? Storage::url($publication->image_path) : asset("images/media/image" . ($index + 1) . ".png") }}');">
                     <a href="{{ route('report.show', $publication->slug) }}" class="text-decoration-none">
                         <span class="category">{{ $publication->category->name ?? '' }}</span>
