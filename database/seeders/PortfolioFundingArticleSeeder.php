@@ -30,6 +30,9 @@ class PortfolioFundingArticleSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+
+
+
         // Sub-articles for first article
         DB::table('portfolio_funding_articles_sub')->insert([
             [
@@ -40,6 +43,9 @@ class PortfolioFundingArticleSeeder extends Seeder
                 'is_large' => false,
                 'image_path' => 'portfolios/01JHFQD9T5Z8WB3Q1JT81DRPHK.png',
                 'order' => 1,
+                'stage' => 'Growth to Late Stage',
+                'geography' => 'Indonesia',
+                'ticketsize' => '20-25 Mn USD',
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -51,6 +57,9 @@ class PortfolioFundingArticleSeeder extends Seeder
                 'is_large' => false,
                 'image_path' => 'portfolios/01JHFQEB1RBGJ9EY8NK5M5A02K.png',
                 'order' => 2,
+                'stage' => 'Growth to Late Stage',
+                'geography' => 'Indonesia',
+                'ticketsize' => '20-25 Mn USD',
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -62,6 +71,9 @@ class PortfolioFundingArticleSeeder extends Seeder
                 'is_large' => false,
                 'image_path' => 'portfolios/01JHFQEB1PV4K9YBV43PRECCA4.png',
                 'order' => 3,
+                'stage' => 'Early Stage',
+                'geography' => 'Indonesia',
+                'ticketsize' => '500k USD',
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -73,6 +85,9 @@ class PortfolioFundingArticleSeeder extends Seeder
                 'is_large' => false,
                 'image_path' => 'portfolios/01JHFQEB1QEJPRMP4HJACSFC5W.png',
                 'order' => 4,
+                'stage' => 'Early to Growth Stage',
+                'geography' => 'Indonesia and Southeast Asia',
+                'ticketsize' => '1-2 Mn USD',
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),

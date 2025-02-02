@@ -27,6 +27,9 @@ return new class extends Migration
             $table->string('image_path')->nullable(); // For storing icon reference
             $table->boolean('is_active')->default(true);
             $table->integer('order')->default(0); // To maintain display order
+            $table->string('stage');
+            $table->string('geography');
+            $table->string('ticketsize');
             $table->timestamps();
         });
 

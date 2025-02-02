@@ -387,13 +387,15 @@
                                         <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
                                             {{ $subArticle->content }}
                                         </div>
-                                        <div>
-                                            <a href="{{ route('portfolio.show.funding', $subArticle->title) }}" {{-- onclick="openPortfolioModal(event)" --}} class="text-decoration-none">
+                                        <div @if($subArticle->title == 'Balance Sheet Fund') style="visibility: hidden;" @endif>
+                                            <a href="{{ route('portfolio.show.funding', $subArticle->title) }}" class="text-decoration-none">
                                                 <span class="funding-link">Fund Details >></span>
                                             </a>
                                         </div>
 
                                         {{-- Hover card that follows mouse --}}
+                                        <div @if($subArticle->title == 'Balance Sheet Fund') style="visibility: hidden;" @endif>
+
                                         <div class="card-funding-hover">
                                             <div class="hover-content">
                                                 <div class="">
@@ -405,19 +407,20 @@
                                                 <div class="criteria-grid">
                                                     <div class="criteria-item">
                                                         <h3>Stage</h3>
-                                                        <p>Growth to Late Stage</p>
+                                                        <p>{{ $subArticle->stage }}</p>
                                                     </div>
                                                     <div class="criteria-item">
                                                         <h3>Geography</h3>
-                                                        <p>Indonesia</p>
+                                                        <p>{{ $subArticle->geography }}</p>
                                                     </div>
                                                     <div class="criteria-item">
                                                         <h3>Ticket Size</h3>
-                                                        <p>$20-25Mn</p>
+                                                        <p>{{ $subArticle->ticketsize }}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                     </div>
                                 @endforeach
                             </div>

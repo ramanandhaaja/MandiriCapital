@@ -21,6 +21,9 @@ class PortfolioFundingArticleSub extends Model
         'image_path',
         'is_active',
         'order',
+        'stage',
+        'geography',
+        'ticketsize',
     ];
 
     /**
