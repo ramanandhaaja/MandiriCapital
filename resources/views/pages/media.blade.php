@@ -114,7 +114,7 @@
             <h2 class="newsletter-title" id="news-title" style="display: none;">From Ideas to Insight - Know More</h2>
             <h2 class="newsletter-title" id="podcast-title" style="display: none;">Catch Up with Our Latest Episodes</h2>
             <h2 class="newsletter-title" id="blog-title" style="display: none;">Stay Ahead With Us</h2>
-            <a href="#">
+            <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}"
                      alt="Lets Connect"
                      class="button-image center-image-newsletter">
