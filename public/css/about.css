@@ -1198,10 +1198,10 @@ html, body {
 .team-card .background-image {
     position: absolute;
     bottom: 120px;
-    top: -200px;
+    top: 0px;
     left: 0;
     width: 450px;
-    height: calc(100% + 400px);
+    height: calc(100%);
     object-fit: cover;
     background-size: cover;
     background-position: top;
