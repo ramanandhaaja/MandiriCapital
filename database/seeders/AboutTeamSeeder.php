@@ -22,7 +22,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Ronald S. Simorangkir',
                 'job_group' => 'Board of Directors',
-                'title' => 'CEO',
+                'title' => 'Chief Executive Officer',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SB2Q865FEAM6A5RCKCKHC.png'
@@ -30,7 +30,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Wisnu Setiadi',
                 'job_group' => 'Board of Directors',
-                'title' => 'CIO',
+                'title' => 'Chief Financial Officer',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SBCWG26E4XSJPPHTFPNTX.png'
@@ -116,6 +116,14 @@ class AboutTeamSeeder extends Seeder
                 'image_path' => 'our-identity/01JK2SJ4WYYRNW8Y4KFG1E91TR.png'
             ],
             [
+                'name' => 'Nathania Orlana',
+                'job_group' => 'Value Creation',
+                'title' => 'Value Creation',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
+            ],
+            [
                 'name' => 'Natasya Monica Tumundo',
                 'job_group' => 'Legal, Compliance & HR',
                 'title' => 'SVP Legal, Compliance & HR',
@@ -146,6 +154,14 @@ class AboutTeamSeeder extends Seeder
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SKX294SBZ2K7FBT7GCZQK.png'
+            ],
+            [
+                'name' => 'Adrian Jonathan',
+                'job_group' => 'Legal, Compliance & HR',
+                'title' => 'Legal, Compliance & HR',
+                'content' => 'this is the desc',
+                'published_date' => Carbon::now(),
+                'image_path' => ''
             ],
             [
                 'name' => 'Ahmat Sahri',

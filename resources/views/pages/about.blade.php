@@ -230,9 +230,11 @@
         </div>
         @endforeach
 
+        {{--
         <div class="team-image-containter">
             <img class="team-image-large" src="{{ asset('images/about/teamlarge.png') }}" alt="Team Photo">
         </div>
+        --}}
 
         {{-- Newsletter Section --}}
         <div class="newsletter-section">
