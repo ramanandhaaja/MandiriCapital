@@ -17,7 +17,7 @@ class AboutTeamSeeder extends Seeder
                 'title' => 'Independent Commissioner',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => 'our-identity/01JK126JHGMPFPXYSRWPEWN2ED.jpg'
+                'image_path' => ''
             ],
             [
                 'name' => 'Ronald S. Simorangkir',
@@ -25,7 +25,7 @@ class AboutTeamSeeder extends Seeder
                 'title' => 'CEO',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => 'our-identity/01JK12Q8EWRPFGMCKW3WYYXPDP.jpg'
+                'image_path' => ''
             ],
             [
                 'name' => 'Wisnu Setiadi',
@@ -33,7 +33,7 @@ class AboutTeamSeeder extends Seeder
                 'title' => 'CIO',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => 'our-identity/01JK12VBZFEFGDHW23PC7E57SB.jpg'
+                'image_path' => ''
             ],
             [
                 'name' => 'Muhammad Salman',

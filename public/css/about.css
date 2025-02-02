@@ -570,7 +570,6 @@ html, body {
     padding: 120px 100px;
     color: var(--color-white);
     display: flex;
-    max-width: 1600px;
     margin: 0 auto;
     gap: 80px;
 }
