@@ -1258,7 +1258,7 @@ html, body {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
-    margin: 40px 50px 0 50px;
+    margin: 10px 50px 0 65px;
 }
 
 .card-ecosystem {
@@ -1494,7 +1494,7 @@ html, body {
     font-family: var(--font-family);
     font-size: 32px;
     color: #FFFFFF;
-    padding-left: 50px;
+    padding-left: 65px;
 }
 
 .mandiri-team-group-title {

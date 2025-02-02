@@ -144,8 +144,13 @@
         <div class="mandiri-ecosystem-title">
             Mandiri Ecosystem
         </div>
+
+        @foreach ($ecosystemList as $group => $ecosystems)
+        <div class="mandiri-team-group-title">
+            {{ $group }}
+        </div>
         <div class="ecosystem-grid">
-            @foreach ($ecosystemList as $ecosystem)
+            @foreach ($ecosystems as $ecosystem)
                 {{-- Card Content --}}
                 <div class="card-ecosystem" data-hover-trigger>
                     <div class="background-image">
@@ -177,21 +182,16 @@
                             <p class="focus-description">{!! $ecosystem->hover_focus_area !!}</p>
 
                             <div class="synergy-points">
-
                                 <div class="synergy-point">
                                     {!! $ecosystem->hover_content !!}
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             @endforeach
         </div>
-
-
+        @endforeach
     </div>
 
     {{-- Team Section --}}
@@ -229,12 +229,6 @@
             @endforeach
         </div>
         @endforeach
-
-        {{--
-        <div class="team-image-containter">
-            <img class="team-image-large" src="{{ asset('images/about/teamlarge.png') }}" alt="Team Photo">
-        </div>
-        --}}
 
         {{-- Newsletter Section --}}
         <div class="newsletter-section">

@@ -56,7 +56,20 @@ class PageController extends Controller
 
         $prioritySectors = AboutPrioritySector::get();
 
-        $ecosystemList = AboutMandiriEcosystem::get();
+        // Group ecosystem list by their group field
+        $ecosystemList = AboutMandiriEcosystem::get()
+            ->groupBy('group')
+            ->sortBy(function ($items, $key) {
+                // Define the order of groups if needed
+                $groupOrder = [
+                    'Bank',
+                    'Investment',
+                    'Multi-Finance',
+                    'Remittance',
+                    'Insurance'
+                ];
+                return array_search($key, $groupOrder);
+            });
 
         // Define the order of job groups
         $jobGroupOrder = [
