@@ -1,5 +1,28 @@
 /* Reset Styles */
+:root {
 
+    /* Typography */
+    --font-family: 'Avenir LT Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 28px;
+    --font-size-3xl: 36px;
+    --font-size-4xl: 120px;
+
+
+    /* Transitions */
+    --transition-default: 0.2s ease;
+}
+
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('../fonts/Avenir LT Std 45 Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 /* Hero Section */
 .hero-section {
@@ -26,7 +49,7 @@
     color: #FFFFFF;
     position: absolute;
     bottom: 100px;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 64px;
     font-weight: 500;
     padding-left: 70px;
@@ -38,7 +61,7 @@
     color: #FFFFFF;
     position: absolute;
     bottom: 95px;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     font-weight: 500;
     padding-left: 70px;
@@ -65,14 +88,14 @@
 }
 
 .article-subtitle {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #A1A1AA;
     font-size: 24px;
     line-height: 1.4;
 }
 
 .article-content-text {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #ffffff;
 
 }
@@ -101,7 +124,7 @@
 }
 
 .article-meta h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 34px;
     font-weight: 600;
     color: #EFA32F;
@@ -115,7 +138,7 @@
 }
 
 .article-date {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: #ffffff;
 }
@@ -143,19 +166,19 @@
 }
 
 .author-name {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: #ffffff;
 }
 
 .author-role {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: #A1A1AA;
 }
 
 .article-category {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     font-weight: 500;
     color: #ffffff;
@@ -228,7 +251,7 @@
 }
 
 .nav-label {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: #A1A1AA;
     overflow: hidden;
@@ -241,6 +264,11 @@
     line-height: 1.8;
     color: #333;
     background: transparent;
+}
+
+.article-content a {
+    text-decoration: none;
+    color: #EFA32F;
 }
 
 .article-content p {
@@ -257,7 +285,7 @@
 }
 
 .article-source {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     margin-top: 20px;
     padding-top: 20px;
     font-size: 14px;
@@ -276,7 +304,7 @@
 
 /* Share Section */
 .share-section {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     padding-top: 100px;
     padding-right: 20px;
     background: transparent;
@@ -337,8 +365,7 @@
 }
 
 .center-image-newsletter {
-    max-width: 100%;
-    height: auto;
+    height: 58px;
     margin: 0 auto;
     display: block;
     background: transparent;

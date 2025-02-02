@@ -68,7 +68,7 @@
                 <div class="article-content">
 
                     <div class="article-subtitle">
-                        <p>{{ $post->content_heading }}</p>
+                        <p>{!! $post->content_heading !!}</p>
                     </div>
                     <div class="article-content-text">
                         <p>{!! $post->content !!}</p>

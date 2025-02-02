@@ -239,7 +239,7 @@
     {{-- Portfolio Section --}}
     <div class="portfolio-full-section display-grid">
         {{-- View Toggle Button --}}
-        <div class="floating-action-button">
+        <div class="floating-action-button" style="visibility: hidden;">
             <div class="menu-icon" onclick="toggleView()">
                 <img src="{{ asset('images/portfolio/icon-list.png') }}" alt="Menu Icon" class="icon-list active">
                 <img src="{{ asset('images/portfolio/icon-grid.png') }}" alt="Menu Icon" class="icon-grid">
