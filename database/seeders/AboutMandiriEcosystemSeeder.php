@@ -17,7 +17,7 @@ class AboutMandiriEcosystemSeeder extends Seeder
             [
                 'title' => 'The Most Outstanding Bank Syariah',
                 'slug' => 'bank-syariah-indonesia',
-                'content' => "Provides a full range of Syariah-compliant services, including retail banking, corporate financing, wealth management, and trade finance",
+                'content' => "Provides a full range of Syariah-compliant services, including retail banking, corporate financing, wealth management, and trade finance.",
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JHDTS5N5K8AHECTBRKX10FE1.png',
                 'is_domestic' => false,

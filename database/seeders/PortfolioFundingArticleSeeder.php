@@ -35,7 +35,8 @@ class PortfolioFundingArticleSeeder extends Seeder
             [
                 'article_id' => $firstArticleId,
                 'title' => "Balance Sheet Fund",
-                'content' => "The biggest conglomerate with various subsidiaries. Mandiri’s total asset amount to Rp. 2.258 Tn a of Q1 2024, Mandiri has 42+ Mn retail customers and 200k+ SMEs, 137 Branch offices, 12k+ ATM, 7 overseas branch offices which includes Singapore, Hong Kong, Shanghai, Cayman Islands, Dili, London, Malaysia",
+                'content' => "Mandiri Capital Indonesia (MCI), the Corporate Venture Capital arm of Mandiri Group, strategically invests in startups (both within Indonesia and globally) that offer innovative products or services capable of synergizing with Mandiri’s ecosystem. Leveraging the Group’s position as Indonesia’s leading financial conglomerate, MCI empowers startups to scale efficiently and accelerate growth through access to Mandiri’s extensive network, resources, and market expertise. By fostering strategic partnerships with forward-thinking ventures, MCI aims to co-create value, driving mutual growth while participating on the group’s digital enhancement.
+",
                 'is_large' => false,
                 'image_path' => 'portfolios/01JHFQD9T5Z8WB3Q1JT81DRPHK.png',
                 'order' => 1,
