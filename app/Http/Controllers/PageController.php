@@ -264,10 +264,20 @@ class PageController extends Controller
             'email' => 'required|email|max:255',
         ]);
 
+
+        PublicationEmailDownload::create([
+            'name' => $validated['name'],
+            'company_name' => $validated['company_name'],
+            'email' => $validated['email'],
+        ]);
+
+        return redirect()->back()->with('success', 'Thank you for your interest, we will contact you very soon!');
+        /*
         // Check if email already exists
         $existingDownload = PublicationEmailDownload::where('email', $validated['email'])->first();
 
         // If the email exists, allow download
+
 
 
         // Check if publication is a Whitepaper
@@ -292,6 +302,7 @@ class PageController extends Controller
 
         // If not a whitepaper, redirect back with error
         return redirect()->back()->with('error', 'This content is not available for download.');
+        */
     }
 
 

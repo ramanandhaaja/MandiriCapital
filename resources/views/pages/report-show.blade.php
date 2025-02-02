@@ -79,7 +79,7 @@
 
                     <div class="form-actions">
                         <button type="button" class="btn-cancel">Cancel</button>
-                        <button type="submit" class="btn-download"
+                        <button type="submit" class="btn-download" onclick="alert('Thank you for your interest, we will contact you very soon!')"
                             data-category="{{ $publication->category->name }}">Download</button>
                     </div>
 

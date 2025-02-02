@@ -1258,8 +1258,10 @@ html, body {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
-    margin: 10px 50px 0 65px;
+    margin: 10px auto;
+    max-width: 1350px;
 }
+
 
 .card-ecosystem {
     position: relative;
@@ -1270,7 +1272,7 @@ html, body {
     height: 352px;
     grid-column: span 1;
     border-radius: 12px;
-}
+} ⁠
 
 .card-profile-photo {
     position: absolute;
