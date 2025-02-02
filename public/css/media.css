@@ -81,7 +81,6 @@ a {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 1600px;
     margin: 40px  20px;
 }
 

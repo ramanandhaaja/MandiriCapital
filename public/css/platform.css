@@ -1128,7 +1128,6 @@ html, body {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     padding: 60px 20px;
-    max-width: 1600px;
     margin: 60px auto;
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -1140,7 +1139,6 @@ html, body {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     padding: 60px 20px 0 20px;
-    max-width: 1600px;
     margin: 60px auto;
     opacity: 1;
     transition: opacity 0.3s ease;
