@@ -51,12 +51,10 @@
 
 /* Main Content Section */
 .content-section {
-    width: calc(100% - 40px);
-    margin-top: 100px;
-    margin-left: 40px;
-    margin-right: 0px;
-    background: transparent;
+    width: calc(100% - 80px);
     max-width: 1440px;
+    margin: 100px auto 0;
+    background: transparent;
 }
 
 .content-container {
