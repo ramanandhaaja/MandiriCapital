@@ -50,10 +50,13 @@
     <div class="masonry-grid" data-route-pattern="{{ route('media.show', ':slug') }}">
         @foreach($posts as $index => $post)
             @php
+
                 $isLargeCard = ($index === 0 || $index === 6);
-                $defaultImage = asset("images/media/image" . ($index + 1) . ".png");
-                $backgroundImage = $post->featured_image ? Storage::url($post->featured_image) : $defaultImage;
-                $formattedDate = \Carbon\Carbon::parse($post->published_at)->format('F Y');
+                $defaultImage = asset("images/media/image1.png");
+                $backgroundImage = $post->front_image ? Storage::url($post->front_image) : $defaultImage;
+                //$backgroundImage = $post->featured_image;
+
+                $formattedDate = \Carbon\Carbon::parse($post->published_at)->format('d F Y');
             @endphp
 
             <div class="card {{ $isLargeCard ? 'large' : '' }}">
@@ -209,8 +212,9 @@
                 const postsHtml = posts.map((post, index) => {
                     const isLargeCard = filter === 'all' && (index === 0 || index === posts.length - 1);
                     const postUrl = elements.routePattern.replace(':slug', post.slug);
-                    const defaultImage = `/images/media/image${index + 1}.png`;
-                    const backgroundImage = post.featured_image ? '/storage/' + post.featured_image : defaultImage;
+                    const defaultImage = `/images/media/image1.png`;
+                    const backgroundImage = post.front_image ? '/storage/' + post.front_image : defaultImage;
+
                     const date = new Date(post.published_at).toLocaleDateString('en-US', {
                         month: 'long',
                         year: 'numeric'

@@ -121,7 +121,7 @@ class AboutTeamSeeder extends Seeder
                 'title' => 'Value Creation',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => ''
+                'image_path' => 'our-identity/01JK3JVJ9ZS2AZ3VSWR17P4SBS.jpg'
             ],
             [
                 'name' => 'Natasya Monica Tumundo',
@@ -161,7 +161,7 @@ class AboutTeamSeeder extends Seeder
                 'title' => 'Legal, Compliance & HR',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => ''
+                'image_path' => 'our-identity/01JK3JW5GR495FY9GAB49FCW61.jpeg'
             ],
             [
                 'name' => 'Ahmat Sahri',
@@ -201,7 +201,7 @@ class AboutTeamSeeder extends Seeder
                 'title' => 'Finance & Treasury',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => 'our-identity/01JK3800ZZEDFQNPZ8ACVF6R63.jpeg'
+                'image_path' => 'our-identity/01JK3K2NWB2N6RNECPVNMPHNY3.jpeg'
             ],
             [
                 'name' => 'Gracia Anglani',
@@ -217,7 +217,7 @@ class AboutTeamSeeder extends Seeder
                 'title' => 'Finance & Treasury',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => ''
+                'image_path' => 'our-identity/01JK3JTT4R4E7AZEKV99H2XPZG.jpeg'
             ],
             [
                 'name' => 'Ade Lydia',

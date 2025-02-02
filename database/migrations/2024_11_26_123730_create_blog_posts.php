@@ -17,6 +17,8 @@ return new class extends Migration
             $table->longText('content');
             $table->longText('media_source_url')->nullable();
             $table->longText('media_url')->nullable();
+            $table->string('front_image')->nullable();
+            $table->string('headline_image')->nullable();
             $table->string('featured_image')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->string('meta_title')->nullable();

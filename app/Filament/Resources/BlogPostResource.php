@@ -51,16 +51,11 @@ class BlogPostResource extends Resource
                                             ->required()
                                             ->unique(BlogPost::class, 'slug', ignoreRecord: true),
 
-                                        Forms\Components\TextInput::make('content_heading')
-                                            ->required()
-                                            ->label('Content Heading')
-                                            ->placeholder('Enter the main heading for the content'),
 
 
                                     ]),
 
                                 Forms\Components\RichEditor::make('content_heading')
-                                    ->required()
                                     ->label('Content Heading')
                                     ->placeholder('Enter the main heading for the content')
                                     ->columnSpanFull(),
@@ -105,12 +100,27 @@ class BlogPostResource extends Resource
                         */
                         Forms\Components\Section::make('Image')
                             ->schema([
-                                Forms\Components\FileUpload::make('featured_image')
+                                Forms\Components\FileUpload::make('front_image')
                                     ->image()
                                     ->disk('public')
                                     ->directory('blog-images')
                                     ->visibility('public')
                                     ->columnSpanFull(),
+
+                                    Forms\Components\FileUpload::make('headline_image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('blog-images')
+                                    ->visibility('public')
+                                    ->columnSpanFull(),
+
+                                    Forms\Components\FileUpload::make('featured_image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('blog-images')
+                                    ->visibility('public')
+                                    ->columnSpanFull(),
+
                             ]),
                     ])
                     ->columnSpan(['lg' => 2]),
@@ -166,12 +176,10 @@ class BlogPostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('featured_image')
+                Tables\Columns\ImageColumn::make('front_image')
                     ->disk('public')
-                    ->circular()
                     ->height(40)
-                    ->width(40)
-                    ->getStateUsing(fn ($record) => $record->featured_image_url),
+                    ->width(40),
 
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()

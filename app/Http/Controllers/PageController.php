@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
+
 // Model Imports
 
 use App\Models\AboutMandiriEcosystem;
@@ -107,7 +109,7 @@ class PageController extends Controller
         $hero = HeroSection::whereHas('category', function($query) {
             $query->where('name', 'Media');
         })->first();
-
+/*
         // Get all active categories first
         $categories = BlogCategory::where('is_active', true)->get();
         $categoryNames = $categories->pluck('name')->toArray();
@@ -118,12 +120,35 @@ class PageController extends Controller
             ->whereHas('categories', function($query) use ($categoryNames) {
                 $query->whereIn('name', $categoryNames);
             })
-            ->orderBy('published_at', 'desc')
-            ->paginate(10);
+            ->orderBy('published_at', 'desc');
+
+
+
+
+        // Debug output
+        //echo "<pre>";
+        //print_r($posts->toArray());
+        //echo "</pre>";
+        //die();  // This will stop execution here to show the output
 
         $tags = BlogTag::whereIn('name', $categoryNames)->get();
+        */
 
-        return view('pages.media', compact('hero', 'posts', 'categories', 'tags'));
+
+        $query = BlogPost::with(['user', 'categories'])
+            ->where('status', 'published')
+            ->whereNotNull('published_at');
+
+        // If category is provided, filter by it
+        if (isset($category)) {
+            $query->whereHas('categories', function ($query) use ($category) {
+                $query->where('name', ucfirst($category));
+            });
+        }
+
+        $posts = $query->orderBy('published_at', 'desc')->take(7)->get();
+
+        return view('pages.media', compact('hero', 'posts'));
     }
 
     public function mediashow($slug)
@@ -311,11 +336,11 @@ class PageController extends Controller
             $query->whereHas('categories', function ($query) use ($category) {
                 $query->where('name', ucfirst($category));
             });
+        } else {
+            $query->take(7); // Limit to 7 items when category is 'all'
         }
 
-        $posts = $query->orderBy('published_at', 'desc')
-            ->take(7)
-            ->get();
+        $posts = $query->orderBy('published_at', 'desc')->get();
 
         return response()->json($posts);
     }

@@ -18,6 +18,8 @@ class BlogPost extends Model
         'content',
         'media_url',
         'media_source_url',
+        'front_image',
+        'headline_image',
         'featured_image',
         'published_at',
         'meta_title',
@@ -58,11 +60,4 @@ class BlogPost extends Model
         return $this->belongsToMany(BlogTag::class, 'blog_post_tags');
     }
 
-    public function getFeaturedImageUrlAttribute()
-    {
-        if (!$this->featured_image) {
-            return null;
-        }
-        return asset('storage/' . $this->featured_image);
-    }
 }
