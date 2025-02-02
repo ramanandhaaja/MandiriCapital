@@ -19,7 +19,7 @@
             {{-- Search and Filter Section --}}
             <div class="center-search">
                 {{-- Search Bar and Date Range --}}
-                <div class="search-section">
+                <div class="search-section" style="visibility: hidden;">
                     <div class="search-filters-container">
                         {{-- Search Input --}}
                         <div class="search-input-container">

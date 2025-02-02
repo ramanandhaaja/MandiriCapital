@@ -14,9 +14,10 @@
                 <h1 class="hero-main-text">INVESTMENT </h1>
             </a>
             <div class="center-search">
+
                 <div class="search-input-container">
-                    <input type="text" placeholder="Search..." class="search-input">
-                    <i class="fas fa-search search-input-icon"></i>
+                    <input type="text" placeholder="Search..." class="search-input" style="visibility: hidden;">
+                    <i class="fas fa-search search-input-icon" style="visibility: hidden;"></i>
                 </div>
                 <div class="category-filters">
                     <a href="#" class="filter-link active" data-category="get_investment">Get Investment</a>

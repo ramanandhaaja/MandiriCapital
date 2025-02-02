@@ -18,7 +18,7 @@
             {{-- Search and Filter Section --}}
             <div class="center-search">
                 {{-- Search Box with Date Range --}}
-                <div class="search-section">
+                <div class="search-section" style="visibility: hidden;">
                     <div class="search-filters-container">
                         <div class="search-input-container">
                             <input type="text" placeholder="Search..." class="search-input">

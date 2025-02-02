@@ -49,7 +49,8 @@
                 'date' => 'June 2020',
                 'image' => 'Article1.png',
                 'logo' => 'exponent.png',
-                'position' => ''
+                'position' => '',
+                'link' => route('platform.show', 'xponent')
             ],
             [
                 'type' => 'large',
@@ -58,7 +59,8 @@
                 'date' => 'June 2020',
                 'image' => 'Article2.jpeg',
                 'logo' => '',
-                'position' => 'right'
+                'position' => 'right',
+                'link' => route('platform.show', 'xponent')
             ],
             [
                 'type' => 'medium',
@@ -67,7 +69,8 @@
                 'date' => 'June 2020',
                 'image' => 'Article3.png',
                 'logo' => 'zenith.png',
-                'position' => ''
+                'position' => '',
+                'link' => route('platform.show', 'zenith')
             ],
             [
                 'type' => 'medium',
