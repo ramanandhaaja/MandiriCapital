@@ -16,7 +16,7 @@ class HomeArticleSeeder extends Seeder
                 'category' => 'Counter',
                 'title' => 'AUM',
                 'slug' => '',
-                'content' => 'IDR3,8Bn',
+                'content' => 'IDR3,844Bn',
                 'published_date' => Carbon::now()->subDays(30),
                 'image_path' => ''
             ],
