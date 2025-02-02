@@ -1189,6 +1189,7 @@ html, body {
     background-size: cover;
     background-position: center;
     height: 530px;
+    max-width: 450px;
     grid-column: span 1;
     gap: 20px;
     border: 0.5px solid var(--color-border);
