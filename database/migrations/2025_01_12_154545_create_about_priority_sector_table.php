@@ -39,6 +39,7 @@ return new class extends Migration
         Schema::create('about_team', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+            $table->string('job_group')->nullable();
             $table->string('title')->nullable();
             $table->text('content')->nullable();
             $table->date('published_date')->nullable();

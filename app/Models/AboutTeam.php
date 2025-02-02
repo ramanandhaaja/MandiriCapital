@@ -14,6 +14,7 @@ class AboutTeam extends Model
     protected $fillable = [
         'name',
         'title',
+        'job_group',
         'content',
         'published_date',
         'image_path',

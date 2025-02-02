@@ -2737,14 +2737,14 @@ a.text-decoration-none {
 .contact-icon {
     width: 24px;
     height: 24px;
-    color: #ffffff;
+    color: #EFA32F;
     text-align: right;
     padding: 10px;
 }
 
 .contact-icon-section {
     text-align: right;
-    color: #ffffff;
+    color:#EFA32F;
 }
 
 /* Contact Form Toggle Styles */

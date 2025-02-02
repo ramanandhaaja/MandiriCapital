@@ -213,9 +213,12 @@
             </div>
         </div>
 
+        @foreach ($teamMembers as $jobGroup => $members)
+        <div class="mandiri-team-group-title">
+            {{ $jobGroup }}
+        </div>
         <div class="masonry-grid">
-
-            @foreach ($teamMembers as $member)
+            @foreach ($members as $member)
                 <div class="team-card">
                     <img class="background-image" src="{{ '/storage/' . $member->image_path }}" alt="{{ $member->name }}">
                     <div class="card-profile-photo">
@@ -225,6 +228,7 @@
                 </div>
             @endforeach
         </div>
+        @endforeach
 
         <div class="team-image-containter">
             <img class="team-image-large" src="{{ asset('images/about/teamlarge.png') }}" alt="Team Photo">

@@ -13,6 +13,7 @@ class AboutTeamSeeder extends Seeder
         $datas = [
             [
                 'name' => 'Alamanda Shatika',
+                'job_group' => 'Board of Commissioners',
                 'title' => 'Independent Commissioner',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -20,6 +21,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Ronald S. Simorangkir',
+                'job_group' => 'Board of Directors',
                 'title' => 'CEO',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -27,6 +29,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Wisnu Setiadi',
+                'job_group' => 'Board of Directors',
                 'title' => 'CIO',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -34,6 +37,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Muhammad Salman',
+                'job_group' => 'Venture Fund',
                 'title' => 'VP Venture Fund',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -41,6 +45,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Muhammad Rusyad',
+                'job_group' => 'Venture Fund',
                 'title' => 'Venture Fund',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -48,6 +53,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Oktavia Laras',
+                'job_group' => 'Venture Fund',
                 'title' => 'Venture Fund',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -55,6 +61,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Faris Iman',
+                'job_group' => 'Investment',
                 'title' => 'VP Investment',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -62,6 +69,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Melvin Santoso',
+                'job_group' => 'Investment',
                 'title' => 'Investment',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -69,6 +77,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Aldwin Riyaz Fadlurrahman',
+                'job_group' => 'Investment',
                 'title' => 'Investment',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -76,6 +85,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Muhammad Ilyas',
+                'job_group' => 'Investment',
                 'title' => 'Investment',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -83,6 +93,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Rabbi Amrita Givatama',
+                'job_group' => 'Value Creation',
                 'title' => 'EVP Value Creation',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -90,6 +101,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Fleta Jovitasari',
+                'job_group' => 'Value Creation',
                 'title' => 'Value Creation',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -97,6 +109,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Safira Azalia',
+                'job_group' => 'Value Creation',
                 'title' => 'Value Creation',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -104,6 +117,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Natasya Monica Tumundo',
+                'job_group' => 'Legal, Compliance & HR',
                 'title' => 'SVP Legal, Compliance & HR',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -111,6 +125,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Auginta Narasti Putri',
+                'job_group' => 'Legal, Compliance & HR',
                 'title' => 'Legal, Compliance & HR',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -118,6 +133,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Dipo Prima',
+                'job_group' => 'Legal, Compliance & HR',
                 'title' => 'Legal, Compliance & HR',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -125,6 +141,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Luna Amirahdya',
+                'job_group' => 'Legal, Compliance & HR',
                 'title' => 'Legal, Compliance & HR',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -132,6 +149,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Ahmat Sahri',
+                'job_group' => 'Risk & Portfolio Management',
                 'title' => 'VP Risk & Portfolio Management',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -139,6 +157,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Sthira Aryapradipta S.',
+                'job_group' => 'Risk & Portfolio Management',
                 'title' => 'Risk & Portfolio Management',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -146,6 +165,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Thalia Shizuka',
+                'job_group' => 'Risk & Portfolio Management',
                 'title' => 'Risk & Portfolio Management',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -153,6 +173,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Mohammad Iqbal',
+                'job_group' => 'Finance & Treasury',
                 'title' => 'VP Finance & Treasury',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -160,6 +181,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Camelia Magdalena',
+                'job_group' => 'Finance & Treasury',
                 'title' => 'Finance & Treasury',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -167,6 +189,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Gracia Anglani',
+                'job_group' => 'Finance & Treasury',
                 'title' => 'Finance & Treasury',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -174,6 +197,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Delvin Theodorus Hansell',
+                'job_group' => 'Finance & Treasury',
                 'title' => 'Finance & Treasury',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -181,6 +205,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Ade Lydia',
+                'job_group' => 'Corsec & Operations',
                 'title' => 'Team Leader Corsec & Operations',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -188,6 +213,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Yuda Arisitian',
+                'job_group' => 'Corsec & Operations',
                 'title' => 'IT & Operations',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -195,6 +221,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Inggrid Anggi Purnama',
+                'job_group' => 'Corsec & Operations',
                 'title' => 'Procurement',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -202,6 +229,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Raina Safa Radhyana Rahmat',
+                'job_group' => 'Corsec & Operations',
                 'title' => 'Social Media',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -209,6 +237,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Nabila Fauzia',
+                'job_group' => 'Internal Audit',
                 'title' => 'Internal Audit',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -216,6 +245,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Hira Laksamana',
+                'job_group' => 'Special Project',
                 'title' => 'EVP Special Project',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
@@ -223,6 +253,7 @@ class AboutTeamSeeder extends Seeder
             ],
             [
                 'name' => 'Dinar Meikaratri',
+                'job_group' => 'Executive Assistant to BOD',
                 'title' => 'Executive Assistant',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),

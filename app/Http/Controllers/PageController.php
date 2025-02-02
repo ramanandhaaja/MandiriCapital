@@ -58,7 +58,9 @@ class PageController extends Controller
 
         $ecosystemList = AboutMandiriEcosystem::get();
 
-        $teamMembers = AboutTeam::get();
+        $teamMembers = AboutTeam::orderBy('job_group')
+            ->get()
+            ->groupBy('job_group');
 
         return view('pages.about', compact('hero', 'ecosystemList', 'prioritySectors', 'teamMembers'));
     }
