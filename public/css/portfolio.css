@@ -2732,3 +2732,39 @@ a.text-decoration-none {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+    text-align: right;
+    padding: 10px;
+}
+
+.contact-icon-section {
+    text-align: right;
+    color: #ffffff;
+}
+
+/* Contact Form Toggle Styles */
+.contact-icon-section {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-icon-section .contact-icon {
+    transition: transform 0.3s ease;
+}
+
+.contact-icon-section.active .contact-icon {
+    transform: rotate(180deg);
+}
+
+.contact-form.hidden {
+    display: none;
+}

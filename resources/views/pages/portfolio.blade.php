@@ -71,14 +71,17 @@
 
         {{-- Contact Form Section --}}
         <div class="masonry-grid-contact-section-grey">
-            <div class="grid-headline-title-card">
+            <div class="grid-headline-title-card-contact">
                 <h1 class="grid-headline-title-contact">Get Investment!</h1>
                 <h1 class="grid-headline-subtitle-contact">
                 </h1>
             </div>
 
             <div class="grid-headline-contact-card">
-                <form id="contactForm" class="contact-form">
+                <div class="contact-icon-section" id="contactToggle">
+                    <i class="fas fa-chevron-down contact-icon" aria-hidden="true"></i>Show Form
+                </div>
+                <form id="contactForm" class="contact-form hidden">
                     @csrf
                     {{-- Company Details --}}
                     <div class="form-row">
@@ -212,9 +215,23 @@
     </div>
 
     <script>
+        // File input handler
         document.getElementById('company_profile').addEventListener('change', function(e) {
             const fileName = e.target.files[0]?.name || 'No File Chosen';
             e.target.parentElement.querySelector('.file-name').textContent = fileName;
+        });
+
+        // Form toggle handler
+        document.getElementById('contactToggle').addEventListener('click', function() {
+            const form = document.getElementById('contactForm');
+            const icon = this.querySelector('.contact-icon');
+
+            this.classList.toggle('active');
+            form.classList.toggle('hidden');
+
+            // Update text based on form visibility
+            const text = form.classList.contains('hidden') ? 'Show Form' : 'Hide Form';
+            this.innerHTML = `<i class="fas fa-chevron-down contact-icon" aria-hidden="true"></i>${text}`;
         });
     </script>
 
@@ -415,7 +432,7 @@
 
         {{-- Contact Form Section --}}
         <div class="masonry-grid-contact-section">
-            <div class="grid-headline-title-card">
+            <div class="grid-headline-title-card-contact">
                 <h1 class="grid-headline-title-contact">New Investor Enquiry</h1>
                 <p class="grid-headline-subtitle-contact">
                     Begin your investment journey with confidence—partner with us today.
