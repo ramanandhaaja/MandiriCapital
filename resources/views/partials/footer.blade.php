@@ -22,12 +22,12 @@
         <!-- Middle Column -->
         <div class="footer-middle">
             <ul class="footer-links">
-                <li><a href="#">OUR IDENTITY</a></li>
-                <li><a href="#">INVESTMENT</a></li>
-                <li><a href="#">VALUE CREATION</a></li>
-                <li><a href="#">MEDIA</a></li>
-                <li><a href="#">PUBLICATION</a></li>
-                <li><a href="#">CONTACT US</a></li>
+                <li><a href="{{ route('about') }}">OUR IDENTITY</a></li>
+                <li><a href="{{ route('portfolio') }}">INVESTMENT</a></li>
+                <li><a href="{{ route('platform') }}">VALUE CREATION</a></li>
+                <li><a href="{{ route('media') }}">MEDIA</a></li>
+                <li><a href="{{ route('report') }}">PUBLICATION</a></li>
+                <li><a href="{{ route('contact') }}">CONTACT US</a></li>
             </ul>
         </div>
 
@@ -49,6 +49,6 @@
 
     <!-- Copyright -->
     <div class="footer-copyright">
-        <p>© 2024 Mandiri Capital Indonesia. All rights reserved</p>
+        <p> 2024 Mandiri Capital Indonesia. All rights reserved</p>
     </div>
 </footer>

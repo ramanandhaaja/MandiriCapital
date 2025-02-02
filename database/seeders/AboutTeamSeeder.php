@@ -201,7 +201,7 @@ class AboutTeamSeeder extends Seeder
                 'title' => 'Finance & Treasury',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => ''
+                'image_path' => 'our-identity/01JK3800ZZEDFQNPZ8ACVF6R63.jpeg'
             ],
             [
                 'name' => 'Gracia Anglani',

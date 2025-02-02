@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('stage')->nullable();
             $table->string('website_url')->nullable();
             $table->string('image_path')->nullable();
+            $table->string('highlight_image')->nullable();
             $table->string('icon')->nullable();
             $table->string('ceo_name')->nullable();
             $table->string('year_invested')->nullable();

@@ -89,6 +89,12 @@ class PortfolioResource extends Resource
                                     ->directory('portfolios')
                                     ->visibility('public')
                                     ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('highlight_image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('portfolios')
+                                    ->visibility('public')
+                                    ->columnSpanFull(),
                             ]),
                     ])
                     ->columnSpan(['lg' => 2]),

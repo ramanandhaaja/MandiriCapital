@@ -18,6 +18,7 @@ class Portfolio extends Model
         'stage',
         'website_url',
         'image_path',
+        'highlight_image',
         'icon',
         'ceo_name',
         'year_invested',
