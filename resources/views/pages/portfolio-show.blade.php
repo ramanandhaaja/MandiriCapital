@@ -36,12 +36,12 @@
 
                         <div class="company-info-grid">
                             <div class="info-item">
-                                <div class="info-label">KANTOR PUSAT</div>
+                                <div class="info-label">HEAD OFFICE</div>
                                 <div class="info-value">Indonesia</div>
                             </div>
 
                             <div class="info-item">
-                                <div class="info-label">SEKTOR</div>
+                                <div class="info-label">SECTOR</div>
                                 <div class="info-value">Commerce/Fintech enabler</div>
                             </div>
 
@@ -61,6 +61,8 @@
                     </div>
                 </div>
             </div>
+
+            {{--
             <div class="sidebar-left">
                 <div class="article-meta">
                     <h1>Company Objective SDG</h1>
@@ -104,6 +106,8 @@
                     </div>
                 </div>
             </div>
+            --}}
+
         </div>
         <div class="share-section">
             <div class="share-content">
