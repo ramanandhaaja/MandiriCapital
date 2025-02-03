@@ -2,7 +2,7 @@
 {{-- //TODO: prev article dan next article based on current article date --}}
 1. portfolio bikin pake order
 2. background clor di ubah jadi #?
-3. value creation minta seperti counter di home
+3. value creation minta seperti counter di home -> done
 3. cek logo merah putih fund di online, bukan local -> done
 4. slideshow zenith dll -> done
 5. masih rata kiri jg di zenith dll
@@ -10,7 +10,7 @@
 7. movement di post di media dan publciation, kayak di home
 8. Wording untuk report di download reportnya -> done
 9. form pake sendgrid
-10. update cover porto
+10. update cover porto-> done
 
 
 
@@ -56,7 +56,7 @@ portofolio di urutin (nanti dikasi tau urutannya) -> nunggu dulu
 
 merah putih fund logo di dalam detailnya broken -> done
 
-value creation minta seperti counter di home
+value creation minta seperti counter di home -> done
 
 
 detail di dalam program yg ada angka2 dibuat counter naik dari 0 k angkanya
