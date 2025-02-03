@@ -6,7 +6,7 @@
 
 @section('container')
     <div class="hero-section">
-        <img src="{{ asset('images/platform/background-exponent.png') }}" class="video-background"/>
+        <img src="{{ asset('images/platform/background-exponent.png') }}" class="video-background" />
 
         <div class="hero-content">
             <div class="center-text">Business Matchmaking between startups and Mandiri Group</div>
@@ -24,14 +24,15 @@
         <div class="headline-grid-counter">
             @php
                 $dummyArticles = [
-                    ['title' => 'PROJECTS','subtitle' => 'Startups', 'content' => '65+'],
-                    ['title' => 'STARTUPS','subtitle' => 'Mandiri Business Units', 'content' => '20+'],
-                    ['title' => 'BUSINESS UNITS','subtitle' => 'Business Deals', 'content' => '10+']
+                    ['title' => 'PROJECTS', 'subtitle' => 'Startups', 'content' => '65+'],
+                    ['title' => 'STARTUPS', 'subtitle' => 'Mandiri Business Units', 'content' => '20+'],
+                    ['title' => 'BUSINESS UNITS', 'subtitle' => 'Business Deals', 'content' => '10+'],
                 ];
             @endphp
-            @foreach($dummyArticles as $index => $article)
+            @foreach ($dummyArticles as $index => $article)
                 <div class="headline-card-two ">
-                    <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article['content'] }}">{{ $article['content'] }}</div>
+                    <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article['content'] }}">
+                        {{ $article['content'] }}</div>
 
                     <p class="subtitle">{{ $article['subtitle'] }}</p>
                 </div>
@@ -39,13 +40,17 @@
         </div>
     </div>
 
+
+
+
     {{-- Get Investment Section --}}
     <div class="get-investement-section">
 
         <div class="masonry-grid-investment-section">
             <div class="grid-headline-title-card">
                 <h1 class="grid-headline-title">Why You Should Join Xponent?</h1>
-                <h1 class="grid-headline-subtitle-left">Practical 3-Month Program of Venture Development and Synergy Creation</h1>
+                <h1 class="grid-headline-subtitle-left">Practical 3-Month Program of Venture Development and Synergy
+                    Creation</h1>
             </div>
             <div class="grid-headline-description-card">
                 <div class="masonry-grid-investment-section-sub">
@@ -55,7 +60,8 @@
                         </div>
                         <h2 class="card-title">Network
                         </h2>
-                        <p class="card-description">Bringing you to the biggest financial conglomerate bank in Indonesia with 120+ business units to explore.</p>
+                        <p class="card-description">Bringing you to the biggest financial conglomerate bank in Indonesia
+                            with 120+ business units to explore.</p>
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon-bottom">
@@ -71,7 +77,8 @@
                         </div>
                         <h2 class="card-title">Investment Opportunities
                         </h2>
-                        <p class="card-description">Meet our investment team and secure strategic investment from Mandiri Capital Indonesia.</p>
+                        <p class="card-description">Meet our investment team and secure strategic investment from Mandiri
+                            Capital Indonesia.</p>
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon-bottom">
@@ -79,7 +86,8 @@
                         </div>
                         <h2 class="card-title">Exposure
                         </h2>
-                        <p class="card-description">Unique opportunity to showcase your statup, expand your network, and potentially generate new business deals.</p>
+                        <p class="card-description">Unique opportunity to showcase your statup, expand your network, and
+                            potentially generate new business deals.</p>
                     </div>
                 </div>
                 <div class="grid-headline-title-card-sub-bottom">
@@ -102,7 +110,8 @@
                         </div>
                         <h2 class="card-title">Business Matchmaking:
                         </h2>
-                        <p class="card-description">Join us for an exclusive Business Matchmaking Session that brings together the brightest startups and Mandiri Group, driving collaboration and growth.
+                        <p class="card-description">Join us for an exclusive Business Matchmaking Session that brings
+                            together the brightest startups and Mandiri Group, driving collaboration and growth.
                         </p>
                     </div>
                     <div class="grid-headline-title-card-sub">
@@ -111,7 +120,8 @@
                         </div>
                         <h2 class="card-title">Industry Insight Sessions
                         </h2>
-                        <p class="card-description">Industry Insight Session is a program that offers attendees new industry insight from a panel discussion session, that bring practitioners from various industries.</p>
+                        <p class="card-description">Industry Insight Session is a program that offers attendees new industry
+                            insight from a panel discussion session, that bring practitioners from various industries.</p>
                     </div>
                 </div>
                 <div class="grid-headline-title-card-sub-bottom">
@@ -137,7 +147,8 @@
                 <div class="masonry-grid-investment-section-sub">
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ asset('images/platform/crowde.png') }}" alt="funding2.png" class="card-funding-image" />
+                        <img src="{{ asset('images/platform/crowde.png') }}" alt="funding2.png"
+                            class="card-funding-image" />
                         <div class="funding-category">
                             Yohanes Sughitononughroho
                         </div>
@@ -145,13 +156,15 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            “CI & Bank Mandiri Greatly assisted CROWDE in providing access and connections to financial industry players, particularly banking."
+                            “CI & Bank Mandiri Greatly assisted CROWDE in providing access and connections to financial
+                            industry players, particularly banking."
                         </div>
                     </div>
 
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ asset('images/platform/dagangan.png') }}" alt="funding2.png" class="card-funding-image" />
+                        <img src="{{ asset('images/platform/dagangan.png') }}" alt="funding2.png"
+                            class="card-funding-image" />
                         <div class="funding-category">
                             Ryan Manafe
                         </div>
@@ -159,13 +172,16 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            "We can meet everyone from Mandiri Capital, other business units. We can know what parts are relevant to us, we can even meet directly with stakeholders so we can follow-up specifically on what and what added value we can offer."
+                            "We can meet everyone from Mandiri Capital, other business units. We can know what parts are
+                            relevant to us, we can even meet directly with stakeholders so we can follow-up specifically on
+                            what and what added value we can offer."
                         </div>
                     </div>
 
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ asset('images/platform/ayoconnect.png') }}" alt="funding2.png" class="card-funding-image" />
+                        <img src="{{ asset('images/platform/ayoconnect.png') }}" alt="funding2.png"
+                            class="card-funding-image" />
                         <div class="funding-category">
                             Chiragh Kipralani
                         </div>
@@ -173,7 +189,9 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            “It is an honor for ayoconnect to be given the trust of Bank Mandiri to be able to collaborate from implementing integrated embedded usecases for Livin' customers so that they can enjoy the best variety of services in just one.”
+                            “It is an honor for ayoconnect to be given the trust of Bank Mandiri to be able to collaborate
+                            from implementing integrated embedded usecases for Livin' customers so that they can enjoy the
+                            best variety of services in just one.”
                         </div>
                     </div>
                 </div>
@@ -193,6 +211,9 @@
         </div>
 
     </div>
+@endsection
+@section('scripts')
+    <script src="{{ asset('js/platform-animation.js') }}"></script>
 
     <script>
         document.getElementById('company_profile').addEventListener('change', function(e) {

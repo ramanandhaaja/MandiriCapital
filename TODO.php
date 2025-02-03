@@ -3,7 +3,7 @@
 1. portfolio bikin pake order
 2. background clor di ubah jadi #?
 3. value creation minta seperti counter di home
-3. cek logo merah putih fund di online, bukan local -> done, tp cek dl di online
+3. cek logo merah putih fund di online, bukan local -> done
 4. slideshow zenith dll -> done
 5. masih rata kiri jg di zenith dll
 6. insight jadi blog -> done

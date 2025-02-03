@@ -51,6 +51,7 @@
 
 
 
+
         {{--
         <div class="headline-grid-two middle-animation">
 
@@ -536,6 +537,7 @@
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('js/platform-animation.js') }}"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>
     <script>
         console.log('Platform page loaded');
