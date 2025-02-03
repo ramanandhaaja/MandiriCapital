@@ -175,19 +175,19 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
 
-                    {{-- Carousel Navigation Controls --}}
-                    <div class="carousel-controls">
-                        <div class="carousel-navigation">
-                            <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-                            <button class="next-btn" onclick="moveSlide(1)">&#10095;</button>
-                        </div>
-                        <div class="carousel-dots">
-                            @foreach($testimonials as $index => $testimonial)
-                                <span class="dot {{ $index === 0 ? 'active' : '' }}"
-                                      onclick="currentSlide({{ $index + 1 }})"></span>
-                            @endforeach
-                        </div>
+                {{-- Carousel Navigation Controls --}}
+                <div class="carousel-controls">
+                    <div class="carousel-navigation">
+                        <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                        <button class="next-btn" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+                    <div class="carousel-dots">
+                        @foreach($testimonials as $index => $testimonial)
+                            <span class="dot {{ $index === 0 ? 'active' : '' }}"
+                                  onclick="currentSlide({{ $index + 1 }})"></span>
+                        @endforeach
                     </div>
                 </div>
             </div>

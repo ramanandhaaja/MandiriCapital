@@ -292,7 +292,7 @@
     {{-- Synergy Programs Section --}}
     <section class="synergy-section" id="program-section">
         <div class="hero-mid-section">
-            <h1 class="center-text">Our value creation program</h1>
+            <h1 class="center-text">Our Value Creation Program</h1>
         </div>
 
         @foreach ($valueCreationList as $index => $program)

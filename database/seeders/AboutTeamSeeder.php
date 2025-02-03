@@ -12,7 +12,7 @@ class AboutTeamSeeder extends Seeder
     {
         $datas = [
             [
-                'name' => 'Alamanda Shatika',
+                'name' => 'Alamanda Shantika',
                 'job_group' => 'Board of Commissioners',
                 'title' => 'Independent Commissioner',
                 'content' => 'this is the desc',
@@ -134,7 +134,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Auginta Narasti Putri',
                 'job_group' => 'Legal, Compliance & HR',
-                'title' => 'Legal, Compliance & HR',
+                'title' => 'Legal',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SK37DBPPFVQVR2G1PBM8Q.png'
@@ -142,7 +142,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Dipo Prima',
                 'job_group' => 'Legal, Compliance & HR',
-                'title' => 'Legal, Compliance & HR',
+                'title' => 'HC',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SKJ13Y5Q4MXEE4NT23VKS.png'
@@ -150,7 +150,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Luna Amirahdya',
                 'job_group' => 'Legal, Compliance & HR',
-                'title' => 'Legal, Compliance & HR',
+                'title' => 'Compliance',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SKX294SBZ2K7FBT7GCZQK.png'

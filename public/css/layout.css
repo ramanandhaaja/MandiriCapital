@@ -384,9 +384,9 @@ body.menu-open {
 }
 
 .footer-middle {
-    justify-content: center;
+    justify-content: flex-start;
     text-align: left;
-    padding-left: 100px;
+    padding-left: 20px;
 }
 
 /* Certification Section */
@@ -434,6 +434,10 @@ body.menu-open {
         gap: 30px;
     }
 
+    .footer-middle {
+        padding-left: 0px;
+    }
+
     .footer-left {
         max-width: 100%;
     }
@@ -446,4 +450,6 @@ body.menu-open {
     .certification-images {
         flex-wrap: wrap;
     }
+
+
 }

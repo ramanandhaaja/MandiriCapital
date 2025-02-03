@@ -249,109 +249,6 @@ html, body {
     background-color: var(--color-secondary);
 }
 
-/* Responsive Design
-   ========================================================================== */
-@media (max-width: 1200px) {
-    .masonry-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .portfolio-section {
-        padding: var(--spacing-xl) var(--spacing-lg);
-    }
-
-    .portfolio-header,
-    .portfolio-row {
-        gap: var(--spacing-md);
-    }
-}
-
-@media (max-width: 768px) {
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card.xlarge {
-        grid-column: span 4;
-        grid-row: span 1;
-    }
-
-    .card.large {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-
-    .hero-section h1 {
-        font-size: 48px;
-    }
-
-    .card h2 {
-        font-size: 24px;
-    }
-
-    .search-section {
-        margin-top: 100px;
-    }
-
-    .category-filters {
-        gap: var(--spacing-lg);
-        overflow-x: auto;
-        padding-bottom: var(--spacing-sm);
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .category {
-        font-size: var(--spacing-md);
-        top: var(--spacing-lg);
-        left: var(--spacing-lg);
-    }
-
-    .portfolio-header {
-        display: none;
-    }
-
-    .portfolio-row {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
-        padding: var(--spacing-lg);
-    }
-
-    .description-cell {
-        -webkit-line-clamp: 3;
-    }
-
-    .partner-info {
-        margin-top: var(--spacing-sm);
-    }
-
-    .category-cell,
-    .stage-cell {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 480px) {
-    .masonry-grid {
-        grid-template-columns: 1fr;
-        padding: 0 var(--spacing-lg);
-    }
-
-    .card.xlarge,
-    .card.large {
-        grid-column: span 1;
-    }
-
-    .search-input {
-        font-size: 14px;
-        padding: var(--spacing-sm) var(--spacing-md);
-    }
-
-    .filter-link {
-        font-size: 14px;
-        padding-bottom: var(--spacing-sm);
-    }
-}
-
 /* Hero Section Styles */
 
 .hero-section {
@@ -796,13 +693,6 @@ html, body {
     text-align: right;
 }
 
-@media (max-width: 1024px) {
-    .headline-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-}
-
 .grid-headline-title {
     position: relative;
     font-family: var(--font-family);
@@ -885,8 +775,7 @@ html, body {
 
 .category-highlight {
     font-family: var(--font-family);
-    padding-top: 90px;
-    padding-bottom: 20px;
+    padding-top: 100px;
     font-size: 14px;
     display: flex;
     flex-direction: column;
@@ -930,7 +819,7 @@ html, body {
 .card-ecosystem-highlight-grid {
     position: relative;
     display: grid;
-    gap: 0px;
+    gap: 20px;
     grid-template-columns: repeat(2, 1fr);
     max-width: 1600px;
     padding-right: 40px;
@@ -984,7 +873,7 @@ html, body {
 
 .tag-container-highlight {
     position: absolute;
-    top: 40px;
+    bottom: 120px;
     right: 30px;
     display: flex;
     gap: 10px;
@@ -1008,89 +897,6 @@ html, body {
 .tag-international {
     color: rgba(0, 150, 200, 1);
     background-color: rgba(0, 150, 200, 0.3);
-}
-
-@media (max-width: 1400px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 48px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .card.large {
-        grid-column: span 2;
-    }
-}
-
-@media (max-width: 768px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 24px;
-    }
-
-    .search-section {
-        margin-top: 100px;
-    }
-
-    .category-filters {
-        gap: 24px;
-        overflow-x: auto;
-        padding-bottom: 8px;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .masonry-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .card,
-    .card.large {
-        grid-column: span 1;
-        height: 300px;
-    }
-
-    .card-content {
-        bottom: 48px;
-        left: 24px;
-        right: 24px;
-    }
-
-    .category {
-        font-size: 16px;
-        top: 24px;
-        left: 24px;
-    }
-
-    .card h2 {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 16px;
-    }
-
-    .search-input {
-        font-size: 14px;
-        padding: 10px 16px;
-    }
-
-    .filter-link {
-        font-size: 14px;
-        padding-bottom: 12px;
-    }
-
-    .card h2 {
-        font-size: 20px;
-    }
 }
 
 .newsletter-section {
@@ -1253,6 +1059,20 @@ html, body {
     height: auto;
 }
 
+.team-card .card-profile-photo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    visibility: visible;
+    opacity: 1;
+    background: rgba(0, 0, 0, 1);
+    border: none;
+    padding: 0;
+    z-index: 2;
+}
+
 .ecosystem-grid {
     position: relative;
     display: grid;
@@ -1261,7 +1081,6 @@ html, body {
     margin: 10px auto;
     max-width: 1350px;
 }
-
 
 .card-ecosystem {
     position: relative;
@@ -1272,7 +1091,7 @@ html, body {
     height: 352px;
     grid-column: span 1;
     border-radius: 12px;
-} ⁠
+}
 
 .card-profile-photo {
     position: absolute;
@@ -1285,6 +1104,7 @@ html, body {
     background: rgba(0, 0, 0, 1);
     border: none;
     padding: 0;
+    z-index: 2;
 }
 
 .card-ecosystem-hover {
@@ -1356,8 +1176,6 @@ html, body {
     margin: 5px;
 }
 
-
-
 .hover-title {
     color: var(--color-white);
     font-size: 1.5rem;
@@ -1375,8 +1193,6 @@ html, body {
     margin-bottom: 1.5rem;
 }
 
-
-
 .focus-areas-title {
     color: var(--color-white);
     font-size: 1.2rem;
@@ -1393,7 +1209,6 @@ html, body {
     flex-direction: column;
 }
 
-
 .card-ecosystem .background-image {
     position: absolute;
     top: 0;
@@ -1404,7 +1219,6 @@ html, body {
     background-position: center;
     z-index: 0;
 }
-
 
 .background-image::before {
     content: '';
@@ -1462,8 +1276,6 @@ html, body {
     z-index: 2;
 }
 
-
-
 .card-ecosystem h2 {
     font-family: var(--font-family);
     color: white;
@@ -1504,4 +1316,352 @@ html, body {
     font-size: 32px;
     color: #FFFFFF;
     padding: 40px 0 10px 65px;
+}
+
+@media (max-width: 768px) {
+    /* Grid and Card Styles */
+    .masonry-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 24px;
+    }
+
+    .card.xlarge {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+
+    .card.large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    /* Hero Section Styles */
+    .hero-section {
+        height: 100vh;
+        min-height: 600px;
+    }
+
+    .hero-main-text {
+        font-size: 48px;
+        top: 30%;
+    }
+
+    .center-search {
+        position: relative;
+        bottom: auto;
+        margin-top: 50vh;
+        height: auto;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    /* Category Filters */
+    .category-filters {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: 0;
+        height: auto;
+        margin: 0;
+    }
+
+    .filter-link {
+        font-size: 24px;
+        padding: var(--spacing-sm) 0;
+        display: block;
+        min-width: 200px;
+    }
+
+    /* Search Section */
+    .search-section {
+        margin-top: 100px;
+        padding: 0 24px;
+    }
+
+    .search-input {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    /* Portfolio Section */
+    .portfolio-header {
+        display: none;
+    }
+
+    .portfolio-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-lg);
+    }
+
+    .description-cell {
+        -webkit-line-clamp: 3;
+    }
+
+    .partner-info {
+        margin-top: var(--spacing-sm);
+    }
+
+    .category-cell,
+    .stage-cell {
+        font-size: 13px;
+    }
+
+    /* Headline Grid */
+    .headline-grid,
+    .headline-grid-four {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .headline-card {
+        text-align: center;
+        padding: var(--spacing-xl) var(--spacing-md);
+        border-bottom: 1px solid var(--color-border);
+        border-left: none;
+        border-right: none;
+    }
+
+    .headline-card.middle-border,
+    .headline-card.left-border {
+        border-bottom: 1px solid var(--color-border);
+        border-left: none;
+        border-right: none;
+    }
+
+    .headline-card:last-child {
+        border-bottom: none;
+    }
+
+    .headline-title {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+        margin-top: var(--spacing-xl);
+    }
+
+    .newsletter-container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .newsletter-title {
+        font-size: 28px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .center-image-newsletter {
+        height: 45px;
+        padding-top: var(--spacing-md);
+    }
+
+    /* Ecosystem Section */
+    .ecosystem-grid {
+        grid-template-columns: 1fr;
+        margin: 10px;
+        padding: 0;
+    }
+
+    .card-ecosystem-highlight {
+        grid-column: span 1;
+        height: auto;
+        min-height: auto;
+        background: var(--color-black);
+        padding: 30px 20px;
+        border-radius: 12px;
+    }
+
+    .card-ecosystem-highlight-grid {
+        position: relative;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .card-ecosystem-image-highlight {
+        position: static;
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        margin: 0 auto;
+        left: auto;
+        top: auto;
+        object-fit: contain;
+    }
+
+    .tag-container-highlight {
+        margin: 0 0 90px 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .tag {
+        padding: 6px 12px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
+    .category-highlight {
+        font-size: 22px;
+        line-height: 1.4;
+        margin: 0 0 15px 0;
+        display: block;
+        text-align: center;
+        color: var(--color-primary);
+    }
+
+    .card-ecosystem-content-highlight {
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 0;
+        text-align: center;
+        position: static;
+        color: var(--color-white);
+        padding: 0;
+        opacity: 0.9;
+    }
+
+    .card-ecosystem-highlight a {
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Team Section */
+    .team-section {
+        padding-bottom: 40px;
+    }
+
+    .team-card {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .team-image-containter{
+        width: 100%;
+        height: auto;
+        margin-top: 100px;
+    }
+
+    .team-image-large{
+        width: 100%;
+        height: auto;
+    }
+
+    /* Team Title Section */
+    .team-title-section {
+        padding: 40px 20px;
+    }
+
+    .team-title-section .masonry-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .grid-headline-title-card {
+        text-align: center;
+        padding: 0;
+    }
+
+    .grid-headline-title {
+        font-size: 36px;
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-weight: 600;
+        color: var(--color-white);
+    }
+
+    .grid-headline-description-card {
+        text-align: center;
+        padding: 0;
+    }
+
+    .grid-headline-subtitle {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0 15px;
+        font-weight: normal;
+        color: var(--color-gray-400);
+        text-align: center;
+    }
+
+    /* Team Members Section */
+    .mandiri-team-group-title {
+        font-size: 28px;
+        padding: 30px 20px;
+        text-align: left;
+    }
+
+    .team-card {
+        position: relative;
+        height: 400px;
+        margin: 0;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .team-card .background-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+    }
+
+    .team-card .card-profile-photo {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .team-name {
+        font-size: 20px;
+        line-height: 1.3;
+        margin-bottom: 4px;
+        color: var(--color-primary);
+    }
+
+    .team-title {
+        font-size: 16px;
+        line-height: 1.4;
+        color: var(--color-white);
+        opacity: 0.9;
+    }
+
+    /* Adjust grid for different screen sizes */
+    @media (max-width: 480px) {
+        .masonry-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 0 20px;
+        }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+        .masonry-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 0 20px;
+        }
+    }
 }

@@ -320,8 +320,9 @@
         });
     </script>
 
+{{--
     <script src="{{ asset('js/about-animation.js') }}"></script>
-
+--}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.card-ecosystem');
