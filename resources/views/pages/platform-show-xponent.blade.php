@@ -145,7 +145,7 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            “During the mentorship sessions with Astra International, the discussion focused on a successful synergy project, possibly because Imajin and Astra target the same industry. I believe that every industry has it own unique approach, wich is why the sharing session ath time was quiet insightful, especialy for the manufavturing and automative industries"
+                            “CI & Bank Mandiri Greatly assisted CROWDE in providing access and connections to financial industry players, particularly banking"
                         </div>
                     </div>
 
@@ -159,7 +159,7 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            "“Fishlog succesfully collaborated with mandiri SME to develop a loan referral program for the fisheries industry, valued at 50 billion rupiah”"
+                            "We can meet everyone from Mandiri Capital, other business units. We can know what parts are relevant to us, we can even meet directly with stakeholders so we can follow-up specifically on what and what added value we can offer."
                         </div>
                     </div>
 
@@ -173,7 +173,7 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            “The mentorship program truly opened my eyes, especially in preparing for my future series B fundraising. There were many insights from that time that i still remember today, and i know i need to be even more prepeared because, statistically, Series B fundraising is the thouhest”
+                            “It is an honor for ayoconnect to be given the trust of Bank Mandiri to be able to collaborate from implementing integrated embedded usecases for Livin' customers so that they can enjoy the best variety of services in just one”
                         </div>
                     </div>
                 </div>

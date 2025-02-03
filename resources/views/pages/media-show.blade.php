@@ -9,7 +9,7 @@
 
 @section('container')
     <div class="hero-section">
-        <div class="hero-content" style="background-image: url('{{ asset('images/media/OnHover.png') }}');">
+        <div class="hero-content" style="background-image: url('{{ $post->front_image ? Storage::url($post->front_image) : asset('images/media/OnHover.png') }}');">
         </div>
         <h1>{{ $post->title }}</h1>
         <p>{{ \Carbon\Carbon::parse($post->published_at)->format('d F Y') }}</p>

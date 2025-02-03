@@ -127,7 +127,15 @@
         </div>
 
         <div class="platform-image-containter-horizontal">
-            <img class="platform-image-large" src="{{ asset('images/platform/large-image.png') }}" alt="Team Photo">
+            <div class="platform-image-containter-grid">
+
+                <video autoplay muted loop playsinline class="platform-video-large">
+                    <source src="{{ asset('images/platform/videozenith.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <img class="platform-image-large" src="{{ asset('images/platform/large-image.png') }}" alt="Team Photo">
+            </div>
         </div>
 
 
