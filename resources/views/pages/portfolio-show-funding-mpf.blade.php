@@ -9,7 +9,7 @@
 
 @section('container')
     <div class="top-hero-section">
-        <img src="{{ asset('images/portfolio/MPFlogo.png') }}" alt="Author" class="author-avatar">
+        <img src="{{ asset('images/portfolio/MPFLogo.png') }}" alt="Author" class="author-avatar">
     </div>
 
     <div class="hero-section">
