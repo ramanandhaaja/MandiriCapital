@@ -20,7 +20,7 @@
                         <div class="author-info">
                             <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar">
                             <div class="author-details">
-                                <span class="author-name">Mandiri Admin - </span>
+                                <span class="author-name">Mandiri Capital Indonesia - </span>
                                 <span class="author-role">Author</span>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
         <div class="download-container">
             <!-- Left Column -->
             <div class="download-left">
-                <h2 class="download-title">Please fill in contact data to download</h2>
+                <h2 class="download-title">Please fill in your contact data to request our report</h2>
                 <img src="{{ asset('images/report/download.png') }}" alt="Download" class="download-image">
             </div>
 
@@ -81,15 +81,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="position">Posisi/Jabatan    </label>
+                            <label for="position">Job Position</label>
                             <input type="text" id="position" name="position" placeholder="Write here..."
                                 required>
                         </div>
                     </div>
                     <div class="form-actions">
-                        <button type="button" class="btn-cancel">Cancel</button>
+                        <button type="reset" class="btn-cancel">Reset</button>
                         <button type="submit" class="btn-download" onclick="alert('Thank you for your interest, we will contact you very soon!')"
-                            data-category="{{ $publication->category->name }}">Download</button>
+                            data-category="{{ $publication->category->name }}">Request Report</button>
                     </div>
 
 

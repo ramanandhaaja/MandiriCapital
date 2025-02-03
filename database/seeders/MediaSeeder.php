@@ -220,14 +220,6 @@ pivotal experience at the heart of Asia\'s fintech evolution.',
             ],
 
 
-
-
-
-
-
-
-
-
             [
                 'title' => 'Connecting Startups: MCI’s XYZ Value Creation Program at Money 20/20 Asia - News Main',
                 'content_heading' => 'Mandiri Capital Indonesia (MCI), the venture capital arm of Bank Mandiri, is taking its
@@ -304,14 +296,6 @@ Register your startup to discover what\'s possible at',
                 'meta_description' => '',
                 'published_at' => '2024-04-24',
             ],
-
-
-
-
-
-
-
-
 
 
             [
@@ -395,15 +379,6 @@ kolaborasi dan Zenith untuk akselerasi.',
                 'meta_description' => '',
                 'published_at' => '2024-12-31',
             ],
-
-
-
-
-
-
-
-
-
 
 
             [
@@ -520,54 +495,6 @@ di:</span>
 
 
 
-
-
-
-
-            [
-                'title' => 'Video: Cuan Pembiayaan Startup Ala Mandiri Capital Indonesia - Press Release',
-                'content_heading' => '',
-                'content' => '',
-                'media_url' => 'https://www.youtube.com/watch?v=MLGRM3U7GSk&t=148s',
-                'media_source_url' => 'https://mandiri-capital.co.id/video-cuan-pembiayaan-startup-ala-mandiri-capital-indonesia/',
-                'status' => 'published',
-                'front_image' => 'blog-images/01JK3HSAAB2RHH397ZMQAEJQ48.jpeg',
-                'headline_image' => '',
-                'featured_image' => '',
-                'meta_title' => '',
-                'meta_description' => '',
-                'published_at' => '2024-07-06',
-            ],
-
-
-
-
-
-
-
-            [
-                'title' => 'Video: Mandiri Capital Bidik Pasar Regional & Global Lewat Money 20/20 - Press Release',
-                'content_heading' => '',
-                'content' => '',
-                'media_url' => 'https://youtube.com/watch?v=elqa8kBbpEQ',
-                'media_source_url' => 'https://mandiri-capital.co.id/video-mandiri-capital-bidik-pasar-regional-global-lewat-money-20-20/',
-                'status' => 'published',
-                'front_image' => 'blog-images/01JK3HSAAB2RHH397ZMQAEJQ48.jpeg',
-                'headline_image' => '',
-                'featured_image' => '',
-                'meta_title' => '',
-                'meta_description' => '',
-                'published_at' => '2024-07-06',
-            ],
-
-
-
-
-
-
-
-
-
             [
                 'title' => 'Mandiri Capital Masih Lihat Peluang Startup Meski Suku Bunga Tinggi - News Main',
                 'content_heading' => 'Bisnis.com, JAKARTA — PT Mandiri Capital Indonesia (MCI) buka-bukaan soal strategi di
@@ -623,11 +550,6 @@ ungkapnya',
                 'meta_description' => '',
                 'published_at' => '2024-05-07',
             ],
-
-
-
-
-
 
 
             [
@@ -704,9 +626,6 @@ ent-di-bangkok/',
             ],
 
 
-
-
-
             [
                 'title' => 'Tuntas Xponent Money 20/20 Asia, MCI Siap Tembus Pasar Regional-Global - News Main',
                 'content_heading' => '<strong>Jakarta, CNBC Indonesia -</strong>
@@ -776,10 +695,6 @@ sektor industri, termasuk pemberian pinjaman, B2B value chain, dan penyedia pemb
             ],
 
 
-
-
-
-
             [
                 'title' => 'Mandiri Capital Indonesia Partisipasi dalam Program Relawan Bakti BUMN 2024 - Press Release',
                 'content_heading' => '<strong>IDXChannel</strong> - PT
@@ -841,11 +756,6 @@ ujar Wisnu.',
                 'meta_description' => '',
                 'published_at' => '2024-09-05',
             ],
-
-
-
-
-
 
 
             [
@@ -921,9 +831,14 @@ desa-wisata-hilisimaetano/',
                 ])
             );
 
-            // Get the news category and attach it
-            $newsCategory = BlogCategory::where('name', 'News')->first();
-            $blogPost->categories()->sync([$newsCategory->id]);
+            // Get the appropriate category based on the post title
+            if ($post['title'] === 'Program Xponent MCI di Money 20/20 Asia Jadi Jembatan Konektivitas Dunia - Insight') {
+                $category = BlogCategory::where('name', 'Blog')->first();
+            } else {
+                $category = BlogCategory::where('name', 'News')->first();
+            }
+
+            $blogPost->categories()->sync([$category->id]);
         }
     }
 }

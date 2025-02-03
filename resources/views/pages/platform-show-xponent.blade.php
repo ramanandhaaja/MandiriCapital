@@ -131,7 +131,7 @@
         <div class="masonry-grid-investment-section">
             <div class="grid-headline-title-card">
                 <h1 class="grid-headline-title">About The Program</h1>
-                <h1 class="grid-headline-subtitle-left">Artikel</h1>
+                <h1 class="grid-headline-subtitle-left">Testimonies</h1>
             </div>
             <div class="grid-headline-description-card">
                 <div class="masonry-grid-investment-section-sub">
@@ -145,7 +145,7 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            “CI & Bank Mandiri Greatly assisted CROWDE in providing access and connections to financial industry players, particularly banking"
+                            “CI & Bank Mandiri Greatly assisted CROWDE in providing access and connections to financial industry players, particularly banking."
                         </div>
                     </div>
 
@@ -173,7 +173,7 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            “It is an honor for ayoconnect to be given the trust of Bank Mandiri to be able to collaborate from implementing integrated embedded usecases for Livin' customers so that they can enjoy the best variety of services in just one”
+                            “It is an honor for ayoconnect to be given the trust of Bank Mandiri to be able to collaborate from implementing integrated embedded usecases for Livin' customers so that they can enjoy the best variety of services in just one.”
                         </div>
                     </div>
                 </div>

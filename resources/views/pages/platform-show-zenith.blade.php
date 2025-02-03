@@ -143,7 +143,7 @@
         <div class="masonry-grid-investment-section">
             <div class="grid-headline-title-card">
                 <h1 class="grid-headline-title">About The Program</h1>
-                <h1 class="grid-headline-subtitle-left">Artikel</h1>
+                <h1 class="grid-headline-subtitle-left">Testimonies</h1>
             </div>
             <div class="grid-headline-description-card">
                 <div class="masonry-grid-investment-section-sub">
@@ -157,7 +157,7 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            "During the mentorship sessions with Astra International, the discussion focused on a successful synergy project, possibly because Imajin and Astra target the same industry. I believe that every industry has it own unique approach, wich is why the sharing session ath time was quiet insightful, especialy for the manufavturing and automative industries"
+                            "During the mentorship sessions with Astra International, the discussion focused on a successful synergy project, possibly because Imajin and Astra target the same industry. I believe that every industry has it own unique approach, wich is why the sharing session ath time was quiet insightful, especialy for the manufavturing and automative industries."
                         </div>
                     </div>
 
@@ -171,7 +171,7 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            "Fishlog succesfully collaborated with mandiri SME to develop a loan referral program for the fisheries industry, valued at 50 billion rupiah"
+                            "Fishlog succesfully collaborated with mandiri SME to develop a loan referral program for the fisheries industry, valued at 50 billion rupiah."
                         </div>
                     </div>
 
@@ -185,7 +185,7 @@
                             CEO & Co-Founder
                         </div>
                         <div class="card-funding-content">
-                            "The mentorship program truly opened my eyes, especially in preparing for my future series B fundraising. There were many insights from that time that i still remember today, and i know i need to be even more prepeared because, statistically, Series B fundraising is the thouhest"
+                            "The mentorship program truly opened my eyes, especially in preparing for my future series B fundraising. There were many insights from that time that i still remember today, and i know i need to be even more prepeared because, statistically, Series B fundraising is the thouhest."
                         </div>
                     </div>
                 </div>

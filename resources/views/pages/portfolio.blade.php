@@ -274,7 +274,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <div class="card-stats">
+                            <div class="card-stats" style="visibility: hidden;">
                                 @foreach ($stats as $index => $stat)
                                     <div class="stat-item{{ $index === 1 ? '-middle' : '' }}">
                                         <img src="{{ asset('images/portfolio/' . $stat['icon']) }}"
@@ -394,7 +394,6 @@
                                         </div>
 
                                         {{-- Hover card that follows mouse --}}
-                                        <div @if($subArticle->title == 'Balance Sheet Fund') style="visibility: hidden;" @endif>
 
                                         <div class="card-funding-hover">
                                             <div class="hover-content">
@@ -420,7 +419,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     </div>
                                 @endforeach
                             </div>

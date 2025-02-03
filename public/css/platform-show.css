@@ -210,7 +210,6 @@ html, body {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     padding: 60px 20px;
-    max-width: 1600px;
     margin: 0px auto;
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -245,6 +244,17 @@ html, body {
     opacity: 1;
     transition: opacity 0.3s ease;
     background-color: #18181B ;
+}
+
+
+.masonry-grid-investment-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 60px 20px;
+    margin: 0px auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .masonry-grid-contact-section {
@@ -971,6 +981,14 @@ html, body {
     height: 360px;
 }
 
+.platform-image-large-yaxis{
+    width: 80%;
+    height: auto;
+}
+
+.platform-image-containter-horizontal-yaxis{
+    width: 100%;
+}
 /* Business Deals Section
    ========================================================================== */
 .platform-image-containter {

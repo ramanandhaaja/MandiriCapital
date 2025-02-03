@@ -27,8 +27,8 @@
 
 
 
-        <div class="platform-image-containter-horizontal">
-            <img class="platform-image-large" src="{{ asset('images/platform/large-image-yaxis.png') }}" alt="Team Photo">
+        <div class="platform-image-containter-horizontal-yaxis">
+            <img class="platform-image-large-yaxis" src="{{ asset('images/platform/large-image-yaxis.png') }}" alt="Team Photo">
         </div>
 
 

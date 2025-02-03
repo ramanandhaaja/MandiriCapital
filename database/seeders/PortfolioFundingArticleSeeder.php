@@ -30,22 +30,18 @@ class PortfolioFundingArticleSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-
-
-
         // Sub-articles for first article
         DB::table('portfolio_funding_articles_sub')->insert([
             [
                 'article_id' => $firstArticleId,
                 'title' => "Balance Sheet Fund",
-                'content' => "Mandiri Capital Indonesia (MCI), the Corporate Venture Capital arm of Mandiri Group, strategically invests in startups (both within Indonesia and globally) that offer innovative products or services capable of synergizing with Mandiri’s ecosystem. Leveraging the Group’s position as Indonesia’s leading financial conglomerate, MCI empowers startups to scale efficiently and accelerate growth through access to Mandiri’s extensive network, resources, and market expertise. By fostering strategic partnerships with forward-thinking ventures, MCI aims to co-create value, driving mutual growth while participating on the group’s digital enhancement.
-",
+                'content' => "Mandiri Capital Indonesia (MCI), the Corporate Venture Capital arm of Mandiri Group, strategically invests in startups (both within Indonesia and globally) that offer innovative products or services capable of synergizing with Mandiri’s ecosystem. Leveraging the Group’s position as Indonesia’s leading financial conglomerate, MCI empowers startups to scale efficiently and accelerate growth through access to Mandiri’s extensive network, resources, and market expertise. By fostering strategic partnerships with forward-thinking ventures, MCI aims to co-create value, driving mutual growth while participating on the group’s digital enhancement.",
                 'is_large' => false,
                 'image_path' => 'portfolios/01JHFQD9T5Z8WB3Q1JT81DRPHK.png',
                 'order' => 1,
                 'stage' => 'Growth to Late Stage',
-                'geography' => 'Indonesia',
-                'ticketsize' => '20-25 Mn USD',
+                'geography' => 'Asia Region',
+                'ticketsize' => 'Above 2 Mn USD',
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),

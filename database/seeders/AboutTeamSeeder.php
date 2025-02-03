@@ -52,7 +52,7 @@ class AboutTeamSeeder extends Seeder
                 'image_path' => 'our-identity/01JK2SC0PW855P8HWV4VVD0T02.png'
             ],
             [
-                'name' => 'Oktavia Laras',
+                'name' => 'Oktavia Larasati',
                 'job_group' => 'Venture Fund',
                 'title' => 'Venture Fund',
                 'content' => 'this is the desc',
@@ -62,7 +62,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Faris Iman',
                 'job_group' => 'Investment',
-                'title' => 'VP Investment',
+                'title' => 'SVP Investment',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SED7N3G3CR1DP0G5THRCS.png'
@@ -158,7 +158,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Adrian Jonathan',
                 'job_group' => 'Legal, Compliance & HR',
-                'title' => 'Legal, Compliance & HR',
+                'title' => 'Compliance',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK3JW5GR495FY9GAB49FCW61.jpeg'
@@ -238,7 +238,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Inggrid Anggi Purnama',
                 'job_group' => 'Corsec & Operations',
-                'title' => 'Procurement',
+                'title' => 'Corsec & Operations',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SS28WAM9WVT41S3H99S1D.png'
@@ -246,7 +246,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Raina Safa Radhyana Rahmat',
                 'job_group' => 'Corsec & Operations',
-                'title' => 'Social Media',
+                'title' => 'Corsec & Operations',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SSJHE03DTFBA10DBKMQR2.png'

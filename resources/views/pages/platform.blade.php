@@ -298,9 +298,32 @@
             <div class="synergy-container {{ $index % 2 === 1 ? 'dark' : '' }}">
                 <div class="synergy-grid">
                     @if ($index % 2 === 1)
+                        @if ($program->title === 'Yaxis')
                         <div class="synergy-image">
-                            <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" style="height: 500px;">
+                            <div class="carousel-container" id="carousel-odd-{{ $index }}">
+                                <div class="carousel-slide" data-carousel="odd-{{ $index }}">
+                                    <img src="{{ asset('images/platform/yaxisslide1.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                </div>
+                                <div class="carousel-slide" data-carousel="odd-{{ $index }}">
+                                    <img src="{{ asset('images/platform/yaxisslide2.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                </div>
+                                <div class="carousel-slide" data-carousel="odd-{{ $index }}">
+                                    <img src="{{ asset('images/platform/yaxisslide3.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                </div>
+
+                                <!-- Navigation arrows -->
+                                <a class="prev" onclick="moveSlide(-1, 'odd-{{ $index }}')">&#10094;</a>
+                                <a class="next" onclick="moveSlide(1, 'odd-{{ $index }}')">&#10095;</a>
+
+                                <!-- Navigation dots -->
+                                <div class="dots-container">
+                                    <span class="dot active" data-carousel="odd-{{ $index }}" onclick="currentSlide(1, 'odd-{{ $index }}')"></span>
+                                    <span class="dot" data-carousel="odd-{{ $index }}" onclick="currentSlide(2, 'odd-{{ $index }}')"></span>
+                                    <span class="dot" data-carousel="odd-{{ $index }}" onclick="currentSlide(3, 'odd-{{ $index }}')"></span>
+                                </div>
+                            </div>
                         </div>
+                        @endif
                     @endif
 
                     <div class="synergy-content">
@@ -312,13 +335,44 @@
 
                         <div class="synergy-register">
                             <a href="{{ route('platform.show', $program->slug) }}" class="register-btn btn-detail">View Detail</a>
-                            <a href="{{ route('platform.apply') }}" class="register-btn btn-register">Register Now</a>
+                            <a href="{{ $program->title === 'Zenith' ? route('platform.apply') : '#contact-form-section' }}" class="register-btn btn-register">Register Now</a>
                         </div>
                     </div>
                     @if ($index % 2 === 0)
+                        @if ($program->title === 'Xponent')
                         <div class="synergy-image">
-                            <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" style="height: 500px;">
+                            <div class="carousel-container" id="carousel-even-{{ $index }}">
+                                <div class="carousel-slide active" data-carousel="even-{{ $index }}">
+                                    <img src="{{ asset('images/platform/xponentslide1.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                </div>
+                                <div class="carousel-slide" data-carousel="even-{{ $index }}">
+                                    <img src="{{ asset('images/platform/xponentslide2.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                </div>
+                                <div class="carousel-slide" data-carousel="even-{{ $index }}">
+                                    <img src="{{ asset('images/platform/xponentslide3.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                </div>
+
+                                <!-- Navigation arrows -->
+                                <a class="prev" onclick="moveSlide(-1, 'even-{{ $index }}')">&#10094;</a>
+                                <a class="next" onclick="moveSlide(1, 'even-{{ $index }}')">&#10095;</a>
+
+                                <!-- Navigation dots -->
+                                <div class="dots-container">
+                                    <span class="dot active" data-carousel="even-{{ $index }}" onclick="currentSlide(1, 'even-{{ $index }}')"></span>
+                                    <span class="dot" data-carousel="even-{{ $index }}" onclick="currentSlide(2, 'even-{{ $index }}')"></span>
+                                    <span class="dot" data-carousel="even-{{ $index }}" onclick="currentSlide(3, 'even-{{ $index }}')"></span>
+                                </div>
+                            </div>
                         </div>
+                        @elseif ($program->title === 'Zenith')
+                        <div class="synergy-image">
+                            <div class="carousel-container" id="carousel-odd-{{ $index }}">
+                                <div class="carousel-slide active" data-carousel="odd-{{ $index }}">
+                                    <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" style="height: 500px;">
+                                </div>
+                            </div>
+                        </div>
+                        @endif
                     @endif
                 </div>
             </div>
@@ -326,145 +380,146 @@
 
 
 
-    {{-- Contact Form Section --}}
-    <div class="masonry-grid-contact-section-grey">
-        <div class="grid-headline-title-card">
-            <h1 class="grid-headline-title-contact">Synergize with Us</h1>
-            <h1 class="grid-headline-subtitle-contact">
-            </h1>
+            {{-- Contact Form Section --}}
+            <div class="masonry-grid-contact-section-grey" id="contact-form-section">
+                <div class="grid-headline-title-card">
+                    <h1 class="grid-headline-title-contact">Synergize with Us</h1>
+                    <h1 class="grid-headline-subtitle-contact">
+                    </h1>
+                </div>
+
+                <div class="grid-headline-contact-card">
+                    <form id="contactForm" class="contact-form">
+                        @csrf
+                        {{-- Company Details --}}
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="program" class="form-label">Program*</label>
+                                <input type="text" id="program" name="program" class="form-input"
+                                    placeholder="Write here..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mandiri_ecosystem" class="form-label">Mandiri Ecosystem*</label>
+                                <input type="text" id="mandiri_ecosystem" name="mandiri_ecosystem" class="form-input"
+                                    placeholder="Write here..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name" class="form-label">First Name*</label>
+                                <input type="text" id="first_name" name="first_name" class="form-input"
+                                    placeholder="Write here..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name" class="form-label">Last Name*</label>
+                                <input type="text" id="last_name" name="last_name" class="form-input"
+                                    placeholder="Write here..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address*</label>
+                                <input type="email" id="email" name="email" class="form-input"
+                                    placeholder="Write here..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number*</label>
+                                <input type="text" id="phone" name="phone" class="form-input"
+                                    placeholder="Write here..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company_name" class="form-label">Company Name*</label>
+                                <input type="text" id="company_name" name="company_name" class="form-input"
+                                    placeholder="Write here..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="url" class="form-label">Add URL to your Company Website</label>
+                                <input type="text" id="url" name="url" class="form-input"
+                                    placeholder="Write here..." required>
+                            </div>
+                        </div>
+
+                        {{-- Upload Company Profile / Pitch Deck --}}
+                        <div class="form-group">
+                            <label class="form-label">Upload Your Company Profile / Pitch Deck</label>
+                            <div class="file-upload-container">
+                                <label for="company_profile" class="file-upload-button">Choose File</label>
+                                <span class="file-name">No File Chosen</span>
+                                <input type="file" id="company_profile" name="company_profile" class="file-input"
+                                    accept=".pdf" required>
+                            </div>
+                            <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page PDF)</p>
+                            <div class="upload-guidelines">
+                                <p class="guidelines-title">Your company profile or pitch deck should address these things:</p>
+                                <ul class="guidelines-list">
+                                    <li>The specific problem your company are aiming to tackle</li>
+                                    <li>The solution for the specific problem</li>
+                                    <li>The business model, describe the strategy to increase the revenue or profit with its
+                                        products and customer base</li>
+                                    <li>The target market, the size, entry barriers, challenges, and opportunities</li>
+                                    <li>Number of the current users or clients that are using your products</li>
+                                    <li>Your competition and who might be one</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {{-- Business Sector Selection --}}
+                        <div class="form-group">
+                            <label class="form-label">Choose your company's main business sector</label>
+                            <div class="sector-grid">
+                                <div class="sector-item">
+                                    <input type="radio" id="agriculture" name="business_sector" value="Agriculture & Food"
+                                        class="sector-radio" required>
+                                    <label for="agriculture" class="sector-label">Embedded Finance</label>
+                                </div>
+                                <div class="sector-item">
+                                    <input type="radio" id="energy" name="business_sector" value="Energy & Resources"
+                                        class="sector-radio">
+                                    <label for="energy" class="sector-label">Health & Wellness</label>
+                                </div>
+                                <div class="sector-item">
+                                    <input type="radio" id="healthcare" name="business_sector"
+                                        value="Healthcare & Pharmaceuticals" class="sector-radio">
+                                    <label for="healthcare" class="sector-label">Wealth Management</label>
+                                </div>
+                                <div class="sector-item">
+                                    <input type="radio" id="education" name="business_sector"
+                                        value="Education & employment" class="sector-radio">
+                                    <label for="education" class="sector-label">Tech Enabler</label>
+                                </div>
+                                <div class="sector-item">
+                                    <input type="radio" id="automotive" name="business_sector"
+                                        value="Automotive & Transportation" class="sector-radio">
+                                    <label for="automotive" class="sector-label">Value Chain Enabler</label>
+                                </div>
+                                <div class="sector-item">
+                                    <input type="radio" id="banking" name="business_sector"
+                                        value="Banking & Financial Service" class="sector-radio">
+                                    <label for="banking" class="sector-label">Property Tech & Asset Management</label>
+                                </div>
+                                <div class="sector-item">
+                                    <input type="radio" id="other" name="business_sector" value="Other"
+                                        class="sector-radio">
+                                    <label for="other" class="sector-label">Other</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Submit Button --}}
+                        <div class="form-group button-group">
+                            <button type="reset" class="reset-button">Reset</button>
+                            <button type="submit" class="submit-button">Submit Pitch</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <div class="grid-headline-contact-card">
-            <form id="contactForm" class="contact-form">
-                @csrf
-                {{-- Company Details --}}
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="program" class="form-label">Program*</label>
-                        <input type="text" id="program" name="program" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="mandiri_ecosystem" class="form-label">Mandiri Ecosystem*</label>
-                        <input type="text" id="mandiri_ecosystem" name="mandiri_ecosystem" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="first_name" class="form-label">First Name*</label>
-                        <input type="text" id="first_name" name="first_name" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="last_name" class="form-label">Last Name*</label>
-                        <input type="text" id="last_name" name="last_name" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address*</label>
-                        <input type="email" id="email" name="email" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone" class="form-label">Phone Number*</label>
-                        <input type="text" id="phone" name="phone" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="company_name" class="form-label">Company Name*</label>
-                        <input type="text" id="company_name" name="company_name" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="url" class="form-label">Add URL to your Company Website</label>
-                        <input type="text" id="url" name="url" class="form-input"
-                            placeholder="Write here..." required>
-                    </div>
-                </div>
-
-                {{-- Upload Company Profile / Pitch Deck --}}
-                <div class="form-group">
-                    <label class="form-label">Upload Your Company Profile / Pitch Deck</label>
-                    <div class="file-upload-container">
-                        <label for="company_profile" class="file-upload-button">Choose File</label>
-                        <span class="file-name">No File Chosen</span>
-                        <input type="file" id="company_profile" name="company_profile" class="file-input"
-                            accept=".pdf" required>
-                    </div>
-                    <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page PDF)</p>
-                    <div class="upload-guidelines">
-                        <p class="guidelines-title">Your company profile or pitch deck should address these things:</p>
-                        <ul class="guidelines-list">
-                            <li>The specific problem your company are aiming to tackle</li>
-                            <li>The solution for the specific problem</li>
-                            <li>The business model, describe the strategy to increase the revenue or profit with its
-                                products and customer base</li>
-                            <li>The target market, the size, entry barriers, challenges, and opportunities</li>
-                            <li>Number of the current users or clients that are using your products</li>
-                            <li>Your competition and who might be one</li>
-                        </ul>
-                    </div>
-                </div>
-
-                {{-- Business Sector Selection --}}
-                <div class="form-group">
-                    <label class="form-label">Choose your company's main business sector</label>
-                    <div class="sector-grid">
-                        <div class="sector-item">
-                            <input type="radio" id="agriculture" name="business_sector" value="Agriculture & Food"
-                                class="sector-radio" required>
-                            <label for="agriculture" class="sector-label">Embedded Finance</label>
-                        </div>
-                        <div class="sector-item">
-                            <input type="radio" id="energy" name="business_sector" value="Energy & Resources"
-                                class="sector-radio">
-                            <label for="energy" class="sector-label">Health & Wellness</label>
-                        </div>
-                        <div class="sector-item">
-                            <input type="radio" id="healthcare" name="business_sector"
-                                value="Healthcare & Pharmaceuticals" class="sector-radio">
-                            <label for="healthcare" class="sector-label">Wealth Management</label>
-                        </div>
-                        <div class="sector-item">
-                            <input type="radio" id="education" name="business_sector"
-                                value="Education & employment" class="sector-radio">
-                            <label for="education" class="sector-label">Tech Enabler</label>
-                        </div>
-                        <div class="sector-item">
-                            <input type="radio" id="automotive" name="business_sector"
-                                value="Automotive & Transportation" class="sector-radio">
-                            <label for="automotive" class="sector-label">Value Chain Enabler</label>
-                        </div>
-                        <div class="sector-item">
-                            <input type="radio" id="banking" name="business_sector"
-                                value="Banking & Financial Service" class="sector-radio">
-                            <label for="banking" class="sector-label">Property Tech & Asset Management</label>
-                        </div>
-                        <div class="sector-item">
-                            <input type="radio" id="other" name="business_sector" value="Other"
-                                class="sector-radio">
-                            <label for="other" class="sector-label">Other</label>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Submit Button --}}
-                <div class="form-group button-group">
-                    <button type="reset" class="reset-button">Reset</button>
-                    <button type="submit" class="submit-button">Submit Pitch</button>
-                </div>
-            </form>
-        </div>
-    </div>
 </section>
 
     {{-- Newsletter Section --}}
@@ -481,8 +536,11 @@
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('js/carousel.js') }}"></script>
     <script>
+        console.log('Platform page loaded');
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('Platform DOM Content Loaded');
             // DOM Elements
             const elements = {
                 filterLinks: document.querySelectorAll('.filter-link'),

@@ -366,7 +366,7 @@
 
 @section('scripts')
     <script src="{{ asset('js/home-animation.js') }}"></script>
-    <script src="{{ asset('js/carousel.js') }}"></script>
+    <script src="{{ asset('js/carousel-home.js') }}"></script>
     <script>
         // Modal Functions
         function openPitchModal() {
