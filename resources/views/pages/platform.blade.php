@@ -408,8 +408,8 @@
                                 <select id="mandiri_ecosystem" name="mandiri_ecosystem" class="form-input" required>
                                     <option value="" disabled selected>Select the Ecosystem...</option>
                                     <option value="Bank Syariah Indonesia">Bank Syariah Indonesia</option>
-                                    <option value="Mandiri Taspen">Mandiri Taspen</option>
-                                    <option value="Mandiri Europe">Mandiri Europe</option>
+                                    <option value="Mandiri Taspen">Bank Mandiri Taspen</option>
+                                    <option value="Mandiri Europe">Bank Mandiri Europe</option>
                                     <option value="Mandiri Sekuritas">Mandiri Sekuritas</option>
                                     <option value="Mandiri Investasi">Mandiri Investasi</option>
                                     <option value="Mandiri Tunas Finance">Mandiri Tunas Finance</option>
