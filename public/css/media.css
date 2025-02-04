@@ -569,25 +569,69 @@ a {
 
 /* Responsive Design
    ========================================================================== */
-@media (max-width: 1400px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 48px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .card.large {
-        grid-column: span 2;
-    }
-}
 
 @media (max-width: 768px) {
+
+
+    /* Hero Section Styles */
+    .hero-section {
+        height: 100vh;
+        min-height: 600px;
+    }
+
+    .hero-main-text {
+        font-size: 48px;
+        top: 30%;
+    }
+
+    .center-search {
+        position: relative;
+        margin-top: 50vh;
+        height: auto;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    /* Category Filters */
+    .category-filters {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0;
+        height: auto;
+        margin: 0;
+    }
+
+    .filter-link {
+        font-size: 24px;
+        padding: 12px 0;
+        display: block;
+        width: 100%;
+
+    }
+
+    /* Search Section */
+    .search-section {
+        margin-top: 100px;
+        padding: 0 24px;
+    }
+
+    .search-input {
+        font-size: 16px;
+        padding: 12px 20px;
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Search Section Mobile Styles */
+
+    .search-input-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+
+
     .search-section,
     .masonry-grid {
         padding: 0 24px;
@@ -601,29 +645,11 @@ a {
     .card.large {
         grid-column: span 1;
     }
-}
 
-@media (max-width: 480px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 16px;
-    }
 
-    .search-input {
-        font-size: var(--font-size-sm);
-        padding: 10px 16px;
-    }
-
-    .filter-link {
-        font-size: var(--font-size-sm);
-        padding-bottom: var(--spacing-md);
-    }
-
-    .card h2 {
-        font-size: var(--font-size-lg);
-    }
-
-    .hero-main-text {
-        font-size: calc(var(--font-size-4xl) * 0.4);
+    .newsletter-section{
+        width: auto;
     }
 }
+
+

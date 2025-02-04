@@ -381,54 +381,73 @@ body {
 
 /* Responsive Design
    ========================================================================== */
-@media (max-width: 1400px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 var(--spacing-2xl);
-    }
-}
 
-@media (max-width: 1200px) {
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-lg);
-    }
-}
 
 @media (max-width: 768px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 var(--spacing-lg);
+
+    /* Hero Section Styles */
+    .hero-section {
+        height: 100vh;
+        min-height: 600px;
     }
 
-    .search-section {
-        margin-top: 100px;
+    .hero-main-text {
+        font-size: 48px;
+        top: 30%;
     }
 
+    .center-search {
+        position: relative;
+        margin-top: 50vh;
+        height: auto;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    /* Category Filters */
     .category-filters {
-        gap: 24px;
-        overflow-x: auto;
-        padding-bottom: 8px;
-        -webkit-overflow-scrolling: touch;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0;
+        height: auto;
+        margin: 0;
     }
 
     .filter-link {
         font-size: 24px;
-        font-weight: 500;
-        padding-bottom: 16px;
-        position: relative;
-        width:200px;
+        padding: 12px 0;
+        display: block;
+        width: 100%;
+
     }
 
-    .filter-link.active {
-        color: #FFD700;
-        font-family: var(--font-family);
+    /* Search Section */
+    .search-section {
+        margin-top: 100px;
+        padding: 0 24px;
     }
 
-    .filter-link.active::after {
-        display: none;
+    .search-input {
+        font-size: 16px;
+        padding: 12px 20px;
+        width: 100%;
+        max-width: none;
     }
 
+    /* Search Section Mobile Styles */
+
+    .search-input-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+
+
+    .search-section,
+    .masonry-grid {
+        padding: 0 var(--spacing-lg);
+    }
 
     .masonry-grid {
         grid-template-columns: 1fr;
@@ -472,30 +491,5 @@ body {
 
     .hero-main-text {
         font-size: calc(var(--font-size-2xl) * 0.6);
-    }
-}
-
-@media (max-width: 480px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 var(--spacing-md);
-    }
-
-    .search-input {
-        font-size: var(--font-size-sm);
-        padding: 10px var(--spacing-md);
-    }
-
-    .filter-link {
-        font-size: var(--font-size-sm);
-        padding-bottom: var(--spacing-md);
-    }
-
-    .card h2 {
-        font-size: calc(var(--font-size-lg) * 0.7);
-    }
-
-    .hero-main-text {
-        font-size: calc(var(--font-size-2xl) * 0.4);
     }
 }

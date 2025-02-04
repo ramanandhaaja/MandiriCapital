@@ -145,96 +145,8 @@ body {
     text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 1400px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 48px;
-    }
-}
 
-@media (max-width: 1200px) {
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
 
-    .card.large {
-        grid-column: span 2;
-    }
-}
-
-@media (max-width: 768px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 24px;
-    }
-
-    .search-section {
-        margin-top: 100px;
-    }
-
-    .category-filters {
-        gap: 24px;
-        overflow-x: auto;
-        padding-bottom: 8px;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .masonry-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .card,
-    .card.large {
-        grid-column: span 1;
-        height: 300px;
-    }
-
-    .card-content {
-        bottom: 48px;
-        left: 24px;
-        right: 24px;
-    }
-
-    .category {
-        font-size: 16px;
-        top: 24px;
-        left: 24px;
-    }
-
-    .card h2 {
-        font-size: 24px;
-    }
-
-    .date {
-        bottom: 24px;
-        left: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .search-section,
-    .masonry-grid {
-        padding: 0 16px;
-        z-index: 10;
-    }
-
-    .search-input {
-        font-size: 14px;
-        padding: 10px 16px;
-        z-index: 10;
-    }
-
-    .filter-link {
-        font-size: 14px;
-        padding-bottom: 12px;
-    }
-
-    .card h2 {
-        font-size: 20px;
-    }
-}
 
 /* Hero Section Styles */
 .hero-section {
@@ -282,15 +194,7 @@ body {
     z-index: -5;
 }
 
-@media screen and (max-width: 768px) {
-    .video-background {
-        width: auto;
-        min-width: 100%;
-        height: calc(100% + 600px);
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
+
 
 .center-image {
     position: absolute;
@@ -534,107 +438,6 @@ body {
     background-color: #D97706;
 }
 
-@media (max-width: 992px) {
-    .download-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .download-right {
-        max-width: 100%;
-    }
-
-    .download-title {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 640px) {
-    .download-section {
-        padding: 40px 16px;
-    }
-
-    .download-title {
-        font-size: 24px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .form-actions {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 1200px) {
-    .download-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .download-left {
-        text-align: center;
-    }
-
-    .download-right {
-        max-width: 100%;
-    }
-
-    .download-title {
-        font-size: 28px;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .download-section {
-        margin: 40px 20px;
-        padding: 40px 20px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .form-group input {
-        padding: 10px 14px;
-        font-size: 14px;
-    }
-
-    .form-actions {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .btn-cancel, .btn-download {
-        width: 100%;
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .download-title {
-        font-size: 24px;
-    }
-
-}
-
-@media (max-width: 480px) {
-    .download-section {
-        margin: 30px 15px;
-        padding: 30px 15px;
-    }
-
-    .download-title {
-        font-size: 20px;
-    }
-
-    .form-group label {
-        font-size: 14px;
-    }
-
-}
 
 /* Newsletter Section Styles */
 .newsletter-section {
@@ -906,50 +709,6 @@ body {
     max-width: 100%;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .synergy-container {
-        padding: 0 2rem;
-    }
-
-    .synergy-grid {
-        gap: 4rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .synergy-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .synergy-content {
-        padding-left: 0;
-        text-align: center;
-    }
-
-    .synergy-title {
-        font-size: 42px;
-    }
-
-    .synergy-iframe {
-        height: 400px;
-    }
-}
-
-@media (max-width: 480px) {
-    .synergy-container {
-        padding: 0 1rem;
-    }
-
-    .synergy-title {
-        font-size: 36px;
-    }
-
-    .synergy-iframe {
-        height: 300px;
-    }
-}
 
 .headline-section {
     padding-top: 0px;
@@ -1749,4 +1508,210 @@ select.form-input option {
 
 .dot.active, .dot:hover {
     background-color: var(--color-white);
+}
+
+
+
+@media (max-width: 768px) {
+
+
+
+    /* Hero Section Styles */
+    .hero-section {
+        height: 100vh;
+        min-height: 600px;
+    }
+
+    .hero-main-text {
+        font-size: 48px;
+        top: 30%;
+    }
+
+    .center-search {
+        position: relative;
+        margin-top: 50vh;
+        height: auto;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    /* Category Filters */
+    .category-filters {
+        flex-direction: column;
+        gap: 16px;
+        padding: 85px 0 0 0;
+        height: auto;
+        margin: 0;
+    }
+
+    .filter-link {
+        font-size: 24px;
+        padding: 12px 0;
+        display: block;
+        width: 100%;
+
+    }
+
+    /* Search Section */
+    .search-section {
+        margin-top: 100px;
+        padding: 0 24px;
+    }
+
+    .search-input {
+        font-size: 16px;
+        padding: 12px 20px;
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Search Section Mobile Styles */
+
+    .search-input-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+
+    .search-section,
+    .masonry-grid {
+        padding: 0 24px;
+    }
+
+
+    .masonry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .card.large {
+        grid-column: span 1;
+        height: 300px;
+    }
+
+    .card-content {
+        bottom: 48px;
+        left: 24px;
+        right: 24px;
+    }
+
+    .category {
+        font-size: 16px;
+        top: 24px;
+        left: 24px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .date {
+        bottom: 24px;
+        left: 24px;
+    }
+
+    .video-background {
+        width: auto;
+        min-width: 100%;
+        height: calc(100% + 600px);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .download-section {
+        margin: 40px 20px;
+        padding: 40px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .form-group input {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-cancel, .btn-download {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .download-title {
+        font-size: 24px;
+    }
+
+    .synergy-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .synergy-content {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .synergy-title {
+        font-size: 42px;
+    }
+
+    .synergy-iframe {
+        height: 400px;
+    }
+
+    .headline-grid-counter{
+        grid-template-columns: repeat(1, 1fr);
+        width: auto;
+
+    }
+
+    .headline-card-two{
+        padding-bottom: 40px;
+    }
+
+    .headline-card-two.middle-border{
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid var(--color-border);
+        padding-top: 40px;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 40px;
+    }
+
+    .masonry-grid-investment-section{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .masonry-grid-investment-section-sub{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-headline-title{
+        padding-left: 60px;
+        margin-left: 0px;
+    }
+
+    .section-content{
+        padding-left: 60px;
+    }
+
+    .potential-section{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .potential-content-card{
+        padding-left: 80px;
+    }
+
+    .potential-content-section{
+        width: auto;
+    }
 }

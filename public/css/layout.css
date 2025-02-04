@@ -1,3 +1,18 @@
+:root {
+    /* Typography */
+    --font-family: 'Avenir LT Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+
+}
+
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('../fonts/Avenir LT Std 45 Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 /* Reset and Base Styles */
 body {
     margin: 0;
@@ -11,11 +26,9 @@ body.menu-open {
     overflow: hidden;
 }
 
-
-
 /* Header and Navigation */
 .site-header {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     background-color: rgba(0, 0, 0, 0.1);
     padding: 0;
     position: fixed;
@@ -205,82 +218,6 @@ body.menu-open {
     margin: 0 5px;
 }
 
-/* Mobile Styles */
-@media (max-width: 1024px) {
-    .logo {
-        padding-left: 25px;
-        /* Mobile padding */
-    }
-
-    .nav-container {
-        padding: 0 16px 0 0;
-        /* Adjust right padding for mobile */
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-content {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        justify-content: center;
-        padding: 80px 24px;
-        transform: translateX(100%);
-        z-index: 1000;
-    }
-
-    .nav-content.active {
-        transform: translateX(0);
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 24px;
-        align-items: center;
-        margin-bottom: 32px;
-    }
-
-    .nav-item {
-        font-size: 24px;
-        padding: 12px;
-    }
-
-    .language-selector {
-        flex-direction: row;
-        gap: 16px;
-    }
-
-    .lang-link {
-        font-size: 18px;
-    }
-}
-
-/* Small Screen Adjustments */
-@media (max-width: 480px) {
-    .nav-container {
-        padding: 0 16px;
-        height: 64px;
-    }
-
-    .logo img {
-        height: 32px;
-    }
-
-    .nav-item {
-        font-size: 20px;
-    }
-
-    .language-selector {
-        gap: 12px;
-    }
-}
-
 /* Fix for iOS Safari 100vh issue */
 @supports (-webkit-touch-callout: none) {
     .nav-content {
@@ -294,7 +231,7 @@ body.menu-open {
     background-color: #1a2332;
     color: white;
     padding: 60px 0 0px 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     margin: 60px 0 0 0;
     /* Add this */
     width: 100%;
@@ -339,14 +276,14 @@ body.menu-open {
 }
 
 .company-info h3 {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 5px;
 }
 
 .company-info p {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #a0aec0;
     font-size: 14px;
     line-height: 1.5;
@@ -362,18 +299,18 @@ body.menu-open {
 }
 
 .footer-links {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     list-style: none;
     padding: 0;
 }
 
 .footer-links li {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     margin-bottom: 10px;
 }
 
 .footer-links a {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: white;
     text-decoration: none;
     font-size: 14px;
@@ -381,7 +318,7 @@ body.menu-open {
 }
 
 .footer-links a:hover {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #ffd700;
 }
 
@@ -403,7 +340,7 @@ body.menu-open {
 }
 
 .certification-text {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #a0aec0;
     font-size: 14px;
 }
@@ -420,7 +357,7 @@ body.menu-open {
 
 /* Copyright */
 .footer-copyright {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     text-align: right;
     padding-top: 0;
     margin-top: -10px;
@@ -456,3 +393,84 @@ body.menu-open {
 
 
 }
+
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+    .logo {
+        padding-left: 25px;
+        /* Mobile padding */
+    }
+
+    .nav-container {
+        padding: 0 16px 0 0;
+        /* Adjust right padding for mobile */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        padding: 40px 24px;
+        transform: translateX(100%);
+        z-index: 1000;
+    }
+
+    .nav-content.active {
+        transform: translateX(0);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        margin-bottom: 32px;
+    }
+
+    .nav-item {
+        font-size: 24px;
+        padding: 12px;
+    }
+
+    .language-selector {
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .lang-link {
+        font-size: 18px;
+    }
+
+    .search-icon{
+        visibility: hidden;
+    }
+}
+
+/* Small Screen Adjustments */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 16px;
+        height: 64px;
+    }
+
+    .logo img {
+        height: 32px;
+    }
+
+    .nav-item {
+        font-size: 20px;
+    }
+
+    .language-selector {
+        gap: 12px;
+    }
+}
+
