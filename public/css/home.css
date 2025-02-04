@@ -481,251 +481,8 @@ label {
     margin-top: var(--spacing-xl);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
-    .center-text {
-        font-size: calc(var(--font-size-hero) * 0.7);
-    }
-}
 
-@media (max-width: 768px) {
-    .headline-grid,
-    .pitch-form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .headline-card-two.middle-border {
-        border: none;
-        border-top: 1px solid var(--color-border);
-        border-bottom: 1px solid var(--color-border);
-        padding: var(--spacing-lg) 0;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .form-group.full-width {
-        grid-column: span 1;
-    }
-
-    /* Featured Investees Mobile Styles */
-    .founder-carousell-section {
-        padding: var(--spacing-xl) 0;
-    }
-
-    .section-title {
-        position: relative;
-        top: 0;
-        left: 0;
-        font-size: var(--font-size-3xl);
-        text-align: center;
-        margin-bottom: var(--spacing-xl);
-    }
-
-    .founder-carousel-container {
-        padding: 20px var(--spacing-md) 0;
-    }
-
-    .slide-content {
-        flex-direction: column;
-        gap: var(--spacing-xl);
-        align-items: center;
-    }
-
-    .founder-image {
-        width: 300px;
-        height: 300px;
-        max-width: 100%;
-        position: relative;
-    }
-
-    .image-circle {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .image-circle::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--color-secondary);
-        border-radius: 50%;
-        z-index: 1;
-    }
-
-    .founder-photo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        object-fit: cover;
-        z-index: 2;
-    }
-
-    .slide-text {
-        padding-top: 0;
-        text-align: center;
-    }
-
-    .amartha-logo {
-        margin-bottom: var(--spacing-md);
-    }
-
-    .amartha-logo img {
-        height: 80px;
-    }
-
-    .slide-text h3 {
-        font-size: var(--font-size-xl);
-    }
-
-    .slide-text p {
-        font-size: var(--font-size-lg);
-    }
-
-    .carousel-controls {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        margin-top: var(--spacing-xl);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .carousel-navigation {
-        justify-content: center;
-        display: flex;
-        gap: 12px;
-        margin-bottom: var(--spacing-md);
-    }
-
-    .carousel-dots {
-        justify-content: center;
-        display: flex;
-        gap: var(--spacing-sm);
-    }
-
-    .prev-btn,
-    .next-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        color: var(--color-white);
-        font-size: var(--font-size-lg);
-        cursor: pointer;
-        border-radius: 50%;
-    }
-
-    .dot {
-        display: block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.2);
-        cursor: pointer;
-    }
-
-    .dot.active {
-        background: var(--color-accent);
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .masonry-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .headline-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-
-    .headline-grid-two {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 20px 15px;
-    }
-
-    .headline-grid {
-        padding: 0 15px;
-    }
-
-    .headline-grid-two {
-        padding: 0 15px;
-    }
-
-    .card.large {
-        grid-column: span 2;
-    }
-
-    .video-background {
-        width: auto;
-        min-width: 100%;
-        height: calc(100% + 600px);
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 48px;
-    }
-
-    .category {
-        font-size: 20px;
-        top: 20px;
-        left: 20px;
-    }
-
-    .card h2 {
-        font-size: 24px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .masonry-grid {
-        grid-template-columns: 1fr;
-        padding: 15px;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .card.large,
-    .card.medium {
-        grid-column: span 1;
-    }
-}
 
 /* File Input Styles */
 .file-input {
@@ -918,17 +675,6 @@ textarea[name="message"] {
     max-width: none;
 }
 
-@media (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        border-radius: 24px;
-    }
-
-    .modal-close {
-        top: 10px;
-        right: 10px;
-    }
-}
 
 /* Founder Carousel Section */
 .founder-carousell-section {
@@ -1095,6 +841,26 @@ textarea[name="message"] {
 }
 
 @media (max-width: 768px) {
+    .center-text {
+        font-size: 60px;
+        bottom: 240px;
+    }
+
+    .counter{
+        margin: 30px 0 40px;
+    }
+
+    .headline-grid-two{
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    .headline-card-two.left-border{
+        border-left: none;
+        border-top: 1px solid var(--color-border);
+        padding-top: 40px;
+    }
+
     .carousel-controls {
         position: static;
         margin-top: var(--spacing-xl);
@@ -1114,4 +880,151 @@ textarea[name="message"] {
     .carousel-dots {
         justify-content: center;
     }
+
+    .modal-content {
+        width: 95%;
+        border-radius: 24px;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+    }
+
+    .headline-grid,
+    .pitch-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .headline-card-two.middle-border {
+        border: none;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+        padding: var(--spacing-lg) 0;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+
+    /* Featured Investees Mobile Styles */
+    .founder-carousell-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .section-title {
+        position: relative;
+        top: 0;
+        left: 0;
+        font-size: var(--font-size-3xl);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .masonry-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 15px;
+    }
+
+    .headline-grid {
+        padding: 0 15px;
+    }
+
+    .headline-grid-two {
+        padding: 0 15px;
+    }
+
+    .card.large {
+        grid-column: span 2;
+    }
+
+    .video-background {
+        width: auto;
+        min-width: 100%;
+        height: calc(100% + 600px);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero-section h1 {
+        font-size: 48px;
+    }
+
+    .category {
+        font-size: 20px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    /* Carousel Mobile Styles */
+    .founder-carousell-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .founder-carousel-container {
+        padding: 0;
+    }
+
+    .carousel-slide .slide-content {
+        flex-direction: column;
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .founder-image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .image-circle {
+        width: 240px;
+        height: 240px;
+    }
+
+    .slide-text {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .amartha-logo img {
+        max-width: 120px;
+        margin: 0 auto var(--spacing-md);
+    }
+
+    .slide-text h3 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .slide-text p {
+        font-size: var(--font-size-base);
+        line-height: 1.5;
+    }
+
+    .carousel-controls {
+        margin: 0;
+    }
+
+    .carousel-navigation button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .amartha-logo img{
+        max-width: 240px;
+        height: auto;
+    }
+
+
 }
