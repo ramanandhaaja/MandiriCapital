@@ -1,3 +1,33 @@
+/* Root variables for consistent theming */
+:root {
+    --color-primary: #FFD700;
+    --color-secondary: #EFA32F;
+    --color-dark: #18181B;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-gray-100: #F3F4F6;
+    --color-gray-400: #9CA3AF;
+    --color-gray-500: #6B7280;
+    --color-gray-600: #4B5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1F2937;
+    --color-gray-900: #111827;
+    --color-border: #3F3F46;
+    --font-family: 'Avenir LT Std', sans-serif;
+}
+
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('../fonts/Avenir LT Std 45 Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #131313;
+    color: var(--color-white);
+}
+
 
 /* Reset Styles */
 .top-hero-section {
@@ -61,14 +91,14 @@
 }
 
 .article-subtitle p {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #FFFFFF;
     font-size: 14px;
     line-height: 1.4;
 }
 
 .article-content-text p{
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     color: #ffffff;
 
 }
@@ -98,7 +128,7 @@
 }
 
 .article-meta h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 34px;
     font-weight: 600;
     color: #FFFFFF;
@@ -112,7 +142,7 @@
 }
 
 .article-date {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: #ffffff;
 }
@@ -134,19 +164,19 @@
 }
 
 .author-name {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: #ffffff;
 }
 
 .author-role {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: #A1A1AA;
 }
 
 .article-category {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     font-weight: 500;
     color: #ffffff;
@@ -159,7 +189,7 @@
 
 /* Main Content */
 .article-content {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     margin-top: 0px;
     font-size: 14px;
     color: #FFFFFF;
@@ -172,13 +202,13 @@
 
 /* Company Details */
 .company-details {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     padding: 10px 0 0 0;
     color: #FFFFFF;
 }
 
 .company-description {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 40px;
@@ -226,7 +256,7 @@
 
 /* Share Section */
 .share-section {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     padding-top: 30px;
     padding-right: 20px;
     background: transparent;
@@ -324,7 +354,7 @@
 }
 
 .sdg-content h3 {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 18px;
     font-weight: 500;
     color: #FFFFFF;
@@ -332,7 +362,7 @@
 }
 
 .sdg-content p {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
     color: #A1A1AA;
     margin-top:5px;

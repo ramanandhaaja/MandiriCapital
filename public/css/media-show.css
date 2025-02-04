@@ -24,6 +24,11 @@
     font-display: swap;
 }
 
+body {
+    background-color: #131313;
+    color: var(--color-white);
+}
+
 /* Hero Section */
 .hero-section {
     width: 100%;

@@ -23,6 +23,12 @@
     font-style: normal;
 }
 
+body {
+    background-color: #131313;
+    color: var(--color-white);
+}
+
+
 /* Base styles */
 * {
     font-family: var(--font-family);

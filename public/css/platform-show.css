@@ -56,6 +56,11 @@
     font-style: normal;
 }
 
+body {
+    background-color: #131313;
+    color: var(--color-white);
+}
+
 /* Base styles */
 * {
     font-family: var(--font-family);
@@ -144,9 +149,9 @@ html, body {
     width: 100%;
     height: 50%;
     background: linear-gradient(to top,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0.8) 30%,
-        rgba(0, 0, 0, 0) 100%
+        #131313 0%,
+        #131313 30%,
+        #131313 100%
     );
     z-index: -5;
 }
@@ -996,7 +1001,6 @@ html, body {
    ========================================================================== */
 .platform-image-containter {
     padding: 4rem 1rem;
-    background-color: var(--color-black);
     text-align: center;
     width: 100%;
     box-sizing: border-box;

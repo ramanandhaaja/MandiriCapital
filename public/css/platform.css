@@ -29,6 +29,11 @@ html, body {
     font-style: normal;
 }
 
+body {
+    background-color: #131313;
+    color: var(--color-white);
+}
+
 /* Grid Layout */
 .masonry-grid {
     position: relative;
@@ -270,9 +275,9 @@ html, body {
     width: 100%;
     height: 50%;
     background: linear-gradient(to top,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0.8) 30%,
-        rgba(0, 0, 0, 0) 100%
+        rgba(19, 19, 19, 1) 0%,
+        rgba(19, 19, 19, 0.8) 30%,
+        rgba(19, 19, 19, 0) 100%
     );
     z-index: -5;
 }
@@ -764,7 +769,7 @@ html, body {
 }
 
 .synergy-container.dark {
-    background-color: #000000;
+    background-color: #131313;
 }
 
 .synergy-grid {
