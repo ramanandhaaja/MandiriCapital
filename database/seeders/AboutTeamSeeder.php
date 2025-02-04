@@ -249,7 +249,7 @@ class AboutTeamSeeder extends Seeder
                 'title' => 'Corsec & Operations',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
-                'image_path' => 'our-identity/01JK2SSJHE03DTFBA10DBKMQR2.png'
+                'image_path' => 'our-identity/01JK2SSJHE03DTFBA10DBKMQR2.jpeg'
             ],
             [
                 'name' => 'Nabila Fauzia',
