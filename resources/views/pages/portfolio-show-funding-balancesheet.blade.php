@@ -13,13 +13,13 @@
     </div>
 
     <div class="hero-section">
-        <div class="hero-content" style="background-image: url('{{ asset('images/portfolio/MPFHeadline.jpeg') }}');">
+        <div class="hero-content" style="background-image: url('{{ asset('images/portfolio/BalacesheetHeadline.jpeg') }}');">
         </div>
     </div>
 
 
     <div class="hero-mid-section">
-        <h1 class="center-text">Indonesia is one of the digital economic powerhouses in Southeast Asia.</h1>
+        <h1 class="center-text">Mandiri Group is the largest banking institution by asset value in Indonesia.</h1>
     </div>
 
     <!-- Content Section -->
