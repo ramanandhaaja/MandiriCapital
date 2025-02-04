@@ -190,7 +190,7 @@ class PageController extends Controller
     {
         //$portfolioFunding = PortfolioFundingArticleSub::where('id', $id)->firstOrFail();
         if ($title=="Balance Sheet Fund") {
-            return view('pages.portfolio-show-funding-mpf');
+            return view('pages.portfolio-show-funding-balancesheet');
         } elseif ($title=="Merah Putih Fund (MPF)") {
             return view('pages.portfolio-show-funding-mpf');
         }elseif ($title=="Indonesia Impact Fund (IIF)") {

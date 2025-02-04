@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'log'),
-
+    //'default' => env('MAIL_MAILER', 'log'),
+    'default' => env('MAIL_MAILER', 'mailersend'),
     /*
     |--------------------------------------------------------------------------
     | Mailer Configurations
@@ -36,6 +36,10 @@ return [
     */
 
     'mailers' => [
+        'mailersend' => [
+            'transport' => 'mailersend',
+            'api_key' => env('MAILERSEND_API_KEY'),
+        ],
 
         'smtp' => [
             'transport' => 'smtp',

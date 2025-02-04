@@ -387,11 +387,9 @@
                                         <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
                                             {{ $subArticle->content }}
                                         </div>
-                                        <div @if($subArticle->title == 'Balance Sheet Fund') style="visibility: hidden;" @endif>
                                             <a href="{{ route('portfolio.show.funding', $subArticle->title) }}" class="text-decoration-none">
                                                 <span class="funding-link">Fund Details >></span>
                                             </a>
-                                        </div>
 
                                         {{-- Hover card that follows mouse --}}
 

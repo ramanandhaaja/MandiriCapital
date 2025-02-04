@@ -400,7 +400,7 @@
                                 <select id="program" name="program" class="form-input" required>
                                     <option value="" disabled selected>Select a program...</option>
                                     <option value="xponent">Xponent</option>
-                                    <option value="yaxis">Yaxis</option>
+                                    <option value="yaxis">Y-axis</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -415,7 +415,7 @@
                                     <option value="Mandiri Tunas Finance">Mandiri Tunas Finance</option>
                                     <option value="Mandiri Utama Finance">Mandiri Utama Finance</option>
                                     <option value="Mandiri Remitance">Mandiri Remitance</option>
-                                    <option value="Axa Mandiri">Axa Mandiri</option>
+                                    <option value="Axa Mandiri">AXA Mandiri</option>
                                 </select>
                             </div>
                         </div>
