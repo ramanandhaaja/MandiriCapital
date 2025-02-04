@@ -219,8 +219,10 @@
                         <p class="subtitle">*Place your pitchdeck below and our investment team will check it out!</p>
                         <p class="subtitle">*Please note that we receive a high volume of submissions and will not be able to reply to everyone.</p>
                     </div>
-
+                    {{--
                     <form action="#" method="POST" enctype="multipart/form-data" class="pitch-form-content">
+                     --}}
+                    <form onsubmit="return false;" class="pitch-form-content">
                         @csrf
                         {{-- Personal Information --}}
                         <div class="form-row">
@@ -285,7 +287,7 @@
                         {{-- Form Actions --}}
                         <div class="form-actions">
                             <button type="button" class="btn-cancel" onclick="closePitchModal()">Cancel</button>
-                            <button type="submit" class="btn-submit">Submit Pitch</button>
+                            <button type="submit" class="btn-submit" onclick="closePitchModal()">Submit Pitch</button>
                         </div>
                     </form>
                 </div>
@@ -306,7 +308,8 @@
                         <p class="subtitle">Menara Mandiri II, lantai 14.<br>Jl. Jend. Sudirman No. 54-55, Jakarta 12190</p>
                     </div>
 
-                    <form action="#" method="POST" enctype="multipart/form-data" class="pitch-form-content">
+                    {{--  <form action="#" method="POST" enctype="multipart/form-data" class="pitch-form-content">
+                    --}}    <form onsubmit="return false;" class="pitch-form-content">
                         @csrf
                         {{-- Contact Information --}}
                         <div class="form-row">
@@ -355,7 +358,7 @@
                         {{-- Form Actions --}}
                         <div class="form-actions">
                             <button type="button" class="btn-cancel" onclick="closeInvestorModal()">Cancel</button>
-                            <button type="submit" class="btn-submit">Submit</button>
+                            <button type="submit" class="btn-submit" onclick="closeInvestorModal()">Submit</button>
                         </div>
                     </form>
                 </div>
