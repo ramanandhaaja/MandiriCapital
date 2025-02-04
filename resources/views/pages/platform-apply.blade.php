@@ -187,7 +187,7 @@
 
                 <div class="grid-headline-contact-card">
                     <div class="form-group">
-                        <label class="form-label">Which of the following best describes the current status of your business?This question is required.*</label>
+                        <label class="form-label">Which of the following best describes the current status of your business?*</label>
                         <div class="sector-grid">
                             <div class="sector-item">
                                 <input type="radio" id="bootstrap" name="business_status" value="Bootstrap"
@@ -243,7 +243,7 @@
 
                 <div class="grid-headline-contact-card">
                     <div class="form-group">
-                        <label class="form-label">What is your current annual revenue range?This question is required.*</label>
+                        <label class="form-label">What is your current annual revenue range?*</label>
                         <div class="sector-grid">
                             <div class="sector-item">
                                 <input type="radio" id="less_than_1b" name="revenue_range" value="Less than IDR 1 billion"
@@ -289,7 +289,7 @@
 
                 <div class="grid-headline-contact-card">
                     <div class="form-group">
-                        <label class="form-label">How long has your company been operating?This question is required.*</label>
+                        <label class="form-label">How long has your company been operating?*</label>
                         <div class="sector-grid">
                             <div class="sector-item">
                                 <input type="radio" id="less_than_1_year" name="operating_time" value="Less than 1 year"
@@ -371,7 +371,7 @@
 
                 <div class="grid-headline-contact-card">
                     <div class="form-group">
-                        <label class="form-label">Is your company established in Indonesia?This question is required.*</label>
+                        <label class="form-label">Is your company established in Indonesia?*</label>
                         <div class="sector-grid">
                             <div class="sector-item">
                                 <input type="radio" id="yes_established" name="established_in_indonesia" value="Yes"
