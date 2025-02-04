@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('year_invested')->nullable();
             $table->string('sector')->nullable();
             $table->string('head_office')->nullable();
+            $table->integer('order')->nullable();
             $table->string('instagram_url')->nullable();
             $table->string('linkedin_url')->nullable();
             $table->timestamps();

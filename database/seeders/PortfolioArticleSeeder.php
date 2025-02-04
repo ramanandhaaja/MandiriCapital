@@ -119,6 +119,7 @@ class PortfolioArticleSeeder extends Seeder
             ],
         ]);
 
+        /*
         // Third Article - Investment Process
         $thirdArticleId = DB::table('portfolio_articles')->insertGetId([
             'title' => 'What are we currently looking for?',
@@ -198,6 +199,6 @@ class PortfolioArticleSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-        ]);
+        ]); */
     }
 }

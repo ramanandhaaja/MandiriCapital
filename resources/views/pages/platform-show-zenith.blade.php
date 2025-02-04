@@ -8,10 +8,12 @@
     <div class="hero-section">
         <div class="hero-content">
             <div class="center-text">Zenith <br />Startup Accelerator</div>
+            {{--
             <div class="image-container">
                 <img src="{{ asset('images/platform/forstartup.png') }}" alt="For Startup" class="button-image center-image"
                     onclick="openPitchModal()">
             </div>
+             --}}
         </div>
         <div class="hero-content">
             <img src="{{ asset('images/platform/zenithlg.png') }}" alt="For Startup" class="right-image">
@@ -200,7 +202,7 @@
         <div class="highlight-applynow-bottom">
             <div class="highlight-content">
                 <h2 class="highlight-title">Ignite The Highest Point</h2>
-                <a href="#" class="apply-now-button">Apply Now</a>
+                {{--  <a href="#" class="apply-now-button">Apply Now</a> --}}
             </div>
         </div>
 

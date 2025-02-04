@@ -44,8 +44,9 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'Agritech',
                 'portfolio_category_id' => $categoryIds[0],
                 'head_office' => 'Jakarta',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/agriakuid/',
-                'linkedin_url' => 'https://www.linkedin.com/company/agriaku/'
+                'linkedin_url' => 'https://www.linkedin.com/company/agriaku/',
             ],
             [
                 'name' => 'Amartha',
@@ -60,6 +61,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'P2P Lending',
                 'portfolio_category_id' => $categoryIds[0],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/amarthaid/',
                 'linkedin_url' => 'https://www.linkedin.com/company/amartha/'
             ],
@@ -76,6 +78,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'AI',
                 'portfolio_category_id' => $categoryIds[0],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/assistx_enterprise/',
                 'linkedin_url' => 'https://www.linkedin.com/company/assistx-enterprise/'
             ],
@@ -92,6 +95,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'Open Banking',
                 'portfolio_category_id' => $categoryIds[0],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/ayoconnect.id/',
                 'linkedin_url' => 'https://www.linkedin.com/company/ayoconnect/posts/?feedView=all'
             ],
@@ -108,12 +112,13 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'e-commerce',
                 'portfolio_category_id' => $categoryIds[0],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/bukalapak/',
                 'linkedin_url' => 'https://www.linkedin.com/company/pt-bukalapak-com/posts/?feedView=all'
             ],
             [
                 'name' => 'Cakap',
-                'description' => 'Cakap is a rapidly growing Indonesian education company that utilizes technology to provide high-quality courses and reputable certifications, while also connecting qualified students with employers for upskilling purposes',
+                'description' => 'Cakap is a rapidly growing Indonesian education company that utilizes technology to provide high-quality courses and reputable certifications, while also connecting qualified students with employers for upskilling purposes.',
                 'stage' => 'Series B',
                 'website_url' => 'https://cakap.com/',
                 'image_path' => 'portfolios/01JK316EBT9SQA1F6ARJ1A1YJM.png',
@@ -124,6 +129,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'Education',
                 'portfolio_category_id' => $categoryIds[1],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/cakapcom/',
                 'linkedin_url' => 'https://www.linkedin.com/company/cakap/'
             ],
@@ -140,6 +146,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'P2P Lending',
                 'portfolio_category_id' => $categoryIds[1],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/temancrowde/',
                 'linkedin_url' => 'https://www.linkedin.com/company/crowdeco/'
             ],
@@ -156,6 +163,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'Tech',
                 'portfolio_category_id' => $categoryIds[1],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/delos.aqua/',
                 'linkedin_url' => 'https://www.linkedin.com/company/delosaqua/'
             ],
@@ -172,6 +180,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'Health',
                 'portfolio_category_id' => $categoryIds[1],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/fitaja.id/',
                 'linkedin_url' => 'https://www.linkedin.com/company/fitaja-digital-nusantara/'
             ],
@@ -188,6 +197,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'Tech transport, Bank, E-Commerce',
                 'portfolio_category_id' => $categoryIds[2],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/gotoindonesia/',
                 'linkedin_url' => 'https://www.linkedin.com/company/gotogroup/'
             ],
@@ -204,6 +214,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'ESG',
                 'portfolio_category_id' => $categoryIds[2],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/greenhope.co/',
                 'linkedin_url' => 'https://www.linkedin.com/company/greenhope-co/'
             ],
@@ -220,6 +231,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'ERP Saas',
                 'portfolio_category_id' => $categoryIds[2],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/iseller.id/',
                 'linkedin_url' => 'https://www.linkedin.com/company/iseller/'
             ],
@@ -236,6 +248,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'E-wallet',
                 'portfolio_category_id' => $categoryIds[2],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/linkaja/',
                 'linkedin_url' => 'https://www.linkedin.com/company/linkaja/'
             ],
@@ -252,6 +265,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'ERP Saas',
                 'portfolio_category_id' => $categoryIds[2],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/mekaricom/',
                 'linkedin_url' => 'https://www.linkedin.com/company/mekari/'
             ],
@@ -268,6 +282,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'Digital Signature',
                 'portfolio_category_id' => $categoryIds[2],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/privyid/',
                 'linkedin_url' => 'https://www.linkedin.com/company/privy-id/'
             ],
@@ -284,6 +299,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'Payment Solution',
                 'portfolio_category_id' => $categoryIds[3],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/pten.id/',
                 'linkedin_url' => 'https://www.linkedin.com/company/pten-indonesia/'
             ],
@@ -300,6 +316,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'Insurtech',
                 'portfolio_category_id' => $categoryIds[3],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/qoala.app/',
                 'linkedin_url' => 'https://www.linkedin.com/company/qoala/'
             ],
@@ -316,6 +333,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'B2B commerce',
                 'portfolio_category_id' => $categoryIds[3],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/sinbad.co.id/',
                 'linkedin_url' => 'https://www.linkedin.com/company/sinbad/'
             ],
@@ -332,6 +350,7 @@ class PortfolioSeeder extends Seeder
                 'sector' => 'Payment Solution',
                 'portfolio_category_id' => $categoryIds[3],
                 'head_office' => 'Indonesia',
+                'order' => '1',
                 'instagram_url' => 'https://www.instagram.com/yokke.id/',
                 'linkedin_url' => 'https://www.linkedin.com/company/yokke/'
             ],

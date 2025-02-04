@@ -986,8 +986,11 @@ html, body {
     height: auto;
 }
 
-.platform-image-containter-horizontal-yaxis{
+.platform-image-containter-horizontal-yaxis {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* Business Deals Section
    ========================================================================== */

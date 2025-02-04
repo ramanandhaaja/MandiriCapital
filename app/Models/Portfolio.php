@@ -25,6 +25,7 @@ class Portfolio extends Model
         'sector',
         'portfolio_category_id',
         'head_office',
+        'order',
         'instagram_url',
         'linkedin_url'
     ];

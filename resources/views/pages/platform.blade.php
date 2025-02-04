@@ -397,13 +397,26 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="program" class="form-label">Program*</label>
-                                <input type="text" id="program" name="program" class="form-input"
-                                    placeholder="Write here..." required>
+                                <select id="program" name="program" class="form-input" required>
+                                    <option value="" disabled selected>Select a program...</option>
+                                    <option value="xponent">Xponent</option>
+                                    <option value="yaxis">Yaxis</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="mandiri_ecosystem" class="form-label">Mandiri Ecosystem*</label>
-                                <input type="text" id="mandiri_ecosystem" name="mandiri_ecosystem" class="form-input"
-                                    placeholder="Write here..." required>
+                                <select id="mandiri_ecosystem" name="mandiri_ecosystem" class="form-input" required>
+                                    <option value="" disabled selected>Select the Ecosystem...</option>
+                                    <option value="Bank Syariah Indonesia">Bank Syariah Indonesia</option>
+                                    <option value="Mandiri Taspen">Mandiri Taspen</option>
+                                    <option value="Mandiri Europe">Mandiri Europe</option>
+                                    <option value="Mandiri Sekuritas">Mandiri Sekuritas</option>
+                                    <option value="Mandiri Investasi">Mandiri Investasi</option>
+                                    <option value="Mandiri Tunas Finance">Mandiri Tunas Finance</option>
+                                    <option value="Mandiri Utama Finance">Mandiri Utama Finance</option>
+                                    <option value="Mandiri Remitance">Mandiri Remitance</option>
+                                    <option value="Axa Mandiri">Axa Mandiri</option>
+                                </select>
                             </div>
                         </div>
 

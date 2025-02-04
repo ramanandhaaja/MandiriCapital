@@ -1,6 +1,6 @@
 
 {{-- //TODO: prev article dan next article based on current article date --}}
-1. portfolio bikin pake order
+1. portfolio bikin pake order -> tinggal masukin ordernya aja
 2. background clor di ubah jadi #?
 3. value creation minta seperti counter di home -> done
 3. cek logo merah putih fund di online, bukan local -> done

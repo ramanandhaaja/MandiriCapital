@@ -121,6 +121,8 @@ class PortfolioResource extends Resource
                                             ->unique('portfolio_categories', 'slug'),
                                     ])
                                     ->preload(),
+                                    Forms\Components\TextInput::make('order')
+                                    ->maxLength(255)
                             ]),
                     ])
                     ->columnSpan(['lg' => 1]),

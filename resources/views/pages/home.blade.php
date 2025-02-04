@@ -107,7 +107,7 @@
                 'category' => 'CEO Startup',
                 'title' => '',
                 'date' => 'June 2020',
-                'image' => 'Article7.png',
+                'image' => 'Article7.jpeg',
                 'logo' => '',
                 'position' => ''
             ],
