@@ -466,115 +466,6 @@ body {
     background-color: #D97706;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .masonry-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 992px) {
-    .masonry-grid-investment-section-sub {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 0 20px;
-    }
-
-    .card-title {
-        font-size: 14px;
-    }
-
-    .card-description {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card.xlarge {
-        grid-column: span 4;
-        grid-row: span 1;
-    }
-
-    .card.large {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-
-    .grid-headline-title-card-sub {
-        padding: 32px;
-    }
-
-    .apply-header {
-        padding: 1.5rem 2rem;
-    }
-
-    .apply-title {
-        font-size: 1.5rem;
-    }
-
-    .apply-logo {
-        height: 30px;
-    }
-
-    .card-title {
-        font-size: 18px;
-    }
-
-    .card h2 {
-        font-size: 24px;
-    }
-
-    .search-section {
-        margin-top: 100px;
-    }
-
-    .category-filters {
-        gap: 24px;
-        overflow-x: auto;
-        padding-bottom: 8px;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .category {
-        font-size: 16px;
-        top: 24px;
-        left: 24px;
-    }
-
-    .date {
-        bottom: 24px;
-        left: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .masonry-grid {
-        grid-template-columns: 1fr;
-        padding: 0 20px;
-    }
-
-    .card.xlarge {
-        grid-column: span 1;
-    }
-
-    .card.large {
-        grid-column: span 1;
-    }
-
-    .search-input {
-        font-size: 14px;
-        padding: 10px 16px;
-    }
-
-    .filter-link {
-        font-size: 14px;
-        padding-bottom: 12px;
-    }
-}
 
 /* Contact Form */
 .contact-form-section {
@@ -820,4 +711,97 @@ body {
     justify-content: flex-end;
     margin-top: 24px;
     margin-right: -280px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .masonry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card.xlarge {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+
+    .card.large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .grid-headline-title-card-sub {
+        padding: 32px;
+    }
+
+    .apply-header {
+        padding: 1.5rem 2rem;
+    }
+
+    .apply-title {
+        font-size: 1.5rem;
+    }
+
+    .apply-logo {
+        height: 30px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .search-section {
+        margin-top: 100px;
+    }
+
+    .category-filters {
+        gap: 24px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category {
+        font-size: 16px;
+        top: 24px;
+        left: 24px;
+    }
+
+    .date {
+        bottom: 24px;
+        left: 24px;
+    }
+
+    .masonry-grid-contact-section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .form-row {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0px;
+        margin-bottom: 0px;
+    }
+
+    .grid-headline-title-contact {
+        margin-left: 0px;
+    }
+
+    .form-group.button-group {
+        justify-content: flex-start;
+        padding-left: 30px;
+    }
+
+    .grid-headline-contact-card{
+        padding-right: 30px;
+    }
 }
