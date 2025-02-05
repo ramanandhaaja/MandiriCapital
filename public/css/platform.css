@@ -1720,4 +1720,35 @@ select.form-input option {
     .carousell-image{
         height:auto;
     }
+
+
+    .masonry-grid-contact-section-grey{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-headline-title-contact{
+        margin-left: 30px;
+    }
+
+    .grid-headline-contact-card {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    .sector-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-group.button-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 44px;
+    }
+
+    .center-text{
+        width: 80%;
+        font-size: 40px;
+        margin: 0 auto;
+    }
 }

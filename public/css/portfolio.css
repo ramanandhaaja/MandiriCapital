@@ -2736,4 +2736,20 @@ a.text-decoration-none {
     .grid-headline-contact-card{
         padding-right: 30px;
     }
+
+    .masonry-grid-contact-section-grey {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0px;
+    }
+
+    .center-text{
+        width: 80%;
+        font-size: 40px;
+        margin: 0 auto;
+    }
 }

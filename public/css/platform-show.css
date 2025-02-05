@@ -106,16 +106,7 @@ html, body {
     line-height: 1.4;
 }
 
-@media (max-width: 768px) {
-    .hero-mid-section {
-        padding: 0 1rem;
-        margin-bottom: 60px;
-    }
 
-    .center-text-midsection {
-        font-size: 24px;
-    }
-}
 
 .video-background {
     position: absolute;
@@ -612,108 +603,6 @@ html, body {
     background-color: #D97706;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .masonry-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 992px) {
-    .masonry-grid-investment-section-sub {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 0 20px;
-    }
-
-    .card-title {
-        font-size: 14px;
-    }
-
-    .card-description {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    .masonry-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card.xlarge {
-        grid-column: span 4;
-        grid-row: span 1;
-    }
-
-    .card.large {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-
-
-
-    .grid-headline-title-card-sub {
-        padding: 32px;
-    }
-
-
-    .card-title {
-        font-size: 18px;
-    }
-
-    .card h2 {
-        font-size: 24px;
-    }
-
-    .search-section {
-        margin-top: 100px;
-    }
-
-    .category-filters {
-        gap: 24px;
-        overflow-x: auto;
-        padding-bottom: 8px;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .category {
-        font-size: 16px;
-        top: 24px;
-        left: 24px;
-    }
-
-    .date {
-        bottom: 24px;
-        left: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .masonry-grid {
-        grid-template-columns: 1fr;
-        padding: 0 20px;
-    }
-
-    .card.xlarge {
-        grid-column: span 1;
-    }
-
-    .card.large {
-        grid-column: span 1;
-    }
-
-    .search-input {
-        font-size: 14px;
-        padding: 10px 16px;
-    }
-
-    .filter-link {
-        font-size: 14px;
-        padding-bottom: 12px;
-    }
-}
-
-
 /* Contact Form */
 .contact-form-section {
     padding-top: 0px;
@@ -859,11 +748,6 @@ html, body {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .sector-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* File Upload Styles
    ========================================================================== */
@@ -1044,21 +928,6 @@ html, body {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .business-logos-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 0 0.5rem;
-    }
-
-    .logo-item img {
-        height: 40px;
-    }
-
-    .business-deals-title {
-        font-size: 1.75rem;
-    }
-}
 
 /* Program Images Grid Section */
 .program-images-grid {
@@ -1094,22 +963,6 @@ html, body {
 
 .program-image-item:hover img {
     transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-    .program-images-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-    }
-
-    .program-image-item {
-        height: 150px;
-    }
-
-    .program-image-item.large {
-        grid-column: span 2;
-        height: 200px;
-    }
 }
 
 
@@ -1357,25 +1210,6 @@ html, body {
     color: var(--color-dark);
 }
 
-@media (max-width: 768px) {
-    .highlight-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .highlight-applynow-bottom {
-        padding: 3rem 1rem;
-    }
-
-    .highlight-title {
-        font-size: 2rem;
-    }
-
-    .apply-now-button {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.9rem;
-    }
-}
 
 
 
@@ -1436,3 +1270,119 @@ html, body {
     border-left: 1px solid #3F3F46;
     border-right: 1px solid #3F3F46;
 }
+
+
+@media (max-width: 768px) {
+    .hero-mid-section {
+        padding: 0 1rem;
+        margin-bottom: 60px;
+    }
+
+    .center-text{
+        width: 80%;
+        font-size: 40px;
+        margin: 0 auto;
+    }
+
+    .masonry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card.xlarge {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+
+    .card.large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+
+
+    .grid-headline-title-card-sub {
+        padding: 32px;
+    }
+
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .search-section {
+        margin-top: 100px;
+    }
+
+    .category-filters {
+        gap: 24px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category {
+        font-size: 16px;
+        top: 24px;
+        left: 24px;
+    }
+
+    .date {
+        bottom: 24px;
+        left: 24px;
+    }
+
+    .sector-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .business-logos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .logo-item img {
+        height: 40px;
+    }
+
+    .business-deals-title {
+        font-size: 1.75rem;
+    }
+
+    .program-images-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .program-image-item {
+        height: 150px;
+    }
+
+    .program-image-item.large {
+        grid-column: span 2;
+        height: 200px;
+    }
+
+    .highlight-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .highlight-applynow-bottom {
+        padding: 3rem 1rem;
+    }
+
+    .highlight-title {
+        font-size: 2rem;
+    }
+
+    .apply-now-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+

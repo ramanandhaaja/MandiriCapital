@@ -136,6 +136,7 @@ body {
     bottom: 160px;
     padding-left: var(--spacing-xl);
     color: var(--color-white);
+    width: 90%;
 }
 
 .image-container {
@@ -842,8 +843,9 @@ textarea[name="message"] {
 
 @media (max-width: 768px) {
     .center-text {
-        font-size: 60px;
+        font-size: 50px;
         bottom: 240px;
+        width: 90%;
     }
 
     .counter{
@@ -1025,6 +1027,8 @@ textarea[name="message"] {
         max-width: 240px;
         height: auto;
     }
+
+
 
 
 }

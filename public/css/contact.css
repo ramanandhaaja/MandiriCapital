@@ -301,7 +301,7 @@ body {
 
 .radio-group {
     display: flex;
-    gap: 50px;
+    gap: 30px;
 }
 
 .radio-container {

@@ -1651,6 +1651,12 @@ body {
         opacity: 0.9;
     }
 
+    .center-text{
+        width: 80%;
+        font-size: 40px;
+        margin: 0 auto;
+    }
+
     /* Adjust grid for different screen sizes */
     @media (max-width: 480px) {
         .masonry-grid {
