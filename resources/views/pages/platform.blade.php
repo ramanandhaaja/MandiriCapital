@@ -303,13 +303,13 @@
                         <div class="synergy-image">
                             <div class="carousel-container" id="carousel-odd-{{ $index }}">
                                 <div class="carousel-slide" data-carousel="odd-{{ $index }}">
-                                    <img src="{{ asset('images/platform/yaxisslide1.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                    <img src="{{ asset('images/platform/yaxisslide1.jpg') }}" alt="{{ $program->title }}"  class="carousell-image">
                                 </div>
                                 <div class="carousel-slide" data-carousel="odd-{{ $index }}">
-                                    <img src="{{ asset('images/platform/yaxisslide2.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                    <img src="{{ asset('images/platform/yaxisslide2.jpg') }}" alt="{{ $program->title }}"  class="carousell-image">
                                 </div>
                                 <div class="carousel-slide" data-carousel="odd-{{ $index }}">
-                                    <img src="{{ asset('images/platform/yaxisslide3.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                    <img src="{{ asset('images/platform/yaxisslide3.jpg') }}" alt="{{ $program->title }}"  class="carousell-image">
                                 </div>
 
                                 <!-- Navigation arrows -->
@@ -344,13 +344,13 @@
                         <div class="synergy-image">
                             <div class="carousel-container" id="carousel-even-{{ $index }}">
                                 <div class="carousel-slide active" data-carousel="even-{{ $index }}">
-                                    <img src="{{ asset('images/platform/xponentslide1.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                    <img src="{{ asset('images/platform/xponentslide1.jpg') }}" alt="{{ $program->title }}" class="carousell-image">
                                 </div>
                                 <div class="carousel-slide" data-carousel="even-{{ $index }}">
-                                    <img src="{{ asset('images/platform/xponentslide2.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                    <img src="{{ asset('images/platform/xponentslide2.jpg') }}" alt="{{ $program->title }}" class="carousell-image">
                                 </div>
                                 <div class="carousel-slide" data-carousel="even-{{ $index }}">
-                                    <img src="{{ asset('images/platform/xponentslide3.jpg') }}" alt="{{ $program->title }}" style="height: 500px;">
+                                    <img src="{{ asset('images/platform/xponentslide3.jpg') }}" alt="{{ $program->title }}" class="carousell-image">
                                 </div>
 
                                 <!-- Navigation arrows -->
@@ -369,7 +369,7 @@
                         <div class="synergy-image">
                             <div class="carousel-container" id="carousel-odd-{{ $index }}">
                                 <div class="carousel-slide active" data-carousel="odd-{{ $index }}">
-                                    <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" style="height: 500px;">
+                                    <img src="{{ '/storage/' . $program->image_path_frontpage }}" alt="{{ $program->title }}" class="carousell-image">
                                 </div>
                             </div>
                         </div>
