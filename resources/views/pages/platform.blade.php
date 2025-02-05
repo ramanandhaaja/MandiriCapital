@@ -379,8 +379,6 @@
             </div>
         @endforeach
 
-
-
             {{-- Contact Form Section --}}
             <div class="masonry-grid-contact-section-grey" id="contact-form-section">
                 <div class="grid-headline-title-card">

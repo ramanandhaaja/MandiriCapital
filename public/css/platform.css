@@ -565,9 +565,8 @@ body {
 
 .synergy-container {
     background-color: #18181B;
-    padding: 60px;
+    padding: 60px 30px 60px 30px;
     width: 100%;
-    margin: 0px;
     box-sizing: border-box;
 }
 
