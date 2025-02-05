@@ -1301,7 +1301,7 @@ html, body {
 
 
     .grid-headline-title-card-sub {
-        padding: 32px;
+        padding: 30px 0;
     }
 
 
@@ -1383,6 +1383,44 @@ html, body {
     .apply-now-button {
         padding: 0.6rem 1.5rem;
         font-size: 0.9rem;
+    }
+
+
+    .headline-grid-counter{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .masonry-grid-investment-section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-headline-title {
+        margin-left:30px;
+    }
+
+    .grid-headline-subtitle-left {
+        margin-left: 30px;
+    }
+
+    .masonry-grid-investment-section-sub{
+        grid-template-columns: repeat(1, 1fr);
+        gap:20px;
+    }
+
+    .masonry-grid-investment-section-grey{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .masonry-grid-investment-section-sub-two{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-headline-description-card {
+        padding: 0px 30px;
+    }
+
+    .card-funding {
+        height: 380px;
     }
 }
 

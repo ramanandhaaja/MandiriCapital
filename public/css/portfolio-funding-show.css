@@ -440,11 +440,6 @@ body {
 /* Responsive Design */
 
 @media (max-width: 768px) {
-    .hero-section {
-        height: 400px;
-        padding-top: 100px;
-        background: transparent;
-    }
 
     .article-meta h1 {
         font-size: 28px;
@@ -472,10 +467,6 @@ body {
         gap: 20px;
     }
 
-    .share-section {
-        width: 100%;
-        margin-top: 20px;
-    }
 
     .sidebar-left {
         padding-left: 0;
@@ -486,4 +477,18 @@ body {
         font-size: 40px;
         margin: 0 auto;
     }
+    .content-text{
+        font-size: 16px;
+        margin: 0 auto;
+    }
+
+    .investors-imagempf {
+        width: 350px;
+        height: auto;
+    }
+    .investors-image{
+        width: 350px;
+        height: auto;
+    }
+
 }
