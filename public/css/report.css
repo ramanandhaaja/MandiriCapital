@@ -392,7 +392,7 @@ body {
     }
 
     .hero-main-text {
-        font-size: 48px;
+        font-size: 40px;
         top: 30%;
     }
 
@@ -472,7 +472,7 @@ body {
     }
 
     .card h2 {
-        font-size: 36px;
+        font-size: 24px;
         font-weight: 600;
     }
 
@@ -487,9 +487,5 @@ body {
         height: calc(100% + 600px);
         left: 50%;
         transform: translateX(-50%);
-    }
-
-    .hero-main-text {
-        font-size: calc(var(--font-size-2xl) * 0.6);
     }
 }
