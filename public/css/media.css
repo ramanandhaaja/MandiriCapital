@@ -650,6 +650,11 @@ a {
     .newsletter-section{
         width: auto;
     }
+
+    .card h2{
+        font-size: 24px;
+        -webkit-line-clamp: 4;
+    }
 }
 
 
