@@ -26,8 +26,8 @@
                                 </a>
                             </div>
 
-                            <div class="contact-info-group">
-                                <h3 class="contact-info-title">CUSTOMER SERVICE</h3>
+                            <div class="contact-info-group customer-report-container">
+                                <h3 class="contact-info-title" data-tooltip="Reporting Violations of Mandiri Sekuritas Employees.">CUSTOMER REPORT</h3>
                                 <a href="mailto:mcicare@mandiri-capital.co.id" class="contact-info-link">
                                     mcicare@mandiri-capital.co.id
                                 </a>
@@ -232,6 +232,32 @@
         </div>
     </section>
 @endsection
+
+<style>
+.customer-report-container {
+    position: relative;
+}
+
+.contact-info-title[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+.contact-info-title[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 100;
+    margin-top: 5px;
+}
+</style>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

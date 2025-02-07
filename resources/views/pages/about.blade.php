@@ -132,7 +132,7 @@
                         <a href="#" class="text-decoration-none">
                             <span class="category-highlight">The Biggest Conglomerate with Various Subsidiaries.</span>
                             <div class="card-ecosystem-content-highlight">
-                                Mandiri’s total asset amount to Rp. 2.258 Tn a of Q1 2024, Mandiri has 42+ Mn retail
+                                Mandiri’s total asset amount to Rp. 2.427 Tn a of Q4 2024, Mandiri has 42+ Mn retail
                                 customers and 200k+ SMEs, 137 Branch offices, 12k+ ATM, 7 overseas branch offices which
                                 includes Singapore, Hong Kong, Shanghai, Cayman Islands, Dili, London, and Malaysia.
                             </div>
@@ -199,7 +199,7 @@
         <div class="team-title-section">
             <div class="masonry-grid">
                 <div class="grid-headline-title-card">
-                    <h1 class="grid-headline-title">Meet the amazing people behind MCI</h1>
+                    <h1 class="grid-headline-title">Meet the team making things happen at MCI</h1>
                 </div>
                 <div class="grid-headline-description-card">
                     <h1 class="grid-headline-subtitle">

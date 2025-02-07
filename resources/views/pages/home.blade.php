@@ -60,7 +60,7 @@ v
                 'image' => 'Article2.jpeg',
                 'logo' => '',
                 'position' => 'right',
-                'link' => route('platform.show', 'xponent')
+                'link' => 'https://www.mandiri-capital.co.id/report/the-billion-dollar-moment-a-paradigm-shift-for-indonesia-ipos'
             ],
             [
                 'type' => 'medium',
@@ -79,7 +79,7 @@ v
                 'date' => 'June 2020',
                 'image' => 'Article4.png',
                 'logo' => '',
-                'position' => ''
+                'position' => '',
             ],
 
             // Small Square Cards
@@ -90,7 +90,8 @@ v
                 'date' => 'June 2020',
                 'image' => 'Article5.jpeg',
                 'logo' => '',
-                'position' => 'right'
+                'position' => 'right',
+                'link' => 'https://mandiri-capital.co.id/media/mandiri-capital-indonesia-mendorong-inovasi-digital-melalui-mandiri-innovation-hub-2024-press-release'
             ],
             [
                 'type' => 'small-square',
@@ -99,7 +100,8 @@ v
                 'date' => 'June 2020',
                 'image' => 'Article6.png',
                 'logo' => '',
-                'position' => 'right'
+                'position' => 'right',
+                'link' => 'https://mandiri-capital.co.id/report/developing-constructive-collaboration-to-achieve-productive-innovation'
             ],
 
             [
@@ -109,7 +111,7 @@ v
                 'date' => 'June 2020',
                 'image' => 'Article7.jpeg',
                 'logo' => '',
-                'position' => ''
+                'position' => 'https://mandiri-capital.co.id/portfolio/amartha'
             ],
             [
                 'type' => 'small-square',
@@ -118,7 +120,8 @@ v
                 'date' => 'June 2020',
                 'image' => 'Article8.jpeg',
                 'logo' => '',
-                'position' => 'right'
+                'position' => 'right',
+                'link' => 'https://mandiri-capital.co.id/media/program-xponent-mci-di-money-2020-asia-jadi-jembatan-konektivitas-dunia-insight'
             ],
             [
                 'type' => 'small-square',
@@ -127,7 +130,8 @@ v
                 'date' => 'June 2020',
                 'image' => 'Article9.png',
                 'logo' => '',
-                'position' => 'right'
+                'position' => 'right',
+                'link' => 'https://mandiri-capital.co.id/report/strengthening-sustainability-innovation'
             ]
 
         ];
@@ -135,8 +139,10 @@ v
 
     <div class="masonry-grid">
         @foreach($cards as $card)
+
             <div class="card {{ $card['type'] }} {{ $card['position'] }}"
                 @if(isset($card['image'])) style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ asset('images/home/' . $card['image']) }}')" @endif>
+                <a href="{{ $card['link'] ?? '#' }}" class="card-link">
                 <span class="category">{{ $card['category'] }}</span>
                 @if($card['logo'])
                     <img src="{{ asset('images/home/' . $card['logo']) }}" alt="{{ $card['category'] }} Logo" class="logo-card">
@@ -144,6 +150,7 @@ v
                 <div class="card-content">
                     <h2>{{ $card['title'] }}</h2>
                 </div>
+                </a>
             </div>
         @endforeach
     </div>

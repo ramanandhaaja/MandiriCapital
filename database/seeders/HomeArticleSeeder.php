@@ -23,8 +23,8 @@ class HomeArticleSeeder extends Seeder
             [
                 'category' => 'Counter',
                 'title' => 'Bank Mandiri Total Asset',
-                'slug' => '*As of September 2024',
-                'content' => 'IDR2,324Tn',
+                'slug' => '*As of Desember 2024',
+                'content' => 'IDR2,427Tn',
                 'published_date' => Carbon::now()->subDays(15),
                 'image_path' => ''
             ]

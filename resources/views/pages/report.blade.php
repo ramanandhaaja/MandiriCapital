@@ -42,8 +42,8 @@
                 {{-- Category Filters --}}
                 <div class="category-filters">
                     <a href="#" class="filter-link active">All</a>
-                    <a href="#" class="filter-link">Annual Report</a>
-                    <a href="#" class="filter-link">Sustainability</a>
+                    <a href="#" class="filter-link">Annual & Financial Report</a>
+                    <a href="#" class="filter-link">Sustainability Report</a>
                     <a href="#" class="filter-link">Whitepaper</a>
                 </div>
             </div>

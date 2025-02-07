@@ -97,8 +97,8 @@ class PortfolioArticleSeeder extends Seeder
             ],
             [
                 'article_id' => $secondArticleId,
-                'title' => 'End-to-End Guidance and Mentorship',
-                'content' => 'Throughout the investment period, we provide hands-on guidance, mentorship, and access to experts. Our aim is to help you navigate challenges, refine your strategies, and accelerate your growth journey.',
+                'title' => 'Strategic Growth Support',
+                'content' => 'Throughout the investment period, we offer hands-on support, strategic insights, and access to industry experts. Our goal is to help you overcome challenges, optimize your strategies, and scale your business effectively.',
                 'icon' => 'portfolios/01JHFA5QMN3WW6YRSXFSQGBE8Z.png',
                 'text_icon' => '',
                 'order' => 3,

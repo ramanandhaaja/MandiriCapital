@@ -158,7 +158,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Adrian Jonathan',
                 'job_group' => 'Legal, Compliance & HR',
-                'title' => 'Compliance',
+                'title' => 'Legal &Compliance',
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK3JW5GR495FY9GAB49FCW61.jpeg'
