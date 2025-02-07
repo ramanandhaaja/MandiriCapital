@@ -13,7 +13,7 @@
         </video>
 
         <div class="hero-content">
-            <a href="#"><h1 class="hero-main-text">MEDIA</h1></a>
+            <a href="#"><h1 class="hero-main-text">{{ $hero->title }}</h1></a>
 
             {{-- Search and Filter Section --}}
             <div class="center-search">
@@ -35,13 +35,12 @@
                     </div>
                 </div>
 
-                {{-- Category Filter Links --}}
-                <div class="category-filters">
-                    <a href="#" class="filter-link active">All</a>
-                    <a href="#" class="filter-link">News</a>
-                    {{-- <a href="#" class="filter-link">Podcast</a> --}}
-                    <a href="#" class="filter-link">Blog</a>
-                </div>
+                {{-- SUB MENU  --}}
+                <nav class="category-filters">
+                    @foreach ($menuSubCategory as $menuSubCat)
+                        <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ Str::slug($menuSubCat->slug) }}">{{ $menuSubCat->name }}</a>
+                    @endforeach
+                </nav>
             </div>
         </div>
     </div>

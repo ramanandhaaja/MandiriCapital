@@ -7,12 +7,14 @@ use Illuminate\Support\Facades\Log;
 // Model Imports
 
 use App\Models\AboutMandiriEcosystem;
+use App\Models\AboutMCIIntro;
 use App\Models\AboutPrioritySector;
 use App\Models\AboutTeam;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
 use App\Models\HeroSection;
+use App\Models\HeroSectionSubCategory;
 use App\Models\HomeArticle;
 use App\Models\HomeProfileCompany;
 use App\Models\Platform;
@@ -53,16 +55,28 @@ class PageController extends Controller
     public function about()
     {
         $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('name', 'Our Identity');
+            $query->where('slug', 'our-identity');
         })->first();
+
+        $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
+            $query->where('slug', 'our-identity');
+        })->get();
+
+        // Get the specific about-mci subcategory
+        $aboutMciHeadline = HeroSectionSubCategory::where('slug', 'about-mci')->first();
+
+        $mciintro = AboutMCIIntro::first();
 
         $prioritySectors = AboutPrioritySector::get();
 
         // Group ecosystem list by their group field
-        $ecosystemList = AboutMandiriEcosystem::get()
+        $ecosystemHeadline = AboutMandiriEcosystem::where('is_headline', true)->get();
+
+        // Group ecosystem list by their group field
+        $ecosystemList = AboutMandiriEcosystem::where('is_headline', false)
+            ->get()
             ->groupBy('group')
             ->sortBy(function ($items, $key) {
-                // Define the order of groups if needed
                 $groupOrder = [
                     'Bank',
                     'Investment',
@@ -96,7 +110,7 @@ class PageController extends Controller
                 return array_search($key, $jobGroupOrder);
             });
 
-        return view('pages.about', compact('hero', 'ecosystemList', 'prioritySectors', 'teamMembers'));
+        return view('pages.about', compact('hero', 'menuSubCategory', 'aboutMciHeadline', 'mciintro', 'ecosystemHeadline','ecosystemList', 'prioritySectors', 'teamMembers'));
     }
 
     public function contact()
@@ -109,6 +123,10 @@ class PageController extends Controller
         $hero = HeroSection::whereHas('category', function($query) {
             $query->where('name', 'Media');
         })->first();
+
+        $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
+            $query->where('slug', 'media');
+        })->get();
 /*
         // Get all active categories first
         $categories = BlogCategory::where('is_active', true)->get();
@@ -148,7 +166,7 @@ class PageController extends Controller
 
         $posts = $query->orderBy('published_at', 'desc')->take(7)->get();
 
-        return view('pages.media', compact('hero', 'posts'));
+        return view('pages.media', compact('hero', 'menuSubCategory','posts'));
     }
 
     public function mediashow($slug)
@@ -160,8 +178,12 @@ class PageController extends Controller
     public function portfolio()
     {
         $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('name', 'Portfolio');
+            $query->where('slug', 'portfolio');
         })->first();
+
+        $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
+            $query->where('slug', 'portfolio');
+        })->get();
 
         $portfolioArticlesList = PortfolioArticle::get();
         $portfolioArticleSubList = PortfolioArticleSub::get();
@@ -177,7 +199,7 @@ class PageController extends Controller
         $categories = PortfolioCategory::all();
         $selectedCategory = null;
 
-        return view('pages.portfolio', compact('hero', 'portfolios', 'categories', 'selectedCategory', 'portfolioArticlesList', 'portfolioArticleSubList','portfolioFundingArticlesList', 'portfolioFundingArticleSubList'));
+        return view('pages.portfolio', compact('hero', 'menuSubCategory','portfolios', 'categories', 'selectedCategory', 'portfolioArticlesList', 'portfolioArticleSubList','portfolioFundingArticlesList', 'portfolioFundingArticleSubList'));
     }
 
     public function portfolioshow($slug)
@@ -205,14 +227,18 @@ class PageController extends Controller
     public function platform()
     {
         $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('name', 'Platform');
+            $query->where('slug', 'platform');
         })->first();
+
+        $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
+            $query->where('slug', 'platform');
+        })->get();
 
         $businessUnitList = Platform::all();
 
         $valueCreationList = PlatformValueCreation::all();
 
-        return view('pages.platform', compact('hero', 'businessUnitList', 'valueCreationList'));
+        return view('pages.platform', compact('hero', 'menuSubCategory','businessUnitList', 'valueCreationList'));
     }
 
     public function platformshow($slug)
@@ -237,8 +263,12 @@ class PageController extends Controller
     public function report()
     {
         $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('name', 'Publication');
+            $query->where('name', 'publication');
         })->first();
+
+        $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
+            $query->where('slug', 'publication');
+        })->get();
 
         $publications = Publication::with('category')
             ->orderBy('published_date')
@@ -246,7 +276,7 @@ class PageController extends Controller
 
         $publication_categories = PublicationCategory::all();
 
-        return view('pages.report', compact('hero', 'publications', 'publication_categories'));
+        return view('pages.report', compact('hero','menuSubCategory', 'publications', 'publication_categories'));
     }
 
     public function reportshow($slug)

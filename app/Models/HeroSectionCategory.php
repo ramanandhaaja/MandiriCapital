@@ -21,8 +21,9 @@ class HeroSectionCategory extends Model
         return $this->hasMany(HeroSection::class);
     }
 
-    public function isEmailVerificationRequired(): bool
+    public function subCategories()
     {
-        return false;
+        return $this->hasMany(HeroSectionSubCategory::class);
     }
+
 }

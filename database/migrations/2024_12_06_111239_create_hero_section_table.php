@@ -28,6 +28,15 @@ return new class extends Migration
             $table->string('image_path');
             $table->timestamps();
         });
+
+        Schema::create('hero_section_sub_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->foreignId('hero_section_category_id')->constrained('hero_section_categories')->onDelete('cascade');
+            $table->string('headline_text');
+            $table->timestamps();
+        });
     }
 
     /**

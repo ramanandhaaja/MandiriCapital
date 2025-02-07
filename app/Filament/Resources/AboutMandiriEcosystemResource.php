@@ -92,6 +92,13 @@ class AboutMandiriEcosystemResource extends Resource
 
                         Forms\Components\Group::make()
                             ->schema([
+                                Forms\Components\Section::make('Headline')
+                                    ->schema([
+                                        Forms\Components\Checkbox::make('is_headline')
+                                            ->label('Headline')
+                                            ->default(true)
+                                            ->columnSpanFull(),
+                                    ]),
                                 Forms\Components\Section::make('Tag')
                                     ->schema([
                                         Forms\Components\Grid::make()

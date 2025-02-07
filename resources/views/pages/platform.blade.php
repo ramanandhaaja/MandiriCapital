@@ -13,12 +13,14 @@
         </video>
 
         <div class="hero-content">
-            <h1 class="hero-main-text">VALUE CREATION</h1>
+            <h1 class="hero-main-text">{{ $hero->title }}</h1>
             <div class="center-search">
-                <div class="category-filters">
-                    <a href="#" class="filter-link active" data-filter="business">Our Focus</a>
-                    <a href="#" class="filter-link" data-filter="program">Program</a>
-                </div>
+                {{-- SUB MENU  --}}
+                <nav class="category-filters">
+                    @foreach ($menuSubCategory as $menuSubCat)
+                        <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ Str::slug($menuSubCat->slug) }}">{{ $menuSubCat->name }}</a>
+                    @endforeach
+                </nav>
             </div>
         </div>
     </div>

@@ -12,12 +12,12 @@
         </video>
 
         <div class="hero-content">
-            <h1 class="hero-main-text">OUR IDENTITY</h1>
+            <h1 class="hero-main-text">{{ $hero->title }}</h1>
             <div class="center-search">
                 <nav class="category-filters">
-                    <a href="#" class="filter-link active" data-filter="about-mci">About MCI</a>
-                    <a href="#" class="filter-link" data-filter="about-mandiri">About Mandiri</a>
-                    <a href="#" class="filter-link" data-filter="our-team">Our Team</a>
+                    @foreach ($menuSubCategory as $menuSubCat)
+                        <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ Str::slug($menuSubCat->slug) }}">{{ $menuSubCat->name }}</a>
+                    @endforeach
                 </nav>
             </div>
         </div>
@@ -27,67 +27,53 @@
     <div class="about-full-section">
         {{-- Mission Statement --}}
         <div class="hero-mid-section">
-            <h1 class="center-text">MCI Connect Startups With Mandiri Group to Drive Rapid Innovation</h1>
+            <h1 class="center-text">{!! $aboutMciHeadline->headline_text ?? 'MCI Connect Startups With Mandiri Group to Drive Rapid Innovation' !!}</h1>
         </div>
 
         {{-- Company Overview --}}
         <div class="counter-content">
             <div class="content-container">
                 <div class="text-content">
-
-                    <p>At Mandiri Capital Indonesia (MCI), we’re not just a venture capital firm—we’re catalysts for rapid
-                        innovation and sustainable growth. As the corporate venture capital arm of Bank Mandiri, we drive
-                        transformative change by forging synergies across a dynamic ecosystem, empowering startups to scale,
-                        and fostering impactful collaborations that fuel progress.</p>
-
-                    <p>With a diverse portfolio of 23 startups and access to strategic funds such as the Balance Sheet Fund,
-                        Indonesia Impact Fund, and Merah Putih Fund, MCI is leading the charge in shaping Indonesia's
-                        digital innovation landscape.</p>
-
-                    <p>Established in 2015 as the venture capital arm of PT Bank Mandiri (Persero) Tbk, MCI’s core mission
-                        has always been to unlock synergies that accelerate innovation. We don’t just envision growth; we
-                        make it happen—building a future of opportunity, resilience, and long-term success for both startups
-                        and Indonesia's economy.</p>
+                    {!! $mciintro->intro !!}
                 </div>
             </div>
 
             {{-- Features Section --}}
             <div class="features-container">
-                <h2 class="features-title">Unlocking Startups'<br>Best Potential</h2>
+                <h2 class="features-title">{!! $mciintro->headline !!}</h2>
 
                 <div class="feature-items">
-                    @php
-                        $features = [
-                            [
-                                'icon' => 'icon1.png',
-                                'title' => 'Building Synergy with Mandiri Ecosystem',
-                                'description' => 'Empowering startups through strategic collaborations and resources.',
-                            ],
-                            [
-                                'icon' => 'icon2.png',
-                                'title' => 'Nurturing Startup Fundamentals',
-                                'description' => 'Strengthening growth with expert mentorship and guidance.',
-                            ],
-                            [
-                                'icon' => 'icon3.png',
-                                'title' => 'ESG Initiative',
-                                'description' => 'Promoting sustainable growth through responsible business practices.',
-                            ],
-                        ];
-                    @endphp
 
-                    @foreach ($features as $feature)
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <img src="{{ asset('images/about/' . $feature['icon']) }}"
-                                    alt="{{ $feature['title'] }} Icon">
+                                <img src="{{ '/storage/' . $mciintro->icon_article1 }}"
+                                    alt="">
                             </div>
                             <div class="feature-content">
-                                <h3>{{ $feature['title'] }}</h3>
-                                <p>{{ $feature['description'] }}</p>
+                                <h3>{!! $mciintro->articletitle1 !!}</h3>
+                                <p>{!! $mciintro->article1 !!}</p>
                             </div>
                         </div>
-                    @endforeach
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <img src="{{ '/storage/' . $mciintro->icon_article2 }}"
+                                    alt="">
+                            </div>
+                            <div class="feature-content">
+                                <h3>{!!  $mciintro->articletitle2 !!}</h3>
+                                <p>{!! $mciintro->article2 !!}</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <img src="{{ '/storage/' . $mciintro->icon_article3 }}"
+                                    alt="">
+                            </div>
+                            <div class="feature-content">
+                                <h3>{!! $mciintro->articletitle3 !!}</h3>
+                                <p>{!! $mciintro->article3 !!}</p>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -120,26 +106,30 @@
     {{-- Mandiri Section --}}
     <div class="mandiri-section">
         <div class="ecosystem-grid">
-            <div class="card-ecosystem-highlight">
-                <div class="card-ecosystem-highlight-grid">
-                    <img src="{{ asset('images/about/mandirilogobig.png') }}" alt=""
-                        class="card-ecosystem-image-highlight">
-                    <div class="">
-                        <div class="tag-container-highlight">
-                            <span class="tag tag-domestic">Domestik</span>
-                            <span class="tag tag-international">International</span>
-                        </div>
-                        <a href="#" class="text-decoration-none">
-                            <span class="category-highlight">The Biggest Conglomerate with Various Subsidiaries.</span>
-                            <div class="card-ecosystem-content-highlight">
-                                Mandiri’s total asset amount to Rp. 2.427 Tn a of Q4 2024, Mandiri has 42+ Mn retail
-                                customers and 200k+ SMEs, 137 Branch offices, 12k+ ATM, 7 overseas branch offices which
-                                includes Singapore, Hong Kong, Shanghai, Cayman Islands, Dili, London, and Malaysia.
+            @foreach($ecosystemHeadline as $headline)
+                <div class="card-ecosystem-highlight">
+                    <div class="card-ecosystem-highlight-grid">
+                        <img src="{{ '/storage/' .$headline->image_path }}" alt="{{ $headline->title }}"
+                            class="card-ecosystem-image-highlight">
+                        <div class="">
+                            <div class="tag-container-highlight">
+                                @if($headline->is_domestic)
+                                <span class="tag tag-domestic">Domestik</span>
+                                @endif
+                                @if($headline->is_international)
+                                <span class="tag tag-international">International</span>
+                                @endif
                             </div>
-                        </a>
+                            <a href="#" class="text-decoration-none">
+                                <span class="category-highlight">{{ $headline->title }}</span>
+                                <div class="card-ecosystem-content-highlight">
+                                    {{ $headline->content }}
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
         <div class="mandiri-ecosystem-title">
             Mandiri Ecosystem

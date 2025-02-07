@@ -14,7 +14,7 @@
         </video>
 
         <div class="hero-content">
-            <a href="#"><h1 class="hero-main-text">PUBLICATION</h1></a>
+            <a href="#"><h1 class="hero-main-text">{{ $hero->title }}</h1></a>
 
             {{-- Search and Filter Section --}}
             <div class="center-search">
@@ -40,12 +40,12 @@
                 </div>
 
                 {{-- Category Filters --}}
-                <div class="category-filters">
-                    <a href="#" class="filter-link active">All</a>
-                    <a href="#" class="filter-link">Annual & Financial Report</a>
-                    <a href="#" class="filter-link">Sustainability Report</a>
-                    <a href="#" class="filter-link">Whitepaper</a>
-                </div>
+                {{-- SUB MENU  --}}
+                <nav class="category-filters">
+                    @foreach ($menuSubCategory as $menuSubCat)
+                        <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ Str::slug($menuSubCat->slug) }}">{{ $menuSubCat->name }}</a>
+                    @endforeach
+                </nav>
             </div>
         </div>
     </div>

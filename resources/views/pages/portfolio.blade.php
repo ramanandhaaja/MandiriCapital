@@ -7,11 +7,11 @@
 @section('container')
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
-            <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
+           <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
         <div class="hero-content">
             <a href="#">
-                <h1 class="hero-main-text">INVESTMENT </h1>
+                <h1 class="hero-main-text">{{$hero->title  }} </h1>
             </a>
             <div class="center-search">
 
@@ -19,11 +19,12 @@
                     <input type="text" placeholder="Search..." class="search-input" style="visibility: hidden;">
                     <i class="fas fa-search search-input-icon" style="visibility: hidden;"></i>
                 </div>
-                <div class="category-filters">
-                    <a href="#" class="filter-link active" data-category="get_investment">Get Investment</a>
-                    <a href="#" class="filter-link" data-category="portfolio">Portfolio</a>
-                    <a href="#" class="filter-link" data-category="funding">Funds</a>
-                </div>
+                {{-- SUB MENU  --}}
+                <nav class="category-filters">
+                    @foreach ($menuSubCategory as $menuSubCat)
+                        <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-category="{{ Str::slug($menuSubCat->slug) }}">{{ $menuSubCat->name }}</a>
+                    @endforeach
+                </nav>
             </div>
         </div>
     </div>
@@ -583,7 +584,7 @@
                 };
 
                 const FILTER_TYPES = {
-                    GET_INVESTMENT: 'get_investment',
+                    GET_INVESTMENT: 'get-investment',
                     PORTFOLIO: 'portfolio',
                     FUNDING: 'funding'
                 };

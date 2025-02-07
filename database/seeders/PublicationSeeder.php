@@ -13,8 +13,8 @@ class PublicationSeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Annual Report'],
-            ['name' => 'Sustainability'],
+            ['name' => 'Annual & Financial Report'],
+            ['name' => 'Sustainability Report'],
             ['name' => 'Whitepaper'],
         ];
 

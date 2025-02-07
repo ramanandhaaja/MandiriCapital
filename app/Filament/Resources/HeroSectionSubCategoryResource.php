@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\HeroSectionResource\Pages;
-use App\Models\HeroSection;
+use App\Filament\Resources\HeroSectionSubCategoryResource\Pages;
+use App\Models\HeroSectionSubCategory;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -11,15 +11,17 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
-class HeroSectionResource extends Resource
+class HeroSectionSubCategoryResource extends Resource
 {
-    protected static ?string $model = HeroSection::class;
+    protected static ?string $model = HeroSectionSubCategory::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
 
     protected static ?string $navigationGroup = 'Master Data Management';
 
-    protected static ?int $navigationSort = 0;
+    protected static ?string $navigationLabel = 'Sub-Menu Category';
+
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
@@ -33,7 +35,7 @@ class HeroSectionResource extends Resource
                                     ->schema([
                                         Forms\Components\Grid::make(2)
                                             ->schema([
-                                                Forms\Components\TextInput::make('title')
+                                                Forms\Components\TextInput::make('name')
                                                     ->required()
                                                     ->maxLength(255)
                                                     ->live(onBlur: true)
@@ -44,10 +46,10 @@ class HeroSectionResource extends Resource
                                                 Forms\Components\TextInput::make('slug')
                                                     ->required()
                                                     ->maxLength(255)
-                                                    ->unique(HeroSection::class, 'slug', ignoreRecord: true),
+                                                    ->unique(HeroSectionSubCategory::class, 'slug', ignoreRecord: true),
                                             ]),
 
-                                        Forms\Components\RichEditor::make('content')
+                                        Forms\Components\RichEditor::make('headline_text')
                                             ->required()
                                             ->maxLength(65535)
                                             ->columnSpanFull(),
@@ -55,22 +57,10 @@ class HeroSectionResource extends Resource
                                         Forms\Components\Grid::make(2)
                                             ->schema([
                                                 Forms\Components\DatePicker::make('published_date')
-                                                    ->required(),
+                                                    ->nullable(),
                                             ]),
-
                                     ])
                                     ->columns(2),
-                                Forms\Components\Section::make('Image/Video')
-                                    ->schema([
-                                        Forms\Components\FileUpload::make('image_path')
-                                            ->required()
-                                            ->acceptedFileTypes(['image/*', 'video/*'])
-                                            ->maxSize(50 * 1024) // 50MB max file size
-                                            ->disk('public')
-                                            ->directory('hero-sections')
-                                            ->visibility('public')
-                                            ->columnSpanFull(),
-                                    ]),
                             ])
                             ->columnSpan(2),
 
@@ -104,21 +94,14 @@ class HeroSectionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image_path')
-                    ->disk('public')
-                    ->height(50),
 
-                Tables\Columns\TextColumn::make('title')
+                Tables\Columns\TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('category.name')
                     ->sortable()
                     ->searchable(),
-
-                Tables\Columns\TextColumn::make('published_date')
-                    ->date()
-                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -141,9 +124,9 @@ class HeroSectionResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListHeroSection::route('/'),
-            'create' => Pages\CreateHeroSection::route('/create'),
-            'edit' => Pages\EditHeroSection::route('/{record}/edit'),
+            'index' => Pages\ListHeroSectionSubCategory::route('/'),
+            'create' => Pages\CreateHeroSectionSubCategory::route('/create'),
+            'edit' => Pages\EditHeroSectionSubCategory::route('/{record}/edit'),
         ];
     }
 }

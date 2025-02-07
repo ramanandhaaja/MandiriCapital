@@ -17,7 +17,9 @@ class HeroSectionCategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Content Management';
+    protected static ?string $navigationGroup = 'Master Data Management';
+
+    protected static ?string $navigationLabel = 'Menu Category';
 
     protected static ?int $navigationSort = 1;
 

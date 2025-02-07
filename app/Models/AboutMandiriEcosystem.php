@@ -19,6 +19,7 @@ class AboutMandiriEcosystem extends Model
         'image_path',
         'is_domestic',
         'is_international',
+        'is_headline',
         'group',
         'hover_focus_area',
         'hover_content',
