@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use App\Models\Platform;
+use App\Models\PlatformArticle;
 use App\Models\PlatformCategory;
+use App\Models\PlatformCounter;
 
 class PlatformSeeder extends Seeder
 {
@@ -19,103 +21,276 @@ class PlatformSeeder extends Seeder
     public function run()
     {
 
+        $platformArticles = [
+            [
+                'title' => 'Unlock Your Potentials',
+                'subtitle' => '',
+                'content' => 'Ecosystem Driven
+
+We empower innovation and foster collaboration by leveraging our strategic position within the Mandiri Group and its extensive network.
+
+Beyond Mandiri Group, we also help startups to connect with SOEs and other corporations.
+
+Tailored Guidance
+
+Through our value creation programs, we offer hands-on support to scale your business and operations excellence.
+
+Access to Indonesia and Global Market:
+
+At the forefront of innovation, MCI supports startups worldwide in their expansion efforts.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ];
+
+        foreach ($platformArticles as $article) {
+            PlatformArticle::updateOrCreate(
+                $article
+            );
+        }
+
+        $platformCounters = [
+            [
+                'title' => 'PROJECTS',
+                'subtitle' => 'hand to business unit',
+                'content' => '120+',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'STARTUPS',
+                'subtitle' => 'work with our business unit',
+                'content' => '40+',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'BUSINESS UNITS',
+                'subtitle' => 'mandiri and subsidiaries work with statup',
+                'content' => '40+',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ];
+
+        foreach ($platformCounters as $counter) {
+            PlatformCounter::updateOrCreate(
+                $counter
+            );
+        }
+
+        $platformCategories = [
+            [
+                'name' => 'Embedded Finance',
+                'order' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Health & Wellness',
+                'order' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Wealth Management',
+                'order' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Tech Enabler',
+                'order' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Value Chain Enabler',
+                'order' => 5,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],[
+                'name' => 'Property Tech & Asset Management',
+                'order' => 5,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ];
+
+        foreach ($platformCategories as $platformCategory) {
+            PlatformCategory::updateOrCreate(
+                $platformCategory
+            );
+        }
+
         $platforms = [
             [
-                'title' => 'Mortgage',
-                'slug' => 'mortgage',
-                'content' => 'Property tech startups that open to synergy in loan channeling',
+                'title' => 'Generative AI',
+                'slug' => 'generative-ai',
+                'platform_category_id' => 1,
+                'content' => '',
                 'published_date' => now(),
-                'image_path' => 'platforms/01JHG09MC0RMJWX8T99EJRJE8Y.png',
+                'image_path' => 'platforms/01JKHZ8918FN548BZ18A0V24KC.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'title' => 'Financial Management',
                 'slug' => 'financial-management',
-                'content' => 'Startups that can support business function in payment related, such as payment gateway, cash collection, customer loyalty and rewards',
+                'platform_category_id' => 1,
+                'content' => '',
                 'published_date' => now(),
-                'image_path' => 'platforms/01JHG0ASS6003ZDQ0XDSSWWF85.png',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Productive Loan',
-                'slug' => 'productive-loan',
-                'content' => 'Open synergy for loan channeling and referral in productive area',
-                'published_date' => now(),
-                'image_path' => 'platforms/01JHG0BPCRAZDA6HK01NVNNVMN.png',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Consumptive Loan',
-                'slug' => 'consumptive-loan',
-                'content' => 'Open synergy for loan channeling and referral in consumptive area',
-                'published_date' => now(),
-                'image_path' => 'platforms/01JHG0C9SFV9AK5QK9PW6XSXXH.png',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Paylater',
-                'slug' => 'paylater',
-                'content' => 'Mandiri paylater is looking for partners to maximize your payment options',
-                'published_date' => now(),
-                'image_path' => 'platforms/01JHG0CYN7PHJSS7HS9DW7WJG7.png',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Savings',
-                'slug' => 'savings',
-                'content' => 'Eager to collaborate in product bundling or cross selling, targeting B2C and B2B business',
-                'published_date' => now(),
-                'image_path' => 'platforms/01JHG0DK0Z97EKY0EMYM37HG6H.png',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Invoice Financing',
-                'slug' => 'invoice-financing',
-                'content' => 'Mandiri tap into partner\'s business model which require invoice financing',
-                'published_date' => now(),
-                'image_path' => 'platforms/01JHG0EA2HBXBY761D1JRTG1VR.png',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Remittance',
-                'slug' => 'remittance',
-                'content' => 'Exploring collaboration with startups that provide seamless outgoing and incoming transfers overseas',
-                'published_date' => now(),
-                'image_path' => 'platforms/01JHG0F3K88E8ETRXSNN3SMATQ.png',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Automotive Financing',
-                'slug' => 'automotive-financing',
-                'content' => 'Mandiri\'s vehicle financing is looking for startups that focus on primary and secondary market',
-                'published_date' => now(),
-                'image_path' => 'platforms/01JHG0FQQ2BWPS6KS84BTJ692P.png',
+                'image_path' => 'platforms/01JKHZ8Q3CGCK4R9KQ871NM51T.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'title' => 'Data Management',
                 'slug' => 'data-management',
-                'content' => 'Cover data collection, input and output for business decision-making process',
+                'platform_category_id' => 1,
+                'content' => '',
                 'published_date' => now(),
-                'image_path' => 'platforms/01JHG0G8DTQ8PQFPAMH03HRARJ.png',
+                'image_path' => 'platforms/01JKHZ92Y23M9N4K0MRVM51T51.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Artificial Intelligence',
-                'slug' => 'artificial-intelligence',
-                'content' => 'AI tech in customer engagement, such as chatbot, CRM and complaint management',
+                'title' => 'Personalisation',
+                'slug' => 'personalisation',
+                'platform_category_id' => 1,
+                'content' => '',
                 'published_date' => now(),
-                'image_path' => 'platforms/01JHG0H3RW95AKN8CZSCQGDB3H.png',
+                'image_path' => 'platforms/01JKHZ9HGD9592C6K4SG5PBKGJ.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Health & Wellness',
+                'slug' => 'health-wellness',
+                'platform_category_id' => 2,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZ9VQNXA9BBERMSYMDYRDK.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Wealth Management',
+                'slug' => 'wealth-management',
+                'platform_category_id' => 3,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZA8WSS923773HBZMSFNV0.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'SaaS',
+                'slug' => 'saas',
+                'platform_category_id' => 4,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZANRN575J22EHT2TCNXDS.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Online Payment',
+                'slug' => 'online-payment',
+                'platform_category_id' => 4,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZB1G4JJGJ19AP0V99AS2M.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Cash Collection',
+                'slug' => 'cash-collections',
+                'platform_category_id' => 4,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZBF8T5FAGB7ZVXFFJXMG6.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Lifestyle',
+                'slug' => 'lifestyle',
+                'platform_category_id' => 5,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZC3E4ZAKEGMT1Q2ABHND8.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'FMCG',
+                'slug' => 'fmcg',
+                'platform_category_id' => 5,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZCEHF05FQK65DZXGX7H6Y.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Health',
+                'slug' => 'health',
+                'platform_category_id' => 5,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZCVD9RJM412N15A8TYKGE.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Transportation',
+                'slug' => 'transportation',
+                'platform_category_id' => 5,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZVG8S7WA8MW5V9E1N2M3N.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Cash Collection',
+                'slug' => 'cash-collection',
+                'platform_category_id' => 5,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKJ022GZSN3SFRERJDSR2KCP.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Asset Liquidation',
+                'slug' => 'asset-liquidation',
+                'platform_category_id' => 6,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZH9V2AWB6E79EXSX837K2.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Product bundling for wealth customers',
+                'slug' => 'product-bundling-for-wealth-customers',
+                'platform_category_id' => 6,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZHQPX59N129MDDWH1WZZT.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Idle asset management',
+                'slug' => 'idle-asset-management',
+                'platform_category_id' => 6,
+                'content' => '',
+                'published_date' => now(),
+                'image_path' => 'platforms/01JKHZJ46KXBYNKA3T67ZCW6XH.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

@@ -1095,6 +1095,28 @@ body {
 }
 
 
+.potential-content-section h2 {
+    position: relative;
+    font-family: var(--font-family);
+    color: #EFA32F;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: left;
+    margin: 0 0 20px 0;
+}
+
+.potential-content-section  p {
+    position: relative;
+    font-family: var(--font-family);
+    color: #A1A1AA;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    margin: 0 0 30px 0;
+    line-height: 1.6;
+}
+
+
 
 
 .masonry-grid-contact-section-grey {

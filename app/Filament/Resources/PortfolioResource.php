@@ -134,9 +134,13 @@ class PortfolioResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('order')
+                    ->sortable()
+                    ->searchable(),
                 Tables\Columns\ImageColumn::make('image_path')
                     ->disk('public')
                     ->height(50),
+
 
                 Tables\Columns\TextColumn::make('name')
                     ->sortable()

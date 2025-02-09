@@ -11,10 +11,16 @@ class Platform extends Model
         'slug',
         'content',
         'published_date',
-        'image_path'
+        'image_path',
+        'platform_category_id'
     ];
 
     protected $casts = [
         'published_date' => 'date'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(PlatformCategory::class, 'platform_category_id');
+    }
 }

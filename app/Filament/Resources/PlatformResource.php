@@ -17,13 +17,13 @@ class PlatformResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $navigationGroup = 'Value Management';
+    protected static ?string $navigationGroup = 'Value Creation Management';
 
-    protected static ?string $navigationLabel = 'Business Unit';
+    protected static ?string $navigationLabel = 'Business Focus';
 
-    protected static ?string $modelLabel = 'Business Unit';
+    protected static ?string $modelLabel = 'Business Focus';
 
-    protected static ?string $pluralModelLabel = 'Business Unit';
+    protected static ?string $pluralModelLabel = 'Business Focus';
 
     protected static ?int $navigationSort = 40;
 
@@ -54,7 +54,6 @@ class PlatformResource extends Resource
                                             ]),
 
                                         Forms\Components\RichEditor::make('content')
-                                            ->required()
                                             ->maxLength(65535)
                                             ->columnSpanFull(),
 

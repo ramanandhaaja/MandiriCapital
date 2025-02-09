@@ -18,6 +18,9 @@ use App\Models\HeroSectionSubCategory;
 use App\Models\HomeArticle;
 use App\Models\HomeProfileCompany;
 use App\Models\Platform;
+use App\Models\PlatformArticle;
+use App\Models\PlatformCategory;
+use App\Models\PlatformCounter;
 use App\Models\PlatformValueCreation;
 use App\Models\Portfolio;
 use App\Models\PortfolioArticle;
@@ -192,7 +195,7 @@ class PageController extends Controller
         $portfolioFundingArticleSubList = PortfolioFundingArticleSub::get();
 
         $portfolioQuery = Portfolio::with('category')
-            ->orderBy('year_invested', 'desc');
+            ->orderBy('order', 'asc');
 
         $portfolios = $portfolioQuery->get();
 
@@ -234,11 +237,16 @@ class PageController extends Controller
             $query->where('slug', 'platform');
         })->get();
 
-        $businessUnitList = Platform::all();
+        $counters = PlatformCounter::all();
+
+        $platformFocusCategory = PlatformCategory::orderBy('order')->get();
+        $platformFocusList = Platform::all();
+
+        $platformArticle = PlatformArticle::all();
 
         $valueCreationList = PlatformValueCreation::all();
 
-        return view('pages.platform', compact('hero', 'menuSubCategory','businessUnitList', 'valueCreationList'));
+        return view('pages.platform', compact('hero', 'menuSubCategory','counters','platformFocusCategory','platformFocusList', 'valueCreationList', 'platformArticle'));
     }
 
     public function platformshow($slug)

@@ -17,7 +17,7 @@ class PlatformValueCreationResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $navigationGroup = 'Value Management';
+    protected static ?string $navigationGroup = 'Value Creation Management';
 
     protected static ?string $navigationLabel = 'Value Creation Program';
 
