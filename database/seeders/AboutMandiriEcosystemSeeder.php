@@ -40,6 +40,7 @@ class AboutMandiriEcosystemSeeder extends Seeder
         foreach ($categories as $data) {
             AboutMandiriEcosystemCategory::create($data);
         }
+        
 
         $datas = [
             [

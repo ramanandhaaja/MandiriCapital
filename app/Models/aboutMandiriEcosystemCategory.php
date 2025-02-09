@@ -13,7 +13,6 @@ class AboutMandiriEcosystemCategory extends Model
         'order',
     ];
 
-
     public function aboutMandiriEcosystem()
     {
         return $this->hasMany(AboutMandiriEcosystem::class);
