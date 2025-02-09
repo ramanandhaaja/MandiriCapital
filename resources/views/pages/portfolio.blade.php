@@ -34,7 +34,7 @@
         {{-- Article Section --}}
 
         <div class="hero-mid-section">
-            <h1 class="center-text">Ready to rise? Prove your resilience and show you have what it takes!</h1>
+            <h1 class="center-text">{{ $menuSubCategory->first()->headline_text  }}</h1>
         </div>
 
         @foreach ($portfolioArticlesList as $index => $article)
@@ -355,7 +355,7 @@
     <div class="for-investor-section">
         {{-- Hero Section --}}
         <div class="hero-mid-section">
-            <h1 class="center-text">To foster long-term growth, we invest through three distinct fund vehicles</h1>
+            <h1 class="center-text">{{ $menuSubCategory->skip(2)->first()->headline_text  }}</h1>
         </div>
 
         {{-- Investment Vehicles --}}

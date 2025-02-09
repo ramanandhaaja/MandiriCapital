@@ -27,7 +27,7 @@
     <div class="about-full-section">
         {{-- Mission Statement --}}
         <div class="hero-mid-section">
-            <h1 class="center-text">{!! $aboutMciHeadline->headline_text ?? 'MCI Connect Startups With Mandiri Group to Drive Rapid Innovation' !!}</h1>
+            <h1 class="center-text">{{ $menuSubCategory->first()->headline_text ?? 'MCI Connect Startups With Mandiri Group to Drive Rapid Innovation' }}</h1>
         </div>
 
         {{-- Company Overview --}}

@@ -67,9 +67,6 @@ class PageController extends Controller
             $query->where('slug', 'our-identity');
         })->get();
 
-        // Get the specific about-mci subcategory
-        $aboutMciHeadline = HeroSectionSubCategory::where('slug', 'about-mci')->first();
-
         $mciintro = AboutMCIIntro::first();
 
         $prioritySectors = AboutPrioritySector::get();
@@ -84,7 +81,7 @@ class PageController extends Controller
         $aboutTeamCategory = AboutTeamCategory::orderBy('order')->get();
         $teamMembers = AboutTeam::all();
 
-        return view('pages.about', compact('hero', 'menuSubCategory', 'aboutMciHeadline', 'mciintro', 'ecosystemHeadline','ecosystemListCategory','ecosystemList', 'prioritySectors', 'aboutTeamCategory', 'teamMembers'));
+        return view('pages.about', compact('hero', 'menuSubCategory', 'mciintro', 'ecosystemHeadline','ecosystemListCategory','ecosystemList', 'prioritySectors', 'aboutTeamCategory', 'teamMembers'));
     }
 
     public function contact()

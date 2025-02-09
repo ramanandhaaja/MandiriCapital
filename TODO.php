@@ -13,5 +13,11 @@
 10. update cover porto-> done
 
 CMS
-1. Home main article
-2.
+1. Footer semua page
+2. Home main article cms
+3. Our team headline cms (our team)
+4. Our Team large photo cms
+5. Media news next and prev
+6. Contact cms
+7. Funding cms (MPF dll)
+8. Program cms (zenith dll)

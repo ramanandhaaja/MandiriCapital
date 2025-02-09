@@ -30,8 +30,8 @@
     <div class="headline-section" id="business-section">
 
         <div class="hero-mid-section">
-            <h1 class="center-text">Catalysing Growth Through Synergy with Our Value Creation Programs</h1>
-        </div>
+            <h1 class="center-text">{{ $menuSubCategory->first()->headline_text  }}</h1>
+         </div>
 
         <div class="headline-section-two">
             <div class="headline-grid-counter">
@@ -132,7 +132,7 @@
     {{-- Synergy Programs Section --}}
     <section class="synergy-section" id="program-section">
         <div class="hero-mid-section">
-            <h1 class="center-text">Our Value Creation Program</h1>
+            <h1 class="center-text">{{ $menuSubCategory->skip(1)->first()->headline_text  }}</h1>
         </div>
 
         @foreach ($valueCreationList as $index => $program)
