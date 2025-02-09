@@ -186,22 +186,20 @@
 
     {{-- Team Section --}}
     <div class="team-section">
+        @foreach ($aboutTeamHeadline as $headline)
         <div class="team-title-section">
             <div class="masonry-grid">
                 <div class="grid-headline-title-card">
-                    <h1 class="grid-headline-title">Meet the team making things happen at MCI</h1>
+                    <h1 class="grid-headline-title">{{ $headline->title }}</h1>
                 </div>
                 <div class="grid-headline-description-card">
                     <h1 class="grid-headline-subtitle">
-                        Our team is packed with talent, creativity, and a whole lot of personality.
-                        We're a group of bright minds and big thinkers who love what we do—and have
-                        a great time doing it. From tackling challenges to coming up with fresh ideas,
-                        every team member brings something unique to the table. Together, we make work
-                        exciting, inspiring, and just a little more fun every day. Come get to know us!
+                        {!! $headline->content !!}
                     </h1>
                 </div>
             </div>
         </div>
+        @endforeach
         @foreach ($aboutTeamCategory as $index => $article)
         <div class="mandiri-team-group-title">
             {{ $article['name'] }}

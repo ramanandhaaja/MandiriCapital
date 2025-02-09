@@ -25,7 +25,7 @@ class AboutTeamResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Team Member';
 
-    protected static ?int $navigationSort = 17;
+    protected static ?int $navigationSort = 18;
 
     public static function form(Form $form): Form
     {

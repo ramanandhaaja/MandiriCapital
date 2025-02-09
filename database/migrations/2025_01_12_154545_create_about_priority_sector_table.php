@@ -62,6 +62,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('about_team_headlines', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('content')->nullable();
+            $table->timestamps();
+        });
+
         Schema::create('about_team_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');

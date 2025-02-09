@@ -12,6 +12,7 @@ use App\Models\AboutMCIIntro;
 use App\Models\AboutPrioritySector;
 use App\Models\AboutTeam;
 use App\Models\AboutTeamCategory;
+use App\Models\AboutTeamHeadline;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
@@ -78,10 +79,13 @@ class PageController extends Controller
         $ecosystemListCategory = AboutMandiriEcosystemCategory::orderBy('order')->get();
         $ecosystemList = AboutMandiriEcosystem::all();
 
+
+        $aboutTeamHeadline = AboutTeamHeadline::all();
+
         $aboutTeamCategory = AboutTeamCategory::orderBy('order')->get();
         $teamMembers = AboutTeam::all();
 
-        return view('pages.about', compact('hero', 'menuSubCategory', 'mciintro', 'ecosystemHeadline','ecosystemListCategory','ecosystemList', 'prioritySectors', 'aboutTeamCategory', 'teamMembers'));
+        return view('pages.about', compact('hero', 'menuSubCategory', 'mciintro', 'ecosystemHeadline','ecosystemListCategory','ecosystemList', 'prioritySectors','aboutTeamHeadline', 'aboutTeamCategory', 'teamMembers', 'aboutTeamHeadline'));
     }
 
     public function contact()

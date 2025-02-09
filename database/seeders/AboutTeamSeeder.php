@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\AboutTeam;
 use App\Models\AboutTeamCategory;
+use App\Models\AboutTeamHeadline;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
@@ -11,6 +12,19 @@ class AboutTeamSeeder extends Seeder
 {
     public function run(): void
     {
+
+        $teamHeadlines = [
+            [
+                'title' => 'Meet the team making things happen at MCI',
+                'content' => 'Our team is packed with talent, creativity, and a whole lot of personality. We\'re a group of bright minds and big thinkers who love what we do—and have a great time doing it. From tackling challenges to coming up with fresh ideas, every team member brings something unique to the table. Together, we make work exciting, inspiring, and just a little more fun every day. Come get to know us!',
+            ],
+        ];
+
+        foreach ($teamHeadlines as $data) {
+            AboutTeamHeadline::create($data);
+        }
+
+
 
         $jobGroups = [
             [

@@ -15,7 +15,7 @@
 CMS
 1. Footer semua page
 2. Home main article cms
-3. Our team headline cms (our team)
+3. home conunter lupa di tambah *as 2024 etc
 4. Our Team large photo cms
 5. Media news next and prev
 6. Contact cms

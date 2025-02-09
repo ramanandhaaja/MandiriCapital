@@ -19,7 +19,7 @@ class AboutTeamCategoryResource extends Resource
     protected static ?string $navigationLabel = 'Team Category';
     protected static ?string $modelLabel = 'Team Category';
     protected static ?string $pluralModelLabel = 'Team Categories';
-    protected static ?int $navigationSort = 18;
+    protected static ?int $navigationSort = 19;
 
     public static function form(Form $form): Form
     {
