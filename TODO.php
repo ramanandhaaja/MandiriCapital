@@ -11,3 +11,7 @@
 8. Wording untuk report di download reportnya -> done
 9. form pake sendgrid
 10. update cover porto-> done
+
+CMS
+1. Home main article
+2.
