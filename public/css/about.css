@@ -727,7 +727,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 0px 65px;
-    max-width: 1600px;
+    max-width: 1350px;
     margin: 0 auto;
     gap: 20px;
 }
@@ -1308,18 +1308,24 @@ body {
 }
 
 .mandiri-ecosystem-title {
+
+    position: relative;
     font-family: var(--font-family);
     font-size: 32px;
     color: #FFFFFF;
-    padding-left: 65px;
+    margin: 40px auto 10px auto;
+    max-width: 1350px;
 }
 
 .mandiri-team-group-title {
+    position: relative;
     font-family: var(--font-family);
     font-size: 32px;
     color: #FFFFFF;
-    padding: 40px 0 10px 65px;
+    margin: 40px auto 10px auto;
+    max-width: 1350px;
 }
+
 
 @media (max-width: 768px) {
     /* Grid and Card Styles */

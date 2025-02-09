@@ -135,45 +135,45 @@
             Mandiri Ecosystem
         </div>
 
-        @foreach ($ecosystemList as $group => $ecosystems)
+        @foreach ($ecosystemListCategory as $index => $article)
         <div class="mandiri-team-group-title">
-            {{ $group }}
+            {{ $article['name'] }}
         </div>
         <div class="ecosystem-grid">
-            @foreach ($ecosystems as $ecosystem)
+            @foreach ($ecosystemList->where('about_ecosystem_category_id', $article['id']) as $subArticle)
                 {{-- Card Content --}}
                 <div class="card-ecosystem" data-hover-trigger>
                     <div class="background-image">
-                        <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}"
+                        <img src="{{ '/storage/' . $subArticle->image_path }}" alt="{{ $subArticle->title }}"
                             class="card-ecosystem-image">
                         <div class="tag-container">
-                            @if ($ecosystem->is_domestic)
+                            @if ($subArticle->is_domestic)
                                 <span class="tag tag-domestic">Domestik</span>
                             @endif
-                            @if ($ecosystem->is_international)
+                            @if ($subArticle->is_international)
                                 <span class="tag tag-international">International</span>
                             @endif
                         </div>
                         <a href="#" class="text-decoration-none">
-                            <span class="category">{{ $ecosystem->title }}</span>
+                            <span class="category">{{ $subArticle->title }}</span>
                             <div class="card-ecosystem-content">
-                                {{ $ecosystem->content }}
+                                {{ $subArticle->content }}
                             </div>
                         </a>
                     </div>
                     {{-- card content hover --}}
                     <div class="card-ecosystem-hover">
                         <div class="hover-content">
-                            <img src="{{ '/storage/' . $ecosystem->image_path }}" alt="{{ $ecosystem->title }}"
+                            <img src="{{ '/storage/' . $subArticle->image_path }}" alt="{{ $subArticle->title }}"
                                 class="hover-image">
                             <h2 class="hover-title">Here's what we seek for a synergy:</h2>
 
                             <h4 class="focus-areas-title">Focus Areas:</h4>
-                            <p class="focus-description">{!! $ecosystem->hover_focus_area !!}</p>
+                            <p class="focus-description">{!! $subArticle->hover_focus_area !!}</p>
 
                             <div class="synergy-points">
                                 <div class="synergy-point">
-                                    {!! $ecosystem->hover_content !!}
+                                    {!! $subArticle->hover_content !!}
                                 </div>
                             </div>
                         </div>
@@ -202,18 +202,17 @@
                 </div>
             </div>
         </div>
-
-        @foreach ($teamMembers as $jobGroup => $members)
+        @foreach ($aboutTeamCategory as $index => $article)
         <div class="mandiri-team-group-title">
-            {{ $jobGroup }}
+            {{ $article['name'] }}
         </div>
         <div class="masonry-grid">
-            @foreach ($members as $member)
+            @foreach ($teamMembers->where('about_team_category_id', $article['id']) as $subArticle)
                 <div class="team-card">
-                    <img class="background-image" src="{{ '/storage/' . $member->image_path }}" alt="{{ $member->name }}">
+                    <img class="background-image" src="{{ '/storage/' . $subArticle->image_path }}" alt="{{ $subArticle->name }}">
                     <div class="card-profile-photo">
-                        <span class="team-name">{{ $member->name }}</span>
-                        <span class="team-title">{{ $member->title }}</span>
+                        <span class="team-name">{{ $subArticle->name }}</span>
+                        <span class="team-title">{{ $subArticle->title }}</span>
                     </div>
                 </div>
             @endforeach

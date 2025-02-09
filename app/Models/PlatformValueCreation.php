@@ -15,7 +15,9 @@ class PlatformValueCreation extends Model
         'content_frontpage',
         'content_sub_frontpage',
         'logo',
-        'image_path_frontpage',
+        'image_path_frontpage1',
+        'image_path_frontpage2',
+        'image_path_frontpage3',
         'is_active',
         'published_date'
     ];

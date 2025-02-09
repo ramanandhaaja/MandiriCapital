@@ -15,7 +15,9 @@ return new class extends Migration
             $table->text('content_frontpage')->nullable();
             $table->text('content_sub_frontpage')->nullable();
             $table->text('logo')->nullable();
-            $table->string('image_path_frontpage')->nullable();
+            $table->string('image_path_frontpage1')->nullable();
+            $table->string('image_path_frontpage2')->nullable();
+            $table->string('image_path_frontpage3')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

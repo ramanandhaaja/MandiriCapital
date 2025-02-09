@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\Log;
 // Model Imports
 
 use App\Models\AboutMandiriEcosystem;
+use App\Models\AboutMandiriEcosystemCategory;
 use App\Models\AboutMCIIntro;
 use App\Models\AboutPrioritySector;
 use App\Models\AboutTeam;
+use App\Models\AboutTeamCategory;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
@@ -73,47 +75,16 @@ class PageController extends Controller
         $prioritySectors = AboutPrioritySector::get();
 
         // Group ecosystem list by their group field
+
         $ecosystemHeadline = AboutMandiriEcosystem::where('is_headline', true)->get();
 
-        // Group ecosystem list by their group field
-        $ecosystemList = AboutMandiriEcosystem::where('is_headline', false)
-            ->get()
-            ->groupBy('group')
-            ->sortBy(function ($items, $key) {
-                $groupOrder = [
-                    'Bank',
-                    'Investment',
-                    'Multi-Finance',
-                    'Remittance',
-                    'Insurance'
-                ];
-                return array_search($key, $groupOrder);
-            });
+        $ecosystemListCategory = AboutMandiriEcosystemCategory::orderBy('order')->get();
+        $ecosystemList = AboutMandiriEcosystem::all();
 
-        // Define the order of job groups
-        $jobGroupOrder = [
-            'Board of Commissioners',
-            'Board of Directors',
-            'Venture Fund',
-            'Investment',
-            'Value Creation',
-            'Legal, Compliance & HR',
-            'Risk & Portfolio Management',
-            'Finance & Treasury',
-            'Corsec & Operations',
-            'Internal Audit',
-            'Special Project',
-            'Executive Assistant to BOD'
-        ];
+        $aboutTeamCategory = AboutTeamCategory::orderBy('order')->get();
+        $teamMembers = AboutTeam::all();
 
-        // Get team members and sort them by the custom order
-        $teamMembers = AboutTeam::get()
-            ->groupBy('job_group')
-            ->sortBy(function ($members, $key) use ($jobGroupOrder) {
-                return array_search($key, $jobGroupOrder);
-            });
-
-        return view('pages.about', compact('hero', 'menuSubCategory', 'aboutMciHeadline', 'mciintro', 'ecosystemHeadline','ecosystemList', 'prioritySectors', 'teamMembers'));
+        return view('pages.about', compact('hero', 'menuSubCategory', 'aboutMciHeadline', 'mciintro', 'ecosystemHeadline','ecosystemListCategory','ecosystemList', 'prioritySectors', 'aboutTeamCategory', 'teamMembers'));
     }
 
     public function contact()

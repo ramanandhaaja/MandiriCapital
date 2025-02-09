@@ -28,8 +28,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-
-
         Schema::create('about_priority_sector', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
@@ -37,6 +35,13 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->date('published_date')->nullable();
             $table->string('image_path')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('about_mandiri_ecosystem_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->integer('order');
             $table->timestamps();
         });
 
@@ -53,11 +58,18 @@ return new class extends Migration
             $table->string('group')->nullable();
             $table->text('hover_focus_area')->nullable();
             $table->text('hover_content')->nullable();
+            $table->foreignId('about_ecosystem_category_id')->constrained('about_mandiri_ecosystem_categories')->onDelete('cascade');
             $table->timestamps();
         });
 
+        Schema::create('about_team_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->integer('order');
+            $table->timestamps();
+        });
 
-        Schema::create('about_team', function (Blueprint $table) {
+        Schema::create('about_teams', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->string('job_group')->nullable();
@@ -65,6 +77,7 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->date('published_date')->nullable();
             $table->string('image_path')->nullable();
+            $table->foreignId('about_team_category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -74,7 +87,11 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('about_mci_intro');
         Schema::dropIfExists('about_priority_sector');
+        Schema::dropIfExists('about_mandiri_ecosystem_categories');
         Schema::dropIfExists('about_mandiri_ecosystem');
+        Schema::dropIfExists('about_team_categories');
+        Schema::dropIfExists('about_teams');
     }
 };

@@ -23,10 +23,16 @@ class AboutMandiriEcosystem extends Model
         'group',
         'hover_focus_area',
         'hover_content',
+        'about_ecosystem_category_id',
     ];
 
     protected $casts = [
         'published_date' => 'date'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(AboutMandiriEcosystemCategory::class, 'about_ecosystem_category_id');
+    }
 
 }

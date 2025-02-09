@@ -25,19 +25,7 @@ class PlatformSeeder extends Seeder
             [
                 'title' => 'Unlock Your Potentials',
                 'subtitle' => '',
-                'content' => 'Ecosystem Driven
-
-We empower innovation and foster collaboration by leveraging our strategic position within the Mandiri Group and its extensive network.
-
-Beyond Mandiri Group, we also help startups to connect with SOEs and other corporations.
-
-Tailored Guidance
-
-Through our value creation programs, we offer hands-on support to scale your business and operations excellence.
-
-Access to Indonesia and Global Market:
-
-At the forefront of innovation, MCI supports startups worldwide in their expansion efforts.',
+                'content' => '<h2>Ecosystem Driven&nbsp;</h2><p>We empower innovation and foster collaboration by leveraging our strategic position within the Mandiri Group and its extensive network.&nbsp;</p><p>Beyond Mandiri Group, we also help startups to connect with SOEs and other corporations.&nbsp;</p><h2>Tailored Guidance&nbsp;</h2><p>Through our value creation programs, we offer hands-on support to scale your business and operations excellence.&nbsp;</p><h2>Access to Indonesia and Global Market:&nbsp;</h2><p>At the forefront of innovation, MCI supports startups worldwide in their expansion efforts.</p>',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

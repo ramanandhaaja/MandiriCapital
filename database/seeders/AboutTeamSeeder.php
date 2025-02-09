@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\AboutTeam;
+use App\Models\AboutTeamCategory;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
@@ -10,11 +11,70 @@ class AboutTeamSeeder extends Seeder
 {
     public function run(): void
     {
+
+        $jobGroups = [
+            [
+                'name' => 'Board of Commissioners',
+                'order' => 1,
+            ],
+            [
+                'name' => 'Board of Directors',
+                'order' => 2,
+            ],
+            [
+                'name' => 'Venture Fund',
+                'order' => 3,
+            ],
+            [
+                'name' => 'Investment',
+                'order' => 4,
+            ],
+            [
+                'name' => 'Value Creation',
+                'order' => 5,
+            ],
+            [
+                'name' => 'Legal, Compliance & HR',
+                'order' => 6,
+            ],
+            [
+                'name' => 'Risk & Portfolio Management',
+                'order' => 7,
+            ],
+            [
+                'name' => 'Finance & Treasury',
+                'order' => 8,
+            ],
+            [
+                'name' => 'Corsec & Operations',
+                'order' => 9,
+            ],
+            [
+                'name' => 'Internal Audit',
+                'order' => 10,
+            ],
+            [
+                'name' => 'Special Project',
+                'order' => 11,
+            ],
+            [
+                'name' => 'Executive Assistant to BOD',
+                'order' => 12,
+            ],
+        ];
+
+        foreach ($jobGroups as $data) {
+            AboutTeamCategory::create($data);
+        }
+
+
+
         $datas = [
             [
                 'name' => 'Alamanda Shantika',
                 'job_group' => 'Board of Commissioners',
                 'title' => 'Independent Commissioner',
+                'about_team_category_id' => 1,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SATDFDBTP4GDBQEB6R4PM.png'
@@ -23,6 +83,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Ronald S. Simorangkir',
                 'job_group' => 'Board of Directors',
                 'title' => 'Chief Executive Officer',
+                'about_team_category_id' => 2,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SB2Q865FEAM6A5RCKCKHC.png'
@@ -31,6 +92,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Wisnu Setiadi',
                 'job_group' => 'Board of Directors',
                 'title' => 'Chief Financial Officer',
+                'about_team_category_id' => 2,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SBCWG26E4XSJPPHTFPNTX.png'
@@ -39,6 +101,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Muhammad Salman',
                 'job_group' => 'Venture Fund',
                 'title' => 'VP Venture Fund',
+                'about_team_category_id' => 3,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SBPKKJXF1PKC1A4XK2AWJ.png'
@@ -47,6 +110,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Muhammad Rusyad',
                 'job_group' => 'Venture Fund',
                 'title' => 'Venture Fund',
+                'about_team_category_id' => 3,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SC0PW855P8HWV4VVD0T02.png'
@@ -55,6 +119,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Oktavia Larasati',
                 'job_group' => 'Venture Fund',
                 'title' => 'Venture Fund',
+                'about_team_category_id' => 3,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SCAAT3JGD2DFD8Y16SMZ5.png'
@@ -63,6 +128,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Faris Iman',
                 'job_group' => 'Investment',
                 'title' => 'SVP Investment',
+                'about_team_category_id' => 4,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SED7N3G3CR1DP0G5THRCS.png'
@@ -71,6 +137,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Melvin Santoso',
                 'job_group' => 'Investment',
                 'title' => 'Investment',
+                'about_team_category_id' => 4,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SFP0DRK681E8HVH4QKYQM.png'
@@ -79,6 +146,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Aldwin Riyaz Fadlurrahman',
                 'job_group' => 'Investment',
                 'title' => 'Investment',
+                'about_team_category_id' => 4,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SG0T93EP3VAR4DZCAQ1YD.png'
@@ -87,6 +155,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Muhammad Ilyas',
                 'job_group' => 'Investment',
                 'title' => 'Investment',
+                'about_team_category_id' => 4,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SGDE10B6QRCBQBN9R4ECM.png'
@@ -95,6 +164,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Rabbi Amrita Givatama',
                 'job_group' => 'Value Creation',
                 'title' => 'EVP Value Creation',
+                'about_team_category_id' => 5,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SGTJ782QGXM6JSMS5ZDY3.png'
@@ -103,6 +173,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Fleta Jovitasari',
                 'job_group' => 'Value Creation',
                 'title' => 'Value Creation',
+                'about_team_category_id' => 5,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SHJVFJ1BYMVZ656EN3XN4.png'
@@ -111,6 +182,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Safira Azalia',
                 'job_group' => 'Value Creation',
                 'title' => 'Value Creation',
+                'about_team_category_id' => 5,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SJ4WYYRNW8Y4KFG1E91TR.png'
@@ -119,6 +191,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Nathania Orlana',
                 'job_group' => 'Value Creation',
                 'title' => 'Value Creation',
+                'about_team_category_id' => 5,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK3JVJ9ZS2AZ3VSWR17P4SBS.jpg'
@@ -127,6 +200,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Natasya Monica Tumundo',
                 'job_group' => 'Legal, Compliance & HR',
                 'title' => 'SVP Legal, Compliance & HR',
+                'about_team_category_id' => 6,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SJJQMQK44975NSYPGA6M3.png'
@@ -135,6 +209,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Auginta Narasti Putri',
                 'job_group' => 'Legal, Compliance & HR',
                 'title' => 'Legal',
+                'about_team_category_id' => 6,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SK37DBPPFVQVR2G1PBM8Q.png'
@@ -143,6 +218,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Dipo Prima',
                 'job_group' => 'Legal, Compliance & HR',
                 'title' => 'HC',
+                'about_team_category_id' => 6,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SKJ13Y5Q4MXEE4NT23VKS.png'
@@ -151,6 +227,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Luna Amirahdya',
                 'job_group' => 'Legal, Compliance & HR',
                 'title' => 'Compliance',
+                'about_team_category_id' => 6,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SKX294SBZ2K7FBT7GCZQK.png'
@@ -159,6 +236,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Adrian Jonathan',
                 'job_group' => 'Legal, Compliance & HR',
                 'title' => 'Legal &Compliance',
+                'about_team_category_id' => 6,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK3JW5GR495FY9GAB49FCW61.jpeg'
@@ -167,6 +245,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Ahmat Sahri',
                 'job_group' => 'Risk & Portfolio Management',
                 'title' => 'VP Risk & Portfolio Management',
+                'about_team_category_id' => 7,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SMDG1P3R09HEV7TDC86DA.png'
@@ -175,6 +254,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Sthira Aryapradipta S.',
                 'job_group' => 'Risk & Portfolio Management',
                 'title' => 'Risk & Portfolio Management',
+                'about_team_category_id' => 7,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SMTA1ZTQ1CVSKJKWBAZRZ.png'
@@ -183,6 +263,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Thalia Shizuka',
                 'job_group' => 'Risk & Portfolio Management',
                 'title' => 'Risk & Portfolio Management',
+                'about_team_category_id' => 7,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SNTXTD5ZFAKXA5KCNFW1Y.png'
@@ -191,6 +272,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Mohammad Iqbal',
                 'job_group' => 'Finance & Treasury',
                 'title' => 'VP Finance & Treasury',
+                'about_team_category_id' => 8,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SPDCST2S9E7CJRCM67P9S.png'
@@ -199,6 +281,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Camelia Magdalena',
                 'job_group' => 'Finance & Treasury',
                 'title' => 'Finance & Treasury',
+                'about_team_category_id' => 8,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK3K2NWB2N6RNECPVNMPHNY3.jpeg'
@@ -207,6 +290,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Gracia Anglani',
                 'job_group' => 'Finance & Treasury',
                 'title' => 'Finance & Treasury',
+                'about_team_category_id' => 8,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SQDNX4D63APGXNZ2X3MPE.png'
@@ -215,6 +299,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Delvin Theodorus Hansell',
                 'job_group' => 'Finance & Treasury',
                 'title' => 'Finance & Treasury',
+                'about_team_category_id' => 8,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK3JTT4R4E7AZEKV99H2XPZG.jpeg'
@@ -223,6 +308,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Ade Lydia',
                 'job_group' => 'Corsec & Operations',
                 'title' => 'Team Leader Corsec & Operations',
+                'about_team_category_id' => 9,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SQXE4VM4GHVMYCGHAK8NS.png'
@@ -231,6 +317,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Yuda Arisitian',
                 'job_group' => 'Corsec & Operations',
                 'title' => 'IT & Operations',
+                'about_team_category_id' => 9,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SRFJB1RNJS0E5JQHMENN2.png'
@@ -239,6 +326,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Inggrid Anggi Purnama',
                 'job_group' => 'Corsec & Operations',
                 'title' => 'Corsec & Operations',
+                'about_team_category_id' => 9,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SS28WAM9WVT41S3H99S1D.png'
@@ -247,6 +335,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Raina Safa Radhyana Rahmat',
                 'job_group' => 'Corsec & Operations',
                 'title' => 'Corsec & Operations',
+                'about_team_category_id' => 9,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SSJHE03DTFBA10DBKMQR2.jpeg'
@@ -255,6 +344,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Nabila Fauzia',
                 'job_group' => 'Internal Audit',
                 'title' => 'Internal Audit',
+                'about_team_category_id' => 10,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2ST6DJXFAHY967EWJK2GQ3.png'
@@ -263,6 +353,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Hira Laksamana',
                 'job_group' => 'Special Project',
                 'title' => 'EVP Special Project',
+                'about_team_category_id' => 11,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2STP6MFQQPTD0H5CR04JZG.png'
@@ -271,6 +362,7 @@ class AboutTeamSeeder extends Seeder
                 'name' => 'Dinar Meikaratri',
                 'job_group' => 'Executive Assistant to BOD',
                 'title' => 'Executive Assistant',
+                'about_team_category_id' => 12,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SV4VQ8HXGCHQGATKPFJ3T.png'

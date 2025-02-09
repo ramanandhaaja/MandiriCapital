@@ -9,7 +9,7 @@ class AboutTeam extends Model
 {
     use HasFactory;
 
-    protected $table = 'about_team';
+    protected $table = 'about_teams';
 
     protected $fillable = [
         'name',
@@ -18,10 +18,16 @@ class AboutTeam extends Model
         'content',
         'published_date',
         'image_path',
+        'about_team_category_id'
     ];
 
     protected $casts = [
         'published_date' => 'date'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(AboutTeamCategory::class, 'about_team_category_id');
+    }
 
 }

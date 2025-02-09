@@ -25,7 +25,7 @@ class PlatformResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Business Focus';
 
-    protected static ?int $navigationSort = 40;
+    protected static ?int $navigationSort = 42;
 
     public static function form(Form $form): Form
     {

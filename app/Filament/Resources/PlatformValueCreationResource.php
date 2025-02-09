@@ -25,7 +25,7 @@ class PlatformValueCreationResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Value Creation Program';
 
-    protected static ?int $navigationSort = 41;
+    protected static ?int $navigationSort = 44;
 
     public static function form(Form $form): Form
     {
@@ -78,7 +78,19 @@ class PlatformValueCreationResource extends Resource
                                 ->visibility('public')
                                 ->columnSpanFull(),
 
-                            Forms\Components\FileUpload::make('image_path_frontpage')
+                            Forms\Components\FileUpload::make('image_path_frontpage1')
+                                ->image()
+                                ->disk('public')
+                                ->directory('platforms')
+                                ->visibility('public')
+                                ->columnSpanFull(),
+                            Forms\Components\FileUpload::make('image_path_frontpage2')
+                                ->image()
+                                ->disk('public')
+                                ->directory('platforms')
+                                ->visibility('public')
+                                ->columnSpanFull(),
+                            Forms\Components\FileUpload::make('image_path_frontpage3')
                                 ->image()
                                 ->disk('public')
                                 ->directory('platforms')
