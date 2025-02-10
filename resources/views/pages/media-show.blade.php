@@ -15,6 +15,29 @@
         <p>{{ \Carbon\Carbon::parse($post->published_at)->format('d F Y') }}</p>
     </div>
 
+    @if($post->categories->name == 'Podcast')
+        <div class="card-podcast">
+            <div class="card-wrapper-podcast">
+                <div class="guest-header">
+                    <div class="guest-info">
+                        <div class="guest-image">
+                            <img src="{{ $post->author_image ? Storage::url($post->author_image) : asset('images/media/author.png') }}"
+                                alt="{{ $post->author_name ?? 'Guest' }}">
+                        </div>
+                        <div class="guest-details">
+                            <div class="guest-label">NEW PODCAST</div>
+                            <div class="guest-name">{{ $post->author_name ?? '' }}</div>
+                            <div class="guest-position">{{ $post->author_title ?? '' }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+
+
+
     <!-- Content Section -->
     <div class="content-section">
         <div class="content-container">
@@ -40,11 +63,13 @@
                         @if($previousPost)
                         <a href="{{ route('media.show', $previousPost->slug) }}" class="nav-button prev-button">
                             <span><i class="fas fa-chevron-left"></i> Previous</span>
+                            {{--
                             @if($previousPost->front_image)
                             <div class="nav-content">
                                 <img src="{{ asset('storage/' . $previousPost->front_image) }}" alt="{{ $previousPost->title }}">
                             </div>
                             @endif
+                            --}}
                             <div class="nav-text">
                                 <span class="nav-label">{{ Str::limit($previousPost->title, 60) }}</span>
                             </div>
@@ -54,11 +79,13 @@
                         @if($nextPost)
                         <a href="{{ route('media.show', $nextPost->slug) }}" class="nav-button next-button">
                             <span><i class="fas fa-chevron-right"></i>Next </span>
+                            {{--
                             @if($nextPost->front_image)
                             <div class="nav-content">
                                 <img src="{{ asset('storage/' . $nextPost->front_image) }}" alt="{{ $nextPost->title }}">
                             </div>
                             @endif
+                             --}}
                             <div class="nav-text">
                                 <span class="nav-label">{{ Str::limit($nextPost->title, 60) }}</span>
                             </div>

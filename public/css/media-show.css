@@ -206,6 +206,32 @@ body {
     text-align: left;
     background: transparent;
     border: none;
+    text-decoration: none !important;
+    color: #ffffff;
+}
+
+.nav-button:hover,
+.nav-button:focus,
+.nav-button:active,
+.nav-button:visited {
+    text-decoration: none !important;
+    color: #ffffff;
+}
+
+.nav-button span,
+.nav-button .nav-text,
+.nav-button .nav-label {
+    text-decoration: none !important;
+    color: #ffffff;
+}
+
+.nav-text span {
+    text-decoration: none !important;
+}
+
+.nav-label {
+    text-decoration: none !important;
+    color: #ffffff;
 }
 
 .nav-button a{
@@ -219,12 +245,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 5px;
+    gap: 10px;
     font-family: var(--font-family);
     text-decoration: none;
 }
-
-
 
 .nav-button.prev-button span i {
     align-self: flex-start;
@@ -387,6 +411,70 @@ body {
 }
 
 
+
+/* Guest Header Styles
+   ========================================================================== */
+.card-podcast {
+    position: absolute;
+    top: 180px;
+    left: 50px;
+    width: 400px;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 10;
+    border-radius: 12px;
+}
+
+.card-wrapper-podcast {
+    position: relative;
+}
+
+.guest-header {
+    padding: 20px;
+}
+
+.guest-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.guest-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.guest-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.guest-details {
+    color: #ffffff;
+}
+
+.guest-label {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-family: var(--font-family);
+}
+
+.guest-name {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    font-family: var(--font-family);
+}
+
+.guest-position {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-section {
@@ -435,4 +523,3 @@ body {
         text-align: center;
     }
 }
-
