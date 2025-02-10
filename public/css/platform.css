@@ -1654,7 +1654,7 @@ select.form-input option {
     }
 
     .form-group input {
-        padding: 10px 14px;
+        padding: 10px 10px;
         font-size: 14px;
     }
 
@@ -1750,12 +1750,12 @@ select.form-input option {
     }
 
     .grid-headline-title-contact{
-        margin-left: 30px;
+        margin-left: 20px;
     }
 
     .grid-headline-contact-card {
-        padding-right: 30px;
-        padding-left: 30px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
 
     .sector-grid {
@@ -1786,4 +1786,18 @@ select.form-input option {
     .headline-card-two {
         padding: 0px;
     }
+
+    .synergy-container {
+        padding: 60px 20px 60px 20px;
+    }
+
+    .synergy-image {
+        padding: 0px;
+    }
+
+    .synergy-info {
+        padding: 20px;
+    }
+
+
 }
