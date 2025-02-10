@@ -2668,18 +2668,18 @@ a.text-decoration-none {
     }
 
     .grid-headline-title{
-        margin-left:30px;
+        margin-left:20px;
     }
 
     .grid-headline-title-card{
-        padding: 0;
+        padding: 0px 0px 0px 20px;
     }
 
     .masonry-grid-investment-section-sub{
         grid-template-columns: repeat(1, 1fr);
     }
     .grid-headline-title-card-sub{
-        padding: 0 30px;
+        padding: 0 20px;
     }
     .grid-headline-description-card{
         padding: 10px 0 60px 0;
@@ -2690,8 +2690,8 @@ a.text-decoration-none {
     }
 
     .grid-headline-subtitle-left{
-        margin-left:30px;
-        margin-bottom: 40px;
+        margin:20px 0 0 0 ;
+        width: 100%;
     }
 
     .card-title-sub-bottom{
@@ -2751,5 +2751,23 @@ a.text-decoration-none {
         width: 80%;
         font-size: 40px;
         margin: 0 auto;
+    }
+
+    .grid-headline-title{
+        margin:0px;
+    }
+
+    .floating-action-button{
+        visibility: hidden;
+    }
+
+    .masonry-grid-investment-section {
+        padding: 0px 20px;
+        gap: 0px;
+    }
+
+    .masonry-grid-investment-section-grey2 {
+        padding: 0px 20px;
+        gap: 0px;
     }
 }

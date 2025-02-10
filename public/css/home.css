@@ -207,8 +207,8 @@ body {
 
 .counter {
     color: var(--color-secondary);
-    font-size: var(--font-size-4xl);
-    margin: 30px 0 0;
+    font-size: 54px;
+    margin: 30px auto;
     font-weight: 500;
     text-align: center;
 }
@@ -288,6 +288,7 @@ body {
     bottom: 50px;
     left: 40px;
     z-index: 2;
+    padding-right: 40px;
 }
 
 .logo-card {
@@ -963,7 +964,7 @@ textarea[name="message"] {
     }
 
     .card h2 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     /* Carousel Mobile Styles */

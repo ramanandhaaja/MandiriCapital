@@ -488,4 +488,8 @@ body {
         left: 50%;
         transform: translateX(-50%);
     }
+
+    .masonry-grid {
+        margin: 40px 0px 0;
+    }
 }

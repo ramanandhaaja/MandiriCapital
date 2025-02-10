@@ -1,11 +1,9 @@
 @extends('layout.mainlayout')
 @use('Illuminate\Support\Facades\Storage')
 
-
 @section('localcss')
     <link href="{{ asset('css/media-show.css') }}" rel="stylesheet">
 @endsection
-
 
 @section('container')
     <div class="hero-section">
@@ -34,9 +32,6 @@
             </div>
         </div>
     @endif
-
-
-
 
     <!-- Content Section -->
     <div class="content-section">
@@ -96,8 +91,6 @@
             </div>
 
             <div class="content-text">
-
-
                 <div class="article-content">
 
                     <div class="article-subtitle">

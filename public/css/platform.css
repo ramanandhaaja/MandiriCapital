@@ -1719,12 +1719,13 @@ select.form-input option {
     }
 
     .grid-headline-title{
-        padding-left: 60px;
-        margin-left: 0px;
+        padding-left: 20px;
+        margin: 0px;
     }
 
     .section-content{
-        padding-left: 60px;
+        padding-top: 20px;
+        padding-left: 20px;
     }
 
     .potential-section{
@@ -1732,7 +1733,7 @@ select.form-input option {
     }
 
     .potential-content-card{
-        padding-left: 80px;
+        padding-left: 40px;
     }
 
     .potential-content-section{
@@ -1772,5 +1773,17 @@ select.form-input option {
         width: 80%;
         font-size: 40px;
         margin: 0 auto;
+    }
+
+    .potential-title{
+        margin:0px 40px 0px 40px;
+    }
+
+    .newsletter-section{
+        width: auto;
+    }
+
+    .headline-card-two {
+        padding: 0px;
     }
 }

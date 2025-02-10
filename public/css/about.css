@@ -1368,6 +1368,11 @@ body {
         width: 100%;
     }
 
+    .mandiri-ecosystem-title{
+        margin: 20px auto 0px auto;
+        padding: 0px 20px;
+    }
+
     /* Category Filters */
     .category-filters {
         flex-direction: column;
@@ -1474,7 +1479,7 @@ body {
     /* Ecosystem Section */
     .ecosystem-grid {
         grid-template-columns: 1fr;
-        margin: 10px;
+        margin: 20px;
         padding: 0;
     }
 
@@ -1482,7 +1487,6 @@ body {
         grid-column: span 1;
         height: auto;
         min-height: auto;
-        background: var(--color-black);
         padding: 30px 20px;
         border-radius: 12px;
     }
@@ -1508,7 +1512,7 @@ body {
     }
 
     .tag-container-highlight {
-        margin: 0 0 90px 0;
+        margin: 0 0 140px 0;
         text-align: center;
         display: flex;
         justify-content: center;
@@ -1603,7 +1607,7 @@ body {
         font-size: 16px;
         line-height: 1.6;
         margin: 0;
-        padding: 0 15px;
+        padding: 0 20px;
         font-weight: normal;
         color: var(--color-gray-400);
         text-align: center;
@@ -1612,7 +1616,7 @@ body {
     /* Team Members Section */
     .mandiri-team-group-title {
         font-size: 28px;
-        padding: 30px 20px;
+        padding: 0px 20px 10px;
         text-align: left;
     }
 
@@ -1661,6 +1665,10 @@ body {
         width: 80%;
         font-size: 40px;
         margin: 0 auto;
+    }
+
+    .content-container {
+        padding-left: 0px;
     }
 
     /* Adjust grid for different screen sizes */

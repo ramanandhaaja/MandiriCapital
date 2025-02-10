@@ -520,4 +520,16 @@ body {
     .map-content{
         margin-top: 0;
     }
+
+    .contact-container {
+        margin: 0 40px;
+    }
+
+    .map-section {
+        margin: 0 20px;
+    }
+
+    .map-grid{
+        margin: 0 20px;
+    }
 }

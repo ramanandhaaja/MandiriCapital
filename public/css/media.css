@@ -445,7 +445,7 @@ a {
     font-size: 14px;
     color: #ffffff;
 }
- 
+
 /* Blog Header Styles
    ========================================================================== */
 .blog-header {
@@ -640,6 +640,7 @@ a {
 
     .masonry-grid {
         grid-template-columns: 1fr;
+        margin: 0;
     }
 
     .card,
@@ -654,7 +655,58 @@ a {
 
     .card h2{
         font-size: 24px;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 3;
+    }
+
+    .card .card-content {
+        padding-right: 30px;
+        padding-top: 380px;
+    }
+
+    .guest-image{
+        width: 80px;
+        height: 80px;
+    }
+
+    .guest-label {
+        font-size: 20px;
+        padding: 0px 0px 10px 0px;
+        margin: 0px;
+    }
+
+    .guest-name {
+        font-size: 20px;
+        padding: 0px;
+    }
+
+    .guest-header {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 140px;
+        width: auto;
+    }
+
+    .blog-image{
+        width: 80px;
+        height: 80px;
+    }
+
+    .blog-header {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 140px;
+        width: auto;
+    }
+
+    .blog-label {
+        font-size: 20px;
+        padding: 0px 0px 10px 0px;
+        margin: 0px;
+    }
+
+    .blog-name {
+        font-size: 20px;
+        padding: 0px;
     }
 }
 
