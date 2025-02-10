@@ -60,7 +60,7 @@
                         <div class="card-content">
                             <h2>{{ $publication->title }}</h2>
                         </div>
-                        <span class="date">{{ Carbon::parse($publication->published_date)->format('F Y') }}</span>
+                        <span class="date">{{ Carbon::parse($publication->published_date)->format('d F Y') }}</span>
                     </a>
                 </div>
             @endif
@@ -176,11 +176,13 @@
              * @returns {string} Formatted date string
              */
             function formatDate(dateString) {
-                return new Date(dateString).toLocaleDateString('en-US', {
-                    month: 'long',
-                    year: 'numeric'
-                });
+                const date = new Date(dateString);
+                const day = date.getDate();
+                const month = date.toLocaleString('en-US', { month: 'long' }).toLowerCase();
+                const year = date.getFullYear();
+                return `${day} ${month} ${year}`;
             }
+
         });
     </script>
 @endsection

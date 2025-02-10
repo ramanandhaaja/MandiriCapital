@@ -229,10 +229,12 @@
                     const defaultImage = `/images/media/image1.png`;
                     const backgroundImage = post.front_image ? '/storage/' + post.front_image : defaultImage;
 
-                    const date = new Date(post.published_at).toLocaleDateString('en-US', {
+                    const date = new Date(post.published_at).toLocaleDateString('en-GB', {
+                        day: 'numeric',
                         month: 'long',
                         year: 'numeric'
                     });
+
                     const newsFilterClass = filter !== 'all' ? 'news-filter' : '';
                     const showGuestClass = filter.toLowerCase() === 'podcast' ? 'show-guest' : '';
                     const showBlogClass = filter.toLowerCase() === 'blog' ? 'show-blog' : '';
