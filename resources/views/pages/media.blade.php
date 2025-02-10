@@ -49,53 +49,54 @@
     <div class="masonry-grid" data-route-pattern="{{ route('media.show', ':slug') }}">
         @foreach($posts as $index => $post)
             @php
-
                 $isLargeCard = ($index === 0 || $index === 6);
                 $defaultImage = asset("images/media/image1.png");
                 $backgroundImage = $post->front_image ? Storage::url($post->front_image) : $defaultImage;
-                //$backgroundImage = $post->featured_image;
-
-                $formattedDate = \Carbon\Carbon::parse($post->published_at)->format('d F Y');
+                $formattedDate = \Carbon\Carbon::parse($post->published_at)->translatedFormat('d F Y');
+                $category = $post->categories->first();
             @endphp
 
             <div class="card {{ $isLargeCard ? 'large' : '' }}">
                 <a href="{{ route('media.show', $post->slug) }}" class="text-decoration-none">
                     <div class="card-wrapper">
-                        @if($post->categories->first()->name === 'Podcast')
-                        <div class="guest-header">
-                            <div class="guest-info">
-                                <div class="guest-image">
-                                    <img src="{{ asset('images/media/profilepodcast.png') }}" alt="Ahmad Zaki">
-                                </div>
-                                <div class="guest-details">
-                                    <div class="guest-label">SPECIAL GUEST</div>
-                                    <div class="guest-name">Ahmad Zaki</div>
-                                    <div class="guest-position">Ceo of BukaLapak</div>
+                        @if($category && $category->name === 'Podcast')
+                            <div class="guest-header">
+                                <div class="guest-info">
+                                    <div class="guest-image">
+                                        <img src="{{ $post->author_image ?? asset('images/media/author.png') }}"
+                                             alt="{{ $post->author_name ?? 'Guest' }}">
+                                    </div>
+                                    <div class="guest-details">
+                                        <div class="guest-label">NEW PODCAST</div>
+                                    <div class="guest-name">{{ $post->author_name ?? '' }}</div>
+                                    <div class="guest-position">{{ $post->author_title ?? '' }}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endif
-                        @if($post->categories->first()->name === 'Blog')
-                        <div class="blog-header">
-                            <div class="blog-info">
-                                <div class="blog-image">
-                                    <img src="{{ asset('images/media/author.png') }}" alt="Ahmad Zaki">
-                                </div>
-                                <div class="blog-details">
-                                    <div class="blog-label">Author</div>
-                                    <div class="blog-name">Rizki Saputra</div>
+                        @if($category && $category->name === 'Blog')
+                            <div class="blog-header">
+                                <div class="blog-info">
+                                    <div class="blog-image">
+                                    <img src="{{ $post->author_image ?? asset('images/media/author.png') }}" alt="Author Name">
+                                    </div>
+                                    <div class="blog-details">
+                                        <div class="blog-label">Author</div>
+                                    <div class="blog-name">{{ $post->author_name ?? '' }}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endif
                         <div class="main-content">
                             <div class="background-image" style="background-image: url('{{ $backgroundImage }}');"></div>
-                            <span class="category filter-dependent">{{ $post->categories->first()->name }}</span>
+                            @if($category)
+                                <span class="category filter-dependent">{{ $category->name }}</span>
+                            @endif
                             <div class="card-content">
                                 <h2>{{ $post->title }}</h2>
                                 <span class="post-date" style="display: none;">{{ $formattedDate }}</span>
-                                @if($post->categories->first()->name === 'News')
-                                <p class="business-news-week" style="display: none;">Business News Week</p>
+                                @if($category && $category->name === 'News')
+                                    <p class="business-news-week">{{ $post->news_source ?? 'Business News Week' }}</p>
                                 @endif
                             </div>
                             <span class="date filter-dependent">{{ $formattedDate }}</span>
@@ -193,21 +194,35 @@
             // Fetch posts based on filter
             async function fetchAndUpdatePosts(filter) {
                 try {
+                    console.log('Fetching posts for filter:', filter);
                     const response = await fetch(`/media/filter/${filter}`, {
-                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json'
+                        }
                     });
 
-                    if (!response.ok) throw new Error('Network response was not ok');
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`Network response was not ok: ${response.status} ${errorText}`);
+                    }
 
                     const posts = await response.json();
+                    console.log('Posts received:', posts);
+
+                    if (!Array.isArray(posts)) {
+                        throw new Error('Received data is not an array');
+                    }
+
                     updatePosts(posts, filter);
                 } catch (error) {
-                    console.error('Error:', error);
+                    console.error('Error fetching posts:', error);
                 }
             }
 
             // Update posts in the DOM
             function updatePosts(posts, filter) {
+                console.log('Updating posts:', posts.length);
                 const postsHtml = posts.map((post, index) => {
                     const isLargeCard = filter === 'all' && (index === 0 || index === posts.length - 1);
                     const postUrl = elements.routePattern.replace(':slug', post.slug);
@@ -226,31 +241,32 @@
                     const businessNewsWeekDisplay = filter === 'news' ? 'block' : 'none';
 
                     // Guest header HTML
-                    const guestHeader = post.categories[0]?.name.toLowerCase() === 'podcast' ? `
+                    const guestHeader = post.categories?.name?.toLowerCase() === 'podcast' ? `
                         <div class="guest-header">
                             <div class="guest-info">
                                 <div class="guest-image">
-                                    <img src="{{ asset('images/media/profilepodcast.png') }}" alt="Ahmad Zaki">
+                                    <img src="${post.author_image ? '/storage/' + post.author_image : '{{ asset('images/media/author.png') }}'}" alt="Author">
+
                                 </div>
                                 <div class="guest-details">
-                                    <div class="guest-label">SPECIAL GUEST</div>
-                                    <div class="guest-name">Ahmad Zaki</div>
-                                    <div class="guest-position">Ceo of BukaLapak</div>
+                                    <div class="guest-label">NEW PODCAST</div>
+                                    <div class="guest-name">${post.author_name || ''}</div>
+                                    <div class="guest-position">${post.author_title || ''}</div>
                                 </div>
                             </div>
                         </div>
                     ` : '';
 
                     // Blog header HTML
-                    const blogHeader = post.categories[0]?.name.toLowerCase() === 'blog' ? `
+                    const blogHeader = post.categories?.name?.toLowerCase() === 'blog' ? `
                         <div class="blog-header">
                             <div class="blog-info">
                                 <div class="blog-image">
-                                    <img src="{{ asset('images/media/author.png') }}" alt="Ahmad Zaki">
+                                    <img src="${post.author_image ? '/storage/' + post.author_image : '{{ asset('images/media/author.png') }}'}" alt="Author">
                                 </div>
                                 <div class="blog-details">
                                     <div class="blog-label">Author</div>
-                                    <div class="blog-name">Rizki Saputra</div>
+                                    <div class="blog-name">${post.author_name || 'Author Name'}</div>
                                 </div>
                             </div>
                         </div>
@@ -259,19 +275,19 @@
                     return `
                         <div class="card ${isLargeCard ? 'large' : ''} ${newsFilterClass} ${showGuestClass} ${showBlogClass}">
                             <a href="${postUrl}" class="text-decoration-none">
-                                ${guestHeader}
-                                ${blogHeader}
-                                <div class="main-content">
-                                    <div class="background-image" style="background-image: url('${backgroundImage}');"></div>
-                                    <span class="category filter-dependent" style="display: ${filterDependentDisplay};">${post.categories[0]?.name || ''}</span>
-                                    <div class="card-content">
-                                        <h2>${post.title}</h2>
-                                        <span class="post-date" style="display: ${postDateDisplay};">${date}</span>
-                                        ${post.categories[0]?.name === 'News' ? `
+                                    ${guestHeader}
+                                    ${blogHeader}
+                                    <div class="main-content">
+                                        <div class="background-image" style="background-image: url('${backgroundImage}');"></div>
+                                        <span class="category filter-dependent" style="display: ${filterDependentDisplay};">${post.categories?.name || ''}</span>
+                                        <div class="card-content">
+                                            <h2>${post.title}</h2>
+                                            <span class="post-date" style="display: ${postDateDisplay};">${date}</span>
+                                            ${post.categories?.name === 'News' ? `
                                             <p class="business-news-week" style="display: ${businessNewsWeekDisplay};">Business News Week</p>
-                                        ` : ''}
-                                    </div>
-                                    <span class="date filter-dependent" style="display: ${filterDependentDisplay};">${date}</span>
+                                            ` : ''}
+                                        </div>
+                                        <span class="date filter-dependent" style="display: ${filterDependentDisplay};">${date}</span>
                                 </div>
                             </a>
                         </div>

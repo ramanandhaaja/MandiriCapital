@@ -13,19 +13,23 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->longText('content_heading');
-            $table->longText('content');
+            $table->longText('content_heading')->nullable();
+            $table->longText('content')->nullable();
             $table->longText('media_source_url')->nullable();
             $table->longText('media_url')->nullable();
             $table->string('front_image')->nullable();
             $table->string('headline_image')->nullable();
             $table->string('featured_image')->nullable();
+            $table->string('author_name')->nullable();
+            $table->string('author_title')->nullable();
+            $table->string('author_image')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->enum('status', ['draft', 'published', 'archived'])->default('draft');
             $table->timestamps();
             $table->softDeletes();
+            $table->foreignId('blog_category_id')->constrained()->onDelete('cascade');
         });
     }
 

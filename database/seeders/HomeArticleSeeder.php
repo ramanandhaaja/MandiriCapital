@@ -15,16 +15,18 @@ class HomeArticleSeeder extends Seeder
             [
                 'category' => 'Counter',
                 'title' => 'AUM',
-                'slug' => '',
+                'slug' => 'aum',
                 'content' => 'IDR3,844Bn',
+                'sub_content' => '',
                 'published_date' => Carbon::now()->subDays(30),
                 'image_path' => ''
             ],
             [
                 'category' => 'Counter',
                 'title' => 'Bank Mandiri Total Asset',
-                'slug' => '*As of Desember 2024',
+                'slug' => 'bank-mandiri-total-asset',
                 'content' => 'IDR2,427Tn',
+                'sub_content' => '*As of December 2024',
                 'published_date' => Carbon::now()->subDays(15),
                 'image_path' => ''
             ]

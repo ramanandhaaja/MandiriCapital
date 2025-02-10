@@ -21,10 +21,14 @@ class BlogPost extends Model
         'front_image',
         'headline_image',
         'featured_image',
+        'author_name',
+        'author_title',
+        'author_image',
         'published_at',
         'meta_title',
         'meta_description',
         'status',
+        'blog_category_id'
     ];
 
     protected $casts = [
@@ -43,21 +47,14 @@ class BlogPost extends Model
         });
     }
 
+    public function categories()
+    {
+        return $this->belongsTo(BlogCategory::class, 'blog_category_id');
+    }
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function categories(): BelongsToMany
-    {
-        return $this->belongsToMany(BlogCategory::class, 'blog_post_categories')
-            ->withTimestamps();
-    }
-
-    public function tags(): BelongsToMany
-    {
-        return $this->belongsToMany(BlogTag::class, 'blog_post_tags');
     }
 
 }

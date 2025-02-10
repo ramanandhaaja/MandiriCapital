@@ -17,6 +17,7 @@ class HomeArticle extends Model
         'title',
         'slug',
         'content',
+        'sub_content',
         'published_date',
         'image_path'
     ];

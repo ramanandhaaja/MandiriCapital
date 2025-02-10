@@ -4,13 +4,6 @@
         <!-- Left Column -->
         <div class="footer-left">
             <img src="{{ asset('images/logo.png') }}" alt="Mandiri Capital" class="footer-logo">
-            {{--
-            <div class="social-links">
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            </div>
-             --}}
             <div class="company-info">
                 <h3>MANDIRI CAPITAL INDONESIA</h3>
                 <p>Menara Mandiri II, lantai 14.</p>
@@ -22,12 +15,9 @@
         <!-- Middle Column -->
         <div class="footer-middle">
             <ul class="footer-links">
-                <li><a href="{{ route('about') }}">OUR IDENTITY</a></li>
-                <li><a href="{{ route('portfolio') }}">INVESTMENT</a></li>
-                <li><a href="{{ route('platform') }}">VALUE CREATION</a></li>
-                <li><a href="{{ route('media') }}">MEDIA</a></li>
-                <li><a href="{{ route('report') }}">PUBLICATION</a></li>
-                <li><a href="{{ route('contact') }}">CONTACT US</a></li>
+                @foreach ($menuCategory as $menuCat)
+                <li><a href="{{ route($menuCat->route) }}">{{ $menuCat->name }}</a></li>
+                @endforeach
             </ul>
         </div>
 
@@ -41,14 +31,14 @@
         <!-- Certification Section -->
         <div class="footer-certification">
             <div class="social-links">
-                <a href="https://www.instagram.com/mandiricapital/" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/mandiri-capital-indonesia-mci/posts/?feedView=all" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="{{ $masterData->instagram }}" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="{{ $masterData->linkedin }}" class="social-icon"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </div>
 
     <!-- Copyright -->
     <div class="footer-copyright">
-        <p> 2024 Mandiri Capital Indonesia. All rights reserved</p>
+        <p>&copy; {{ date('Y') }} Mandiri Capital Indonesia. All rights reserved</p>
     </div>
 </footer>

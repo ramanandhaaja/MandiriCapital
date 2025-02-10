@@ -59,6 +59,10 @@ class HomeArticleResource extends Resource
                                             ->maxLength(65535)
                                             ->columnSpanFull(),
 
+                                        Forms\Components\TextInput::make('sub_content')
+                                            ->maxLength(255)
+                                            ->label('Content Description'),
+
                                         Forms\Components\Grid::make(2)
                                             ->schema([
                                                 Forms\Components\DatePicker::make('published_date')

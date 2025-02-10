@@ -240,7 +240,7 @@
     {{-- Portfolio Section --}}
     <div class="portfolio-full-section display-grid">
         {{-- View Toggle Button --}}
-        <div class="floating-action-button" style="visibility: hidden;">
+        <div class="floating-action-button">
             <div class="menu-icon" onclick="toggleView()">
                 <img src="{{ asset('images/portfolio/icon-list.png') }}" alt="Menu Icon" class="icon-list active">
                 <img src="{{ asset('images/portfolio/icon-grid.png') }}" alt="Menu Icon" class="icon-grid">
@@ -295,10 +295,10 @@
                     {{-- Table Header --}}
                     <div class="portfolio-header">
                         <div class="header-cell">Company Name</div>
-                        <div class="header-cell">Category</div>
+                        <div class="header-cell">Sector</div>
                         <div class="header-cell">Short Description</div>
-                        <div class="header-cell">Current Stage</div>
-                        <div class="header-cell">Partners</div>
+                        <div class="header-cell">Head Office</div>
+                        <div class="header-cell">Year Invested</div>
                     </div>
 
                     @foreach ($portfolios as $portfolio)
@@ -314,16 +314,16 @@
                                 <a href="{{ $portfolio->website_url }}" target="_blank"
                                     class="company-website">{{ str_replace(['https://', 'http://'], '', $portfolio->website_url) }}</a>
                             </div>
-                            <div class="category-cell">{{ $portfolio->category->name }}</div>
+                            <div class="category-cell">{{ $portfolio->sector }}</div>
                             <div class="description-cell">
                                 {{ Str::limit($portfolio->description, 100) }}
                             </div>
                             <div class="stage-cell">
-                                <span class="stage-tag">{{ $portfolio->stage }}</span>
+                                <span class="stage-tag">{{ $portfolio->head_office }}</span>
                             </div>
                             <div class="partners-cell">
                                 <div class="partner-info">
-                                    <span>{{ $portfolio->ceo_name }} (CEO)</span>
+                                    <span>{{ $portfolio->year_invested }}</span>
                                     <button class="expand-btn" aria-label="Show more details">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"

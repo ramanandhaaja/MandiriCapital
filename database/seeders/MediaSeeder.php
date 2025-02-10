@@ -32,10 +32,10 @@ class MediaSeeder extends Seeder
 
         foreach ($categories as $category) {
             BlogCategory::updateOrCreate(
-                ['slug' => $category['slug']],
                 $category
             );
         }
+
 
         // Create sample tags
         $tags = [
@@ -67,10 +67,10 @@ class MediaSeeder extends Seeder
 
         foreach ($tags as $tag) {
             BlogTag::updateOrCreate(
-                ['slug' => $tag['slug']],
                 $tag
             );
         }
+
 
         // Get or create the first user if needed
         $user = User::firstOrCreate(
@@ -86,6 +86,7 @@ class MediaSeeder extends Seeder
             [
                 'title' => 'Mandiri Capital Indonesia (MCI) Joins Money 20/20 Asia 2024, Get Schedule & Activities -
 Event|News Main',
+                'slug' => 'mandiri-capital-indonesia-mci-joins-money-20-20-asia-2024-get-schedule-activities-event-news-main',
                 'content_heading' => 'Venture capital plays a pivotal role in innovation and growth, and Mandiri Capital Indonesia
 (MCI) is at the forefront. MCI, the venture arm of Bank Mandiri, supports technology
 companies’ development and assists startups in Asia with growth and disruption.
@@ -214,14 +215,19 @@ pivotal experience at the heart of Asia\'s fintech evolution.',
                 'front_image' => 'blog-images/01JK3HSAAB2RHH397ZMQAEJQ48.jpeg',
                 'headline_image' => '',
                 'featured_image' => '',
+                'author_name' => '',
+                'author_title' => '',
+                'author_image' => '',
                 'meta_title' => '',
                 'meta_description' => '',
                 'published_at' => '2024-04-21',
+                'blog_category_id' => 1
             ],
 
 
             [
                 'title' => 'Connecting Startups: MCI’s XYZ Value Creation Program at Money 20/20 Asia - News Main',
+                'slug' => 'connecting-startups-mcis-xyz-value-creation-program-at-money-20-20-asia-news-main',
                 'content_heading' => 'Mandiri Capital Indonesia (MCI), the venture capital arm of Bank Mandiri, is taking its
 matchmaking program Xponent global. Debuting at Money 20/20 Asia in Bangkok, Xponent
 connects startups and tech companies with Mandiri Group\'s business units. This fosters
@@ -292,14 +298,19 @@ Register your startup to discover what\'s possible at',
                 'front_image' => 'blog-images/01JK3HSM30X0DG9VFDH7B2W9XX.jpeg',
                 'headline_image' => '',
                 'featured_image' => '',
+                'author_name' => '',
+                'author_title' => '',
+                'author_image' => '',
                 'meta_title' => '',
                 'meta_description' => '',
                 'published_at' => '2024-04-24',
+                'blog_category_id' => 1
             ],
 
 
             [
                 'title' => 'Mandiri Capital Indonesia mendorong Inovasi Digital melalui Mandiri Innovation Hub 2024. - Press Release',
+                'slug' => 'mandiri-capital-indonesia-mendorong-inovasi-digital-melalui-mandiri-innovation-hub-2024-press-release',
                 'content_heading' => '<strong>Jakarta, 31 Desember 2024</strong> – Mandiri Capital Indonesia (MCI),
 perusahaan anak Bank Mandiri yang bergerak di industri modal ventura, secara proaktif
 mendorong inovasi di teknologi finansial <em>(fintech).
@@ -375,14 +386,19 @@ kolaborasi dan Zenith untuk akselerasi.',
                 'front_image' => 'blog-images/01JK3HT74VJMCQ7CQP2Z8MFAF8.jpeg',
                 'headline_image' => '',
                 'featured_image' => '',
+                'author_name' => '',
+                'author_title' => '',
+                'author_image' => '',
                 'meta_title' => '',
                 'meta_description' => '',
                 'published_at' => '2024-12-31',
+                'blog_category_id' => 1
             ],
 
 
             [
                 'title' => 'Program Xponent MCI di Money 20/20 Asia Jadi Jembatan Konektivitas Dunia - Insight',
+                'slug' => 'program-xponent-mci-di-money-2020-asia-jadi-jembatan-konektivitas-dunia-insight',
                 'content_heading' => '<span style="font-weight: 400;">Mandiri Capital Indonesia (MCI), perusahaan modal ventura
 Bank Mandiri, membawa program matchmaking-nya, Xponent, ke tingkat global. Melalui
 kiprah awalnya di Money 20/20 Asia di Bangkok, Xponent menghubungkan startup dan
@@ -485,11 +501,15 @@ di:</span>
                 'media_source_url' => 'https://mandiri-capital.co.id/program-xponent-mci-di-money-20-20-asia-jadi-jembatan-konektivitas-dunia/',
                 'status' => 'published',
                 'front_image' => 'blog-images/01JK3HVA7SQ8KGMEGNN56W0N5T.jpg',
-                'headline_image' => '',
+                'headline_image' => 'blog-images/01JK3HVA7SQ8KGMEGNN56W0N5T.jpg',
                 'featured_image' => '',
+                'author_name' => 'Mandiri Capital Indonesia',
+                'author_title' => '',
+                'author_image' => 'blog-images/01JKQGA0N0675TVFQ14SM5682Y.png',
                 'meta_title' => '',
                 'meta_description' => '',
                 'published_at' => '2024-07-05',
+                'blog_category_id' => 3
             ],
 
 
@@ -497,6 +517,7 @@ di:</span>
 
             [
                 'title' => 'Mandiri Capital Masih Lihat Peluang Startup Meski Suku Bunga Tinggi - News Main',
+                'slug' => 'mandiri-capital-masih-lihat-peluang-startup-meski-suku-bunga-tinggi-news-main',
                 'content_heading' => 'Bisnis.com, JAKARTA — PT Mandiri Capital Indonesia (MCI) buka-bukaan soal strategi di
 tengah tren suku bunga yang tinggi. Perusahaan modal ventura di bawah Bank Mandiri
 tersebut mengakui suku bunga menjadi salah satu metrik makroekonomi yang mereka lihat
@@ -546,16 +567,21 @@ ungkapnya',
                 'front_image' => 'blog-images/01JK3HYWKW1BX2Z7AEQ8MJZ676.jpg',
                 'headline_image' => '',
                 'featured_image' => '',
+                'author_name' => '',
+                'author_title' => '',
+                'author_image' => '',
                 'meta_title' => '',
                 'meta_description' => '',
                 'published_at' => '2024-05-07',
+                'blog_category_id' => 1
             ],
 
 
             [
                 'title' => 'Mandiri Capital Indonesia Jajaki Pasar Global Lewat Program Xponent di Bangkok - News
 Main',
-                'content_heading' => '<strong>KONTAN.CO.ID -</strong>
+                'slug' => 'mandiri-capital-indonesia-jajaki-pasar-global-lewat-program-xponent-di-bangkok-news-main',
+'content_heading' => '<strong>KONTAN.CO.ID -</strong>
 <strong>JAKARTA.
 </strong>
 Mandiri Capital Indonesia
@@ -620,14 +646,19 @@ ent-di-bangkok/',
                 'front_image' => 'blog-images/01JK3J18TAFKDTFVRAEGV1SAYJ.jpg',
                 'headline_image' => '',
                 'featured_image' => '',
+                'author_name' => '',
+                'author_title' => '',
+                'author_image' => '',
                 'meta_title' => '',
                 'meta_description' => '',
                 'published_at' => '2024-05-12',
+                'blog_category_id' => 1
             ],
 
 
             [
                 'title' => 'Tuntas Xponent Money 20/20 Asia, MCI Siap Tembus Pasar Regional-Global - News Main',
+                'slug' => 'tuntas-xponent-money-20-20-asia-mci-siap-tembus-pasar-regional-global-news-main',
                 'content_heading' => '<strong>Jakarta, CNBC Indonesia -</strong>
 Mandiri Capital Indonesia (MCI), perusahaan
 modal ventura korporat yang didukung oleh lembaga keuangan terbesar Indonesia, PT Bank
@@ -689,14 +720,19 @@ sektor industri, termasuk pemberian pinjaman, B2B value chain, dan penyedia pemb
                 'front_image' => 'blog-images/01JK3J1T8X5ES7JE7036R89KBZ.jpeg',
                 'headline_image' => '',
                 'featured_image' => '',
+                'author_name' => '',
+                'author_title' => '',
+                'author_image' => '',
                 'meta_title' => '',
                 'meta_description' => '',
                 'published_at' => '2024-05-12',
+                'blog_category_id' => 1
             ],
 
 
             [
                 'title' => 'Mandiri Capital Indonesia Partisipasi dalam Program Relawan Bakti BUMN 2024 - Press Release',
+                'slug' => 'mandiri-capital-indonesia-partisipasi-dalam-program-relawan-bakti-bumn-2024-press-release',
                 'content_heading' => '<strong>IDXChannel</strong> - PT
 <a
 href="https://www.idxchannel.com/tag/mandiri-capital" rel="dofollow">Mandiri
@@ -752,15 +788,20 @@ ujar Wisnu.',
                 'front_image' => 'blog-images/01JK3J3Y4K35BZFW1EPBXJM57D.jpg',
                 'headline_image' => '',
                 'featured_image' => '',
+                'author_name' => '',
+                'author_title' => '',
+                'author_image' => '',
                 'meta_title' => '',
                 'meta_description' => '',
                 'published_at' => '2024-09-05',
+                'blog_category_id' => 1
             ],
 
 
             [
                 'title' => 'Mandiri Capital Indonesia Ramaikan Relawan Bakti BUMN 2024 di Desa Wisata
 Hilisimaetano - Press Release',
+                'slug' => 'mandiri-capital-indonesia-ramaikan-relawan-bakti-bumn-2024-di-desa-wisata-hilisimaetano-press-release',
                 'content_heading' => '<strong>Suara.com </strong>-
 Dalam rangka memperingati Hari Kemerdekaan Republik
 Indonesia yang ke-79, PT Mandiri Capital Indonesia (“MCI”) terpilih oleh Kementerian BUMN
@@ -812,33 +853,41 @@ desa-wisata-hilisimaetano/',
                 'front_image' => 'blog-images/01JK3J5JPGJE31BE19DTKGNJDE.jpeg',
                 'headline_image' => '',
                 'featured_image' => '',
+                'author_name' => '',
+                'author_title' => '',
+                'author_image' => '',
                 'meta_title' => '',
                 'meta_description' => '',
                 'published_at' => '2024-09-05',
+                'blog_category_id' => 1
+            ],
+            [
+                'title' => 'Welcome to Podcast Mandiri Capital Indonesia',
+                'slug' => 'welcome-to-podcast-mandiri-capital-indonesia',
+                'content_heading' => '',
+                'content' => 'Welcome to Podcast Mandiri Capital Indonesia',
+                'media_url' => '',
+                'media_source_url' => '',
+                'status' => 'published',
+                'front_image' => 'blog-images/01JKQE6ST911KS0JGRQ1F0523S.jpeg',
+                'headline_image' => 'blog-images/01JKQE6ST911KS0JGRQ1F0523S.jpeg',
+                'featured_image' => '',
+                'author_name' => 'Mandiri Capital Indonesia',
+                'author_title' => '',
+                'author_image' => 'blog-images/01JKQGA0N0675TVFQ14SM5682Y.png',
+                'meta_title' => '',
+                'meta_description' => '',
+                'published_at' => '2025-02-7',
+                'blog_category_id' => 2
             ],
 
         ];
 
-        foreach ($posts as $post) {
-            $slug = Str::slug($post['title']);
+        foreach ($posts as $postData) {
 
-            // Create or update the blog post
-            $blogPost = BlogPost::updateOrCreate(
-                ['slug' => $slug],
-                array_merge($post, [
-                    'slug' => $slug,
-                    'user_id' => $user->id,
-                ])
+            $post = BlogPost::updateOrCreate(
+                $postData
             );
-
-            // Get the appropriate category based on the post title
-            if ($post['title'] === 'Program Xponent MCI di Money 20/20 Asia Jadi Jembatan Konektivitas Dunia - Insight') {
-                $category = BlogCategory::where('name', 'Blog')->first();
-            } else {
-                $category = BlogCategory::where('name', 'News')->first();
-            }
-
-            $blogPost->categories()->sync([$category->id]);
         }
     }
 }

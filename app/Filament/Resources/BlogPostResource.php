@@ -51,10 +51,16 @@ class BlogPostResource extends Resource
                                             ->required()
                                             ->unique(BlogPost::class, 'slug', ignoreRecord: true),
 
+                                    ]),
+                                    Forms\Components\Grid::make(2)
+                                    ->schema([
+                                        Forms\Components\TextInput::make('author_name')
+                                            ->live(onBlur: true),
 
+                                        Forms\Components\TextInput::make('author_title')
+                                            ->live(onBlur: true),
 
                                     ]),
-
                                 Forms\Components\RichEditor::make('content_heading')
                                     ->label('Content Heading')
                                     ->placeholder('Enter the main heading for the content')
@@ -121,6 +127,13 @@ class BlogPostResource extends Resource
                                     ->visibility('public')
                                     ->columnSpanFull(),
 
+                                    Forms\Components\FileUpload::make('author_image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('blog-images')
+                                    ->visibility('public')
+                                    ->columnSpanFull(),
+
                             ]),
                     ])
                     ->columnSpan(['lg' => 2]),
@@ -129,8 +142,8 @@ class BlogPostResource extends Resource
                     ->schema([
                         Forms\Components\Section::make('Categories')
                             ->schema([
-                                Forms\Components\Select::make('categories')
-                                    ->multiple()
+                                Forms\Components\Select::make('blog_category_id')
+                                    ->label('Category')
                                     ->relationship('categories', 'name')
                                     ->createOptionForm([
                                         Forms\Components\TextInput::make('name')
@@ -138,27 +151,8 @@ class BlogPostResource extends Resource
                                         Forms\Components\TextInput::make('slug')
                                             ->required(),
                                     ])
+                                    ->required()
                                     ->preload(),
-                            ]),
-
-                        Forms\Components\Section::make('Tags')
-                            ->schema([
-                                Forms\Components\Select::make('tags')
-                                    ->multiple()
-                                    ->relationship('tags', 'name')
-                                    ->preload()
-                                    ->createOptionForm([
-                                        Forms\Components\TextInput::make('name')
-                                            ->required()
-                                            ->live(onBlur: true)
-                                            ->afterStateUpdated(
-                                                fn(string $state, callable $set) =>
-                                                $set('slug', Str::slug($state))
-                                            ),
-                                        Forms\Components\TextInput::make('slug')
-                                            ->required()
-                                            ->unique('blog_tags', 'slug')
-                                    ])
                             ]),
 
                         Forms\Components\Section::make('SEO')

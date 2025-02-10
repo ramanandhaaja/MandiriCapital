@@ -13,11 +13,11 @@
 10. update cover porto-> done
 
 CMS
-1. Footer semua page
+1. Footer semua page -> done
 2. Home main article cms
-3. home conunter lupa di tambah *as 2024 etc
+3. home conunter lupa di tambah *as 2024 etc -> done
 4. Our Team large photo cms
 5. Media news next and prev
-6. Contact cms
+6. Contact cms -> done
 7. Funding cms (MPF dll)
 8. Program cms (zenith dll)

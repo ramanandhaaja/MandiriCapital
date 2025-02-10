@@ -22,14 +22,14 @@
                             <div class="contact-info-group">
                                 <h3 class="contact-info-title">EMAIL</h3>
                                 <a href="mailto:info@mandiri-capital.co.id" class="contact-info-link">
-                                    info@mandiri-capital.co.id
+                                    {{ $masterData->email_contact }}
                                 </a>
                             </div>
 
                             <div class="contact-info-group customer-report-container">
                                 <h3 class="contact-info-title" data-tooltip="Reporting Violations of Mandiri Sekuritas Employees.">CUSTOMER REPORT</h3>
                                 <a href="mailto:mcicare@mandiri-capital.co.id" class="contact-info-link">
-                                    mcicare@mandiri-capital.co.id
+                                    {{ $masterData->email_customer_report }}
                                 </a>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                         <div class="contact-info-group">
                             <h3 class="contact-info-title">PHONE</h3>
                             <a href="tel:+62215266661" class="contact-info-link">
-                                +62-21-5266661
+                                {{ $masterData->phone }}
                             </a>
                         </div>
 
@@ -46,11 +46,11 @@
                         <div class="contact-info-group">
                             <h3 class="contact-info-title">VISIT OUR SOCIAL MEDIA</h3>
                             <div class="social-media-container">
-                                <a href="https://www.instagram.com/mandiricapital/" class="social-media-link" aria-label="Instagram">
+                                <a href=" {{ $masterData->instagram }}" class="social-media-link" aria-label="Instagram">
                                     <img src="{{ asset('images/contact/instagram.png') }}" alt="Instagram"
                                         class="social-media-icon">
                                 </a>
-                                <a href="https://www.linkedin.com/company/mandiri-capital-indonesia-mci/posts/?feedView=all" class="social-media-link" aria-label="LinkedIn">
+                                <a href=" {{ $masterData->linkedin }}" class="social-media-link" aria-label="LinkedIn">
                                     <img src="{{ asset('images/contact/linkedin.png') }}" alt="LinkedIn"
                                         class="social-media-icon">
                                 </a>
@@ -224,8 +224,7 @@
                 <div class="map-info">
                     <h3 class="company-name">MANDIRI CAPITAL INDONESIA</h3>
                     <p class="address">
-                        Menara Mandiri II, lantai 14,<br>
-                        Jl. Jend. Sudirman No. 54-55, Jakarta 12190
+                        {{ $masterData->address }}
                     </p>
                 </div>
             </div>

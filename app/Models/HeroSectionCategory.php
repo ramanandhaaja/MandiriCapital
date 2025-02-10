@@ -13,7 +13,8 @@ class HeroSectionCategory extends Model
 
     protected $fillable = [
         'name',
-        'slug'
+        'slug',
+        'route'
     ];
 
     public function heroSections()

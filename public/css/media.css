@@ -413,7 +413,7 @@ a {
 .guest-image {
     width: 140px;
     height: 140px;
-    border-radius: 50%;
+    border-radius: 100%;
     overflow: hidden;
 }
 
@@ -495,9 +495,10 @@ a {
 }
 
 .blog-name {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 500;
     margin-bottom: 0px;
+    padding-right:50px
 }
 
 

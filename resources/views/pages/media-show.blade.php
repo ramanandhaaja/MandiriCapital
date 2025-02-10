@@ -28,36 +28,42 @@
                             <div class="author-info">
                                 <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar">
                                 <div class="author-details">
-                                    <span class="author-name">Mandiri Admin</span>
+                                    <span class="author-name">{{ $post->author_name ?? '' }}</span>
                                     <span class="author-role">Author</span>
                                 </div>
                             </div>
-                            <div class="article-category">{{ $post->categories->first()->name }}</div>
+                            <div class="article-category">{{ $post->categories->name }}</div>
                         </div>
                     </div>
 
                     <div class="nav-buttons-wrapper">
-                        <button class="nav-button prev-button">
+                        @if($previousPost)
+                        <a href="{{ route('media.show', $previousPost->slug) }}" class="nav-button prev-button">
                             <span><i class="fas fa-chevron-left"></i> Previous</span>
+                            @if($previousPost->front_image)
                             <div class="nav-content">
-                                <img src="{{ asset('images/media/news1.png') }}" alt="Previous Article">
+                                <img src="{{ asset('storage/' . $previousPost->front_image) }}" alt="{{ $previousPost->title }}">
                             </div>
+                            @endif
                             <div class="nav-text">
-                                <span class="nav-label">MCI Selektif Danai Startup Berprospek Cerah, Apa Saja?</span>
+                                <span class="nav-label">{{ Str::limit($previousPost->title, 60) }}</span>
                             </div>
-                        </button>
+                        </a>
+                        @endif
 
-                        <button class="nav-button next-button">
-                            <span><i class="fas fa-chevron-right"></i> Next</span>
+                        @if($nextPost)
+                        <a href="{{ route('media.show', $nextPost->slug) }}" class="nav-button next-button">
+                            <span><i class="fas fa-chevron-right"></i>Next </span>
+                            @if($nextPost->front_image)
                             <div class="nav-content">
-                                <img src="{{ asset('images/media/news1.png') }}" alt="Next Article">
-
+                                <img src="{{ asset('storage/' . $nextPost->front_image) }}" alt="{{ $nextPost->title }}">
                             </div>
+                            @endif
                             <div class="nav-text">
-                                <span class="nav-label">Hadir dalam Program Relawan Bakti BUMN 2024 di Desa Wisata
-                                    H...</span>
+                                <span class="nav-label">{{ Str::limit($nextPost->title, 60) }}</span>
                             </div>
-                        </button>
+                        </a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -74,11 +80,11 @@
                         <p>{!! $post->content !!}</p>
 
                     </div>
-                    <div class="article-source">
-                        Sumber: <a
-                            href="{{ $post->media_source_url }}"
-                            target="_blank">{{ $post->media_source_url }}</a>
-                    </div>
+                    @if($post->media_source_url)
+                        <div class="article-source">
+                            Sumber: <a href="{{ $post->media_source_url }}" target="_blank">{{ $post->media_source_url }}</a>
+                        </div>
+                    @endif
 
                     <div style="width: 100%; margin: 40px 0 0 0;">
                         @if(Str::contains(strtolower($post->media_url), 'spotify'))

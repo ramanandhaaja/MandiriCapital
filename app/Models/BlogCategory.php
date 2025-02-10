@@ -22,13 +22,9 @@ class BlogCategory extends Model
         'is_active' => 'boolean',
     ];
 
-    public function posts(): BelongsToMany
+    public function posts()
     {
-        return $this->belongsToMany(BlogPost::class, 'blog_post_categories')
-            ->withTimestamps();
+        return $this->hasMany(BlogPost::class);
     }
+
 }
-
-
-
-

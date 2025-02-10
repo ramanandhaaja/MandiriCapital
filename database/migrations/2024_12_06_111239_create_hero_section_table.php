@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
+            $table->string('route')->unique();
             $table->timestamps();
         });
 
@@ -37,6 +38,21 @@ return new class extends Migration
             $table->string('headline_text');
             $table->timestamps();
         });
+
+        Schema::create('hero_masters', function (Blueprint $table) {
+            $table->id();
+            $table->string('footer');
+            $table->string('instagram');
+            $table->string('linkedin');
+            $table->string('twitter');
+            $table->string('email_form');
+            $table->string('email_contact');
+            $table->string('email_customer_report');
+            $table->string('phone');
+            $table->string('address');
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -46,5 +62,7 @@ return new class extends Migration
     {
         Schema::dropIfExists('hero_section_categories');
         Schema::dropIfExists('hero_section');
+        Schema::dropIfExists('hero_section_sub_categories');
+        Schema::dropIfExists('hero_masters');
     }
 };

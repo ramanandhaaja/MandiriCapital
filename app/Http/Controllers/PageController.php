@@ -16,7 +16,9 @@ use App\Models\AboutTeamHeadline;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\BlogTag;
+use App\Models\HeroMaster;
 use App\Models\HeroSection;
+use App\Models\HeroSectionCategory;
 use App\Models\HeroSectionSubCategory;
 use App\Models\HomeArticle;
 use App\Models\HomeProfileCompany;
@@ -40,6 +42,14 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    public function __construct()
+    {
+        $masterData = HeroMaster::first();
+        $menuCategory = HeroSectionCategory::all();
+
+        view()->share(compact('masterData', 'menuCategory'));
+    }
+
     /**
      * Display the home page
      *
@@ -115,9 +125,6 @@ class PageController extends Controller
             })
             ->orderBy('published_at', 'desc');
 
-
-
-
         // Debug output
         //echo "<pre>";
         //print_r($posts->toArray());
@@ -128,26 +135,37 @@ class PageController extends Controller
         */
 
 
-        $query = BlogPost::with(['user', 'categories'])
+        $postCategory = BlogCategory::get();
+
+        $posts = BlogPost::with(['categories'])
             ->where('status', 'published')
-            ->whereNotNull('published_at');
-
-        // If category is provided, filter by it
-        if (isset($category)) {
-            $query->whereHas('categories', function ($query) use ($category) {
-                $query->where('name', ucfirst($category));
-            });
-        }
-
-        $posts = $query->orderBy('published_at', 'desc')->take(7)->get();
+            ->whereNotNull('published_at')
+            ->orderBy('published_at', 'desc')
+            ->take(7)
+            ->get();
 
         return view('pages.media', compact('hero', 'menuSubCategory','posts'));
     }
 
     public function mediashow($slug)
     {
-        $post = BlogPost::where('slug', $slug)->firstOrFail();
-        return view('pages.media-show', compact('post'));
+        $post = BlogPost::with('categories')
+            ->where('slug', $slug)
+            ->firstOrFail();
+
+        // Get previous post
+        $previousPost = BlogPost::where('published_at', '<', $post->published_at)
+            ->where('status', 'published')
+            ->orderBy('published_at', 'desc')
+            ->first(['id', 'title', 'slug', 'front_image']);
+
+        // Get next post
+        $nextPost = BlogPost::where('published_at', '>', $post->published_at)
+            ->where('status', 'published')
+            ->orderBy('published_at', 'asc')
+            ->first(['id', 'title', 'slug', 'front_image']);
+
+        return view('pages.media-show', compact('post', 'previousPost', 'nextPost'));
     }
 
     public function portfolio()
@@ -349,7 +367,7 @@ class PageController extends Controller
 
     public function mediaFilter($category)
     {
-        $query = BlogPost::with(['user', 'categories'])
+        $query = BlogPost::with(['categories'])
             ->where('status', 'published')
             ->whereNotNull('published_at');
 
@@ -358,7 +376,7 @@ class PageController extends Controller
                 $query->where('name', ucfirst($category));
             });
         } else {
-            $query->take(7); // Limit to 7 items when category is 'all'
+            $query->take(7);
         }
 
         $posts = $query->orderBy('published_at', 'desc')->get();

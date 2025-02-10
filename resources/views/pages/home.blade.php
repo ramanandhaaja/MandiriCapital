@@ -32,7 +32,7 @@ v
                 <div class="headline-card-two {{ $index === 1 ? 'left-border' : '' }}">
                     <h1 style="{{ $article->title == 'AUM' ? 'font-size: 20px;' : '' }}">{{ $article->title }}</h1>
                     <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article->content }}">0</div>
-                    <p class="subtitle-counter">{{ $article->slug }}</p>
+                    <p class="subtitle-counter">{{ $article->sub_content }}</p>
                 </div>
             @endforeach
         </div>
@@ -204,7 +204,7 @@ v
     {{-- Newsletter Section: Call to Action --}}
     <div class="newsletter-section">
         <div class="newsletter-container">
-            <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
+            <h2 class="newsletter-title">{{ $masterData->footer }}</h2>
             <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}"
                      alt="Lets Connect"

@@ -249,7 +249,7 @@ class AboutTeamSeeder extends Seeder
             [
                 'name' => 'Adrian Jonathan',
                 'job_group' => 'Legal, Compliance & HR',
-                'title' => 'Legal &Compliance',
+                'title' => 'Legal & Compliance',
                 'about_team_category_id' => 6,
                 'content' => 'this is the desc',
                 'published_date' => Carbon::now(),

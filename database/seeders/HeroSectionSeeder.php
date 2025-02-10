@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\HeroMaster;
 use App\Models\HeroSection;
 use App\Models\HeroSectionCategory;
 use App\Models\HeroSectionSubCategory;
@@ -17,15 +18,37 @@ class HeroSectionSeeder extends Seeder
         HeroSection::query()->delete();
         HeroSectionSubCategory::query()->delete();
 
+
+
+        // Create categories
+        $heromasters = [
+            [
+            'footer' => "WE'D LOVE TO HEAR FROM YOU",
+            'instagram' => 'https://www.instagram.com/mandiricapital/',
+            'linkedin' => 'https://www.linkedin.com/company/mandiri-capital-indonesia-mci/posts/?feedView=all',
+            'twitter' => '',
+            'email_form' => 'info@mandiri-capital.co.id',
+            'email_contact' => 'info@mandiri-capital.co.id',
+            'email_customer_report' => 'mcicare@mandiri-capital.co.id',
+            'phone' => ' +62-21-5266661',
+            'address' => 'Menara Mandiri II, lantai 14, Jl. Jend. Sudirman No. 54-55, Jakarta 12190',
+            ],
+        ];
+
+        foreach ($heromasters as $data) {
+            HeroMaster::create($data);
+        }
+
+
         // Create categories
         $categories = [
-            ['name' => 'HOME', 'slug' => 'home'],
-            ['name' => 'OUR IDENTITY', 'slug' => 'our-identity'],
-            ['name' => 'INVESTMENT', 'slug' => 'portfolio'],
-            ['name' => 'VALUE CREATION', 'slug' => 'platform'],
-            ['name' => 'MEDIA', 'slug' => 'media'],
-            ['name' => 'PUBLICATION', 'slug' => 'publication'],
-            ['name' => 'CONTACT US', 'slug' => 'contact-us']
+            ['name' => 'HOME', 'slug' => 'home', 'route' => 'home'],
+            ['name' => 'OUR IDENTITY', 'slug' => 'our-identity', 'route' => 'about'],
+            ['name' => 'INVESTMENT', 'slug' => 'portfolio', 'route' => 'portfolio'],
+            ['name' => 'VALUE CREATION', 'slug' => 'platform', 'route' => 'platform'],
+            ['name' => 'MEDIA', 'slug' => 'media', 'route' => 'media'],
+            ['name' => 'PUBLICATION', 'slug' => 'publication', 'route' => 'report'],
+            ['name' => 'CONTACT US', 'slug' => 'contact-us', 'route' => 'contact']
         ];
 
         foreach ($categories as $category) {
@@ -150,6 +173,12 @@ class HeroSectionSeeder extends Seeder
             [
                 'name' => 'News',
                 'slug' => 'news',
+                'hero_section_category_id' => 5, // Program
+                'headline_text' => '',
+            ],
+            [
+                'name' => 'Podcast',
+                'slug' => 'podcast',
                 'hero_section_category_id' => 5, // Program
                 'headline_text' => '',
             ],
