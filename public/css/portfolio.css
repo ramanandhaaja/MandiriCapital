@@ -2482,6 +2482,10 @@ a.text-decoration-none {
     display: none;
 }
 
+.container-bg{
+    background-color: #131313;
+}
+
 
 
 @media (max-width: 768px) {

@@ -38,6 +38,7 @@
         </div>
 
         @foreach ($portfolioArticlesList as $index => $article)
+        <div class="container-bg">
             <div
                 class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey' }}">
                 <div class="grid-headline-title-card">
@@ -69,6 +70,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         @endforeach
 
         {{-- Contact Form Section --}}

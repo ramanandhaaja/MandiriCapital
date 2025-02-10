@@ -578,6 +578,8 @@ body {
 .headline-section {
     padding-top: 80px;
     padding-bottom: 80px;
+    max-width: 1450px;
+    margin: 0 auto;
 }
 
 .headline-section-grey {
