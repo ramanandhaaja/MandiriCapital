@@ -38,35 +38,39 @@ class AboutPrioritySectorResource extends Resource
                             ->schema([
                                 Forms\Components\Section::make()
                                     ->schema([
+                                        Forms\Components\Tabs::make('Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('title.en')
+                                                            ->label('Title (English)')
+                                                            ->required()
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull()
+                                                            ->afterStateUpdated(fn (string $state, callable $set) =>
+                                                                $set('slug', Str::slug($state))
+                                                            ),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('title.id')
+                                                            ->label('Title (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(255)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                            ]),
+
                                         Forms\Components\Grid::make(2)
                                             ->schema([
-                                                Forms\Components\TextInput::make('title')
-                                                    ->required()
-                                                    ->maxLength(255)
-                                                    ->live(onBlur: true)
-                                                    ->afterStateUpdated(fn (string $state, callable $set) =>
-                                                        $set('slug', Str::slug($state))
-                                                    ),
-
                                                 Forms\Components\TextInput::make('slug')
                                                     ->required()
+                                                    ->disabled()
                                                     ->maxLength(255)
+                                                    ->columnSpanFull()
                                                     ->unique(AboutPrioritySector::class, 'slug', ignoreRecord: true),
                                             ]),
-
-                                        Forms\Components\RichEditor::make('content')
-
-                                            ->maxLength(65535)
-                                            ->columnSpanFull(),
-
-                                        Forms\Components\Grid::make(2)
-                                            ->schema([
-                                                Forms\Components\DatePicker::make('published_date')
-                                                    ->required(),
-
-
-                                            ]),
-
                                     ])
 
                             ])

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('hero_section_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->json('name');
             $table->string('slug')->unique();
             $table->string('route')->unique();
             $table->timestamps();
@@ -21,10 +21,10 @@ return new class extends Migration
 
         Schema::create('hero_section', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->json('title');
             $table->string('slug')->unique();
             $table->foreignId('hero_section_category_id')->constrained('hero_section_categories')->onDelete('cascade');
-            $table->text('content');
+            $table->json('content');
             $table->date('published_date');
             $table->string('image_path');
             $table->timestamps();
@@ -32,10 +32,10 @@ return new class extends Migration
 
         Schema::create('hero_section_sub_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->json('name');
             $table->string('slug')->unique();
             $table->foreignId('hero_section_category_id')->constrained('hero_section_categories')->onDelete('cascade');
-            $table->string('headline_text');
+            $table->json('headline_text');
             $table->timestamps();
         });
 

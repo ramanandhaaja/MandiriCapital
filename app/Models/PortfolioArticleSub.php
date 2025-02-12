@@ -5,13 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Str;
+use Spatie\Translatable\HasTranslations;
 
 class PortfolioArticleSub extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
     protected $table = 'portfolio_articles_sub';
+
+    public array $translatable = [
+        'title',
+        'content',
+    ];
+
 
     protected $fillable = [
         'article_id',

@@ -27,40 +27,49 @@ class HeroSectionSubCategoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Grid::make()
+                Forms\Components\Grid::make(3)
                     ->schema([
                         Forms\Components\Group::make()
                             ->schema([
                                 Forms\Components\Section::make()
                                     ->schema([
-                                        Forms\Components\Grid::make(2)
-                                            ->schema([
-                                                Forms\Components\TextInput::make('name')
-                                                    ->required()
-                                                    ->maxLength(255)
-                                                    ->live(onBlur: true)
-                                                    ->afterStateUpdated(fn (string $state, callable $set) =>
-                                                        $set('slug', Str::slug($state))
-                                                    ),
-
-                                                Forms\Components\TextInput::make('slug')
-                                                    ->required()
-                                                    ->maxLength(255)
-                                                    ->unique(HeroSectionSubCategory::class, 'slug', ignoreRecord: true),
+                                        Forms\Components\Tabs::make('Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('name.en')
+                                                            ->label('Name (English)')
+                                                            ->required()
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->afterStateUpdated(fn (string $state, callable $set) =>
+                                                                $set('slug', Str::slug($state))
+                                                            ),
+                                                        Forms\Components\RichEditor::make('headline_text.en')
+                                                            ->label('Headline Text (English)')
+                                                            ->required()
+                                                            ->maxLength(65535),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('name.id')
+                                                            ->label('Name (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(255),
+                                                        Forms\Components\RichEditor::make('headline_text.id')
+                                                            ->label('Headline Text (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535),
+                                                    ]),
                                             ]),
 
-                                        Forms\Components\RichEditor::make('headline_text')
+                                        Forms\Components\TextInput::make('slug')
                                             ->required()
-                                            ->maxLength(65535)
-                                            ->columnSpanFull(),
+                                            ->maxLength(255)
+                                            ->unique(HeroSectionSubCategory::class, 'slug', ignoreRecord: true)
+                                            ->disabled(),
 
-                                        Forms\Components\Grid::make(2)
-                                            ->schema([
-                                                Forms\Components\DatePicker::make('published_date')
-                                                    ->nullable(),
-                                            ]),
-                                    ])
-                                    ->columns(2),
+                                    ]),
                             ])
                             ->columnSpan(2),
 
@@ -86,7 +95,6 @@ class HeroSectionSubCategoryResource extends Resource
                             ])
                             ->columnSpan(1),
                     ])
-                    ->columns(3),
             ]);
     }
 

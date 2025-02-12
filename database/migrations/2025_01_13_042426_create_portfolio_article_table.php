@@ -10,10 +10,10 @@ return new class extends Migration
     {
         Schema::create('portfolio_articles', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('content')->nullable();
-            $table->string('title_sub')->nullable();
-            $table->text('content_sub')->nullable();
+            $table->json('title');
+            $table->json('content')->nullable();
+            $table->json('title_sub')->nullable();
+            $table->json('content_sub')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
@@ -23,8 +23,8 @@ return new class extends Migration
             $table->foreignId('article_id')
                   ->constrained('portfolio_articles')
                   ->onDelete('cascade');
-            $table->string('title');
-            $table->text('content');
+            $table->json('title');
+            $table->json('content');
             $table->string('icon')->nullable(); // For storing icon reference
             $table->string('text_icon')->nullable(); // For storing icon reference
             $table->boolean('is_active')->default(true);

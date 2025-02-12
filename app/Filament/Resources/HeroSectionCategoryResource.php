@@ -27,23 +27,43 @@ class HeroSectionCategoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Section::make()
+                Forms\Components\Grid::make()
                     ->schema([
-                        Forms\Components\TextInput::make('name')
-                            ->required()
-                            ->maxLength(255)
-                            ->live(onBlur: true)
-                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                                if ($operation === 'create') {
-                                    $set('slug', Str::slug($state));
-                                }
-                            }),
+                        Forms\Components\Section::make()
+                            ->schema([
+                                Forms\Components\Tabs::make('Translations')
+                                    ->tabs([
+                                        Forms\Components\Tabs\Tab::make('English')
+                                            ->schema([
+                                                Forms\Components\TextInput::make('name.en')
+                                                    ->label('Name (English)')
+                                                    ->required()
+                                                    ->maxLength(255)
+                                                    ->live(onBlur: true)
+                                                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                                                        if ($operation === 'create') {
+                                                            $set('slug', Str::slug($state));
+                                                        }
+                                                    }),
+                                            ]),
+                                        Forms\Components\Tabs\Tab::make('Indonesian')
+                                            ->schema([
+                                                Forms\Components\TextInput::make('name.id')
+                                                    ->label('Name (Indonesian)')
+                                                    ->required()
+                                                    ->maxLength(255),
+                                            ]),
+                                    ]),
 
-                        Forms\Components\TextInput::make('slug')
-                            ->required()
-                            ->maxLength(255)
-                            ->unique(ignoreRecord: true),
+                                Forms\Components\TextInput::make('slug')
+                                    ->required()
+                                    ->maxLength(255)
+                                    ->unique(ignoreRecord: true)
+                                    ->disabled(),
+                            ])
+                            ->columnSpan(2),
                     ])
+                    ->columns(3)
             ]);
     }
 

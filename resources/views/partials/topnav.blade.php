@@ -26,18 +26,14 @@
 
 
             <div class="nav-right">
-                <button class="search-icon">
+                <button class="search-icon" style="visibility: hidden;">
                     <i class="fas fa-search"></i>
                 </button>
 
                 <div class="language-selector">
-                      {{--
-                    <a href="#" class="lang-link active">EN</a>
-
+                    <a href="{{ route('language.switch', 'en') }}" class="lang-link {{ session('locale', 'en') == 'en' ? 'active' : '' }}">EN</a>
                     <span class="lang-separator">|</span>
-                    <a href="#" class="lang-link">ID</a>
-
-                 --}}
+                    <a href="{{ route('language.switch', 'id') }}" class="lang-link {{ session('locale', 'en') == 'id' ? 'active' : '' }}">ID</a>
                 </div>
             </div>
 

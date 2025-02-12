@@ -31,35 +31,45 @@ class HeroSectionResource extends Resource
                             ->schema([
                                 Forms\Components\Section::make()
                                     ->schema([
-                                        Forms\Components\Grid::make(2)
-                                            ->schema([
-                                                Forms\Components\TextInput::make('title')
-                                                    ->required()
-                                                    ->maxLength(255)
-                                                    ->live(onBlur: true)
-                                                    ->afterStateUpdated(fn (string $state, callable $set) =>
-                                                        $set('slug', Str::slug($state))
-                                                    ),
-
-                                                Forms\Components\TextInput::make('slug')
-                                                    ->required()
-                                                    ->maxLength(255)
-                                                    ->unique(HeroSection::class, 'slug', ignoreRecord: true),
-                                            ]),
-
-                                        Forms\Components\RichEditor::make('content')
-                                            ->required()
-                                            ->maxLength(65535)
+                                        Forms\Components\Tabs::make('Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('title.en')
+                                                            ->label('Title (English)')
+                                                            ->required()
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->afterStateUpdated(fn (string $state, callable $set) =>
+                                                                $set('slug', Str::slug($state))
+                                                            ),
+                                                        Forms\Components\RichEditor::make('content.en')
+                                                            ->label('Content (English)')
+                                                            ->required()
+                                                            ->maxLength(65535),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('title.id')
+                                                            ->label('Title (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(255),
+                                                        Forms\Components\RichEditor::make('content.id')
+                                                            ->label('Content (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535),
+                                                    ]),
+                                            ])
                                             ->columnSpanFull(),
 
-                                        Forms\Components\Grid::make(2)
-                                            ->schema([
-                                                Forms\Components\DatePicker::make('published_date')
-                                                    ->required(),
-                                            ]),
+                                        Forms\Components\TextInput::make('slug')
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->unique(HeroSection::class, 'slug', ignoreRecord: true)
+                                            ->disabled(),
 
-                                    ])
-                                    ->columns(2),
+                                    ]),
+
                                 Forms\Components\Section::make('Image/Video')
                                     ->schema([
                                         Forms\Components\FileUpload::make('image_path')
@@ -93,8 +103,11 @@ class HeroSectionResource extends Resource
                                             ->unique('hero_section_categories', 'slug'),
                                     ])
                                     ->preload(),
+
                             ])
                             ->columnSpan(1),
+
+
                     ])
                     ->columns(3),
             ]);

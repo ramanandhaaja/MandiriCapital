@@ -4,8 +4,10 @@ use App\Filament\Resources\PublicationEmailDownloadResource as ResourcesPublicat
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PublicationController; // Added this line
 use App\Http\Controllers\PublicationEmailDownloadResource; // Added this line
+use Carbon\Language;
 use Illuminate\Support\Facades\Route;
 
 
@@ -50,3 +52,5 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/category/{slug}', [BlogController::class, 'byCategory'])->name('blog.category');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
+Route::get('language/{lang}', [LanguageController::class, 'switchLang'])->name('language.switch');

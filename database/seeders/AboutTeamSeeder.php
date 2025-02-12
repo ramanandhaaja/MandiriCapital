@@ -15,8 +15,14 @@ class AboutTeamSeeder extends Seeder
 
         $teamHeadlines = [
             [
-                'title' => 'Meet the team making things happen at MCI',
-                'content' => 'Our team is packed with talent, creativity, and a whole lot of personality. We\'re a group of bright minds and big thinkers who love what we do—and have a great time doing it. From tackling challenges to coming up with fresh ideas, every team member brings something unique to the table. Together, we make work exciting, inspiring, and just a little more fun every day. Come get to know us!',
+                'title' => [
+                    'en' => 'Meet the team making things happen at MCI',
+                    'id' => 'Kenali tim yang membuat segalanya terjadi di MCI'
+                ],
+                'content' => [
+                    'en' => 'Our team is packed with talent, creativity, and a whole lot of personality. We\'re a group of bright minds and big thinkers who love what we do—and have a great time doing it. From tackling challenges to coming up with fresh ideas, every team member brings something unique to the table. Together, we make work exciting, inspiring, and just a little more fun every day. Come get to know us!',
+                    'id' => 'Tim kami dipenuhi dengan talenta, kreativitas, dan kepribadian yang beragam. Kami adalah kumpulan pemikir cemerlang dan visioner yang mencintai pekerjaan kami—dan menikmati setiap prosesnya. Mulai dari mengatasi tantangan hingga menciptakan ide-ide segar, setiap anggota tim membawa keunikan mereka sendiri. Bersama-sama, kami membuat pekerjaan menjadi menyenangkan, menginspirasi, dan sedikit lebih mengasyikkan setiap harinya. Mari berkenalan dengan kami!'
+                ],
             ],
         ];
 
@@ -28,51 +34,87 @@ class AboutTeamSeeder extends Seeder
 
         $jobGroups = [
             [
-                'name' => 'Board of Commissioners',
+                'name' => [
+                    'en' => 'Board of Commissioners',
+                    'id' => 'Dewan Komisaris'
+                ],
                 'order' => 1,
             ],
             [
-                'name' => 'Board of Directors',
+                'name' => [
+                    'en' => 'Board of Directors',
+                    'id' => 'Dewan Direksi'
+                ],
                 'order' => 2,
             ],
             [
-                'name' => 'Venture Fund',
+                'name' => [
+                    'en' => 'Venture Fund',
+                    'id' => 'Dana Ventura'
+                ],
                 'order' => 3,
             ],
             [
-                'name' => 'Investment',
+                'name' => [
+                    'en' => 'Investment',
+                    'id' => 'Investasi'
+                ],
                 'order' => 4,
             ],
             [
-                'name' => 'Value Creation',
+                'name' => [
+                    'en' => 'Value Creation',
+                    'id' => 'Penciptaan Nilai'
+                ],
                 'order' => 5,
             ],
             [
-                'name' => 'Legal, Compliance & HR',
+                'name' => [
+                    'en' => 'Legal, Compliance & HR',
+                    'id' => 'Legal, Kepatuhan & SDM'
+                ],
                 'order' => 6,
             ],
             [
-                'name' => 'Risk & Portfolio Management',
+                'name' => [
+                    'en' => 'Risk & Portfolio Management',
+                    'id' => 'Manajemen Risiko & Portofolio'
+                ],
                 'order' => 7,
             ],
             [
-                'name' => 'Finance & Treasury',
+                'name' => [
+                    'en' => 'Finance & Treasury',
+                    'id' => 'Keuangan & Treasuri'
+                ],
                 'order' => 8,
             ],
             [
-                'name' => 'Corsec & Operations',
+                'name' => [
+                    'en' => 'Corsec & Operations',
+                    'id' => 'Sekretaris Perusahaan & Operasional'
+                ],
                 'order' => 9,
             ],
             [
-                'name' => 'Internal Audit',
+                'name' => [
+                    'en' => 'Internal Audit',
+                    'id' => 'Audit Internal'
+                ],
                 'order' => 10,
             ],
             [
-                'name' => 'Special Project',
+                'name' => [
+                    'en' => 'Special Project',
+                    'id' => 'Proyek Khusus'
+                ],
                 'order' => 11,
             ],
             [
-                'name' => 'Executive Assistant to BOD',
+                'name' => [
+                    'en' => 'Executive Assistant to BOD',
+                    'id' => 'Asisten Eksekutif Dewan Direksi'
+                ],
                 'order' => 12,
             ],
         ];
@@ -86,298 +128,331 @@ class AboutTeamSeeder extends Seeder
         $datas = [
             [
                 'name' => 'Alamanda Shantika',
-                'job_group' => 'Board of Commissioners',
-                'title' => 'Independent Commissioner',
+                'title' => [
+                    'en' => 'Independent Commissioner',
+                    'id' => 'Komisaris Independen'
+                ],
                 'about_team_category_id' => 1,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SATDFDBTP4GDBQEB6R4PM.png'
             ],
             [
                 'name' => 'Ronald S. Simorangkir',
-                'job_group' => 'Board of Directors',
-                'title' => 'Chief Executive Officer',
+                'title' => [
+                    'en' => 'Chief Executive Officer',
+                    'id' => 'Direktur Utama'
+                ],
                 'about_team_category_id' => 2,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SB2Q865FEAM6A5RCKCKHC.png'
             ],
             [
                 'name' => 'Wisnu Setiadi',
-                'job_group' => 'Board of Directors',
-                'title' => 'Chief Financial Officer',
+                'title' => [
+                    'en' => 'Chief Financial Officer',
+                    'id' => 'Direktur Keuangan'
+                ],
                 'about_team_category_id' => 2,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SBCWG26E4XSJPPHTFPNTX.png'
             ],
             [
                 'name' => 'Muhammad Salman',
-                'job_group' => 'Venture Fund',
-                'title' => 'VP Venture Fund',
+                'title' => [
+                    'en' => 'VP Venture Fund',
+                    'id' => 'VP Dana Ventura'
+                ],
                 'about_team_category_id' => 3,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SBPKKJXF1PKC1A4XK2AWJ.png'
             ],
             [
                 'name' => 'Muhammad Rusyad',
-                'job_group' => 'Venture Fund',
-                'title' => 'Venture Fund',
+                'title' => [
+                    'en' => 'Venture Fund',
+                    'id' => 'Dana Ventura'
+                ],
                 'about_team_category_id' => 3,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SC0PW855P8HWV4VVD0T02.png'
             ],
             [
                 'name' => 'Oktavia Larasati',
-                'job_group' => 'Venture Fund',
-                'title' => 'Venture Fund',
+                'title' => [
+                    'en' => 'Venture Fund',
+                    'id' => 'Dana Ventura'
+                ],
                 'about_team_category_id' => 3,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SCAAT3JGD2DFD8Y16SMZ5.png'
             ],
             [
                 'name' => 'Faris Iman',
-                'job_group' => 'Investment',
-                'title' => 'SVP Investment',
+                'title' => [
+                    'en' => 'SVP Investment',
+                    'id' => 'SVP Investasi'
+                ],
                 'about_team_category_id' => 4,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SED7N3G3CR1DP0G5THRCS.png'
             ],
             [
                 'name' => 'Melvin Santoso',
-                'job_group' => 'Investment',
-                'title' => 'Investment',
+                'title' => [
+                    'en' => 'Investment',
+                    'id' => 'Investasi'
+                ],
                 'about_team_category_id' => 4,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SFP0DRK681E8HVH4QKYQM.png'
             ],
             [
                 'name' => 'Aldwin Riyaz Fadlurrahman',
-                'job_group' => 'Investment',
-                'title' => 'Investment',
+                'title' => [
+                    'en' => 'Investment',
+                    'id' => 'Investasi'
+                ],
                 'about_team_category_id' => 4,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SG0T93EP3VAR4DZCAQ1YD.png'
             ],
             [
                 'name' => 'Muhammad Ilyas',
-                'job_group' => 'Investment',
-                'title' => 'Investment',
+                'title' => [
+                    'en' => 'Investment',
+                    'id' => 'Investasi'
+                ],
                 'about_team_category_id' => 4,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SGDE10B6QRCBQBN9R4ECM.png'
             ],
             [
                 'name' => 'Rabbi Amrita Givatama',
-                'job_group' => 'Value Creation',
-                'title' => 'EVP Value Creation',
+                'title' => [
+                    'en' => 'EVP Value Creation',
+                    'id' => 'EVP Penciptaan Nilai'
+                ],
                 'about_team_category_id' => 5,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SGTJ782QGXM6JSMS5ZDY3.png'
             ],
             [
                 'name' => 'Fleta Jovitasari',
-                'job_group' => 'Value Creation',
-                'title' => 'Value Creation',
+                'title' => [
+                    'en' => 'Value Creation',
+                    'id' => 'Penciptaan Nilai'
+                ],
                 'about_team_category_id' => 5,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SHJVFJ1BYMVZ656EN3XN4.png'
             ],
             [
                 'name' => 'Safira Azalia',
-                'job_group' => 'Value Creation',
-                'title' => 'Value Creation',
+                'title' => [
+                    'en' => 'Value Creation',
+                    'id' => 'Penciptaan Nilai'
+                ],
                 'about_team_category_id' => 5,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SJ4WYYRNW8Y4KFG1E91TR.png'
             ],
             [
                 'name' => 'Nathania Orlana',
-                'job_group' => 'Value Creation',
-                'title' => 'Value Creation',
+                'title' => [
+                    'en' => 'Value Creation',
+                    'id' => 'Penciptaan Nilai'
+                ],
                 'about_team_category_id' => 5,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK3JVJ9ZS2AZ3VSWR17P4SBS.jpg'
             ],
             [
                 'name' => 'Natasya Monica Tumundo',
-                'job_group' => 'Legal, Compliance & HR',
-                'title' => 'SVP Legal, Compliance & HR',
+                'title' => [
+                    'en' => 'SVP Legal, Compliance & HR',
+                    'id' => 'SVP Hukum, Kepatuhan & SDM'
+                ],
                 'about_team_category_id' => 6,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SJJQMQK44975NSYPGA6M3.png'
             ],
             [
                 'name' => 'Auginta Narasti Putri',
-                'job_group' => 'Legal, Compliance & HR',
-                'title' => 'Legal',
+                'title' => [
+                    'en' => 'Legal',
+                    'id' => 'Hukum'
+                ],
                 'about_team_category_id' => 6,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SK37DBPPFVQVR2G1PBM8Q.png'
             ],
             [
                 'name' => 'Dipo Prima',
-                'job_group' => 'Legal, Compliance & HR',
-                'title' => 'HC',
+                'title' => [
+                    'en' => 'HC',
+                    'id' => 'HC'
+                ],
                 'about_team_category_id' => 6,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SKJ13Y5Q4MXEE4NT23VKS.png'
             ],
             [
                 'name' => 'Luna Amirahdya',
-                'job_group' => 'Legal, Compliance & HR',
-                'title' => 'Compliance',
+                'title' => [
+                    'en' => 'Compliance',
+                    'id' => 'Kepatuhan'
+                ],
                 'about_team_category_id' => 6,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SKX294SBZ2K7FBT7GCZQK.png'
             ],
             [
                 'name' => 'Adrian Jonathan',
-                'job_group' => 'Legal, Compliance & HR',
-                'title' => 'Legal & Compliance',
+                'title' => [
+                    'en' => 'Legal & Compliance',
+                    'id' => 'Hukum & Kepatuhan'
+                ],
                 'about_team_category_id' => 6,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK3JW5GR495FY9GAB49FCW61.jpeg'
             ],
             [
                 'name' => 'Ahmat Sahri',
-                'job_group' => 'Risk & Portfolio Management',
-                'title' => 'VP Risk & Portfolio Management',
+                'title' => [
+                    'en' => 'VP Risk & Portfolio Management',
+                    'id' => 'VP Manajemen Risiko & Portofolio'
+                ],
                 'about_team_category_id' => 7,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SMDG1P3R09HEV7TDC86DA.png'
             ],
             [
                 'name' => 'Sthira Aryapradipta S.',
-                'job_group' => 'Risk & Portfolio Management',
-                'title' => 'Risk & Portfolio Management',
+                'title' => [
+                    'en' => 'Risk & Portfolio Management',
+                    'id' => 'Manajemen Risiko & Portofolio'
+                ],
                 'about_team_category_id' => 7,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SMTA1ZTQ1CVSKJKWBAZRZ.png'
             ],
             [
                 'name' => 'Thalia Shizuka',
-                'job_group' => 'Risk & Portfolio Management',
-                'title' => 'Risk & Portfolio Management',
+                'title' => [
+                    'en' => 'Risk & Portfolio Management',
+                    'id' => 'Manajemen Risiko & Portofolio'
+                ],
                 'about_team_category_id' => 7,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SNTXTD5ZFAKXA5KCNFW1Y.png'
             ],
             [
                 'name' => 'Mohammad Iqbal',
-                'job_group' => 'Finance & Treasury',
-                'title' => 'VP Finance & Treasury',
+                'title' => [
+                    'en' => 'VP Finance & Treasury',
+                    'id' => 'VP Keuangan & Perbendaharaan'
+                ],
                 'about_team_category_id' => 8,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SPDCST2S9E7CJRCM67P9S.png'
             ],
             [
                 'name' => 'Camelia Magdalena',
-                'job_group' => 'Finance & Treasury',
-                'title' => 'Finance & Treasury',
+                'title' => [
+                    'en' => 'Finance & Treasury',
+                    'id' => 'Keuangan & Perbendaharaan'
+                ],
                 'about_team_category_id' => 8,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK3K2NWB2N6RNECPVNMPHNY3.jpeg'
             ],
             [
                 'name' => 'Gracia Anglani',
-                'job_group' => 'Finance & Treasury',
-                'title' => 'Finance & Treasury',
+                'title' => [
+                    'en' => 'Finance & Treasury',
+                    'id' => 'Keuangan & Perbendaharaan'
+                ],
                 'about_team_category_id' => 8,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SQDNX4D63APGXNZ2X3MPE.png'
             ],
             [
                 'name' => 'Delvin Theodorus Hansell',
-                'job_group' => 'Finance & Treasury',
-                'title' => 'Finance & Treasury',
+                'title' => [
+                    'en' => 'Finance & Treasury',
+                    'id' => 'Keuangan & Perbendaharaan'
+                ],
                 'about_team_category_id' => 8,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK3JTT4R4E7AZEKV99H2XPZG.jpeg'
             ],
             [
                 'name' => 'Ade Lydia',
-                'job_group' => 'Corsec & Operations',
-                'title' => 'Team Leader Corsec & Operations',
+                'title' => [
+                    'en' => 'Team Leader Corsec & Operations',
+                    'id' => 'Pemimpin Tim Corsec & Operasional'
+                ],
                 'about_team_category_id' => 9,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SQXE4VM4GHVMYCGHAK8NS.png'
             ],
             [
                 'name' => 'Yuda Arisitian',
-                'job_group' => 'Corsec & Operations',
-                'title' => 'IT & Operations',
+                'title' => [
+                    'en' => 'IT & Operations',
+                    'id' => 'TI & Operasional'
+                ],
                 'about_team_category_id' => 9,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SRFJB1RNJS0E5JQHMENN2.png'
             ],
             [
                 'name' => 'Inggrid Anggi Purnama',
-                'job_group' => 'Corsec & Operations',
-                'title' => 'Corsec & Operations',
+                'title' => [
+                    'en' => 'Corsec & Operations',
+                    'id' => 'Corsec & Operasional'
+                ],
                 'about_team_category_id' => 9,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SS28WAM9WVT41S3H99S1D.png'
             ],
             [
                 'name' => 'Raina Safa Radhyana Rahmat',
-                'job_group' => 'Corsec & Operations',
-                'title' => 'Corsec & Operations',
+                'title' => [
+                    'en' => 'Corsec & Operations',
+                    'id' => 'Corsec & Operasional'
+                ],
                 'about_team_category_id' => 9,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SSJHE03DTFBA10DBKMQR2.jpeg'
             ],
             [
                 'name' => 'Nabila Fauzia',
-                'job_group' => 'Internal Audit',
-                'title' => 'Internal Audit',
+                'title' => [
+                    'en' => 'Internal Audit',
+                    'id' => 'Audit Internal'
+                ],
                 'about_team_category_id' => 10,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2ST6DJXFAHY967EWJK2GQ3.png'
             ],
             [
                 'name' => 'Hira Laksamana',
-                'job_group' => 'Special Project',
-                'title' => 'EVP Special Project',
+                'title' => [
+                    'en' => 'EVP Special Project',
+                    'id' => 'EVP Proyek Khusus'
+                ],
                 'about_team_category_id' => 11,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2STP6MFQQPTD0H5CR04JZG.png'
             ],
             [
                 'name' => 'Dinar Meikaratri',
-                'job_group' => 'Executive Assistant to BOD',
-                'title' => 'Executive Assistant',
+                'title' => [
+                    'en' => 'Executive Assistant',
+                    'id' => 'Asisten Eksekutif'
+                ],
                 'about_team_category_id' => 12,
-                'content' => 'this is the desc',
                 'published_date' => Carbon::now(),
                 'image_path' => 'our-identity/01JK2SV4VQ8HXGCHQGATKPFJ3T.png'
             ]

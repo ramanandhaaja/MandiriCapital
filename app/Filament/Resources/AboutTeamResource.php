@@ -37,29 +37,31 @@ class AboutTeamResource extends Resource
                             ->schema([
                                 Forms\Components\Section::make()
                                     ->schema([
-                                        Forms\Components\Grid::make(2)
-                                            ->schema([
-
-                                                Forms\Components\TextInput::make('name')
-                                                    ->required()
-                                                    ->maxLength(255),
-
-                                                Forms\Components\TextInput::make('title')
-                                                    ->required()
-                                                    ->maxLength(255),
-                                            ]),
-
-                                        Forms\Components\RichEditor::make('content')
+                                        Forms\Components\TextInput::make('name')
                                             ->required()
-                                            ->maxLength(65535)
+                                            ->maxLength(255)
                                             ->columnSpanFull(),
 
-                                        Forms\Components\Grid::make(2)
-                                            ->schema([
-                                        Forms\Components\DatePicker::make('published_date')
-                                            ->required(),
-                                            ]),
-
+                                        Forms\Components\Tabs::make('Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('title.en')
+                                                            ->label('Title (English)')
+                                                            ->required()
+                                                            ->maxLength(255)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('title.id')
+                                                            ->label('Title (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(255)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                            ])
+                                            ->columnSpanFull(),
                                     ])
                                     ->columns(2),
 

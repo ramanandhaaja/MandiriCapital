@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->text('content_frontpage')->nullable();
-            $table->text('content_sub_frontpage')->nullable();
+            $table->json('content_frontpage')->nullable();
+            $table->json('content_sub_frontpage')->nullable();
             $table->text('logo')->nullable();
             $table->string('image_path_frontpage1')->nullable();
             $table->string('image_path_frontpage2')->nullable();

@@ -3,7 +3,7 @@
 @section('localcss')
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 @endsection
-v
+
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endsection
@@ -16,8 +16,8 @@ v
         </video>
 
         <div class="hero-content">
-            <div class="center-text">{!! $hero->title !!}</div>
-            <div class="center-text-subtitle">{!! $hero->content !!}</div>
+            <div class="center-text">{!! $hero->getTranslation('title', session('locale', 'en')) !!}</div>
+            <div class="center-text-subtitle">{!! $hero->getTranslation('content', session('locale', 'en')) !!}</div>
             <div class="image-container">
                 <img src="{{ asset('images/home/forstartup.png') }}" alt="For Startup" class="button-image center-image" onclick="openPitchModal()">
                 <img src="{{ asset('images/home/forlp.png') }}" alt="For LP" class="button-image center-image" onclick="openInvestorModal()">
@@ -30,9 +30,11 @@ v
         <div class="headline-grid-two">
             @foreach($articles as $index => $article)
                 <div class="headline-card-two {{ $index === 1 ? 'left-border' : '' }}">
-                    <h1 style="{{ $article->title == 'AUM' ? 'font-size: 20px;' : '' }}">{{ $article->title }}</h1>
-                    <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article->content }}">0</div>
-                    <p class="subtitle-counter">{{ $article->sub_content }}</p>
+                    <h1 style="{{ $article->getTranslation('title', session('locale', 'en')) == 'AUM' ? 'font-size: 20px;' : '' }}">
+                        {{ $article->getTranslation('title', session('locale', 'en')) }}
+                    </h1>
+                    <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article->getTranslation('content', session('locale', 'en')) }}">0</div>
+                    <p class="subtitle-counter">{{ $article->getTranslation('sub_content', session('locale', 'en')) }}</p>
                 </div>
             @endforeach
         </div>
@@ -176,8 +178,8 @@ v
                                         <img src="{{ '/storage/' . $testimonial->company_image_path }}"
                                              alt="{{ $testimonial->name }} Logo">
                                     </div>
-                                    <h3>{{ $testimonial->name }}, {{ $testimonial->title }}</h3>
-                                    <p>"{{ $testimonial->content }}"</p>
+                                    <h3>{{ $testimonial->name }}, {{ $testimonial->getTranslation('title', session('locale', 'en')) }}</h3>
+                                    <p>"{{ $testimonial->getTranslation('content', session('locale', 'en')) }}"</p>
                                 </div>
                             </div>
                         </div>

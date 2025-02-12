@@ -53,14 +53,38 @@ class PlatformValueCreationResource extends Resource
                                                     ->unique(PlatformValueCreation::class, 'slug', ignoreRecord: true),
                                             ]),
 
-                                        Forms\Components\RichEditor::make('content_frontpage')
-                                            ->required()
-                                            ->maxLength(65535)
-                                            ->columnSpanFull(),
+                                        Forms\Components\Tabs::make('Content Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('content_frontpage.en')
+                                                            ->label('Content Frontpage (English)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
 
-                                            Forms\Components\RichEditor::make('content_sub_frontpage')
-                                            ->required()
-                                            ->maxLength(65535)
+                                                        Forms\Components\RichEditor::make('content_sub_frontpage.en')
+                                                            ->label('Content Sub Frontpage (English)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('content_frontpage.id')
+                                                            ->label('Content Frontpage (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\RichEditor::make('content_sub_frontpage.id')
+                                                            ->label('Content Sub Frontpage (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                            ])
                                             ->columnSpanFull(),
                                     ])
                                     ->columns(2),

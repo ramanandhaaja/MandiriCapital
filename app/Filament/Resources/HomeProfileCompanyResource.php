@@ -46,55 +46,68 @@ class HomeProfileCompanyResource extends Resource
                                                 Forms\Components\TextInput::make('name')
                                                     ->required()
                                                     ->maxLength(255),
-
-                                                Forms\Components\TextInput::make('title')
-                                                    ->required()
-                                                    ->maxLength(255),
                                             ]),
 
-                                        Forms\Components\RichEditor::make('content')
-                                            ->required()
-                                            ->maxLength(65535)
+                                        Forms\Components\Tabs::make('Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('title.en')
+                                                            ->label('Title (English)')
+                                                            ->required()
+                                                            ->maxLength(255),
+                                                        Forms\Components\RichEditor::make('content.en')
+                                                            ->label('Content (English)')
+                                                            ->required()
+                                                            ->maxLength(65535),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('title.id')
+                                                            ->label('Title (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(255),
+                                                        Forms\Components\RichEditor::make('content.id')
+                                                            ->label('Content (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535),
+                                                    ]),
+                                            ])
                                             ->columnSpanFull(),
 
-                                        Forms\Components\Grid::make(2)
-                                            ->schema([
-                                        Forms\Components\DatePicker::make('published_date')
-                                            ->required(),
-                                            ]),
+
 
                                     ])
                                     ->columns(2),
-
-
                             ])
                             ->columnSpan(2),
-                            Forms\Components\Group::make()
-                                ->schema([
-                                    Forms\Components\Section::make('Company Logo')
-                                        ->schema([
-                                            Forms\Components\FileUpload::make('company_image_path')
-                                                ->required()
-                                                ->acceptedFileTypes(['image/*', 'video/*'])
-                                                ->maxSize(50 * 1024) // 50MB max file size
-                                                ->disk('public')
-                                                ->directory('hero-sections')
-                                                ->visibility('public')
-                                                ->columnSpanFull(),
-                                        ]),
-                                    Forms\Components\Section::make('Founder Photo')
-                                        ->schema([
-                                            Forms\Components\FileUpload::make('image_path')
-                                                ->required()
-                                                ->acceptedFileTypes(['image/*', 'video/*'])
-                                                ->maxSize(50 * 1024) // 50MB max file size
-                                                ->disk('public')
-                                                ->directory('hero-sections')
-                                                ->visibility('public')
-                                                ->columnSpanFull(),
-                                        ]),
-                                ])
-                                ->columnSpan(1),
+
+                        Forms\Components\Group::make()
+                            ->schema([
+                                Forms\Components\Section::make('Company Logo')
+                                    ->schema([
+                                        Forms\Components\FileUpload::make('company_image_path')
+                                            ->required()
+                                            ->acceptedFileTypes(['image/*', 'video/*'])
+                                            ->maxSize(50 * 1024) // 50MB max file size
+                                            ->disk('public')
+                                            ->directory('hero-sections')
+                                            ->visibility('public')
+                                            ->columnSpanFull(),
+                                    ]),
+                                Forms\Components\Section::make('Founder Photo')
+                                    ->schema([
+                                        Forms\Components\FileUpload::make('image_path')
+                                            ->required()
+                                            ->acceptedFileTypes(['image/*', 'video/*'])
+                                            ->maxSize(50 * 1024) // 50MB max file size
+                                            ->disk('public')
+                                            ->directory('hero-sections')
+                                            ->visibility('public')
+                                            ->columnSpanFull(),
+                                    ]),
+                            ])
+                            ->columnSpan(1),
                     ])
                     ->columns(3),
             ]);

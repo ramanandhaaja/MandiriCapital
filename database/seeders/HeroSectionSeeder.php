@@ -42,13 +42,62 @@ class HeroSectionSeeder extends Seeder
 
         // Create categories
         $categories = [
-            ['name' => 'HOME', 'slug' => 'home', 'route' => 'home'],
-            ['name' => 'OUR IDENTITY', 'slug' => 'our-identity', 'route' => 'about'],
-            ['name' => 'INVESTMENT', 'slug' => 'portfolio', 'route' => 'portfolio'],
-            ['name' => 'VALUE CREATION', 'slug' => 'platform', 'route' => 'platform'],
-            ['name' => 'MEDIA', 'slug' => 'media', 'route' => 'media'],
-            ['name' => 'PUBLICATION', 'slug' => 'publication', 'route' => 'report'],
-            ['name' => 'CONTACT US', 'slug' => 'contact-us', 'route' => 'contact']
+            [
+                'name' => [
+                    'en' => 'HOME',
+                    'id' => 'BERANDA'
+                ],
+                'slug' => 'home',
+                'route' => 'home'
+            ],
+            [
+                'name' => [
+                    'en' => 'OUR IDENTITY',
+                    'id' => 'IDENTITAS KAMI'
+                ],
+                'slug' => 'our-identity',
+                'route' => 'about'
+            ],
+            [
+                'name' => [
+                    'en' => 'INVESTMENT',
+                    'id' => 'INVESTASI'
+                ],
+                'slug' => 'portfolio',
+                'route' => 'portfolio'
+            ],
+            [
+                'name' => [
+                    'en' => 'VALUE CREATION',
+                    'id' => 'PENCIPTAAN NILAI'
+                ],
+                'slug' => 'platform',
+                'route' => 'platform'
+            ],
+            [
+                'name' => [
+                    'en' => 'MEDIA',
+                    'id' => 'MEDIA'
+                ],
+                'slug' => 'media',
+                'route' => 'media'
+            ],
+            [
+                'name' => [
+                    'en' => 'PUBLICATION',
+                    'id' => 'PUBLIKASI'
+                ],
+                'slug' => 'publication',
+                'route' => 'report'
+            ],
+            [
+                'name' => [
+                    'en' => 'CONTACT US',
+                    'id' => 'HUBUNGI KAMI'
+                ],
+                'slug' => 'contact-us',
+                'route' => 'contact'
+            ]
         ];
 
         foreach ($categories as $category) {
@@ -58,50 +107,86 @@ class HeroSectionSeeder extends Seeder
         // Create hero sections
         $sections = [
             [
-                'title' => 'Corporate Venture Capital of Bank Mandiri',
+                'title' => [
+                    'en' => 'Corporate Venture Capital of Bank Mandiri',
+                    'id' => 'Modal Ventura Korporasi Bank Mandiri'
+                ],
                 'slug' => 'corporate-venture-capital-of-bank-mandiri',
                 'hero_section_category_id' => 1, // Home
-                'content' => 'We bring unparalleled resources, expertise, and connections to help you grow and thrive in every stage.',
+                'content' => [
+                    'en' => 'We bring unparalleled resources, expertise, and connections to help you grow and thrive in every stage.',
+                    'id' => 'Kami membawa sumber daya, keahlian, dan koneksi yang tak tertandingi untuk membantu Anda berkembang dan sukses di setiap tahap.'
+                ],
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD.mp4'
             ],
             [
-                'title' => 'OUR IDENTITY',
+                'title' => [
+                    'en' => 'OUR IDENTITY',
+                    'id' => 'IDENTITAS KAMI'
+                ],
                 'slug' => 'our-identity',
                 'hero_section_category_id' => 2, // About
-                'content' => 'Our Identity Section Header',
+                'content' => [
+                    'en' => 'Our Identity Section Header',
+                    'id' => 'Header Identitas Kami'
+                ],
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD1.mp4'
             ],
             [
-                'title' => 'INVESTMENT',
+                'title' => [
+                    'en' => 'INVESTMENT',
+                    'id' => 'INVESTASI'
+                ],
                 'slug' => 'investment',
                 'hero_section_category_id' => 3, // Portfolio
-                'content' => 'Portfolio Section Header.',
+                'content' => [
+                    'en' => 'Portfolio Section Header.',
+                    'id' => 'Header Portofolio.'
+                ],
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD2.mp4'
             ],
             [
-                'title' => 'VALUE CREATION',
+                'title' => [
+                    'en' => 'VALUE CREATION',
+                    'id' => 'PENCIPTAAN NILAI'
+                ],
                 'slug' => 'value-creation',
                 'hero_section_category_id' => 4, // Platform
-                'content' => 'Platform Section Header.',
+                'content' => [
+                    'en' => 'Platform Section Header.',
+                    'id' => 'Header Platform.'
+                ],
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD3.mp4'
             ],
             [
-                'title' => 'MEDIA',
+                'title' => [
+                    'en' => 'MEDIA',
+                    'id' => 'MEDIA'
+                ],
                 'slug' => 'media',
                 'hero_section_category_id' => 5, // Media
-                'content' => 'Media Section Header.',
+                'content' => [
+                    'en' => 'Media Section Header.',
+                    'id' => 'Header Media.'
+                ],
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD4.mp4'
             ],
             [
-                'title' => 'PUBLICATION',
+                'title' => [
+                    'en' => 'PUBLICATION',
+                    'id' => 'PUBLIKASI'
+                ],
                 'slug' => 'publication',
                 'hero_section_category_id' => 6, // Publication
-                'content' => 'Publication Section Header.',
+                'content' => [
+                    'en' => 'Publication Section Header.',
+                    'id' => 'Header Publikasi.'
+                ],
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD5.mp4'
             ]
@@ -117,100 +202,197 @@ class HeroSectionSeeder extends Seeder
         $subcategories = [
 
             [
-                'name' => 'About MCI',
+                'name' => [
+                    'en' => 'About MCI',
+                    'id' => 'Tentang MCI'
+                ],
                 'slug' => 'about-mci',
                 'hero_section_category_id' => 2, // About
-                'headline_text' => 'MCI Connect Startups With Mandiri Group to Drive Rapid Innovation',
+                'headline_text' => [
+                    'en' => 'MCI Connect Startups With Mandiri Group to Drive Rapid Innovation',
+                    'id' => 'MCI Menghubungkan Startup dengan Grup Mandiri untuk Mendorong Inovasi Cepat'
+                ],
             ],
             [
-                'name' => 'About Mandiri',
+                'name' => [
+                    'en' => 'About Mandiri',
+                    'id' => 'Tentang Mandiri'
+                ],
                 'slug' => 'about-mandiri',
                 'hero_section_category_id' => 2, // About
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
             ],
             [
-                'name' => 'Our Team',
+                'name' => [
+                    'en' => 'Our Team',
+                    'id' => 'Tim Kami'
+                ],
                 'slug' => 'our-team',
                 'hero_section_category_id' => 2, // About
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
             ],
             [
-                'name' => 'Get Investment',
+                'name' => [
+                    'en' => 'Get Investment',
+                    'id' => 'Dapatkan Investasi'
+                ],
                 'slug' => 'get-investment',
                 'hero_section_category_id' => 3, // Investment
-                'headline_text' => 'Ready to rise? Prove your resilience and show you have what it takes!',
+                'headline_text' => [
+                    'en' => 'Ready to rise? Prove your resilience and show you have what it takes!',
+                    'id' => 'Siap untuk meningkat? Tunjukkan ketahanan Anda dan buktikan Anda memiliki apa yang diperlukan!'
+                ],
             ],
             [
-                'name' => 'Portfolio',
+                'name' => [
+                    'en' => 'Portfolio',
+                    'id' => 'Portofolio'
+                ],
                 'slug' => 'portfolio',
                 'hero_section_category_id' => 3, // Investment
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
             ],
             [
-                'name' => 'Funds',
+                'name' => [
+                    'en' => 'Funds',
+                    'id' => 'Dana'
+                ],
                 'slug' => 'funding',
                 'hero_section_category_id' => 3, // Investment
-                'headline_text' => 'To foster long-term growth, we invest through three distinct fund vehicles',
+                'headline_text' => [
+                    'en' => 'To foster long-term growth, we invest through three distinct fund vehicles',
+                    'id' => 'Untuk mendorong pertumbuhan jangka panjang, kami berinvestasi melalui tiga kendaraan dana yang berbeda'
+                ],
             ],
             [
-                'name' => 'Our Focus',
+                'name' => [
+                    'en' => 'Our Focus',
+                    'id' => 'Fokus Kami'
+                ],
                 'slug' => 'business',
                 'hero_section_category_id' => 4, // Program
-                'headline_text' => 'Catalysing Growth Through Synergy with Our Value Creation Programs',
+                'headline_text' => [
+                    'en' => 'Catalysing Growth Through Synergy with Our Value Creation Programs',
+                    'id' => 'Mendorong Pertumbuhan Melalui Sinergi dengan Program Penciptaan Nilai Kami'
+                ],
             ],
             [
-                'name' => 'Program',
+                'name' => [
+                    'en' => 'Program',
+                    'id' => 'Program'
+                ],
                 'slug' => 'program',
                 'hero_section_category_id' => 4, // Program
-                'headline_text' => 'Our Value Creation Program',
+                'headline_text' => [
+                    'en' => 'Our Value Creation Program',
+                    'id' => 'Program Penciptaan Nilai Kami'
+                ],
             ],
             [
-                'name' => 'All',
+                'name' => [
+                    'en' => 'All',
+                    'id' => 'Semua'
+                ],
                 'slug' => 'all',
                 'hero_section_category_id' => 5, // Program
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
             ],
             [
-                'name' => 'News',
+                'name' => [
+                    'en' => 'News',
+                    'id' => 'Berita'
+                ],
                 'slug' => 'news',
                 'hero_section_category_id' => 5, // Program
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
             ],
             [
-                'name' => 'Podcast',
+                'name' => [
+                    'en' => 'Podcast',
+                    'id' => 'Podcast'
+                ],
                 'slug' => 'podcast',
                 'hero_section_category_id' => 5, // Program
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
             ],
             [
-                'name' => 'Blog',
+                'name' => [
+                    'en' => 'Blog',
+                    'id' => 'Blog'
+                ],
                 'slug' => 'blog',
                 'hero_section_category_id' => 5, // Program
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
             ],
             [
-                'name' => 'All',
+                'name' => [
+                    'en' => 'All',
+                    'id' => 'Semua'
+                ],
                 'slug' => 'all-report',
                 'hero_section_category_id' => 6, // Program
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
             ],
             [
-                'name' => 'Annual & Financial Report',
+                'name' => [
+                    'en' => 'Annual & Financial Report',
+                    'id' => 'Laporan Tahunan & Keuangan'
+                ],
                 'slug' => 'annual-and-financial-report',
                 'hero_section_category_id' => 6, // Program
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
             ],
             [
-                'name' => 'Sustainability Report',
+                'name' => [
+                    'en' => 'Sustainability Report',
+                    'id' => 'Laporan Keberlanjutan'
+                ],
                 'slug' => 'sustainability-report',
                 'hero_section_category_id' => 6, // Program
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
             ],
             [
-                'name' => 'Whitepaper',
+                'name' => [
+                    'en' => 'Whitepaper',
+                    'id' => 'Whitepaper'
+                ],
                 'slug' => 'whitepaper',
                 'hero_section_category_id' => 6, // Program
-                'headline_text' => '',
+                'headline_text' => [
+                    'en' => '',
+                    'id' => ''
+                ],
+
             ],
 
         ];

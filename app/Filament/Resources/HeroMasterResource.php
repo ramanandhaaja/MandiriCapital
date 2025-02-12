@@ -64,8 +64,6 @@ class HeroMasterResource extends Resource
                                         Forms\Components\TextInput::make('address')
                                             ->columnSpanFull(),
 
-                                        Forms\Components\TextInput::make('footer')
-                                            ->maxLength(255),
 
                                     ])
                                     ->columns(2),

@@ -5,21 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Spatie\Translatable\HasTranslations;
 
 class HomeArticle extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
     protected $table = 'home_article';
 
-    protected $fillable = [
-        'category',
+
+    public array $translatable = [
         'title',
-        'slug',
+        'content',
+        'sub_content',
+    ];
+
+    protected $fillable = [
+        'title',
         'content',
         'sub_content',
         'published_date',
-        'image_path'
     ];
 
     protected $casts = [

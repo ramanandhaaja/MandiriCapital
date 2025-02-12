@@ -10,8 +10,8 @@ return new class extends Migration
     {
         Schema::create('portfolio_funding_articles', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('content')->nullable();
+            $table->json('title');
+            $table->json('content')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
@@ -21,15 +21,15 @@ return new class extends Migration
             $table->foreignId('article_id')
                   ->constrained('portfolio_funding_articles')
                   ->onDelete('cascade');
-            $table->string('title');
-            $table->text('content');
+            $table->json('title');
+            $table->json('content')->nullable();
             $table->boolean('is_large')->default(false);
             $table->string('image_path')->nullable(); // For storing icon reference
             $table->boolean('is_active')->default(true);
             $table->integer('order')->default(0); // To maintain display order
-            $table->string('stage');
-            $table->string('geography');
-            $table->string('ticketsize');
+            $table->json('stage');
+            $table->json('geography');
+            $table->json('ticketsize');
             $table->timestamps();
         });
 

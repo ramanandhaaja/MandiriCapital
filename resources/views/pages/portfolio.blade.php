@@ -34,7 +34,7 @@
         {{-- Article Section --}}
 
         <div class="hero-mid-section">
-            <h1 class="center-text">{{ $menuSubCategory->first()->headline_text  }}</h1>
+            <h1 class="center-text">{!! $menuSubCategory->first()?->getTranslation('headline_text', session('locale', 'en')) ?? '' !!}</h1>
         </div>
 
         @foreach ($portfolioArticlesList as $index => $article)
@@ -42,8 +42,8 @@
             <div
                 class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey' }}">
                 <div class="grid-headline-title-card">
-                    <h1 class="grid-headline-title">{{ $article->title }}</h1>
-                    <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
+                    <h1 class="grid-headline-title">{!! $article->getTranslation('title', session('locale', 'en')) !!}</h1>
+                    <h1 class="grid-headline-subtitle-left">{!! $article->getTranslation('content', session('locale', 'en')) !!}</h1>
                 </div>
                 <div class="grid-headline-description-card">
                     <div class="masonry-grid-investment-section-sub">
@@ -52,21 +52,21 @@
                                 @if ($subArticle->icon)
                                     <div class="card-icon">
                                         <img src="{{ '/storage/' . $subArticle->icon }}"
-                                            alt="{{ $subArticle->title }} Icon">
+                                            alt="{!! $subArticle->getTranslation('title', session('locale', 'en')) !!} Icon">
                                     </div>
                                 @else
                                     <div class="card-icon-bottom">
                                         <h1 class="card-title-bottom">{{ $subArticle->text_icon }}</h1>
                                     </div>
                                 @endif
-                                <h2 class="card-title">{{ $subArticle->title }}</h2>
-                                <p class="card-description">{{ $subArticle->content }}</p>
+                                <h2 class="card-title">{!! $subArticle->getTranslation('title', session('locale', 'en')) !!}</h2>
+                                <p class="card-description">{!! $subArticle->getTranslation('content', session('locale', 'en')) !!}</p>
                             </div>
                         @endforeach
                     </div>
                     <div class="grid-headline-title-card-sub-bottom">
-                        <h1 class="card-title-sub-bottom">{{ $article->title_sub }}</h1>
-                        <p class="card-description-bottom">{{ $article->content_sub }}</p>
+                        <h1 class="card-title-sub-bottom">{!! $article->getTranslation('title_sub', session('locale', 'en')) !!}</h1>
+                        <p class="card-description-bottom">{!! $article->getTranslation('content_sub', session('locale', 'en')) !!}</p>
                     </div>
                 </div>
             </div>
@@ -273,7 +273,7 @@
                                         <img class="icon-image" src="{{ Storage::url($portfolio->icon) }}"
                                             alt="{{ $portfolio->icon }}">
 
-                                        <p class="portfolio-description">{{ $portfolio->description }}</p>
+                                        <p class="portfolio-description">{!! $portfolio->getTranslation('description', session('locale', 'en')) !!}</p>
                                     </div>
                                 </div>
                             </a>
@@ -296,11 +296,11 @@
                 <div class="portfolio-section">
                     {{-- Table Header --}}
                     <div class="portfolio-header">
-                        <div class="header-cell">Company Name</div>
-                        <div class="header-cell">Sector</div>
-                        <div class="header-cell">Short Description</div>
-                        <div class="header-cell">Head Office</div>
-                        <div class="header-cell">Year Invested</div>
+                        <div class="header-cell">{{ session('locale') === 'id' ? 'Nama Perusahaan' : 'Company Name' }}</div>
+                        <div class="header-cell">{{ session('locale') === 'id' ? 'Sektor' : 'Sector' }}</div>
+                        <div class="header-cell">{{ session('locale') === 'id' ? 'Deskripsi Singkat' : 'Short Description' }}</div>
+                        <div class="header-cell">{{ session('locale') === 'id' ? 'Kantor Pusat' : 'Head Office' }}</div>
+                        <div class="header-cell">{{ session('locale') === 'id' ? 'Tahun Investasi' : 'Year Invested' }}</div>
                     </div>
 
                     @foreach ($portfolios as $portfolio)
@@ -316,12 +316,12 @@
                                 <a href="{{ $portfolio->website_url }}" target="_blank"
                                     class="company-website">{{ str_replace(['https://', 'http://'], '', $portfolio->website_url) }}</a>
                             </div>
-                            <div class="category-cell">{{ $portfolio->sector }}</div>
+                            <div class="category-cell">{!! $portfolio->getTranslation('sector', session('locale', 'en')) !!}</div>
                             <div class="description-cell">
-                                {{ Str::limit($portfolio->description, 100) }}
+                                {{ Str::limit($portfolio->getTranslation('description', session('locale', 'en')), 100) }}
                             </div>
                             <div class="stage-cell">
-                                <span class="stage-tag">{{ $portfolio->head_office }}</span>
+                                <span class="stage-tag">{!! $portfolio->getTranslation('head_office', session('locale', 'en')) !!}</span>
                             </div>
                             <div class="partners-cell">
                                 <div class="partner-info">
@@ -357,15 +357,15 @@
     <div class="for-investor-section">
         {{-- Hero Section --}}
         <div class="hero-mid-section">
-            <h1 class="center-text">{{ $menuSubCategory->skip(2)->first()->headline_text  }}</h1>
+            <h1 class="center-text">{!! $menuSubCategory->skip(2)->first()?->getTranslation('headline_text', session('locale', 'en')) ?? '' !!}</h1>
         </div>
 
         {{-- Investment Vehicles --}}
         @foreach ($portfolioFundingArticlesList as $index => $article)
         <div class="{{ $index % 2 === 0 ? 'masonry-grid-investment-section' : 'masonry-grid-investment-section-grey2' }}">
                 <div class="grid-headline-title-card">
-                    <h1 class="grid-headline-title">{{ $article->title }}</h1>
-                    <h1 class="grid-headline-subtitle-left">{!! $article->content !!}</h1>
+                    <h1 class="grid-headline-title">{{ $article->getTranslation('title', session('locale', 'en')) }}</h1>
+                    <h1 class="grid-headline-subtitle-left">{!! $article->getTranslation('content', session('locale', 'en')) !!}</h1>
                 </div>
 
                 <div class="grid-headline-description-card">
@@ -385,13 +385,13 @@
                                         @endif
 
                                         <div class="funding-category{{ $subArticle->is_large ? '-large' : '' }}">
-                                            {{ $subArticle->title }}
+                                            {!! $subArticle->getTranslation('title', session('locale', 'en')) !!}
                                         </div>
                                         <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
-                                            {{ $subArticle->content }}
+                                            {!! $subArticle->getTranslation('content', session('locale', 'en')) !!}
                                         </div>
                                             <a href="{{ route('portfolio.show.funding', $subArticle->title) }}" class="text-decoration-none">
-                                                <span class="funding-link">Fund Details >></span>
+                                                <span class="funding-link">{{ session('locale') === 'id' ? 'Detail Dana >>' : 'Fund Details >>' }}</span>
                                             </a>
 
                                         {{-- Hover card that follows mouse --}}
@@ -402,20 +402,20 @@
                                                     <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png" class="card-funding-image-hover" />
                                                 </div>
                                                 <div class="funding-category-hover">
-                                                    Startup Criteria
+                                                    {{ session('locale') === 'id' ? 'Kriteria Startup' : 'Startup Criteria' }}
                                                 </div>
                                                 <div class="criteria-grid">
                                                     <div class="criteria-item">
-                                                        <h3>Stage</h3>
-                                                        <p>{{ $subArticle->stage }}</p>
+                                                        <h3>{{ session('locale') === 'id' ? 'Tahap' : 'Stage' }}</h3>
+                                                        <p>{!! $subArticle->getTranslation('stage', session('locale', 'en')) !!}</p>
                                                     </div>
                                                     <div class="criteria-item">
-                                                        <h3>Geography</h3>
-                                                        <p>{{ $subArticle->geography }}</p>
+                                                        <h3>{{ session('locale') === 'id' ? 'Wilayah' : 'Geography' }}</h3>
+                                                        <p>{!! $subArticle->getTranslation('geography', session('locale', 'en')) !!}</p>
                                                     </div>
                                                     <div class="criteria-item">
-                                                        <h3>Ticket Size</h3>
-                                                        <p>{{ $subArticle->ticketsize }}</p>
+                                                        <h3>{{ session('locale') === 'id' ? 'Ukuran Investasi' : 'Ticket Size' }}</h3>
+                                                        <p>{!! $subArticle->getTranslation('ticketsize', session('locale', 'en')) !!}</p>
                                                     </div>
                                                 </div>
                                             </div>

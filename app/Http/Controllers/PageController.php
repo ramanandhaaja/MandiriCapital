@@ -57,9 +57,9 @@ class PageController extends Controller
      */
     public function index()
     {
-        $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('name', 'Home');
-        })->first();
+        $hero = HeroSection::with('category')
+        ->whereRelation('category', 'slug', 'home')
+        ->first();
 
         $articles = HomeArticle::take(3)->get();
 
@@ -106,7 +106,7 @@ class PageController extends Controller
     public function media()
     {
         $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('name', 'Media');
+            $query->where('slug', 'media');
         })->first();
 
         $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
@@ -261,7 +261,7 @@ class PageController extends Controller
     public function report()
     {
         $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('name', 'publication');
+            $query->where('slug', 'publication');
         })->first();
 
         $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {

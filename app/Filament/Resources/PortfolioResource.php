@@ -40,25 +40,69 @@ class PortfolioResource extends Resource
                                         Forms\Components\TextInput::make('slug')
                                             ->required()
                                             ->maxLength(255)
+                                            ->disabled()
                                             ->unique(Portfolio::class, 'slug', ignoreRecord: true),
                                     ]),
 
-                                Forms\Components\RichEditor::make('description')
-                                    ->required()
-                                    ->maxLength(65535)
+                                Forms\Components\Tabs::make('Content Translations')
+                                    ->tabs([
+                                        Forms\Components\Tabs\Tab::make('English')
+                                            ->schema([
+                                                Forms\Components\RichEditor::make('description.en')
+                                                    ->label('Description (English)')
+                                                    ->required()
+                                                    ->maxLength(65535)
+                                                    ->columnSpanFull(),
+
+                                                Forms\Components\Grid::make(2)
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('stage.en')
+                                                            ->label('Stage (English)')
+                                                            ->required()
+                                                            ->maxLength(255),
+
+                                                        Forms\Components\TextInput::make('head_office.en')
+                                                            ->label('Head Office (English)')
+                                                            ->required()
+                                                            ->maxLength(255),
+                                                    ]),
+
+                                                Forms\Components\TextInput::make('sector.en')
+                                                    ->label('Sector (English)')
+                                                    ->required()
+                                                    ->maxLength(255)
+                                                    ->columnSpanFull(),
+                                            ]),
+
+                                        Forms\Components\Tabs\Tab::make('Indonesian')
+                                            ->schema([
+                                                Forms\Components\RichEditor::make('description.id')
+                                                    ->label('Description (Indonesian)')
+                                                    ->required()
+                                                    ->maxLength(65535)
+                                                    ->columnSpanFull(),
+
+                                                Forms\Components\Grid::make(2)
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('stage.id')
+                                                            ->label('Stage (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(255),
+
+                                                        Forms\Components\TextInput::make('head_office.id')
+                                                            ->label('Head Office (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(255),
+                                                    ]),
+
+                                                Forms\Components\TextInput::make('sector.id')
+                                                    ->label('Sector (Indonesian)')
+                                                    ->required()
+                                                    ->maxLength(255)
+                                                    ->columnSpanFull(),
+                                            ]),
+                                    ])
                                     ->columnSpanFull(),
-
-                                Forms\Components\Grid::make(2)
-                                    ->schema([
-                                        Forms\Components\TextInput::make('stage')
-                                            ->required()
-                                            ->maxLength(255),
-
-                                        Forms\Components\TextInput::make('website_url')
-                                            ->required()
-                                            ->url()
-                                            ->maxLength(255),
-                                    ]),
 
                                 Forms\Components\Grid::make(2)
                                     ->schema([
@@ -69,6 +113,26 @@ class PortfolioResource extends Resource
                                         Forms\Components\TextInput::make('year_invested')
                                             ->required()
                                             ->maxLength(255),
+                                    ]),
+
+                                Forms\Components\Grid::make(2)
+                                    ->schema([
+                                        Forms\Components\TextInput::make('instagram_url')
+                                            ->required()
+                                            ->url()
+                                            ->maxLength(255),
+
+                                        Forms\Components\TextInput::make('linkedin_url')
+                                            ->required()
+                                            ->maxLength(255),
+                                    ]),
+                                Forms\Components\Grid::make(2)
+                                    ->schema([
+                                        Forms\Components\TextInput::make('website_url')
+                                            ->required()
+                                            ->url()
+                                            ->maxLength(255),
+
                                     ]),
                             ])
                             ->columns(2),
@@ -121,7 +185,7 @@ class PortfolioResource extends Resource
                                             ->unique('portfolio_categories', 'slug'),
                                     ])
                                     ->preload(),
-                                    Forms\Components\TextInput::make('order')
+                                Forms\Components\TextInput::make('order')
                                     ->maxLength(255)
                             ]),
                     ])

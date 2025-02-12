@@ -4,12 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class AboutMandiriEcosystem extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
     protected $table = 'about_mandiri_ecosystem';
+
+    public array $translatable = [
+        'title',
+        'content',
+        'hover_focus_area',
+        'hover_content',
+    ];
 
     protected $fillable = [
         'title',
@@ -20,7 +28,6 @@ class AboutMandiriEcosystem extends Model
         'is_domestic',
         'is_international',
         'is_headline',
-        'group',
         'hover_focus_area',
         'hover_content',
         'about_ecosystem_category_id',

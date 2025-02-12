@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('portfolio_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->json('name');
             $table->string('slug')->unique();
             $table->timestamps();
         });
@@ -23,21 +23,22 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->foreignId('portfolio_category_id')->constrained()->onDelete('cascade');
-            $table->text('description')->nullable();
-            $table->string('stage')->nullable();
+            $table->json('description')->nullable();
+            $table->json('stage')->nullable();
             $table->string('website_url')->nullable();
             $table->string('image_path')->nullable();
             $table->string('highlight_image')->nullable();
             $table->string('icon')->nullable();
             $table->string('ceo_name')->nullable();
             $table->string('year_invested')->nullable();
-            $table->string('sector')->nullable();
-            $table->string('head_office')->nullable();
+            $table->json('sector')->nullable();
+            $table->json('head_office')->nullable();
             $table->integer('order')->nullable();
             $table->string('instagram_url')->nullable();
             $table->string('linkedin_url')->nullable();
             $table->timestamps();
         });
+
     }
 
     /**

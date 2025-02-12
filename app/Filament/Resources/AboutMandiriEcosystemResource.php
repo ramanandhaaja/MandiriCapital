@@ -49,10 +49,7 @@ class AboutMandiriEcosystemResource extends Resource
                                                         $set('slug', Str::slug($state))
                                                     ),
 
-                                                Forms\Components\TextInput::make('slug')
-                                                    ->required()
-                                                    ->maxLength(255)
-                                                    ->unique(AboutMandiriEcosystem::class, 'slug', ignoreRecord: true),
+
                                             ]),
 
                                         Forms\Components\RichEditor::make('content')
@@ -62,8 +59,10 @@ class AboutMandiriEcosystemResource extends Resource
 
                                         Forms\Components\Grid::make(2)
                                             ->schema([
-                                                Forms\Components\DatePicker::make('published_date')
-                                                    ->required(),
+                                                Forms\Components\TextInput::make('slug')
+                                                    ->required()
+                                                    ->maxLength(255)
+                                                    ->unique(AboutMandiriEcosystem::class, 'slug', ignoreRecord: true),
 
 
                                             ]),

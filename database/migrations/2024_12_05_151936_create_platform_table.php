@@ -13,16 +13,15 @@ return new class extends Migration
     {
         Schema::create('platform_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->json('name');
             $table->integer('order');
             $table->timestamps();
         });
 
         Schema::create('platforms', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->json('title');
             $table->string('slug')->unique();
-            $table->text('content')->nullable();
             $table->date('published_date');
             $table->string('image_path');
             $table->foreignId('platform_category_id')->constrained()->onDelete('cascade');
@@ -31,17 +30,17 @@ return new class extends Migration
 
         Schema::create('platform_counter', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('subtitle');
-            $table->string('content');
+            $table->json('title');
+            $table->json('subtitle');
+            $table->json('content');
             $table->timestamps();
         });
 
         Schema::create('platform_article', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('subtitle')->nullable();
-            $table->text('content');
+            $table->json('title');
+            $table->json('subtitle')->nullable();
+            $table->json('content');
             $table->timestamps();
         });
 

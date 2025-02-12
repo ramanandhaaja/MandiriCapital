@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('company_name')->nullable();
             $table->string('name')->nullable();
-            $table->string('title')->nullable();
-            $table->text('content')->nullable();
+            $table->json('title')->nullable();
+            $table->json('content')->nullable();
             $table->date('published_date')->nullable();
             $table->string('image_path')->nullable();
             $table->string('company_image_path')->nullable();

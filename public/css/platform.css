@@ -1009,6 +1009,7 @@ body {
     margin: 0;
     color: #ffffff;
     font-family: var(--font-family);
+    text-align: center;
 }
 
 .card-description {
@@ -1071,11 +1072,14 @@ body {
 .potential-subtitle {
     position: relative;
     font-family: var(--font-family);
-    color: #EFA32F;
-    font-size: 28px;
+    color: #A1A1AA;
+    font-size: 14px;
     font-weight: 500;
     text-align: left;
-    margin: 0 0 20px 0;
+    margin-left: 80px;
+    margin-right: 90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .potential-description {
@@ -1169,7 +1173,7 @@ body {
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 15px;
 }
 

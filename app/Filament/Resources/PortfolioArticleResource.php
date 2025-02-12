@@ -32,39 +32,68 @@ class PortfolioArticleResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Group::make()
-                    ->schema([
-                        Forms\Components\Section::make()
-                            ->schema([
-                                Forms\Components\Grid::make(2)
-                                    ->schema([
-                                        Forms\Components\TextInput::make('title')
-                                            ->required()
-                                            ->maxLength(255)
-                                            ->live(onBlur: true)
+                ->schema([
+                    Forms\Components\Section::make()
+                        ->schema([
+                            Forms\Components\Tabs::make('Content Translations')
+                                ->tabs([
+                                    Forms\Components\Tabs\Tab::make('English')
+                                        ->schema([
+                                            Forms\Components\TextInput::make('title.en')
+                                                ->label('Title (English)')
+                                                ->required()
+                                                ->maxLength(255)
+                                                ->live(onBlur: true)
+                                                ->columnSpanFull(),
 
-                                         ]),
+                                            Forms\Components\RichEditor::make('content.en')
+                                                ->label('Content (English)')
+                                                ->maxLength(65535)
+                                                ->columnSpanFull(),
 
-                                Forms\Components\RichEditor::make('content')
-                                    ->maxLength(65535)
-                                    ->columnSpanFull(),
+                                            Forms\Components\TextInput::make('title_sub.en')
+                                                ->label('Sub Title (English)')
+                                                ->maxLength(255)
+                                                ->live(onBlur: true)
+                                                ->columnSpanFull(),
 
-                                Forms\Components\Grid::make(2)
-                                    ->schema([
-                                        Forms\Components\TextInput::make('title_sub')
-                                            ->maxLength(255)
-                                            ->live(onBlur: true)
+                                            Forms\Components\RichEditor::make('content_sub.en')
+                                                ->label('Sub Content (English)')
+                                                ->maxLength(65535)
+                                                ->columnSpanFull(),
+                                        ]),
 
-                                         ]),
+                                    Forms\Components\Tabs\Tab::make('Indonesian')
+                                        ->schema([
+                                            Forms\Components\TextInput::make('title.id')
+                                                ->label('Title (Indonesian)')
+                                                ->required()
+                                                ->maxLength(255)
+                                                ->live(onBlur: true)
+                                                ->columnSpanFull(),
 
-                                Forms\Components\RichEditor::make('content_sub')
-                                    ->maxLength(65535)
-                                    ->columnSpanFull(),
-                            ])
-                            ->columns(2),
-                    ])
-                    ->columnSpan(['lg' => 2]),
+                                            Forms\Components\RichEditor::make('content.id')
+                                                ->label('Content (Indonesian)')
+                                                ->maxLength(65535)
+                                                ->columnSpanFull(),
 
+                                            Forms\Components\TextInput::make('title_sub.id')
+                                                ->label('Sub Title (Indonesian)')
+                                                ->maxLength(255)
+                                                ->live(onBlur: true)
+                                                ->columnSpanFull(),
 
+                                            Forms\Components\RichEditor::make('content_sub.id')
+                                                ->label('Sub Content (Indonesian)')
+                                                ->maxLength(65535)
+                                                ->columnSpanFull(),
+                                        ]),
+                                ])
+                                ->columnSpanFull(),
+                        ])
+                        ->columns(2),
+                ])
+                ->columnSpan(['lg' => 2]),
 
 
 
@@ -75,12 +104,42 @@ class PortfolioArticleResource extends Resource
                                 Forms\Components\HasManyRepeater::make('subArticles')
                                     ->relationship('subArticles')
                                     ->schema([
-                                        Forms\Components\TextInput::make('title')
-                                            ->required()
-                                            ->maxLength(255),
-                                        Forms\Components\RichEditor::make('content')
-                                            ->required()
-                                            ->columnSpanFull(),
+                                        Forms\Components\Grid::make(2)
+                                            ->schema([
+                                                Forms\Components\Tabs::make('Sub Content Translations')
+                                                    ->tabs([
+                                                        Forms\Components\Tabs\Tab::make('English')
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('title.en')
+                                                                    ->label('Title (English)')
+                                                                    ->required()
+                                                                    ->maxLength(255)
+                                                                    ->columnSpanFull(),
+
+                                                                Forms\Components\RichEditor::make('content.en')
+                                                                    ->label('Content (English)')
+                                                                    ->required()
+                                                                    ->maxLength(65535)
+                                                                    ->columnSpanFull(),
+                                                            ]),
+
+                                                        Forms\Components\Tabs\Tab::make('Indonesian')
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('title.id')
+                                                                    ->label('Title (Indonesian)')
+                                                                    ->required()
+                                                                    ->maxLength(255)
+                                                                    ->columnSpanFull(),
+
+                                                                Forms\Components\RichEditor::make('content.id')
+                                                                    ->label('Content (Indonesian)')
+                                                                    ->required()
+                                                                    ->maxLength(65535)
+                                                                    ->columnSpanFull(),
+                                                            ]),
+                                                    ])
+                                                    ->columnSpanFull(),
+                                            ]),
                                         Forms\Components\Grid::make(3)
                                             ->schema([
                                                 Forms\Components\FileUpload::make('icon')

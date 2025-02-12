@@ -38,15 +38,38 @@ class AboutMCIIntroResource extends Resource
                             ->schema([
                                 Forms\Components\Section::make()
                                     ->schema([
-                                        Forms\Components\RichEditor::make('intro')
-                                            ->maxLength(65535)
-                                            ->columnSpanFull(),
+                                        Forms\Components\Tabs::make('IntroTranslations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('intro.en')
+                                                            ->label('Intro (English)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
 
-                                        Forms\Components\RichEditor::make('headline')
-                                            ->maxLength(65535)
-                                            ->columnSpanFull(),
-                                    ]),
+                                                        Forms\Components\RichEditor::make('headline.en')
+                                                            ->label('Headline (English)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('intro.id')
+                                                            ->label('Intro (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
 
+                                                        Forms\Components\RichEditor::make('headline.id')
+                                                            ->label('Headline (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                            ]),
+                                    ])
                             ])
                             ->columnSpan(2),
 
@@ -54,16 +77,38 @@ class AboutMCIIntroResource extends Resource
                             ->schema([
                                 Forms\Components\Section::make()
                                     ->schema([
-                                        Forms\Components\RichEditor::make('articletitle1')
-                                            ->maxLength(65535)
-                                            ->columnSpanFull()
-                                            ->label('Artikel 1'),
+                                        Forms\Components\Tabs::make('Article1Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('articletitle1.en')
+                                                            ->label('Article 1 Title (English)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
 
-                                        Forms\Components\RichEditor::make('article1')
-                                            ->maxLength(65535)
-                                            ->columnSpanFull()
-                                            ->label('Content Artikel 1'),
-                                    ]),
+                                                        Forms\Components\RichEditor::make('article1.en')
+                                                            ->label('Article 1 Content (English)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('articletitle1.id')
+                                                            ->label('Article 1 Title (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\RichEditor::make('article1.id')
+                                                            ->label('Article 1 Content (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                            ]),
+                                    ])
                             ])
                             ->columnSpan(2),
 
@@ -72,7 +117,7 @@ class AboutMCIIntroResource extends Resource
                                 Forms\Components\FileUpload::make('icon_article1')
                                     ->required()
                                     ->acceptedFileTypes(['image/*'])
-                                    ->maxSize(50 * 1024) // 50MB max file size
+                                    ->maxSize(50 * 1024)
                                     ->disk('public')
                                     ->directory('hero-sections')
                                     ->visibility('public')
@@ -84,16 +129,38 @@ class AboutMCIIntroResource extends Resource
                             ->schema([
                                 Forms\Components\Section::make()
                                     ->schema([
-                                        Forms\Components\RichEditor::make('articletitle2')
-                                            ->maxLength(65535)
-                                            ->columnSpanFull()
-                                            ->label('Artikel 2'),
+                                        Forms\Components\Tabs::make('Article2Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('articletitle2.en')
+                                                            ->label('Article 2 Title (English)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
 
-                                        Forms\Components\RichEditor::make('article2')
-                                            ->maxLength(65535)
-                                            ->columnSpanFull()
-                                            ->label('Content Artikel 2'),
-                                    ]),
+                                                        Forms\Components\RichEditor::make('article2.en')
+                                                            ->label('Article 2 Content (English)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('articletitle2.id')
+                                                            ->label('Article 2 Title (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\RichEditor::make('article2.id')
+                                                            ->label('Article 2 Content (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                            ]),
+                                    ])
                             ])
                             ->columnSpan(2),
 
@@ -102,7 +169,7 @@ class AboutMCIIntroResource extends Resource
                                 Forms\Components\FileUpload::make('icon_article2')
                                     ->required()
                                     ->acceptedFileTypes(['image/*'])
-                                    ->maxSize(50 * 1024) // 50MB max file size
+                                    ->maxSize(50 * 1024)
                                     ->disk('public')
                                     ->directory('hero-sections')
                                     ->visibility('public')
@@ -110,21 +177,42 @@ class AboutMCIIntroResource extends Resource
                             ])
                             ->columnSpan(1),
 
-
                         Forms\Components\Group::make()
                             ->schema([
                                 Forms\Components\Section::make()
                                     ->schema([
-                                        Forms\Components\RichEditor::make('articletitle3')
-                                            ->maxLength(65535)
-                                            ->columnSpanFull()
-                                            ->label('Artikel 3'),
+                                        Forms\Components\Tabs::make('Article3Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('articletitle3.en')
+                                                            ->label('Article 3 Title (English)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
 
-                                        Forms\Components\RichEditor::make('article3')
-                                            ->maxLength(65535)
-                                            ->columnSpanFull()
-                                            ->label('Content Artikel 3'),
-                                    ]),
+                                                        Forms\Components\RichEditor::make('article3.en')
+                                                            ->label('Article 3 Content (English)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('articletitle3.id')
+                                                            ->label('Article 3 Title (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\RichEditor::make('article3.id')
+                                                            ->label('Article 3 Content (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                            ]),
+                                    ])
                             ])
                             ->columnSpan(2),
 
@@ -133,16 +221,13 @@ class AboutMCIIntroResource extends Resource
                                 Forms\Components\FileUpload::make('icon_article3')
                                     ->required()
                                     ->acceptedFileTypes(['image/*'])
-                                    ->maxSize(50 * 1024) // 50MB max file size
+                                    ->maxSize(50 * 1024)
                                     ->disk('public')
                                     ->directory('hero-sections')
                                     ->visibility('public')
                                     ->columnSpanFull(),
                             ])
                             ->columnSpan(1),
-
-
-
                     ])
                     ->columns(3),
             ])

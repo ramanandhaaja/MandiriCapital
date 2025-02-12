@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\HomeArticle;
-
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
@@ -13,22 +12,34 @@ class HomeArticleSeeder extends Seeder
     {
         $articles = [
             [
-                'category' => 'Counter',
-                'title' => 'AUM',
-                'slug' => 'aum',
-                'content' => 'IDR3,844Bn',
-                'sub_content' => '',
+                'title' => [
+                    'en' => 'AUM',
+                    'id' => 'AUM'
+                ],
+                'content' => [
+                    'en' => 'IDR3,844Bn',
+                    'id' => 'IDR3,844M'
+                ],
+                'sub_content' => [
+                    'en' => '',
+                    'id' => ''
+                ],
                 'published_date' => Carbon::now()->subDays(30),
-                'image_path' => ''
             ],
             [
-                'category' => 'Counter',
-                'title' => 'Bank Mandiri Total Asset',
-                'slug' => 'bank-mandiri-total-asset',
-                'content' => 'IDR2,427Tn',
-                'sub_content' => '*As of December 2024',
+                'title' => [
+                    'en' => 'Bank Mandiri Total Asset',
+                    'id' => 'Total Aset Bank Mandiri'
+                ],
+                'content' => [
+                    'en' => 'IDR2,427Tn',
+                    'id' => 'IDR2,427T'
+                ],
+                'sub_content' => [
+                    'en' => '*As of December 2024',
+                    'id' => '*Per Desember 2024'
+                ],
                 'published_date' => Carbon::now()->subDays(15),
-                'image_path' => ''
             ]
         ];
 

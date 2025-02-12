@@ -30,17 +30,19 @@
     <div class="headline-section" id="business-section">
 
         <div class="hero-mid-section">
-            <h1 class="center-text">{{ $menuSubCategory->first()->headline_text  }}</h1>
+            <h1 class="center-text">{!! $menuSubCategory->first()?->getTranslation('headline_text', session('locale', 'en')) ?? '' !!}
+            </h1>
+
          </div>
 
         <div class="headline-section-two">
             <div class="headline-grid-counter">
                 @foreach ($counters as $index => $article)
                     <div class="headline-card-two {{ $index === 1 ? 'middle-border' : '' }}">
-                        <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article['content'] }}">
-                            {{ $article['content'] }}</div>
-                        <h1>{{ $article['title'] }}</h1>
-                        <p class="subtitle">{{ $article['subtitle'] }}</p>
+                        <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article->getTranslation('content', session('locale', 'en')) }}">
+                            {{ $article->getTranslation('content', session('locale', 'en')) }}</div>
+                        <h1>{{ $article->getTranslation('title', session('locale', 'en')) }}</h1>
+                        <p class="subtitle">{{ $article->getTranslation('subtitle', session('locale', 'en')) }}</p>
                     </div>
                 @endforeach
             </div>
@@ -85,26 +87,26 @@
 
         <div class="masonry-grid-investment-section">
             <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">What we focus on?</h1>
+                <h1 class="grid-headline-title">{{ session('locale', 'en') === 'id' ? 'Apa yang Menjadi Fokus Kami?' : 'What we focus on?' }}</h1>
             </div>
 
             <div class="grid-headline-description-card">
                 @foreach ($platformFocusCategory as $index => $article)
                     <div class="section-content">
-                        <h1 class="grid-headline-title-sub">{{ $article['name'] }}</h1>
+                        <h1 class="grid-headline-title-sub">{{ $article->getTranslation('name', session('locale', 'en')) }}</h1>
                         <div class="masonry-grid-investment-section-sub">
-                            @foreach ($platformFocusList->where('platform_category_id', $article['id']) as $subArticle)
+                            @foreach ($platformFocusList->where('platform_category_id', $article->id) as $subArticle)
                                 <div class="grid-headline-title-card-sub">
-                                    @if ($subArticle['image_path'])
+                                    @if ($subArticle->image_path)
                                         <div class="card-icon">
-                                            <img src="{{ '/storage/' . $subArticle['image_path'] }}" alt="">
+                                            <img src="{{ '/storage/' . $subArticle->image_path }}" alt="">
                                         </div>
                                     @else
                                         <div class="card-icon-bottom">
                                             <h1 class="card-title-bottom"></h1>
                                         </div>
                                     @endif
-                                    <h2 class="card-title">{{ $subArticle['title'] }}</h2>
+                                    <h2 class="card-title">{{ $subArticle->getTranslation('title', session('locale', 'en')) }}</h2>
                                 </div>
                             @endforeach
                         </div>
@@ -117,12 +119,13 @@
         <div class="potential-section">
             @foreach ($platformArticle as $index => $article)
                 <div class="potential-title-card">
-                    <h1 class="potential-title">{{ $article->title }}</h1>
+                    <h1 class="potential-title">{{ $article->getTranslation('title', session('locale', 'en')) }}</h1>
+                    <p class="potential-subtitle">{{ $article->getTranslation('subtitle', session('locale', 'en')) }}</p>
                 </div>
 
                 <div class="potential-content-card">
                     <div class="potential-content-section">
-                        {!! $article->content !!}
+                        {!! $article->getTranslation('content', session('locale', 'en')) !!}
                     </div>
                 </div>
             @endforeach
@@ -132,7 +135,8 @@
     {{-- Synergy Programs Section --}}
     <section class="synergy-section" id="program-section">
         <div class="hero-mid-section">
-            <h1 class="center-text">{{ $menuSubCategory->skip(1)->first()->headline_text  }}</h1>
+            <h1 class="center-text">{!! $menuSubCategory->skip(1)->first()?->getTranslation('headline_text', session('locale', 'en')) ?? '' !!}
+            </h1>
         </div>
 
         @foreach ($valueCreationList as $index => $program)
@@ -188,9 +192,9 @@
 
                     <div class="synergy-content">
                         <img src="{{ '/storage/' . $program->logo }}" alt="{{ $program->title }}" style="height: 80px;">
-                        <h2 class="synergy-title">{!! $program->content_frontpage !!}</h2>
+                        <h2 class="synergy-title">{!! $program->getTranslation('content_frontpage', session('locale', 'en')) !!}</h2>
                         <div class="synergy-info">
-                            <p>{!! $program->content_sub_frontpage !!}</p>
+                            <p>{!! $program->getTranslation('content_sub_frontpage', session('locale', 'en')) !!}</p>
                         </div>
 
                         <div class="synergy-register">

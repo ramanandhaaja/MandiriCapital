@@ -4,17 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class AboutPrioritySector extends Model
 {
     use HasFactory;
+    use HasFactory, HasTranslations;
 
     protected $table = 'about_priority_sector';
+
+    public array $translatable = [
+        'title',
+    ];
 
     protected $fillable = [
         'title',
         'slug',
-        'content',
         'published_date',
         'image_path'
     ];

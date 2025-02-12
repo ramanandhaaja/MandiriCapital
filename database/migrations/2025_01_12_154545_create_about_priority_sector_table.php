@@ -14,14 +14,14 @@ return new class extends Migration
 
         Schema::create('about_mci_intro', function (Blueprint $table) {
             $table->id();
-            $table->text('intro');
-            $table->text('headline');
-            $table->text('articletitle1');
-            $table->text('articletitle2');
-            $table->text('articletitle3');
-            $table->text('article1');
-            $table->text('article2');
-            $table->text('article3');
+            $table->json('intro');
+            $table->json('headline');
+            $table->json('articletitle1');
+            $table->json('articletitle2');
+            $table->json('articletitle3');
+            $table->json('article1');
+            $table->json('article2');
+            $table->json('article3');
             $table->string('icon_article1');
             $table->string('icon_article2');
             $table->string('icon_article3');
@@ -30,9 +30,8 @@ return new class extends Migration
 
         Schema::create('about_priority_sector', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
+            $table->json('title')->nullable();
             $table->text('slug')->nullable();
-            $table->text('content')->nullable();
             $table->date('published_date')->nullable();
             $table->string('image_path')->nullable();
             $table->timestamps();
@@ -40,38 +39,37 @@ return new class extends Migration
 
         Schema::create('about_mandiri_ecosystem_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->json('name');
             $table->integer('order');
             $table->timestamps();
         });
 
         Schema::create('about_mandiri_ecosystem', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
+            $table->json('title')->nullable();
             $table->text('slug')->nullable();
-            $table->text('content')->nullable();
+            $table->json('content')->nullable();
             $table->date('published_date')->nullable();
             $table->string('image_path')->nullable();
             $table->boolean('is_domestic')->default(false);
             $table->boolean('is_international')->default(false);
             $table->boolean('is_headline')->default(false);
-            $table->string('group')->nullable();
-            $table->text('hover_focus_area')->nullable();
-            $table->text('hover_content')->nullable();
+            $table->json('hover_focus_area')->nullable();
+            $table->json('hover_content')->nullable();
             $table->foreignId('about_ecosystem_category_id')->constrained('about_mandiri_ecosystem_categories')->onDelete('cascade');
             $table->timestamps();
         });
 
         Schema::create('about_team_headlines', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('content')->nullable();
+            $table->json('title');
+            $table->json('content')->nullable();
             $table->timestamps();
         });
 
         Schema::create('about_team_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->json('name');
             $table->integer('order');
             $table->timestamps();
         });
@@ -79,9 +77,7 @@ return new class extends Migration
         Schema::create('about_teams', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('job_group')->nullable();
-            $table->string('title')->nullable();
-            $table->text('content')->nullable();
+            $table->json('title')->nullable();
             $table->date('published_date')->nullable();
             $table->string('image_path')->nullable();
             $table->foreignId('about_team_category_id')->constrained()->onDelete('cascade');

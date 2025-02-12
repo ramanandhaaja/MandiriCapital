@@ -24,8 +24,14 @@ class PlatformValueCreationSeeder extends Seeder
 
                 'title' => 'Xponent',
                 'slug' => 'xponent',
-                'content_frontpage' => "Connecting Startups Discover What's Possible",
-                'content_sub_frontpage' => 'Business Matchmaking between startups and Mandiri Group, speed dating with investment team, and sharing session',
+                'content_frontpage' => [
+                    'en' => "Connecting Startups Discover What's Possible",
+                    'id' => "Menghubungkan Startup Menemukan Berbagai Kemungkinan"
+                ],
+                'content_sub_frontpage' => [
+                    'en' => 'Business Matchmaking between startups and Mandiri Group, speed dating with investment team, and sharing session',
+                    'id' => 'Pencocokan bisnis antara startup dan Grup Mandiri, speed dating dengan tim investasi, dan sesi berbagi'
+                ],
                 'logo' => 'platforms/01JHG8DQPQSJ55ETWR63FPN3RC.png',
                 'image_path_frontpage1' => 'platforms/01JKMXV95BQY33Z8TZ0KJY5MEX.jpg',
                 'image_path_frontpage2' => 'platforms/01JKMXV95D9AXJJBHKMPK58H50.jpg',
@@ -38,8 +44,14 @@ class PlatformValueCreationSeeder extends Seeder
 
                 'title' => 'Yaxis',
                 'slug' => 'yaxis',
-                'content_frontpage' => "Network & Industry Enrichment",
-                'content_sub_frontpage' => 'Networking event designed to bring startup founders, corporations, regulators, government, and tech communities together to meet, connect, and build relationships and explore potential collaborations',
+                'content_frontpage' => [
+                    'en' => "Network & Industry Enrichment",
+                    'id' => "Jaringan & Pengayaan Industri"
+                ],
+                'content_sub_frontpage' => [
+                    'en' => 'Networking event designed to bring startup founders, corporations, regulators, government, and tech communities together to meet, connect, and build relationships and explore potential collaborations',
+                    'id' => 'Acara jaringan yang dirancang untuk membawa pendiri startup, perusahaan, regulator, pemerintah, dan komunitas teknologi bersama-sama untuk bertemu, terhubung, membangun hubungan dan menjelajahi potensi kolaborasi'
+                ],
                 'logo' => 'platforms/01JHG8K3DJ8QG7P82PY1V9F7RH.png',
                 'image_path_frontpage1' => 'platforms/01JKMY629R066ATP4XW4XKDK10.jpg',
                 'image_path_frontpage2' => 'platforms/01JKMY629TJBYR4F5X78W2GYTN.jpg',
@@ -52,8 +64,14 @@ class PlatformValueCreationSeeder extends Seeder
 
                 'title' => 'Zenith',
                 'slug' => 'zenith',
-                'content_frontpage' => "Zenith Startup Accelerator",
-                'content_sub_frontpage' => 'Accelerator program to accelerate integration between startup and Mandiri Group. The program includes 3 different sessions which include mentoring, focus group discussion, and synergy creation.',
+                'content_frontpage' => [
+                    'en' => "Zenith Startup Accelerator",
+                    'id' => "Pengembangan Startup Zenith"
+                ],
+                'content_sub_frontpage' => [
+                    'en' => 'Accelerator program to accelerate integration between startup and Mandiri Group. The program includes 3 different sessions which include mentoring, focus group discussion, and synergy creation.',
+                    'id' => 'Program akselerator untuk mempercepat integrasi antara startup dan Grup Mandiri. Program ini mencakup 3 sesi yang berbeda yang mencakup mentoring, diskusi kelompok fokus, dan penciptaan sinergi.'
+                ],
                 'logo' => 'platforms/01JHG8KFCAQJ4ASQ3406YMP8AB.png',
                 'image_path_frontpage1' => 'platforms/01JKMY86HD6EDPB6TQWKWZD3EB.png',
                 'image_path_frontpage2' => '',
