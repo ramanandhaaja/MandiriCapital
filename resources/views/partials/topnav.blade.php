@@ -30,7 +30,7 @@
                     <i class="fas fa-search"></i>
                 </button>
 
-                <div class="language-selector" style="visibility: hidden;">
+                <div class="language-selector">
                     <a href="{{ route('language.switch', 'en') }}" class="lang-link {{ session('locale', 'en') == 'en' ? 'active' : '' }}">EN</a>
                     <span class="lang-separator">|</span>
                     <a href="{{ route('language.switch', 'id') }}" class="lang-link {{ session('locale', 'en') == 'id' ? 'active' : '' }}">ID</a>

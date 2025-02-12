@@ -13,17 +13,34 @@ class PublicationSeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Annual & Financial Report'],
-            ['name' => 'Sustainability Report'],
-            ['name' => 'Whitepaper'],
+            [
+                'name' => [
+                    'en' => 'Annual & Financial Report',
+                    'id' => 'Laporan Tahunan & Keuangan'
+                ],
+                'slug' => 'annual-and-financial-report',
+            ],
+            [
+                'name' => [
+                    'en' => 'Sustainability Report',
+                    'id' => 'Laporan Keberlanjutan'
+                ],
+                'slug' => 'sustainability-report',
+            ],
+            [
+                'name' => [
+                    'en' => 'Whitepaper',
+                    'id' => 'Dokumen Teknis'
+                ],
+                'slug' => 'whitepaper',
+            ]
         ];
 
         $categoryIds = [];
         foreach ($categories as $category) {
-            $slug = Str::slug($category['name']);
             $createdCategory = PublicationCategory::updateOrCreate(
-                ['slug' => $slug],
-                array_merge($category, ['slug' => $slug])
+                ['slug' => $category['slug']],
+                $category
             );
             $categoryIds[] = $createdCategory->id;
         }

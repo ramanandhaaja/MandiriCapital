@@ -22,22 +22,50 @@ class PublicationCategoryResource extends Resource
     protected static ?int $navigationSort = 64;
 
     public static function form(Form $form): Form
+
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255)
-                    ->live(onBlur: true)
-                    ->afterStateUpdated(fn (string $state, callable $set) =>
-                        $set('slug', Str::slug($state))
-                    ),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255)
-                    ->unique(PublicationCategory::class, 'slug', ignoreRecord: true),
+                Forms\Components\Grid::make()
+                    ->schema([
+                        Forms\Components\Section::make()
+                            ->schema([
+                                Forms\Components\Tabs::make('Translations')
+                                    ->tabs([
+                                        Forms\Components\Tabs\Tab::make('English')
+                                            ->schema([
+                                                Forms\Components\TextInput::make('name.en')
+                                                    ->label('Name (English)')
+                                                    ->required()
+                                                    ->maxLength(255)
+                                                    ->live(onBlur: true)
+                                                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                                                        if ($operation === 'create') {
+                                                            $set('slug', Str::slug($state));
+                                                        }
+                                                    }),
+                                            ]),
+                                        Forms\Components\Tabs\Tab::make('Indonesian')
+                                            ->schema([
+                                                Forms\Components\TextInput::make('name.id')
+                                                    ->label('Name (Indonesian)')
+                                                    ->required()
+                                                    ->maxLength(255),
+                                            ]),
+                                    ]),
+
+                                    Forms\Components\TextInput::make('slug')
+                                    ->required()
+                                    ->disabled()
+                                    ->unique(PublicationCategory::class, 'slug', ignoreRecord: true),
+
+                            ])
+                            ->columnSpan(2),
+                    ])
+                    ->columns(3)
             ]);
     }
+
 
     public static function table(Table $table): Table
     {

@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\AboutTeamResource\Pages;
 use App\Models\AboutTeam;
+use App\Models\AboutTeamCategory;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -71,6 +72,16 @@ class AboutTeamResource extends Resource
                             Forms\Components\Group::make()
                                 ->schema([
 
+                                    Forms\Components\Section::make('Category')
+                                        ->schema([
+                                            Forms\Components\Select::make('about_team_category_id')
+                                                ->label('Category')
+                                                ->relationship('category', 'name')
+                                                ->required()
+                                                ->preload()
+                                                ->searchable(),
+
+                                        ]),
                                     Forms\Components\Section::make('Team Photo')
                                         ->schema([
                                             Forms\Components\FileUpload::make('image_path')

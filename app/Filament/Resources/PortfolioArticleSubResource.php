@@ -21,11 +21,11 @@ class PortfolioArticleSubResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?int $navigationSort = 31;
 
-    protected static ?string $navigationLabel = 'Get Investment Sub-Articles';
+    protected static ?string $navigationLabel = 'Get Investment';
 
-    protected static ?string $modelLabel = 'Get Investment Sub-Articles';
+    protected static ?string $modelLabel = 'Get Investment ';
 
-    protected static ?string $pluralModelLabel = 'Get Investment Sub-Articles';
+    protected static ?string $pluralModelLabel = 'Get Investment ';
 
     public static function form(Form $form): Form
     {
@@ -81,6 +81,19 @@ class PortfolioArticleSubResource extends Resource
 
                 Forms\Components\Group::make()
                     ->schema([
+                        Forms\Components\Section::make('Icon')
+                        ->schema([
+                            Forms\Components\Section::make('Category')
+                                        ->schema([
+                                            Forms\Components\Select::make('article_id')
+                                                ->label('Category')
+                                                ->relationship('article', 'title')
+                                                ->required()
+                                                ->preload()
+                                                ->searchable(),
+
+                                        ]),
+                        ]),
                         Forms\Components\Section::make('Icon')
                         ->schema([
                             Forms\Components\FileUpload::make('icon')

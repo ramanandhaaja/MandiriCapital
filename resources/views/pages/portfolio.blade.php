@@ -388,9 +388,9 @@
                                             {!! $subArticle->getTranslation('title', session('locale', 'en')) !!}
                                         </div>
                                         <div class="card-funding-content{{ $subArticle->is_large ? '-large' : '' }}">
-                                            {!! $subArticle->getTranslation('content', session('locale', 'en')) !!}
+                                            {!! $subArticle->getTranslation('about_content_front', session('locale', 'en')) !!}
                                         </div>
-                                            <a href="{{ route('portfolio.show.funding', $subArticle->title) }}" class="text-decoration-none">
+                                            <a href="{{ route('portfolio.show.funding', $subArticle->id) }}" class="text-decoration-none">
                                                 <span class="funding-link">{{ session('locale') === 'id' ? 'Detail Dana >>' : 'Fund Details >>' }}</span>
                                             </a>
 

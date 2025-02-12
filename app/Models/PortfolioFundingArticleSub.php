@@ -15,23 +15,46 @@ class PortfolioFundingArticleSub extends Model
 
     public array $translatable = [
         'title',
-        'content',
+        'about_title',
+        'about_content_front',
+        'about_content',
+        'investment_thesis_title',
+        'investment_thesis_content',
+        'investor_title',
+        'investment_criteria_title',
+        'headline_title',
         'stage',
         'geography',
         'ticketsize',
+
     ];
 
     protected $fillable = [
         'article_id',
         'title',
-        'content',
-        'is_large',
-        'image_path',
-        'is_active',
-        'order',
+        'about_title',
+        'about_content_front',
+        'about_content',
+        'investment_thesis_title',
+        'investment_thesis_content',
+        'investor_title',
+        'investor1_url',
+        'investor2_url',
+        'investor3_url',
+        'investor4_url',
+        'investor5_url',
+        'investor6_url',
+        'investment_criteria_title',
         'stage',
         'geography',
         'ticketsize',
+        'is_large',
+        'headline_title',
+        'headline_url',
+        'image_path',
+        'is_active',
+        'order',
+
     ];
 
     /**

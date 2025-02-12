@@ -201,9 +201,15 @@ class PageController extends Controller
         return view('pages.portfolio-show', compact('portfolio'));
     }
 
-    public function portfolioShowFunding($title)
+    public function portfolioShowFunding($id)
     {
-        //$portfolioFunding = PortfolioFundingArticleSub::where('id', $id)->firstOrFail();
+        $portfolioFunding = PortfolioFundingArticleSub::where('id', $id)->firstOrFail();
+
+        $title = $portfolioFunding->title;
+
+        return view('pages.portfolio-show-funding', compact('portfolioFunding', 'title'));
+
+        /*
         if ($title=="Balance Sheet Fund") {
             return view('pages.portfolio-show-funding-balancesheet');
         } elseif ($title=="Merah Putih Fund (MPF)") {
@@ -212,7 +218,7 @@ class PageController extends Controller
             return view('pages.portfolio-show-funding-iif');
         }elseif ($title=="BTN Fund") {
             return view('pages.portfolio-show-funding-btn');
-        }
+        }*/
 
 
     }
@@ -356,7 +362,7 @@ class PageController extends Controller
 
         if ($category !== 'all') {
             $query->whereHas('category', function ($query) use ($category) {
-                $query->where('name', ucfirst($category));
+                $query->where('name', $category);
             });
         }
 
@@ -367,13 +373,15 @@ class PageController extends Controller
 
     public function mediaFilter($category)
     {
-        $query = BlogPost::with(['categories'])
+        $query = BlogPost::with(['categories' => function($query) {
+            $query->select(['id', 'name', 'slug']);
+        }])
             ->where('status', 'published')
             ->whereNotNull('published_at');
 
         if ($category !== 'all') {
             $query->whereHas('categories', function ($query) use ($category) {
-                $query->where('slug', ucfirst($category));
+                $query->where('slug', $category);
             });
         } else {
             $query->take(7);
@@ -386,16 +394,20 @@ class PageController extends Controller
 
     public function reportFilter($category)
     {
-        $query = Publication::with('category')
-            ->orderBy('published_date', 'desc');
+        Log::info('Filtering with category: ' . $category); // Debug category
 
-        if ($category !== 'all') {
+        $query = Publication::with(['category' => function($query) {
+            $query->select(['id', 'name', 'slug']);
+        }])->orderBy('published_date', 'desc');
+
+        if ($category !== 'all-report') {
             $query->whereHas('category', function ($query) use ($category) {
-                $query->where('name', ucfirst($category));
+                $query->where('slug', $category);
             });
         }
 
         $publications = $query->get();
+        Log::info('Found publications: ' . $publications->count()); // Debug result count
 
         return response()->json($publications);
     }
@@ -407,7 +419,7 @@ class PageController extends Controller
 
         if ($category !== 'all') {
             $query->whereHas('category', function ($query) use ($category) {
-                $query->where('name', ucfirst($category));
+                $query->where('name', $category);
             });
         }
 
@@ -423,7 +435,7 @@ class PageController extends Controller
 
         if ($category !== 'all') {
             $query->whereHas('category', function ($query) use ($category) {
-                $query->where('name', ucfirst($category));
+                $query->where('name', $category);
             });
         }
 

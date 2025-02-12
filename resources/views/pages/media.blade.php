@@ -38,7 +38,7 @@
                 {{-- SUB MENU  --}}
                 <nav class="category-filters">
                     @foreach ($menuSubCategory as $menuSubCat)
-                        <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ Str::slug($menuSubCat->slug) }}">{{ $menuSubCat->name }}</a>
+                        <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ $menuSubCat->slug }}">{{ $menuSubCat->name }}</a>
                     @endforeach
                 </nav>
             </div>
@@ -146,6 +146,8 @@
                 e.preventDefault();
                 const filter = this.textContent.toLowerCase();
                 currentFilter = filter;
+
+                console.log(filter);
 
                 // Update active state of filter links
                 elements.filterLinks.forEach(link => {
@@ -281,7 +283,7 @@
                                     ${blogHeader}
                                     <div class="main-content">
                                         <div class="background-image" style="background-image: url('${backgroundImage}');"></div>
-                                        <span class="category filter-dependent" style="display: ${filterDependentDisplay};">${post.categories?.name || ''}</span>
+                                        <span class="category filter-dependent" style="display: ${filterDependentDisplay};">{!! $category->getTranslation('name', session('locale', 'en')) !!}</span>
                                         <div class="card-content">
                                             <h2>${post.title}</h2>
                                             <span class="post-date" style="display: ${postDateDisplay};">${date}</span>

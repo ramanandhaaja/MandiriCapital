@@ -21,11 +21,11 @@ class PortfolioFundingArticleResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?int $navigationSort = 35;
 
-    protected static ?string $navigationLabel = 'Funding Articles';
+    protected static ?string $navigationLabel = 'Funding Category';
 
-    protected static ?string $modelLabel = 'Funding Articles';
+    protected static ?string $modelLabel = 'Funding Category';
 
-    protected static ?string $pluralModelLabel = 'Funding Articles';
+    protected static ?string $pluralModelLabel = 'Funding Category';
 
     public static function form(Form $form): Form
     {

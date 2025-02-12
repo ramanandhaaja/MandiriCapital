@@ -21,11 +21,11 @@ class PortfolioFundingArticleSubResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?int $navigationSort = 36;
 
-    protected static ?string $navigationLabel = 'Funding Sub-Articles';
+    protected static ?string $navigationLabel = 'Funding List';
 
-    protected static ?string $modelLabel = 'Funding Sub-Articles';
+    protected static ?string $modelLabel = 'Funding List';
 
-    protected static ?string $pluralModelLabel = 'Funding Sub-Articles';
+    protected static ?string $pluralModelLabel = 'Funding List';
 
     public static function form(Form $form): Form
     {
@@ -48,11 +48,64 @@ class PortfolioFundingArticleSubResource extends Resource
                                                             ->live(onBlur: true)
                                                             ->columnSpanFull(),
 
-                                                        Forms\Components\RichEditor::make('content.en')
-                                                            ->label('Content (English)')
+                                                        Forms\Components\RichEditor::make('about_content_front.en')
+                                                            ->label('Front Content (English)')
                                                             ->required()
                                                             ->maxLength(65535)
                                                             ->columnSpanFull(),
+
+                                                        Forms\Components\TextInput::make('about_title.en')
+                                                            ->label('About Title (English)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\RichEditor::make('about_content.en')
+                                                            ->label('About Content (English)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\TextInput::make('investment_thesis_title.en')
+                                                            ->label('Investment Thesis Title (English)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\RichEditor::make('investment_thesis_content.en')
+                                                            ->label('Investment Thesis Content (English)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\TextInput::make('investor_title.en')
+                                                            ->label('Investor Title (English)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\TextInput::make('investment_criteria_title.en')
+                                                            ->label('Investment Criteria Title (English)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                            Forms\Components\TextInput::make('stage.en')
+                                                            ->label('Stage (English)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                            Forms\Components\TextInput::make('geography.en')
+                                                            ->label('Geography (English)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                            Forms\Components\TextInput::make('ticketsize.en')
+                                                            ->label('Ticket Size (English)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
                                                     ]),
 
                                                 Forms\Components\Tabs\Tab::make('Indonesian')
@@ -64,10 +117,62 @@ class PortfolioFundingArticleSubResource extends Resource
                                                             ->live(onBlur: true)
                                                             ->columnSpanFull(),
 
-                                                        Forms\Components\RichEditor::make('content.id')
-                                                            ->label('Content (Indonesian)')
+                                                        Forms\Components\RichEditor::make('about_content_front.id')
+                                                            ->label('Front Content (Indonesian)')
                                                             ->required()
                                                             ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+                                                            Forms\Components\TextInput::make('about_title.id')
+                                                            ->label('About Title (Indonesian)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\RichEditor::make('about_content.id')
+                                                            ->label('About Content (Indonesian)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\TextInput::make('investment_thesis_title.id')
+                                                            ->label('Investment Thesis Title (Indonesian)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\RichEditor::make('investment_thesis_content.id')
+                                                            ->label('Investment Thesis Content (Indonesian)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\TextInput::make('investor_title.id')
+                                                            ->label('Investor Title (Indonesian)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\TextInput::make('investment_criteria_title.id')
+                                                            ->label('Investment Criteria Title (Indonesian)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                            Forms\Components\TextInput::make('stage.id')
+                                                            ->label('Stage (Indonesian)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                            Forms\Components\TextInput::make('geography.id')
+                                                            ->label('Geography (Indonesian)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull(),
+
+                                                            Forms\Components\TextInput::make('ticketsize.id')
+                                                            ->label('Ticket Size (Indonesian)')
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
                                                             ->columnSpanFull(),
                                                     ]),
                                             ])
@@ -80,16 +185,78 @@ class PortfolioFundingArticleSubResource extends Resource
                     ->columnSpan(['lg' => 2]),
 
                 Forms\Components\Group::make()
+
                     ->schema([
-                        Forms\Components\Section::make('image_path')
+                        Forms\Components\Section::make('Category')
+                        ->schema([
+                            Forms\Components\Select::make('article_id')
+                        ->label('Category')
+                        ->relationship('article', 'title')
+                        ->required()
+                        ->preload()
+                        ->searchable(),
+
+                        ]),
+
+                        Forms\Components\Section::make('Image List')
                         ->schema([
                             Forms\Components\FileUpload::make('image_path')
                                 ->image()
-                                ->image()
+                                ->label('Logo')
                                 ->disk('public')
                                 ->directory('portfolios')
                                 ->visibility('public')
                                 ->columnSpanFull(),
+                            Forms\Components\FileUpload::make('headline_url')
+                                ->image()
+                                ->label('Headline Image')
+                                ->disk('public')
+                                ->directory('portfolios')
+                                ->visibility('public')
+                                ->columnSpanFull(),
+                            Forms\Components\FileUpload::make('investor1_url')
+                                ->image()
+                                ->label('Investor 1 Image')
+                                ->disk('public')
+                                ->directory('portfolios')
+                                ->visibility('public')
+                                ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('investor2_url')
+                                ->image()
+                                ->label('Investor 2 Image')
+                                ->disk('public')
+                                ->directory('portfolios')
+                                ->visibility('public')
+                                ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('investor3_url')
+                                ->image()
+                                ->label('Investor 3 Image')
+                                ->disk('public')
+                                ->directory('portfolios')
+                                ->visibility('public')
+                                ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('investor4_url')
+                                ->image()
+                                ->label('Investor 4 Image')
+                                ->disk('public')
+                                ->directory('portfolios')
+                                ->visibility('public')
+                                ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('investor5_url')
+                                ->image()
+                                ->label('Investor 5 Image')
+                                ->disk('public')
+                                ->directory('portfolios')
+                                ->visibility('public')
+                                ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('investor6_url')
+                                ->image()
+                                ->label('Investor 6 Image')
+                                ->disk('public')
+                                ->directory('portfolios')
+                                ->visibility('public')
+                                ->columnSpanFull(),
+
 
                         ]),
                     ])

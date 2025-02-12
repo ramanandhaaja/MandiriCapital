@@ -40,28 +40,45 @@ class AboutMandiriEcosystemResource extends Resource
                                     ->schema([
                                         Forms\Components\Grid::make(2)
                                             ->schema([
-                                                Forms\Components\TextInput::make('title')
-                                                    ->required()
-                                                    ->maxLength(255)
-                                                    ->live(onBlur: true)
-                                                    ->afterStateUpdated(
-                                                        fn(string $state, callable $set) =>
-                                                        $set('slug', Str::slug($state))
-                                                    ),
-
-
+                                                Forms\Components\Tabs::make('Translations')
+                                                    ->tabs([
+                                                        Forms\Components\Tabs\Tab::make('English')
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('title.en')
+                                                                    ->label('Title (English)')
+                                                                    ->required()
+                                                                    ->maxLength(255)
+                                                                    ->live(onBlur: true)
+                                                                    ->afterStateUpdated(
+                                                                        fn(string $state, callable $set) =>
+                                                                        $set('slug', Str::slug($state))
+                                                                    ),
+                                                                Forms\Components\RichEditor::make('content.en')
+                                                                    ->label('Content (English)')
+                                                                    ->required()
+                                                                    ->maxLength(65535),
+                                                            ]),
+                                                        Forms\Components\Tabs\Tab::make('Indonesian')
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('title.id')
+                                                                    ->label('Title (Indonesian)')
+                                                                    ->required()
+                                                                    ->maxLength(255),
+                                                                Forms\Components\RichEditor::make('content.id')
+                                                                    ->label('Content (Indonesian)')
+                                                                    ->required()
+                                                                    ->maxLength(65535),
+                                                            ]),
+                                                    ])
+                                                    ->columnSpanFull(),
                                             ]),
-
-                                        Forms\Components\RichEditor::make('content')
-
-                                            ->maxLength(65535)
-                                            ->columnSpanFull(),
 
                                         Forms\Components\Grid::make(2)
                                             ->schema([
                                                 Forms\Components\TextInput::make('slug')
                                                     ->required()
                                                     ->maxLength(255)
+                                                    ->disabled()
                                                     ->unique(AboutMandiriEcosystem::class, 'slug', ignoreRecord: true),
 
 
@@ -72,16 +89,32 @@ class AboutMandiriEcosystemResource extends Resource
 
                                 Forms\Components\Section::make('Mouse-Hover')
                                     ->schema([
-                                        Forms\Components\RichEditor::make('hover_focus_area')
-                                            ->label('Hover Focus Area')
-                                            ->maxLength(65535)
+                                        Forms\Components\Tabs::make('Hover Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('hover_focus_area.en')
+                                                            ->label('Hover Focus Area (English)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\RichEditor::make('hover_content.en')
+                                                            ->label('Hover Content (English)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\RichEditor::make('hover_focus_area.id')
+                                                            ->label('Hover Focus Area (Indonesian)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\RichEditor::make('hover_content.id')
+                                                            ->label('Hover Content (Indonesian)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+                                                    ]),
+                                            ])
                                             ->columnSpanFull(),
-
-                                        Forms\Components\RichEditor::make('hover_content')
-                                            ->label('Hover Content')
-                                            ->maxLength(65535)
-                                            ->columnSpanFull(),
-
                                     ])
                                     ->columns(2),
 
@@ -91,6 +124,16 @@ class AboutMandiriEcosystemResource extends Resource
 
                         Forms\Components\Group::make()
                             ->schema([
+                                Forms\Components\Section::make('Category')
+                                ->schema([
+                                    Forms\Components\Select::make('about_ecosystem_category_id')
+                                        ->label('Category')
+                                        ->relationship('category', 'name')
+                                        ->required()
+                                        ->preload()
+                                        ->searchable(),
+
+                                ]),
                                 Forms\Components\Section::make('Headline')
                                     ->schema([
                                         Forms\Components\Checkbox::make('is_headline')
@@ -111,7 +154,6 @@ class AboutMandiriEcosystemResource extends Resource
                                             ])
                                             ->columns(2),
                                     ]),
-
                                 Forms\Components\Section::make('Image')
                                     ->schema([
                                         Forms\Components\FileUpload::make('image_path')

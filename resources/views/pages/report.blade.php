@@ -43,7 +43,7 @@
                 {{-- SUB MENU  --}}
                 <nav class="category-filters">
                     @foreach ($menuSubCategory as $menuSubCat)
-                        <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ Str::slug($menuSubCat->slug) }}">{{ $menuSubCat->name }}</a>
+                        <a href="#" class="filter-link" data-filter="{{ $menuSubCat->slug }}">{{ $menuSubCat->getTranslation('name', session('locale', 'en')) }}</a>
                     @endforeach
                 </nav>
             </div>
@@ -56,7 +56,7 @@
             @if($index < 10)
                 <div class="card" style="background-image: url('{{ $publication->image_path ? Storage::url($publication->image_path) : asset("images/media/image" . ($index + 1) . ".png") }}');">
                     <a href="{{ route('report.show', $publication->slug) }}" class="text-decoration-none">
-                        <span class="category">{{ $publication->category->name ?? '' }}</span>
+                        <span class="category">{{ $publication->category?->getTranslation('name', session('locale', 'en')) ?? '' }}</span>
                         <div class="card-content">
                             <h2>{{ $publication->title }}</h2>
                         </div>
@@ -91,7 +91,7 @@
                 routePattern: document.querySelector('.masonry-grid').dataset.routePattern
             };
 
-            let currentFilter = 'all';
+            let currentFilter = 'all-report';
 
             // Initialize filter click handlers
             initializeFilters();
@@ -111,8 +111,9 @@
              */
             async function handleFilterClick(e) {
                 e.preventDefault();
+                const filter = this.getAttribute('data-filter');
                 updateActiveFilter(this);
-                await fetchAndUpdatePublications(this.textContent.toLowerCase());
+                await fetchAndUpdatePublications(filter);
             }
 
             /**
@@ -130,6 +131,7 @@
              */
             async function fetchAndUpdatePublications(filter) {
                 try {
+                    console.log('Fetching with filter:', filter); // Debug filter value
                     const response = await fetch(`/report/filter/${filter}`, {
                         headers: { 'X-Requested-With': 'XMLHttpRequest' }
                     });
@@ -137,6 +139,7 @@
                     if (!response.ok) throw new Error('Network response was not ok');
 
                     const publications = await response.json();
+                    console.log('Received publications:', publications); // Debug response
                     updatePublicationsGrid(publications);
                 } catch (error) {
                     console.error('Error fetching publications:', error);
@@ -154,10 +157,13 @@
                         ? '/storage/' + publication.image_path
                         : '/images/media/image' + (index + 1) + '.png';
 
+                    const locale = '{{ session('locale', 'en') }}';
+                    const categoryName = publication.category?.name?.[locale] || '';
+
                     return `
                         <div class="card" style="background-image: url('${imageUrl}');">
                             <a href="${postUrl}" class="text-decoration-none">
-                                <span class="category">${publication.category?.name ?? ''}</span>
+                                <span class="category">${categoryName}</span>
                                 <div class="card-content">
                                     <h2>${publication.title}</h2>
                                 </div>

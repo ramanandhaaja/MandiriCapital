@@ -103,9 +103,8 @@
                 'image' => 'Article6.png',
                 'logo' => '',
                 'position' => 'right',
-                'link' => 'https://mandiri-capital.co.id/report/developing-constructive-collaboration-to-achieve-productive-innovation'
+                'link' => 'http://localhost:8000/media/program-xponent-mci-di-money-20-20-asia-jadi-jembatan-konektivitas-dunia-insight'
             ],
-
             [
                 'type' => 'medium',
                 'category' => 'Featured Investees',
@@ -124,7 +123,7 @@
                 'image' => 'Article8.jpeg',
                 'logo' => '',
                 'position' => 'right',
-                'link' => 'https://mandiri-capital.co.id/media/program-xponent-mci-di-money-2020-asia-jadi-jembatan-konektivitas-dunia-insight'
+                'link' => 'https://mandiri-capital.co.id/report/developing-constructive-collaboration-to-achieve-productive-innovation'
             ],
             [
                 'type' => 'small-square',

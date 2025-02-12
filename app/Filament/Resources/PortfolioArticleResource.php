@@ -21,11 +21,11 @@ class PortfolioArticleResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?int $navigationSort = 30;
 
-    protected static ?string $navigationLabel = 'Get Investment Articles';
+    protected static ?string $navigationLabel = 'Get Investment Category';
 
-    protected static ?string $modelLabel = 'Get Investment Articles';
+    protected static ?string $modelLabel = 'Get Investment Category';
 
-    protected static ?string $pluralModelLabel = 'Get Investment Articles';
+    protected static ?string $pluralModelLabel = 'Get Investment Category';
 
     public static function form(Form $form): Form
     {
@@ -97,72 +97,6 @@ class PortfolioArticleResource extends Resource
 
 
 
-                Forms\Components\Group::make()
-                    ->schema([
-                        Forms\Components\Section::make('Article Sub Items')
-                            ->schema([
-                                Forms\Components\HasManyRepeater::make('subArticles')
-                                    ->relationship('subArticles')
-                                    ->schema([
-                                        Forms\Components\Grid::make(2)
-                                            ->schema([
-                                                Forms\Components\Tabs::make('Sub Content Translations')
-                                                    ->tabs([
-                                                        Forms\Components\Tabs\Tab::make('English')
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('title.en')
-                                                                    ->label('Title (English)')
-                                                                    ->required()
-                                                                    ->maxLength(255)
-                                                                    ->columnSpanFull(),
-
-                                                                Forms\Components\RichEditor::make('content.en')
-                                                                    ->label('Content (English)')
-                                                                    ->required()
-                                                                    ->maxLength(65535)
-                                                                    ->columnSpanFull(),
-                                                            ]),
-
-                                                        Forms\Components\Tabs\Tab::make('Indonesian')
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('title.id')
-                                                                    ->label('Title (Indonesian)')
-                                                                    ->required()
-                                                                    ->maxLength(255)
-                                                                    ->columnSpanFull(),
-
-                                                                Forms\Components\RichEditor::make('content.id')
-                                                                    ->label('Content (Indonesian)')
-                                                                    ->required()
-                                                                    ->maxLength(65535)
-                                                                    ->columnSpanFull(),
-                                                            ]),
-                                                    ])
-                                                    ->columnSpanFull(),
-                                            ]),
-                                        Forms\Components\Grid::make(3)
-                                            ->schema([
-                                                Forms\Components\FileUpload::make('icon')
-                                                    ->image()
-                                                    ->disk('public')
-                                                    ->directory('portfolios'),
-                                                Forms\Components\TextInput::make('text_icon')
-                                                    ->maxLength(255),
-                                                Forms\Components\TextInput::make('order')
-                                                    ->numeric()
-                                                    ->default(0),
-                                            ]),
-                                        Forms\Components\Toggle::make('is_active')
-                                            ->default(true)
-                                            ->inline(false),
-                                    ])
-                                    ->orderColumn('order')
-                                    ->defaultItems(0)
-                                    ->reorderable()
-                                    ->columnSpanFull()
-                            ])
-                    ])
-                    ->columnSpan(['lg' => 2]),
             ])
             ->columns(3);
     }
