@@ -38,7 +38,7 @@
                 {{-- SUB MENU  --}}
                 <nav class="category-filters">
                     @foreach ($menuSubCategory as $menuSubCat)
-                        <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ $menuSubCat->slug }}">{{ $menuSubCat->name }}</a>
+                        <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ $menuSubCat->slug }}">{{ $menuSubCat->getTranslation('name', session('locale', 'en')) }}</a>
                     @endforeach
                 </nav>
             </div>
@@ -144,14 +144,14 @@
             // Filter click handler
             async function handleFilterClick(e) {
                 e.preventDefault();
-                const filter = this.textContent.toLowerCase();
+                const filter = this.getAttribute('data-filter');
                 currentFilter = filter;
 
                 console.log(filter);
 
                 // Update active state of filter links
                 elements.filterLinks.forEach(link => {
-                    link.classList.toggle('active', link.textContent.toLowerCase() === filter);
+                    link.classList.toggle('active', link.getAttribute('data-filter') === filter);
                 });
 
                 // Update newsletter titles visibility
