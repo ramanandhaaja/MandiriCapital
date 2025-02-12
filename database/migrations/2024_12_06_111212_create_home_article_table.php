@@ -19,6 +19,19 @@ return new class extends Migration
             $table->date('published_date');
             $table->timestamps();
         });
+
+        Schema::create('home_headline', function (Blueprint $table) {
+            $table->id();
+            $table->json('title');
+            $table->json('category')->nullable();
+            $table->string('logo_path')->nullable();
+            $table->string('image_path')->nullable();
+            $table->string('link_url')->nullable();
+            $table->string('type')->nullable();
+            $table->string('position')->nullable();
+            $table->date('published_date');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -27,5 +40,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('home_article');
+        Schema::dropIfExists('home_headline');
     }
 };

@@ -140,17 +140,16 @@
     @endphp
 
     <div class="masonry-grid">
-        @foreach($cards as $card)
-
-            <div class="card {{ $card['type'] }} {{ $card['position'] }}"
-                @if(isset($card['image'])) style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ asset('images/home/' . $card['image']) }}')" @endif>
-                <a href="{{ $card['link'] ?? '#' }}" class="card-link">
-                <span class="category">{{ $card['category'] }}</span>
-                @if($card['logo'])
-                    <img src="{{ asset('images/home/' . $card['logo']) }}" alt="{{ $card['category'] }} Logo" class="logo-card">
+        @foreach($articlesHeadlineList as $card)
+            <div class="card {{ $card->type }} {{ $card->position }}"
+                @if($card->image_path) style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ '/storage/' . $card->image_path }}')" @endif>
+                <a href="{{ $card->link_url ?? '#' }}" class="card-link">
+                <span class="category">{{ $card->getTranslation('category', session('locale', 'en')) }}</span>
+                @if($card->logo_path)
+                    <img src="{{ '/storage/' . $card->logo_path }}" alt="{{ $card->getTranslation('category', session('locale', 'en')) }} Logo" class="logo-card">
                 @endif
                 <div class="card-content">
-                    <h2>{{ $card['title'] }}</h2>
+                    <h2>{{ $card->getTranslation('title', session('locale', 'en')) }}</h2>
                 </div>
                 </a>
             </div>

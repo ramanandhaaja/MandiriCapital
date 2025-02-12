@@ -21,6 +21,7 @@ use App\Models\HeroSection;
 use App\Models\HeroSectionCategory;
 use App\Models\HeroSectionSubCategory;
 use App\Models\HomeArticle;
+use App\Models\HomeHeadline;
 use App\Models\HomeProfileCompany;
 use App\Models\Platform;
 use App\Models\PlatformArticle;
@@ -63,9 +64,13 @@ class PageController extends Controller
 
         $articles = HomeArticle::take(3)->get();
 
+        $articlesHeadlineList = HomeHeadline::all();
+
         $testimonials = HomeProfileCompany::get();
 
-        return view('pages.home', compact('hero', 'articles', 'testimonials'));
+
+
+        return view('pages.home', compact('hero', 'articles', 'articlesHeadlineList', 'testimonials'));
     }
 
     public function about()

@@ -2,30 +2,31 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\HomeProfileCompanyResource\Pages;
-use App\Models\HomeProfileCompany;
+use App\Filament\Resources\HomeArticleHeadlineResource\Pages;
+use App\Models\HomeHeadline;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class HomeProfileCompanyResource extends Resource
+class HomeArticleHeadlineResource extends Resource
 {
-    protected static ?string $model = HomeProfileCompany::class;
+    protected static ?string $model = HomeHeadline::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
 
-    protected static ?string $navigationLabel = 'Testimonial';
+    protected static ?string $navigationLabel = 'Headline News';
 
     protected static ?string $navigationGroup = 'Home Management';
 
-    protected static ?string $modelLabel = 'Testimonial';
+    protected static ?string $modelLabel = 'Headline News';
 
-    protected static ?string $pluralModelLabel = 'Testimonial';
+    protected static ?string $pluralModelLabel = 'Headline News';
 
-    protected static ?int $navigationSort = 12;
+    protected static ?int $navigationSort = 11;
 
     public static function form(Form $form): Form
     {
@@ -37,46 +38,45 @@ class HomeProfileCompanyResource extends Resource
                             ->schema([
                                 Forms\Components\Section::make()
                                     ->schema([
-                                        Forms\Components\Grid::make(2)
-                                            ->schema([
-                                                Forms\Components\TextInput::make('company_name')
-                                                    ->required()
-                                                    ->maxLength(255),
-
-                                                Forms\Components\TextInput::make('name')
-                                                    ->required()
-                                                    ->maxLength(255),
-                                            ]),
 
                                         Forms\Components\Tabs::make('Translations')
                                             ->tabs([
                                                 Forms\Components\Tabs\Tab::make('English')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title.en')
-                                                            ->label('Title (English)')
+                                                        Forms\Components\TextInput::make('category.en')
+                                                            ->label('Category (English)')
                                                             ->required()
                                                             ->maxLength(255),
-                                                        Forms\Components\RichEditor::make('content.en')
-                                                            ->label('Content (English)')
-                                                            ->required()
-                                                            ->maxLength(65535),
+                                                        Forms\Components\TextInput::make('title.en')
+                                                            ->label('Title (English)')
+                                                            ->maxLength(255),
                                                     ]),
                                                 Forms\Components\Tabs\Tab::make('Indonesian')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title.id')
-                                                            ->label('Title (Indonesian)')
+                                                        Forms\Components\TextInput::make('category.id')
+                                                            ->label('Category (Indonesian)')
                                                             ->required()
                                                             ->maxLength(255),
-                                                        Forms\Components\RichEditor::make('content.id')
-                                                            ->label('Content (Indonesian)')
-                                                            ->required()
-                                                            ->maxLength(65535),
+                                                        Forms\Components\TextInput::make('title.id')
+                                                            ->label('Title (Indonesian)')
+                                                            ->maxLength(255),
+
                                                     ]),
                                             ])
                                             ->columnSpanFull(),
+                                        Forms\Components\TextInput::make('link_url')
+                                            ->label('Category (English)')
+                                            ->maxLength(255)
+                                            ->columnSpanFull(),
+                                        Forms\Components\TextInput::make('type')
+                                            ->label('Category (English)')
+                                            ->disabled()
+                                            ->maxLength(255),
 
-
-
+                                         Forms\Components\TextInput::make('position')
+                                            ->label('Position')
+                                            ->disabled()
+                                            ->maxLength(255),
                                     ])
                                     ->columns(2),
                             ])
@@ -84,19 +84,15 @@ class HomeProfileCompanyResource extends Resource
 
                         Forms\Components\Group::make()
                             ->schema([
-                                Forms\Components\Section::make('Company Logo')
+                                Forms\Components\Section::make('Headline Image')
                                     ->schema([
-                                        Forms\Components\FileUpload::make('company_image_path')
-                                            ->required()
+                                        Forms\Components\FileUpload::make('logo_path')
                                             ->acceptedFileTypes(['image/*', 'video/*'])
                                             ->maxSize(50 * 1024) // 50MB max file size
                                             ->disk('public')
                                             ->directory('hero-sections')
                                             ->visibility('public')
                                             ->columnSpanFull(),
-                                    ]),
-                                Forms\Components\Section::make('Founder Photo')
-                                    ->schema([
                                         Forms\Components\FileUpload::make('image_path')
                                             ->required()
                                             ->acceptedFileTypes(['image/*', 'video/*'])
@@ -106,6 +102,7 @@ class HomeProfileCompanyResource extends Resource
                                             ->visibility('public')
                                             ->columnSpanFull(),
                                     ]),
+
                             ])
                             ->columnSpan(1),
                     ])
@@ -117,17 +114,13 @@ class HomeProfileCompanyResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('company_image_path')
-                    ->label('Company Logo')
+                Tables\Columns\ImageColumn::make('image_path')
+                    ->label('Headline Image')
                     ->disk('public')
                     ->height(50),
 
-                Tables\Columns\TextColumn::make('company_name')
-                    ->label('Company Name')
-                    ->sortable()
-                    ->searchable(),
-
-                Tables\Columns\TextColumn::make('name')
+                Tables\Columns\TextColumn::make('category')
+                    ->label('Category')
                     ->sortable()
                     ->searchable(),
 
@@ -153,9 +146,9 @@ class HomeProfileCompanyResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListHomeProfileCompany::route('/'),
-            'create' => Pages\CreateHomeProfileCompany::route('/create'),
-            'edit' => Pages\EditHomeProfileCompany::route('/{record}/edit'),
+            'index' => Pages\ListHomeArticleHeadline::route('/'),
+            'create' => Pages\CreateHomeArticleHeadline::route('/create'),
+            'edit' => Pages\EditHomeArticleHeadline::route('/{record}/edit'),
         ];
     }
 }
