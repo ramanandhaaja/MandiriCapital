@@ -108,12 +108,13 @@
 
             [
                 'type' => 'medium',
-                'category' => 'CEO Startup',
+                'category' => 'Featured Investees',
                 'title' => '',
                 'date' => 'June 2020',
                 'image' => 'Article7.jpeg',
                 'logo' => '',
-                'position' => 'https://mandiri-capital.co.id/portfolio/amartha'
+                'position' => 'left',
+                'link' => 'https://mandiri-capital.co.id/portfolio/amartha'
             ],
             [
                 'type' => 'small-square',

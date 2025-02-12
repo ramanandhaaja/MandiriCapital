@@ -431,4 +431,9 @@ class PageController extends Controller
 
         return response()->json($portfolios);
     }
+
+    public function privacy()
+    {
+        return view('pages.portfolio-show-privacy');
+    }
 }

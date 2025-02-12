@@ -54,3 +54,6 @@ Route::get('/blog/category/{slug}', [BlogController::class, 'byCategory'])->name
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::get('language/{lang}', [LanguageController::class, 'switchLang'])->name('language.switch');
+
+
+Route::get('/privacy-policy', [PageController::class, 'privacy'])->name('privacy-policy');

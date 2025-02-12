@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollTrigger: {
                     trigger: card,
                     start: 'top bottom+=50',
-                    end: 'top center',
-                    toggleActions: 'play reverse play reverse',
+                    //end: 'top center',
+                    //toggleActions: 'play reverse play reverse',
                 },
                 x: 0,
                 opacity: 1,
@@ -135,8 +135,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollTrigger: {
                     trigger: card,
                     start: 'top bottom+=100',
-                    end: 'top top+=100',
-                    toggleActions: 'play reverse play reverse',
+                    //end: 'top top+=100',
+                    //toggleActions: 'play reverse play reverse',
 
                 },
                 x: 0,
@@ -162,8 +162,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollTrigger: {
                     trigger: card,
                     start: 'top bottom-=50',
-                    end: 'bottom center',
-                    toggleActions: 'play reverse play reverse',
+                    //end: 'bottom center',
+                    //toggleActions: 'play reverse play reverse',
                 },
                 y: 0,
                 opacity: 1,
@@ -188,8 +188,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollTrigger: {
                     trigger: card,
                     start: 'top bottom',
-                    end: 'bottom center-=100',
-                    toggleActions: 'play reverse play reverse',
+                    //end: 'bottom center-=100',
+                    //toggleActions: 'play reverse play reverse',
                 },
                 y: 0,
                 opacity: 1,
@@ -215,8 +215,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollTrigger: {
                     trigger: card,
                     start: 'top bottom-=50',
-                    end: 'bottom center',
-                    toggleActions: 'play reverse play reverse',
+                    //end: 'bottom center',
+                    //toggleActions: 'play reverse play reverse',
                 },
                 x: 0,
                 opacity: 1,
@@ -240,8 +240,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollTrigger: {
                     trigger: card,
                     start: 'top bottom-=50',
-                    end: 'bottom center',
-                    toggleActions: 'play reverse play reverse',
+                    //end: 'bottom center',
+                    //toggleActions: 'play reverse play reverse',
                 },
                 x: 0,
                 opacity: 1,

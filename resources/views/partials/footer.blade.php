@@ -18,6 +18,7 @@
                 @foreach ($menuCategory as $menuCat)
                 <li><a href="{{ route($menuCat->route) }}">{{ $menuCat->name }}</a></li>
                 @endforeach
+                <li><a href="{{ route('privacy-policy') }}">PRIVACY POLICY</a></li>
             </ul>
         </div>
 
