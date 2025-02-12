@@ -25,20 +25,43 @@ class BlogTagResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Section::make()
+                Forms\Components\Grid::make()
                     ->schema([
-                        Forms\Components\TextInput::make('name')
-                            ->required()
-                            ->live(onBlur: true)
-                            ->afterStateUpdated(fn (string $state, callable $set) =>
+                        Forms\Components\Section::make()
+                            ->schema([
+                                Forms\Components\Tabs::make('Translations')
+                                    ->tabs([
+                                        Forms\Components\Tabs\Tab::make('English')
+                                            ->schema([
+                                                Forms\Components\TextInput::make('name.en')
+                                                    ->label('Name (English)')
+                                                    ->required()
+                                                    ->maxLength(255)
+                                                    ->live(onBlur: true)
+                                                    ->afterStateUpdated(fn (string $state, callable $set) =>
                                 $set('slug', Str::slug($state))
                             ),
-                        Forms\Components\TextInput::make('slug')
-                            ->required()
-                            ->unique(BlogTag::class, 'slug', ignoreRecord: true),
+                                            ]),
+                                        Forms\Components\Tabs\Tab::make('Indonesian')
+                                            ->schema([
+                                                Forms\Components\TextInput::make('name.id')
+                                                    ->label('Name (Indonesian)')
+                                                    ->required()
+                                                    ->maxLength(255),
+                                            ]),
+                                    ]),
+
+                                Forms\Components\TextInput::make('slug')
+                                ->required()
+                                ->disabled()
+                                ->unique(BlogTag::class, 'slug', ignoreRecord: true),
+                            ])
+                            ->columnSpan(2),
                     ])
+                    ->columns(3)
             ]);
     }
+
 
     public static function table(Table $table): Table
     {

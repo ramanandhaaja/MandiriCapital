@@ -377,7 +377,7 @@ body {
 .form-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
+    gap: 50px;
     margin-bottom: var(--spacing-lg);
 }
 
@@ -581,7 +581,7 @@ input[type="file"] {
 
 /* Form Input Styles */
 .form-group input,
-.form-group select,
+
 .form-group textarea {
     padding: 0.75rem 1rem;
     background: rgba(255, 255, 255, 0.1);
@@ -589,7 +589,11 @@ input[type="file"] {
     border-radius: 8px;
     color: white;
     font-size: 1rem;
-    width: 100%;
+
+}
+
+.form-group select{
+    width: 109%;
 }
 
 .form-group input::placeholder,

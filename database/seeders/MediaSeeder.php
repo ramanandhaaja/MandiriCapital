@@ -17,15 +17,24 @@ class MediaSeeder extends Seeder
         // Create sample categories
         $categories = [
             [
-                'name' => 'News',
+                'name' => [
+                    'en' => 'News',
+                    'id' => 'Berita'
+                ],
                 'slug' => 'news',
             ],
             [
-                'name' => 'Podcast',
+                'name' => [
+                    'en' => 'Podcast',
+                    'id' => 'Podcast'
+                ],
                 'slug' => 'podcast',
             ],
             [
-                'name' => 'Blog',
+                'name' => [
+                    'en' => 'Blog',
+                    'id' => 'Blog'
+                ],
                 'slug' => 'blog',
             ],
         ];
@@ -40,27 +49,45 @@ class MediaSeeder extends Seeder
         // Create sample tags
         $tags = [
             [
-                'name' => 'Venture Capital',
+                'name' => [
+                    'en' => 'Venture Capital',
+                    'id' => 'Modal Ventura'
+                ],
                 'slug' => 'venture-capital',
             ],
             [
-                'name' => 'Technology',
+                'name' => [
+                    'en' => 'Technology',
+                    'id' => 'Teknologi'
+                ],
                 'slug' => 'technology',
             ],
             [
-                'name' => 'Startups',
+                'name' => [
+                    'en' => 'Startups',
+                    'id' => 'Perusahaan Rintisan'
+                ],
                 'slug' => 'startups',
             ],
             [
-                'name' => 'Fintech',
+                'name' => [
+                    'en' => 'Fintech',
+                    'id' => 'Teknologi Keuangan'
+                ],
                 'slug' => 'fintech',
             ],
             [
-                'name' => 'Digital Innovation',
+                'name' => [
+                    'en' => 'Digital Innovation',
+                    'id' => 'Inovasi Digital'
+                ],
                 'slug' => 'digital-innovation',
             ],
             [
-                'name' => 'Investment Strategy',
+                'name' => [
+                    'en' => 'Investment Strategy',
+                    'id' => 'Strategi Investasi'
+                ],
                 'slug' => 'investment-strategy',
             ],
         ];
@@ -398,7 +425,7 @@ kolaborasi dan Zenith untuk akselerasi.',
 
             [
                 'title' => 'Program Xponent MCI di Money 20/20 Asia Jadi Jembatan Konektivitas Dunia - Insight',
-                'slug' => 'program-xponent-mci-di-money-2020-asia-jadi-jembatan-konektivitas-dunia-insight',
+                'slug' => 'program-xponent-mci-di-money-20-20-asia-jadi-jembatan-konektivitas-dunia-insight',
                 'content_heading' => '<span style="font-weight: 400;">Mandiri Capital Indonesia (MCI), perusahaan modal ventura
 Bank Mandiri, membawa program matchmaking-nya, Xponent, ke tingkat global. Melalui
 kiprah awalnya di Money 20/20 Asia di Bangkok, Xponent menghubungkan startup dan

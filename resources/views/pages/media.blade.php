@@ -59,7 +59,7 @@
             <div class="card {{ $isLargeCard ? 'large' : '' }}">
                 <a href="{{ route('media.show', $post->slug) }}" class="text-decoration-none">
                     <div class="card-wrapper">
-                        @if($category && $category->name === 'Podcast')
+                        @if($category && $category->slug === 'podcast')
                             <div class="guest-header">
                                 <div class="guest-info">
                                     <div class="guest-image">
@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                         @endif
-                        @if($category && $category->name === 'Blog')
+                        @if($category && $category->slug === 'blog')
                             <div class="blog-header">
                                 <div class="blog-info">
                                     <div class="blog-image">
@@ -90,12 +90,12 @@
                         <div class="main-content">
                             <div class="background-image" style="background-image: url('{{ $backgroundImage }}');"></div>
                             @if($category)
-                                <span class="category filter-dependent">{{ $category->name }}</span>
+                                <span class="category filter-dependent">{!! $category->getTranslation('name', session('locale', 'en')) !!}</span>
                             @endif
                             <div class="card-content">
                                 <h2>{{ $post->title }}</h2>
                                 <span class="post-date" style="display: none;">{{ $formattedDate }}</span>
-                                @if($category && $category->name === 'News')
+                                @if($category && $category->slug === 'news')
                                     <p class="business-news-week">{{ $post->news_source ?? 'Business News Week' }}</p>
                                 @endif
                             </div>
@@ -243,7 +243,7 @@
                     const businessNewsWeekDisplay = filter === 'news' ? 'block' : 'none';
 
                     // Guest header HTML
-                    const guestHeader = post.categories?.name?.toLowerCase() === 'podcast' ? `
+                    const guestHeader = post.categories?.slug?.toLowerCase() === 'podcast' ? `
                         <div class="guest-header">
                             <div class="guest-info">
                                 <div class="guest-image">
@@ -260,7 +260,7 @@
                     ` : '';
 
                     // Blog header HTML
-                    const blogHeader = post.categories?.name?.toLowerCase() === 'blog' ? `
+                    const blogHeader = post.categories?.slug?.toLowerCase() === 'blog' ? `
                         <div class="blog-header">
                             <div class="blog-info">
                                 <div class="blog-image">
@@ -285,7 +285,7 @@
                                         <div class="card-content">
                                             <h2>${post.title}</h2>
                                             <span class="post-date" style="display: ${postDateDisplay};">${date}</span>
-                                            ${post.categories?.name === 'News' ? `
+                                            ${post.categories?.slug === 'news' ? `
                                             <p class="business-news-week" style="display: ${businessNewsWeekDisplay};">Business News Week</p>
                                             ` : ''}
                                         </div>

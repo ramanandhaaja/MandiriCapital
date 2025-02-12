@@ -15,7 +15,7 @@
             <div class="sidebar-left">
                 <div class="article-meta">
                     <div class="meta-info">
-                        <span
+                        <span style="visibility: hidden;"
                             class="article-date">{{ \Carbon\Carbon::parse($publication->published_date)->format('j F Y') }}</span>
                         <div class="author-info">
                             <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar">

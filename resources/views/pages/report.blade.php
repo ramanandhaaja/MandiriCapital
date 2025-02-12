@@ -60,7 +60,7 @@
                         <div class="card-content">
                             <h2>{{ $publication->title }}</h2>
                         </div>
-                        <span class="date">{{ Carbon::parse($publication->published_date)->format('d F Y') }}</span>
+                        <span class="date" style='visibility: hidden;'>{{ Carbon::parse($publication->published_date)->format('d F Y') }}</span>
                     </a>
                 </div>
             @endif

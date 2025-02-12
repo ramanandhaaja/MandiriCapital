@@ -373,7 +373,7 @@ class PageController extends Controller
 
         if ($category !== 'all') {
             $query->whereHas('categories', function ($query) use ($category) {
-                $query->where('name', ucfirst($category));
+                $query->where('slug', ucfirst($category));
             });
         } else {
             $query->take(7);
