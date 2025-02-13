@@ -84,6 +84,10 @@ class AboutPrioritySectorSeeder extends Seeder
 
         $datas = [
             [
+                'main_title' => [
+                    'en' => 'Resilience',
+                    'id' => 'Kekuatan'
+                ],
                 'title' => [
                     'en' => 'Thriving through challenges and staying adaptable.',
                     'id' => 'Bertahan melalui tantangan dan tetap adaptif.'
@@ -93,15 +97,10 @@ class AboutPrioritySectorSeeder extends Seeder
                 'image_path' => 'hero-sections/01JJ3RHBNH1RXYHN5GPSQ7ETP4.png'
             ],
             [
-                'title' => [
-                    'en' => 'Growing together through teamwork and partnership.',
-                    'id' => 'Berkembang bersama melalui kerja sama dan kemitraan.'
+                'main_title' => [
+                    'en' => 'Integrity',
+                    'id' => 'Integritas'
                 ],
-                'slug' => 'growing-together-through-teamwork-and-partnership',
-                'published_date' => Carbon::now(),
-                'image_path' => 'hero-sections/01JJ3RHMAYKVVVJ9P22K6Q67GR.png'
-            ],
-            [
                 'title' => [
                     'en' => 'Committing to high ethical standards in all actions.',
                     'id' => 'Bertekad untuk memenuhi standar etika yang tinggi dalam semua tindakan.'
@@ -111,6 +110,10 @@ class AboutPrioritySectorSeeder extends Seeder
                 'image_path' => 'hero-sections/01JJ3RHWHM1EATFMPCGCR5TZY7.png'
             ],
             [
+                'main_title' => [
+                    'en' => 'Quality',
+                    'id' => 'Kualitas'
+                ],
                 'title' => [
                     'en' => 'Upholding the highest standards in every action.',
                     'id' => 'Menjunjung standar tertinggi dalam setiap tindakan.'
@@ -118,6 +121,19 @@ class AboutPrioritySectorSeeder extends Seeder
                 'slug' => 'upholding-the-highest-standards-in-every-action',
                 'published_date' => Carbon::now(),
                 'image_path' => 'hero-sections/01JJ8RR7WXC6VNT7Y8M0D52BK0.png'
+            ],
+            [
+                'main_title' => [
+                    'en' => 'Collaboration',
+                    'id' => 'Kemitraan'
+                ],
+                'title' => [
+                    'en' => 'Growing together through teamwork and partnership.',
+                    'id' => 'Berkembang bersama melalui kerja sama dan kemitraan.'
+                ],
+                'slug' => 'growing-together-through-teamwork-and-partnership',
+                'published_date' => Carbon::now(),
+                'image_path' => 'hero-sections/01JJ3RHMAYKVVVJ9P22K6Q67GR.png'
             ],
         ];
 

@@ -32,12 +32,6 @@ class PlatformValueCreationZenith extends Model
         'hero_image',
         'hero_background',
         'headline',
-        'counter1_title',
-        'counter2_title',
-        'counter3_title',
-        'counter1_value',
-        'counter2_value',
-        'counter3_value',
 
         'whyzenith_title',
         'whyzenith_subtitle',

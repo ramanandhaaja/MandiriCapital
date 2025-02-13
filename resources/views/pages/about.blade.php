@@ -85,6 +85,7 @@
             <div class="headline-grid-four middle-animation">
                 @foreach ($prioritySectors as $index => $sector)
                     <div class="headline-card {{ $index > 0 ? ($index === 3 ? 'left-border' : 'middle-border') : '' }}">
+                        <h1>{!! $sector->getTranslation('main_title', session('locale', 'en')) !!}</h1>
                         <img class="headline-image" src="{{ '/storage/' . $sector->image_path }}"
                             alt="{{ $sector->title }}">
                         <h1>{!! $sector->getTranslation('title', session('locale', 'en')) !!}</h1>
@@ -95,7 +96,7 @@
 
         <div class="newsletter-section">
             <div class="newsletter-container">
-                <h2 class="newsletter-title">Need Help? Contact Us!</h2>
+                <h2 class="newsletter-title">{!! $masterData->getTranslation('footer', session('locale', 'en')) !!}</h2>
                 <a href="{{ route('contact') }}" class="newsletter-link">
                     <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect"
                         class="button-image center-image-newsletter">
@@ -219,7 +220,7 @@
         {{-- Newsletter Section --}}
         <div class="newsletter-section">
             <div class="newsletter-container">
-                <h2 class="newsletter-title">TALK TO US</h2>
+                <h2 class="newsletter-title">{!! $masterData->getTranslation('footer', session('locale', 'en')) !!}</h2>
                 <a href="{{ route('contact') }}" class="newsletter-link">
                     <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect"
                         class="button-image center-image-newsletter">

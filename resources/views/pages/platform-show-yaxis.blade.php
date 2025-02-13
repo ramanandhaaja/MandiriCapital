@@ -7,7 +7,7 @@
 @section('container')
     <div class="hero-section">
         <div class="hero-content">
-            <div class="center-text">Networking and Collaboration Platform</div>
+            <div class="center-text">{!! $PlatformValueCreationYaxis->getTranslation('hero_text', session('locale', 'en')) !!}</div>
             {{--
             <div class="image-container">
                 <img src="{{ asset('images/platform/forstartup.png') }}" alt="For Startup" class="button-image center-image"
@@ -24,7 +24,7 @@
     <div class="get-investement-section">
 
         <div class="hero-mid-section">
-            <h1 class="center-text-midsection">Networking and collaboration platform designed to connect startups, corporations, regulator, and tech communities. Y-axis is a catalyst for building a stronger, more collaborative ecosystem</h1>
+            <h1 class="center-text-midsection">{!! $PlatformValueCreationYaxis->getTranslation('headline', session('locale', 'en')) !!}</h1>
         </div>
 
 
@@ -37,7 +37,7 @@
 
         <div class="highlight-applynow-bottom">
             <div class="highlight-content">
-                <h2 class="highlight-title">Connecting the Dots</h2>
+                <h2 class="highlight-title">{!! $PlatformValueCreationYaxis->getTranslation('footer_text', session('locale', 'en')) !!}</h2>
                 {{--  <a href="#" class="apply-now-button">Apply Now</a> --}}
             </div>
         </div>

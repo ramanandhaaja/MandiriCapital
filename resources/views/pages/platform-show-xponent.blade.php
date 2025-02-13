@@ -9,7 +9,7 @@
         <img src="{{ asset('images/platform/background-exponent.png') }}" class="video-background" />
 
         <div class="hero-content">
-            <div class="center-text">Business Matchmaking between startups and Mandiri Group</div>
+            <div class="center-text">{!! $PlatformValueCreationXponent->getTranslation('hero_text', session('locale', 'en')) !!}</div>
             {{--
             <div class="image-container">
                 <img src="{{ asset('images/platform/forstartup.png') }}" alt="For Startup" class="button-image center-image"
@@ -24,21 +24,24 @@
 
     <div class="headline-section-two">
         <div class="headline-grid-counter">
-            @php
-                $dummyArticles = [
-                    ['title' => 'PROJECTS', 'subtitle' => 'Startups', 'content' => '65+'],
-                    ['title' => 'STARTUPS', 'subtitle' => 'Mandiri Business Units', 'content' => '20+'],
-                    ['title' => 'BUSINESS UNITS', 'subtitle' => 'Business Deals', 'content' => '10+'],
-                ];
-            @endphp
-            @foreach ($dummyArticles as $index => $article)
-                <div class="headline-card-two ">
-                    <div id="counter{{ $index + 1 }}" class="counter" data-value="{{ $article['content'] }}">
-                        {{ $article['content'] }}</div>
 
-                    <p class="subtitle">{{ $article['subtitle'] }}</p>
+                <div class="headline-card-two ">
+                    <div id="counter1" class="counter" data-value="{!! $PlatformValueCreationXponent->getTranslation('counter1_value', session('locale', 'en')) !!}">
+                        {!! $PlatformValueCreationXponent->getTranslation('counter1_value', session('locale', 'en')) !!}</div>
+                    <p class="subtitle">{!! $PlatformValueCreationXponent->getTranslation('counter1_title', session('locale', 'en')) !!}</p>
                 </div>
-            @endforeach
+                <div class="headline-card-two ">
+                    <div id="counter2" class="counter" data-value="{!! $PlatformValueCreationXponent->getTranslation('counter2_value', session('locale', 'en')) !!}">
+                        {!! $PlatformValueCreationXponent->getTranslation('counter2_value', session('locale', 'en')) !!}</div>
+                    <p class="subtitle">{!! $PlatformValueCreationXponent->getTranslation('counter2_title', session('locale', 'en')) !!}</p>
+                </div>
+                <div class="headline-card-two ">
+                    <div id="counter3" class="counter" data-value="{!! $PlatformValueCreationXponent->getTranslation('counter3_value', session('locale', 'en')) !!}">
+                        {!! $PlatformValueCreationXponent->getTranslation('counter3_value', session('locale', 'en')) !!}</div>
+                    <p class="subtitle">{!! $PlatformValueCreationXponent->getTranslation('counter3_title', session('locale', 'en')) !!}</p>
+                </div>
+
+
         </div>
     </div>
 
@@ -50,9 +53,8 @@
 
         <div class="masonry-grid-investment-section">
             <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">Why You Should Join Xponent?</h1>
-                <h1 class="grid-headline-subtitle-left">Practical 3-Month Program of Venture Development and Synergy
-                    Creation</h1>
+                <h1 class="grid-headline-title">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_title', session('locale', 'en')) !!}</h1>
+                <h1 class="grid-headline-subtitle-left">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_subtitle', session('locale', 'en')) !!}</h1>
             </div>
             <div class="grid-headline-description-card">
                 <div class="masonry-grid-investment-section-sub">
@@ -101,7 +103,7 @@
 
         <div class="masonry-grid-investment-section-grey">
             <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">Inside Exponent:</h1>
+                <h1 class="grid-headline-title">{!! $PlatformValueCreationXponent->getTranslation('insideexponent_title', session('locale', 'en')) !!}</h1>
                 <h1 class="grid-headline-subtitle-left"></h1>
             </div>
             <div class="grid-headline-description-card">
@@ -142,8 +144,8 @@
         {{-- Article Section --}}
         <div class="masonry-grid-investment-section">
             <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">About The Program</h1>
-                <h1 class="grid-headline-subtitle-left">Testimonies</h1>
+                <h1 class="grid-headline-title">{!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_title', session('locale', 'en')) !!}</h1>
+                <h1 class="grid-headline-subtitle-left">{!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_subtitle', session('locale', 'en')) !!}</h1>
             </div>
             <div class="grid-headline-description-card">
                 <div class="masonry-grid-investment-section-sub">
@@ -207,7 +209,7 @@
 
         <div class="highlight-applynow-bottom">
             <div class="highlight-content">
-                <h2 class="highlight-title">Discover What's Possible</h2>
+                <h2 class="highlight-title">{!! $PlatformValueCreationXponent->getTranslation('footer_text', session('locale', 'en')) !!}</h2>
                 {{--  <a href="#" class="apply-now-button">Apply Now</a> --}}
             </div>
         </div>

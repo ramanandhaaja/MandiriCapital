@@ -70,7 +70,7 @@
     {{-- Newsletter Section --}}
     <div class="newsletter-section">
         <div class="newsletter-container">
-            <h2 class="newsletter-title">Dive Into Our Insights</h2>
+            <h2 class="newsletter-title">{!! $masterData->getTranslation('footer', session('locale', 'en')) !!}</h2>
             <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}"
                      alt="Lets Connect"

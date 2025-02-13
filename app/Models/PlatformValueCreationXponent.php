@@ -23,8 +23,15 @@ class PlatformValueCreationXponent extends Model
         'insideexponent_subtitle',
         'testimonialexponent_title',
         'testimonialexponent_subtitle',
+        'counter1_title',
+        'counter2_title',
+        'counter3_title',
+        'counter1_value',
+        'counter2_value',
+        'counter3_value',
         'footer_text',
     ];
+
 
     protected $fillable = [
         'hero_text',

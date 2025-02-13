@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('hero_image');
             $table->string('hero_background');
             $table->json('headline');
-            $table->string('counter1_title');
-            $table->string('counter2_title');
-            $table->string('counter3_title');
-            $table->string('counter1_value');
-            $table->string('counter2_value');
-            $table->string('counter3_value');
+            $table->json('counter1_title');
+            $table->json('counter2_title');
+            $table->json('counter3_title');
+            $table->json('counter1_value');
+            $table->json('counter2_value');
+            $table->json('counter3_value');
             $table->json('whyexponent_title');
             $table->json('whyexponent_subtitle');
             $table->json('insideexponent_title');
@@ -47,7 +47,6 @@ return new class extends Migration
             $table->string('image_path1');
             $table->string('image_path2');
             $table->string('image_path3');
-            $table->date('published_date');
             $table->timestamps();
         });
 
@@ -58,12 +57,6 @@ return new class extends Migration
             $table->string('hero_image');
             $table->string('hero_background');
             $table->json('headline');
-            $table->string('counter1_title');
-            $table->string('counter2_title');
-            $table->string('counter3_title');
-            $table->string('counter1_value');
-            $table->string('counter2_value');
-            $table->string('counter3_value');
             $table->json('whyzenith_title');
             $table->json('whyzenith_subtitle');
             $table->json('insidezenith_title');
@@ -93,6 +86,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('platform_program');
+        Schema::dropIfExists('platform_value_creation_xponent');
+        Schema::dropIfExists('platform_value_creation_yaxis');
+        Schema::dropIfExists('platform_value_creation_zenith');
     }
 };

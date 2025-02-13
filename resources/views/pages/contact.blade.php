@@ -27,7 +27,9 @@
                             </div>
 
                             <div class="contact-info-group customer-report-container">
-                                <h3 class="contact-info-title" data-tooltip="Reporting Violations of Mandiri Employees.">CUSTOMER REPORT</h3>
+
+                                <h3 class="contact-info-title" data-tooltip="Reporting Violations of Mandiri Capital Employees.">CUSTOMER REPORT <i class="fas fa-info-circle" aria-hidden="false" data-tooltip="Reporting Violations of Mandiri Capital Employees."></i>
+                                </h3>
                                 <a href="mailto:mcicare@mandiri-capital.co.id" class="contact-info-link">
                                     {{ $masterData->email_customer_report }}
                                 </a>

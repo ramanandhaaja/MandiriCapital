@@ -23,7 +23,10 @@ class HeroSectionSeeder extends Seeder
         // Create categories
         $heromasters = [
             [
-            'footer' => "WE'D LOVE TO HEAR FROM YOU",
+            'footer' => [
+                'en' => "WE'D LOVE TO HEAR FROM YOU",
+                'id' => "KAMI SENANG MENDENGAR DARI ANDA"
+            ],
             'instagram' => 'https://www.instagram.com/mandiricapital/',
             'linkedin' => 'https://www.linkedin.com/company/mandiri-capital-indonesia-mci/posts/?feedView=all',
             'twitter' => '',

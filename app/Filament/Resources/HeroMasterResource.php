@@ -71,14 +71,26 @@ class HeroMasterResource extends Resource
                             ->columnSpan(2),
                             Forms\Components\Group::make()
                             ->schema([
-                                Forms\Components\Section::make()
+                                Forms\Components\Section::make('Footer Translations')
                                     ->schema([
-
-                                        Forms\Components\TextInput::make('footer')
-                                            ->maxLength(255),
-
-                                    ])
-                                    ->columns(2),
+                                        Forms\Components\Tabs::make('Translations')
+                                            ->tabs([
+                                                Forms\Components\Tabs\Tab::make('English')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('footer.en')
+                                                            ->label('Footer (English)')
+                                                            ->required()
+                                                            ->maxLength(255),
+                                                    ]),
+                                                Forms\Components\Tabs\Tab::make('Indonesian')
+                                                    ->schema([
+                                                        Forms\Components\TextInput::make('footer.id')
+                                                            ->label('Footer (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(255),
+                                                    ]),
+                                            ]),
+                                    ]),
                             ])
                             ->columnSpan(2),
                     ])

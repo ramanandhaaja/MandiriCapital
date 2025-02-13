@@ -41,7 +41,7 @@ return new class extends Migration
 
         Schema::create('hero_masters', function (Blueprint $table) {
             $table->id();
-            $table->string('footer');
+            $table->json('footer');
             $table->string('instagram');
             $table->string('linkedin');
             $table->string('twitter');

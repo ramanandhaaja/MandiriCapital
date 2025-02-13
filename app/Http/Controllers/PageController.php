@@ -28,6 +28,9 @@ use App\Models\PlatformArticle;
 use App\Models\PlatformCategory;
 use App\Models\PlatformCounter;
 use App\Models\PlatformValueCreation;
+use App\Models\PlatformValueCreationXponent;
+use App\Models\PlatformValueCreationYaxis;
+use App\Models\PlatformValueCreationZenith;
 use App\Models\Portfolio;
 use App\Models\PortfolioArticle;
 use App\Models\PortfolioArticleSub;
@@ -252,16 +255,18 @@ class PageController extends Controller
 
     public function platformshow($slug)
     {
+
         if ($slug=="xponent") {
-            return view('pages.platform-show-xponent');
+            $PlatformValueCreationXponent = PlatformValueCreationXponent::first();
+            return view('pages.platform-show-xponent', compact('PlatformValueCreationXponent'));
         } elseif ($slug=="yaxis") {
-            return view('pages.platform-show-yaxis');
+            $PlatformValueCreationYaxis = PlatformValueCreationYaxis::first();
+            return view('pages.platform-show-yaxis', compact('PlatformValueCreationYaxis'));
         }elseif ($slug=="zenith") {
-            return view('pages.platform-show-zenith');
+            $PlatformValueCreationZenith = PlatformValueCreationZenith::first();
+            return view('pages.platform-show-zenith', compact('PlatformValueCreationZenith'));
         }
     }
-
-
 
     public function platformapply()
     {

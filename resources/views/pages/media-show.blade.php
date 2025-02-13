@@ -147,7 +147,7 @@
 
     <div class="newsletter-section">
         <div class="newsletter-container">
-            <h2 class="newsletter-title">WE'D LOVE TO HEAR FROM YOU</h2>
+            <h2 class="newsletter-title">{!! $masterData->getTranslation('footer', session('locale', 'en')) !!}</h2>
 
             <a href="#">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"

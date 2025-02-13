@@ -7,7 +7,7 @@
 @section('container')
     <div class="hero-section">
         <div class="hero-content">
-            <div class="center-text">Zenith <br />Startup Accelerator</div>
+            <div class="center-text">{!! $PlatformValueCreationZenith->getTranslation('hero_text', session('locale', 'en')) !!}</div>
             {{--
             <div class="image-container">
                 <img src="{{ asset('images/platform/forstartup.png') }}" alt="For Startup" class="button-image center-image"
@@ -25,7 +25,7 @@
 
         <div class="masonry-grid-investment-section">
             <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">Why You Should Join Zenith?</h1>
+                <h1 class="grid-headline-title">{!! $PlatformValueCreationZenith->getTranslation('whyzenith_title', session('locale', 'en')) !!}</h1>
                 <h1 class="grid-headline-subtitle-left"></h1>
             </div>
             <div class="grid-headline-description-card">
@@ -67,8 +67,8 @@
 
         <div class="masonry-grid-investment-section-grey">
             <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">Inside Zenith:</h1>
-                <h1 class="grid-headline-subtitle-left"></h1>
+                <h1 class="grid-headline-title">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_title', session('locale', 'en')) !!}</h1>
+                <h1 class="grid-headline-subtitle-left">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_subtitle', session('locale', 'en')) !!}</h1>
             </div>
             <div class="grid-headline-description-card">
                 <div class="masonry-grid-investment-section-sub">
@@ -105,7 +105,7 @@
         </div>
 
         <div class="platform-image-containter">
-            <h2 class="business-deals-title">10+ Business Deals</h2>
+            <h2 class="business-deals-title">{!! $PlatformValueCreationZenith->getTranslation('deal_title', session('locale', 'en')) !!}</h2>
             <div class="business-logos-grid">
                 <div class="logo-item">
                     <img src="{{ asset('images/platform/rekosistem.png') }}" alt="Rekosistem Logo">
@@ -144,8 +144,8 @@
         {{-- Article Section --}}
         <div class="masonry-grid-investment-section">
             <div class="grid-headline-title-card">
-                <h1 class="grid-headline-title">About The Program</h1>
-                <h1 class="grid-headline-subtitle-left">Testimonies</h1>
+                <h1 class="grid-headline-title">{!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_title', session('locale', 'en')) !!}</h1>
+                <h1 class="grid-headline-subtitle-left">{!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_subtitle', session('locale', 'en')) !!}</h1>
             </div>
             <div class="grid-headline-description-card">
                 <div class="masonry-grid-investment-section-sub">
@@ -201,7 +201,7 @@
 
         <div class="highlight-applynow-bottom">
             <div class="highlight-content">
-                <h2 class="highlight-title">Ignite The Highest Point</h2>
+                <h2 class="highlight-title">{!! $PlatformValueCreationZenith->getTranslation('footer_text', session('locale', 'en')) !!}</h2>
                 {{--  <a href="#" class="apply-now-button">Apply Now</a> --}}
             </div>
         </div>

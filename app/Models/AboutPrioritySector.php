@@ -14,10 +14,12 @@ class AboutPrioritySector extends Model
     protected $table = 'about_priority_sector';
 
     public array $translatable = [
+        'main_title',
         'title',
     ];
 
     protected $fillable = [
+        'main_title',
         'title',
         'slug',
         'published_date',

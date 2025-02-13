@@ -42,8 +42,17 @@ class AboutPrioritySectorResource extends Resource
                                             ->tabs([
                                                 Forms\Components\Tabs\Tab::make('English')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title.en')
+                                                        Forms\Components\TextInput::make('main_title.en')
                                                             ->label('Title (English)')
+                                                            ->required()
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull()
+                                                            ->afterStateUpdated(fn (string $state, callable $set) =>
+                                                                $set('slug', Str::slug($state))
+                                                            ),
+                                                        Forms\Components\TextInput::make('title.en')
+                                                            ->label('Subtitle (English)')
                                                             ->required()
                                                             ->maxLength(255)
                                                             ->live(onBlur: true)
@@ -54,8 +63,17 @@ class AboutPrioritySectorResource extends Resource
                                                     ]),
                                                 Forms\Components\Tabs\Tab::make('Indonesian')
                                                     ->schema([
-                                                        Forms\Components\TextInput::make('title.id')
+                                                        Forms\Components\TextInput::make('main_title.id')
                                                             ->label('Title (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(255)
+                                                            ->live(onBlur: true)
+                                                            ->columnSpanFull()
+                                                            ->afterStateUpdated(fn (string $state, callable $set) =>
+                                                                $set('slug', Str::slug($state))
+                                                            ),
+                                                        Forms\Components\TextInput::make('title.id')
+                                                            ->label('Subtitle (Indonesian)')
                                                             ->required()
                                                             ->maxLength(255)
                                                             ->columnSpanFull(),

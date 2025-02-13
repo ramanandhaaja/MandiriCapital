@@ -30,6 +30,7 @@ return new class extends Migration
 
         Schema::create('about_priority_sector', function (Blueprint $table) {
             $table->id();
+            $table->json('main_title');
             $table->json('title')->nullable();
             $table->text('slug')->nullable();
             $table->date('published_date')->nullable();
