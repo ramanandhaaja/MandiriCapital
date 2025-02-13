@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 150px 0 100px 0;
+    padding: 250px 0 100px 0;
     position: relative;
     z-index: 2;
     overflow: hidden;
@@ -388,7 +388,7 @@ body {
 /* Table Display Styles */
 .portfolio-section {
     width: 100%;
-    margin: 20px 0;
+    margin: 100px 0;
 }
 
 .portfolio-header {

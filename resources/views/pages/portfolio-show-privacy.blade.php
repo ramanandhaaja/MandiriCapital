@@ -9,22 +9,23 @@
 
 @section('container')
 
+    <div class="top-hero-section">
+        <div class="center-text">PRIVACY POLICY</div>
+    </div>
 
     <div class="hero-section">
         <div class="hero-content" style="background-image: url('{{ asset('images/portfolio/privacy-policy.jpg') }}');">
         </div>
     </div>
 
-    <div class="top-hero-section">
-        <div class="center-text">PRIVACY POLICY</div>
-    </div>
+
 
     <div class="table-display-portfolio">
         <div class="portfolio-section">
             {{-- Table Header --}}
             <div class="portfolio-header">
                 <div class="header-cell">Year </div>
-                <div class="header-cell">Short Description</div>
+                <div class="header-cell">Description</div>
                 <div class="header-cell"></div>
             </div>
 
