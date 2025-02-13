@@ -6,7 +6,7 @@
 
 @section('container')
     <div class="hero-section">
-        <img src="{{ asset('images/platform/background-exponent.png') }}" class="video-background" />
+        <img src="{{ '/storage/' . $PlatformValueCreationXponent->hero_background }}" class="video-background" />
 
         <div class="hero-content">
             <div class="center-text">{!! $PlatformValueCreationXponent->getTranslation('hero_text', session('locale', 'en')) !!}</div>
@@ -18,7 +18,7 @@
              --}}
         </div>
         <div class="hero-content">
-            <img src="{{ asset('images/platform/xponentlg.png') }}" alt="For Startup" class="right-image">
+            <img src="{{ '/storage/' . $PlatformValueCreationXponent->hero_image }}" alt="For Startup" class="right-image">
         </div>
     </div>
 
@@ -60,38 +60,51 @@
                 <div class="masonry-grid-investment-section-sub">
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">01</h1>
+                            <h1 class="card-title-bottom">{{ $PlatformValueCreationXponent->whyexponent_icon1 }}</h1>
                         </div>
-                        <h2 class="card-title">Network
+                        <h2 class="card-title">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_title1', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Bringing you to the biggest financial conglomerate bank in Indonesia
-                            with 120+ business units to explore.</p>
+                        <p class="card-description">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_content1', session('locale', 'en')) !!}</p>
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">02</h1>
+                            <h1 class="card-title-bottom">{{ $PlatformValueCreationXponent->whyexponent_icon2 }}</h1>
                         </div>
-                        <h2 class="card-title">Business Growth
+                        <h2 class="card-title">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_title2', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">We help startups to build business traction.</p>
+                        <p class="card-description">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_content2', session('locale', 'en')) !!}</p>
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">03</h1>
+                            <h1 class="card-title-bottom">{{ $PlatformValueCreationXponent->whyexponent_icon3 }}</h1>
                         </div>
-                        <h2 class="card-title">Investment Opportunities
+                        <h2 class="card-title">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_title3', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Meet our investment team and secure strategic investment from Mandiri
-                            Capital Indonesia.</p>
+                        <p class="card-description">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_content3', session('locale', 'en')) !!}</p>
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">04</h1>
+                            <h1 class="card-title-bottom">{{ $PlatformValueCreationXponent->whyexponent_icon4 }}</h1>
                         </div>
-                        <h2 class="card-title">Exposure
+                        <h2 class="card-title">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_title4', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Unique opportunity to showcase your statup, expand your network, and
-                            potentially generate new business deals.</p>
+                        <p class="card-description">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_content4', session('locale', 'en')) !!}</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon-bottom">
+                            <h1 class="card-title-bottom">{{ $PlatformValueCreationXponent->whyexponent_icon5 }}</h1>
+                        </div>
+                        <h2 class="card-title">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_title5', session('locale', 'en')) !!}
+                        </h2>
+                        <p class="card-description">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_content5', session('locale', 'en')) !!}</p>
+                    </div>
+                    <div class="grid-headline-title-card-sub">
+                        <div class="card-icon-bottom">
+                            <h1 class="card-title-bottom">{{ $PlatformValueCreationXponent->whyexponent_icon6 }}</h1>
+                        </div>
+                        <h2 class="card-title">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_title6', session('locale', 'en')) !!}
+                        </h2>
+                        <p class="card-description">{!! $PlatformValueCreationXponent->getTranslation('whyexponent_content6', session('locale', 'en')) !!}</p>
                     </div>
                 </div>
                 <div class="grid-headline-title-card-sub-bottom">
@@ -110,22 +123,21 @@
                 <div class="masonry-grid-investment-section-sub-two">
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">01</h1>
+                            <h1 class="card-title-bottom">{{ $PlatformValueCreationXponent->insideexponent_icon1 }}</h1>
                         </div>
-                        <h2 class="card-title">Business Matchmaking:
+                        <h2 class="card-title">{!! $PlatformValueCreationXponent->getTranslation('insideexponent_title1', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Join us for an exclusive Business Matchmaking Session that brings
-                            together the brightest startups and Mandiri Group, driving collaboration and growth.
+                        <p class="card-description">{!! $PlatformValueCreationXponent->getTranslation('insideexponent_content1', session('locale', 'en')) !!}
                         </p>
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">02</h1>
+                            <h1 class="card-title-bottom">{{ $PlatformValueCreationXponent->insideexponent_icon2 }}</h1>
                         </div>
-                        <h2 class="card-title">Industry Insight Sessions
+                        <h2 class="card-title">{!! $PlatformValueCreationXponent->getTranslation('insideexponent_title2', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Industry Insight Session is a program that offers attendees new industry
-                            insight from a panel discussion session, that bring practitioners from various industries.</p>
+                        <p class="card-description">{!! $PlatformValueCreationXponent->getTranslation('insideexponent_content2', session('locale', 'en')) !!}
+                        </p>
                     </div>
                 </div>
                 <div class="grid-headline-title-card-sub-bottom">
@@ -137,7 +149,22 @@
 
 
         <div class="platform-image-containter-horizontal">
-            <img class="platform-image-large" src="{{ asset('images/platform/large-image-xponent.png') }}" alt="Team Photo">
+            @if($PlatformValueCreationXponent->image_path1)
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path1 }}" alt="Team Photo">
+            @endif
+            @if($PlatformValueCreationXponent->image_path2)
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path2 }}" alt="Team Photo">
+            @endif
+            @if($PlatformValueCreationXponent->image_path3)
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path3 }}" alt="Team Photo">
+            @endif
+            @if($PlatformValueCreationXponent->image_path4)
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path4 }}" alt="Team Photo">
+            @endif
+            @if($PlatformValueCreationXponent->image_path5)
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path5 }}" alt="Team Photo">
+            @endif
+
         </div>
 
 
@@ -154,14 +181,13 @@
                         <img src="{{ asset('images/platform/crowde.png') }}" alt="funding2.png"
                             class="card-funding-image" />
                         <div class="funding-category">
-                            Yohanes Sughitononughroho
+                            {!! $PlatformValueCreationXponent->testimonialexponent_founder1 !!}
                         </div>
                         <div class="card-funding-jobtitle">
-                            CEO & Co-Founder
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_title1', session('locale', 'en')) !!}
                         </div>
                         <div class="card-funding-content">
-                            “CI & Bank Mandiri Greatly assisted CROWDE in providing access and connections to financial
-                            industry players, particularly banking."
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_content1', session('locale', 'en')) !!}
                         </div>
                     </div>
 
@@ -170,15 +196,13 @@
                         <img src="{{ asset('images/platform/dagangan.png') }}" alt="funding2.png"
                             class="card-funding-image" />
                         <div class="funding-category">
-                            Ryan Manafe
+                            {!! $PlatformValueCreationXponent->testimonialexponent_founder2 !!}
                         </div>
                         <div class="card-funding-jobtitle">
-                            CEO & Co-Founder
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_title2', session('locale', 'en')) !!}
                         </div>
                         <div class="card-funding-content">
-                            "We can meet everyone from Mandiri Capital, other business units. We can know what parts are
-                            relevant to us, we can even meet directly with stakeholders so we can follow-up specifically on
-                            what and what added value we can offer."
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_content2', session('locale', 'en')) !!}
                         </div>
                     </div>
 
@@ -187,15 +211,13 @@
                         <img src="{{ asset('images/platform/ayoconnect.png') }}" alt="funding2.png"
                             class="card-funding-image" />
                         <div class="funding-category">
-                            Chiragh Kipralani
+                            {!! $PlatformValueCreationXponent->testimonialexponent_founder3 !!}
                         </div>
                         <div class="card-funding-jobtitle">
-                            CEO & Co-Founder
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_title3', session('locale', 'en')) !!}
                         </div>
                         <div class="card-funding-content">
-                            “It is an honor for ayoconnect to be given the trust of Bank Mandiri to be able to collaborate
-                            from implementing integrated embedded usecases for Livin' customers so that they can enjoy the
-                            best variety of services in just one.”
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_content3', session('locale', 'en')) !!}
                         </div>
                     </div>
                 </div>
@@ -218,11 +240,4 @@
 @endsection
 @section('scripts')
     <script src="{{ asset('js/platform-animation.js') }}"></script>
-
-    <script>
-        document.getElementById('company_profile').addEventListener('change', function(e) {
-            const fileName = e.target.files[0]?.name || 'No File Chosen';
-            e.target.parentElement.querySelector('.file-name').textContent = fileName;
-        });
-    </script>
 @endsection

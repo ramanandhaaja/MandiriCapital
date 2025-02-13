@@ -16,7 +16,7 @@
              --}}
         </div>
         <div class="hero-content">
-            <img src="{{ asset('images/platform/zenithlg.png') }}" alt="For Startup" class="right-image">
+            <img src="{{ '/storage/' . $PlatformValueCreationZenith->hero_image }}" alt="For Startup" class="right-image">
         </div>
     </div>
 
@@ -32,30 +32,27 @@
                 <div class="masonry-grid-investment-section-sub">
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ asset('images/platform/icon1.png') }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->whyzenith_icon1 }}" alt="">
                         </div>
-                        <h2 class="card-title">Networking Opportunities
+                        <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('whyzenith_title1', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Expand your business reach by connecting with industry leaders,
-                            potential clients, and investors.</p>
+                        <p class="card-description">{!! $PlatformValueCreationZenith->getTranslation('whyzenith_content1', session('locale', 'en')) !!}</p>
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ asset('images/platform/icon2.png') }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->whyzenith_icon2 }}" alt="">
                         </div>
-                        <h2 class="card-title">Funding Access
+                        <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('whyzenith_title2', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Unlock diverse investment prospects and explore potential funding
-                            opportunities from Mandiri Capital Indonesia and other investor partners.</p>
+                        <p class="card-description">{!! $PlatformValueCreationZenith->getTranslation('whyzenith_content2', session('locale', 'en')) !!}</p>
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ asset('images/platform/icon3.png') }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->whyzenith_icon3 }}" alt="">
                         </div>
-                        <h2 class="card-title">Global Access
+                        <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('whyzenith_title3', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Enhance your market presence with access to global companies and global
-                            networking opportunities provided by MCI.</p>
+                        <p class="card-description">{!! $PlatformValueCreationZenith->getTranslation('whyzenith_content3', session('locale', 'en')) !!}</p>
                     </div>
                 </div>
                 <div class="grid-headline-title-card-sub-bottom">
@@ -74,27 +71,27 @@
                 <div class="masonry-grid-investment-section-sub">
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ asset('images/platform/icon1.png') }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->insidezenith_icon1 }}" alt="">
                         </div>
-                        <h2 class="card-title">Expert Insights
+                        <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_title1', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Gain cutting-edge knowledge through in-depth mentoring sessions, expert led workshops, and personalized 1:1 mentoring</p>
+                        <p class="card-description">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_content1', session('locale', 'en')) !!}</p>
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ asset('images/platform/icon2.png') }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->insidezenith_icon2 }}" alt="">
                         </div>
-                        <h2 class="card-title">Synergy Creation
+                        <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_title2', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Drive innovation and foster dynamic collaborations with Mandiri Group and other corportations.</p>
+                        <p class="card-description">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_content2', session('locale', 'en')) !!}</p>
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ asset('images/platform/icon3.png') }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->insidezenith_icon3 }}" alt="">
                         </div>
-                        <h2 class="card-title">Accelerated Access
+                        <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_title3', session('locale', 'en')) !!}
                         </h2>
-                        <p class="card-description">Benefit from expedited access to Bank Mandiri’s banking products, impact measurement, people management, HR services, legal practice, & cloud services.</p>
+                        <p class="card-description">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_content3', session('locale', 'en')) !!}</p>
                     </div>
                 </div>
                 <div class="grid-headline-title-card-sub-bottom">
@@ -108,22 +105,22 @@
             <h2 class="business-deals-title">{!! $PlatformValueCreationZenith->getTranslation('deal_title', session('locale', 'en')) !!}</h2>
             <div class="business-logos-grid">
                 <div class="logo-item">
-                    <img src="{{ asset('images/platform/rekosistem.png') }}" alt="Rekosistem Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path1 }}" alt="Rekosistem Logo">
                 </div>
                 <div class="logo-item">
-                    <img src="{{ asset('images/platform/ai-rudder.png') }}" alt="AI Rudder Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path2 }}" alt="AI Rudder Logo">
                 </div>
                 <div class="logo-item">
-                    <img src="{{ asset('images/platform/imajin.png') }}" alt="Imajin Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path3 }}" alt="Imajin Logo">
                 </div>
                 <div class="logo-item">
-                    <img src="{{ asset('images/platform/lifepack.png') }}" alt="Lifepack Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path4 }}" alt="Lifepack Logo">
                 </div>
                 <div class="logo-item">
-                    <img src="{{ asset('images/platform/praktis.png') }}" alt="Praktis Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path5 }}" alt="Praktis Logo">
                 </div>
                 <div class="logo-item">
-                    <img src="{{ asset('images/platform/fishlog.png') }}" alt="Fishlog Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path6 }}" alt="Fishlog Logo">
                 </div>
             </div>
         </div>
@@ -132,11 +129,11 @@
             <div class="platform-image-containter-grid">
 
                 <video autoplay muted loop playsinline class="platform-video-large">
-                    <source src="{{ asset('images/platform/videozenith.mp4') }}" type="video/mp4">
+                    <source src="{{ '/storage/' . $PlatformValueCreationZenith->image_path1 }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
-                <img class="platform-image-large" src="{{ asset('images/platform/large-image.png') }}" alt="Team Photo">
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationZenith->image_path2 }}" alt="Team Photo">
             </div>
         </div>
 
@@ -151,43 +148,43 @@
                 <div class="masonry-grid-investment-section-sub">
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ asset('images/platform/imajin.png') }}" alt="funding2.png" class="card-funding-image" />
+                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo1 }}" alt="funding2.png" class="card-funding-image" />
                         <div class="funding-category">
-                            Joselin Olivia
+                            {!! $PlatformValueCreationZenith->testimonialzenith_founder1 !!}
                         </div>
                         <div class="card-funding-jobtitle">
-                            CEO & Co-Founder
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_title1', session('locale', 'en')) !!}
                         </div>
                         <div class="card-funding-content">
-                            "During the mentorship sessions with Astra International, the discussion focused on a successful synergy project, possibly because Imajin and Astra target the same industry. I believe that every industry has it own unique approach, wich is why the sharing session ath time was quiet insightful, especialy for the manufavturing and automative industries."
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_content1', session('locale', 'en')) !!}
                         </div>
                     </div>
 
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ asset('images/platform/fishlog.png') }}" alt="funding2.png" class="card-funding-image" />
+                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo2 }}" alt="funding2.png" class="card-funding-image" />
                         <div class="funding-category">
-                            Bayu Anggara
+                            {!! $PlatformValueCreationZenith->testimonialzenith_founder2 !!}
                         </div>
                         <div class="card-funding-jobtitle">
-                            CEO & Co-Founder
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_title2', session('locale', 'en')) !!}
                         </div>
                         <div class="card-funding-content">
-                            "Fishlog succesfully collaborated with mandiri SME to develop a loan referral program for the fisheries industry, valued at 50 billion rupiah."
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_content2', session('locale', 'en')) !!}
                         </div>
                     </div>
 
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ asset('images/platform/lifepack.png') }}" alt="funding2.png" class="card-funding-image" />
+                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo3 }}" alt="funding2.png" class="card-funding-image" />
                         <div class="funding-category">
-                            Natali Ardianto
+                            {!! $PlatformValueCreationZenith->testimonialzenith_founder3 !!}
                         </div>
                         <div class="card-funding-jobtitle">
-                            CEO & Co-Founder
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_title3', session('locale', 'en')) !!}
                         </div>
                         <div class="card-funding-content">
-                            "The mentorship program truly opened my eyes, especially in preparing for my future series B fundraising. There were many insights from that time that i still remember today, and i know i need to be even more prepeared because, statistically, Series B fundraising is the thouhest."
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_content3', session('locale', 'en')) !!}
                         </div>
                     </div>
                 </div>

@@ -28,6 +28,8 @@ class PlatformValueCreationYaxis extends Model
         'image_path1',
         'image_path2',
         'image_path3',
+        'image_path4',
+        'image_path5',
         'published_date'
     ];
 
