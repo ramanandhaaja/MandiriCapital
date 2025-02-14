@@ -99,14 +99,6 @@ class MediaSeeder extends Seeder
         }
 
 
-        // Get or create the first user if needed
-        $user = User::firstOrCreate(
-            ['email' => 'nandha@nandha.com'],
-            [
-                'name' => 'nandha',
-                'password' => Hash::make('nandha'),
-            ]
-        );
 
         // Create sample blog posts
         $posts = [
