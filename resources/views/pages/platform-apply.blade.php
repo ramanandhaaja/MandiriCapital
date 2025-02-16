@@ -16,7 +16,19 @@
 
 
         {{-- Contact Form Section --}}
-        <form id="contactForm" class="contact-form">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        <form id="contactForm" class="contact-form" action="{{ route('platform.zenith.email') }}" method="POST">
             @csrf
             <div class="masonry-grid-contact-section grey-color">
                 <div class="grid-headline-title-card">

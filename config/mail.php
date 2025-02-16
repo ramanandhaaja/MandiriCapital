@@ -41,6 +41,7 @@ return [
             'api_key' => env('MAILERSEND_API_KEY'),
         ],
 
+
         'smtp' => [
             'transport' => 'smtp',
             'url' => env('MAIL_URL'),

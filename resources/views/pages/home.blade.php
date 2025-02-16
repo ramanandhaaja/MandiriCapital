@@ -227,10 +227,7 @@
                         <p class="subtitle">*Place your pitchdeck below and our investment team will check it out!</p>
                         <p class="subtitle">*Please note that we receive a high volume of submissions and will not be able to reply to everyone.</p>
                     </div>
-                    {{--
-                    <form action="#" method="POST" enctype="multipart/form-data" class="pitch-form-content">
-                     --}}
-                    <form onsubmit="return false;" class="pitch-form-content">
+                    <form id="startupPitchForm" class="pitch-form-content">
                         @csrf
                         {{-- Personal Information --}}
                         <div class="form-row">
@@ -295,7 +292,7 @@
                         {{-- Form Actions --}}
                         <div class="form-actions">
                             <button type="button" class="btn-cancel" onclick="closePitchModal()">Cancel</button>
-                            <button type="submit" class="btn-submit" onclick="closePitchModal()">Submit Pitch</button>
+                            <button type="submit" class="btn-submit">Submit Pitch</button>
                         </div>
                     </form>
                 </div>
@@ -316,8 +313,7 @@
                         <p class="subtitle">Menara Mandiri II, lantai 14.<br>Jl. Jend. Sudirman No. 54-55, Jakarta 12190</p>
                     </div>
 
-                    {{--  <form action="#" method="POST" enctype="multipart/form-data" class="pitch-form-content">
-                    --}}    <form onsubmit="return false;" class="pitch-form-content">
+                    <form id="investorForm" class="pitch-form-content">
                         @csrf
                         {{-- Contact Information --}}
                         <div class="form-row">
@@ -366,7 +362,7 @@
                         {{-- Form Actions --}}
                         <div class="form-actions">
                             <button type="button" class="btn-cancel" onclick="closeInvestorModal()">Cancel</button>
-                            <button type="submit" class="btn-submit" onclick="closeInvestorModal()">Submit</button>
+                            <button type="submit" class="btn-submit">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -404,11 +400,7 @@
         function updateFileName() {
             const fileInput = document.getElementById('pitch_file');
             const fileChosen = document.getElementById('file-chosen');
-            if (fileInput.files.length > 0) {
-                fileChosen.textContent = fileInput.files[0].name;
-            } else {
-                fileChosen.textContent = 'No File Chosen';
-            }
+            fileChosen.textContent = fileInput.files[0] ? fileInput.files[0].name : 'No File Chosen';
         }
 
         // Close modals when clicking outside
@@ -425,3 +417,75 @@
         }
     </script>
 @endsection
+
+@push('scripts')
+<script>
+    document.getElementById('startupPitchForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch('{{ route('home.startup.email') }}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert(data.message);
+                closePitchModal();
+                this.reset();
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => {
+            alert('An error occurred. Please try again.');
+        });
+    });
+
+    document.getElementById('investorForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        fetch('{{ route('home.investor.email') }}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            credentials: 'same-origin'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.status === 'success') {
+                alert(data.message);
+                closeInvestorModal();
+                this.reset();
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        });
+    });
+
+    function updateFileName() {
+        const fileInput = document.getElementById('pitch_file');
+        const fileChosen = document.getElementById('file-chosen');
+        fileChosen.textContent = fileInput.files[0] ? fileInput.files[0].name : 'No File Chosen';
+    }
+</script>
+@endpush

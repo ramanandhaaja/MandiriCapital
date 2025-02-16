@@ -85,7 +85,20 @@
                 <div class="contact-icon-section" id="contactToggle">
                     <i class="fas fa-chevron-down contact-icon" aria-hidden="true"></i>Show Form
                 </div>
-                <form id="contactForm" class="contact-form hidden">
+
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
+                <form id="contactForm" class="contact-form hidden" action="{{ route('portfolio.get.investment.email') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     {{-- Company Details --}}
                     <div class="form-row">
@@ -134,7 +147,7 @@
                             <label for="company_profile" class="file-upload-button">Choose File</label>
                             <span class="file-name">No File Chosen</span>
                             <input type="file" id="company_profile" name="company_profile" class="file-input"
-                                accept=".pdf" required>
+                                accept=".pdf" >
                         </div>
                         <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page PDF)</p>
                         <div class="upload-guidelines">
@@ -443,7 +456,19 @@
             </div>
 
             <div class="grid-headline-contact-card">
-                <form id="contactForm" class="contact-form">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
+                <form id="contactForm" class="contact-form" action="{{ route('portfolio.funds.email') }}" method="POST">
                     @csrf
                     {{-- Company Details --}}
                     <div class="form-row">
@@ -495,7 +520,6 @@
                 </form>
             </div>
         </div>
-
 
         {{-- Portfolio Register Form Modal --}}
         <div id="portfolioFormModal" class="modal">
@@ -726,12 +750,5 @@
                     closePortfolioModal();
                 }
             }
-
-            // Handle form submission
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // Add your form submission logic here
-                console.log('Form submitted');
-            });
         </script>
     @endsection

@@ -264,7 +264,20 @@
             </div>
 
             <div class="grid-headline-contact-card">
-                <form id="contactForm" class="contact-form">
+
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
+                <form id="contactForm" class="contact-form hidden" action="{{ route('platform.email') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     {{-- Company Details --}}
 
@@ -338,9 +351,9 @@
                         <label class="form-label">Upload Your Company Profile / Pitch Deck</label>
                         <div class="file-upload-container">
                             <label for="company_profile" class="file-upload-button">Choose File</label>
-                            <span class="file-name">No File Chosen</span>
+                            <span class="file-name" id="fileName">No File Chosen</span>
                             <input type="file" id="company_profile" name="company_profile" class="file-input"
-                                accept=".pdf" required>
+                                accept=".pdf" onchange="updateFileName(this)" required>
                         </div>
                         <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page PDF)</p>
                         <div class="upload-guidelines">
@@ -362,34 +375,34 @@
                         <label class="form-label">Choose your company's main business sector</label>
                         <div class="sector-grid">
                             <div class="sector-item">
-                                <input type="radio" id="agriculture" name="business_sector" value="Agriculture & Food"
+                                <input type="radio" id="embedded_finance" name="business_sector" value="Embedded Finance"
                                     class="sector-radio" required>
-                                <label for="agriculture" class="sector-label">Embedded Finance</label>
+                                <label for="embedded_finance" class="sector-label">Embedded Finance</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="energy" name="business_sector" value="Energy & Resources"
+                                <input type="radio" id="health_wellness" name="business_sector" value="Health & Wellness"
                                     class="sector-radio">
-                                <label for="energy" class="sector-label">Health & Wellness</label>
+                                <label for="health_wellness" class="sector-label">Health & Wellness</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="healthcare" name="business_sector"
-                                    value="Healthcare & Pharmaceuticals" class="sector-radio">
-                                <label for="healthcare" class="sector-label">Wealth Management</label>
+                                <input type="radio" id="wealth_management" name="business_sector"
+                                    value="Wealth Management" class="sector-radio">
+                                <label for="wealth_management" class="sector-label">Wealth Management</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="education" name="business_sector"
-                                    value="Education & employment" class="sector-radio">
-                                <label for="education" class="sector-label">Tech Enabler</label>
+                                <input type="radio" id="tech_enabler" name="business_sector"
+                                    value="Tech Enabler" class="sector-radio">
+                                <label for="tech_enabler" class="sector-label">Tech Enabler</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="automotive" name="business_sector"
-                                    value="Automotive & Transportation" class="sector-radio">
-                                <label for="automotive" class="sector-label">Value Chain Enabler</label>
+                                <input type="radio" id="value_chain" name="business_sector"
+                                    value="Value Chain Enabler" class="sector-radio">
+                                <label for="value_chain" class="sector-label">Value Chain Enabler</label>
                             </div>
                             <div class="sector-item">
-                                <input type="radio" id="banking" name="business_sector"
-                                    value="Banking & Financial Service" class="sector-radio">
-                                <label for="banking" class="sector-label">Property Tech & Asset Management</label>
+                                <input type="radio" id="property_tech" name="business_sector"
+                                    value="Property Tech & Asset Management" class="sector-radio">
+                                <label for="property_tech" class="sector-label">Property Tech & Asset Management</label>
                             </div>
                             <div class="sector-item">
                                 <input type="radio" id="other" name="business_sector" value="Other"
@@ -461,5 +474,11 @@
             // Initialize with business section
             updateSections('business');
         });
+    </script>
+    <script>
+        function updateFileName(input) {
+            const fileName = document.getElementById('fileName');
+            fileName.textContent = input.files[0] ? input.files[0].name : 'No File Chosen';
+        }
     </script>
 @endsection

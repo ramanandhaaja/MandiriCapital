@@ -65,7 +65,19 @@
                 <div class="contact-form-section">
                     <p class="contact-form-intro">We are happy to discuss your business situation, please contact.</p>
 
-                    <form id="contactForm" class="contact-form">
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
+                    <form id="contactForm" class="contact-form" action="{{ route('contact.email') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <p class="identity-text">I'm a</p>
 
@@ -93,57 +105,57 @@
                         </div>
 
                         {{-- Contact Form Other --}}
-                        <div class="form-startup">
+                        <div class="form-startup" style="display: block;">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="startup_name" class="form-label"> Startup's Name</label>
                                     <input type="text" id="startup_name" name="startup_name" class="form-input"
-                                        placeholder="Write here..." required>
+                                        placeholder="Write here...">
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" id="email" name="email" class="form-input"
-                                        placeholder="Write here..." required>
+                                        placeholder="Write here...">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="startup_category" class="form-label"> Startup Category</label>
                                     <input type="text" id="startup_category" name="startup_category" class="form-input"
-                                        placeholder="Write here..." required>
+                                        placeholder="Write here...">
                                 </div>
                                 <div class="form-group">
                                     <label for="company_name" class="form-label">Company Name</label>
                                     <input type="text" id="company_name" name="company_name" class="form-input"
-                                        placeholder="Write here..." required>
+                                        placeholder="Write here...">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="problem" class="form-label">Whats the problem you are trying to solve?</label>
                                 <textarea id="problem" name="problem" rows="5" class="form-textarea" placeholder="Write here..."
-                                    maxlength="300" required></textarea>
+                                    maxlength="300"></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label for="solution" class="form-label">How are you going to solve the problem?</label>
                                 <textarea id="solution" name="solution" rows="5" class="form-textarea" placeholder="Write here..."
-                                    maxlength="300" required></textarea>
+                                    maxlength="300"></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label for="proposition" class="form-label">What's your value proposition?</label>
                                 <textarea id="proposition" name="proposition" rows="5" class="form-textarea" placeholder="Write here..."
-                                    maxlength="300" required></textarea>
+                                    maxlength="300"></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Upload Your Company Profile / Pitch Deck</label>
                                 <div class="file-upload-container">
                                     <label for="company_profile" class="file-upload-button">Choose File</label>
-                                    <span class="file-name">No File Chosen</span>
+                                    <span class="file-name" id="fileName">No File Chosen</span>
                                     <input type="file" id="company_profile" name="company_profile" class="file-input"
-                                        accept=".pdf" required>
+                                        accept=".pdf" onchange="updateFileName(this)">
                                 </div>
                                 <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page
                                     PDF)</p>
@@ -170,30 +182,29 @@
                         </div>
 
                         {{-- Contact Form Other --}}
-                        <div class="form-other">
-
+                        <div class="form-other" style="display: none;">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name" class="form-label"> Name</label>
                                     <input type="text" id="name" name="name" class="form-input"
-                                        placeholder="Write here..." required>
+                                        placeholder="Write here...">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" id="email" name="email" class="form-input"
-                                        placeholder="Write here..." required>
+                                    <label for="other_email" class="form-label">Email</label>
+                                    <input type="email" id="other_email" name="other_email" class="form-input"
+                                        placeholder="Write here...">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="subject" class="form-label">Subject</label>
                                 <input type="text" id="subject" name="subject" class="form-input"
-                                    placeholder="Write here..." required>
+                                    placeholder="Write here...">
                             </div>
 
                             <div class="form-group">
                                 <label for="message" class="form-label">Message</label>
-                                <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Write here..." required></textarea>
+                                <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Write here..."></textarea>
                             </div>
 
                             <div class="form-group">
@@ -234,60 +245,51 @@
     </section>
 @endsection
 
-<style>
-.customer-report-container {
-    position: relative;
-}
 
-.contact-info-title[data-tooltip] {
-    position: relative;
-    cursor: help;
-}
 
-.contact-info-title[data-tooltip]:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 14px;
-    white-space: nowrap;
-    z-index: 100;
-    margin-top: 5px;
-}
-</style>
+<script>
+    function updateFileName(input) {
+        const fileNameSpan = document.getElementById('fileName');
+        if (input.files && input.files[0]) {
+            fileNameSpan.textContent = input.files[0].name;
+        } else {
+            fileNameSpan.textContent = 'No File Chosen';
+        }
+    }
+</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const radioButtons = document.querySelectorAll('input[name="identity"]');
         const formStartup = document.querySelector('.form-startup');
         const formOther = document.querySelector('.form-other');
+        const radioButtons = document.querySelectorAll('input[name="identity"]');
 
-        // Function to update form visibility
-        function updateFormVisibility(selectedValue) {
-            if (selectedValue === 'startup') {
-                formOther.classList.remove('active');
-                formStartup.classList.add('active');
+        console.log('Form action:', document.getElementById('contactForm').action);
+
+        function toggleForm(identity) {
+            console.log('Toggling form for:', identity);
+            if (identity === 'startup') {
+                formStartup.style.display = 'block';
+                formOther.style.display = 'none';
             } else {
-                formStartup.classList.remove('active');
-                formOther.classList.add('active');
+                formStartup.style.display = 'none';
+                formOther.style.display = 'block';
             }
         }
 
-        // Show initial form based on default checked radio
-        const initialChecked = document.querySelector('input[name="identity"]:checked');
-        if (initialChecked) {
-            updateFormVisibility(initialChecked.value);
-        }
+        // Set initial state
+        toggleForm('startup');
 
-        // Add event listeners to radio buttons
+        // Handle radio button changes
         radioButtons.forEach(radio => {
-            radio.addEventListener('change', function() {
-                updateFormVisibility(this.value);
+            radio.addEventListener('change', (e) => {
+                toggleForm(e.target.value);
             });
+        });
+
+        // Debug form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            console.log('Form submitting...');
         });
     });
 </script>
