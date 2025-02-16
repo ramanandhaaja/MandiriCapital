@@ -11,6 +11,7 @@
             <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
 
+
         <div class="hero-content">
             <h1 class="hero-main-text">{{ $hero->title }}</h1>
             <div class="center-search">
