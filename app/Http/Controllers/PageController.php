@@ -51,10 +51,7 @@ class PageController extends Controller
 {
     public function __construct()
     {
-        $masterData = HeroMaster::first();
-        $menuCategory = HeroSectionCategory::all();
-
-        view()->share(compact('masterData', 'menuCategory'));
+        // Menu data is now shared via AppServiceProvider
     }
 
     /**

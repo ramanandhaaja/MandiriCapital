@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Filament\Support\Facades\FilamentView;
 use Illuminate\Contracts\View\View;
+use App\Models\HeroMaster;
+use App\Models\HeroSectionCategory;
+use Illuminate\Support\Facades\View as ViewFacade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,5 +29,13 @@ class AppServiceProvider extends ServiceProvider
             'panels::auth.login.form.after',
             fn (): View => view('filament.login_extra')
         );
+
+        // Share menu data with all views
+        ViewFacade::composer('*', function ($view) {
+            $masterData = HeroMaster::first();
+            $menuCategory = HeroSectionCategory::all();
+
+            $view->with(compact('masterData', 'menuCategory'));
+        });
     }
 }
