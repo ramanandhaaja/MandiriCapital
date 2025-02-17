@@ -16,7 +16,7 @@
              --}}
         </div>
         <div class="hero-content">
-            <img src="{{ '/storage/' . $PlatformValueCreationZenith->hero_image }}" alt="For Startup" class="right-image">
+            <img src="{{ '/storage/' . $PlatformValueCreationZenith->hero_image }}" alt="For Startup" class="right-image" loading="lazy">
         </div>
     </div>
 
@@ -32,7 +32,7 @@
                 <div class="masonry-grid-investment-section-sub">
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->whyzenith_icon1 }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->whyzenith_icon1 }}" alt="" loading="lazy">
                         </div>
                         <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('whyzenith_title1', session('locale', 'en')) !!}
                         </h2>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->whyzenith_icon2 }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->whyzenith_icon2 }}" alt="" loading="lazy">
                         </div>
                         <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('whyzenith_title2', session('locale', 'en')) !!}
                         </h2>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->whyzenith_icon3 }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->whyzenith_icon3 }}" alt="" loading="lazy">
                         </div>
                         <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('whyzenith_title3', session('locale', 'en')) !!}
                         </h2>
@@ -71,7 +71,7 @@
                 <div class="masonry-grid-investment-section-sub">
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->insidezenith_icon1 }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->insidezenith_icon1 }}" alt="" loading="lazy">
                         </div>
                         <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_title1', session('locale', 'en')) !!}
                         </h2>
@@ -79,7 +79,7 @@
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->insidezenith_icon2 }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->insidezenith_icon2 }}" alt="" loading="lazy">
                         </div>
                         <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_title2', session('locale', 'en')) !!}
                         </h2>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="grid-headline-title-card-sub">
                         <div class="card-icon">
-                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->insidezenith_icon3 }}" alt="">
+                            <img src="{{ '/storage/' . $PlatformValueCreationZenith->insidezenith_icon3 }}" alt="" loading="lazy">
                         </div>
                         <h2 class="card-title">{!! $PlatformValueCreationZenith->getTranslation('insidezenith_title3', session('locale', 'en')) !!}
                         </h2>
@@ -105,22 +105,22 @@
             <h2 class="business-deals-title">{!! $PlatformValueCreationZenith->getTranslation('deal_title', session('locale', 'en')) !!}</h2>
             <div class="business-logos-grid">
                 <div class="logo-item">
-                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path1 }}" alt="Rekosistem Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path1 }}" alt="Rekosistem Logo" loading="lazy">
                 </div>
                 <div class="logo-item">
-                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path2 }}" alt="AI Rudder Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path2 }}" alt="AI Rudder Logo" loading="lazy">
                 </div>
                 <div class="logo-item">
-                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path3 }}" alt="Imajin Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path3 }}" alt="Imajin Logo" loading="lazy">
                 </div>
                 <div class="logo-item">
-                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path4 }}" alt="Lifepack Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path4 }}" alt="Lifepack Logo" loading="lazy">
                 </div>
                 <div class="logo-item">
-                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path5 }}" alt="Praktis Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path5 }}" alt="Praktis Logo" loading="lazy">
                 </div>
                 <div class="logo-item">
-                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path6 }}" alt="Fishlog Logo">
+                    <img src="{{ '/storage/' . $PlatformValueCreationZenith->deal_image_path6 }}" alt="Fishlog Logo" loading="lazy">
                 </div>
             </div>
         </div>
@@ -148,7 +148,7 @@
                 <div class="masonry-grid-investment-section-sub">
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo1 }}" alt="funding2.png" class="card-funding-image" />
+                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo1 }}" alt="funding2.png" class="card-funding-image" loading="lazy" />
                         <div class="funding-category">
                             {!! $PlatformValueCreationZenith->testimonialzenith_founder1 !!}
                         </div>
@@ -162,7 +162,7 @@
 
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo2 }}" alt="funding2.png" class="card-funding-image" />
+                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo2 }}" alt="funding2.png" class="card-funding-image" loading="lazy" />
                         <div class="funding-category">
                             {!! $PlatformValueCreationZenith->testimonialzenith_founder2 !!}
                         </div>
@@ -176,7 +176,7 @@
 
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo3 }}" alt="funding2.png" class="card-funding-image" />
+                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo3 }}" alt="funding2.png" class="card-funding-image" loading="lazy" />
                         <div class="funding-category">
                             {!! $PlatformValueCreationZenith->testimonialzenith_founder3 !!}
                         </div>

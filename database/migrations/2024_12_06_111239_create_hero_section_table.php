@@ -45,11 +45,6 @@ return new class extends Migration
             $table->string('instagram');
             $table->string('linkedin');
             $table->string('twitter');
-            $table->string('email_form');
-            $table->string('email_contact');
-            $table->string('email_customer_report');
-            $table->string('phone');
-            $table->string('address');
             $table->timestamps();
         });
 

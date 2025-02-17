@@ -9,7 +9,7 @@
     {{-- Hero Section --}}
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
-            <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
+            <source loading="lazy" src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
 
         <div class="hero-content">
@@ -99,7 +99,7 @@
                                 <div class="grid-headline-title-card-sub">
                                     @if ($subArticle->image_path)
                                         <div class="card-icon">
-                                            <img src="{{ '/storage/' . $subArticle->image_path }}" alt="">
+                                            <img src="{{ '/storage/' . $subArticle->image_path }}" alt="" loading="lazy">
                                         </div>
                                     @else
                                         <div class="card-icon-bottom">
@@ -148,18 +148,18 @@
                                 <div class="carousel-container" id="carousel-even-{{ $index }}">
                                     <div class="carousel-slide active" data-carousel="even-{{ $index }}">
                                         <img src="{{ '/storage/' . $program->image_path_frontpage1 }}"
-                                            alt="{{ $program->title }}" class="carousell-image">
+                                            alt="{{ $program->title }}" class="carousell-image" loading="lazy">
                                     </div>
                                     @if ($program->image_path_frontpage2)
                                         <div class="carousel-slide" data-carousel="even-{{ $index }}">
                                             <img src="{{ '/storage/' . $program->image_path_frontpage2 }}"
-                                                alt="{{ $program->title }}" class="carousell-image">
+                                                alt="{{ $program->title }}" class="carousell-image" loading="lazy">
                                         </div>
                                     @endif
                                     @if ($program->image_path_frontpage3)
                                         <div class="carousel-slide" data-carousel="even-{{ $index }}">
                                             <img src="{{ '/storage/' . $program->image_path_frontpage3 }}"
-                                                alt="{{ $program->title }}" class="carousell-image">
+                                                alt="{{ $program->title }}" class="carousell-image" loading="lazy">
                                         </div>
                                     @endif
 
@@ -183,7 +183,7 @@
                                 <div class="carousel-container" id="carousel-odd-{{ $index }}">
                                     <div class="carousel-slide active" data-carousel="odd-{{ $index }}">
                                         <img src="{{ '/storage/' . $program->image_path_frontpage1 }}"
-                                            alt="{{ $program->title }}" class="carousell-image">
+                                            alt="{{ $program->title }}" class="carousell-image" loading="lazy">
                                     </div>
                                 </div>
                             </div>
@@ -210,18 +210,18 @@
                                 <div class="carousel-container" id="carousel-even-{{ $index }}">
                                     <div class="carousel-slide active" data-carousel="even-{{ $index }}">
                                         <img src="{{ '/storage/' . $program->image_path_frontpage1 }}"
-                                            alt="{{ $program->title }}" class="carousell-image">
+                                            alt="{{ $program->title }}" class="carousell-image" loading="lazy">
                                     </div>
                                     @if ($program->image_path_frontpage2)
                                         <div class="carousel-slide" data-carousel="even-{{ $index }}">
                                             <img src="{{ '/storage/' . $program->image_path_frontpage2 }}"
-                                                alt="{{ $program->title }}" class="carousell-image">
+                                                alt="{{ $program->title }}" class="carousell-image" loading="lazy">
                                         </div>
                                     @endif
                                     @if ($program->image_path_frontpage3)
                                         <div class="carousel-slide" data-carousel="even-{{ $index }}">
                                             <img src="{{ '/storage/' . $program->image_path_frontpage3 }}"
-                                                alt="{{ $program->title }}" class="carousell-image">
+                                                alt="{{ $program->title }}" class="carousell-image" loading="lazy">
                                         </div>
                                     @endif
 
@@ -245,7 +245,7 @@
                                 <div class="carousel-container" id="carousel-odd-{{ $index }}">
                                     <div class="carousel-slide active" data-carousel="odd-{{ $index }}">
                                         <img src="{{ '/storage/' . $program->image_path_frontpage1 }}"
-                                            alt="{{ $program->title }}" class="carousell-image">
+                                            alt="{{ $program->title }}" class="carousell-image" loading="lazy">
                                     </div>
                                 </div>
                             </div>
@@ -430,7 +430,7 @@
 
             <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
-                    class="button-image center-image-newsletter">
+                    class="button-image center-image-newsletter" loading="lazy">
             </a>
         </div>
     </div>

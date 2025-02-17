@@ -10,7 +10,7 @@
 
         <div class="apply-header">
             <h1 class="apply-title">Registration</h1>
-            <img src="{{ asset('images/platform/zenith-apply.png') }}" alt="Zenith Logo" class="apply-logo">
+            <img loading="lazy" src="{{ asset('images/platform/zenith-apply.png') }}" alt="Zenith Logo" class="apply-logo">
         </div>
 
 

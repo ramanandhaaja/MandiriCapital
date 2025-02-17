@@ -30,11 +30,6 @@ class HeroSectionSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/mandiricapital/',
             'linkedin' => 'https://www.linkedin.com/company/mandiri-capital-indonesia-mci/posts/?feedView=all',
             'twitter' => '',
-            'email_form' => 'info@mandiri-capital.co.id',
-            'email_contact' => 'info@mandiri-capital.co.id',
-            'email_customer_report' => 'mcicare@mandiri-capital.co.id',
-            'phone' => ' +62-21-5266661',
-            'address' => 'Menara Mandiri II, lantai 14, Jl. Jend. Sudirman No. 54-55, Jakarta 12190',
             ],
         ];
 

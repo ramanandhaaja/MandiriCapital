@@ -42,6 +42,7 @@ use App\Models\PublicationCategory;
 use App\Models\PublicationEmailDownload;
 use App\Models\PublicationEmailRegistered;
 use App\Mail\TestEmail;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
@@ -110,7 +111,8 @@ class PageController extends Controller
 
     public function contact()
     {
-        return view('pages.contact');
+        $contact = Contact::first();
+        return view('pages.contact', compact('contact'));
     }
 
     public function media()

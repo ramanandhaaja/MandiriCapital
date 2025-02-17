@@ -8,7 +8,7 @@
     {{-- Hero Section --}}
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
-            <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
+            <source loading="lazy" src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
 
 
@@ -49,7 +49,8 @@
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <img src="{{ '/storage/' . $mciintro->icon_article1 }}"
-                                    alt="">
+                                    alt=""
+                                    loading="lazy">
                             </div>
                             <div class="feature-content">
                                 <h3>{!! $mciintro->getTranslation('articletitle1', session('locale', 'en')) !!}</h3>
@@ -59,7 +60,8 @@
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <img src="{{ '/storage/' . $mciintro->icon_article2 }}"
-                                    alt="">
+                                    alt=""
+                                    loading="lazy">
                             </div>
                             <div class="feature-content">
                                 <h3>{!! $mciintro->getTranslation('articletitle2', session('locale', 'en')) !!}</h3>
@@ -69,7 +71,8 @@
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <img src="{{ '/storage/' . $mciintro->icon_article3 }}"
-                                    alt="">
+                                    alt=""
+                                    loading="lazy">
                             </div>
                             <div class="feature-content">
                                 <h3>{!! $mciintro->getTranslation('articletitle3', session('locale', 'en')) !!}</h3>
@@ -88,7 +91,8 @@
                     <div class="headline-card {{ $index > 0 ? ($index === 3 ? 'left-border' : 'middle-border') : '' }}">
                         <h1>{!! $sector->getTranslation('main_title', session('locale', 'en')) !!}</h1>
                         <img class="headline-image" src="{{ '/storage/' . $sector->image_path }}"
-                            alt="{{ $sector->title }}">
+                            alt="{{ $sector->title }}"
+                            loading="lazy">
                         <h1>{!! $sector->getTranslation('title', session('locale', 'en')) !!}</h1>
                     </div>
                 @endforeach
@@ -100,7 +104,8 @@
                 <h2 class="newsletter-title">{!! $masterData->getTranslation('footer', session('locale', 'en')) !!}</h2>
                 <a href="{{ route('contact') }}" class="newsletter-link">
                     <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect"
-                        class="button-image center-image-newsletter">
+                        class="button-image center-image-newsletter"
+                        loading="lazy">
                 </a>
             </div>
         </div>
@@ -113,7 +118,8 @@
                 <div class="card-ecosystem-highlight">
                     <div class="card-ecosystem-highlight-grid">
                         <img src="{{ '/storage/' .$headline->image_path }}" alt="{!! $headline->getTranslation('title', session('locale', 'en')) !!}"
-                            class="card-ecosystem-image-highlight">
+                            class="card-ecosystem-image-highlight"
+                            loading="lazy">
                         <div class="">
                             <div class="tag-container-highlight">
                                 @if($headline->is_domestic)
@@ -147,7 +153,8 @@
                 <div class="card-ecosystem" data-hover-trigger>
                     <div class="background-image">
                         <img src="{{ '/storage/' . $subArticle->image_path }}" alt="{!! $subArticle->getTranslation('title', session('locale', 'en')) !!}"
-                            class="card-ecosystem-image">
+                            class="card-ecosystem-image"
+                            loading="lazy">
                         <div class="tag-container">
                             @if ($subArticle->is_domestic)
                                 <span class="tag tag-domestic">{{ session('locale') === 'id' ? 'Domestik' : 'Domestic' }}</span>
@@ -166,7 +173,8 @@
                     <div class="card-ecosystem-hover">
                         <div class="hover-content">
                             <img src="{{ '/storage/' . $subArticle->image_path }}" alt="{!! $subArticle->getTranslation('title', session('locale', 'en')) !!}"
-                                class="hover-image">
+                                class="hover-image"
+                                loading="lazy">
                             <h2 class="hover-title">{{ session('locale') === 'id' ? 'Inilah yang kami cari untuk sinergi:' : "Here's what we seek for a synergy:" }}</h2>
 
                             <h4 class="focus-areas-title">{{ session('locale') === 'id' ? 'Area Fokus:' : 'Focus Areas:' }}</h4>
@@ -208,7 +216,7 @@
         <div class="masonry-grid">
             @foreach ($teamMembers->where('about_team_category_id', $article['id']) as $subArticle)
                 <div class="team-card">
-                    <img class="background-image" src="{{ '/storage/' . $subArticle->image_path }}" alt="{{ $subArticle->name }}">
+                    <img class="background-image" src="{{ '/storage/' . $subArticle->image_path }}" alt="{{ $subArticle->name }}" loading="lazy">
                     <div class="card-profile-photo">
                         <span class="team-name">{{ $subArticle->name }}</span>
                         <span class="team-title">{!! $subArticle->getTranslation('title', session('locale', 'en')) !!}</span>
@@ -224,7 +232,8 @@
                 <h2 class="newsletter-title">{!! $masterData->getTranslation('footer', session('locale', 'en')) !!}</h2>
                 <a href="{{ route('contact') }}" class="newsletter-link">
                     <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Let's Connect"
-                        class="button-image center-image-newsletter">
+                        class="button-image center-image-newsletter"
+                        loading="lazy">
                 </a>
             </div>
         </div>

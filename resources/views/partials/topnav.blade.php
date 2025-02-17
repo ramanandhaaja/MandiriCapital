@@ -3,7 +3,7 @@
     <nav class="nav-container">
         <div class="logo">
             <a href="{{ route('home') }}">
-                <img src="{{ asset('images/logo.png') }}" alt="Mandiri Capital">
+                <img src="{{ asset('images/logo.png') }}" alt="Mandiri Capital" loading="lazy">
             </a>
         </div>
 

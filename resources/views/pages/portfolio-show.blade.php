@@ -9,7 +9,7 @@
 
 @section('container')
     <div class="top-hero-section">
-        <img src="{{ Storage::url($portfolio->image_path) }}" alt="{{ $portfolio->name }}" class="author-avatar">
+        <img loading="lazy" src="{{ Storage::url($portfolio->image_path) }}" alt="{{ $portfolio->name }}" class="author-avatar">
     </div>
 
     <div class="hero-section">

@@ -9,7 +9,7 @@
 
 @section('container')
     <div class="top-hero-section">
-        <img src="{{ asset('images/portfolio/BTNLogo.png') }}" alt="Author" class="author-avatar">
+        <img src="{{ asset('images/portfolio/BTNLogo.png') }}" alt="Author" class="author-avatar" loading="lazy">
     </div>
 
     <div class="hero-section">
@@ -52,7 +52,7 @@
             <div class="content-text">
                 <div class="article-content">
                     <div class="company-details">
-                        <img src="{{ asset('images/portfolio/investorsBTN.png') }}" alt="Investors" class="investors-image">
+                        <img src="{{ asset('images/portfolio/investorsBTN.png') }}" alt="Investors" class="investors-image" loading="lazy">
                         </div>
                 </div>
             </div>

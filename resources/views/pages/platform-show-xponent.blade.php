@@ -150,19 +150,19 @@
 
         <div class="platform-image-containter-horizontal">
             @if($PlatformValueCreationXponent->image_path1)
-                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path1 }}" alt="Team Photo">
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path1 }}" alt="Team Photo" loading="lazy">
             @endif
             @if($PlatformValueCreationXponent->image_path2)
-                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path2 }}" alt="Team Photo">
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path2 }}" alt="Team Photo" loading="lazy">
             @endif
             @if($PlatformValueCreationXponent->image_path3)
-                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path3 }}" alt="Team Photo">
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path3 }}" alt="Team Photo" loading="lazy">
             @endif
             @if($PlatformValueCreationXponent->image_path4)
-                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path4 }}" alt="Team Photo">
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path4 }}" alt="Team Photo" loading="lazy">
             @endif
             @if($PlatformValueCreationXponent->image_path5)
-                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path5 }}" alt="Team Photo">
+                <img class="platform-image-large" src="{{ '/storage/' . $PlatformValueCreationXponent->image_path5 }}" alt="Team Photo" loading="lazy">
             @endif
 
         </div>

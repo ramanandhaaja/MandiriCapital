@@ -74,7 +74,8 @@
             <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}"
                      alt="Lets Connect"
-                     class="button-image center-image-newsletter">
+                     class="button-image center-image-newsletter"
+                     loading="lazy">
             </a>
         </div>
     </div>

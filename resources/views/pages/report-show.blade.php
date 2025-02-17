@@ -18,14 +18,14 @@
                         <span style="visibility: hidden;"
                             class="article-date">{{ \Carbon\Carbon::parse($publication->published_date)->format('j F Y') }}</span>
                         <div class="author-info">
-                            <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar">
+                            <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar" loading="lazy">
                             <div class="author-details">
                                 <span class="author-name">Mandiri Capital Indonesia - </span>
                                 <span class="author-role">Author</span>
                             </div>
                         </div>
                         <img src="{{ $publication->image_path ? Storage::url($publication->image_path) : asset('images/media/image5.png') }}"
-                            alt="Author" class="image-left" />
+                            alt="Author" class="image-left" loading="lazy"/>
                         <div class="article-title">{{ $publication->title ?? '' }}</div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
             <!-- Left Column -->
             <div class="download-left">
                 <h2 class="download-title">Please fill in your contact data to request our report</h2>
-                <img src="{{ asset('images/report/download.png') }}" alt="Download" class="download-image">
+                <img src="{{ asset('images/report/download.png') }}" alt="Download" class="download-image" loading="lazy">
             </div>
 
             <!-- Right Column -->

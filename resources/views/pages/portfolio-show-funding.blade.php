@@ -9,7 +9,7 @@
 
 @section('container')
     <div class="top-hero-section">
-        <img src="{{ '/storage/' . $portfolioFunding->image_path }}" alt="Author" class="author-avatar">
+        <img src="{{ '/storage/' . $portfolioFunding->image_path }}" alt="Author" class="author-avatar" loading="lazy">
     </div>
 
     <div class="hero-section">
@@ -66,22 +66,22 @@
                 <div class="article-content">
                     <div class="company-details">
                         @if($portfolioFunding->investor1_url)
-                            <img src="{{ '/storage/' . $portfolioFunding->investor1_url }}" alt="Investor 1" class="investors-imagempf">
+                            <img src="{{ '/storage/' . $portfolioFunding->investor1_url }}" alt="Investor 1" class="investors-imagempf" loading="lazy">
                         @endif
                         @if($portfolioFunding->investor2_url)
-                            <img src="{{ '/storage/' . $portfolioFunding->investor2_url }}" alt="Investor 2" class="investors-imagempf">
+                            <img src="{{ '/storage/' . $portfolioFunding->investor2_url }}" alt="Investor 2" class="investors-imagempf" loading="lazy">
                         @endif
                         @if($portfolioFunding->investor3_url)
-                            <img src="{{ '/storage/' . $portfolioFunding->investor3_url }}" alt="Investor 3" class="investors-imagempf">
+                            <img src="{{ '/storage/' . $portfolioFunding->investor3_url }}" alt="Investor 3" class="investors-imagempf" loading="lazy">
                         @endif
                         @if($portfolioFunding->investor4_url)
-                            <img src="{{ '/storage/' . $portfolioFunding->investor4_url }}" alt="Investor 4" class="investors-imagempf">
+                            <img src="{{ '/storage/' . $portfolioFunding->investor4_url }}" alt="Investor 4" class="investors-imagempf" loading="lazy">
                         @endif
                         @if($portfolioFunding->investor5_url)
-                            <img src="{{ '/storage/' . $portfolioFunding->investor5_url }}" alt="Investor 5" class="investors-imagempf">
+                            <img src="{{ '/storage/' . $portfolioFunding->investor5_url }}" alt="Investor 5" class="investors-imagempf" loading="lazy">
                         @endif
                         @if($portfolioFunding->investor6_url)
-                            <img src="{{ '/storage/' . $portfolioFunding->investor6_url }}" alt="Investor 6" class="investors-imagempf">
+                            <img src="{{ '/storage/' . $portfolioFunding->investor6_url }}" alt="Investor 6" class="investors-imagempf" loading="lazy">
                         @endif
                     </div>
                 </div>

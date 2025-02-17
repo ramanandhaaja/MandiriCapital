@@ -40,36 +40,15 @@ class HeroMasterResource extends Resource
                                         Forms\Components\TextInput::make('linkedin')
                                             ->columnSpanFull(),
 
+                                        Forms\Components\TextInput::make('twitter')
+                                            ->columnSpanFull(),
+
                                     ])
                                     ->columns(2),
                             ])
                             ->columnSpan(2),
+
                         Forms\Components\Group::make()
-                            ->schema([
-                                Forms\Components\Section::make()
-                                    ->schema([
-
-                                        Forms\Components\TextInput::make('email_form')
-                                            ->columnSpanFull(),
-
-                                        Forms\Components\TextInput::make('email_contact')
-                                            ->columnSpanFull(),
-
-                                        Forms\Components\TextInput::make('email_customer_report')
-                                            ->columnSpanFull(),
-
-                                        Forms\Components\TextInput::make('phone')
-                                            ->columnSpanFull(),
-
-                                        Forms\Components\TextInput::make('address')
-                                            ->columnSpanFull(),
-
-
-                                    ])
-                                    ->columns(2),
-                            ])
-                            ->columnSpan(2),
-                            Forms\Components\Group::make()
                             ->schema([
                                 Forms\Components\Section::make('Footer Translations')
                                     ->schema([

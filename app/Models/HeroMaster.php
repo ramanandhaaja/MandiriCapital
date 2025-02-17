@@ -21,10 +21,5 @@ class HeroMaster extends Model
         'instagram',
         'linkedin',
         'twitter',
-        'email_form',
-        'email_contact',
-        'email_customer_report',
-        'phone',
-        'address',
     ];
 }

@@ -16,7 +16,7 @@
              --}}
         </div>
         <div class="hero-content">
-            <img src="{{ '/storage/' . $PlatformValueCreationYaxis->hero_image }}" alt="For Startup" class="right-image">
+            <img src="{{ '/storage/' . $PlatformValueCreationYaxis->hero_image }}" alt="For Startup" class="right-image" loading="lazy">
         </div>
     </div>
 
@@ -30,7 +30,7 @@
 
 
         <div class="platform-image-containter-horizontal-yaxis">
-            <img class="platform-image-large-yaxis" src="{{ '/storage/' . $PlatformValueCreationYaxis->image_path1 }}" alt="Team Photo">
+            <img class="platform-image-large-yaxis" src="{{ '/storage/' . $PlatformValueCreationYaxis->image_path1 }}" alt="Team Photo" loading="lazy">
         </div>
 
 

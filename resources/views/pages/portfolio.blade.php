@@ -7,7 +7,7 @@
 @section('container')
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
-           <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
+           <source loading="lazy" src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
         <div class="hero-content">
             <a href="#">
@@ -52,7 +52,7 @@
                                 @if ($subArticle->icon)
                                     <div class="card-icon">
                                         <img src="{{ '/storage/' . $subArticle->icon }}"
-                                            alt="{!! $subArticle->getTranslation('title', session('locale', 'en')) !!} Icon">
+                                            alt="{!! $subArticle->getTranslation('title', session('locale', 'en')) !!} Icon" loading="lazy">
                                     </div>
                                 @else
                                     <div class="card-icon-bottom">
@@ -257,8 +257,8 @@
         {{-- View Toggle Button --}}
         <div class="floating-action-button">
             <div class="menu-icon" onclick="toggleView()">
-                <img src="{{ asset('images/portfolio/icon-list.png') }}" alt="Menu Icon" class="icon-list active">
-                <img src="{{ asset('images/portfolio/icon-grid.png') }}" alt="Menu Icon" class="icon-grid">
+                <img src="{{ asset('images/portfolio/icon-list.png') }}" alt="Menu Icon" class="icon-list active" loading="lazy">
+                <img src="{{ asset('images/portfolio/icon-grid.png') }}" alt="Menu Icon" class="icon-grid" loading="lazy">
             </div>
         </div>
 
@@ -281,10 +281,10 @@
                                 class="company-image-link">
                                 <div class="image-container">
                                     <img class="portfolio-image" src="{{ Storage::url($portfolio->image_path) }}"
-                                        alt="{{ $portfolio->name }}">
+                                        alt="{{ $portfolio->name }}" loading="lazy">
                                     <div class="image-overlay">
                                         <img class="icon-image" src="{{ Storage::url($portfolio->icon) }}"
-                                            alt="{{ $portfolio->icon }}">
+                                            alt="{{ $portfolio->icon }}" loading="lazy">
 
                                         <p class="portfolio-description">{!! $portfolio->getTranslation('description', session('locale', 'en')) !!}</p>
                                     </div>
@@ -294,7 +294,7 @@
                                 @foreach ($stats as $index => $stat)
                                     <div class="stat-item{{ $index === 1 ? '-middle' : '' }}">
                                         <img src="{{ asset('images/portfolio/' . $stat['icon']) }}"
-                                            alt="Portfolio Statistic">
+                                            alt="Portfolio Statistic" loading="lazy">
                                     </div>
                                 @endforeach
                             </div>
@@ -324,7 +324,7 @@
                                     class="company-image-link-list">
                                     <img class="company-image"
                                         src="{{ $portfolio->image_path ? Storage::url($portfolio->image_path) : asset('images/media/image5.png') }}"
-                                        alt="{{ $portfolio->name }}">
+                                        alt="{{ $portfolio->name }}" loading="lazy">
                                 </a>
                                 <a href="{{ $portfolio->website_url }}" target="_blank"
                                     class="company-website">{{ str_replace(['https://', 'http://'], '', $portfolio->website_url) }}</a>
@@ -360,7 +360,7 @@
                 <h2 class="newsletter-title">{!! $masterData->getTranslation('footer', session('locale', 'en')) !!}</h2>
                 <a href="{{ route('contact') }}">
                     <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
-                        class="button-image center-image-newsletter">
+                        class="button-image center-image-newsletter" loading="lazy">
                 </a>
             </div>
         </div>
@@ -391,7 +391,7 @@
                                             <div class="background-image">
                                         @endif
 
-                                        <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png" class="card-funding-image" />
+                                        <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png" class="card-funding-image" loading="lazy"/>
 
                                         @if (!$subArticle->is_large)
                                             </div>
@@ -412,7 +412,7 @@
                                         <div class="card-funding-hover">
                                             <div class="hover-content">
                                                 <div class="">
-                                                    <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png" class="card-funding-image-hover" />
+                                                    <img src="{{ '/storage/' . $subArticle->image_path }}" alt="funding2.png" class="card-funding-image-hover" loading="lazy"/>
                                                 </div>
                                                 <div class="funding-category-hover">
                                                     {{ session('locale') === 'id' ? 'Kriteria Startup' : 'Startup Criteria' }}

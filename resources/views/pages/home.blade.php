@@ -12,15 +12,15 @@
     {{-- Hero Section: Video background with call-to-action buttons --}}
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
-            <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
+            <source loading="lazy" src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
 
         <div class="hero-content">
             <div class="center-text">{!! $hero->getTranslation('title', session('locale', 'en')) !!}</div>
             <div class="center-text-subtitle">{!! $hero->getTranslation('content', session('locale', 'en')) !!}</div>
             <div class="image-container">
-                <img src="{{ asset('images/home/forstartup.png') }}" alt="For Startup" class="button-image center-image" onclick="openPitchModal()">
-                <img src="{{ asset('images/home/forlp.png') }}" alt="For LP" class="button-image center-image" onclick="openInvestorModal()">
+                <img src="{{ asset('images/home/forstartup.png') }}" alt="For Startup" class="button-image center-image" onclick="openPitchModal()" loading="lazy">
+                <img src="{{ asset('images/home/forlp.png') }}" alt="For LP" class="button-image center-image" onclick="openInvestorModal()" loading="lazy">
             </div>
         </div>
     </div>
@@ -146,7 +146,7 @@
                 <a href="{{ $card->link_url ?? '#' }}" class="card-link">
                 <span class="category">{{ $card->getTranslation('category', session('locale', 'en')) }}</span>
                 @if($card->logo_path)
-                    <img src="{{ '/storage/' . $card->logo_path }}" alt="{{ $card->getTranslation('category', session('locale', 'en')) }} Logo" class="logo-card">
+                    <img src="{{ '/storage/' . $card->logo_path }}" alt="{{ $card->getTranslation('category', session('locale', 'en')) }} Logo" class="logo-card" loading="lazy">
                 @endif
                 <div class="card-content">
                     <h2>{{ $card->getTranslation('title', session('locale', 'en')) }}</h2>
@@ -169,13 +169,15 @@
                                     <div class="image-circle">
                                         <img src="{{ '/storage/' . $testimonial->image_path }}"
                                              alt="{{ $testimonial->name }}"
-                                             class="founder-photo">
+                                             class="founder-photo"
+                                             loading="lazy">
                                     </div>
                                 </div>
                                 <div class="slide-text">
                                     <div class="amartha-logo">
                                         <img src="{{ '/storage/' . $testimonial->company_image_path }}"
-                                             alt="{{ $testimonial->name }} Logo">
+                                             alt="{{ $testimonial->name }} Logo"
+                                             loading="lazy">
                                     </div>
                                     <h3>{{ $testimonial->name }}, {{ $testimonial->getTranslation('title', session('locale', 'en')) }}</h3>
                                     <p>"{{ $testimonial->getTranslation('content', session('locale', 'en')) }}"</p>
@@ -209,7 +211,8 @@
             <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}"
                      alt="Lets Connect"
-                     class="button-image center-image-newsletter">
+                     class="button-image center-image-newsletter"
+                     loading="lazy">
             </a>
         </div>
     </div>

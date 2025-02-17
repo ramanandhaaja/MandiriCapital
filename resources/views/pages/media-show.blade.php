@@ -20,7 +20,8 @@
                     <div class="guest-info">
                         <div class="guest-image">
                             <img src="{{ $post->author_image ? Storage::url($post->author_image) : asset('images/media/author.png') }}"
-                                alt="{{ $post->author_name ?? 'Guest' }}">
+                                alt="{{ $post->author_name ?? 'Guest' }}"
+                                loading="lazy">
                         </div>
                         <div class="guest-details">
                             <div class="guest-label">NEW PODCAST</div>
@@ -44,7 +45,7 @@
                         <div class="meta-info">
                             <span class="article-date">{{ \Carbon\Carbon::parse($post->published_at)->format('d F Y') }}</span>
                             <div class="author-info">
-                                <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar">
+                                <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar" loading="lazy">
                                 <div class="author-details">
                                     <span class="author-name">{{ $post->author_name ?? '' }}</span>
                                     <span class="author-role">Author</span>
@@ -151,7 +152,8 @@
 
             <a href="#">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
-                    class="button-image center-image-newsletter">
+                    class="button-image center-image-newsletter"
+                    loading="lazy">
             </a>
         </div>
     </div>

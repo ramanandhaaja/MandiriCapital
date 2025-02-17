@@ -9,7 +9,7 @@
     {{-- Hero Section with Video Background --}}
     <div class="hero-section">
         <video autoplay muted loop playsinline class="video-background">
-            <source src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
+            <source loading="lazy" src="{{ '/storage/' . $hero->image_path }}" type="video/mp4">
         </video>
 
         <div class="hero-content">
@@ -64,7 +64,8 @@
                                 <div class="guest-info">
                                     <div class="guest-image">
                                         <img src="{{ $post->author_image ?? asset('images/media/author.png') }}"
-                                             alt="{{ $post->author_name ?? 'Guest' }}">
+                                             alt="{{ $post->author_name ?? 'Guest' }}"
+                                             loading="lazy">
                                     </div>
                                     <div class="guest-details">
                                         <div class="guest-label">NEW PODCAST</div>
@@ -78,7 +79,7 @@
                             <div class="blog-header">
                                 <div class="blog-info">
                                     <div class="blog-image">
-                                    <img src="{{ $post->author_image ?? asset('images/media/author.png') }}" alt="Author Name">
+                                    <img src="{{ $post->author_image ?? asset('images/media/author.png') }}" alt="Author Name" loading="lazy">
                                     </div>
                                     <div class="blog-details">
                                         <div class="blog-label">Author</div>
@@ -117,7 +118,8 @@
             <a href="{{ route('contact') }}">
                 <img src="{{ asset('images/portfolio/letsconnect.png') }}"
                      alt="Lets Connect"
-                     class="button-image center-image-newsletter">
+                     class="button-image center-image-newsletter"
+                     loading="lazy">
             </a>
         </div>
     </div>
@@ -249,7 +251,7 @@
                         <div class="guest-header">
                             <div class="guest-info">
                                 <div class="guest-image">
-                                    <img src="${post.author_image ? '/storage/' + post.author_image : '{{ asset('images/media/author.png') }}'}" alt="Author">
+                                    <img src="${post.author_image ? '/storage/' + post.author_image : '{{ asset('images/media/author.png') }}'}" alt="Author" loading="lazy">
 
                                 </div>
                                 <div class="guest-details">
@@ -266,7 +268,7 @@
                         <div class="blog-header">
                             <div class="blog-info">
                                 <div class="blog-image">
-                                    <img src="${post.author_image ? '/storage/' + post.author_image : '{{ asset('images/media/author.png') }}'}" alt="Author">
+                                    <img src="${post.author_image ? '/storage/' + post.author_image : '{{ asset('images/media/author.png') }}'}" alt="Author" loading="lazy">
                                 </div>
                                 <div class="blog-details">
                                     <div class="blog-label">Author</div>

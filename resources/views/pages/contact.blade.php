@@ -12,49 +12,50 @@
                 {{-- Contact Information Column --}}
                 <div>
                     <h2 class="contact-title">
-                        More details?<br>
-                        Contact Us
+                        {!! $contact->getTranslation('contact_title', session('locale', 'en')) !!}
                     </h2>
 
                     <div class="contact-info-section">
                         {{-- Email Information --}}
                         <div class="info-row">
                             <div class="contact-info-group">
-                                <h3 class="contact-info-title">EMAIL</h3>
+                                <h3 class="contact-info-title">{!! $contact->getTranslation('email_contact_title', session('locale', 'en')) !!}</h3>
                                 <a href="mailto:info@mandiri-capital.co.id" class="contact-info-link">
-                                    {{ $masterData->email_contact }}
+                                    {{ $contact->email_contact }}
                                 </a>
                             </div>
 
                             <div class="contact-info-group customer-report-container">
 
-                                <h3 class="contact-info-title" data-tooltip="Reporting Violations of Mandiri Capital Employees.">CUSTOMER REPORT <i class="fas fa-info-circle" aria-hidden="false" data-tooltip="Reporting Violations of Mandiri Capital Employees."></i>
+                                <h3 class="contact-info-title" data-tooltip="{!! $contact->getTranslation('email_customer_report_tooltip', session('locale', 'en')) !!}">{!! $contact->getTranslation('email_customer_report_title', session('locale', 'en')) !!} <i class="fas fa-info-circle" aria-hidden="false" data-tooltip="{!! $contact->getTranslation('email_customer_report_tooltip', session('locale', 'en')) !!}"></i>
                                 </h3>
                                 <a href="mailto:mcicare@mandiri-capital.co.id" class="contact-info-link">
-                                    {{ $masterData->email_customer_report }}
+                                    {{ $contact->email_customer_report }}
                                 </a>
                             </div>
                         </div>
 
                         {{-- Phone Information --}}
                         <div class="contact-info-group">
-                            <h3 class="contact-info-title">PHONE</h3>
+                            <h3 class="contact-info-title">{!! $contact->getTranslation('phone_title', session('locale', 'en')) !!}</h3>
                             <a href="tel:+62215266661" class="contact-info-link">
-                                {{ $masterData->phone }}
+                                {{ $contact->phone }}
                             </a>
                         </div>
 
                         {{-- Social Media Links --}}
                         <div class="contact-info-group">
-                            <h3 class="contact-info-title">VISIT OUR SOCIAL MEDIA</h3>
+                            <h3 class="contact-info-title">{!! $contact->getTranslation('social_media_title', session('locale', 'en')) !!}</h3>
                             <div class="social-media-container">
                                 <a href=" {{ $masterData->instagram }}" class="social-media-link" aria-label="Instagram">
                                     <img src="{{ asset('images/contact/instagram.png') }}" alt="Instagram"
-                                        class="social-media-icon">
+                                        class="social-media-icon"
+                                        loading="lazy">
                                 </a>
                                 <a href=" {{ $masterData->linkedin }}" class="social-media-link" aria-label="LinkedIn">
                                     <img src="{{ asset('images/contact/linkedin.png') }}" alt="LinkedIn"
-                                        class="social-media-icon">
+                                        class="social-media-icon"
+                                        loading="lazy">
                                 </a>
                             </div>
                         </div>
@@ -176,7 +177,7 @@
 
                             <div class="form-group">
                                 <button type="submit" class="submit-button">
-                                    <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message">
+                                    <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message" loading="lazy">
                                 </button>
                             </div>
                         </div>
@@ -209,7 +210,7 @@
 
                             <div class="form-group">
                                 <button type="submit" class="submit-button">
-                                    <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message">
+                                    <img src="{{ asset('images/contact/contact.png') }}" alt="Send Message" loading="lazy">
                                 </button>
                             </div>
                         </div>
@@ -230,14 +231,13 @@
         <div class="map-grid">
             <div class="map-content">
                 <h2 class="map-title">
-                    Visit Our<br>
-                    Office
+                    {!! $contact->getTranslation('map_title', session('locale', 'en')) !!}
                 </h2>
 
                 <div class="map-info">
                     <h3 class="company-name">MANDIRI CAPITAL INDONESIA</h3>
                     <p class="address">
-                        {{ $masterData->address }}
+                        {{ $contact->address }}
                     </p>
                 </div>
             </div>
