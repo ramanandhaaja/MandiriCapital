@@ -11,7 +11,7 @@
         </video>
         <div class="hero-content">
             <a href="#">
-                <h1 class="hero-main-text">{{$hero->title  }} </h1>
+                <h1 class="hero-main-text">{!! $hero->getTranslation('title', session('locale', 'en')) !!}</h1>
             </a>
             <div class="center-search">
 

@@ -82,11 +82,7 @@ class HeroMasterResource extends Resource
         return $table
             ->columns([
 
-                Tables\Columns\TextColumn::make('email')
-                    ->sortable()
-                    ->searchable(),
-
-                Tables\Columns\TextColumn::make('instagram')
+                Tables\Columns\TextColumn::make('footer')
                     ->sortable()
                     ->searchable(),
 

@@ -64,9 +64,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        $hero = HeroSection::with('category')
-        ->whereRelation('category', 'slug', 'home')
-        ->first();
+        $hero = HeroSection::where('hero_section_category_id', '1')->first();
 
         $articles = HomeArticle::take(3)->get();
 
@@ -79,9 +77,8 @@ class PageController extends Controller
 
     public function about()
     {
-        $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('slug', 'our-identity');
-        })->first();
+        $hero = HeroSection::where('hero_section_category_id', '2')->first();
+
 
         $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
             $query->where('slug', 'our-identity');
@@ -115,9 +112,7 @@ class PageController extends Controller
 
     public function media()
     {
-        $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('slug', 'media');
-        })->first();
+        $hero = HeroSection::where('hero_section_category_id', '5')->first();
 
         $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
             $query->where('slug', 'media');
@@ -180,9 +175,8 @@ class PageController extends Controller
 
     public function portfolio()
     {
-        $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('slug', 'portfolio');
-        })->first();
+        $hero = HeroSection::where('hero_section_category_id', '3')->first();
+
 
         $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
             $query->where('slug', 'portfolio');
@@ -236,9 +230,7 @@ class PageController extends Controller
 
     public function platform()
     {
-        $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('slug', 'platform');
-        })->first();
+        $hero = HeroSection::where('hero_section_category_id', '4')->first();
 
         $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
             $query->where('slug', 'platform');
@@ -279,9 +271,8 @@ class PageController extends Controller
 
     public function report()
     {
-        $hero = HeroSection::whereHas('category', function($query) {
-            $query->where('slug', 'publication');
-        })->first();
+        $hero = HeroSection::where('hero_section_category_id', '6')->first();
+
 
         $menuSubCategory = HeroSectionSubCategory::whereHas('category', function($query) {
             $query->where('slug', 'publication');
@@ -409,7 +400,8 @@ class PageController extends Controller
 
     public function customerCare()
     {
-        $hero = HeroSection::where('slug', 'customer-care')->first();
+        $hero = HeroSection::where('hero_section_category_id', '8')->first();
+
 
         $customerCareComplaint = CustomerCare::first();
         $customerCareHow = CustomerCareHow::first();
@@ -418,7 +410,8 @@ class PageController extends Controller
 
     public function privacy()
     {
-        $hero = HeroSection::where('slug', 'privacy-policy')->first();
+        $hero = HeroSection::where('hero_section_category_id', '7')->first();
+
 
         $privacyPolicies = PrivacyPolicy::all();
 

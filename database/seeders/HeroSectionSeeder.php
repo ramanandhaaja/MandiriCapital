@@ -216,13 +216,13 @@ class HeroSectionSeeder extends Seeder
             [
                 'title' => [
                     'en' => 'PRIVACY POLICY',
-                    'id' => 'PRIVASI'
+                    'id' => 'KEBIJAKAN PRIVASI'
                 ],
                 'slug' => 'privacy-policy',
                 'hero_section_category_id' => 7, // Privacy Policy
                 'content' => [
                     'en' => 'Privacy Policy Section Header.',
-                    'id' => 'Header Privasi.'
+                    'id' => 'Header Kebijakan Privasi.'
                 ],
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JMACH2WXRBA28308574XCHZ6.jpeg'

@@ -13,7 +13,7 @@
 
 
         <div class="hero-content">
-            <h1 class="hero-main-text">{{ $hero->title }}</h1>
+            <h1 class="hero-main-text">{!! $hero->getTranslation('title', session('locale', 'en')) !!}</h1>
             <div class="center-search">
                 <nav class="category-filters">
                     @foreach ($menuSubCategory as $menuSubCat)

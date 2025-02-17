@@ -9,7 +9,7 @@
 
 @section('container')
     <div class="top-hero-section">
-        <div class="center-text">{{ $hero->title }}</div>
+        <div class="center-text">{!! $hero->getTranslation('title', session('locale', 'en')) !!}</div>
         {{--  <div class="center-text">{{ session('locale', 'en') == 'en' ? 'PRIVACY POLICY' : 'KEBIJAKAN PRIVASI' }}</div> --}}
     </div>
 
