@@ -43,6 +43,9 @@ use App\Models\PublicationEmailDownload;
 use App\Models\PublicationEmailRegistered;
 use App\Mail\TestEmail;
 use App\Models\Contact;
+use App\Models\CustomerCare;
+use App\Models\CustomerCareHow;
+use App\Models\PrivacyPolicy;
 use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
@@ -70,8 +73,6 @@ class PageController extends Controller
         $articlesHeadlineList = HomeHeadline::all();
 
         $testimonials = HomeProfileCompany::get();
-
-
 
         return view('pages.home', compact('hero', 'articles', 'articlesHeadlineList', 'testimonials'));
     }
@@ -406,12 +407,21 @@ class PageController extends Controller
         return response()->json($portfolios);
     }
 
+    public function customerCare()
+    {
+        $hero = HeroSection::where('slug', 'customer-care')->first();
+
+        $customerCareComplaint = CustomerCare::first();
+        $customerCareHow = CustomerCareHow::first();
+        return view('pages.customer-care', compact('customerCareComplaint', 'customerCareHow', 'hero'));
+    }
+
     public function privacy()
     {
-/*
-        Mail::to('info@codefoundry.co.id')
-            ->send(new TestEmail());*/
+        $hero = HeroSection::where('slug', 'privacy-policy')->first();
 
-        return view('pages.portfolio-show-privacy');
+        $privacyPolicies = PrivacyPolicy::all();
+
+        return view('pages.portfolio-show-privacy', compact('privacyPolicies', 'hero'));
     }
 }

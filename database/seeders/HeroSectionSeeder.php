@@ -46,7 +46,8 @@ class HeroSectionSeeder extends Seeder
                     'id' => 'BERANDA'
                 ],
                 'slug' => 'home',
-                'route' => 'home'
+                'route' => 'home',
+                'show_on_mainmenu' =>  true,
             ],
             [
                 'name' => [
@@ -54,7 +55,8 @@ class HeroSectionSeeder extends Seeder
                     'id' => 'IDENTITAS KAMI'
                 ],
                 'slug' => 'our-identity',
-                'route' => 'about'
+                'route' => 'about',
+                'show_on_mainmenu' =>  true,
             ],
             [
                 'name' => [
@@ -62,7 +64,8 @@ class HeroSectionSeeder extends Seeder
                     'id' => 'INVESTASI'
                 ],
                 'slug' => 'portfolio',
-                'route' => 'portfolio'
+                'route' => 'portfolio',
+                'show_on_mainmenu' =>  true,
             ],
             [
                 'name' => [
@@ -70,7 +73,8 @@ class HeroSectionSeeder extends Seeder
                     'id' => 'PENCIPTAAN NILAI'
                 ],
                 'slug' => 'platform',
-                'route' => 'platform'
+                'route' => 'platform',
+                'show_on_mainmenu' =>  true,
             ],
             [
                 'name' => [
@@ -78,7 +82,8 @@ class HeroSectionSeeder extends Seeder
                     'id' => 'MEDIA'
                 ],
                 'slug' => 'media',
-                'route' => 'media'
+                'route' => 'media',
+                'show_on_mainmenu' =>  true,
             ],
             [
                 'name' => [
@@ -86,15 +91,35 @@ class HeroSectionSeeder extends Seeder
                     'id' => 'PUBLIKASI'
                 ],
                 'slug' => 'publication',
-                'route' => 'report'
+                'route' => 'report',
+                'show_on_mainmenu' =>  true,
             ],
             [
                 'name' => [
                     'en' => 'CONTACT US',
                     'id' => 'HUBUNGI KAMI'
                 ],
-                'slug' => 'contact-us',
-                'route' => 'contact'
+                'slug' => 'contact',
+                'route' => 'contact',
+                'show_on_mainmenu' =>  true,
+            ],
+            [
+                'name' => [
+                    'en' => 'PRIVACY POLICY',
+                    'id' => 'KEBIJAKAN PRIVASI'
+                ],
+                'slug' => 'privacy-policy',
+                'route' => 'privacy-policy',
+                'show_on_mainmenu' =>  false,
+            ],
+            [
+                'name' => [
+                    'en' => 'CUSTOMER CARE',
+                    'id' => 'LAYANAN PELANGGAN'
+                ],
+                'slug' => 'customer-care',
+                'route' => 'customer-care',
+                'show_on_mainmenu' =>  false,
             ]
         ];
 
@@ -187,6 +212,34 @@ class HeroSectionSeeder extends Seeder
                 ],
                 'published_date' => now(),
                 'image_path' => 'hero-sections/01JEMN5NATHM7E9ZMBZAKEG2QD5.mp4'
+            ],
+            [
+                'title' => [
+                    'en' => 'PRIVACY POLICY',
+                    'id' => 'PRIVASI'
+                ],
+                'slug' => 'privacy-policy',
+                'hero_section_category_id' => 7, // Privacy Policy
+                'content' => [
+                    'en' => 'Privacy Policy Section Header.',
+                    'id' => 'Header Privasi.'
+                ],
+                'published_date' => now(),
+                'image_path' => 'hero-sections/01JMACH2WXRBA28308574XCHZ6.jpeg'
+            ],
+            [
+                'title' => [
+                    'en' => 'CUSTOMER CARE',
+                    'id' => 'LAYANAN PENGGUNA'
+                ],
+                'slug' => 'customer-care',
+                'hero_section_category_id' => 8, // Customer Care
+                'content' => [
+                    'en' => 'Customer Care Section Header.',
+                    'id' => 'Header Pengguna.'
+                ],
+                'published_date' => now(),
+                'image_path' => 'hero-sections/01JMAA6FGK35S9G7V71BSRF4FA.png'
             ]
         ];
 

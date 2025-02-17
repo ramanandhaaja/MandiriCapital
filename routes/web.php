@@ -70,3 +70,4 @@ Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('language/{lang}', [LanguageController::class, 'switchLang'])->name('language.switch');
 
 Route::get('/privacy-policy', [PageController::class, 'privacy'])->name('privacy-policy');
+Route::get('/customer-care', [PageController::class, 'customerCare'])->name('customer-care');

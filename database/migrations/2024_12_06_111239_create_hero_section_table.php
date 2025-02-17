@@ -16,6 +16,7 @@ return new class extends Migration
             $table->json('name');
             $table->string('slug')->unique();
             $table->string('route')->unique();
+            $table->boolean('show_on_mainmenu')->default(false);
             $table->timestamps();
         });
 

@@ -54,7 +54,9 @@ class HeroSectionCategoryResource extends Resource
                                                     ->maxLength(255),
                                             ]),
                                     ]),
-
+                                Forms\Components\Toggle::make('show_on_mainmenu')
+                                    ->label('Show on Main Menu')
+                                    ->default(false),
                                 Forms\Components\TextInput::make('slug')
                                     ->required()
                                     ->maxLength(255)
@@ -75,6 +77,8 @@ class HeroSectionCategoryResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
+                Tables\Columns\IconColumn::make('show_on_mainmenu')
+                    ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

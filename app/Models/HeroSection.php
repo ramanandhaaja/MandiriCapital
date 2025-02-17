@@ -23,7 +23,7 @@ class HeroSection extends Model
         'hero_section_category_id',
         'content',
         'published_date',
-        'image_path'
+        'image_path',
     ];
 
     public function category()

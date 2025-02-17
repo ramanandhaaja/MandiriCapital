@@ -27,7 +27,7 @@
 
                             <div class="contact-info-group customer-report-container">
 
-                                <h3 class="contact-info-title" data-tooltip="{!! $contact->getTranslation('email_customer_report_tooltip', session('locale', 'en')) !!}">{!! $contact->getTranslation('email_customer_report_title', session('locale', 'en')) !!} <i class="fas fa-info-circle" aria-hidden="false" data-tooltip="{!! $contact->getTranslation('email_customer_report_tooltip', session('locale', 'en')) !!}"></i>
+                                <h3 class="contact-info-title" data-tooltip="{!! $contact->getTranslation('email_customer_report_tooltip', session('locale', 'en')) !!}">{!! $contact->getTranslation('email_customer_report_title', session('locale', 'en')) !!}
                                 </h3>
                                 <a href="mailto:mcicare@mandiri-capital.co.id" class="contact-info-link">
                                     {{ $contact->email_customer_report }}

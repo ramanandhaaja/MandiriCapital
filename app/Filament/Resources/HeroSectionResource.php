@@ -68,6 +68,7 @@ class HeroSectionResource extends Resource
                                             ->unique(HeroSection::class, 'slug', ignoreRecord: true)
                                             ->disabled(),
 
+
                                     ]),
 
                                 Forms\Components\Section::make('Image/Video')

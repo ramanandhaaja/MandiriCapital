@@ -10,11 +10,12 @@
 @section('container')
 
     <div class="top-hero-section">
-        <div class="center-text">PRIVACY POLICY</div>
+        <div class="center-text">{{ $hero->title }}</div>
+        {{--  <div class="center-text">{{ session('locale', 'en') == 'en' ? 'PRIVACY POLICY' : 'KEBIJAKAN PRIVASI' }}</div>--}}
     </div>
 
     <div class="hero-section">
-        <div class="hero-content" style="background-image: url('{{ asset('images/portfolio/privacy-policy.jpg') }}');">
+        <div class="hero-content" style="background-image: url('{{ '/storage/' . $hero->image_path }}');">
         </div>
     </div>
 
@@ -24,35 +25,20 @@
         <div class="portfolio-section">
             {{-- Table Header --}}
             <div class="portfolio-header">
-                <div class="header-cell">Year </div>
-                <div class="header-cell">Description</div>
+                <div class="header-cell">{{ session('locale', 'en') == 'en' ? 'Year' : 'Tahun' }}</div>
+                <div class="header-cell">{{ session('locale', 'en') == 'en' ? 'Description' : 'Deskripsi' }}</div>
                 <div class="header-cell"></div>
             </div>
 
+            @foreach($privacyPolicies as $policy)
             <div class="portfolio-row">
-                <div class="info-label">2024 </div>
-                <div class="description-cell">Kebijakan Privasi - Pasangan Usaha & Investor</div>
+                <div class="info-label">{{ $policy->year }}</div>
+                <div class="description-cell">{{ $policy->getTranslation('description', session('locale', 'en')) }}</div>
                 <div class="download-cell">
-                    <a href="{{ asset('images/portfolio/01KebijakanPrivasi.pdf') }}" target="_blank" class="website-link"> Download <i class="fas fa-file-pdf"></i></a></div>
+                    <a href="{{ asset('storage/' . $policy->file_url) }}" target="_blank" class="website-link">{{ session('locale', 'en') == 'en' ? 'Download' : 'Unduh' }} <i class="fas fa-file-pdf"></i></a>
+                </div>
             </div>
-            <div class="portfolio-row">
-                <div class="info-label">2024 </div>
-                <div class="description-cell">Kebijakan Privasi - Tenaga Alih Daya</div>
-                <div class="download-cell">
-                    <a href="{{ asset('images/portfolio/02KebijakanPrivasi.pdf') }}" target="_blank" class="website-link"> Download <i class="fas fa-file-pdf"></i></a></div>
-            </div>
-            <div class="portfolio-row">
-                <div class="info-label">2024 </div>
-                <div class="description-cell">Kebijakan Privasi - Peserta Pemagangan</div>
-                <div class="download-cell">
-                    <a href="{{ asset('images/portfolio/03KebijakanPrivasi.pdf') }}" target="_blank" class="website-link"> Download <i class="fas fa-file-pdf"></i></a></div>
-            </div>
-            <div class="portfolio-row">
-                <div class="info-label">2024 </div>
-                <div class="description-cell">Kebijakan Privasi - Pihak Ketiga</div>
-                <div class="download-cell">
-                    <a href="{{ asset('images/portfolio/04KebijakanPrivasi.pdf') }}" target="_blank" class="website-link"> Download <i class="fas fa-file-pdf"></i></a></div>
-            </div>
+            @endforeach
         </div>
     </div>
 

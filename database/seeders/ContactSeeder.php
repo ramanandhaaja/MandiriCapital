@@ -27,8 +27,8 @@ class ContactSeeder extends Seeder
                 'id' => "EMAIL"
             ],
             'email_customer_report_title' => [
-                'en' => "CUSTOMER REPORT",
-                'id' => "LAPORAN PELANGGAN"
+                'en' => "MCI's Whistleblowing ",
+                'id' => "Whistleblowing MCI's"
             ],
             'email_customer_report_tooltip' => [
                 'en' => "Reporting Violations of Mandiri Capital Employees.",
@@ -45,8 +45,8 @@ class ContactSeeder extends Seeder
             'email_form' => 'info@mandiri-capital.co.id',
             'email_contact' => 'info@mandiri-capital.co.id',
             'email_customer_report' => 'mcicare@mandiri-capital.co.id',
-            'phone' => ' +62-21-5266661',
-            'address' => 'Menara Mandiri II, lantai 14, Jl. Jend. Sudirman No. 54-55, Jakarta 12190',
+            'phone' => '+62-21-5266661',
+            'address' => 'Menara Mandiri II, 14th Floor Jl. Jend. Sudirman Kav No. 54-55, Jakarta 12190',
             ],
         ];
 

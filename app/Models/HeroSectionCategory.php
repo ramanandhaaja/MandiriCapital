@@ -19,6 +19,7 @@ class HeroSectionCategory extends Model
     protected $fillable = [
         'name',
         'slug',
+        'show_on_mainmenu',
         'route'
     ];
 

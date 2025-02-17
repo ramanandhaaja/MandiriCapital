@@ -18,16 +18,16 @@
                 @foreach ($menuCategory as $menuCat)
                 <li><a href="{{ route($menuCat->route) }}">{{ $menuCat->name }}</a></li>
                 @endforeach
-                <li><a href="{{ route('privacy-policy') }}">PRIVACY POLICY</a></li>
             </ul>
         </div>
 
         <!-- Right Column -->
         <div class="footer-right">
-            <p class="footer-right-text">Authorized</p>
-            <p class="footer-right-text">and Supervised by</p>
-            <p class="footer-right-text"><strong>OJK (Otoritas Jasa Keuangan)</strong></p>
+            <p class="footer-right-text">{{ session('locale', 'en') == 'en' ? 'Authorized' : 'Dikelola' }}</p>
+            <p class="footer-right-text">{{ session('locale', 'en') == 'en' ? 'and Supervised by' : 'dan Diperiksa Oleh' }}</p>
+            <p class="footer-right-text"><strong>{{ session('locale', 'en') == 'en' ? 'OJK (Otoritas Jasa Keuangan)' : 'OJK (Otoritas Jasa Keuangan)' }}</strong></p>
         </div>
+
 
         <!-- Certification Section -->
         <div class="footer-certification">

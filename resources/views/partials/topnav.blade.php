@@ -18,7 +18,7 @@
         <div class="nav-content" id="navContent">
             <div class="nav-links">
                 @foreach ($menuCategory as $menuCat)
-                @if ($menuCat->route != 'home')
+                @if ($menuCat->route != 'home' && $menuCat->show_on_mainmenu)
                     <a href="{{ route($menuCat->route) }}" class="nav-item {{ Route::currentRouteName() ==  $menuCat->route  ? 'active' : '' }}">{{ $menuCat->name }}</a>
                 @endif
                 @endforeach
@@ -30,7 +30,7 @@
                     <i class="fas fa-search"></i>
                 </button>
 
-                <div class="language-selector" >
+                <div class="language-selector"  >
                     <a href="{{ route('language.switch', 'en') }}" class="lang-link {{ session('locale', 'en') == 'en' ? 'active' : '' }}">EN</a>
                     <span class="lang-separator">|</span>
                     <a href="{{ route('language.switch', 'id') }}" class="lang-link {{ session('locale', 'en') == 'id' ? 'active' : '' }}">ID</a>
