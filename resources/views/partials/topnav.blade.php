@@ -26,7 +26,7 @@
 
 
             <div class="nav-right">
-                <button class="search-icon" style="visibility: hidden;">
+                <button class="search-icon" style="display: none;">
                     <i class="fas fa-search"></i>
                 </button>
 
