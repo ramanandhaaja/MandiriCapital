@@ -24,7 +24,7 @@ class PlatformEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('MS_06VHji@trial-3vz9dleok16gkj50.mlsender.net', 'Code Foundry'),
+            from: new Address('MS_06VHji@trial-3vz9dleok16gkj50.mlsender.net', 'Mandiri Capital Indonesia'),
             subject: 'New Platform Submission - ' . $this->formData['program'],
         );
     }
