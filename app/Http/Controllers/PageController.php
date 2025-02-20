@@ -277,6 +277,8 @@ class PageController extends Controller
         }elseif ($slug=="zenith") {
             $PlatformValueCreationZenith = PlatformValueCreationZenith::first();
             return view('pages.platform-show-zenith', compact('PlatformValueCreationZenith'));
+        }else{
+            abort(404);
         }
     }
 

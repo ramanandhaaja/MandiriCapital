@@ -8,10 +8,15 @@
 
 <div class="newsletter-section">
     <div class="newsletter-container">
+        @php
+            $heroError = \App\Models\HeroError::first();
+            $locale = session('locale', config('app.locale'));
+            app()->setLocale($locale);
+        @endphp
 
-        <img src="{{ asset('images/404/404.gif') }}" alt="404" class="center-largeimage-newsletter">
-        <h2 class="newsletter-title">This page is under construction</h2>
-        <p class="newsletter-subtitle">Our website is under construction. We are preparing something amazing and exciting for you! </p>
+        <img src="{{ '/storage/' . $heroError->image_path }}" alt="404" class="center-largeimage-newsletter">
+        <h2 class="newsletter-title">{!! $heroError->getTranslation('title', $locale) !!}</h2>
+        <p class="newsletter-subtitle">{!! $heroError->getTranslation('subtitle', $locale) !!}</p>
         <a href="javascript:history.back()">
             <img src="{{ asset('images/404/back.png') }}" alt="back" class="button-image center-image-newsletter">
         </a>

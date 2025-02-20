@@ -31,7 +31,6 @@ Route::post('/homeinvestors', [EmailController::class, 'homeInvestorEmail'])->na
 
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/about/filter/{tag}', [PageController::class, 'aboutFilter'])->name('about.filter');
-Route::get('/about/{slug}', [PageController::class, 'aboutshow'])->name('about.show');
 
 Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio');
 Route::get('/portfolio/filter/{tag}', [PageController::class, 'portfolioFilter'])->name('portfolio.filter');

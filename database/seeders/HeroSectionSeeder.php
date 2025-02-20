@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\HeroError;
 use App\Models\HeroMaster;
 use App\Models\HeroSection;
 use App\Models\HeroSectionCategory;
@@ -18,7 +19,23 @@ class HeroSectionSeeder extends Seeder
         HeroSection::query()->delete();
         HeroSectionSubCategory::query()->delete();
 
+        $heroerror = [
+            [
+            'title' => [
+                'en' => "This page is under construction",
+                'id' => "Halaman ini sedang dikonstruksi"
+            ],
+            'subtitle' => [
+                'en' => "Our website is under construction. We are preparing something amazing and exciting for you!",
+                'id' => "Kami sedang mengkonstruksi halaman ini. Kami sedang mempersiapkan sesuatu yang menakjubkan dan menarik untuk Anda!"
+            ],
+            'image_path' => 'hero-sections/01JMHFK59VHA4MBWTNV5QW5WH2.gif',
+            ],
+        ];
 
+        foreach ($heroerror as $data) {
+            HeroError::create($data);
+        }
 
         // Create categories
         $heromasters = [
