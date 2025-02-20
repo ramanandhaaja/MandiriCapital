@@ -104,7 +104,7 @@ class PageController extends Controller
         $ecosystemHeadline = AboutMandiriEcosystem::where('is_headline', true)->get();
 
         $ecosystemListCategory = AboutMandiriEcosystemCategory::orderBy('order')->get();
-        $ecosystemList = AboutMandiriEcosystem::all();
+        $ecosystemList = AboutMandiriEcosystem::where('is_headline', false)->get();
 
 
         $aboutTeamHeadline = AboutTeamHeadline::all();

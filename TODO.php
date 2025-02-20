@@ -5,7 +5,7 @@
 IMPORTANT
 1. CMS ZENITH imagenya belum
 2. CMS Team large team belum
-3. Minor2 translation
+3. Minor2 translation ->done
 4. podcast
 
 
@@ -21,6 +21,6 @@ IMPORTANT
 9. Publication title bisa tidal mandatory ->done
 10. Gambar dan panah untuk customer care
 11. Kererangan maks 50mb
-12. CMC untuk 404
-13. All forms dibuat CMSnya untuk bisa diedit
+12. CMC untuk 404 ->done
+13. All forms dibuat CMSnya untuk bisa diedit -> halfdone
 
