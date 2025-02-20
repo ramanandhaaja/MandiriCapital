@@ -32,6 +32,11 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login(FilamentLoginLayout::class)
+            ->authGuard('web')
+            ->authMiddleware([
+                'web',
+                Authenticate::class,
+            ])
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -55,9 +60,6 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-            ])
-            ->authMiddleware([
-                Authenticate::class,
             ])
             ->brandName('MANDIRI CAPITAL INDONESIA CMS')
             ->maxContentWidth('full');
