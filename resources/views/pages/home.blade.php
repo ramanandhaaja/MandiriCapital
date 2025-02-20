@@ -60,7 +60,7 @@
 
     {{-- Testimonial Section: Customer Success Stories --}}
     <div class="founder-carousell-section">
-        <h1 class="section-title">Featured Investees</h1>
+        <h1 class="section-title">{{ session('locale') === 'id' ? 'Investasi Unggulan' : 'Featured Investees' }}</h1>
         <div class="founder-carousel-container">
             <div class="founder-carousel">
                 <div class="carousel-slides">
@@ -128,20 +128,19 @@
             <section class="pitch-form">
                 <div class="pitch-form-grid">
                     <div class="pitch-form-intro">
-                        <h2>Please fill the Form to Pitch With Us</h2>
-                        <p class="subtitle">*Place your pitchdeck below and our investment team will check it out!</p>
-                        <p class="subtitle">*Please note that we receive a high volume of submissions and will not be able to reply to everyone.</p>
+                        <h2>{!! $home_email_startup->getTranslation('title', session('locale', 'en')) !!}</h2>
+                        <p class="subtitle">{!! $home_email_startup->getTranslation('subtitle', session('locale', 'en')) !!}</p>
                     </div>
                     <form id="startupPitchForm" class="pitch-form-content">
                         @csrf
                         {{-- Personal Information --}}
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="first_name">First Name<span class="required">*</span></label>
+                                <label for="first_name">{!! $home_email_startup->getTranslation('firstname', session('locale', 'en')) !!}<span class="required">*</span></label>
                                 <input type="text" name="first_name" id="first_name" placeholder="Write here..." required>
                             </div>
                             <div class="form-group">
-                                <label for="last_name">Last Name<span class="required">*</span></label>
+                                <label for="last_name">{!! $home_email_startup->getTranslation('lastname', session('locale', 'en')) !!}<span class="required">*</span></label>
                                 <input type="text" name="last_name" id="last_name" placeholder="Write here..." required>
                             </div>
                         </div>
@@ -149,11 +148,11 @@
                         {{-- Contact Information --}}
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="email">Email Address<span class="required">*</span></label>
+                                <label for="email">{!! $home_email_startup->getTranslation('email', session('locale', 'en')) !!}<span class="required">*</span></label>
                                 <input type="email" name="email" id="email" placeholder="Write here..." required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number<span class="required">*</span></label>
+                                <label for="phone">{!! $home_email_startup->getTranslation('phone', session('locale', 'en')) !!}<span class="required">*</span></label>
                                 <input type="text" name="phone" id="phone" placeholder="Write here..." required>
                             </div>
                         </div>
@@ -161,11 +160,11 @@
                         {{-- Business Information --}}
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="business_name">Company Name<span class="required">*</span></label>
+                                <label for="business_name">{!! $home_email_startup->getTranslation('company', session('locale', 'en')) !!}<span class="required">*</span></label>
                                 <input type="text" name="business_name" id="business_name" placeholder="Write here..." required>
                             </div>
                             <div class="form-group">
-                                <label for="website_url">Add URL to your Company Website</label>
+                                <label for="website_url">{!! $home_email_startup->getTranslation('website_url', session('locale', 'en')) !!}</label>
                                 <input type="url" name="website_url" id="website_url" placeholder="Write here...">
                             </div>
                         </div>
@@ -173,23 +172,23 @@
                         {{-- Pitch Materials --}}
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="sector">Choose your company's main business sector</label>
+                                <label for="sector">{!! $home_email_startup->getTranslation('business_sector', session('locale', 'en')) !!}</label>
                                 <select name="sector" id="sector" required>
-                                    <option value="">Select an option</option>
-                                    <option value="agriculture_food">Agriculture & Food</option>
-                                    <option value="energy_resources">Energy & Resources</option>
-                                    <option value="healthcare_pharmaceuticals">Healthcare & Pharmaceuticals</option>
-                                    <option value="education_employment">Education & Employment</option>
-                                    <option value="automotive_transportation">Automotive & Transportation</option>
-                                    <option value="banking_financial">Banking & Financial Service</option>
-                                    <option value="consulting_professional">Consulting & Professional Services</option>
-                                    <option value="media_entertainment">Media & Entertainment</option>
-                                    <option value="retail_wholesale">Retail & Wholesale</option>
-                                    <option value="other">Other</option>
+                                    <option value="">{{ session('locale') === 'id' ? 'Pilih opsi' : 'Select an option' }}</option>
+                                    <option value="agriculture_food">{{ session('locale') === 'id' ? 'Pertanian & Makanan' : 'Agriculture & Food' }}</option>
+                                    <option value="energy_resources">{{ session('locale') === 'id' ? 'Energi & Sumber Daya' : 'Energy & Resources' }}</option>
+                                    <option value="healthcare_pharmaceuticals">{{ session('locale') === 'id' ? 'Kesehatan & Farmasi' : 'Healthcare & Pharmaceuticals' }}</option>
+                                    <option value="education_employment">{{ session('locale') === 'id' ? 'Pendidikan & Pekerjaan' : 'Education & Employment' }}</option>
+                                    <option value="automotive_transportation">{{ session('locale') === 'id' ? 'Otomotif & Transportasi' : 'Automotive & Transportation' }}</option>
+                                    <option value="banking_financial">{{ session('locale') === 'id' ? 'Perbankan & Jasa Keuangan' : 'Banking & Financial Service' }}</option>
+                                    <option value="consulting_professional">{{ session('locale') === 'id' ? 'Konsultasi & Jasa Profesional' : 'Consulting & Professional Services' }}</option>
+                                    <option value="media_entertainment">{{ session('locale') === 'id' ? 'Media & Hiburan' : 'Media & Entertainment' }}</option>
+                                    <option value="retail_wholesale">{{ session('locale') === 'id' ? 'Ritel & Grosir' : 'Retail & Wholesale' }}</option>
+                                    <option value="other">{{ session('locale') === 'id' ? 'Lainnya' : 'Other' }}</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="pitch_file">Upload Your Files</label>
+                                <label for="pitch_file">{!! $home_email_startup->getTranslation('upload', session('locale', 'en')) !!}</label>
                                 <div class="file-input">
                                     <button type="button" class="file-button" onclick="document.getElementById('pitch_file').click()">
                                         Choose File
@@ -202,8 +201,8 @@
 
                         {{-- Form Actions --}}
                         <div class="form-actions">
-                            <button type="button" class="btn-cancel" onclick="closePitchModal()">Cancel</button>
-                            <button type="submit" class="btn-submit">Submit Pitch</button>
+                            <button type="button" class="btn-cancel" onclick="closePitchModal()">{!! $home_email_startup->getTranslation('cancel', session('locale', 'en')) !!}</button>
+                            <button type="submit" class="btn-submit">{!! $home_email_startup->getTranslation('submit', session('locale', 'en')) !!}</button>
                         </div>
                     </form>
                 </div>
@@ -219,9 +218,8 @@
             <section class="pitch-form">
                 <div class="pitch-form-grid">
                     <div class="pitch-form-intro">
-                        <h2>We'd Love to hear from you</h2>
-                        <p class="subtitle">MANDIRI CAPITAL INDONESIA</p>
-                        <p class="subtitle">Menara Mandiri II, lantai 14.<br>Jl. Jend. Sudirman No. 54-55, Jakarta 12190</p>
+                        <h2>{!! $home_email_investor->getTranslation('title', session('locale', 'en')) !!}</h2>
+                        <p class="subtitle">{!! $home_email_investor->getTranslation('subtitle', session('locale', 'en')) !!}</p>
                     </div>
 
                     <form id="investorForm" class="pitch-form-content">
@@ -229,16 +227,16 @@
                         {{-- Contact Information --}}
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="full_name">Full Name</label>
+                                <label for="full_name">{!! $home_email_investor->getTranslation('fullname', session('locale', 'en')) !!}</label>
                                 <input type="text" name="full_name" id="full_name" placeholder="Write here..." required>
                             </div>
                             <div class="form-group">
-                                <label for="subject">Subject</label>
+                                <label for="subject">{!! $home_email_investor->getTranslation('subject', session('locale', 'en')) !!}</label>
                                 <select name="subject" id="subject" required>
-                                    <option value="">Select...</option>
-                                    <option value="investment">Investment</option>
-                                    <option value="partnership">Partnership</option>
-                                    <option value="other">Other</option>
+                                    <option value="">{{ session('locale') === 'id' ? 'Pilih...' : 'Select...' }}</option>
+                                    <option value="investment">{{ session('locale') === 'id' ? 'Investasi' : 'Investment' }}</option>
+                                    <option value="partnership">{{ session('locale') === 'id' ? 'Kemitraan' : 'Partnership' }}</option>
+                                    <option value="other">{{ session('locale') === 'id' ? 'Lainnya' : 'Other' }}</option>
                                 </select>
                             </div>
                         </div>
@@ -246,11 +244,11 @@
                         {{-- Additional Contact Details --}}
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
+                                <label for="phone">{!! $home_email_investor->getTranslation('phone', session('locale', 'en')) !!}</label>
                                 <input type="tel" name="phone" id="phone" placeholder="Write here..." required>
                             </div>
                             <div class="form-group">
-                                <label for="investor_email">Email Address</label>
+                                <label for="investor_email">{!! $home_email_investor->getTranslation('email', session('locale', 'en')) !!}</label>
                                 <input type="email" name="investor_email" id="investor_email" placeholder="Write here..." required>
                             </div>
                         </div>
@@ -258,22 +256,22 @@
                         {{-- Company Information --}}
                         <div class="form-row">
                             <div class="form-group full-width">
-                                <label for="company">Company Name</label>
+                                <label for="company">{!! $home_email_investor->getTranslation('company', session('locale', 'en')) !!}</label>
                                 <input type="text" name="company" id="company" placeholder="Write here..." required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group full-width">
-                                <label for="message">Message</label>
+                                <label for="message">{!! $home_email_investor->getTranslation('message', session('locale', 'en')) !!}</label>
                                 <textarea name="message" id="message" placeholder="Write here..." required></textarea>
                             </div>
                         </div>
 
                         {{-- Form Actions --}}
                         <div class="form-actions">
-                            <button type="button" class="btn-cancel" onclick="closeInvestorModal()">Cancel</button>
-                            <button type="submit" class="btn-submit">Submit</button>
+                            <button type="button" class="btn-cancel" onclick="closeInvestorModal()">{!! $home_email_investor->getTranslation('cancel', session('locale', 'en')) !!}</button>
+                            <button type="submit" class="btn-submit">{!! $home_email_investor->getTranslation('submit', session('locale', 'en')) !!}</button>
                         </div>
                     </form>
                 </div>

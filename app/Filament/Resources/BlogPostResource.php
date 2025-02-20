@@ -181,7 +181,8 @@ class BlogPostResource extends Resource
 
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->limit(50, '...'),
 
                 Tables\Columns\TextColumn::make('categories.name')
                     ->searchable()
@@ -206,6 +207,7 @@ class BlogPostResource extends Resource
                         'archived' => 'Archived',
                     ]),
             ])
+            ->defaultSort('published_at', 'desc')
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),

@@ -91,11 +91,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('about_mci_intro');
-        Schema::dropIfExists('about_priority_sector');
-        Schema::dropIfExists('about_mandiri_ecosystem_categories');
-        Schema::dropIfExists('about_mandiri_ecosystem');
-        Schema::dropIfExists('about_team_categories');
         Schema::dropIfExists('about_teams');
+        Schema::dropIfExists('about_team_categories');
+        Schema::dropIfExists('about_team_headlines');
+        Schema::dropIfExists('about_mandiri_ecosystem');
+        Schema::dropIfExists('about_mandiri_ecosystem_categories');
+        Schema::dropIfExists('about_priority_sector');
+        Schema::dropIfExists('about_mci_intro');
     }
 };

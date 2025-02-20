@@ -43,9 +43,17 @@ use App\Models\PublicationEmailDownload;
 use App\Models\PublicationEmailRegistered;
 use App\Mail\TestEmail;
 use App\Models\Contact;
+use App\Models\ContactEmail;
 use App\Models\CustomerCare;
 use App\Models\CustomerCareHow;
+use App\Models\HomeEmailInvestor;
+use App\Models\HomeEmailStartup;
+use App\Models\PlatformEmail;
+use App\Models\PlatformEmailZenith;
+use App\Models\PortfolioEmailInvestor;
+use App\Models\PortfolioEmailStartup;
 use App\Models\PrivacyPolicy;
+use App\Models\PublicationEmail;
 use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
@@ -72,7 +80,10 @@ class PageController extends Controller
 
         $testimonials = HomeProfileCompany::get();
 
-        return view('pages.home', compact('hero', 'articles', 'articlesHeadlineList', 'testimonials'));
+        $home_email_startup = HomeEmailStartup::first();
+        $home_email_investor = HomeEmailInvestor::first();
+
+        return view('pages.home', compact('hero', 'articles', 'articlesHeadlineList', 'testimonials', 'home_email_startup', 'home_email_investor'));
     }
 
     public function about()
@@ -107,7 +118,8 @@ class PageController extends Controller
     public function contact()
     {
         $contact = Contact::first();
-        return view('pages.contact', compact('contact'));
+        $contact_email = ContactEmail::first();
+        return view('pages.contact', compact('contact', 'contact_email'));
     }
 
     public function media()
@@ -196,7 +208,10 @@ class PageController extends Controller
         $categories = PortfolioCategory::all();
         $selectedCategory = null;
 
-        return view('pages.portfolio', compact('hero', 'menuSubCategory','portfolios', 'categories', 'selectedCategory', 'portfolioArticlesList', 'portfolioArticleSubList','portfolioFundingArticlesList', 'portfolioFundingArticleSubList'));
+        $portfolio_email_startup = PortfolioEmailStartup::first();
+        $portfolio_email_investor = PortfolioEmailInvestor::first();
+
+        return view('pages.portfolio', compact('hero', 'menuSubCategory','portfolios', 'categories', 'selectedCategory', 'portfolioArticlesList', 'portfolioArticleSubList','portfolioFundingArticlesList', 'portfolioFundingArticleSubList', 'portfolio_email_startup', 'portfolio_email_investor'));
     }
 
     public function portfolioshow($slug)
@@ -245,7 +260,9 @@ class PageController extends Controller
 
         $valueCreationList = PlatformValueCreation::all();
 
-        return view('pages.platform', compact('hero', 'menuSubCategory','counters','platformFocusCategory','platformFocusList', 'valueCreationList', 'platformArticle'));
+        $platform_email = PlatformEmail::first();
+
+        return view('pages.platform', compact('hero', 'menuSubCategory','counters','platformFocusCategory','platformFocusList', 'valueCreationList', 'platformArticle', 'platform_email'));
     }
 
     public function platformshow($slug)
@@ -265,7 +282,8 @@ class PageController extends Controller
 
     public function platformapply()
     {
-        return view('pages.platform-apply');
+        $platform_email_zenith = PlatformEmailZenith::first();
+        return view('pages.platform-apply', compact('platform_email_zenith'));
     }
 
 
@@ -290,7 +308,9 @@ class PageController extends Controller
     public function reportshow($slug)
     {
         $publication = Publication::where('slug', $slug)->firstOrFail();
-        return view('pages.report-show', compact('publication'));
+        $publication_email = PublicationEmail::first();
+
+        return view('pages.report-show', compact('publication', 'publication_email'));
     }
 
 

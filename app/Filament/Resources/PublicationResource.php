@@ -118,7 +118,8 @@ class PublicationResource extends Resource
 
                 Tables\Columns\TextColumn::make('title')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->limit(50, '...'),
 
                 Tables\Columns\TextColumn::make('category.name')
                     ->sortable()
@@ -135,6 +136,7 @@ class PublicationResource extends Resource
             ->filters([
                 //
             ])
+            ->defaultSort('created_at', 'desc')
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),

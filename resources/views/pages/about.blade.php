@@ -85,7 +85,7 @@
 
         {{-- Priority Sectors --}}
         <div class="headline-section">
-            <h1 class="headline-title">VALUES WE UPHOLD</h1>
+            <h1 class="headline-title">{{ session('locale') === 'id' ? 'NILAI-NILAI YANG KAMI JUNJUNG' : 'VALUES WE UPHOLD' }}</h1>
             <div class="headline-grid-four middle-animation">
                 @foreach ($prioritySectors as $index => $sector)
                     <div class="headline-card {{ $index > 0 ? ($index === 3 ? 'left-border' : 'middle-border') : '' }}">
@@ -141,7 +141,7 @@
             @endforeach
         </div>
         <div class="mandiri-ecosystem-title">
-            Mandiri Ecosystem
+            {{ session('locale') === 'id' ? 'Ekosistem Mandiri' : 'Mandiri Ecosystem' }}
         </div>
 
         @foreach ($ecosystemListCategory as $index => $article)

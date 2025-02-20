@@ -64,7 +64,7 @@
 
                 {{-- Contact Form Column --}}
                 <div class="contact-form-section">
-                    <p class="contact-form-intro">We are happy to discuss your business situation, please contact.</p>
+                    <p class="contact-form-intro">{!! $contact_email->getTranslation('title', session('locale', 'en')) !!}</p>
 
                     @if(session('success'))
                         <div class="alert alert-success">
@@ -80,7 +80,7 @@
 
                     <form id="contactForm" class="contact-form" action="{{ route('contact.email') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <p class="identity-text">I'm a</p>
+                        <p class="identity-text">{{ session('locale') === 'id' ? 'Saya adalah' : "I'm a" }}</p>
 
                         <div class="identity-section">
 
@@ -88,19 +88,19 @@
                                 <label class="radio-container">
                                     <input type="radio" name="identity" value="startup" checked>
                                     <span class="radio-button"></span>
-                                    <span class="radio-label">Startup</span>
+                                    <span class="radio-label">{!! $contact_email->getTranslation('position1', session('locale', 'en')) !!}</span>
                                 </label>
 
                                 <label class="radio-container">
                                     <input type="radio" name="identity" value="investor">
                                     <span class="radio-button"></span>
-                                    <span class="radio-label">Investor</span>
+                                    <span class="radio-label">{!! $contact_email->getTranslation('position2', session('locale', 'en')) !!}</span>
                                 </label>
 
                                 <label class="radio-container">
                                     <input type="radio" name="identity" value="media">
                                     <span class="radio-button"></span>
-                                    <span class="radio-label">Media</span>
+                                    <span class="radio-label">{!! $contact_email->getTranslation('position3', session('locale', 'en')) !!}</span>
                                 </label>
                             </div>
                         </div>
@@ -109,69 +109,60 @@
                         <div class="form-startup" style="display: block;">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="startup_name" class="form-label"> Startup's Name</label>
+                                    <label for="startup_name" class="form-label"> {!! $contact_email->getTranslation('name', session('locale', 'en')) !!}</label>
                                     <input type="text" id="startup_name" name="startup_name" class="form-input"
                                         placeholder="Write here...">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email" class="form-label">Email</label>
+                                    <label for="email" class="form-label">{!! $contact_email->getTranslation('email', session('locale', 'en')) !!}</label>
                                     <input type="email" id="email" name="email" class="form-input"
                                         placeholder="Write here...">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="startup_category" class="form-label"> Startup Category</label>
+                                    <label for="startup_category" class="form-label"> {!! $contact_email->getTranslation('startup_category', session('locale', 'en')) !!}</label>
                                     <input type="text" id="startup_category" name="startup_category" class="form-input"
                                         placeholder="Write here...">
                                 </div>
                                 <div class="form-group">
-                                    <label for="company_name" class="form-label">Company Name</label>
+                                    <label for="company_name" class="form-label"> {!! $contact_email->getTranslation('company', session('locale', 'en')) !!}</label>
                                     <input type="text" id="company_name" name="company_name" class="form-input"
                                         placeholder="Write here...">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="problem" class="form-label">Whats the problem you are trying to solve?</label>
+                                <label for="problem" class="form-label">{!! $contact_email->getTranslation('problem', session('locale', 'en')) !!}</label>
                                 <textarea id="problem" name="problem" rows="5" class="form-textarea" placeholder="Write here..."
                                     maxlength="300"></textarea>
                             </div>
 
                             <div class="form-group">
-                                <label for="solution" class="form-label">How are you going to solve the problem?</label>
+                                <label for="solution" class="form-label">{!! $contact_email->getTranslation('solution', session('locale', 'en')) !!}</label>
                                 <textarea id="solution" name="solution" rows="5" class="form-textarea" placeholder="Write here..."
                                     maxlength="300"></textarea>
                             </div>
 
                             <div class="form-group">
-                                <label for="proposition" class="form-label">What's your value proposition?</label>
+                                <label for="proposition" class="form-label">{!! $contact_email->getTranslation('proposition', session('locale', 'en')) !!}</label>
                                 <textarea id="proposition" name="proposition" rows="5" class="form-textarea" placeholder="Write here..."
                                     maxlength="300"></textarea>
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">Upload Your Company Profile / Pitch Deck</label>
+                                <label class="form-label">{!! $contact_email->getTranslation('upload', session('locale', 'en')) !!}</label>
                                 <div class="file-upload-container">
                                     <label for="company_profile" class="file-upload-button">Choose File</label>
                                     <span class="file-name" id="fileName">No File Chosen</span>
                                     <input type="file" id="company_profile" name="company_profile" class="file-input"
                                         accept=".pdf" onchange="updateFileName(this)">
                                 </div>
-                                <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page
-                                    PDF)</p>
+                                <p class="description-text">{{ session('locale') === 'id' ? 'Silakan unggah profil perusahaan atau Pitch Deck Anda (Maks. 15 halaman PDF)' : 'Please upload your company profile or Pitch Deck (Max. 15 page PDF)' }}</p>
                                 <div class="upload-guidelines">
-                                    <p class="guidelines-title">Your company profile or pitch deck should address these
-                                        things:</p>
-                                    <ul class="guidelines-list">
-                                        <li>The specific problem your company are aiming to tackle</li>
-                                        <li>The solution for the specific problem</li>
-                                        <li>The business model, describe the strategy to increase the revenue or profit with
-                                            its products and customer base</li>
-                                        <li>The target market, the size, entry barriers, challenges, and opportunities</li>
-                                        <li>Number of the current users or clients that are using your products</li>
-                                        <li>Your competition and who might be one</li>
-                                    </ul>
+                                    <p class="guidelines-title">
+                                        {!! $contact_email->getTranslation('instructions', session('locale', 'en')) !!}
+                                    </p>
                                 </div>
                             </div>
 
@@ -186,25 +177,25 @@
                         <div class="form-other" style="display: none;">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="name" class="form-label"> Name</label>
+                                    <label for="name" class="form-label"> {!! $contact_email->getTranslation('name', session('locale', 'en')) !!}</label>
                                     <input type="text" id="name" name="name" class="form-input"
                                         placeholder="Write here...">
                                 </div>
                                 <div class="form-group">
-                                    <label for="other_email" class="form-label">Email</label>
+                                    <label for="other_email" class="form-label">{!! $contact_email->getTranslation('email', session('locale', 'en')) !!}</label>
                                     <input type="email" id="other_email" name="other_email" class="form-input"
                                         placeholder="Write here...">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="subject" class="form-label">Subject</label>
+                                <label for="subject" class="form-label">{!! $contact_email->getTranslation('subject', session('locale', 'en')) !!}</label>
                                 <input type="text" id="subject" name="subject" class="form-input"
                                     placeholder="Write here...">
                             </div>
 
                             <div class="form-group">
-                                <label for="message" class="form-label">Message</label>
+                                <label for="message" class="form-label">{!! $contact_email->getTranslation('message', session('locale', 'en')) !!}</label>
                                 <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Write here..."></textarea>
                             </div>
 

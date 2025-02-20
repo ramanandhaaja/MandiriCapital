@@ -42,7 +42,7 @@ class ContactSeeder extends Seeder
                 'en' => "VISIT OUR SOCIAL MEDIA",
                 'id' => "KUNJUNGI MEDIA SOSIAL KAMI"
             ],
-            'email_form' => 'info@mandiri-capital.co.id',
+            'email_form' => 'corsec@mandiri-capital.co.id',
             'email_contact' => 'info@mandiri-capital.co.id',
             'email_customer_report' => 'mcicare@mandiri-capital.co.id',
             'phone' => '+62-21-5266661',

@@ -36,7 +36,8 @@ class DatabaseSeeder extends Seeder
             PlatformValueCreationDetailSeeder::class,
             ContactSeeder::class,
             PrivacyPolicySeeder::class,
-            CustomerCareSeeder::class
+            CustomerCareSeeder::class,
+            EmailFormSeeder::class
         ]);
     }
 }

@@ -10,6 +10,7 @@ use App\Mail\PlatformEmail;
 use App\Mail\PlatformZenithEmail;
 use App\Mail\HomeStartupEmail;
 use App\Mail\HomeInvestorEmail;
+use App\Models\Contact;
 use App\Models\Publication;
 use App\Models\PublicationEmailDownload;
 use Illuminate\Http\Request;
@@ -24,6 +25,8 @@ class EmailController extends Controller
     {
         // Validate the request
 
+        $contact = Contact::first();
+
         $formData = $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
@@ -32,7 +35,7 @@ class EmailController extends Controller
         ]);
 
         try {
-            Mail::to('info@codefoundry.co.id')
+            Mail::to($contact->email_form)
                 ->send(new ReportRequestEmail($formData, $publication));
 
             return back()->with('success', 'Thank you for your request. We will contact you soon.');
@@ -81,6 +84,8 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
+        $contact = Contact::first();
+
         try {
             $formData = $request->validate([
                 'identity' => 'required|in:startup,investor,media',
@@ -122,7 +127,7 @@ class EmailController extends Controller
 
 
         try {
-            Mail::to('info@codefoundry.co.id')
+            Mail::to($contact->email_form)
                 ->send(new ContactEmail($formData));
 
             Log::info('Email sent successfully.');
@@ -144,6 +149,8 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
+        $contact = Contact::first();
+
         try {
             $formData = $request->validate([
                 'first_name' => 'required|string',
@@ -159,7 +166,7 @@ class EmailController extends Controller
                 $formData['company_profile'] = $request->file('company_profile');
             }
 
-            Mail::to('info@codefoundry.co.id')
+            Mail::to($contact->email_form)
                 ->send(new PortfolioGetInvestmentEmail($formData));
 
             Log::info('Investment request email sent successfully.');
@@ -180,6 +187,8 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
+        $contact = Contact::first();
+
         try {
             $formData = $request->validate([
                 'full_name' => 'required|string',
@@ -190,7 +199,7 @@ class EmailController extends Controller
                 'message' => 'required|string',
             ]);
 
-            Mail::to('info@codefoundry.co.id')
+            Mail::to($contact->email_form)
                 ->send(new PortfolioFundsEmail($formData));
 
             Log::info('Funds request email sent successfully.');
@@ -211,6 +220,8 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
+        $contact = Contact::first();
+
         try {
             $formData = $request->validate([
                 'program' => 'required|string',
@@ -230,7 +241,7 @@ class EmailController extends Controller
                 $formData['company_profile'] = $request->file('company_profile');
             }
 
-            Mail::to('info@codefoundry.co.id')
+            Mail::to($contact->email_form)
                 ->send(new PlatformEmail($formData));
 
             Log::info('Platform submission email sent successfully.');
@@ -250,6 +261,8 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
+        $contact = Contact::first();
+
         try {
             $formData = $request->validate([
                 'email' => 'required|email',
@@ -267,7 +280,7 @@ class EmailController extends Controller
                 'established_in_indonesia' => 'required|string',
             ]);
 
-            Mail::to('info@codefoundry.co.id')
+            Mail::to($contact->email_form)
                 ->send(new PlatformZenithEmail($formData));
 
             Log::info('Zenith Platform submission email sent successfully.');
@@ -286,6 +299,8 @@ class EmailController extends Controller
             'url' => $request->url(),
             'data' => $request->all()
         ]);
+
+        $contact = Contact::first();
 
         try {
             // Log validation attempt
@@ -318,7 +333,7 @@ class EmailController extends Controller
             // Log email attempt
             Log::info('Attempting to send startup email');
 
-            Mail::to('info@codefoundry.co.id')
+            Mail::to($contact->email_form)
                 ->send(new HomeStartupEmail($formData));
 
             Log::info('Home Startup submission email sent successfully.');
@@ -358,6 +373,8 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
+        $contact = Contact::first();
+
         try {
             $formData = $request->validate([
                 'full_name' => 'required|string',
@@ -368,7 +385,7 @@ class EmailController extends Controller
                 'message' => 'required|string',
             ]);
 
-            Mail::to('info@codefoundry.co.id')
+            Mail::to($contact->email_form)
                 ->send(new HomeInvestorEmail($formData));
 
             Log::info('Home Investor submission email sent successfully.');

@@ -57,9 +57,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hero_section_categories');
         Schema::dropIfExists('hero_section');
         Schema::dropIfExists('hero_section_sub_categories');
+        Schema::dropIfExists('hero_section_categories');
         Schema::dropIfExists('hero_masters');
     }
 };

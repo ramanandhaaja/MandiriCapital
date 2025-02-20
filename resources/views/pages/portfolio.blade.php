@@ -76,9 +76,10 @@
         {{-- Contact Form Section --}}
         <div class="masonry-grid-contact-section-grey">
             <div class="grid-headline-title-card-contact">
-                <h1 class="grid-headline-title-contact">Get Investment!</h1>
-                <h1 class="grid-headline-subtitle-contact">
-                </h1>
+                <h1 class="grid-headline-title-contact">{!! $portfolio_email_startup->first()?->getTranslation('title', session('locale', 'en')) ?? '' !!}</h1>
+                <p class="grid-headline-subtitle-contact">
+                    {!! $portfolio_email_startup->first()?->getTranslation('subtitle', session('locale', 'en')) ?? '' !!}
+                </p>
             </div>
 
             <div class="grid-headline-contact-card">
@@ -103,12 +104,12 @@
                     {{-- Company Details --}}
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="first_name" class="form-label">First Name*</label>
+                            <label for="first_name" class="form-label">{!! $portfolio_email_startup->first()?->getTranslation('firstname', session('locale', 'en')) ?? '' !!}*</label>
                             <input type="text" id="first_name" name="first_name" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
-                            <label for="last_name" class="form-label">Last Name*</label>
+                            <label for="last_name" class="form-label">{!! $portfolio_email_startup->first()?->getTranslation('lastname', session('locale', 'en')) ?? '' !!}*</label>
                             <input type="text" id="last_name" name="last_name" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
@@ -116,12 +117,12 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="email" class="form-label">Email Address*</label>
+                            <label for="email" class="form-label">{!! $portfolio_email_startup->first()?->getTranslation('email', session('locale', 'en')) ?? '' !!}*</label>
                             <input type="email" id="email" name="email" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number*</label>
+                            <label for="phone" class="form-label">{!! $portfolio_email_startup->first()?->getTranslation('phone', session('locale', 'en')) ?? '' !!}*</label>
                             <input type="text" id="phone" name="phone" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
@@ -129,12 +130,12 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="company_name" class="form-label">Company Name*</label>
+                            <label for="company_name" class="form-label">{!! $portfolio_email_startup->first()?->getTranslation('company', session('locale', 'en')) ?? '' !!}*</label>
                             <input type="text" id="company_name" name="company_name" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
-                            <label for="url" class="form-label">Add URL to your Company Website</label>
+                            <label for="url" class="form-label">{!! $portfolio_email_startup->first()?->getTranslation('website_url', session('locale', 'en')) ?? '' !!}</label>
                             <input type="text" id="url" name="url" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
@@ -142,7 +143,7 @@
 
                     {{-- Upload Company Profile / Pitch Deck --}}
                     <div class="form-group">
-                        <label class="form-label">Upload Your Company Profile / Pitch Deck</label>
+                        <label class="form-label">{!! $portfolio_email_startup->first()?->getTranslation('upload', session('locale', 'en')) ?? '' !!}</label>
                         <div class="file-upload-container">
                             <label for="company_profile" class="file-upload-button">Choose File</label>
                             <span class="file-name">No File Chosen</span>
@@ -151,80 +152,73 @@
                         </div>
                         <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page PDF)</p>
                         <div class="upload-guidelines">
-                            <p class="guidelines-title">Your company profile or pitch deck should address these things:</p>
-                            <ul class="guidelines-list">
-                                <li>The specific problem your company are aiming to tackle</li>
-                                <li>The solution for the specific problem</li>
-                                <li>The business model, describe the strategy to increase the revenue or profit with its
-                                    products and customer base</li>
-                                <li>The target market, the size, entry barriers, challenges, and opportunities</li>
-                                <li>Number of the current users or clients that are using your products</li>
-                                <li>Your competition and who might be one</li>
-                            </ul>
+                            <p>
+                            {!! $portfolio_email_startup->first()?->getTranslation('instructions', session('locale', 'en')) ?? '' !!}
+                            </p>
                         </div>
                     </div>
 
                     {{-- Business Sector Selection --}}
                     <div class="form-group">
-                        <label class="form-label">Choose your company's main business sector</label>
+                        <label class="form-label">{!! $portfolio_email_startup->first()?->getTranslation('business_sector', session('locale', 'en')) ?? '' !!}</label>
                         <div class="sector-grid">
                             <div class="sector-item">
                                 <input type="radio" id="agriculture" name="business_sector" value="Agriculture & Food"
                                     class="sector-radio" required>
-                                <label for="agriculture" class="sector-label">Agriculture & Food</label>
+                                <label for="agriculture" class="sector-label">{{ session('locale') === 'id' ? 'Pertanian & Makanan' : "Agriculture & Food" }}</label>
                             </div>
                             <div class="sector-item">
                                 <input type="radio" id="energy" name="business_sector" value="Energy & Resources"
                                     class="sector-radio">
-                                <label for="energy" class="sector-label">Energy & Resources</label>
+                                <label for="energy" class="sector-label">{{ session('locale') === 'id' ? 'Energi & Sumber Daya' : "Energy & Resources" }}</label>
                             </div>
                             <div class="sector-item">
                                 <input type="radio" id="healthcare" name="business_sector"
                                     value="Healthcare & Pharmaceuticals" class="sector-radio">
-                                <label for="healthcare" class="sector-label">Healthcare & Pharmaceuticals</label>
+                                <label for="healthcare" class="sector-label">{{ session('locale') === 'id' ? 'Kesehatan & Farmasi' : "Healthcare & Pharmaceuticals" }}</label>
                             </div>
                             <div class="sector-item">
                                 <input type="radio" id="education" name="business_sector"
                                     value="Education & employment" class="sector-radio">
-                                <label for="education" class="sector-label">Education & employment</label>
+                                <label for="education" class="sector-label">{{ session('locale') === 'id' ? 'Pendidikan & Ketenagakerjaan' : "Education & employment" }}</label>
                             </div>
                             <div class="sector-item">
                                 <input type="radio" id="automotive" name="business_sector"
                                     value="Automotive & Transportation" class="sector-radio">
-                                <label for="automotive" class="sector-label">Automotive & Transportation</label>
+                                <label for="automotive" class="sector-label">{{ session('locale') === 'id' ? 'Otomotif & Transportasi' : "Automotive & Transportation" }}</label>
                             </div>
                             <div class="sector-item">
                                 <input type="radio" id="banking" name="business_sector"
                                     value="Banking & Financial Service" class="sector-radio">
-                                <label for="banking" class="sector-label">Banking & Financial Service</label>
+                                <label for="banking" class="sector-label">{{ session('locale') === 'id' ? 'Perbankan & Layanan Keuangan' : "Banking & Financial Service" }}</label>
                             </div>
                             <div class="sector-item">
                                 <input type="radio" id="consulting" name="business_sector"
                                     value="Consulting & Professional Services" class="sector-radio">
-                                <label for="consulting" class="sector-label">Consulting & Professional Services</label>
+                                <label for="consulting" class="sector-label">{{ session('locale') === 'id' ? 'Konsultasi & Layanan Profesional' : "Consulting & Professional Services" }}</label>
                             </div>
                             <div class="sector-item">
                                 <input type="radio" id="media" name="business_sector"
                                     value="Media & Entertainment" class="sector-radio">
-                                <label for="media" class="sector-label">Media & Entertainment</label>
+                                <label for="media" class="sector-label">{{ session('locale') === 'id' ? 'Media & Hiburan' : "Media & Entertainment" }}</label>
                             </div>
                             <div class="sector-item">
                                 <input type="radio" id="retail" name="business_sector" value="Retail & Wholesale"
                                     class="sector-radio">
-                                <label for="retail" class="sector-label">Retail & Wholesale</label>
+                                <label for="retail" class="sector-label">{{ session('locale') === 'id' ? 'Ritel & Grosir' : "Retail & Wholesale" }}</label>
                             </div>
                             <div class="sector-item">
                                 <input type="radio" id="other" name="business_sector" value="Other"
                                     class="sector-radio">
-                                <label for="other" class="sector-label">Other</label>
+                                <label for="other" class="sector-label">{{ session('locale') === 'id' ? 'Lainnya' : "Other" }}</label>
                             </div>
                         </div>
                     </div>
 
                     {{-- Submit Button --}}
                     <div class="form-group button-group">
-                        <button type="reset" class="reset-button">Reset</button>
-                        <button type="submit" class="submit-button">Submit Pitch</button>
+                        <button type="reset" class="reset-button">{!! $portfolio_email_startup->first()?->getTranslation('cancel', session('locale', 'en')) ?? '' !!}</button>
+                        <button type="submit" class="submit-button">{!! $portfolio_email_startup->first()?->getTranslation('submit', session('locale', 'en')) ?? '' !!}</button>
                     </div>
                 </form>
             </div>
@@ -449,9 +443,9 @@
         {{-- Contact Form Section --}}
         <div class="masonry-grid-contact-section">
             <div class="grid-headline-title-card-contact">
-                <h1 class="grid-headline-title-contact">New Investor Enquiry</h1>
+                <h1 class="grid-headline-title-contact">{{ $portfolio_email_investor->first()?->getTranslation('title', session('locale', 'en')) ?? '' }}</h1>
                 <p class="grid-headline-subtitle-contact">
-                    Begin your investment journey with confidence—partner with us today.
+                    {{ $portfolio_email_investor->first()?->getTranslation('subtitle', session('locale', 'en')) ?? '' }}
                 </p>
             </div>
 
@@ -473,12 +467,12 @@
                     {{-- Company Details --}}
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="full_name" class="form-label">Full Name*</label>
+                            <label for="full_name" class="form-label">{{ $portfolio_email_investor->first()?->getTranslation('fullname', session('locale', 'en')) ?? '' }}*</label>
                             <input type="text" id="full_name" name="full_name" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
-                            <label for="subject" class="form-label">Subject*</label>
+                            <label for="subject" class="form-label">{{ $portfolio_email_investor->first()?->getTranslation('subject', session('locale', 'en')) ?? '' }}*</label>
                             <input type="text" id="subject" name="subject" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
@@ -486,13 +480,13 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number*</label>
+                            <label for="phone" class="form-label">{{ $portfolio_email_investor->first()?->getTranslation('phone', session('locale', 'en')) ?? '' }}*</label>
                             <input type="text" id="phone" name="phone" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
                         <div class="form-group">
 
-                            <label for="email" class="form-label">Email Address*</label>
+                            <label for="email" class="form-label">{{ $portfolio_email_investor->first()?->getTranslation('email', session('locale', 'en')) ?? '' }}*</label>
                             <input type="email" id="email" name="email" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
@@ -500,7 +494,7 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="company_name" class="form-label">Company Name*</label>
+                            <label for="company_name" class="form-label">{{ $portfolio_email_investor->first()?->getTranslation('company', session('locale', 'en')) ?? '' }}*</label>
                             <input type="text" id="company_name" name="company_name" class="form-input"
                                 placeholder="Write here..." required>
                         </div>
@@ -508,14 +502,14 @@
 
                     {{-- Business Description --}}
                     <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
+                        <label for="message" class="form-label">{{ $portfolio_email_investor->first()?->getTranslation('message', session('locale', 'en')) ?? '' }}</label>
                         <textarea id="message" name="message" rows="4" class="form-textarea" placeholder="Write here..." required></textarea>
                     </div>
 
                     {{-- Submit Button --}}
                     <div class="form-group button-group">
-                        <button type="reset" class="reset-button">Reset</button>
-                        <button type="submit" class="submit-button">Submit</button>
+                        <button type="reset" class="reset-button">{{ $portfolio_email_investor->first()?->getTranslation('cancel', session('locale', 'en')) ?? '' }}</button>
+                        <button type="submit" class="submit-button">{{ $portfolio_email_investor->first()?->getTranslation('submit', session('locale', 'en')) ?? '' }}</button>
                     </div>
                 </form>
             </div>

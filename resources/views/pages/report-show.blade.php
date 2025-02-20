@@ -54,7 +54,7 @@
         <div class="download-container">
             <!-- Left Column -->
             <div class="download-left">
-                <h2 class="download-title">Please fill in your contact data to request our report</h2>
+                <h2 class="download-title">{!! $publication_email->getTranslation('title', session('locale', 'en')) !!}</h2>
                 <img src="{{ asset('images/report/download.png') }}" alt="Download" class="download-image" loading="lazy">
             </div>
 
@@ -64,12 +64,12 @@
                     @csrf
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">{!! $publication_email->getTranslation('name', session('locale', 'en')) !!}</label>
                             <input type="text" id="name" name="name" placeholder="Write here..." required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">{!! $publication_email->getTranslation('email', session('locale', 'en')) !!}</label>
                             <input type="email" id="email" name="email" placeholder="Write here..." required>
                         </div>
 
@@ -78,21 +78,21 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="company_name">Company Name</label>
+                            <label for="company_name">{!! $publication_email->getTranslation('company', session('locale', 'en')) !!}</label>
                             <input type="text" id="company_name" name="company_name" placeholder="Write here..."
                                 required>
                         </div>
 
                         <div class="form-group">
-                            <label for="position">Job Position</label>
+                            <label for="position">{!! $publication_email->getTranslation('job', session('locale', 'en')) !!}</label>
                             <input type="text" id="position" name="position" placeholder="Write here..." required>
                         </div>
                     </div>
                     <div class="form-actions">
-                        <button type="reset" class="btn-cancel">Reset</button>
+                        <button type="reset" class="btn-cancel">{!! $publication_email->getTranslation('cancel', session('locale', 'en')) !!}</button>
                         <button type="submit" class="btn-download"
                             onclick="alert('Thank you for your interest, we will contact you very soon!')"
-                            data-category="{{ $publication->category->name }}">Request Report</button>
+                            data-category="{{ $publication->category->name }}">{!! $publication_email->getTranslation('submit', session('locale', 'en')) !!}</button>
                     </div>
 
 
