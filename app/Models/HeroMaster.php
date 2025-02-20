@@ -14,6 +14,7 @@ class HeroMaster extends Model
 
     public array $translatable = [
         'footer',
+        'ojk'
     ];
 
     protected $fillable = [
@@ -21,5 +22,6 @@ class HeroMaster extends Model
         'instagram',
         'linkedin',
         'twitter',
+        'ojk'
     ];
 }

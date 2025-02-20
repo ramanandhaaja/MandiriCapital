@@ -59,7 +59,7 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->brandName('MANDIRI CMS')
+            ->brandName('MANDIRI CAPITAL INDONESIA CMS')
             ->maxContentWidth('full');
     }
 }

@@ -60,6 +60,10 @@ class HeroMasterResource extends Resource
                                                             ->label('Footer (English)')
                                                             ->required()
                                                             ->maxLength(255),
+                                                        Forms\Components\RichEditor::make('ojk.en')
+                                                            ->label('OJK (English)')
+                                                            ->required()
+                                                            ->maxLength(65535),
                                                     ]),
                                                 Forms\Components\Tabs\Tab::make('Indonesian')
                                                     ->schema([
@@ -67,6 +71,10 @@ class HeroMasterResource extends Resource
                                                             ->label('Footer (Indonesian)')
                                                             ->required()
                                                             ->maxLength(255),
+                                                        Forms\Components\RichEditor::make('ojk.id')
+                                                            ->label('OJK (Indonesian)')
+                                                            ->required()
+                                                            ->maxLength(65535),
                                                     ]),
                                             ]),
                                     ]),

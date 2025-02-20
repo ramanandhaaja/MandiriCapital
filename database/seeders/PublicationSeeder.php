@@ -48,6 +48,7 @@ class PublicationSeeder extends Seeder
         $publications = [
             [
                 'title' => 'Developing Constructive Collaboration to achieve productive innovation',
+                'hide_title' => false,
                 'content' => 'Developing Constructive Collaboration to achieve productive innovation',
                 'published_date' => Carbon::createFromFormat('d F Y', '10 June 2020')->format('Y-m-d'),
                 'image_path' => 'publications/01JK28PN8QXA5CM26FG666HRFP.png',
@@ -55,6 +56,7 @@ class PublicationSeeder extends Seeder
             ],
             [
                 'title' => 'Strengthening Sustainability Innovation',
+                'hide_title' => false,
                 'content' => 'Strengthening Sustainability Innovation',
                 'published_date' => Carbon::createFromFormat('d F Y', '10 Nov 2023')->format('Y-m-d'),
                 'image_path' => 'publications/01JK28Q0N4ZGABCCKKQHW9J6VT.png',
@@ -62,6 +64,7 @@ class PublicationSeeder extends Seeder
             ],
             [
                 'title' => 'Catalyzing Sustainable Growth : Out Commitment to Efficiency, community, and ESG',
+                'hide_title' => false,
                 'content' => 'Catalyzing Sustainable Growth : Out Commitment to Efficiency, community, and ESG',
                 'published_date' => Carbon::createFromFormat('d F Y', '10 June 2020')->format('Y-m-d'),
                 'image_path' => 'publications/01JK28QBBH37FVZV47WRNEY3A0.jpeg',
@@ -69,6 +72,7 @@ class PublicationSeeder extends Seeder
             ],
             [
                 'title' => 'To Protect and Preserve Sustainability with Asset Optimization',
+                'hide_title' => false,
                 'content' => 'To Protect and Preserve Sustainability with Asset Optimization',
                 'published_date' => Carbon::createFromFormat('d F Y', '10 Nov 2023')->format('Y-m-d'),
                 'image_path' => 'publications/01JK28QNJNNP0QAVS65FPTBJSZ.jpeg',
@@ -76,6 +80,7 @@ class PublicationSeeder extends Seeder
             ],
             [
                 'title' => 'The Billion Dollar Moment :  A Paradigm Shift for Indonesia IPOs',
+                'hide_title' => false,
                 'content' => 'The Billion Dollar Moment :  A Paradigm Shift for Indonesia IPOs',
                 'published_date' => Carbon::createFromFormat('d F Y', '10 Nov 2023')->format('Y-m-d'),
                 'image_path' => 'publications/01JK28R3F8JS68095E6K4AKP4Z.jpeg',
@@ -83,6 +88,7 @@ class PublicationSeeder extends Seeder
             ],
             [
                 'title' => 'Insurtech Strategic Innovation',
+                'hide_title' => false,
                 'content' => 'Insurtech Strategic Innovation',
                 'published_date' => Carbon::createFromFormat('d F Y', '10 June 2020')->format('Y-m-d'),
                 'image_path' => 'publications/01JK28RJDXGCF1MNAQTAFFPT41.jpeg',
@@ -90,6 +96,7 @@ class PublicationSeeder extends Seeder
             ],
             [
                 'title' => 'Unicorns & Centaurs Collaboration with Financial Institutions',
+                'hide_title' => false,
                 'content' => 'Unicorns & Centaurs Collaboration with Financial Institutions',
                 'published_date' => Carbon::createFromFormat('d F Y', '10 June 2020')->format('Y-m-d'),
                 'image_path' => 'publications/01JK28RXFYS9PNZD65C8JWNBVG.jpeg',
@@ -97,6 +104,7 @@ class PublicationSeeder extends Seeder
             ],
             [
                 'title' => 'Catalyzing Sustainable Impact in indonesia',
+                'hide_title' => false,
                 'content' => 'Catalyzing Sustainable Impact in indonesia',
                 'published_date' => Carbon::createFromFormat('d F Y', '10 Nov 2023')->format('Y-m-d'),
                 'image_path' => 'publications/01JK28SCER12ZTVZD5C0QCJPDJ.png',

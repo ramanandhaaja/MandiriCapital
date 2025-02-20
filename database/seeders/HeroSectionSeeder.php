@@ -27,6 +27,10 @@ class HeroSectionSeeder extends Seeder
                 'en' => "WE'D LOVE TO HEAR FROM YOU",
                 'id' => "KAMI SENANG MENDENGAR DARI ANDA"
             ],
+            'ojk' => [
+                'en' => "Authorized </br>and Supervised by </br>OJK (Otoritas Jasa Keuangan)",
+                'id' => "Diotorisasi </br>dan Diawasi oleh </br>OJK (Otoritas Jasa Keuangan)"
+            ],
             'instagram' => 'https://www.instagram.com/mandiricapital/',
             'linkedin' => 'https://www.linkedin.com/company/mandiri-capital-indonesia-mci/posts/?feedView=all',
             'twitter' => '',

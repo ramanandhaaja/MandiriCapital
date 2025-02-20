@@ -18,15 +18,18 @@
                         <span style="visibility: hidden;"
                             class="article-date">{{ \Carbon\Carbon::parse($publication->published_date)->format('j F Y') }}</span>
                         <div class="author-info">
-                            <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar" loading="lazy">
+                            <img src="{{ asset('images/media/author.png') }}" alt="Author" class="author-avatar"
+                                loading="lazy">
                             <div class="author-details">
                                 <span class="author-name">Mandiri Capital Indonesia - </span>
                                 <span class="author-role">Author</span>
                             </div>
                         </div>
                         <img src="{{ $publication->image_path ? Storage::url($publication->image_path) : asset('images/media/image5.png') }}"
-                            alt="Author" class="image-left" loading="lazy"/>
-                        <div class="article-title">{{ $publication->title ?? '' }}</div>
+                            alt="Author" class="image-left" loading="lazy" />
+                        @if (!$publication->hide_title)
+                            <div class="article-title">{{ $publication->title ?? '' }}</div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -82,13 +85,13 @@
 
                         <div class="form-group">
                             <label for="position">Job Position</label>
-                            <input type="text" id="position" name="position" placeholder="Write here..."
-                                required>
+                            <input type="text" id="position" name="position" placeholder="Write here..." required>
                         </div>
                     </div>
                     <div class="form-actions">
                         <button type="reset" class="btn-cancel">Reset</button>
-                        <button type="submit" class="btn-download" onclick="alert('Thank you for your interest, we will contact you very soon!')"
+                        <button type="submit" class="btn-download"
+                            onclick="alert('Thank you for your interest, we will contact you very soon!')"
                             data-category="{{ $publication->category->name }}">Request Report</button>
                     </div>
 

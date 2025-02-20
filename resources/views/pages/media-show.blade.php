@@ -94,10 +94,10 @@
             <div class="content-text">
                 <div class="article-content">
 
-                    <div class="article-subtitle">
+                    <div class="article-subtitle" @if($post->is_content_justified) style="text-align: justify;" @endif>
                         <p>{!! $post->content_heading !!}</p>
                     </div>
-                    <div class="article-content-text">
+                    <div class="article-content-text" @if($post->is_content_justified) style="text-align: justify;" @endif>
                         <p>{!! $post->content !!}</p>
 
                     </div>

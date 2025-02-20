@@ -37,14 +37,20 @@ class PublicationResource extends Resource
                                                     ->required()
                                                     ->maxLength(255)
                                                     ->live(onBlur: true)
-                                                    ->afterStateUpdated(fn (string $state, callable $set) =>
-                                                        $set('slug', Str::slug($state))
-                                                    ),
+                                                    ->afterStateUpdated(function ($state, callable $set) {
+                                                        if ($state !== null) {
+                                                            $set('slug', Str::slug($state));
+                                                        }
+                                                    }),
 
                                                 Forms\Components\TextInput::make('slug')
                                                     ->required()
                                                     ->maxLength(255)
                                                     ->unique(Publication::class, 'slug', ignoreRecord: true),
+
+                                                Forms\Components\Checkbox::make('hide_title')
+                                                    ->label('Hide Title')
+                                                    ->default(false),
                                             ]),
 
                                         Forms\Components\RichEditor::make('content')

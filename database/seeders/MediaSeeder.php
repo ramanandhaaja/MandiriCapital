@@ -116,6 +116,7 @@ further noted that “this event is not just an activity, but a strategic move t
 startups and enterprises with our robust network, providing unparalleled access to resources
 and fostering mutual growth.
 "',
+                'is_content_justified' => false,
                 'content' => '
 The Xponent program is set to highlight MCI\'s commitment, helping startups to network and
 potentially collaborate with Mandiri Group\'s larger ecosystem, demonstrating MCI\'s active
@@ -251,6 +252,7 @@ pivotal experience at the heart of Asia\'s fintech evolution.',
 matchmaking program Xponent global. Debuting at Money 20/20 Asia in Bangkok, Xponent
 connects startups and tech companies with Mandiri Group\'s business units. This fosters
 collaboration and fuels growth within the fintech ecosystem.',
+                'is_content_justified' => false,
                 'content' => 'Now in its fourth edition, Xponent leverages Money 20/20 Asia\'s startup ecosystem to
 expand its reach across the Asian financial landscape.
 The program has two main goals: firstly, to bridge the gap between startups and Mandiri\'s
@@ -339,6 +341,7 @@ Fintech Festival 2024</em>
 , MCI berkesempatan untuk melakukan <em>showcasing</em>
 inovasi digital Bank Mandiri, yaitu Livin’ &amp; Kopra, kepada berbagai perusahaan
 mancanegara seperti Visa, JP Morgan, dan AI Rudder.',
+                'is_content_justified' => false,
                 'content' => '<strong>Tri Nugroho</strong>
 ,
 <strong>General Manager &amp; Country Head, Bank
@@ -424,6 +427,7 @@ kiprah awalnya di Money 20/20 Asia di Bangkok, Xponent menghubungkan startup dan
 perusahaan teknologi dengan unit-unit bisnis Mandiri Group. Hal ini mendorong kolaborasi
 dan mendorong pertumbuhan dalam ekosistem fintech.
 </span>',
+                'is_content_justified' => false,
                 'content' => '<span style="font-weight: 400;">Kini, di pagelaran keempatnya, Xponent memanfaatkan
 ekosistem startup Money 20/20 Asia untuk memperluas jangkauannya di seluruh lanskap
 keuangan Asia.
@@ -554,6 +558,7 @@ dan budidaya perikanan, industri manufaktur, energi terbarukan, serta artificial
 “Namun, MCI tetap melihat semua sektor secara bersamaan untuk menemukan
 opportunity yang terbaik,
 ” ungkapnya.',
+                'is_content_justified' => false,
                 'content' => 'Ronald menambahkan pihaknya melihat dari segala aspek dalam melakukan pendanaan ke
 startup termasuk strategi perseroan untuk bertumbuh dengan sehat dan mencapai
 profitabilitas.
@@ -606,6 +611,7 @@ Capital</a>
 Indonesia (<a href="https://www.idxchannel.com/tag/mci"
 rel="dofollow">MCI</a>) terpilih oleh Kementerian BUMN Republik Indonesia untuk turut
 berpartisipasi dalam Program Relawan Bakti BUMN Batch VI tahun 2024.',
+            'is_content_justified' => false,
                 'content' => '“Kami berharap teman-teman relawan dapat mengimplementasikan core value AKHLAK
 dengan purpose yang lebih tinggi setelah 5 hari terakhir turut serta dalam program bakti di
 Desa Hilisimaetano. Implementasi core value AKHLAK dalam proses bisnis sehari-hari
@@ -676,6 +682,7 @@ tahun 2024 dimana Direktur Keuangan, HR &amp; Manajemen Risiko MCI, Wisnu Setiad
 sebagai salah satu Direktur Muda BUMN ditugaskan untuk memberikan sharing session
 pada relawan BUMN yang ditempatkan pada Desa Wisata Hilisimaetano, Nias Selatan,
 Pulau Nias, Sumatera Utara.',
+                'is_content_justified' => false,
                 'content' => 'Desa Wisata Hilisimaetano dikenal sebagai salah satu destinasi wisata unggulan dengan
 keindahan alam dan budaya yang kaya, dimana desa ini memiliki tradisi atraksi lompat batu
 yang pernah menjadi salah satu latar belakang dalam mata uang seribu rupiah keluaran
@@ -731,6 +738,7 @@ desa-wisata-hilisimaetano/',
                 'title' => 'Welcome to Podcast Mandiri Capital Indonesia',
                 'slug' => 'welcome-to-podcast-mandiri-capital-indonesia',
                 'content_heading' => '',
+                'is_content_justified' => false,
                 'content' => 'Welcome to Podcast Mandiri Capital Indonesia',
                 'media_url' => '',
                 'media_source_url' => '',

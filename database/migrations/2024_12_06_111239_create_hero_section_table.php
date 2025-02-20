@@ -22,30 +22,31 @@ return new class extends Migration
 
         Schema::create('hero_section', function (Blueprint $table) {
             $table->id();
-            $table->json('title');
+            $table->json('title')->nullable();
             $table->string('slug')->unique();
             $table->foreignId('hero_section_category_id')->constrained('hero_section_categories')->onDelete('cascade');
-            $table->json('content');
-            $table->date('published_date');
-            $table->string('image_path');
+            $table->json('content')->nullable();
+            $table->date('published_date')->nullable();
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
 
         Schema::create('hero_section_sub_categories', function (Blueprint $table) {
             $table->id();
-            $table->json('name');
+            $table->json('name')->nullable();
             $table->string('slug')->unique();
             $table->foreignId('hero_section_category_id')->constrained('hero_section_categories')->onDelete('cascade');
-            $table->json('headline_text');
+            $table->json('headline_text')->nullable();
             $table->timestamps();
         });
 
         Schema::create('hero_masters', function (Blueprint $table) {
             $table->id();
-            $table->json('footer');
-            $table->string('instagram');
-            $table->string('linkedin');
-            $table->string('twitter');
+            $table->json('footer')->nullable();
+            $table->json('ojk')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('twitter')->nullable();
             $table->timestamps();
         });
 

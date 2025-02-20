@@ -66,6 +66,10 @@ class BlogPostResource extends Resource
                                     ->placeholder('Enter the main heading for the content')
                                     ->columnSpanFull(),
 
+                                Forms\Components\Checkbox::make('is_content_justified')
+                                    ->label('Justify Content')
+                                    ->default(false),
+
                                 Forms\Components\RichEditor::make('content')
                                     ->required()
                                     ->columnSpanFull(),

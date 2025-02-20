@@ -157,12 +157,18 @@ class PlatformValueCreationDetailSeeder extends Seeder
                     'en' => "Testimonies",
                     'id' => "Testimoni"
                 ],
-                'testimonialexponent_logo1'=> '',
-                'testimonialexponent_logo2'=> '',
-                'testimonialexponent_logo3'=> '',
+                'testimonialexponent_logo1'=> 'platforms/01JMEW1BH226MV411KCXCG49NM.png',
+                'testimonialexponent_logo2'=> 'platforms/01JMEW1BH4TB0SKM7DX7DQS59Q.png',
+                'testimonialexponent_logo3'=> 'platforms/01JMEW1BH5A4GB15MF5AVE8H1Q.png',
+                'testimonialexponent_logo4'=> '',
+                'testimonialexponent_logo5'=> '',
+                'testimonialexponent_logo6'=> '',
                 'testimonialexponent_founder1'=> 'Yohanes Sughitononughroho',
                 'testimonialexponent_founder2'=> 'Ryan Manafe',
                 'testimonialexponent_founder3'=> 'Chiragh Kipralani',
+                'testimonialexponent_founder4'=> '',
+                'testimonialexponent_founder5'=> '',
+                'testimonialexponent_founder6'=> '',
                 'testimonialexponent_title1'=> [
                     'en' => "CEO & Co-Founder",
                     'id' => "CEO & Co-Founder"
@@ -175,6 +181,18 @@ class PlatformValueCreationDetailSeeder extends Seeder
                     'en' => "CEO & Co-Founder",
                     'id' => "CEO & Co-Founder"
                 ],
+                'testimonialexponent_title4'=> [
+                    'en' => "",
+                    'id' => ""
+                ],
+                'testimonialexponent_title5'=> [
+                    'en' => "",
+                    'id' => ""
+                ],
+                'testimonialexponent_title6'=> [
+                    'en' => "",
+                    'id' => ""
+                ],
                 'testimonialexponent_content1'=> [
                     'en' => "CI & Bank Mandiri Greatly assisted CROWDE in providing access and connections to financial industry players, particularly banking.",
                     'id' => "CI & Bank Mandiri sangat membantu CROWDE dalam menyediakan akses dan koneksi ke pelaku industri keuangan, terutama perbankan."
@@ -186,6 +204,18 @@ class PlatformValueCreationDetailSeeder extends Seeder
                 'testimonialexponent_content3'=> [
                     'en' => "It is an honor for ayoconnect to be given the trust of Bank Mandiri to be able to collaborate from implementing integrated embedded usecases for Livin' customers so that they can enjoy the best variety of services in just one.",
                     'id' => "Merupakan suatu kehormatan bagi ayoconnect untuk diberikan kepercayaan oleh Bank Mandiri untuk dapat berkolaborasi dalam mengimplementasikan usecase terintegrasi yang tertanam bagi pelanggan Livin' sehingga mereka dapat menikmati berbagai layanan terbaik hanya dalam satu tempat."
+                ],
+                'testimonialexponent_content4'=> [
+                    'en' => "",
+                    'id' => ""
+                ],
+                'testimonialexponent_content5'=> [
+                    'en' => "",
+                    'id' => ""
+                ],
+                'testimonialexponent_content6'=> [
+                    'en' => "",
+                    'id' => ""
                 ],
                 'footer_text'=> [
                     'en' => "Discover What's Possible",
@@ -368,9 +398,15 @@ class PlatformValueCreationDetailSeeder extends Seeder
                 'testimonialzenith_logo1'=> 'platforms/01JM0G3JSHH5VEC4E521R7CXWJ.png',
                 'testimonialzenith_logo2'=> 'platforms/01JM0G3JSKTASN4N8GWZZFGHJY.png',
                 'testimonialzenith_logo3'=> 'platforms/01JM0G3JSM4650WB33Q0FBJK2M.png',
+                'testimonialzenith_logo4'=> '',
+                'testimonialzenith_logo5'=> '',
+                'testimonialzenith_logo6'=> '',
                 'testimonialzenith_founder1'=> 'Joselin Olivia',
                 'testimonialzenith_founder2'=> 'Bayu Anggara',
                 'testimonialzenith_founder3'=> 'Natali Ardianto',
+                'testimonialzenith_founder4'=> '',
+                'testimonialzenith_founder5'=> '',
+                'testimonialzenith_founder6'=> '',
                 'testimonialzenith_title1'=> [
                     'en' => "CEO & Co-Founder",
                     'id' => "CEO & Co-Founder"
@@ -383,6 +419,18 @@ class PlatformValueCreationDetailSeeder extends Seeder
                     'en' => "CEO & Co-Founder",
                     'id' => "CEO & Co-Founder"
                 ],
+                'testimonialzenith_title4'=> [
+                    'en' => "",
+                    'id' => ""
+                ],
+                'testimonialzenith_title5'=> [
+                    'en' => "",
+                    'id' => ""
+                ],
+                'testimonialzenith_title6'=> [
+                    'en' => "",
+                    'id' => ""
+                ],
                 'testimonialzenith_content1'=> [
                     'en' => "During the mentorship sessions with Astra International, the discussion focused on a successful synergy project, possibly because Imajin and Astra target the same industry. I believe that every industry has it own unique approach, wich is why the sharing session ath time was quiet insightful, especialy for the manufavturing and automative industries.",
                     'id' => "Pada sesi mentoring dengan Astra International, diskusi fokus pada proyek kesuksesan bersama, mungkin karena Imajin dan Astra bergerak di industri yang sama. Saya percaya setiap industri memiliki approach yang unik, yang membuat sesi sharing pada waktu itu sangat menarik dan khusus untuk industri manufaktur dan otomotif."
@@ -394,6 +442,18 @@ class PlatformValueCreationDetailSeeder extends Seeder
                 'testimonialzenith_content3'=> [
                     'en' => "The mentorship program truly opened my eyes, especially in preparing for my future series B fundraising. There were many insights from that time that i still remember today, and i know i need to be even more prepeared because, statistically, Series B fundraising is the thouhest.",
                     'id' => "Program mentoring ini benar-benar membuka mata saya, khususnya dalam persiapan untuk series B fundraising. Ada banyak wawasan dari waktu itu yang saya ingat lagi hari ini, dan saya tahu bahwa saya perlu lebih berpreparasi karena, statistiknya, Series B fundraising adalah yang terbesar."
+                ],
+                'testimonialzenith_content4'=> [
+                    'en' => "",
+                    'id' => ""
+                ],
+                'testimonialzenith_content5'=> [
+                    'en' => "",
+                    'id' => ""
+                ],
+                'testimonialzenith_content6'=> [
+                    'en' => "",
+                    'id' => ""
                 ],
                 'footer_text'=> [
                     'en' => "Ignite The Highest Point",

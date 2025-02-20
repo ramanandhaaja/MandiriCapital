@@ -176,9 +176,10 @@
             </div>
             <div class="grid-headline-description-card">
                 <div class="masonry-grid-investment-section-sub">
+                    @if($PlatformValueCreationXponent->testimonialexponent_logo1)
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ asset('images/platform/crowde.png') }}" alt="funding2.png"
+                        <img src="{{ '/storage/' . $PlatformValueCreationXponent->testimonialexponent_logo1 }}" alt="funding2.png"
                             class="card-funding-image" />
                         <div class="funding-category">
                             {!! $PlatformValueCreationXponent->testimonialexponent_founder1 !!}
@@ -190,10 +191,12 @@
                             {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_content1', session('locale', 'en')) !!}
                         </div>
                     </div>
+                    @endif
 
+                    @if($PlatformValueCreationXponent->testimonialexponent_logo2)
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ asset('images/platform/dagangan.png') }}" alt="funding2.png"
+                        <img src="{{ '/storage/' . $PlatformValueCreationXponent->testimonialexponent_logo2 }}" alt="funding2.png"
                             class="card-funding-image" />
                         <div class="funding-category">
                             {!! $PlatformValueCreationXponent->testimonialexponent_founder2 !!}
@@ -205,10 +208,12 @@
                             {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_content2', session('locale', 'en')) !!}
                         </div>
                     </div>
+                    @endif
 
+                    @if($PlatformValueCreationXponent->testimonialexponent_logo3)
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
-                        <img src="{{ asset('images/platform/ayoconnect.png') }}" alt="funding2.png"
+                        <img src="{{ '/storage/' . $PlatformValueCreationXponent->testimonialexponent_logo3 }}" alt="funding2.png"
                             class="card-funding-image" />
                         <div class="funding-category">
                             {!! $PlatformValueCreationXponent->testimonialexponent_founder3 !!}
@@ -220,6 +225,58 @@
                             {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_content3', session('locale', 'en')) !!}
                         </div>
                     </div>
+                    @endif
+
+                    @if($PlatformValueCreationXponent->testimonialexponent_logo4)
+                    <div class="grid-headline-title-card-sub card-funding">
+                        <div class="background-image"></div>
+                        <img src="{{ '/storage/' . $PlatformValueCreationXponent->testimonialexponent_logo4 }}" alt="funding2.png"
+                            class="card-funding-image" />
+                        <div class="funding-category">
+                            {!! $PlatformValueCreationXponent->testimonialexponent_founder4 !!}
+                        </div>
+                        <div class="card-funding-jobtitle">
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_title4', session('locale', 'en')) !!}
+                        </div>
+                        <div class="card-funding-content">
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_content4', session('locale', 'en')) !!}
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($PlatformValueCreationXponent->testimonialexponent_logo5)
+                    <div class="grid-headline-title-card-sub card-funding">
+                        <div class="background-image"></div>
+                        <img src="{{ '/storage/' . $PlatformValueCreationXponent->testimonialexponent_logo5 }}" alt="funding2.png"
+                            class="card-funding-image" />
+                        <div class="funding-category">
+                            {!! $PlatformValueCreationXponent->testimonialexponent_founder5 !!}
+                        </div>
+                        <div class="card-funding-jobtitle">
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_title5', session('locale', 'en')) !!}
+                        </div>
+                        <div class="card-funding-content">
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_content5', session('locale', 'en')) !!}
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($PlatformValueCreationXponent->testimonialexponent_logo6)
+                    <div class="grid-headline-title-card-sub card-funding">
+                        <div class="background-image"></div>
+                        <img src="{{ '/storage/' . $PlatformValueCreationXponent->testimonialexponent_logo6 }}" alt="funding2.png"
+                            class="card-funding-image" />
+                        <div class="funding-category">
+                            {!! $PlatformValueCreationXponent->testimonialexponent_founder6 !!}
+                        </div>
+                        <div class="card-funding-jobtitle">
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_title6', session('locale', 'en')) !!}
+                        </div>
+                        <div class="card-funding-content">
+                            {!! $PlatformValueCreationXponent->getTranslation('testimonialexponent_content6', session('locale', 'en')) !!}
+                        </div>
+                    </div>
+                    @endif
                 </div>
 
                 <div class="grid-headline-title-card-sub-bottom">

@@ -21,6 +21,7 @@ return new class extends Migration
         Schema::create('publications', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->boolean('hide_title')->default(false);
             $table->string('slug')->unique();
             $table->foreignId('publication_category_id')->constrained()->onDelete('cascade');
             $table->text('content');

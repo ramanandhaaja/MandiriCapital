@@ -288,21 +288,35 @@ class EmailController extends Controller
         ]);
 
         try {
+            // Log validation attempt
+            Log::info('Validating startup form data');
+
             $formData = $request->validate([
                 'first_name' => 'required|string',
                 'last_name' => 'required|string',
                 'email' => 'required|email',
+                'phone' => 'required|string',
                 'business_name' => 'required|string',
-                'market' => 'required|string',
-                'growth_stage' => 'required|string',
-                'pitch_url' => 'nullable|string',
+                'website_url' => 'nullable|url',
+                'sector' => 'required|string',
                 'pitch_file' => 'nullable|file|mimes:pdf,doc,docx,ppt,pptx|max:10240', // Max 10MB
             ]);
 
+            // Log successful validation
+            Log::info('Form data validated successfully', ['formData' => array_keys($formData)]);
+
             // Handle file upload
             if ($request->hasFile('pitch_file')) {
+                Log::info('Processing pitch file upload');
                 $formData['pitch_file'] = $request->file('pitch_file');
+                Log::info('Pitch file processed successfully', [
+                    'filename' => $formData['pitch_file']->getClientOriginalName(),
+                    'size' => $formData['pitch_file']->getSize()
+                ]);
             }
+
+            // Log email attempt
+            Log::info('Attempting to send startup email');
 
             Mail::to('info@codefoundry.co.id')
                 ->send(new HomeStartupEmail($formData));
@@ -313,12 +327,26 @@ class EmailController extends Controller
                 'status' => 'success',
                 'message' => 'Thank you for your submission. We will contact you soon.'
             ]);
+        } catch (ValidationException $e) {
+            Log::error('Startup form validation failed:', [
+                'errors' => $e->errors(),
+                'message' => $e->getMessage()
+            ]);
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Please check your input and try again.',
+                'errors' => $e->errors()
+            ], 422);
         } catch (\Exception $e) {
-            Log::error('Home Startup email sending failed:', ['error' => $e->getMessage()]);
+            Log::error('Home Startup email sending failed:', [
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ]);
+
             return response()->json([
                 'status' => 'error',
                 'message' => 'Sorry, there was an error sending your submission. Please try again later.'
-            ], 422);
+            ], 500);
         }
     }
 

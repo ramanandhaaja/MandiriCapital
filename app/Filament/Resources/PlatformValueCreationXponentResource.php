@@ -467,7 +467,6 @@ class PlatformValueCreationXponentResource extends Resource
                                                             ->directory('platforms')
                                                             ->visibility('public')
                                                             ->columnSpanFull(),
-
                                                         Forms\Components\Grid::make(2)
                                                             ->schema([
                                                                 Forms\Components\TextInput::make('testimonialexponent_founder3')
@@ -477,6 +476,70 @@ class PlatformValueCreationXponentResource extends Resource
                                                             ]),
                                                         Forms\Components\RichEditor::make('testimonialexponent_content3.en')
                                                             ->label('Testimonial Exponent Content 3 (English)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+
+                                                            Forms\Components\FileUpload::make('testimonialexponent_logo4')
+                                                            ->label('Testimonial Exponent Logo 4')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialexponent_founder4')
+                                                                    ->label('Testimonial Exponent Founder 4'),
+                                                                Forms\Components\TextInput::make('testimonialexponent_title4.en')
+                                                                    ->label('Testimonial Exponent Title 4 (English)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialexponent_content4.en')
+                                                            ->label('Testimonial Exponent Content 4 (English)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+
+                                                            Forms\Components\FileUpload::make('testimonialexponent_logo5')
+                                                            ->label('Testimonial Exponent Logo 5')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialexponent_founder5')
+                                                                    ->label('Testimonial Exponent Founder 5'),
+                                                                Forms\Components\TextInput::make('testimonialexponent_title5.en')
+                                                                    ->label('Testimonial Exponent Title 5 (English)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialexponent_content5.en')
+                                                            ->label('Testimonial Exponent Content 5 (English)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+
+
+                                                            Forms\Components\FileUpload::make('testimonialexponent_logo6')
+                                                            ->label('Testimonial Exponent Logo 6')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialexponent_founder6')
+                                                                    ->label('Testimonial Exponent Founder 6'),
+                                                                Forms\Components\TextInput::make('testimonialexponent_title6.en')
+                                                                    ->label('Testimonial Exponent Title 6 (English)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialexponent_content6.en')
+                                                            ->label('Testimonial Exponent Content 6 (English)')
                                                             ->maxLength(65535)
                                                             ->columnSpanFull(),
                                                     ]),
@@ -549,6 +612,71 @@ class PlatformValueCreationXponentResource extends Resource
                                                             ]),
                                                         Forms\Components\RichEditor::make('testimonialexponent_content3.id')
                                                             ->label('Testimonial Exponent Content 3 (Indonesian)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+                                                        Forms\Components\FileUpload::make('testimonialexponent_logo4')
+                                                            ->label('Testimonial Exponent Logo 4')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialexponent_founder4')
+                                                                    ->label('Testimonial Exponent Founder 4'),
+                                                                Forms\Components\TextInput::make('testimonialexponent_title4.id')
+                                                                    ->label('Testimonial Exponent Title 4 (Indonesian)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialexponent_content4.id')
+                                                            ->label('Testimonial Exponent Content 4 (Indonesian)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+
+                                                        Forms\Components\FileUpload::make('testimonialexponent_logo5')
+                                                            ->label('Testimonial Exponent Logo 5')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialexponent_founder5')
+                                                                    ->label('Testimonial Exponent Founder 5'),
+                                                                Forms\Components\TextInput::make('testimonialexponent_title5.id')
+                                                                    ->label('Testimonial Exponent Title 5 (Indonesian)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialexponent_content5.id')
+                                                            ->label('Testimonial Exponent Content 5 (Indonesian)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+
+                                                        Forms\Components\FileUpload::make('testimonialexponent_logo6')
+                                                            ->label('Testimonial Exponent Logo 6')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialexponent_founder6')
+                                                                    ->label('Testimonial Exponent Founder 6'),
+                                                                Forms\Components\TextInput::make('testimonialexponent_title6.id')
+                                                                    ->label('Testimonial Exponent Title 6 (Indonesian)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialexponent_content6.id')
+                                                            ->label('Testimonial Exponent Content 6 (Indonesian)')
                                                             ->maxLength(65535)
                                                             ->columnSpanFull(),
                                                     ]),

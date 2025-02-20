@@ -577,7 +577,6 @@ class PlatformValueCreationZenithResource extends Resource
                                                             ->directory('platforms')
                                                             ->visibility('public')
                                                             ->columnSpanFull(),
-
                                                         Forms\Components\Grid::make(2)
                                                             ->schema([
                                                                 Forms\Components\TextInput::make('testimonialzenith_founder3')
@@ -587,6 +586,70 @@ class PlatformValueCreationZenithResource extends Resource
                                                             ]),
                                                         Forms\Components\RichEditor::make('testimonialzenith_content3.en')
                                                             ->label('Testimonial Zenith Content 3 (English)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+
+                                                            Forms\Components\FileUpload::make('testimonialzenith_logo4')
+                                                            ->label('Testimonial Zenith Logo 4')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialzenith_founder4')
+                                                                    ->label('Testimonial Zenith Founder 4'),
+                                                                Forms\Components\TextInput::make('testimonialzenith_title4.en')
+                                                                    ->label('Testimonial Zenith Title 4 (English)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialzenith_content4.en')
+                                                            ->label('Testimonial Zenith Content 4 (English)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+
+                                                            Forms\Components\FileUpload::make('testimonialzenith_logo5')
+                                                            ->label('Testimonial Zenith Logo 5')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialzenith_founder5')
+                                                                    ->label('Testimonial Zenith Founder 5'),
+                                                                Forms\Components\TextInput::make('testimonialzenith_title5.en')
+                                                                    ->label('Testimonial Zenith Title 5 (English)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialzenith_content5.en')
+                                                            ->label('Testimonial Zenith Content 5 (English)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+
+
+                                                            Forms\Components\FileUpload::make('testimonialzenith_logo6')
+                                                            ->label('Testimonial Zenith Logo 6')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialzenith_founder6')
+                                                                    ->label('Testimonial Zenith Founder 6'),
+                                                                Forms\Components\TextInput::make('testimonialzenith_title6.en')
+                                                                    ->label('Testimonial Zenith Title 6 (English)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialzenith_content6.en')
+                                                            ->label('Testimonial Zenith Content 6 (English)')
                                                             ->maxLength(65535)
                                                             ->columnSpanFull(),
                                                     ]),
@@ -649,7 +712,6 @@ class PlatformValueCreationZenithResource extends Resource
                                                             ->directory('platforms')
                                                             ->visibility('public')
                                                             ->columnSpanFull(),
-
                                                         Forms\Components\Grid::make(2)
                                                             ->schema([
                                                                 Forms\Components\TextInput::make('testimonialzenith_founder3')
@@ -659,6 +721,67 @@ class PlatformValueCreationZenithResource extends Resource
                                                             ]),
                                                         Forms\Components\RichEditor::make('testimonialzenith_content3.id')
                                                             ->label('Testimonial Zenith Content 3 (Indonesian)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+                                                        Forms\Components\FileUpload::make('testimonialzenith_logo4')
+                                                            ->label('Testimonial Zenith Logo 4')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialzenith_founder4')
+                                                                    ->label('Testimonial Zenith Founder 4'),
+                                                                Forms\Components\TextInput::make('testimonialzenith_title4.id')
+                                                                    ->label('Testimonial Zenith Title 4 (Indonesian)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialzenith_content4.id')
+                                                            ->label('Testimonial Zenith Content 4 (Indonesian)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+
+                                                            Forms\Components\FileUpload::make('testimonialzenith_logo5')
+                                                            ->label('Testimonial Zenith Logo 5')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialzenith_founder5')
+                                                                    ->label('Testimonial Zenith Founder 5'),
+                                                                Forms\Components\TextInput::make('testimonialzenith_title5.id')
+                                                                    ->label('Testimonial Zenith Title 5 (Indonesian)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialzenith_content5.id')
+                                                            ->label('Testimonial Zenith Content 5 (Indonesian)')
+                                                            ->maxLength(65535)
+                                                            ->columnSpanFull(),
+
+
+                                                            Forms\Components\FileUpload::make('testimonialzenith_logo6')
+                                                            ->label('Testimonial Zenith Logo 6')
+                                                            ->image()
+                                                            ->disk('public')
+                                                            ->directory('platforms')
+                                                            ->visibility('public')
+                                                            ->columnSpanFull(),
+                                                        Forms\Components\Grid::make(2)
+                                                            ->schema([
+                                                                Forms\Components\TextInput::make('testimonialzenith_founder6')
+                                                                    ->label('Testimonial Zenith Founder 6'),
+                                                                Forms\Components\TextInput::make('testimonialzenith_title6.id')
+                                                                    ->label('Testimonial Zenith Title 6 (Indonesian)'),
+                                                            ]),
+                                                        Forms\Components\RichEditor::make('testimonialzenith_content6.id')
+                                                            ->label('Testimonial Zenith Content 6 (Indonesian)')
                                                             ->maxLength(65535)
                                                             ->columnSpanFull(),
                                                     ]),

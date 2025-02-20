@@ -16,6 +16,7 @@ class BlogPost extends Model
         'slug',
         'content_heading',
         'content',
+        'is_content_justified',
         'media_url',
         'media_source_url',
         'front_image',

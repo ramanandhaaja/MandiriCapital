@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->longText('content_heading')->nullable();
             $table->longText('content')->nullable();
+            $table->boolean('is_content_justified')->default(false);
             $table->longText('media_source_url')->nullable();
             $table->longText('media_url')->nullable();
             $table->string('front_image')->nullable();

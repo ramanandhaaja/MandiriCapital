@@ -231,7 +231,6 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
-    width: 100%;
     max-width: var(--container-max-width);
     margin: 0 auto;
 }
@@ -315,6 +314,29 @@ body {
     opacity: 0.8;
 }
 
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    z-index: 1;
+}
+
+.card .category,
+.card .logo-card {
+    position: absolute;
+    z-index: 2;
+}
+
 /* ==========================================================================
    Newsletter Section
    ========================================================================== */
@@ -358,7 +380,6 @@ body {
 }
 
 .pitch-form-intro {
-    position: sticky;
     top: 20px;
 }
 
@@ -1040,8 +1061,4 @@ textarea[name="message"] {
         max-width: 240px;
         height: auto;
     }
-
-
-
-
 }

@@ -58,7 +58,9 @@
                     <a href="{{ route('report.show', $publication->slug) }}" class="text-decoration-none">
                         <span class="category">{{ $publication->category?->getTranslation('name', session('locale', 'en')) ?? '' }}</span>
                         <div class="card-content">
+                            @if(!$publication->hide_title)
                             <h2>{{ $publication->title }}</h2>
+                            @endif
                         </div>
                         <span class="date" style='visibility: hidden;'>{{ Carbon::parse($publication->published_date)->format('d F Y') }}</span>
                     </a>
@@ -166,7 +168,9 @@
                             <a href="${postUrl}" class="text-decoration-none">
                                 <span class="category">${categoryName}</span>
                                 <div class="card-content">
+                                    @if(!$publication->hide_title)
                                     <h2>${publication.title}</h2>
+                                    @endif
                                 </div>
                                 <span class="date">${formatDate(publication.published_date)}</span>
                             </a>

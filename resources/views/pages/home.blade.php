@@ -40,117 +40,19 @@
         </div>
     </div>
 
-    {{-- Content Section: News and Updates Grid --}}
-    @php
-        $cards = [
-            // Featured Cards
-            [
-                'type' => 'medium',
-                'category' => 'PROGRAM',
-                'title' => 'Connecting Startups Program',
-                'date' => 'June 2020',
-                'image' => 'Article1.png',
-                'logo' => 'exponent.png',
-                'position' => '',
-                'link' => route('platform.show', 'xponent')
-            ],
-            [
-                'type' => 'large',
-                'category' => 'WHITE PAPER',
-                'title' => 'The Billion Dollar Moment: A Paradigm Shift for Indonesian IPOs',
-                'date' => 'June 2020',
-                'image' => 'Article2.jpeg',
-                'logo' => '',
-                'position' => 'right',
-                'link' => 'https://www.mandiri-capital.co.id/report/the-billion-dollar-moment-a-paradigm-shift-for-indonesia-ipos'
-            ],
-            [
-                'type' => 'medium',
-                'category' => 'PROGRAM',
-                'title' => 'Startup Accelerator ',
-                'date' => 'June 2020',
-                'image' => 'Article3.png',
-                'logo' => 'zenith.png',
-                'position' => '',
-                'link' => route('platform.show', 'zenith')
-            ],
-            [
-                'type' => 'medium',
-                'category' => 'PODCAST',
-                'title' => '',
-                'date' => 'June 2020',
-                'image' => 'Article4.png',
-                'logo' => '',
-                'position' => '',
-            ],
-
-            // Small Square Cards
-            [
-                'type' => 'small-square',
-                'category' => 'NEWS',
-                'title' => '',
-                'date' => 'June 2020',
-                'image' => 'Article5.jpeg',
-                'logo' => '',
-                'position' => 'right',
-                'link' => 'https://mandiri-capital.co.id/media/mandiri-capital-indonesia-mendorong-inovasi-digital-melalui-mandiri-innovation-hub-2024-press-release'
-            ],
-            [
-                'type' => 'small-square',
-                'category' => 'BLOG',
-                'title' => 'Understanding the Stock Market',
-                'date' => 'June 2020',
-                'image' => 'Article6.png',
-                'logo' => '',
-                'position' => 'right',
-                'link' => 'http://localhost:8000/media/program-xponent-mci-di-money-20-20-asia-jadi-jembatan-konektivitas-dunia-insight'
-            ],
-            [
-                'type' => 'medium',
-                'category' => 'Featured Investees',
-                'title' => '',
-                'date' => 'June 2020',
-                'image' => 'Article7.jpeg',
-                'logo' => '',
-                'position' => 'left',
-                'link' => 'https://mandiri-capital.co.id/portfolio/amartha'
-            ],
-            [
-                'type' => 'small-square',
-                'category' => 'ANNUAL REPORT',
-                'title' => '',
-                'date' => 'June 2020',
-                'image' => 'Article8.jpeg',
-                'logo' => '',
-                'position' => 'right',
-                'link' => 'https://mandiri-capital.co.id/report/developing-constructive-collaboration-to-achieve-productive-innovation'
-            ],
-            [
-                'type' => 'small-square',
-                'category' => 'SUSTAINABILITY REPORT',
-                'title' => '',
-                'date' => 'June 2020',
-                'image' => 'Article9.png',
-                'logo' => '',
-                'position' => 'right',
-                'link' => 'https://mandiri-capital.co.id/report/strengthening-sustainability-innovation'
-            ]
-
-        ];
-    @endphp
 
     <div class="masonry-grid">
         @foreach($articlesHeadlineList as $card)
             <div class="card {{ $card->type }} {{ $card->position }}"
                 @if($card->image_path) style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ '/storage/' . $card->image_path }}')" @endif>
                 <a href="{{ $card->link_url ?? '#' }}" class="card-link">
-                <span class="category">{{ $card->getTranslation('category', session('locale', 'en')) }}</span>
-                @if($card->logo_path)
-                    <img src="{{ '/storage/' . $card->logo_path }}" alt="{{ $card->getTranslation('category', session('locale', 'en')) }} Logo" class="logo-card" loading="lazy">
-                @endif
-                <div class="card-content">
-                    <h2>{{ $card->getTranslation('title', session('locale', 'en')) }}</h2>
-                </div>
+                    <span class="category">{{ $card->getTranslation('category', session('locale', 'en')) }}</span>
+                    @if($card->logo_path)
+                        <img src="{{ '/storage/' . $card->logo_path }}" alt="{{ $card->getTranslation('category', session('locale', 'en')) }} Logo" class="logo-card" loading="lazy">
+                    @endif
+                    <div class="card-content">
+                        <h2>{{ $card->getTranslation('title', session('locale', 'en')) }}</h2>
+                    </div>
                 </a>
             </div>
         @endforeach
@@ -251,34 +153,40 @@
                                 <input type="email" name="email" id="email" placeholder="Write here..." required>
                             </div>
                             <div class="form-group">
-                                <label for="business_name">Name of Your Business<span class="required">*</span></label>
-                                <input type="text" name="business_name" id="business_name" placeholder="Write here..." required>
+                                <label for="phone">Phone Number<span class="required">*</span></label>
+                                <input type="text" name="phone" id="phone" placeholder="Write here..." required>
                             </div>
                         </div>
 
                         {{-- Business Information --}}
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="market">Country/ Market Does Your Business Serve?<span class="required">*</span></label>
-                                <input type="text" name="market" id="market" placeholder="Write here..." required>
+                                <label for="business_name">Company Name<span class="required">*</span></label>
+                                <input type="text" name="business_name" id="business_name" placeholder="Write here..." required>
                             </div>
                             <div class="form-group">
-                                <label for="growth_stage">Stage of Growth Your Company At<span class="required">*</span></label>
-                                <select name="growth_stage" id="growth_stage" required>
-                                    <option value="">Select...</option>
-                                    <option value="seed">Seed</option>
-                                    <option value="early">Early Stage</option>
-                                    <option value="growth">Growth Stage</option>
-                                    <option value="expansion">Expansion</option>
-                                </select>
+                                <label for="website_url">Add URL to your Company Website</label>
+                                <input type="url" name="website_url" id="website_url" placeholder="Write here...">
                             </div>
                         </div>
 
                         {{-- Pitch Materials --}}
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="pitch_url">Add URL to your Pitch Deck</label>
-                                <input type="url" name="pitch_url" id="pitch_url" placeholder="Write here...">
+                                <label for="sector">Choose your company's main business sector</label>
+                                <select name="sector" id="sector" required>
+                                    <option value="">Select an option</option>
+                                    <option value="agriculture_food">Agriculture & Food</option>
+                                    <option value="energy_resources">Energy & Resources</option>
+                                    <option value="healthcare_pharmaceuticals">Healthcare & Pharmaceuticals</option>
+                                    <option value="education_employment">Education & Employment</option>
+                                    <option value="automotive_transportation">Automotive & Transportation</option>
+                                    <option value="banking_financial">Banking & Financial Service</option>
+                                    <option value="consulting_professional">Consulting & Professional Services</option>
+                                    <option value="media_entertainment">Media & Entertainment</option>
+                                    <option value="retail_wholesale">Retail & Wholesale</option>
+                                    <option value="other">Other</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="pitch_file">Upload Your Files</label>
@@ -387,6 +295,9 @@
         function closePitchModal() {
             document.getElementById('pitchFormModal').style.display = 'none';
             document.body.style.overflow = 'auto';
+            // Reset form when closing
+            document.getElementById('startupPitchForm').reset();
+            document.getElementById('file-chosen').textContent = 'No File Chosen';
         }
 
         function openInvestorModal() {
@@ -398,6 +309,37 @@
             document.getElementById('investorFormModal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+
+        // Form submission handler for startup pitch
+        document.getElementById('startupPitchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            fetch('{{ route('home.startup.email') }}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                credentials: 'same-origin'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('Thank you for your submission. We will contact you soon.');
+                    closePitchModal();
+                    this.reset();
+                } else {
+                    alert(data.message || 'An error occurred. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
 
         // File input handling
         function updateFileName() {
@@ -423,33 +365,6 @@
 
 @push('scripts')
 <script>
-    document.getElementById('startupPitchForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const formData = new FormData(this);
-
-        fetch('{{ route('home.startup.email') }}', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                alert(data.message);
-                closePitchModal();
-                this.reset();
-            } else {
-                alert(data.message);
-            }
-        })
-        .catch(error => {
-            alert('An error occurred. Please try again.');
-        });
-    });
-
     document.getElementById('investorForm').addEventListener('submit', function(e) {
         e.preventDefault();
 

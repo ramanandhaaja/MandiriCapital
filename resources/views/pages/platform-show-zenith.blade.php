@@ -146,6 +146,7 @@
             </div>
             <div class="grid-headline-description-card">
                 <div class="masonry-grid-investment-section-sub">
+                    @if($PlatformValueCreationZenith->testimonialzenith_logo1)
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
                         <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo1 }}" alt="funding2.png" class="card-funding-image" loading="lazy" />
@@ -159,7 +160,9 @@
                             {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_content1', session('locale', 'en')) !!}
                         </div>
                     </div>
+                    @endif
 
+                    @if($PlatformValueCreationZenith->testimonialzenith_logo2)
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
                         <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo2 }}" alt="funding2.png" class="card-funding-image" loading="lazy" />
@@ -173,7 +176,9 @@
                             {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_content2', session('locale', 'en')) !!}
                         </div>
                     </div>
+                    @endif
 
+                    @if($PlatformValueCreationZenith->testimonialzenith_logo3)
                     <div class="grid-headline-title-card-sub card-funding">
                         <div class="background-image"></div>
                         <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo3 }}" alt="funding2.png" class="card-funding-image" loading="lazy" />
@@ -187,6 +192,55 @@
                             {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_content3', session('locale', 'en')) !!}
                         </div>
                     </div>
+                    @endif
+
+                    @if($PlatformValueCreationZenith->testimonialzenith_logo4)
+                    <div class="grid-headline-title-card-sub card-funding">
+                        <div class="background-image"></div>
+                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo4 }}" alt="funding2.png" class="card-funding-image" loading="lazy" />
+                        <div class="funding-category">
+                            {!! $PlatformValueCreationZenith->testimonialzenith_founder4 !!}
+                        </div>
+                        <div class="card-funding-jobtitle">
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_title4', session('locale', 'en')) !!}
+                        </div>
+                        <div class="card-funding-content">
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_content4', session('locale', 'en')) !!}
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($PlatformValueCreationZenith->testimonialzenith_logo5)
+                    <div class="grid-headline-title-card-sub card-funding">
+                        <div class="background-image"></div>
+                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo5 }}" alt="funding2.png" class="card-funding-image" loading="lazy" />
+                        <div class="funding-category">
+                            {!! $PlatformValueCreationZenith->testimonialzenith_founder5 !!}
+                        </div>
+                        <div class="card-funding-jobtitle">
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_title5', session('locale', 'en')) !!}
+                        </div>
+                        <div class="card-funding-content">
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_content5', session('locale', 'en')) !!}
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($PlatformValueCreationZenith->testimonialzenith_logo6)
+                    <div class="grid-headline-title-card-sub card-funding">
+                        <div class="background-image"></div>
+                        <img src="{{ '/storage/' . $PlatformValueCreationZenith->testimonialzenith_logo6 }}" alt="funding2.png" class="card-funding-image" loading="lazy" />
+                        <div class="funding-category">
+                            {!! $PlatformValueCreationZenith->testimonialzenith_founder6 !!}
+                        </div>
+                        <div class="card-funding-jobtitle">
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_title6', session('locale', 'en')) !!}
+                        </div>
+                        <div class="card-funding-content">
+                            {!! $PlatformValueCreationZenith->getTranslation('testimonialzenith_content6', session('locale', 'en')) !!}
+                        </div>
+                    </div>
+                    @endif
                 </div>
 
                 <div class="grid-headline-title-card-sub-bottom">
