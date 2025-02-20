@@ -100,29 +100,6 @@ class CustomerCareResource extends Resource
                                                             ->maxLength(65535)
                                                             ->columnSpanFull(),
 
-                                                        Forms\Components\Grid::make(2)
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('customer_care_icon5')
-                                                                    ->label('Customer Care Icon 5'),
-                                                                Forms\Components\TextInput::make('customer_care_title5.en')
-                                                                    ->label('Customer Care Title 5 (English)'),
-                                                            ]),
-                                                        Forms\Components\RichEditor::make('customer_care_content5.en')
-                                                            ->label('Customer Care Content 5 (English)')
-                                                            ->maxLength(65535)
-                                                            ->columnSpanFull(),
-
-                                                        Forms\Components\Grid::make(2)
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('customer_care_icon6')
-                                                                    ->label('Customer Care Icon 6'),
-                                                                Forms\Components\TextInput::make('customer_care_title6.en')
-                                                                    ->label('Customer Care Title 6 (English)'),
-                                                            ]),
-                                                        Forms\Components\RichEditor::make('customer_care_content6.en')
-                                                            ->label('Customer Care Content 6 (English)')
-                                                            ->maxLength(65535)
-                                                            ->columnSpanFull(),
                                                     ]),
                                                 Forms\Components\Tabs\Tab::make('Indonesian')
                                                     ->schema([
@@ -183,29 +160,6 @@ class CustomerCareResource extends Resource
                                                             ->maxLength(65535)
                                                             ->columnSpanFull(),
 
-                                                        Forms\Components\Grid::make(2)
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('customer_care_icon5')
-                                                                    ->label('Customer Care Icon 5'),
-                                                                Forms\Components\TextInput::make('customer_care_title5.id')
-                                                                    ->label('Customer Care Title 5 (Indonesian)'),
-                                                            ]),
-                                                        Forms\Components\RichEditor::make('customer_care_content5.id')
-                                                            ->label('Customer Care Content 5 (Indonesian)')
-                                                            ->maxLength(65535)
-                                                            ->columnSpanFull(),
-
-                                                        Forms\Components\Grid::make(2)
-                                                            ->schema([
-                                                                Forms\Components\TextInput::make('customer_care_icon6')
-                                                                    ->label('Customer Care Icon 6'),
-                                                                Forms\Components\TextInput::make('customer_care_title6.id')
-                                                                    ->label('Customer Care Title 6 (Indonesian)'),
-                                                            ]),
-                                                        Forms\Components\RichEditor::make('customer_care_content6.id')
-                                                            ->label('Customer Care Content 6 (Indonesian)')
-                                                            ->maxLength(65535)
-                                                            ->columnSpanFull(),
                                                     ]),
                                             ])->columnSpanFull(),
                                     ])->columns(2),
@@ -214,7 +168,39 @@ class CustomerCareResource extends Resource
                             ])
                             ->columnSpan(2),
 
+                            Forms\Components\Section::make('Image')
+                            ->schema([
+                                Forms\Components\FileUpload::make('customer_care_image1')
+                                    ->label('Customer Care Image 1')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('platforms')
+                                    ->visibility('public')
+                                    ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('customer_care_image2')
+                                    ->label('Customer Care Image 2')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('platforms')
+                                    ->visibility('public')
+                                    ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('customer_care_image3')
+                                    ->label('Customer Care Image 3')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('platforms')
+                                    ->visibility('public')
+                                    ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('customer_care_image4')
+                                    ->label('Customer Care Image 4')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('platforms')
+                                    ->visibility('public')
+                                    ->columnSpanFull(),
 
+                            ])
+                            ->columnSpan(1),
                     ])
                     ->columns(3),
             ])

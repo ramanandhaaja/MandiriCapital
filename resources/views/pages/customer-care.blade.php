@@ -30,55 +30,64 @@
                 <h1 class="grid-headline-subtitle-left">{!! $customerCareComplaint->getTranslation('customer_care_subtitle', session('locale', 'en')) !!}</h1>
             </div>
             <div class="grid-headline-description-card">
-                <div class="masonry-grid-investment-section-sub">
+                <div class="masonry-grid-investment-section-sub" style="background-image: url('{{ asset('images/report/custcarebg.png') }}'); height: 250px; width: 800px;background-size: contain; background-position: top; background-repeat: no-repeat">
                     <div class="grid-headline-title-card-sub">
-                        <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">{{ $customerCareComplaint->customer_care_icon1 }}</h1>
+                        <div class="card-custcare-icon">
+                            <img style="width: 100px" src="{{ '/storage/' . $customerCareComplaint->customer_care_image1 }}" alt="">
                         </div>
-                        <h2 class="card-title">{!! $customerCareComplaint->getTranslation('customer_care_title1', session('locale', 'en')) !!}
-                        </h2>
-                        <p class="card-description">{!! $customerCareComplaint->getTranslation('customer_care_content1', session('locale', 'en')) !!}</p>
+                        <div class="card-custcare-content">
+                            <div class="card-icon-bottom">
+                                <h1 class="card-title-bottom">{{ $customerCareComplaint->customer_care_icon1 }}</h1>
+                            </div>
+                            <h2 class="card-title">{!! $customerCareComplaint->getTranslation('customer_care_title1', session('locale', 'en')) !!}
+                            </h2>
+                            <p class="card-description">{!! $customerCareComplaint->getTranslation('customer_care_content1', session('locale', 'en')) !!}</p>
+                        </div>
+
                     </div>
                     <div class="grid-headline-title-card-sub">
-                        <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">{{ $customerCareComplaint->customer_care_icon2 }}</h1>
+                        <div class="card-custcare-icon">
+                            <img style="width: 100px" src="{{ '/storage/' . $customerCareComplaint->customer_care_image2 }}" alt="">
                         </div>
-                        <h2 class="card-title">{!! $customerCareComplaint->getTranslation('customer_care_title2', session('locale', 'en')) !!}
-                        </h2>
-                        <p class="card-description">{!! $customerCareComplaint->getTranslation('customer_care_content2', session('locale', 'en')) !!}</p>
+                        <div class="card-custcare-content">
+                            <div class="card-icon-bottom">
+                                <h1 class="card-title-bottom">{{ $customerCareComplaint->customer_care_icon2 }}</h1>
+                            </div>
+                            <h2 class="card-title">{!! $customerCareComplaint->getTranslation('customer_care_title2', session('locale', 'en')) !!}
+                            </h2>
+                            <p class="card-description">{!! $customerCareComplaint->getTranslation('customer_care_content2', session('locale', 'en')) !!}</p>
+                        </div>
+
                     </div>
                     <div class="grid-headline-title-card-sub">
-                        <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">{{ $customerCareComplaint->customer_care_icon3 }}</h1>
+                        <div class="card-custcare-icon">
+                            <img style="width: 100px" src="{{ '/storage/' . $customerCareComplaint->customer_care_image3 }}" alt="">
                         </div>
-                        <h2 class="card-title">{!! $customerCareComplaint->getTranslation('customer_care_title3', session('locale', 'en')) !!}
-                        </h2>
-                        <p class="card-description">{!! $customerCareComplaint->getTranslation('customer_care_content3', session('locale', 'en')) !!}</p>
+                        <div class="card-custcare-content">
+                            <div class="card-icon-bottom">
+                                <h1 class="card-title-bottom">{{ $customerCareComplaint->customer_care_icon4 }}</h1>
+                            </div>
+                            <h2 class="card-title">{!! $customerCareComplaint->getTranslation('customer_care_title4', session('locale', 'en')) !!}
+                            </h2>
+                            <p class="card-description">{!! $customerCareComplaint->getTranslation('customer_care_content4', session('locale', 'en')) !!}</p>
+                        </div>
                     </div>
                     <div class="grid-headline-title-card-sub">
-                        <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">{{ $customerCareComplaint->customer_care_icon4 }}</h1>
+                        <div class="card-custcare-icon">
+                            <img style="width: 100px" src="{{ '/storage/' . $customerCareComplaint->customer_care_image4 }}" alt="">
                         </div>
-                        <h2 class="card-title">{!! $customerCareComplaint->getTranslation('customer_care_title4', session('locale', 'en')) !!}
-                        </h2>
-                        <p class="card-description">{!! $customerCareComplaint->getTranslation('customer_care_content4', session('locale', 'en')) !!}</p>
-                    </div>
-                    <div class="grid-headline-title-card-sub">
-                        <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">{{ $customerCareComplaint->customer_care_icon5 }}</h1>
+                        <div class="card-custcare-content">
+                            <div class="card-icon-bottom">
+                                <h1 class="card-title-bottom">{{ $customerCareComplaint->customer_care_icon3 }}</h1>
+                            </div>
+                            <h2 class="card-title">{!! $customerCareComplaint->getTranslation('customer_care_title3', session('locale', 'en')) !!}
+                            </h2>
+                            <p class="card-description">{!! $customerCareComplaint->getTranslation('customer_care_content3', session('locale', 'en')) !!}</p>
                         </div>
-                        <h2 class="card-title">{!! $customerCareComplaint->getTranslation('customer_care_title5', session('locale', 'en')) !!}
-                        </h2>
-                        <p class="card-description">{!! $customerCareComplaint->getTranslation('customer_care_content5', session('locale', 'en')) !!}</p>
+
                     </div>
-                    <div class="grid-headline-title-card-sub">
-                        <div class="card-icon-bottom">
-                            <h1 class="card-title-bottom">{{ $customerCareComplaint->customer_care_icon6 }}</h1>
-                        </div>
-                        <h2 class="card-title">{!! $customerCareComplaint->getTranslation('customer_care_title6', session('locale', 'en')) !!}
-                        </h2>
-                        <p class="card-description">{!! $customerCareComplaint->getTranslation('customer_care_content6', session('locale', 'en')) !!}</p>
-                    </div>
+
+
                 </div>
                 <div class="grid-headline-title-card-sub-bottom">
                     <h1 class="card-title-sub-bottom"></h1>
