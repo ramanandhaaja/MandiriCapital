@@ -47,9 +47,15 @@ class HomeArticleHeadlineResource extends Resource
                                                             ->label('Category (English)')
                                                             ->required()
                                                             ->maxLength(255),
+                                                        Forms\Components\Checkbox::make('hide_category')
+                                                            ->label('Hide Category')
+                                                            ->default(false),
                                                         Forms\Components\TextInput::make('title.en')
                                                             ->label('Title (English)')
                                                             ->maxLength(255),
+                                                        Forms\Components\Checkbox::make('hide_title')
+                                                            ->label('Hide Title')
+                                                            ->default(false),
                                                     ]),
                                                 Forms\Components\Tabs\Tab::make('Indonesian')
                                                     ->schema([
@@ -57,26 +63,28 @@ class HomeArticleHeadlineResource extends Resource
                                                             ->label('Category (Indonesian)')
                                                             ->required()
                                                             ->maxLength(255),
+                                                        Forms\Components\Checkbox::make('hide_category')
+                                                            ->label('Hide Category')
+                                                            ->default(false),
                                                         Forms\Components\TextInput::make('title.id')
                                                             ->label('Title (Indonesian)')
                                                             ->maxLength(255),
+                                                        Forms\Components\Checkbox::make('hide_title')
+                                                            ->label('Hide Title')
+                                                            ->default(false),
 
                                                     ]),
                                             ])
                                             ->columnSpanFull(),
                                         Forms\Components\TextInput::make('link_url')
-                                            ->label('Category (English)')
+                                            ->label('Link URL')
                                             ->maxLength(255)
                                             ->columnSpanFull(),
                                         Forms\Components\TextInput::make('type')
-                                            ->label('Category (English)')
+                                            ->label('Category')
                                             ->disabled()
                                             ->maxLength(255),
 
-                                         Forms\Components\TextInput::make('position')
-                                            ->label('Position')
-                                            ->disabled()
-                                            ->maxLength(255),
                                     ])
                                     ->columns(2),
                             ])

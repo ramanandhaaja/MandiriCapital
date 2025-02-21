@@ -28,10 +28,14 @@ class HomeHeadline extends Model
         'type',
         'position',
         'published_date',
+        'hide_category',
+        'hide_title',
     ];
 
     protected $casts = [
         'published_date' => 'date',
+        'hide_category' => 'boolean',
+        'hide_title' => 'boolean',
     ];
 
 }

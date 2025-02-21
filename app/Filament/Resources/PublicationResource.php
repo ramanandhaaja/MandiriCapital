@@ -48,6 +48,9 @@ class PublicationResource extends Resource
                                                     ->maxLength(255)
                                                     ->unique(Publication::class, 'slug', ignoreRecord: true),
 
+                                                Forms\Components\Checkbox::make('hide_category')
+                                                    ->label('Hide Category')
+                                                    ->default(false),
                                                 Forms\Components\Checkbox::make('hide_title')
                                                     ->label('Hide Title')
                                                     ->default(false),
@@ -136,7 +139,7 @@ class PublicationResource extends Resource
             ->filters([
                 //
             ])
-            ->defaultSort('created_at', 'desc')
+            ->defaultSort('published_date', 'desc')
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),

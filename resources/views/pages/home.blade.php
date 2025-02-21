@@ -46,13 +46,17 @@
             <div class="card {{ $card->type }} {{ $card->position }}"
                 @if($card->image_path) style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ '/storage/' . $card->image_path }}')" @endif>
                 <a href="{{ $card->link_url ?? '#' }}" class="card-link">
+                    @if(!$card->hide_category)
                     <span class="category">{{ $card->getTranslation('category', session('locale', 'en')) }}</span>
+                    @endif
                     @if($card->logo_path)
                         <img src="{{ '/storage/' . $card->logo_path }}" alt="{{ $card->getTranslation('category', session('locale', 'en')) }} Logo" class="logo-card" loading="lazy">
                     @endif
+                    @if(!$card->hide_title)
                     <div class="card-content">
                         <h2>{{ $card->getTranslation('title', session('locale', 'en')) }}</h2>
                     </div>
+                    @endif
                 </a>
             </div>
         @endforeach

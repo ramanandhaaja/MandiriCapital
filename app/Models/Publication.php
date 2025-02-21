@@ -17,6 +17,7 @@ class Publication extends Model
     protected $fillable = [
         'title',
         'hide_title',
+        'hide_category',
         'slug',
         'publication_category_id',
         'content',

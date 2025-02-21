@@ -56,7 +56,9 @@
             @if($index < 10)
                 <div class="card" style="background-image: url('{{ $publication->image_path ? Storage::url($publication->image_path) : asset("images/media/image" . ($index + 1) . ".png") }}');">
                     <a href="{{ route('report.show', $publication->slug) }}" class="text-decoration-none">
+                        @if(!$publication->hide_category)
                         <span class="category">{{ $publication->category?->getTranslation('name', session('locale', 'en')) ?? '' }}</span>
+                        @endif
                         <div class="card-content">
                             @if(!$publication->hide_title)
                             <h2>{{ $publication->title }}</h2>
