@@ -19,7 +19,7 @@ class PublicationCategoryResource extends Resource
 
     protected static ?string $navigationGroup = 'Publication Management';
 
-    protected static ?int $navigationSort = 64;
+    protected static ?int $navigationSort = 61;
 
     public static function form(Form $form): Form
 

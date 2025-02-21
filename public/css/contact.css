@@ -409,12 +409,15 @@ body {
 
 .upload-guidelines {
     margin-top: 16px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .guidelines-title {
     font-family: var(--font-family);
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.87);
+    color: rgba(255, 255, 255, 0.6);
     margin-bottom: 8px;
 }
 
