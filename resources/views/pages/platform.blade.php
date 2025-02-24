@@ -200,7 +200,7 @@
                         <div class="synergy-register">
                             <a href="{{ route('platform.show', $program->slug) }}" class="register-btn btn-detail">{{ session('locale') === 'id' ? 'Lihat Detail' : 'View Detail' }}</a>
                             <a href="{{ $program->title === 'Zenith' ? route('platform.apply') : '#contact-form-section' }}"
-                                class="register-btn btn-register">{{ $program->title === 'Zenith' ? 'Daftar Sekarang' : 'Hubungi Kami' }}</a>
+                                class="register-btn btn-register">{{ $program->title === 'Zenith' ? (session('locale') === 'id' ? 'Daftar Sekarang' : 'Apply Now') : (session('locale') === 'id' ? 'Hubungi Kami' : 'Contact Us') }}</a>
                         </div>
                     </div>
                     @if ($index % 2 === 0)
