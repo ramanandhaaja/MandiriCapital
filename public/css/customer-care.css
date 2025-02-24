@@ -366,7 +366,7 @@ body {
 
 .sdg-content p {
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 16px;
     color: #A1A1AA;
     margin-top:5px;
 }
@@ -404,7 +404,7 @@ body {
 .header-cell {
     color: var(--color-white);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 

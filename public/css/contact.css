@@ -372,7 +372,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
@@ -383,7 +383,7 @@ body {
 .file-name {
     color: rgba(255, 255, 255, 0.6);
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .file-input {
