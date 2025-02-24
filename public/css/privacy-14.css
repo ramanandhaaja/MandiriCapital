@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 220px 0 80px 0;
+    padding: 250px 0 100px 0;
     position: relative;
     z-index: 2;
     overflow: hidden;
@@ -57,8 +57,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    max-width: 1500px;
-margin: 0 auto;
 }
 
 .hero-content {
@@ -67,8 +65,8 @@ margin: 0 auto;
     min-height: 560px;
     display: flex;
     flex-direction: column;
-    background-size: auto;
-    background-position: center - 50px;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
@@ -78,7 +76,7 @@ margin: 0 auto;
 /* Main Content Section */
 .content-section {
     display: grid;
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 1fr 800px 1fr;
     gap: 40px;
     margin: 50px auto ;
     background: transparent;
@@ -86,16 +84,12 @@ margin: 0 auto;
 }
 
 .content-container {
-    display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 40px;
-    background: transparent;
 }
 
 .article-subtitle p {
     font-family: var(--font-family);
     color: #FFFFFF;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.4;
 }
 
@@ -145,7 +139,7 @@ margin: 0 auto;
 
 .article-date {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: #ffffff;
 }
 
@@ -167,19 +161,19 @@ margin: 0 auto;
 
 .author-name {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: #ffffff;
 }
 
 .author-role {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: #A1A1AA;
 }
 
 .article-category {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: #ffffff;
     padding: 12px 12px;
@@ -193,7 +187,7 @@ margin: 0 auto;
 .article-content {
     font-family: var(--font-family);
     margin-top: 0px;
-    font-size: 16px;
+    font-size: 14px;
     color: #FFFFFF;
 }
 
@@ -211,7 +205,7 @@ margin: 0 auto;
 
 .company-description {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     margin-bottom: 40px;
     color: #FFFFFF;
@@ -232,7 +226,7 @@ margin: 0 auto;
 }
 
 .info-label {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -240,6 +234,13 @@ margin: 0 auto;
 }
 
 .info-value {
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: right;
+    flex: 1;
+}
+
+.info-download {
     font-size: 16px;
     color: #FFFFFF;
     text-align: right;
@@ -311,7 +312,7 @@ margin: 0 auto;
 }
 
 .newsletter-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-family);
     color: #FFFFFF;
     font-size: 36px;
     font-weight: 600;
@@ -321,7 +322,7 @@ margin: 0 auto;
 
 .center-image-newsletter {
     max-width: 100%;
-    height: auto;
+    height: 58px;
     margin: 0 auto;
     display: block;
     background: transparent;
@@ -365,10 +366,147 @@ margin: 0 auto;
 
 .sdg-content p {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: #A1A1AA;
     margin-top:5px;
 }
+
+
+
+/* Table Display */
+.table-display-portfolio {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    }
+
+.display-table .table-display-portfolio {
+    display: block;
+}
+
+
+/* Table Display Styles */
+.portfolio-section {
+    width: 100%;
+    margin: 100px 0;
+}
+
+.portfolio-header {
+    display: grid;
+    font-family: var(--font-family);
+    grid-template-columns: 80px 3fr 1fr;
+    gap: 16px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-bottom: 8px;
+}
+
+.header-cell {
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.portfolio-row {
+    display: grid;
+    font-family: var(--font-family);
+    grid-template-columns: 80px 3fr 1fr;
+    gap: 16px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.02);
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.company-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.company-image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: grayscale(100%);
+}
+
+.company-website {
+    color: var(--color-gray-400);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.category-cell {
+    color: var(--color-gray-400);
+    font-size: 14px;
+}
+
+.description-cell {
+    color: var(--color-gray-400);
+    font-size: 14px;
+}
+
+.stage-cell {
+    display: flex;
+    align-items: center;
+}
+
+.download-cell{
+    color: var(--color-gray-400);
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.stage-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.partners-cell {
+    color: var(--color-gray-400);
+    font-size: 14px;
+}
+
+.partner-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.expand-btn {
+    background: none;
+    border: none;
+    color: var(--color-gray-400);
+    cursor: pointer;
+    padding: 4px;
+    transition: transform 0.3s ease;
+}
+
+.expand-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.portfolio-row.expanded .expand-btn svg {
+    transform: rotate(180deg);
+}
+
+.center-text {
+    position: relative;
+    font-family: var(--font-family);
+    color: #ffffff;
+    font-size: 56px;
+    font-weight: 350;
+    text-align: center;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -427,5 +565,8 @@ margin: 0 auto;
     .sidebar-left {
         padding-left: 0;
     }
+
+
+
 
 }

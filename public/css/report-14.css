@@ -24,7 +24,7 @@
 
     /* Typography */
     --font-family: 'Avenir LT Std';
-    --font-size-sm: 16px;
+    --font-size-sm: 14px;
     --font-size-base: 16px;
     --font-size-lg: 28px;
     --font-size-xl: 38px;
@@ -315,7 +315,6 @@ body {
     color: var(--color-white);
     font-family: 'Avenir LT Std';
     font-size: 36px;
-    padding-right: 30px;
     font-weight: 600;
     text-transform: uppercase;
     z-index: var(--z-content);
@@ -461,7 +460,7 @@ body {
     }
 
     .category {
-        font-size: 24px;
+        font-size: var(--font-size-base);
         top: var(--spacing-lg);
         left: var(--spacing-lg);
     }

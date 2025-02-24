@@ -26,7 +26,7 @@
 
     /* Typography */
     --font-family: 'Avenir LT Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
-    --font-size-sm: 16px;
+    --font-size-sm: 14px;
     --font-size-base: 16px;
     --font-size-lg: 18px;
     --font-size-xl: 24px;
@@ -188,7 +188,7 @@ a {
 
 .post-date {
     color: var(--color-white);
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 15px;
     opacity: 0.8;
     display: block;
@@ -489,7 +489,7 @@ a {
 }
 
 .blog-label {
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 1px;
     margin-top: 10px;
     padding-bottom: 0px;

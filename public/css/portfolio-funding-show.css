@@ -98,7 +98,7 @@ body {
 .article-subtitle p {
     font-family: var(--font-family);
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.4;
 }
 
@@ -148,7 +148,7 @@ body {
 
 .article-date {
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 16px;
     color: #ffffff;
 }
 
@@ -170,19 +170,19 @@ body {
 
 .author-name {
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 16px;
     color: #ffffff;
 }
 
 .author-role {
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 16px;
     color: #A1A1AA;
 }
 
 .article-category {
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: #ffffff;
     padding: 12px 12px;
@@ -196,7 +196,7 @@ body {
 .article-content {
     font-family: var(--font-family);
     margin-top: 0px;
-    font-size: 14px;
+    font-size: 16px;
     color: #FFFFFF;
 }
 
@@ -214,7 +214,7 @@ body {
 
 .company-description {
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 40px;
     color: #FFFFFF;
@@ -235,7 +235,7 @@ body {
 }
 
 .info-label {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -368,7 +368,7 @@ body {
 
 .sdg-content p {
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 16px;
     color: #A1A1AA;
     margin-top:5px;
 }

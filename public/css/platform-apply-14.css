@@ -31,7 +31,7 @@
 
     /* Typography */
     --font-family: 'Avenir LT Std', sans-serif;
-    --font-size-sm: 16px;
+    --font-size-sm: 14px;
     --font-size-base: 16px;
     --font-size-lg: 20px;
     --font-size-xl: 24px;
@@ -190,7 +190,7 @@ body {
     position: relative;
     font-family: var(--font-family);
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     text-align: left;
     margin-left: 80px;
@@ -204,7 +204,7 @@ body {
     position: relative;
     font-family: var(--font-family);
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     text-align: left;
     margin-left: 0px;
@@ -218,7 +218,7 @@ body {
     position: relative;
     font-family: var(--font-family);
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     text-align: left;
     margin-left: 80px;
@@ -295,7 +295,7 @@ body {
 }
 
 .card-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1.2;
     margin: 0;
@@ -304,7 +304,7 @@ body {
 }
 
 .card-description {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     color: #ffffff;
     opacity: 0.7;
@@ -366,7 +366,7 @@ body {
 }
 
 .stat-item {
-    font-size: 16px;
+    font-size: 12px;
     font-family: var(--font-family);
     display: flex;
     align-items: center;
@@ -375,7 +375,7 @@ body {
 }
 
 .stat-item-middle {
-    font-size: 16px;
+    font-size: 12px;
     font-family: var(--font-family);
     display: flex;
     align-items: center;
@@ -513,7 +513,7 @@ body {
     border-radius: 8px;
     padding: 1rem;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .form-textarea {
@@ -530,7 +530,7 @@ body {
    ========================================================================== */
 .description-text {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
     margin: 8px 0;
 }
@@ -541,7 +541,7 @@ body {
 
 .guidelines-title {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 8px;
 }
@@ -554,7 +554,7 @@ body {
 
 .guidelines-list li {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.6;
     margin-bottom: 4px;
@@ -605,7 +605,7 @@ body {
 
 .sector-label {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.87);
     cursor: pointer;
 }
@@ -632,7 +632,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     transition: background-color 0.3s ease;
 }
 
@@ -643,7 +643,7 @@ body {
 .file-name {
     color: rgba(255, 255, 255, 0.6);
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .file-input {
@@ -665,7 +665,7 @@ body {
     height: 48px;
     width: 140px;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 12px;
     color: #EFA32F;
     background: transparent;
     border: 1px solid #EFA32F;
@@ -689,7 +689,7 @@ body {
     height: 48px;
     width: 140px;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 12px;
     color: white;
     background: #EFA32F;
     border: none;
@@ -765,7 +765,7 @@ body {
     }
 
     .apply-title {
-        font-size: 16px;
+        font-size: 1.5rem;
     }
 
     .apply-logo {

@@ -182,7 +182,7 @@ body {
 .article-subtitle p {
     font-family: var(--font-family);
     color: #FFFFFF;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.4;
 }
 
@@ -232,7 +232,7 @@ body {
 
 .article-date {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: #ffffff;
 }
 
@@ -259,19 +259,19 @@ body {
 
 .author-name {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: #ffffff;
 }
 
 .author-role {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     color: #A1A1AA;
 }
 
 .article-category {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: #ffffff;
     padding: 12px 12px;
@@ -297,7 +297,7 @@ body {
 .article-content {
     font-family: var(--font-family);
     margin-top: 0px;
-    font-size: 16px;
+    font-size: 14px;
     color: #FFFFFF;
 }
 
@@ -337,7 +337,7 @@ body {
 }
 
 .info-label {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -399,11 +399,11 @@ body {
     }
 
     .author-name {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .author-role {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .company-description {
@@ -468,7 +468,7 @@ body {
 
     .form-group input {
         padding: 10px 14px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .form-actions {
@@ -479,7 +479,7 @@ body {
     .btn-cancel, .btn-download {
         width: 100%;
         padding: 10px 20px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .download-title {
@@ -497,7 +497,7 @@ body {
 
     .form-group input {
         padding: 10px 0px 10px 0px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .image-left {

@@ -204,7 +204,7 @@ body.menu-open {
 .lang-link {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .lang-link.active {
@@ -285,7 +285,7 @@ body.menu-open {
 .company-info p {
     font-family: var(--font-family);
     color: #a0aec0;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
 }
 
@@ -313,7 +313,7 @@ body.menu-open {
     font-family: var(--font-family);
     color: white;
     text-decoration: none;
-    font-size: 16x;
+    font-size: 14px;
     transition: color 0.3s;
 }
 
@@ -342,7 +342,7 @@ body.menu-open {
 .certification-text {
     font-family: var(--font-family);
     color: #a0aec0;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .certification-images {
@@ -363,7 +363,7 @@ body.menu-open {
     margin-top: -10px;
     margin-bottom: 50px;
     color: #a0aec0;
-    font-size: 16px;
+    font-size: 14px;
     padding-right: 175px;
 }
 
