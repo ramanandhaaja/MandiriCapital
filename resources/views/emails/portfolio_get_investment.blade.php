@@ -9,14 +9,15 @@
 
         <div>
             <h3>Contact Information</h3>
-            <p><strong>Name:</strong> {{ $formData['first_name'] }} {{ $formData['last_name'] }}</p>
-            <p><strong>Email:</strong> {{ $formData['email'] }}</p>
-            <p><strong>Phone:</strong> {{ $formData['phone'] }}</p>
+            <p><strong>Name:</strong> {{ $formData['first_name'] ?? '' }} {{ $formData['last_name'] ?? '' }}</p>
+            <p><strong>Email:</strong> {{ $formData['email'] ?? '' }}</p>
+            <p><strong>Phone:</strong> {{ $formData['phone'] ?? '' }}</p>
         </div>
         <br/>
         <div>
             <h3>Company Information</h3>
-            <p><strong>Company Name:</strong> {{ $formData['company_name'] }}</p>
+            <p><strong>Company Name:</strong> {{ $formData['company_name'] ?? '' }}</p>
+            <p><strong>Business Sector:</strong> {{ $formData['business_sector'] ?? '' }}</p>
             @if(isset($formData['url']) && $formData['url'])
             <p><strong>Company Website:</strong> {{ $formData['url'] }}</p>
             @endif

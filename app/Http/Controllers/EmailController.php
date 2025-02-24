@@ -158,6 +158,7 @@ class EmailController extends Controller
                 'email' => 'required|email',
                 'phone' => 'required|string',
                 'company_name' => 'required|string',
+                'business_sector' => 'required|string',
                 'url' => 'nullable|string',
                 'company_profile' => 'nullable|file|mimes:pdf|max:10240', // max 10MB
             ]);
@@ -174,7 +175,7 @@ class EmailController extends Controller
             return back()->with('success', 'Thank you for your interest. We will contact you soon.');
 
         } catch (\Exception $e) {
-            Log::error('Email sending failed:', ['error' => $e->getMessage()]);
+            Log::error('Email sending failed:', ['error' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
             return back()->with('error', 'Sorry, there was an error sending your request. Please try again later.');
         }
     }
@@ -231,9 +232,9 @@ class EmailController extends Controller
                 'email' => 'required|email',
                 'phone' => 'required|string',
                 'company_name' => 'required|string',
+                'business_sector' => 'required|string',
                 'url' => 'nullable|string',
                 'company_profile' => 'nullable|file|mimes:pdf|max:10240', // Max 10MB
-                'business_sector' => 'required|string',
             ]);
 
             // Handle file upload

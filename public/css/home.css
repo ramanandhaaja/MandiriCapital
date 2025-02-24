@@ -178,7 +178,6 @@ body {
 .headline-grid-two {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 100%;
     max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 var(--spacing-xl);

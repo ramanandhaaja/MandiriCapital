@@ -19,7 +19,7 @@ IMPORTANT
 7. About program di zenith, testimonial jadi 5 ->done
 8. News tambah psi rata kanan dan rata kiri ->done
 9. Publication title bisa tidal mandatory ->done
-10. Gambar dan panah untuk customer care
+10. Gambar dan panah untuk customer care   ->done
 11. Kererangan maks 50mb
 12. CMC untuk 404 ->done
 13. All forms dibuat CMSnya untuk bisa diedit -> halfdone
