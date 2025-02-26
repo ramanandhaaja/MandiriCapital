@@ -34,6 +34,9 @@ class HeroMasterResource extends Resource
                                 Forms\Components\Section::make()
                                     ->schema([
 
+                                        Forms\Components\TextInput::make('font_size')
+                                            ->columnSpanFull(),
+
                                         Forms\Components\TextInput::make('instagram')
                                             ->columnSpanFull(),
 

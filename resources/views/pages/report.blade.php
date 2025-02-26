@@ -4,6 +4,11 @@
 
 @section('localcss')
     <link href="{{ asset('css/report.css') }}" rel="stylesheet">
+    <style>
+        :root {
+            --font-size-base: {{ $masterData->font_size ?? '14px' }};
+        }
+    </style>
 @endsection
 
 @section('container')

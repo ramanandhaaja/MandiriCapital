@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('hero_masters', function (Blueprint $table) {
-            $table->string('font_size')->default('14');
+            $table->string('font_size')->default('18px');
         });
     }
 

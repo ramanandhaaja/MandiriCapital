@@ -112,7 +112,7 @@ body {
 
 .contact-info-link {
     font-family: var(--font-family);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     transition: color var(--transition-base);
@@ -184,7 +184,7 @@ body {
     border-radius: var(--border-radius);
     padding: var(--spacing-sm);
     color: var(--color-white);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
 }
 
 .form-textarea {
@@ -268,7 +268,7 @@ body {
 
 .company-name {
     font-family: var(--font-family);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     font-weight: 500;
     color: var(--color-white);
     margin-bottom: var(--spacing-sm);
@@ -276,7 +276,7 @@ body {
 
 .address {
     font-family: var(--font-family);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     color: rgba(255, 255, 255, 0.87);
     line-height: 1.6;
 }

@@ -2,11 +2,13 @@
 
 @section('localcss')
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <style>
+        :root {
+            --font-size-base: {{ $masterData->font_size ?? '14px' }};
+        }
+    </style>
 @endsection
 
-@section('styles')
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-@endsection
 
 @section('container')
     {{-- Hero Section: Video background with call-to-action buttons --}}

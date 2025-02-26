@@ -235,7 +235,7 @@ body {
 .date-range-label {
     color: var(--color-white);
     font-family: 'Avenir LT Std';
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     margin-bottom: var(--spacing-xs);
     text-align: left;
 }
@@ -345,7 +345,7 @@ body {
     left: var(--spacing-xl);
     color: rgba(255, 255, 255, 0.8);
     font-family: 'Avenir LT Std';
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     z-index: var(--z-content);
 }
 

@@ -4,7 +4,7 @@
     <link href="{{ asset('css/about.css') }}" rel="stylesheet">
     <style>
         :root {
-            --font-size-base: {{ $masterData->font_size ?? '18px' }};
+            --font-size-base: {{ $masterData->font_size ?? '14px' }};
         }
     </style>
 @endsection

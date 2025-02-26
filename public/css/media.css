@@ -182,7 +182,7 @@ a {
     top: 344px;
     right: 30px;
     color: rgba(255, 255, 255, 0.8);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     z-index: 2;
 }
 
@@ -322,7 +322,7 @@ a {
 
 .date-range-label {
     color: var(--color-white);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     margin-bottom: 4px;
     text-align: left;
 }
