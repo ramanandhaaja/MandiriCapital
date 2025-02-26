@@ -1,7 +1,7 @@
 :root {
     /* Typography */
     --font-family: 'Avenir LT Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
-
+    --font-size-base:18px;
 }
 
 @font-face {
@@ -138,6 +138,7 @@ body.menu-open {
     justify-content: space-between;
     flex: 1;
     max-width: 1050px;
+    font-size: var(--font-size-base);
 }
 
 .nav-item {
@@ -184,7 +185,7 @@ body.menu-open {
     color: #fff;
     cursor: pointer;
     padding: 4px;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     transition: color 0.2s ease;
     display: flex;
     align-items: center;
@@ -204,7 +205,7 @@ body.menu-open {
 .lang-link {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
 }
 
 .lang-link.active {
@@ -277,7 +278,7 @@ body.menu-open {
 
 .company-info h3 {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 700;
     margin-bottom: 5px;
 }
@@ -285,13 +286,14 @@ body.menu-open {
 .company-info p {
     font-family: var(--font-family);
     color: #a0aec0;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     line-height: 1.5;
 }
 
 /* Middle and Right Columns */
 .footer-right {
     text-align: right;
+    font-size: var(--font-size-base);
 }
 
 .footer-right-text {
@@ -313,7 +315,7 @@ body.menu-open {
     font-family: var(--font-family);
     color: white;
     text-decoration: none;
-    font-size: 16x;
+    font-size: var(--font-size-base);
     transition: color 0.3s;
 }
 
@@ -342,7 +344,7 @@ body.menu-open {
 .certification-text {
     font-family: var(--font-family);
     color: #a0aec0;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
 }
 
 .certification-images {
@@ -363,7 +365,7 @@ body.menu-open {
     margin-top: -10px;
     margin-bottom: 50px;
     color: #a0aec0;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     padding-right: 175px;
 }
 
@@ -440,6 +442,7 @@ body.menu-open {
     }
 
     .nav-links {
+
         flex-direction: column;
         gap: 24px;
         align-items: center;
@@ -459,7 +462,7 @@ body.menu-open {
     }
 
     .lang-link {
-        font-size: 18px;
+        font-size: var(--font-size-base);;
     }
 
     .search-icon{

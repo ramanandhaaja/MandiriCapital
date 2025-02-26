@@ -14,6 +14,7 @@
     --color-gray-900: #111827;
     --color-border: #3F3F46;
     --font-family: 'Avenir LT Std', sans-serif;
+    --font-size-base: 18px;
 }
 
 @font-face {
@@ -89,7 +90,7 @@ body {
 .article-subtitle p {
     font-family: var(--font-family);
     color: #FFFFFF;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     line-height: 1.4;
 }
 
@@ -139,7 +140,7 @@ body {
 
 .article-date {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #ffffff;
 }
 
@@ -161,19 +162,19 @@ body {
 
 .author-name {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #ffffff;
 }
 
 .author-role {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #A1A1AA;
 }
 
 .article-category {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     color: #ffffff;
     padding: 12px 12px;
@@ -187,7 +188,7 @@ body {
 .article-content {
     font-family: var(--font-family);
     margin-top: 0px;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #FFFFFF;
 }
 
@@ -205,7 +206,7 @@ body {
 
 .company-description {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     line-height: 1.6;
     margin-bottom: 40px;
     color: #FFFFFF;
@@ -226,7 +227,7 @@ body {
 }
 
 .info-label {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -234,14 +235,14 @@ body {
 }
 
 .info-value {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #FFFFFF;
     text-align: right;
     flex: 1;
 }
 
 .info-download {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #FFFFFF;
     text-align: right;
     flex: 1;
@@ -358,7 +359,7 @@ body {
 
 .sdg-content h3 {
     font-family: var(--font-family);
-    font-size: 18px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     color: #FFFFFF;
     margin: 0px;
@@ -366,7 +367,7 @@ body {
 
 .sdg-content p {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #A1A1AA;
     margin-top:5px;
 }
@@ -404,7 +405,7 @@ body {
 .header-cell {
     color: var(--color-white);
     font-weight: 600;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     text-transform: uppercase;
 }
 
@@ -435,17 +436,17 @@ body {
 .company-website {
     color: var(--color-gray-400);
     text-decoration: none;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
 }
 
 .category-cell {
     color: var(--color-gray-400);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
 }
 
 .description-cell {
     color: var(--color-gray-400);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
 }
 
 .stage-cell {
@@ -455,7 +456,7 @@ body {
 
 .download-cell{
     color: var(--color-gray-400);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     display: flex;
     justify-content: flex-end;
 }
@@ -465,12 +466,12 @@ body {
     color: var(--color-white);
     padding: 4px 8px;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
 }
 
 .partners-cell {
     color: var(--color-gray-400);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
 }
 
 .partner-info {
@@ -610,7 +611,7 @@ body {
     position: relative;
     font-family: var(--font-family);
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     text-align: left;
     margin-left: 80px;
@@ -624,7 +625,7 @@ body {
     position: relative;
     font-family: var(--font-family);
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     text-align: left;
     margin-left: 0px;
@@ -638,7 +639,7 @@ body {
     position: relative;
     font-family: var(--font-family);
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     text-align: left;
     margin-left: 80px;
@@ -744,7 +745,7 @@ body {
 }
 
 .card-title {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     line-height: 1.2;
     margin: 0;
@@ -754,7 +755,7 @@ body {
 }
 
 .card-description {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     line-height: 1.6;
     color: #ffffff;
     opacity: 0.7;
@@ -788,7 +789,7 @@ body {
 }
 
 .card-description-bottom {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #ffffff;
     opacity: 0.7;
     margin: 0;
@@ -832,7 +833,7 @@ body {
 }
 
 .stat-item {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-family: var(--font-family);
     display: flex;
     align-items: center;
@@ -841,7 +842,7 @@ body {
 }
 
 .stat-item-middle {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-family: var(--font-family);
     display: flex;
     align-items: center;
@@ -961,7 +962,7 @@ body {
 .headline-card p {
     font-family: var(--font-family);
     color: var(--color-secondary);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     line-height: 1.5;
     margin-bottom: 16px;
     text-align: center;

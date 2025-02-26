@@ -16,6 +16,7 @@
     --color-gray-900: #111827;
     --color-border: #3F3F46;
     --font-family: 'Avenir LT Std', sans-serif;
+    --font-size-base: 18px;
 }
 
 @font-face {
@@ -69,14 +70,14 @@ body {
 .newsletter-subtitle {
     font-family: var(--font-family);
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     margin: 0 0 10px 0;
 }
 
 
 .newsletter-button {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     background-color: #F59E0B;
     border: none;
     border-radius: 4px;

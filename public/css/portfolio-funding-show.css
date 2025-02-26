@@ -14,6 +14,7 @@
     --color-gray-900: #111827;
     --color-border: #3F3F46;
     --font-family: 'Avenir LT Std', sans-serif;
+    --font-size-base: 18px;
 }
 
 @font-face {
@@ -98,7 +99,7 @@ body {
 .article-subtitle p {
     font-family: var(--font-family);
     color: #FFFFFF;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     line-height: 1.4;
 }
 
@@ -148,7 +149,7 @@ body {
 
 .article-date {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #ffffff;
 }
 
@@ -170,19 +171,19 @@ body {
 
 .author-name {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #ffffff;
 }
 
 .author-role {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #A1A1AA;
 }
 
 .article-category {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     color: #ffffff;
     padding: 12px 12px;
@@ -196,7 +197,7 @@ body {
 .article-content {
     font-family: var(--font-family);
     margin-top: 0px;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #FFFFFF;
 }
 
@@ -214,7 +215,7 @@ body {
 
 .company-description {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     line-height: 1.6;
     margin-bottom: 40px;
     color: #FFFFFF;
@@ -235,7 +236,7 @@ body {
 }
 
 .info-label {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -243,7 +244,7 @@ body {
 }
 
 .info-value {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #FFFFFF;
     text-align: right;
     flex: 1;
@@ -368,7 +369,7 @@ body {
 
 .sdg-content p {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #A1A1AA;
     margin-top:5px;
 }
@@ -392,7 +393,7 @@ body {
 
 .criteria-card h3 {
     color: #ffffff;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: normal;
     margin: 0px;
     padding-bottom: 10px;
@@ -479,7 +480,7 @@ body {
         margin: 0 auto;
     }
     .content-text{
-        font-size: 16px;
+        font-size: var(--font-size-base);;
         margin: 0 auto;
     }
 

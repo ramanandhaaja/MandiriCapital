@@ -11,6 +11,7 @@
     --color-dark: #18181B;
     --color-black: #000000;
     --color-white: #FFFFFF;
+    --font-size-base: 18px;
 
     /* Grays */
     --color-gray-100: #F3F4F6;
@@ -24,8 +25,8 @@
 
     /* Typography */
     --font-family: 'Avenir LT Std';
-    --font-size-sm: 16px;
-    --font-size-base: 16px;
+    --font-size-sm: 18px;
+    --font-size-base: 18px;
     --font-size-lg: 28px;
     --font-size-xl: 38px;
     --font-size-2xl: 120px;
@@ -429,7 +430,7 @@ body {
     }
 
     .search-input {
-        font-size: 16px;
+        font-size: var(--font-size-base);;
         padding: 12px 20px;
         width: 100%;
         max-width: none;

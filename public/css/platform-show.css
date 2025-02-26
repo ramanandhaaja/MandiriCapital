@@ -31,8 +31,8 @@
 
     /* Typography */
     --font-family: 'Avenir LT Std', sans-serif;
-    --font-size-sm: 16px;
-    --font-size-base: 16px;
+    --font-size-sm: 18px;
+    --font-size-base: 18px;
     --font-size-lg: 20px;
     --font-size-xl: 24px;
     --font-size-2xl: 32px;
@@ -167,7 +167,7 @@ html, body {
 }
 
 .center-text-subtitle {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     line-height: 1.2;
     padding-left: 60px;
     color: var(--color-white);
@@ -294,7 +294,7 @@ html, body {
     position: relative;
     font-family: var(--font-family);
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     text-align: left;
     margin-left: 80px;
@@ -308,7 +308,7 @@ html, body {
     position: relative;
     font-family: var(--font-family);
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     text-align: left;
     margin-left: 0px;
@@ -322,7 +322,7 @@ html, body {
     position: relative;
     font-family: var(--font-family);
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     text-align: left;
     margin-left: 80px;
@@ -420,7 +420,7 @@ html, body {
 }
 
 .card-title {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 500;
     line-height: 1.2;
     margin: 0;
@@ -429,7 +429,7 @@ html, body {
 }
 
 .card-description {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     line-height: 1.6;
     color: #ffffff;
     opacity: 0.7;
@@ -459,7 +459,7 @@ html, body {
 }
 
 .card-description-bottom {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #ffffff;
     opacity: 0.7;
     margin: 0;
@@ -503,7 +503,7 @@ html, body {
 }
 
 .stat-item {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-family: var(--font-family);
     display: flex;
     align-items: center;
@@ -512,7 +512,7 @@ html, body {
 }
 
 .stat-item-middle {
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-family: var(--font-family);
     display: flex;
     align-items: center;
@@ -553,7 +553,7 @@ html, body {
 .newsletter-subtitle {
     font-family: var(--font-family);
     color: #9CA3AF;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     margin: 0 0 32px 0;
 }
 
@@ -574,7 +574,7 @@ html, body {
     border-radius: 4px;
     color: #FFFFFF;
     padding: 12px 16px;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
 }
 
 .newsletter-input::placeholder {
@@ -588,7 +588,7 @@ html, body {
 
 .newsletter-button {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     background-color: #F59E0B;
     border: none;
     border-radius: 4px;
@@ -610,7 +610,7 @@ html, body {
 
 .contact-form-intro {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 30px;
     margin-top: 10px;
@@ -634,7 +634,7 @@ html, body {
 .form-label {
     font-family: var(--font-family);
     display: block;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 400;
     margin-bottom: 0.75rem;
     color: rgba(255, 255, 255, 0.87);
@@ -649,7 +649,7 @@ html, body {
     border-radius: 8px;
     padding: 1rem;
     color: #ffffff;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
 }
 
 .form-textarea {
@@ -668,7 +668,7 @@ html, body {
    ========================================================================== */
 .description-text {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: rgba(255, 255, 255, 0.6);
     margin: 8px 0;
 }
@@ -679,7 +679,7 @@ html, body {
 
 .guidelines-title {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: rgba(255, 255, 255, 0.87);
     margin-bottom: 8px;
 }
@@ -692,7 +692,7 @@ html, body {
 
 .guidelines-list li {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.6;
     margin-bottom: 4px;
@@ -743,7 +743,7 @@ html, body {
 
 .sector-label {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: rgba(255, 255, 255, 0.87);
     cursor: pointer;
 }
@@ -765,7 +765,7 @@ html, body {
     border-radius: 4px;
     cursor: pointer;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     transition: background-color 0.3s ease;
 }
 
@@ -776,7 +776,7 @@ html, body {
 .file-name {
     color: rgba(255, 255, 255, 0.6);
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
 }
 
 .file-input {
@@ -798,7 +798,7 @@ html, body {
     height: 32px;
     width: 140px;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #EFA32F;
     background: transparent;
     border: 1px solid #EFA32F;
@@ -818,7 +818,7 @@ html, body {
     height: 32px;
     width: 140px;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: white;
     background: rgba(255, 255, 255, 0.2);
     border: none;
@@ -979,7 +979,7 @@ margin: 0 auto;
     grid-column: span 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding-bottom: 30px;
 }
 
@@ -1042,15 +1042,43 @@ margin: 0 auto;
 }
 
 .funding-category {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: white;
     font-weight: 500;
     z-index: 3;
-    top: 95px;
+    padding: 100px 30px 0;
+    box-sizing: border-box;
+}
+
+.card-funding-jobtitle {
+    position: relative;
+    font-size: var(--font-size-base);;
+    line-height: 21px;
+    color: #A1A1AA;
+    z-index: 3;
     padding: 0 30px;
     box-sizing: border-box;
+}
+
+.card-funding-content {
+    position: relative;
+    font-size: var(--font-size-base);;
+    line-height: 21px;
+    color: #A1A1AA;
+    z-index: 3;
+    padding: 0 30px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .funding-category-large {
@@ -1064,37 +1092,15 @@ margin: 0 auto;
     padding: 0 30px;
     box-sizing: border-box;
 }
-.card-funding-jobtitle {
-    position: absolute;
-    font-size: 16px;
-    line-height: 21px;
-    color: #A1A1AA;
-    z-index: 2;
-    top: 120px;
-    padding: 0 30px;
-    box-sizing: border-box;
-}
 
-.card-funding-content {
-    position: absolute;
-    font-size: 16px;
-    line-height: 21px;
-    color: #A1A1AA;
-    z-index: 2;
-    top: 165px;
-    padding: 0 30px;
-    box-sizing: border-box;
-    display: -webkit-box;
-    -webkit-line-clamp: 10;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+
+
+
 
 .card-funding-content-large {
     position: absolute;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     line-height: 21px;
     color: #A1A1AA;
     z-index: 2;
@@ -1122,7 +1128,7 @@ margin: 0 auto;
 .funding-link {
     position: absolute;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     color: #EAB308;
     z-index: 2;
     bottom: 30px;
@@ -1253,7 +1259,7 @@ margin: 0 auto;
 
 .headline-card-two p {
     color: #A1A1AA;
-    font-size: 16px;
+    font-size: var(--font-size-base);;
     font-weight: 100;
     text-align: center;
     margin-top: 30px;
@@ -1327,7 +1333,7 @@ margin: 0 auto;
     }
 
     .category {
-        font-size: 16px;
+        font-size: var(--font-size-base);;
         top: 24px;
         left: 24px;
     }
