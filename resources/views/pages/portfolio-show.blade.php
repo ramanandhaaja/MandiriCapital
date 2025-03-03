@@ -36,7 +36,7 @@
                 <div class="article-content">
                     <div class="company-details">
                         <p class="company-description">
-                            {{ $portfolio->description }}
+                            {!! $portfolio->description !!}
                         </p>
 
                         <div class="company-info-grid">

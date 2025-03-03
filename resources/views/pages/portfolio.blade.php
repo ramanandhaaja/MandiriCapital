@@ -338,7 +338,7 @@
                                         <img class="icon-image" src="{{ Storage::url($portfolio->icon) }}"
                                             alt="{{ $portfolio->icon }}" loading="lazy">
 
-                                        <p class="portfolio-description">{!! $portfolio->getTranslation('description', session('locale', 'en')) !!}</p>
+                                        <div class="portfolio-description">{!! $portfolio->getTranslation('description', session('locale', 'en')) !!}</div>
                                     </div>
                                 </div>
                             </a>
@@ -386,7 +386,7 @@
                             </div>
                             <div class="category-cell">{!! $portfolio->getTranslation('sector', session('locale', 'en')) !!}</div>
                             <div class="description-cell">
-                                {{ Str::limit($portfolio->getTranslation('description', session('locale', 'en')), 100) }}
+                                {!! Str::limit($portfolio->getTranslation('description', session('locale', 'en')), 100) !!}
                             </div>
                             <div class="stage-cell">
                                 <span class="stage-tag">{!! $portfolio->getTranslation('head_office', session('locale', 'en')) !!}</span>

@@ -102,7 +102,7 @@
                                 <h2>{{ $post->title }}</h2>
                                 <span class="post-date" style="display: none;">{{ $formattedDate }}</span>
                                 @if($category && $category->slug === 'news')
-                                    <p class="business-news-week">{{ $post->news_source ?? 'Business News Week' }}</p>
+                                    <p class="business-news-week">{{ $post->author_name ?? 'Business News Week' }}</p>
                                 @endif
                             </div>
                             <span class="date filter-dependent">{{ $formattedDate }}</span>
