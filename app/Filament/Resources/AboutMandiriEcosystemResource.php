@@ -44,8 +44,8 @@ class AboutMandiriEcosystemResource extends Resource
                                                     ->tabs([
                                                         Forms\Components\Tabs\Tab::make('English')
                                                             ->schema([
-                                                                Forms\Components\TextInput::make('title.en')
-                                                                    ->label('Title (English)')
+                                                                Forms\Components\TextInput::make('name')
+                                                                    ->label('Name')
                                                                     ->required()
                                                                     ->maxLength(255)
                                                                     ->live(onBlur: true)
@@ -53,6 +53,11 @@ class AboutMandiriEcosystemResource extends Resource
                                                                         fn(string $state, callable $set) =>
                                                                         $set('slug', Str::slug($state))
                                                                     ),
+                                                                Forms\Components\TextInput::make('title.en')
+                                                                    ->label('Title (English)')
+                                                                    ->required()
+                                                                    ->maxLength(255)
+                                                                    ->live(onBlur: true),
                                                                 Forms\Components\RichEditor::make('content.en')
                                                                     ->label('Content (English)')
                                                                     ->required()
@@ -60,6 +65,15 @@ class AboutMandiriEcosystemResource extends Resource
                                                             ]),
                                                         Forms\Components\Tabs\Tab::make('Indonesian')
                                                             ->schema([
+                                                                Forms\Components\TextInput::make('name')
+                                                                    ->label('Name')
+                                                                    ->required()
+                                                                    ->maxLength(255)
+                                                                    ->live(onBlur: true)
+                                                                    ->afterStateUpdated(
+                                                                        fn(string $state, callable $set) =>
+                                                                        $set('slug', Str::slug($state))
+                                                                    ),
                                                                 Forms\Components\TextInput::make('title.id')
                                                                     ->label('Title (Indonesian)')
                                                                     ->required()

@@ -262,7 +262,9 @@ class PageController extends Controller
 
         $platform_email = PlatformEmail::first();
 
-        return view('pages.platform', compact('hero', 'menuSubCategory','counters','platformFocusCategory','platformFocusList', 'valueCreationList', 'platformArticle', 'platform_email'));
+        $mandiriEcosystems = AboutMandiriEcosystem::get();
+
+        return view('pages.platform', compact('hero', 'menuSubCategory','counters','platformFocusCategory','platformFocusList', 'valueCreationList', 'platformArticle', 'platform_email', 'mandiriEcosystems'));
     }
 
     public function platformshow($slug)

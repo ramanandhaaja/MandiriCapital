@@ -298,15 +298,9 @@
                             <label for="mandiri_ecosystem" class="form-label">{!! $platform_email->getTranslation('mandiri_ecosystem', session('locale', 'en')) !!}</label>
                             <select id="mandiri_ecosystem" name="mandiri_ecosystem" class="form-input" required>
                                 <option value="" disabled selected>Select the Ecosystem...</option>
-                                <option value="Bank Syariah Indonesia">Bank Syariah Indonesia</option>
-                                <option value="Mandiri Taspen">Bank Mandiri Taspen</option>
-                                <option value="Mandiri Europe">Bank Mandiri Europe</option>
-                                <option value="Mandiri Sekuritas">Mandiri Sekuritas</option>
-                                <option value="Mandiri Investasi">Mandiri Investasi</option>
-                                <option value="Mandiri Tunas Finance">Mandiri Tunas Finance</option>
-                                <option value="Mandiri Utama Finance">Mandiri Utama Finance</option>
-                                <option value="Mandiri Remitance">Mandiri Remitance</option>
-                                <option value="Axa Mandiri">AXA Mandiri</option>
+                                @foreach($mandiriEcosystems as $ecosystem)
+                                    <option value="{{ $ecosystem->name ?: 'name' }}">{{ $ecosystem->name ?: 'name' }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

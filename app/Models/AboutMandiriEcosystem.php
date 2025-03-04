@@ -20,6 +20,7 @@ class AboutMandiriEcosystem extends Model
     ];
 
     protected $fillable = [
+        'name',
         'title',
         'slug',
         'content',
