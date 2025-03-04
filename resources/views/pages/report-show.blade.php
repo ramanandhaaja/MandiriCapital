@@ -42,7 +42,7 @@
                 <div class="article-content">
                     <div class="company-details">
                         <p class="company-description">
-                            {{ $publication->content }}
+                            {!! $publication->content !!}
                         </p>
                     </div>
                 </div>

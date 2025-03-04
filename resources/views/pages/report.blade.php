@@ -173,11 +173,9 @@
                     return `
                         <div class="card" style="background-image: url('${imageUrl}');">
                             <a href="${postUrl}" class="text-decoration-none">
-                                <span class="category">${categoryName}</span>
+                                ${!publication.hide_category ? `<span class="category">${categoryName}</span>` : ''}
                                 <div class="card-content">
-                                    @if(!$publication->hide_title)
-                                    <h2>${publication.title}</h2>
-                                    @endif
+                                    ${!publication.hide_title ? `<h2>${publication.title}</h2>` : ''}
                                 </div>
                                 <span class="date">${formatDate(publication.published_date)}</span>
                             </a>

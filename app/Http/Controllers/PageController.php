@@ -299,7 +299,7 @@ class PageController extends Controller
         })->get();
 
         $publications = Publication::with('category')
-            ->orderBy('published_date')
+            ->orderBy('published_date', 'desc')
             ->paginate(10);
 
         $publication_categories = PublicationCategory::all();

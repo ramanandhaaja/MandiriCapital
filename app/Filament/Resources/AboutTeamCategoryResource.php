@@ -55,9 +55,7 @@ class AboutTeamCategoryResource extends Resource
 
                                 Forms\Components\TextInput::make('order')
                                     ->required()
-                                    ->maxLength(255)
-                                    ->unique(ignoreRecord: true)
-                                    ->disabled(),
+                                    ->maxLength(255),
                             ])
                             ->columnSpan(2),
                     ])

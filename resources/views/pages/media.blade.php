@@ -58,7 +58,7 @@
                 $defaultImage = asset("images/media/image1.png");
                 $backgroundImage = $post->front_image ? Storage::url($post->front_image) : $defaultImage;
                 $formattedDate = \Carbon\Carbon::parse($post->published_at)->translatedFormat('d F Y');
-                $category = $post->categories->first();
+                $category = $post->categories;
             @endphp
 
             <div class="card {{ $isLargeCard ? 'large' : '' }}">
@@ -102,7 +102,7 @@
                                 <h2>{{ $post->title }}</h2>
                                 <span class="post-date" style="display: none;">{{ $formattedDate }}</span>
                                 @if($category && $category->slug === 'news')
-                                    <p class="business-news-week">{{ $post->author_name ?? 'Business News Week' }}</p>
+                                    <p class="business-news-week">{{ $post->author_name ?? '' }}</p>
                                 @endif
                             </div>
                             <span class="date filter-dependent">{{ $formattedDate }}</span>
@@ -295,7 +295,7 @@
                                             <h2>${post.title}</h2>
                                             <span class="post-date" style="display: ${postDateDisplay};">${date}</span>
                                             ${post.categories?.slug === 'news' ? `
-                                            <p class="business-news-week" style="display: ${businessNewsWeekDisplay};">Business News Week</p>
+                                            <p class="business-news-week" style="display: ${businessNewsWeekDisplay};">${post.author_name || ''}</p>
                                             ` : ''}
                                         </div>
                                         <span class="date filter-dependent" style="display: ${filterDependentDisplay};">${date}</span>
