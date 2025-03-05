@@ -33,6 +33,10 @@ class HomeEmailStartupResource extends Resource
                             ->schema([
                                 Forms\Components\Section::make('Footer Translations')
                                     ->schema([
+                                        Forms\Components\TextInput::make('destination')
+                                            ->label('Email Destination')
+                                            ->required()
+                                            ->maxLength(255),
                                         Forms\Components\Tabs::make('Translations')
                                             ->tabs([
                                                 Forms\Components\Tabs\Tab::make('English')

@@ -11,7 +11,15 @@ use App\Mail\PlatformZenithEmail;
 use App\Mail\HomeStartupEmail;
 use App\Mail\HomeInvestorEmail;
 use App\Models\Contact;
+use App\Models\ContactEmail as ModelsContactEmail;
+use App\Models\HomeEmailInvestor;
+use App\Models\HomeEmailStartup;
+use App\Models\PlatformEmail as ModelsPlatformEmail;
+use App\Models\PlatformEmailZenith;
+use App\Models\PortfolioEmailInvestor;
+use App\Models\PortfolioEmailStartup;
 use App\Models\Publication;
+use App\Models\PublicationEmail;
 use App\Models\PublicationEmailDownload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -25,7 +33,7 @@ class EmailController extends Controller
     {
         // Validate the request
 
-        $contact = Contact::first();
+        $contact = PublicationEmail::first();
 
         $formData = $request->validate([
             'name' => 'required|string',
@@ -35,7 +43,7 @@ class EmailController extends Controller
         ]);
 
         try {
-            Mail::to($contact->email_form)
+            Mail::to($contact->destination)
                 ->send(new ReportRequestEmail($formData, $publication));
 
             return back()->with('success', 'Thank you for your request. We will contact you soon.');
@@ -84,7 +92,7 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
-        $contact = Contact::first();
+        $contact = ModelsContactEmail::first();
 
         try {
             $formData = $request->validate([
@@ -127,7 +135,7 @@ class EmailController extends Controller
 
 
         try {
-            Mail::to($contact->email_form)
+            Mail::to($contact->destination)
                 ->send(new ContactEmail($formData));
 
             Log::info('Email sent successfully.');
@@ -149,7 +157,7 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
-        $contact = Contact::first();
+        $contact = PortfolioEmailStartup::first();
 
         try {
             $formData = $request->validate([
@@ -167,7 +175,7 @@ class EmailController extends Controller
                 $formData['company_profile'] = $request->file('company_profile');
             }
 
-            Mail::to($contact->email_form)
+            Mail::to($contact->destination)
                 ->send(new PortfolioGetInvestmentEmail($formData));
 
             Log::info('Investment request email sent successfully.');
@@ -188,7 +196,7 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
-        $contact = Contact::first();
+        $contact = PortfolioEmailInvestor::first();
 
         try {
             $formData = $request->validate([
@@ -200,7 +208,7 @@ class EmailController extends Controller
                 'message' => 'required|string',
             ]);
 
-            Mail::to($contact->email_form)
+            Mail::to($contact->destination)
                 ->send(new PortfolioFundsEmail($formData));
 
             Log::info('Funds request email sent successfully.');
@@ -221,7 +229,7 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
-        $contact = Contact::first();
+        $contact = ModelsPlatformEmail::first();
 
         try {
             $formData = $request->validate([
@@ -242,7 +250,7 @@ class EmailController extends Controller
                 $formData['company_profile'] = $request->file('company_profile');
             }
 
-            Mail::to($contact->email_form)
+            Mail::to($contact->destination)
                 ->send(new PlatformEmail($formData));
 
             Log::info('Platform submission email sent successfully.');
@@ -262,7 +270,7 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
-        $contact = Contact::first();
+        $contact = PlatformEmailZenith::first();
 
         try {
             $formData = $request->validate([
@@ -281,7 +289,7 @@ class EmailController extends Controller
                 'established_in_indonesia' => 'required|string',
             ]);
 
-            Mail::to($contact->email_form)
+            Mail::to($contact->destination)
                 ->send(new PlatformZenithEmail($formData));
 
             Log::info('Zenith Platform submission email sent successfully.');
@@ -301,7 +309,7 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
-        $contact = Contact::first();
+        $contact = HomeEmailStartup::first();
 
         try {
             // Log validation attempt
@@ -334,7 +342,7 @@ class EmailController extends Controller
             // Log email attempt
             Log::info('Attempting to send startup email');
 
-            Mail::to($contact->email_form)
+            Mail::to($contact->destination)
                 ->send(new HomeStartupEmail($formData));
 
             Log::info('Home Startup submission email sent successfully.');
@@ -374,7 +382,7 @@ class EmailController extends Controller
             'data' => $request->all()
         ]);
 
-        $contact = Contact::first();
+        $contact = HomeEmailInvestor::first();
 
         try {
             $formData = $request->validate([
@@ -386,7 +394,7 @@ class EmailController extends Controller
                 'message' => 'required|string',
             ]);
 
-            Mail::to($contact->email_form)
+            Mail::to($contact->destination)
                 ->send(new HomeInvestorEmail($formData));
 
             Log::info('Home Investor submission email sent successfully.');

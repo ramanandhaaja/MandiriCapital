@@ -43,7 +43,9 @@
                 {{-- SUB MENU  --}}
                 <nav class="category-filters">
                     @foreach ($menuSubCategory as $menuSubCat)
+                        @if ($menuSubCat->active)
                         <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ $menuSubCat->slug }}">{{ $menuSubCat->getTranslation('name', session('locale', 'en')) }}</a>
+                        @endif
                     @endforeach
                 </nav>
             </div>

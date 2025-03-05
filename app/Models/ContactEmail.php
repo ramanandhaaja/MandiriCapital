@@ -35,6 +35,7 @@ class ContactEmail extends Model
     ];
 
     protected $fillable = [
+        'destination',
         'title',
         'position1',
         'position2',

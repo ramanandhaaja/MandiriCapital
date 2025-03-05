@@ -22,7 +22,9 @@
             <div class="center-search">
                 <nav class="category-filters">
                     @foreach ($menuSubCategory as $menuSubCat)
+                        @if ($menuSubCat->active)
                         <a href="#" class="filter-link {{ $loop->first ? 'active' : '' }}" data-filter="{{ Str::slug($menuSubCat->slug) }}">{{ $menuSubCat->getTranslation('name', session('locale', 'en')) }}</a>
+                        @endif
                     @endforeach
                 </nav>
             </div>

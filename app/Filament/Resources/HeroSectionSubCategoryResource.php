@@ -47,7 +47,6 @@ class HeroSectionSubCategoryResource extends Resource
                                                             ),
                                                         Forms\Components\RichEditor::make('headline_text.en')
                                                             ->label('Headline Text (English)')
-                                                            ->required()
                                                             ->maxLength(65535),
                                                     ]),
                                                 Forms\Components\Tabs\Tab::make('Indonesian')
@@ -58,11 +57,13 @@ class HeroSectionSubCategoryResource extends Resource
                                                             ->maxLength(255),
                                                         Forms\Components\RichEditor::make('headline_text.id')
                                                             ->label('Headline Text (Indonesian)')
-                                                            ->required()
                                                             ->maxLength(65535),
                                                     ]),
                                             ]),
 
+                                        Forms\Components\Checkbox::make('active')
+                                            ->label('Active')
+                                            ->default(true),
                                         Forms\Components\TextInput::make('slug')
                                             ->required()
                                             ->maxLength(255)

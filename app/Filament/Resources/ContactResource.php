@@ -35,9 +35,6 @@ class ContactResource extends Resource
                                 Forms\Components\Section::make()
                                     ->schema([
 
-                                        Forms\Components\TextInput::make('email_form')
-                                            ->columnSpanFull(),
-
                                         Forms\Components\TextInput::make('email_contact')
                                             ->columnSpanFull(),
 

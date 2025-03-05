@@ -36,6 +36,7 @@ class PlatformEmailZenith extends Model
     ];
 
     protected $fillable = [
+        'destination',
         'title',
         'headline1',
         'email',

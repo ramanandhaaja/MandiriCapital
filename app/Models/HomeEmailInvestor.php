@@ -28,6 +28,7 @@ class HomeEmailInvestor extends Model
     ];
 
     protected $fillable = [
+        'destination',
         'title',
         'subtitle',
         'fullname',

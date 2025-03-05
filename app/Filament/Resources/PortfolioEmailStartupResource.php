@@ -33,6 +33,10 @@ class PortfolioEmailStartupResource extends Resource
                             ->schema([
                                 Forms\Components\Section::make('Footer Translations')
                                     ->schema([
+                                        Forms\Components\TextInput::make('destination')
+                                            ->label('Email Destination')
+                                            ->required()
+                                            ->maxLength(255),
                                         Forms\Components\Tabs::make('Translations')
                                             ->tabs([
                                                 Forms\Components\Tabs\Tab::make('English')
@@ -43,7 +47,6 @@ class PortfolioEmailStartupResource extends Resource
                                                             ->maxLength(255),
                                                         Forms\Components\RichEditor::make('subtitle.en')
                                                             ->label('Subtitle (English)')
-                                                            ->required()
                                                             ->maxLength(65535),
                                                         Forms\Components\TextInput::make('firstname.en')
                                                             ->label('Firstname (English)')
@@ -99,7 +102,6 @@ class PortfolioEmailStartupResource extends Resource
                                                             ->maxLength(255),
                                                         Forms\Components\RichEditor::make('subtitle.id')
                                                             ->label('Subtitle (Indonesian)')
-                                                            ->required()
                                                             ->maxLength(65535),
                                                             Forms\Components\TextInput::make('firstname.id')
                                                             ->label('Firstname (Indonesian)')

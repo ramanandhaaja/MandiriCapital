@@ -21,7 +21,8 @@ class HeroSectionSubCategory extends Model
         'name',
         'slug',
         'hero_section_category_id',
-        'headline_text'
+        'headline_text',
+        'active',
     ];
 
     public function category()

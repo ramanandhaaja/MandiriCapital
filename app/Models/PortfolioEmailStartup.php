@@ -31,6 +31,7 @@ class PortfolioEmailStartup extends Model
     ];
 
     protected $fillable = [
+        'destination',
         'title',
         'subtitle',
         'firstname',

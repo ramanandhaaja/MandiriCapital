@@ -28,6 +28,7 @@ class PortfolioEmailInvestor extends Model
     ];
 
     protected $fillable = [
+        'destination',
         'title',
         'subtitle',
         'fullname',

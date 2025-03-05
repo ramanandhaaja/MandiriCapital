@@ -25,6 +25,7 @@ class PublicationEmail extends Model
     ];
 
     protected $fillable = [
+        'destination',
         'title',
         'name',
         'email',

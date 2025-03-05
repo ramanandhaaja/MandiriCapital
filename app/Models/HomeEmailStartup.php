@@ -30,6 +30,7 @@ class HomeEmailStartup extends Model
     ];
 
     protected $fillable = [
+        'destination',
         'title',
         'subtitle',
         'firstname',

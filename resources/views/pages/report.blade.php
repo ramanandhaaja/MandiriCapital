@@ -19,7 +19,9 @@
         </video>
 
         <div class="hero-content">
-            <a href="#"><h1 class="hero-main-text">{!! $hero->getTranslation('title', session('locale', 'en')) !!}</h1></a>
+            <a href="#">
+                <h1 class="hero-main-text">{!! $hero->getTranslation('title', session('locale', 'en')) !!}</h1>
+            </a>
 
             {{-- Search and Filter Section --}}
             <div class="center-search">
@@ -48,7 +50,10 @@
                 {{-- SUB MENU  --}}
                 <nav class="category-filters">
                     @foreach ($menuSubCategory as $menuSubCat)
-                        <a href="#" class="filter-link" data-filter="{{ $menuSubCat->slug }}">{{ $menuSubCat->getTranslation('name', session('locale', 'en')) }}</a>
+                        @if ($menuSubCat->active)
+                            <a href="#" class="filter-link"
+                                data-filter="{{ $menuSubCat->slug }}">{{ $menuSubCat->getTranslation('name', session('locale', 'en')) }}</a>
+                        @endif
                     @endforeach
                 </nav>
             </div>
@@ -57,19 +62,22 @@
 
     {{-- Publications Grid --}}
     <div class="masonry-grid" data-route-pattern="{{ route('report.show', ':slug') }}">
-        @foreach($publications as $index => $publication)
-            @if($index < 10)
-                <div class="card" style="background-image: url('{{ $publication->image_path ? Storage::url($publication->image_path) : asset("images/media/image" . ($index + 1) . ".png") }}');">
+        @foreach ($publications as $index => $publication)
+            @if ($index < 10)
+                <div class="card"
+                    style="background-image: url('{{ $publication->image_path ? Storage::url($publication->image_path) : asset('images/media/image' . ($index + 1) . '.png') }}');">
                     <a href="{{ route('report.show', $publication->slug) }}" class="text-decoration-none">
-                        @if(!$publication->hide_category)
-                        <span class="category">{{ $publication->category?->getTranslation('name', session('locale', 'en')) ?? '' }}</span>
+                        @if (!$publication->hide_category)
+                            <span
+                                class="category">{{ $publication->category?->getTranslation('name', session('locale', 'en')) ?? '' }}</span>
                         @endif
                         <div class="card-content">
-                            @if(!$publication->hide_title)
-                            <h2>{{ $publication->title }}</h2>
+                            @if (!$publication->hide_title)
+                                <h2>{{ $publication->title }}</h2>
                             @endif
                         </div>
-                        <span class="date" style='visibility: hidden;'>{{ Carbon::parse($publication->published_date)->format('d F Y') }}</span>
+                        <span class="date"
+                            style='visibility: hidden;'>{{ Carbon::parse($publication->published_date)->format('d F Y') }}</span>
                     </a>
                 </div>
             @endif
@@ -81,10 +89,8 @@
         <div class="newsletter-container">
             <h2 class="newsletter-title">{!! $masterData->getTranslation('footer', session('locale', 'en')) !!}</h2>
             <a href="{{ route('contact') }}">
-                <img src="{{ asset('images/portfolio/letsconnect.png') }}"
-                     alt="Lets Connect"
-                     class="button-image center-image-newsletter"
-                     loading="lazy">
+                <img src="{{ asset('images/portfolio/letsconnect.png') }}" alt="Lets Connect"
+                    class="button-image center-image-newsletter" loading="lazy">
             </a>
         </div>
     </div>
@@ -143,7 +149,9 @@
                 try {
                     console.log('Fetching with filter:', filter); // Debug filter value
                     const response = await fetch(`/report/filter/${filter}`, {
-                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
                     });
 
                     if (!response.ok) throw new Error('Network response was not ok');
@@ -163,9 +171,9 @@
             function updatePublicationsGrid(publications) {
                 const postsHtml = publications.map((publication, index) => {
                     const postUrl = elements.routePattern.replace(':slug', publication.slug);
-                    const imageUrl = publication.image_path
-                        ? '/storage/' + publication.image_path
-                        : '/images/media/image' + (index + 1) + '.png';
+                    const imageUrl = publication.image_path ?
+                        '/storage/' + publication.image_path :
+                        '/images/media/image' + (index + 1) + '.png';
 
                     const locale = '{{ session('locale', 'en') }}';
                     const categoryName = publication.category?.name?.[locale] || '';
@@ -194,7 +202,9 @@
             function formatDate(dateString) {
                 const date = new Date(dateString);
                 const day = date.getDate();
-                const month = date.toLocaleString('en-US', { month: 'long' });
+                const month = date.toLocaleString('en-US', {
+                    month: 'long'
+                });
                 const year = date.getFullYear();
                 return `${day} ${month} ${year}`;
             }

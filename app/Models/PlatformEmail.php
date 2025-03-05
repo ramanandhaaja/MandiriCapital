@@ -33,6 +33,7 @@ class PlatformEmail extends Model
     ];
 
     protected $fillable = [
+        'destination',
         'title',
         'subtitle',
         'program',
