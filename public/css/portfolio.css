@@ -1384,10 +1384,6 @@ body {
     margin-bottom: 0px;
 }
 
-.form-row .form-group:only-child {
-    grid-column: 1 / -1;
-}
-
 .form-label {
     font-family: var(--font-family);
     display: block;
@@ -2028,10 +2024,18 @@ a.text-decoration-none {
     font-size: var(--font-size-base);;
     color: rgba(255, 255, 255, 0.6);
     margin: 8px 0;
+    cursor: help;
+    transition: color 0.3s ease;
+}
+
+.description-text:hover {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline dotted;
 }
 
 .upload-guidelines {
-    margin-top: 16px;
+    font-family: var(--font-family);
+    padding: 10px 20px 10px;
     font-size: var(--font-size-base);;
 }
 
@@ -2238,6 +2242,8 @@ a.text-decoration-none {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     pointer-events: none; /* Prevents hover card from interfering with other elements */
 }
+
+
 
 .card-ecosystem-hover {
     position: fixed;

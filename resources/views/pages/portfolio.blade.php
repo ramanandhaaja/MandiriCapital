@@ -198,11 +198,16 @@
                             <input type="file" id="company_profile" name="company_profile" class="file-input"
                                 accept=".pdf">
                         </div>
-                        <p class="description-text">Please upload your company profile or Pitch Deck (Max. 15 page PDF)</p>
-                        <div class="upload-guidelines">
-                            <p>
-                                {!! $portfolio_email_startup->first()?->getTranslation('instructions', session('locale', 'en')) ?? '' !!}
-                            </p>
+                        <p class="description-text" id="company-profile-desc">Please upload your company profile or Pitch Deck (Max. 15 page PDF)</p>
+
+                        <div class="card-funding-hover" id="company-profile-hover">
+                            <div class="hover-content">
+                                <div class="upload-guidelines">
+                                    <p>
+                                        {!! $portfolio_email_startup->first()?->getTranslation('instructions', session('locale', 'en')) ?? '' !!}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -802,6 +807,34 @@
                     hoverCard.classList.remove('active');
                 });
             });
+
+            // Company profile description hover functionality
+            const companyProfileDesc = document.getElementById('company-profile-desc');
+            const companyProfileHover = document.getElementById('company-profile-hover');
+            let isHoveringDesc = false;
+
+            if (companyProfileDesc && companyProfileHover) {
+                document.addEventListener('mousemove', function(e) {
+                    if (isHoveringDesc) {
+                        const mouseX = e.clientX;
+                        const mouseY = e.clientY;
+
+                        companyProfileHover.style.left = `${mouseX}px`;
+                        companyProfileHover.style.top = `${mouseY}px`;
+                        companyProfileHover.style.transform = 'translate(20px, 20px)';
+                    }
+                });
+
+                companyProfileDesc.addEventListener('mouseenter', function() {
+                    isHoveringDesc = true;
+                    companyProfileHover.classList.add('active');
+                });
+
+                companyProfileDesc.addEventListener('mouseleave', function() {
+                    isHoveringDesc = false;
+                    companyProfileHover.classList.remove('active');
+                });
+            }
         });
     </script>
 

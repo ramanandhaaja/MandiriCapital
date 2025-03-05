@@ -405,13 +405,19 @@ body {
     font-size: var(--font-size-base);;
     color: rgba(255, 255, 255, 0.6);
     margin: 8px 0;
+    cursor: help;
+    transition: color 0.3s ease;
+}
+
+.description-text:hover {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline dotted;
 }
 
 .upload-guidelines {
-    margin-top: 16px;
     font-family: var(--font-family);
-    font-size: var(--font-size-base);;
-    color: rgba(255, 255, 255, 0.6);
+    padding: 0px 10px 0;
+    font-size: var(--font-size-base);
 }
 
 .guidelines-title {
@@ -495,6 +501,34 @@ body {
     display: none;
 }
 
+
+/* Hover Card Styles
+   ========================================================================== */
+.card-funding-hover {
+    position: fixed;
+    display: none;
+    z-index: 1000;
+    border-radius: 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #A1A1AA;
+    overflow: hidden;
+    height: 350px;
+    width: 500px;
+    background: rgba(39, 39, 42, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+.card-funding-hover.active {
+    display: block;
+}
+
+.hover-content {
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
 
 /* Responsive Styles
    ========================================================================== */

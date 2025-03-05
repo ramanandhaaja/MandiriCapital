@@ -163,12 +163,17 @@
                                     <input type="file" id="company_profile" name="company_profile" class="file-input"
                                         accept=".pdf" onchange="updateFileName(this)">
                                 </div>
-                                <p class="description-text">{{ session('locale') === 'id' ? 'Silakan unggah profil perusahaan atau Pitch Deck Anda (Maks. 15 halaman PDF)' : 'Please upload your company profile or Pitch Deck (Max. 15 page PDF)' }}</p>
-                                <div class="upload-guidelines">
-                                    <p class="guidelines-title">
-                                        {!! $contact_email->getTranslation('instructions', session('locale', 'en')) !!}
-                                    </p>
+                                <p class="description-text" id="company-profile-desc">{{ session('locale') === 'id' ? 'Silakan unggah profil perusahaan atau Pitch Deck Anda (Maks. 15 halaman PDF)' : 'Please upload your company profile or Pitch Deck (Max. 15 page PDF)' }}</p>
+                                <div class="card-funding-hover" id="company-profile-hover">
+                                    <div class="hover-content">
+                                        <div class="upload-guidelines">
+                                            <p>
+                                                {!! $contact_email->getTranslation('instructions', session('locale', 'en')) !!}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
 
                             <div class="form-group">
@@ -287,5 +292,33 @@
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             console.log('Form submitting...');
         });
+
+        // Company profile description hover functionality
+        const companyProfileDesc = document.getElementById('company-profile-desc');
+        const companyProfileHover = document.getElementById('company-profile-hover');
+        let isHoveringDesc = false;
+
+        if (companyProfileDesc && companyProfileHover) {
+            document.addEventListener('mousemove', function(e) {
+                if (isHoveringDesc) {
+                    const mouseX = e.clientX;
+                    const mouseY = e.clientY;
+
+                    companyProfileHover.style.left = `${mouseX}px`;
+                    companyProfileHover.style.top = `${mouseY}px`;
+                    companyProfileHover.style.transform = 'translate(20px, 20px)';
+                }
+            });
+
+            companyProfileDesc.addEventListener('mouseenter', function() {
+                isHoveringDesc = true;
+                companyProfileHover.classList.add('active');
+            });
+
+            companyProfileDesc.addEventListener('mouseleave', function() {
+                isHoveringDesc = false;
+                companyProfileHover.classList.remove('active');
+            });
+        }
     });
 </script>
