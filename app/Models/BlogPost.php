@@ -7,9 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Translatable\HasTranslations;
 
 class BlogPost extends Model
 {
+    use HasTranslations;
+    public array $translatable = [
+        'title',
+        'content_heading',
+        'content',
+    ];
+
     protected $fillable = [
         'user_id',
         'title',

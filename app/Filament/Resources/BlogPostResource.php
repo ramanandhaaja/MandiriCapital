@@ -37,22 +37,66 @@ class BlogPostResource extends Resource
                                     ->disabled()
                                     ->required(),
 
+
+
+                                Forms\Components\Tabs::make('Translations')
+                                    ->tabs([
+                                        Forms\Components\Tabs\Tab::make('English')
+                                            ->schema([
+                                                Forms\Components\TextInput::make('title.en')
+                                                    ->label('Title (English)')
+                                                    ->required()
+                                                    ->maxLength(255)
+                                                    ->live(onBlur: true)
+                                                    ->afterStateUpdated(
+                                                        fn(string $state, callable $set) =>
+                                                        $set('slug', Str::slug($state))
+                                                    ),
+
+                                                Forms\Components\RichEditor::make('content_heading.en')
+                                                    ->label('Content Heading (English)')
+                                                    ->placeholder('Enter the main heading for the content')
+                                                    ->columnSpanFull(),
+
+                                                Forms\Components\RichEditor::make('content.en')
+                                                    ->label('Content (English)')
+                                                    ->required()
+                                                    ->columnSpanFull(),
+                                            ]),
+                                        Forms\Components\Tabs\Tab::make('Indonesian')
+                                            ->schema([
+                                                Forms\Components\TextInput::make('title.id')
+                                                    ->label('Title (Indonesian)')
+                                                    ->required()
+                                                    ->maxLength(255),
+
+                                                Forms\Components\RichEditor::make('content_heading.id')
+                                                    ->label('Content Heading (Indonesian)')
+                                                    ->placeholder('Enter the main heading for the content')
+                                                    ->columnSpanFull(),
+
+                                                Forms\Components\RichEditor::make('content.id')
+                                                    ->label('Content (Indonesian)')
+                                                    ->required()
+                                                    ->columnSpanFull(),
+                                            ]),
+                                    ])
+                                    ->columnSpanFull(),
+
+                                Forms\Components\Checkbox::make('is_content_justified')
+                                    ->label('Justify Content')
+                                    ->default(false),
+
                                 Forms\Components\Grid::make(2)
                                     ->schema([
-                                        Forms\Components\TextInput::make('title')
-                                            ->required()
-                                            ->live(onBlur: true)
-                                            ->afterStateUpdated(
-                                                fn(string $state, callable $set) =>
-                                                $set('slug', Str::slug($state))
-                                            ),
-
                                         Forms\Components\TextInput::make('slug')
                                             ->required()
-                                            ->unique(BlogPost::class, 'slug', ignoreRecord: true),
-
+                                            ->disabled()
+                                            ->unique(BlogPost::class, 'slug', ignoreRecord: true)
+                                            ->columnSpanFull(),
                                     ]),
-                                    Forms\Components\Grid::make(2)
+
+                                Forms\Components\Grid::make(2)
                                     ->schema([
                                         Forms\Components\TextInput::make('author_name')
                                             ->live(onBlur: true),
@@ -61,18 +105,6 @@ class BlogPostResource extends Resource
                                             ->live(onBlur: true),
 
                                     ]),
-                                Forms\Components\RichEditor::make('content_heading')
-                                    ->label('Content Heading')
-                                    ->placeholder('Enter the main heading for the content')
-                                    ->columnSpanFull(),
-
-                                Forms\Components\Checkbox::make('is_content_justified')
-                                    ->label('Justify Content')
-                                    ->default(false),
-
-                                Forms\Components\RichEditor::make('content')
-                                    ->required()
-                                    ->columnSpanFull(),
 
                                 Forms\Components\TextInput::make('media_source_url')
                                     ->label('Media Source URL')
@@ -117,21 +149,21 @@ class BlogPostResource extends Resource
                                     ->visibility('public')
                                     ->columnSpanFull(),
 
-                                    Forms\Components\FileUpload::make('headline_image')
+                                Forms\Components\FileUpload::make('headline_image')
                                     ->image()
                                     ->disk('public')
                                     ->directory('blog-images')
                                     ->visibility('public')
                                     ->columnSpanFull(),
 
-                                    Forms\Components\FileUpload::make('featured_image')
+                                Forms\Components\FileUpload::make('featured_image')
                                     ->image()
                                     ->disk('public')
                                     ->directory('blog-images')
                                     ->visibility('public')
                                     ->columnSpanFull(),
 
-                                    Forms\Components\FileUpload::make('author_image')
+                                Forms\Components\FileUpload::make('author_image')
                                     ->image()
                                     ->disk('public')
                                     ->directory('blog-images')

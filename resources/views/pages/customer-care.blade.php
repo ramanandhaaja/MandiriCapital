@@ -11,7 +11,6 @@
     </style>
 @endsection
 
-
 @section('container')
     <div class="top-hero-section">
         <div class="center-text">{!! $hero->getTranslation('title', session('locale', 'en')) !!}</div>

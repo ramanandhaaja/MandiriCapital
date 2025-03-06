@@ -88,7 +88,7 @@
                                              loading="lazy">
                                     </div>
                                     <h3>{{ $testimonial->name }}, {{ $testimonial->getTranslation('title', session('locale', 'en')) }}</h3>
-                                    <p>"{{ $testimonial->getTranslation('content', session('locale', 'en')) }}"</p>
+                                    <p>{!! $testimonial->getTranslation('content', session('locale', 'en')) !!}</p>
                                 </div>
                             </div>
                         </div>

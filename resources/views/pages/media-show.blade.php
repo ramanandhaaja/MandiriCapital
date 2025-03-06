@@ -14,7 +14,7 @@
     <div class="hero-section">
         <div class="hero-content" style="background-image: url('{{ $post->front_image ? Storage::url($post->front_image) : asset('images/media/OnHover.png') }}');">
         </div>
-        <h1>{{ $post->title }}</h1>
+        <h1>{!! $post->getTranslation('title', session('locale', 'en')) !!} </h1>
         <p>{{ \Carbon\Carbon::parse($post->published_at)->format('d F Y') }}</p>
     </div>
 
@@ -100,10 +100,11 @@
                 <div class="article-content">
 
                     <div class="article-subtitle" @if($post->is_content_justified) style="text-align: justify;" @endif>
-                        <p>{!! $post->content_heading !!}</p>
+                        <p>{!! $post->getTranslation('content_heading', session('locale', 'en')) !!}</p>
+
                     </div>
                     <div class="article-content-text" @if($post->is_content_justified) style="text-align: justify;" @endif>
-                        <p>{!! $post->content !!}</p>
+                        <p>{!! $post->getTranslation('content', session('locale', 'en')) !!}</p>
 
                     </div>
                     @if($post->media_source_url)

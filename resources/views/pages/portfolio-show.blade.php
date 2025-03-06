@@ -118,8 +118,12 @@
             <div class="share-content">
                 <span class="share-label">Share to:</span>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/mandiricapital/" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/mandiri-capital-indonesia-mci/posts/?feedView=all" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    @if($portfolio->instagram_url)
+                        <a href="{{ $portfolio->instagram_url }}" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    @endif
+                    @if($portfolio->linkedin_url)
+                        <a href="{{ $portfolio->linkedin_url }}" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    @endif
                 </div>
             </div>
         </div>
