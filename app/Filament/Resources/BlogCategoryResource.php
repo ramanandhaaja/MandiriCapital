@@ -60,9 +60,7 @@ class BlogCategoryResource extends Resource
                                     ->required()
                                     ->disabled()
                                     ->unique(BlogCategory::class, 'slug', ignoreRecord: true),
-                                Forms\Components\Toggle::make('is_active')
-                                    ->label('Active')
-                                    ->default(true),
+
                             ])
                             ->columnSpan(2),
                     ])
@@ -79,8 +77,6 @@ class BlogCategoryResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

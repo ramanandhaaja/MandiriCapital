@@ -366,8 +366,18 @@ class PageController extends Controller
         }
 
         $posts = $query->orderBy('published_at', 'desc')->get();
+        
+        // Get current locale
+        $locale = session('locale', 'en');
+        
+        // Manually transform the posts to include translated titles
+        $transformedPosts = $posts->map(function($post) use ($locale) {
+            $postArray = $post->toArray();
+            $postArray['translated_title'] = $post->getTranslation('title', $locale);
+            return $postArray;
+        });
 
-        return response()->json($posts);
+        return response()->json($transformedPosts);
     }
 
     public function reportFilter($category)

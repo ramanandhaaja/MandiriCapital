@@ -294,7 +294,7 @@
                                         <div class="background-image" style="background-image: url('${backgroundImage}');"></div>
                                         <span class="category filter-dependent" style="display: ${filterDependentDisplay};">{!! $category->getTranslation('name', session('locale', 'en')) !!}</span>
                                         <div class="card-content">
-                                            <h2>{!! $post->getTranslation('title', session('locale', 'en')) !!}</h2>
+                                            <h2>${post.translated_title || post.title}</h2>
                                             <span class="post-date" style="display: ${postDateDisplay};">${date}</span>
                                             ${post.categories?.slug === 'news' ? `
                                             <p class="business-news-week" style="display: ${businessNewsWeekDisplay};">${post.author_name || ''}</p>
