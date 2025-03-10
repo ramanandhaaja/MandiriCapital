@@ -24,10 +24,35 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Set secure cookie configurations
+        config([
+            'session.http_only' => true,         // Enable 'HttpOnly' attribute
+            'session.same_site' => 'lax',        // Set SameSite to 'lax' instead of 'strict' to allow some cross-site requests
+        ]);
+
+        // Only set secure flag if using HTTPS
+        if (request()->secure()) {
+            config(['session.secure' => true]);
+        }
+
+        // Regenerate session ID periodically but only for non-form submissions
+        // This prevents CSRF token mismatches during form submissions
+        if (!request()->isMethod('POST') && session()->has('last_regenerated_at')) {
+            $lastRegenerated = session('last_regenerated_at');
+            $sixHoursAgo = time() - (6 * 3600); // 6 hours instead of 1 hour
+
+            if ($lastRegenerated < $sixHoursAgo) {
+                session()->regenerate(false); // false = don't invalidate the old session
+                session(['last_regenerated_at' => time()]);
+            }
+        } elseif (!session()->has('last_regenerated_at')) {
+            session(['last_regenerated_at' => time()]);
+        }
+
+        // Your existing code...
         FilamentView::registerRenderHook(
             'panels::auth.login.form.after',
-            fn (): View => view('filament.login_extra')
+            fn(): View => view('filament.login_extra')
         );
 
         // Share menu data with all views
