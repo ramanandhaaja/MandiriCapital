@@ -33,7 +33,7 @@
                         <img src="{{ $publication->image_path ? Storage::url($publication->image_path) : asset('images/media/image5.png') }}"
                             alt="Author" class="image-left" loading="lazy" />
                         @if (!$publication->hide_title)
-                            <div class="article-title">{{ $publication->title ?? '' }}</div>
+                            <div class="article-title">{{ $publication->getTranslation('title', session('locale', 'en')) ?? '' }}</div>
                         @endif
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                 <div class="article-content">
                     <div class="company-details">
                         <p class="company-description">
-                            {!! $publication->content !!}
+                            {!! $publication->getTranslation('content', session('locale', 'en')) !!}
                         </p>
                     </div>
                 </div>

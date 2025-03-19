@@ -224,6 +224,22 @@ body {
     display: none;
 }
 
+/* Card Styles
+   ========================================================================== */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+
+.card-link:focus {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Date Range
    ========================================================================== */
 .date-range-container {

@@ -41,6 +41,14 @@
 
                         <div class="company-info-grid">
                             <div class="info-item">
+                                <div class="info-label">CEO NAME</div>
+                                <div class="info-value">{{ $portfolio->ceo_name }}</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">GROWTH STAGE</div>
+                                <div class="info-value">{{ $portfolio->stage }}</div>
+                            </div>
+                            <div class="info-item">
                                 <div class="info-label">HEAD OFFICE</div>
                                 <div class="info-value">{{ $portfolio->head_office }}</div>
                             </div>

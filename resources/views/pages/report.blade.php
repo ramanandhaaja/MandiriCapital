@@ -64,22 +64,22 @@
     <div class="masonry-grid" data-route-pattern="{{ route('report.show', ':slug') }}">
         @foreach ($publications as $index => $publication)
             @if ($index < 10)
-                <div class="card"
-                    style="background-image: url('{{ $publication->image_path ? Storage::url($publication->image_path) : asset('images/media/image' . ($index + 1) . '.png') }}');">
-                    <a href="{{ route('report.show', $publication->slug) }}" class="text-decoration-none">
+                <a href="{{ route('report.show', $publication->slug) }}" class="card-link">
+                    <div class="card"
+                        style="background-image: url('{{ $publication->image_path ? Storage::url($publication->image_path) : asset('images/media/image' . ($index + 1) . '.png') }}');">
                         @if (!$publication->hide_category)
                             <span
                                 class="category">{{ $publication->category?->getTranslation('name', session('locale', 'en')) ?? '' }}</span>
                         @endif
                         <div class="card-content">
                             @if (!$publication->hide_title)
-                                <h2>{{ $publication->title }}</h2>
+                                <h2>{{ $publication->getTranslation('title', session('locale', 'en')) }}</h2>
                             @endif
                         </div>
                         <span class="date"
                             style='visibility: hidden;'>{{ Carbon::parse($publication->published_date)->format('d F Y') }}</span>
-                    </a>
-                </div>
+                    </div>
+                </a>
             @endif
         @endforeach
     </div>
@@ -179,15 +179,15 @@
                     const categoryName = publication.category?.name?.[locale] || '';
 
                     return `
-                        <div class="card" style="background-image: url('${imageUrl}');">
-                            <a href="${postUrl}" class="text-decoration-none">
+                        <a href="${postUrl}" class="card-link">
+                            <div class="card" style="background-image: url('${imageUrl}');">
                                 ${!publication.hide_category ? `<span class="category">${categoryName}</span>` : ''}
                                 <div class="card-content">
-                                    ${!publication.hide_title ? `<h2>${publication.title}</h2>` : ''}
+                                    ${!publication.hide_title ? `<h2>${publication.getTranslation('title', session('locale', 'en'))}</h2>` : ''}
                                 </div>
-                                <span class="date">${formatDate(publication.published_date)}</span>
-                            </a>
-                        </div>
+                                <span class="date" style="visibility: hidden;">${formatDate(publication.published_date)}</span>
+                            </div>
+                        </a>
                     `;
                 }).join('');
 

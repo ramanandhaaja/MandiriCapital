@@ -19,11 +19,12 @@ use App\Models\PlatformEmailZenith;
 use App\Models\PortfolioEmailInvestor;
 use App\Models\PortfolioEmailStartup;
 use App\Models\Publication;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use App\Models\PublicationEmail;
 use App\Models\PublicationEmailDownload;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
 
 class EmailController extends Controller
@@ -135,6 +136,28 @@ class EmailController extends Controller
 
 
         try {
+            // Log destination email address
+            Log::info('Attempting to send email', [
+                'to' => $contact->destination,
+                'form_data' => array_map(function($value) {
+                    return $value instanceof UploadedFile ? 'File: ' . $value->getClientOriginalName() : $value;
+                }, $formData)
+            ]);
+
+            // Check if destination email is set
+            if (empty($contact->destination)) {
+                Log::error('Destination email is empty');
+                throw new \Exception('Destination email address is not configured');
+            }
+
+            // Check mail configuration
+            Log::info('Mail configuration', [
+                'driver' => config('mail.default'),
+                'host' => config('mail.mailers.smtp.host'),
+                'port' => config('mail.mailers.smtp.port'),
+                'from_address' => config('mail.from.address'),
+            ]);
+
             Mail::to($contact->destination)
                 ->send(new ContactEmail($formData));
 
@@ -142,7 +165,13 @@ class EmailController extends Controller
 
             return back()->with('success', 'Thank you for your message. We will contact you soon.');
         } catch (\Exception $e) {
-            Log::error('Email sending failed:', ['error' => $e->getMessage()]);
+            Log::error('Email sending failed:', [
+                'error_message' => $e->getMessage(),
+                'error_code' => $e->getCode(),
+                'error_file' => $e->getFile(),
+                'error_line' => $e->getLine(),
+                'trace' => $e->getTraceAsString()
+            ]);
             return back()->with('error', 'Sorry, there was an error sending your message. Please try again later.');
         }
     }
