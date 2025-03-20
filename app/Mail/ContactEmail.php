@@ -37,10 +37,20 @@ class ContactEmail extends Mailable
 
     public function attachments(): array
     {
-        $attachments = [];
-        if (isset($this->formData['company_profile'])) {
-            $attachments[] = $this->formData['company_profile'];
+        if (!isset($this->formData['company_profile']) || !($this->formData['company_profile'] instanceof \Illuminate\Http\UploadedFile)) {
+            return [];
         }
-        return $attachments;
+
+        $file = $this->formData['company_profile'];
+
+        // Sanitize filename by removing special characters
+        $originalName = $file->getClientOriginalName();
+        $sanitizedName = preg_replace('/[^a-zA-Z0-9._-]/', '', $originalName);
+
+        return [
+            \Illuminate\Mail\Mailables\Attachment::fromPath($file->getRealPath())
+                ->as($sanitizedName)
+                ->withMime($file->getMimeType())
+        ];
     }
 }

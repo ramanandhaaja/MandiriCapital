@@ -352,8 +352,7 @@
                         <div class="file-upload-container">
                             <label for="company_profile" class="file-upload-button">Choose File</label>
                             <span class="file-name" id="fileName">No File Chosen</span>
-                            <input type="file" id="company_profile" name="company_profile" class="file-input"
-                                accept=".pdf" onchange="updateFileName(this)" required>
+                            <input type="file" id="company_profile" name="company_profile" accept=".pdf" class="file-input" style="display: none;" onchange="updateFileName(this)">
                         </div>
                         <p class="description-text" id="company-profile-desc">{{ session('locale') === 'id' ? 'Silakan unggah profil perusahaan atau Pitch Deck Anda (Maks. 15 halaman PDF)' : 'Please upload your company profile or Pitch Deck (Max. 15 page PDF)' }}</p>
 

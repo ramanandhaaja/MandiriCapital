@@ -49,8 +49,11 @@ class BlogPostResource extends Resource
                                                     ->maxLength(255)
                                                     ->live(onBlur: true)
                                                     ->afterStateUpdated(
-                                                        fn(string $state, callable $set) =>
-                                                        $set('slug', Str::slug($state))
+                                                        function ($state, callable $set) {
+                                                            if ($state) {
+                                                                $set('slug', Str::slug((string) $state));
+                                                            }
+                                                        }
                                                     ),
 
                                                 Forms\Components\RichEditor::make('content_heading.en')

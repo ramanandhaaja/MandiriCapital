@@ -37,10 +37,20 @@ class HomeStartupEmail extends Mailable
 
     public function attachments(): array
     {
-        $attachments = [];
-        if (isset($this->formData['pitch_file'])) {
-            $attachments[] = $this->formData['pitch_file'];
+        if (!isset($this->formData['pitch_file']) || !($this->formData['pitch_file'] instanceof \Illuminate\Http\UploadedFile)) {
+            return [];
         }
-        return $attachments;
+
+        $file = $this->formData['pitch_file'];
+
+        // Sanitize filename by removing special characters
+        $originalName = $file->getClientOriginalName();
+        $sanitizedName = preg_replace('/[^a-zA-Z0-9._-]/', '', $originalName);
+
+        return [
+            \Illuminate\Mail\Mailables\Attachment::fromPath($file->getRealPath())
+                ->as($sanitizedName)
+                ->withMime($file->getMimeType())
+        ];
     }
 }
