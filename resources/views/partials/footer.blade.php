@@ -6,9 +6,7 @@
             <img src="{{ asset('images/logo.png') }}" alt="Mandiri Capital" class="footer-logo">
             <div class="company-info">
                 <h3>MANDIRI CAPITAL INDONESIA</h3>
-                <p>Menara Mandiri II, lantai 14.</p>
-                <p>Jl. Jend. Sudirman No. 54-55, Jakarta,</p>
-                <p>Indonesia 12190</p>
+                <p>{{ $contact->address }}</p>
             </div>
         </div>
 

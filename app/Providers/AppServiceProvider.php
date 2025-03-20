@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Contact;
 use Illuminate\Support\ServiceProvider;
 use Filament\Support\Facades\FilamentView;
 use Illuminate\Contracts\View\View;
@@ -89,8 +90,9 @@ class AppServiceProvider extends ServiceProvider
         ViewFacade::composer('*', function ($view) {
             $masterData = HeroMaster::first();
             $menuCategory = HeroSectionCategory::all();
+            $contact = Contact::first();
 
-            $view->with(compact('masterData', 'menuCategory'));
+            $view->with(compact('masterData', 'menuCategory', 'contact'));
         });
     }
 }
